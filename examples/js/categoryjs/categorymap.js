@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateCategoryHTML(category) {
         return `
             <div class="category">
-                <img src="assets/${category.CATEGORY}.png"> <!-- Assuming you have images with the same name as category -->
+                <img src="assets/categorymap_images/${category.CATEGORY}.png"> <!-- Assuming you have images with the same name as category -->
                 <p class="categoryName">${category.CATEGORY}</p>
                 <a href="prototype.html?category=${category.CATEGORY}" class="visitCategory" target="_self">Visit</a>
             </div>

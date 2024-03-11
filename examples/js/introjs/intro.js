@@ -8,7 +8,8 @@ document.getElementById("submit-link").addEventListener('click',function(){
       
         sessionStorage.setItem('anotherPageLoaded', true);
         // Load another page
-        window.location.replace("categorymap.html")
+        window.location.replace("categorymapdynmic.html")
+        
     }else{
         alert("conditions not satisfied")
     }
