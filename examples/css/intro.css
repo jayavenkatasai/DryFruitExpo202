@@ -1,0 +1,134 @@
+body{
+    font-family: "Nunito", sans-serif;
+    margin:0;
+}
+.introContents{
+    margin:15px;
+    background-color: #fff;
+    height: 97vh;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding:0;
+}
+.welcomeText {
+    font-size: 50px;
+    font-weight: 600;
+    color: #F65927;
+    padding-bottom: 20px;
+}
+.hsptltext{
+    color: #0080BF; 
+    font-size: 75px; 
+    font-weight: 600; 
+    padding-bottom:30px;
+}
+.hsptltext span{
+    display:block;
+}
+.inputText{
+    border-radius: 8px;
+    border: 1px solid rgba(0, 9, 57, 0.10);
+    background: #FFF;
+    padding: 10px 8px 10px 18px;  
+   max-width: 520px;
+   display:flex;
+   gap:18px;
+   align-items: center;
+   margin:0 auto;
+}
+.inputText input,.inputText ::placeholder{
+    border:none;
+    color:#344054;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+.inputText input:focus{
+    border:none;
+    outline:none;
+}
+.inputText input{
+    width:100%;
+}
+.inputText img{
+    max-width:15px;
+}
+.enterExpoButton button{
+    color: #FFF;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: normal; 
+    text-decoration: none;
+}
+.enterExpoButton{
+    border-radius: 12px;
+    background: #F65927; 
+    padding:15px 0;
+    max-width: 250px;
+    margin:50px auto 0 auto;
+}
+.introContents{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.introText{
+    text-align:center;
+}
+@media only screen and (max-width:1300px){
+    .welcomeText {
+        font-size: 35px;
+        padding-bottom: 10px;
+    }
+    .hsptltext{
+        font-size:50px;
+        padding-bottom: 15px;
+    }
+    .enterExpoButton button {
+        font-size: 18px;
+    }
+    .enterExpoButton {
+        padding: 10px 0;
+        max-width: 175px;
+        margin: 25px auto 0 auto;
+    }
+}
+@media only screen and (max-width:992px){
+    .welcomeText {
+        font-size: 25px;
+    }
+    .hsptltext{
+        font-size:35px;
+    }
+    .inputText {
+        padding: 5px 8px 5px 18px;
+    }
+    .inputText input, .inputText ::placeholder {
+        font-size: 16px;
+    }
+    .introText {
+        width: 95%;
+        margin: auto;
+    }
+    .inputText {
+        max-width: 300px;
+    }
+    .inputText img {
+        max-width: 11px;
+    }
+    .enterExpoButton {
+        max-width: 140px;
+    }
+    .enterExpoButton button {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .hsptltext {
+        font-size: 32px;
+    }
+}
+#submit-link{
+    background-color: none;
+}

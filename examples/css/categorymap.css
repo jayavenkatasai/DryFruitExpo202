@@ -1,0 +1,125 @@
+body{
+    font-family: "Nunito", sans-serif;
+    margin:0;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding:0;
+}
+.categoryheading{
+    color: #F65927;
+    font-size: 50px;
+    font-weight: 600;
+    padding-bottom:40px;
+}
+.categoryheading{
+    text-align:center;
+}
+.categoryMap{
+    padding:100px 0;
+    background: #F1FDFF; 
+}
+.categoryName {
+    color: #464646;
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    max-width: 215px;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.category a {
+    color: #FFF;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #F65927;
+    padding: 8px 12px;
+    text-decoration: none;
+    max-width: 115px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.category{
+    padding: 16px 0; 
+    border-radius: 10px;
+    border: 2px solid #F65927;
+    background: #FFF;
+    text-align:center;
+}
+.category img {
+    width: 100%;
+    max-height: 150px;
+    object-fit:contain;
+}
+.categoryContents {
+    display: grid;
+     grid-template-columns: repeat(5,1fr);
+     gap:20px;;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+.categoryContents{
+    position: relative;
+}
+.arrows{
+    position: absolute;
+    right:0;
+    top:-47px;
+}
+.arrows img {
+    max-width: 40px;
+}
+@media only screen and (max-width:1300px){
+.categoryheading {
+    font-size: 30px;
+}
+.categoryMap {
+    padding: 50px 0;
+}
+.categoryName {
+    font-size: 18px;
+}
+.category a {
+    max-width: 100px;
+    font-size: 14px;
+}
+.categoryContents {
+    width: 95%;
+}
+}
+@media only screen and (max-width:1000px){
+.categoryContents {
+    width: 95%;
+}
+}
+@media only screen and (max-width:992px){
+.category img {
+    height: 100px;
+}
+
+.categoryContents{
+    grid-template-columns: repeat(3,1fr);
+}
+}
+@media only screen and (max-width:850px){
+.categoryContents{
+    grid-template-columns: repeat(2,1fr);
+}
+.arrows img {
+    max-width: 35px;
+}
+.arrows {
+    top: -40px;
+}
+}
+@media only screen and (max-width:550px){
+.categoryContents{
+    grid-template-columns: repeat(1,1fr);
+}
+}
