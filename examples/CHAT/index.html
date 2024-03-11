@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat App</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+  
+  <script>
+
+    // User ID
+    var userID = "1234";
+
+    // Pusher app key and cluster
+    var pusher = new Pusher('002a3766537221bf7086', {
+      cluster: 'ap2'
+    });
+    
+    // Subscribe to chat channel
+    var channel = pusher.subscribe('chat');
+    
+    // DOM elements
+    var chatLog = document.getElementById('chat-log');
+    var chatForm = document.getElementById('chat-form');
+    var messageInput = document.getElementById('message-input');
+    
+    // Listen for new messages from Pusher
+    channel.bind('new-message', function(data) {
+      addMessage(data.user, data.message);
+    });
+    
+    // Post a new message
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      fetch('/send-message', {
+        method: 'POST',
+        body: JSON.stringify({
+          user: userID,
+          message: messageInput.value
+        })  
+      });
+      
+      messageInput.value = '';
+    });
+    
+    // Add message to chat log
+    function addMessage(user, message) {
+      var item = document.createElement('li');
+      item.innerText = `${user}: ${message}`;
+      chatLog.appendChild(item);
+    }
+    
+  </script>
+  
+</head>
+
+<body>
+
+  <h1>Chat App</h1>
+  
+  <ul id="chat-log"></ul>
+  
+  <form id="chat-form">
+    <input type="text" id="message-input"/>
+    <button type="submit">Send</button>
+  </form>
+  
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="http://js.pusherapp.com/1.4/pusher.min.js"></script>
+<title>Pusher Example</title>
+</head>
+<body>
+<div id="messages"></div>
+
+<script>
+// Initialize Pusher
+var pusher = new Pusher('002a3766537221bf7086', {
+  cluster: 'ap2',
+  encrypted: true
+});
+
+// Subscribe to the channel
+var channel = pusher.subscribe('chatRoom');
+
+// Bind to the 'message' event
+channel.bind('message', function(data) {
+  // Display the received message
+  var messageDiv = document.createElement('div');
+  messageDiv.textContent = data.message;
+  document.getElementById('messages').appendChild(messageDiv);
+});
+</script>
+</body>
+</html>

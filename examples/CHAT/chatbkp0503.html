@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Distance Trigger Example</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <style>
+    #restartButton {
+        position: fixed;
+        z-index: 999;
+        top: 20px;
+        left: 20px;
+    }
+    #form-field {
+        position: fixed;
+        z-index: 999;
+        top: 65px;
+        left: 20px;
+    }
+    #iframe-container{
+
+        position: fixed;
+        z-index: 999;
+        top: 150px;
+        left: 20px;
+        display: block;
+        width:100px;
+        height:100px
+    }
+  </style>
+  <body>
+    <div id="iframe-container">
+        <iframe id="iframe-url"  src=""></iframe>
+    </div>
+    <div id="form-field">
+        <input type="text" id="name-field">
+        <button id="submit">SEND</button>
+    </div>
+    <button onclick="restartScene()" id="restartButton">Restart Scene</button>
+    <a-scene cursor="rayOrigin:mouse">
+      <!-- Camera setup with basic movement controls -->
+      <a-entity id="camera" camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+
+      <!-- Trigger boxes -->
+      <a-entity class="trigger" position="3 0 -5" geometry="primitive: box" material="color: red" id="box1">
+        <a-text value="1234" id="txt1"></a-text>
+      </a-entity>
+      <a-entity class="trigger" position="-3 0 -5" geometry="primitive: box" material="color: blue" id="box2">
+        <a-text value="12358" id="txt2"></a-text>
+      </a-entity>
+
+      <a-entity class="trigger" position="0 0 -5" geometry="primitive: box" material="color: green" id="box3">
+        <a-text value="12333" id="txt3"></a-text>
+      </a-entity>
+
+      <!-- Restart button -->
+
+
+      <!-- Script to toggle plane visibility -->
+      <script>
+      function restartScene() {
+  // Reset trigger component
+  var triggerComponent = document.querySelector('[distance-trigger]');
+  triggerComponent.remove();
+
+  // Re-add trigger component
+  var newTriggerComponent = document.createElement('a-entity');
+  newTriggerComponent.setAttribute('distance-trigger', '');
+  document.querySelector('a-scene').appendChild(newTriggerComponent);
+
+  // Show alert for each trigger box with its text value
+  var triggerBoxes = document.querySelectorAll('.trigger');
+  triggerBoxes.forEach(box => {
+    const boxId = box.getAttribute('id');
+    const textValue = box.querySelector('a-text').getAttribute('value');
+  //  alert('Resetting: ' + boxId + '\nText value: ' + textValue);
+  });
+}
+        // function restartScene() {
+        //   // Remove dynamically created text
+        //   var texts = document.querySelectorAll('a-text');
+        //   texts.forEach(text => {
+        //     text.parentNode.removeChild(text);
+        //   });
+
+        //   // Reset trigger component
+        //   var triggerComponent = document.querySelector('[distance-trigger]');
+        //   triggerComponent.remove();
+
+        //   // Re-add trigger component
+        //   var newTriggerComponent = document.createElement('a-entity');
+        //   newTriggerComponent.setAttribute('distance-trigger', '');
+        //   document.querySelector('a-scene').appendChild(newTriggerComponent);
+        // }
+        AFRAME.registerComponent('distance-trigger', {
+          init: function () {
+            this.camera = document.getElementById('camera');
+            this.triggers = document.querySelectorAll('.trigger');
+            this.distanceThreshold = 2; // Adjust as needed
+            this.shownBoxes = new Set();
+            this.triggeredBoxes = new Set();
+            this.triggerEnterEvent = this.triggerEnterEvent.bind(this);
+          },
+          update: function() {
+            this.triggers.forEach(trigger => {
+              trigger.addEventListener('triggerenter', this.triggerEnterEvent);
+            });
+          },
+          remove: function() {
+            this.triggers.forEach(trigger => {
+              trigger.removeEventListener('triggerenter', this.triggerEnterEvent);
+            });
+          },
+          triggerEnterEvent: function(event) {
+            const boxId = event.target.getAttribute('id');
+            const textValue = event.target.querySelector('a-text').getAttribute('value');
+          const message = 'Camera entered ' + boxId + '\nText value: ' + textValue;
+            if (!this.shownBoxes.has(boxId)) {
+              alert('Camera entered ' + message);
+              document.getElementById("iframe-url").setAttribute('src',`cfmchat.cfm?stallid=${textValue}&bname=${textValue}sai`)
+              this.shownBoxes.add(boxId);
+              this.triggeredBoxes.add(boxId);
+              this.createAText(boxId);
+            }
+          },
+          createAText: function(boxId) {
+            const box = document.getElementById(boxId);
+            const text = document.createElement('a-text');
+            text.setAttribute('position', '0 2 0');
+            text.setAttribute('value', 'This is ' + boxId);
+            text.setAttribute('color', 'black'); // Change text color if necessary
+            text.setAttribute('scale', '2 2 2'); // Adjust text size if necessary
+            box.appendChild(text);
+          },
+          tick: function () {
+            var cameraPosition = this.camera.object3D.position;
+            var self = this;
+
+            this.triggers.forEach((trigger) => {
+              var triggerPosition = trigger.object3D.position;
+              var distance = self.distance3D(cameraPosition, triggerPosition);
+              var boxId = trigger.getAttribute('id');
+
+              if (distance <= self.distanceThreshold && !self.shownBoxes.has(boxId)) {
+                trigger.emit('triggerenter');
+              } else if (distance > self.distanceThreshold && self.triggeredBoxes.has(boxId)) {
+                self.triggeredBoxes.delete(boxId);
+              }
+            });
+          },
+          distance3D: function (point1, point2) {
+            var dx = point1.x - point2.x;
+            var dy = point1.y - point2.y;
+            var dz = point1.z - point2.z;
+            return Math.sqrt(dx * dx + dy * dy + dz * dz);
+          }
+        });
+      </script>
+      <script>
+        document.getElementById('submit').addEventListener('click',function(){
+            var name=document.getElementById('name-field').value
+        localStorage.setItem('name',name)
+        console.log(localStorage.getItem('name'))
+        })
+       
+      </script>
+
+      <a-entity distance-trigger></a-entity>
+    </a-scene>
+  </body>
+</html>

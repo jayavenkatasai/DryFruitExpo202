@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('pulse-on-approach', {
+        init: function () {
+          this.originalScale = this.el.getAttribute('scale');
+          this.camera = document.querySelector('[camera]');
+          if (!this.camera) {
+            console.error('Camera not found');
+            return;
+          }
+          this.el.setAttribute('animation__pulse', {
+            property: 'scale',
+            dir: 'alternate',
+            dur: 1000,
+            easing: 'easeInOutQuad',
+            to: {
+              x: this.originalScale.x * 2.1,
+              y: this.originalScale.y * 2.1,
+              z: this.originalScale.z * 2.1
+            },
+            loop: true
+          });
+        },
+        tick: function () {
+          if (!this.camera) return;
+          const cameraPosition = this.camera.object3D.position;
+          console.log(cameraPosition)
+          const elPosition = this.el.object3D.position;
+          console.log(elPosition)
+          const distance = cameraPosition.distanceTo(elPosition);
+          console.log(distance)
+          if (distance < 5) {
+            this.el.setAttribute('animation__pulse', 'enabled', true);
+          } else {
+            this.el.setAttribute('animation__pulse', 'enabled', false);
+            this.el.setAttribute('scale', this.originalScale);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity camera look-controls position="0 1.6 14" wasd-controls></a-entity>
+      <a-box position="0 0 -5" material="color: #4CC3D9" scale="2 2 2" pulse-on-approach></a-box>
+      <a-box position="0 0 -10" material="color: #4CC3D9" scale="2 2 2" pulse-on-approach></a-box>
+    </a-scene>
+  </body>
+</html>

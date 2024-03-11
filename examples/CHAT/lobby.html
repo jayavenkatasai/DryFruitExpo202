@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="meta title" content="Machine Tools Expo Online | Exploration starts from the lobby.">
+    <meta name="keyphrase" content="Machine tools expo">
+    <meta name="keywords" content="precision engineering, advanced machinery, industry 4.0, Engineering machinery expo,Industrial automation expo, manufacturing trends">
+    <meta name="description" content="Become a part of India's Largest B2B expo at the Machine Tools Expo Online for an immersive experience in precision engineering, automation, and advanced machinery. Explore, network, collaborate.">
+    <title>Machine Tools Expo Online | Exploration starts from the lobby.</title>
+    <script src="jslibrary/aframe.min.js"></script>
+    <script src="jslibrary/aframe-event-set-component.min.js"></script>
+    <script src="jslibrary/aframe-environment-component.min.js"></script>
+    <script src="jslibrary/aframedc.min.js"></script>
+    <script src="jslibrary/simple-navmesh-constraint.js"></script>
+    <script src="jslibrary/jquery-3.6.4.min.js"></script>
+    <script src="jslibrary/aframe-html.min.js"></script>
+    <script src="jslibrary/joystick.js"></script>
+    <link href="css/robotoFont.css" rel="stylesheet" />
+    <script src="jslibrary/track.js"></script>
+    <script src="jslibrary/ua-parser.js"></script>
+    <script
+    type="application/javascript">
+      var ipAddress;
+      function getIP(json) {
+          ipAddress = json.ip;
+       //   //console.log("My public IP address is: ", ipAddress);
+      }
+  </script>  
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <style>
+      html, body {
+  overscroll-behavior-x: none;
+}
+      body {
+        font-family: "Roboto";
+      }
+      .webinarAndExpocardContents{
+            max-width:400px;
+            background-color:#fff;
+            border-radius:8px;
+            margin: auto;
+            border:1px solid #363636;
+            padding:25px;
+            gap:40px;
+            position: relative;
+            width:100%;
+        }
+        .visitWebinarCard a,.visitExpoCard a{
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 5px;
+            background: #1B3D6E;
+            color: #fff;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align:center;
+        }
+        .webinarAndExpocardContents {
+          display: flex;
+          justify-content: center;
+        }
+        .closeIcon-webinar{
+            position: absolute;
+            right:10px;
+            top:10px;
+            cursor:pointer;
+        }
+        .webinarAndExpocard {
+          display: flex;
+          position: fixed;
+          z-index: 999;
+          bottom: 10px;
+          width: 100%;
+        }
+      #mapbutton1 {
+        display: none;
+      }
+      #orientationScreen {
+        display: none !important;
+      }
+      .orientationScreenContents {
+        height: 100%;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        z-index: 9999999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .orientationScreenContents h3 {
+        margin: 0;
+        font-size: 20px;
+        color: #fff;
+      }
+      iframe {
+        border: none;
+        border-radius: 5px;
+      }
+      .mblExpoFrame {
+        display: none;
+      }
+      #mappopup {
+        width: 65%;
+        margin: 0 auto;
+        height: 100%;
+        display: none;
+        position: relative;
+        bottom: 100px;
+        border-radius: 10px;
+        z-index: 999;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        top: 0;
+      }
+      #bg {
+        background-color: rgba(251, 251, 251, 1);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 35px 15px 35px 15px;
+        gap: 15px;
+        justify-content: center;
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+      }
+      /* .card{
+            position: relative;
+            z-index:999999;
+        } */
+      #close {
+        display: none;
+        cursor: pointer;
+        border: none;
+        background: no-repeat;
+      }
+      /* #parent{
+        height:70%;
+       } */
+      #close img {
+        max-width: 25px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 12px 18px;
+        border-radius: 5px;
+        border: 1px solid #5e5e5e;
+        /* margin: 5px; */
+        width: 15% !important;
+      }
+      .card button {
+        padding: 7px 10px;
+        border-radius: 5px;
+        background: #1b3d6e;
+        color: #fff;
+        width: 100%;
+        max-width: 155px;
+        border: none;
+        cursor: pointer;
+        font-family: "roboto";
+        font-size: 16px;
+      }
+      .card img {
+        width: 100px;
+        height: 100px;
+      }
+      .card h3 {
+        height: 25px;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 20px;
+      }
+      #pagination {
+        position: relative;
+        width: 100%;
+      }
+      #pagination #mapbutton1 {
+        margin-left: -20px;
+        position: fixed;
+        left: 17.5%;
+        top: 47%;
+        cursor: pointer;
+      }
+      #pagination #mapbutton2 {
+        position: fixed;
+        top: 47%;
+        right: 16.5%;
+        cursor: pointer;
+      }
+      #Backbtn {
+        position: absolute;
+        z-index: 1001;
+        top: 4px;
+        right: 3px;
+      }
+      .visitorsCount {
+        padding: 8px;
+        border-radius: 5px;
+        background: #363636;
+        max-width: 200px;
+        margin-top: -80px;
+        margin-left: 20px;
+      }
+      .liveCustomers {
+        color: #fff;
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .totalCustomers {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+      }
+      #parent {
+        height: 100%;
+        display: flex;
+      }
+      #mappopup {
+        align-items: center;
+      }
+      @media only screen and (max-width: 1600px) {
+        #mappopup {
+          width: 85%;
+        }
+        #pagination #mapbutton2 {
+          right: 6.5%;
+        }
+        #pagination #mapbutton1 {
+          left: 7.5%;
+        }
+      }
+      @media only screen and (max-width: 1230px) {
+        #mappopup {
+          width: 95%;
+        }
+        #pagination #mapbutton1 {
+          left: 2.5%;
+        }
+        #pagination #mapbutton2 {
+          right: 1%;
+        }
+      }
+      @media only screen and (max-width: 1090px) {
+        .card {
+          width: 30% !important;
+        }
+        .iframeImg {
+          max-width: 25px;
+        }
+        #bg {
+          height: 180px !important;
+          overflow-y: scroll;
+        }
+        /* #button1{
+        margin-left:0px ;
+       } */
+        #pagination #mapbutton1 {
+          margin-left: 0%;
+        }
+        #pagination #mapbutton1 {
+          position: fixed;
+          top: 50%;
+          left: 8px;
+        }
+        #pagination #mapbutton2 {
+          position: fixed;
+          right: 6px;
+          top: 50%;
+        }
+
+        #close {
+          top: unset !important;
+        }
+        #pagination {
+          position: fixed;
+          z-index: 9;
+        }
+        .card {
+          position: relative;
+          z-index: 99;
+        }
+        #Backbtn {
+          z-index: unset;
+        }
+        #close {
+          position: fixed;
+          top: 5px;
+          right: 28px;
+          z-index: 999999;
+        }
+        #pagination #mapbutton2 {
+          margin-right: 0%;
+        }
+
+        /* #mappopup {
+            top: 50%;
+        } */
+      }
+      @media only screen and (max-width: 992px) {
+        .mblExpoFrame {
+          display: block;
+        }
+        .desktopExpoFrame {
+          display: none;
+        }
+        .webinarAndExpocardContents {
+            max-width: 276px;
+          }
+        /* .mblExpoFrame {
+                height: 200px;
+                object-fit: contain;
+            } */
+        #orientationScreen {
+          display: block !important;
+        }
+      }
+      @media only screen and (max-width: 900px) {
+        .mblExpoFrame {
+          width: 352px !important;
+          max-height: 200px;
+        }
+      }
+
+      @media only screen and (max-width: 760px) {
+        .liveCustomers {
+          font-size: 20px;
+        }
+        .visitorsCount {
+          max-width: 190px;
+          margin-top: -60px;
+          margin-left: 8px;
+        }
+        #mappopup {
+          width: 90%;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .visitorsCountSection {
+          display: flex;
+          justify-content: end;
+          margin-top: -72px;
+        }
+        #bg {
+          height: 335px;
+          overflow-y: scroll;
+        }
+      }
+
+      .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 1);
+        z-index: 1002;
+        visibility: visible;
+      }
+
+      .loading-icon {
+       
+        width: 75px;
+        height: 75px;
+       
+      }
+/* 
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      } */
+
+      .loading-container p {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #333;
+      }
+      #totalIframe {
+        z-index: 999;
+        position: relative;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+      .iframetagContent {
+        position: relative;
+      }
+      .iframeImg {
+        position: absolute;
+        top: 8px;
+        right: 2%;
+        max-width: 31px;
+        cursor: pointer;
+      }
+      .imgPopUpContents {
+        position: relative;
+      }
+      .imgPopUp {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        z-index: 99999;
+        top: 20px;
+      }
+      @media only screen and (max-width: 1000px) {
+        iframe {
+          height: 300px !important;
+        }
+      }
+      @media only screen and (max-width: 992px) {
+        iframe {
+          width: 500px !important;
+          height: 250px !important;
+        }
+      }
+      #closeIcon {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        cursor: pointer;
+      }
+      @media only screen and (max-width: 800px) {
+        iframe {
+          width: 500px !important;
+        }
+      }
+      @media only screen and (max-width: 550px) {
+        iframe {
+          width: 340px !important;
+        }
+        #pagination #mapbutton1 {
+          left: -2px !important;
+        }
+        #pagination #mapbutton2 {
+          right: 0px !important;
+        }
+      }
+      #visitors {
+        border-radius: 5px;
+        background: #363636;
+        max-width: 200px;
+        margin-top: -80px;
+        margin-left: 20px;
+        position: absolute;
+        top: 98%;
+        left: 0%;
+        padding: 10px;
+        z-index: 9999;
+      }
+      #currentVisitors {
+        color: #fff;
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0;
+      }
+      #totalVisitors {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .orientation-screen {
+        position: absolute;
+        top: 80px;
+        left: 100px;
+        display: none;
+      }
+      @media only screen and (max-width: 450px) {
+        .orientation-screen {
+          display: flex;
+          justify-content: end;
+          margin-top: 150px;
+          font-size: 5px;
+          color: rgb(255, 6, 6);
+          z-index: 9999;
+        }
+      }
+      @-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 5s linear infinite;
+  -moz-animation: rotating 5s linear infinite;
+  -ms-animation: rotating 5s linear infinite;
+  -o-animation: rotating 5s linear infinite;
+  animation: rotating 5s linear infinite;
+}
+      /* @media only screen and (max-width:400px){
+    iframe{
+        width: 340px!important;
+    }
+}  */
+#internet-status{
+  z-index:9999;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1%;
+  top:90%;
+  width:50%;
+  left:50% ;
+  display: flex;
+  justify-content: center; /* corrected property name */
+  align-items: center; /* corrected property name */
+
+}
+#status-content{
+  color: #fff;
+  text-align: center;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 20px;
+  position: fixed;
+  z-index: 9999;
+  top: 30px;
+  font-size: 17px;
+}
+#snackbarContent{
+    width:100%;
+    display: flex;
+    justify-content:center;
+}
+.closeIcon-webinar img {
+    max-width: 23px;
+}
+ 
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+max-height: 20px;
+}
+ 
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+ 
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+ 
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+ 
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+#fullscreenButton{
+  z-index:99999;
+  position: relative;
+  top:1%;
+  left:1%;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color:#fff;
+  font-family: Roboto;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <!-- <div id="internet-status">
+      <p id="status-content">Poor internet connection detected. Please ensure a stable internet connection for uninterrupted viewing experience.</p>
+    </div> -->
+    <button id="fullscreenButton">Enter Full Screen</button>
+    <div id="snackbarContent">
+    <div id="snackbar">Poor internet connection detected. Please ensure a stable internet connection</div>
+  </div>
+  <div class="webinarAndExpocard">
+    <div class="webinarAndExpocardContents">
+        <div class="closeIcon-webinar">
+            <img src="assets/blueCloseIcon.png">
+        </div>
+        <div class="visitWebinarCard">
+            <a href="webinar.html" target="_blank" >Visit Webinar</a>
+        </div>
+        <div class="visitExpoCard" id="visit-expo-btn">
+            <a onclick="handleButtonClick()">Visit Expo</a>
+        </div>
+    </div>
+</div>
+    <div id="orientationScreen">
+      <div class="orientationScreenContents" id="orientat-content">
+        <img src="assets/rotatePhone.gif" />
+        <h3>Rotate your mobile</h3>
+      </div>
+    </div>
+    <!-- <div class="orientation-screen">
+        <h1 id="device-orientation">Screen Orientation is</h1>
+    </div> -->
+    <div class="iframetag" id="totalIframe">
+      <div class="iframetagContent">
+        <img class="iframeImg" src="assets/blueCloseIcon.png" />
+        <iframe
+          width="800px"
+          height="500px"
+          id="iframe-expo"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div id="parent">
+      <div id="mappopup">
+
+     <div id="bg">
+      <image src="assets/loadingicon-1.png" id="apiload" class="rotating"  height="50px" width="50px"></image>
+          <div id="pagination">
+            <img
+              id="mapbutton1"
+              src="assets/arrow-circle-left.png"
+              style="width: 40px; height: 40px"
+            />
+            <img
+              id="mapbutton2"
+              src="assets/arrow-circle-left (1).png"
+              style="width: 40px; height: 40px"
+            />
+          </div>
+          <div id="Backbtn">
+            <button id="close">
+              <img src="assets/blueCloseIcon.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="imgPopUp">
+      <divs class="imgPopUpContents">
+        <img class="desktopExpoFrame" src="assets/expoFrame
+        +.png" />
+        <img class="mblExpoFrame" src="assets/expoFramembl.png" />
+        <div id="closeIcon">
+          <img src="assets/closeIcon.png" />
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="visitorsCountSection">
+        <div id="visitors" style="display: block; ">
+            <h4 id="currentVisitors">Loading...</h4>
+            <h4 id="totalVisitors">Loading...</h4>
+          </div>
+</div> -->
+    <!-- Loading icon -->
+    <div class="loading-container">
+      <image src="assets/loadingicon-1.png" class="loading-icon rotating" height="100px" width="100px"></image>
+      <!-- <div class="loading-icon">
+      </div> -->
+      <p>Loading...</p>
+    </div>
+
+    <script>
+      $("#closeIcon").click(function () {
+        $(".imgPopUp").css("display", "none");
+      });
+      $(".closeIcon-webinar").click(function () {
+        $(".webinarAndExpocard").css("display", "none");
+      });
+    </script>
+    <script>
+     // //console.log(ipAddress)
+      // var numberOfCards = 30;
+  //    checkInternetSpeedAndNotify()
+    
+      var bgContainer = document.getElementById("bg");
+      var ang=0;
+      var currentIndex = 0;
+      var cards = [];
+      var data;
+      let buttonid = 0; // Declare data outside the function
+      let apicall=0;
+
+      const firstload = localStorage.getItem('firstload');
+// //console.log("cache get catched1")
+// //console.log(`cache get catched1 the local variable is ${firstload}`)
+function checkInternetSpeedAndNotify() {
+    let startTime, endTime;
+    let imageSize = "";
+    let image = new Image();
+
+    let imageLink = "https://source.unsplash.com/random?topics=nature";
+
+    image.onload = async function () {
+        endTime = new Date().getTime();
+
+        await fetch(imageLink).then((response) => {
+            imageSize = response.headers.get("content-length");
+            calculateSpeed();
+        });
+    };
+
+    function calculateSpeed() {
+        let timeDuration = (endTime - startTime) / 1000;
+
+        let loadedBits = imageSize * 8;
+        let speedInBps = (loadedBits / timeDuration).toFixed(2);
+        let speedInKbps = (speedInBps / 1024).toFixed(2);
+        let speedInMbps = (speedInKbps / 1024).toFixed(2);
+
+        //console.log(`Download speed: ${speedInKbps} kbps`);
+        if (speedInMbps < 0.2) {
+            showsncakbar();
+            //console.log(`Poor internet connection`);
+        } else {
+            //console.log(`Good internet connection`);
+        }
+        //console.log(`Download speed: ${speedInMbps} mbps`);
+    }
+
+    const init = async () => {
+        startTime = new Date().getTime();
+        image.src = imageLink;
+    };
+
+    init();
+}
+if(!firstload){
+  checkInternetSpeedAndNotify();
+  localStorage.setItem('firstload', 'true');
+}
+
+
+      // document.addEventListener('DOMContentLoaded', function () {
+      //     fetch('https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses')
+      //         .then(response => response.json())
+      //         .then(apiData => {
+      //             data = apiData; // Assign data from API to the global variable
+      //             createCards(data);
+
+      //         })
+      //         .catch(error => console.error('Error fetching data:', error));
+      // });
+
+      // here the categories api call is happening
+      // fetch(
+      //   "https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses"
+      // )
+      //   .then((response) => response.json())
+      //   .then((apiData) => {
+      //     data = apiData; // Assign data from API to the global variable
+      //     createCards(data);
+      //   })
+      //   .catch((error) => console.error("Error fetching data:", error));
+
+      document
+        .getElementById("mapbutton1")
+        .addEventListener("click", showPrevious);
+      document.getElementById("mapbutton2").addEventListener("click", showNext);
+
+      function createCards(data) {
+        for (var i = 0; i < data.length; i++) {
+          var card = document.createElement("div");
+          card.className = "card";
+          card.id = "card" + (i + 1);
+
+          var img = document.createElement("img");
+          img.id = "img" + (i + 1);
+          img.src = `assets/categoryimages/${data[i].CATEGORY}.png`;
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "assets/categoryimages/No Image.png"; // Set default image source
+};
+          img.style.width = "50px";
+          img.style.height = "50px";
+
+          var h3 = document.createElement("h3");
+          h3.id = `categoryname${i + 1}`;
+          h3.textContent = data[i].CATEGORY;
+
+          var button = document.createElement("button");
+          button.id = "button" + (i + 1);
+          button.textContent = "Visit";
+          button.dataset.categoryIndex = i;
+          button.addEventListener("click", openLink);
+
+          card.appendChild(img);
+          card.appendChild(h3);
+          card.appendChild(button);
+
+          bgContainer.appendChild(card);
+          cards.push(card);
+        }
+
+        showCard(currentIndex);
+      }
+      function showCard(index) {
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].style.display = "none";
+        }
+
+        for (var i = 0; i < 10; i++) {
+          if ([index + i] < cards.length) {
+            cards[index + i].style.display = "flex";
+            document.getElementById("mapbutton2").style.display = "flex";
+          } else {
+            document.getElementById("mapbutton2").style.display = "none";
+          }
+        }
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 10) % cards.length;
+        //console.log(currentIndex);
+        buttonid += 1;
+        //console.log(`the button is ${buttonid}`);
+        if (buttonid >= 1) {
+          //console.log("before execution");
+          document.getElementById("mapbutton1").style.display = "flex";
+        }
+        showCard(currentIndex);
+      }
+
+      function showPrevious() {
+        currentIndex = (currentIndex - 10 + cards.length) % cards.length;
+        //console.log(`the before button index is ${currentIndex}`);
+        buttonid -= 1;
+        if (buttonid == 0) {
+          //console.log("before execution");
+          document.getElementById("mapbutton1").style.display = "none";
+          document.getElementById("mapbutton2").style.display = "flex";
+        }
+        showCard(currentIndex);
+      }
+      // function showCard(index) {
+      //     for (var i = 0; i < cards.length; i++) {
+      //         cards[i].style.display = 'none';
+      //     }
+
+      //     for (var i = 0; i < 10 ; i++) {
+      //         cards[index + i].style.display = 'flex';
+      //     }
+      // }
+
+      // function showNext() {
+      //     currentIndex = (currentIndex + 10) % cards.length;
+      //     showCard(currentIndex);
+      // }
+
+      // function showPrevious() {
+      //     currentIndex = (currentIndex - 10 + cards.length) % cards.length;
+      //     showCard(currentIndex);
+      // }
+
+      function closePopup() {
+        var popupcontainer = document.getElementById("mappopup");
+        popupcontainer.style.display = "none";
+      }
+
+      document.getElementById("close").addEventListener("click", closePopup);
+      document.getElementById('visit-expo-btn').addEventListener('click',
+      function (){
+     $(".webinarAndExpocard").css("display", "none")
+      }
+      )
+
+      function openLink(event) {
+        var index = event.currentTarget.dataset.categoryIndex;
+        // trackExpo(0,index,"");
+        // Assuming 'data' is the array obtained from the API
+        var categories = data.map((item) => item.CATEGORY);
+
+        // Generate links based on categories
+        var links = categories.map(
+          (category) => `hall.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`
+        );
+        var categoriesselect = categories.map((category) => category);
+        //console.log(`the categories select is ${categoriesselect}`);
+        //console.log(categoriesselect);
+        //console.log(links);
+        //console.log(categoriesselect[index]);
+        //  trackExpo(0,categoriesselect[index],"")
+        gtag("event",categoriesselect[index], {
+             'page_title':"lobby-Page"
+          });
+        trackExpoCategory(0, categoriesselect[index], "", links[index],ipAddress);
+        //console.log(`the ip at fourth is :${ipAddress}`)
+        //Open the link in the same window
+        //window.location.href = links[index];
+      }
+
+      $(document).ready(function () {
+        // Show loading icon on page load or refresh
+        showLoadingIcon();
+
+        // After 3 seconds, hide the loading icon
+        // setTimeout(function () {
+        //   hideLoadingIcon();
+        // }, 10000);
+      });
+
+      function showLoadingIcon() {
+        var loadingContainer = document.querySelector('.loading-container');
+    if (loadingContainer) {
+        loadingContainer.style.visibility = 'visible';
+        // Function to update loading text every second
+        function updateLoadingText() {
+            var loadingText = loadingContainer.querySelector('p');
+            if (loadingText) {
+                // Example: An array of different loading texts
+                var loadingTexts = ['Loading Machinary Tools...', 'Please wait...', 'Almost there...','Finishing Up'];
+
+                // Get a random loading text
+                var randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+
+                // Update the loading text
+                loadingText.textContent = randomText;
+            }
+        }
+
+        // Call the updateLoadingText function every second
+        var loadingTextInterval = setInterval(updateLoadingText, 1000);
+    // $('.loading-container1').css('visibility', 'visible');
+}
+
+        // $(".loading-container").css("visibility", "visible");
+      }
+    
+
+      function hideLoadingIcon() {
+        // Hide the loading icon without affecting the iframe
+        // $(".loading-container").fadeOut("slow", function () {
+        //   $(this).css("visibility", "hidden");
+        // });
+        $(".loading-container").css("visibility", "hidden");
+      }
+      function showsncakbar() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
+}
+    </script>
+   <script>
+      // Function to toggle full screen
+     // Function to toggle fullscreen mode
+function toggleFullScreen() {
+    var elem = document.documentElement;
+    var fullscreenButton = document.getElementById('fullscreenButton');
+
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  
+        // Enter fullscreen mode
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        // Exit fullscreen mode
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+}
+
+// Get reference to the button
+var fullscreenButton = document.getElementById('fullscreenButton');
+
+// Add click event listener to the button
+fullscreenButton.addEventListener('click', function() {
+    toggleFullScreen();
+});
+
+// Update button text based on full-screen state
+function updateButton() {
+    var fullscreenButton = document.getElementById('fullscreenButton');
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+}
+
+// Event listeners for fullscreen change and visibility change
+document.addEventListener('fullscreenchange', updateButton);
+document.addEventListener('mozfullscreenchange', updateButton);
+document.addEventListener('webkitfullscreenchange', updateButton);
+document.addEventListener('MSFullscreenChange', updateButton);
+document.addEventListener('visibilitychange', updateButton);
+
+</script>
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7WV592"height="0" width="0" style="display:none;visibility:hidden">
+          </iframe>
+          </noscript>
+  <!-- <script>
+        
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=s
+
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+    })(window,document,'script','dataLayer','GTM-K7WV592');
+
+</script> -->
+    <script>
+var parser = new UAParser();
+var result = parser.getResult();
+var useragent =result.device.type
+var os =result.os.name
+//console.log(`the device type is ${useragent}`)
+//console.log(`the os type is ${os}`)
+//console.log(`the device type is ${useragent}`)
+if(useragent=="mobile"){
+  document.getElementById("iframe-expo").setAttribute("src","expoDirectoryMobile.cfm")
+  $(".webinarAndExpocard").css("display", "flex");
+}else{
+  document.getElementById("iframe-expo").setAttribute("src","expoDirectory.cfm")
+  $(".webinarAndExpocard").css("display", "none");
+}
+if(os=="iOS"|| os=="Mac OS"){
+  document.getElementById("fullscreenButton").style.display="none"
+  ////console.log("os code executed")
+}
+
+
+
+      AFRAME.registerComponent("cursor-listener", {
+        schema: {
+          targetPage: { type: "string" },
+        },
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener("click", function () {
+            //console.log("Click event triggered!");
+            //console.log("Target page:", data.targetPage); // Use the targetPage variable
+
+            // Extract button ID from the element
+            var buttonId = el.id;
+            //console.log("Button clicked:", buttonId);
+
+            // Call your custom function with the button name
+            trackExpo(0, buttonId, "",ipAddress);
+            gtag("event",buttonId , {
+             'page_title':"lobby-Page"
+          });
+            // Redirect to the specified page
+            window.open(data.targetPage, "_blank");
+            //window.location.href = data.targetPage;
+          });
+        },
+      });
+
+      // AFRAME.registerComponent('cursor-listener1', {
+      //     schema: {
+      //         targetPosition: { type: 'vec3' }  // New schema for the target position
+      //     },
+      //     init: function () {
+      //         var data = this.data;
+
+      //         this.el.addEventListener('click', function () {
+      //             // Move the camera to the specified position
+      //             var camera = document.querySelector('a-camera');
+      //             camera.setAttribute('position', data.targetPosition);
+      //         });
+      //     }
+      // });
+      AFRAME.registerComponent("cursor-listener2", {
+        schema: {
+          targetPage: { type: "string" },
+        },
+        init: function () {
+          var data = this.data;
+
+          this.el.addEventListener("click", function () {
+            //console.log("Click event triggered!");
+            //console.log("Target page:", data.targetPage); // Use the targetPage variable
+
+            // Redirect to the specified page
+            //window.open(data.targetPage, '_blank');
+            window.location.href = data.targetPage;
+          });
+        },
+      });
+  
+      document.addEventListener("wheel", function (e) {
+    // Get camera entity
+    var cam = document.getElementById("camera"); // Replace "yourCameraId" with the actual ID of your camera entity
+
+    // Define the angle increment for navigation
+    var angIncrement = 0.1; // You can adjust this value based on your scene
+
+    // Update angle with rotation
+    ang = e.deltaY < 0 ? ang + angIncrement : ang - angIncrement;
+
+    // Calculate new position in the forward or backward direction based on the scroll direction
+    var f = 5; // You can adjust this value based on your scene
+
+    // Get the current rotation of the camera in radians
+    var camRotationY = (cam.getAttribute('rotation')['y']) * (Math.PI / 180);
+
+    // Calculate the direction based on the camera's current rotation
+    var direction = e.deltaY < 0 ? 1 : -1; // 1 for upward scroll (forward), -1 for downward scroll (backward)
+
+    var forwardDirection = {
+        x: -Math.sin(camRotationY) * direction,
+        y: 0,
+        z: -Math.cos(camRotationY) * direction
+    };
+
+    // Normalize the direction
+    var norm = Math.sqrt(forwardDirection.x ** 2 + forwardDirection.z ** 2);
+    forwardDirection.x /= norm;
+    forwardDirection.z /= norm;
+
+    // Update camera position in the forward or backward direction
+    var newPosition = {
+        x: cam.getAttribute("position")["x"] + (f / 15) * forwardDirection.x,
+        y: cam.getAttribute("position")["y"],
+        z: cam.getAttribute("position")["z"] + (f / 15) * forwardDirection.z
+    };
+
+    // Set the new position to the camera
+    cam.setAttribute("position", newPosition);
+});
+
+ // Start continuous rotation
+      AFRAME.registerComponent("cursor-listener3", {
+        init: function () {
+          var el = this.el;
+          this.el.addEventListener("click", function () {
+            // Extract button ID from the element
+            fetch(
+        "https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses"
+      )
+        .then((response) => response.json())
+        .then((apiData) => {
+          data = apiData; 
+          if(apicall===0){
+            // Assign data from API to the global variable
+          createCards(data);
+          //console.log(apicall)
+          document.getElementById('apiload').style.display='none'
+          gtag("event", "category-Map", {
+             'page_title':"Hall-Page"
+          });
+          }
+          apicall+=1
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+            var buttonId = el.id;
+            //console.log("Button clicked:", buttonId);
+
+            // Call your custom function with the button name
+            trackExpo(0, buttonId, "",ipAddress,ipAddress);
+          //console.log(`the ip at second is :${ipAddress}`)
+            const bgContainer1 = document.getElementById("mappopup");
+            bgContainer1.style.display = "flex";
+            const closebtn = document.getElementById("close");
+            closebtn.style.display = "block";
+            //console.log("Click event triggered! for category");
+          });
+        },
+      });
+      AFRAME.registerComponent("cursor-listeneriframe", {
+        init: function () {
+          var el = this.el;
+          this.el.addEventListener("click", function () {
+            //    const bgContainer1 = document.getElementById('mappopup');
+            //     bgContainer1.style.display='flex'
+            //     const closebtn=document.getElementById("close")
+            //     closebtn.style.display='block'
+
+            var buttonId = el.id;
+
+            document.getElementById("totalIframe").style.display = "flex";
+            //console.log("Click event triggered! for category");
+            gtag("event", buttonId, {
+             'page_title':"lobby-Page"
+          });
+
+            trackExpo(0, buttonId, "",ipAddress);
+            //console.log(`the ip at third  is :${ipAddress}`)
+          });
+        },
+      });
+
+      AFRAME.registerComponent("clickable", {
+        schema: {
+          targetPage: { type: "string" },
+        },
+        init: function () {
+          var data = this.data;
+
+          this.el.addEventListener("click", function () {
+            //console.log("Click event triggered!");
+            //console.log("Target page:", data.targetPage); // Use the targetPage variable
+
+            // Redirect to the specified pagei
+            window.open(data.targetPage, "_blank");
+            //window.location.href = data.targetPage;
+          });
+        },
+      });
+//console.log("the camera position is ")
+// let camerax= document.getElementById("camera").getAttribute("posistion").x;
+// //console.log(`the camera position is ${camerax}`)
+
+      // var cursor = document.querySelector("a-cursor")
+
+      //    const category= document.getElementById('categorymap')
+      //    category.addEventListener('click', function () {
+      //     debugger;
+
+      //    bgContainer1 = document.getElementById('bg');
+      //    //console.log(bgContainer1)
+      //    bgContainer1.style.display='none'
+      //    })
+      //---------- mobile envinorment and mobile enivnorment code--------------------
+      document.addEventListener("DOMContentLoaded", function () {
+        var category = document.getElementById("categoryMap");
+        //   if (AFRAME.utils.device.isMobile() === false ) {
+        //     //console.log("desktop version");
+        //     //category.setAttribute("visible", false);
+        //        document.getElementById("scene1").removeAttribute('joystick');
+        //        //console.log("desktop version2");
+        //   }else{
+        //     document.getElementById("orientationScreen").style.display="block";
+        //   }
+        if (AFRAME.utils.device.isMobile() === false ) {
+            //console.log("desktop version");
+            const hasSeenPopup = localStorage.getItem('hasSeenPopup');
+            // //console.log("cache get catched1")
+            // //console.log(`cache get catched1 the local variable is ${hasSeenPopup}`)
+            
+            //category.setAttribute("visible", false);
+            if(!hasSeenPopup){
+        document
+        .getElementById("camera")
+        .setAttribute("look-controls", "enabled:false");
+        localStorage.setItem('hasSeenPopup', 'true');
+        // //console.log("cache get catched2")
+
+            ////console.log(`The data is ${document.getElementById("camera").getAttribute('position').x}`)
+
+        //  document.getElementById("intial-audio").setAttribute("src","url(assets/Audio/Welcome to MTExpo To.mp3)")
+        document.getElementById("instrcutionPanel").setAttribute('visible','true');
+              //  document.getElementById("scene1").removeAttribute('joystick');
+              //  //console.log("desktop version2");
+        
+            }else{
+              document.getElementById("instrcutionPanel").remove();
+            //  document.getElementById("iframe-expo").setAttribute("src","expoDirectoryMobile.cfm")
+            }
+       
+        }
+        else{
+            // document.getElementById("orientationScreen").style.display="block";
+            document.getElementById("instrcutionPanel").remove();
+            //document.getElementById("instrcutionPanel").setAttribute('visible','false');
+          }
+      });
+        
+      function checkOrientation() {
+        //  const deviceOrientationElement = document.getElementById('device-orientation');
+        const orientationscreen = document.getElementById("orientationScreen");
+        //console.log(`the orientation screen is ${orientationscreen}`);
+       
+         
+        if (window.orientation === 90 || window.orientation === -90) {
+          //console.log("Device is in landscape orientation");
+          //   deviceOrientationElement.textContent = "it is in landscape mode";
+          //  deviceOrientationElement.style.display = "none";
+          document.getElementById("orientat-content").style.display = "none";
+          //console.log(`before hitting the black screen`);
+          orientationscreen.style.display = "none";
+
+          //console.log(`the blackscreen is ${orientationscreen}`);
+          //console.log(orientationscreen);
+          //console.log(`after hitting the black screen`);
+        
+        } else {
+          //console.log("Device is in portrait orientation");
+          //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
+          //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
+          orientationscreen.style.display = "block";
+          document.getElementById("orientat-content").style.display = "flex";
+        }
+      }
+      // --danger zone for ios
+      if(os=="ios"){
+        var previousOrientation = window.orientation;
+var checkOrientation = function(){
+if(window.orientation !== previousOrientation){
+previousOrientation = window.orientation;
+// orientation changed, do your magic here
+location.reload();
+}
+};
+
+      }
+
+ 
+window.addEventListener("resize", checkOrientation, false);
+
+      function disableCheckAfterOrientationChange() {
+        // Remove the event listener after the user enters landscape mode
+        window.removeEventListener("orientationchange", checkOrientation);
+        // Set up a new event listener to re-enable orientation checking
+        window.addEventListener("orientationchange", enableCheckAfterPortrait);
+      }
+
+      function enableCheckAfterPortrait() {
+        // Remove the event listener after the user enters portrait mode again
+        window.removeEventListener(
+          "orientationchange",
+          enableCheckAfterPortrait
+        );
+        // Set up a new event listener to check orientation on further changes
+        window.addEventListener("orientationchange", checkOrientation);
+      }
+      checkOrientation();
+      // Listen for changes in orientationcameraq
+      window.addEventListener("orientationchange", () => {
+        checkOrientation();
+        disableCheckAfterOrientationChange();
+      });
+      
+function handleButtonClick() {
+  // Put your fetch logic here
+  fetch("https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses")
+    .then((response) => response.json())
+    .then((apiData) => {
+      data = apiData; 
+      if (apicall === 0) {
+        // Assign data from API to the global variable
+        createCards(data);
+        //console.log(apicall);
+        document.getElementById('apiload').style.display='none';
+        gtag("event", "category-Map", {
+          'page_title':"Hall-Page"
+        });
+      }
+      apicall += 1;
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+
+  // Assuming you have ipAddress defined somewhere
+  //console.log(`the ip at second is :${ipAddress}`);
+
+  // Assuming you have bgContainer1 and closebtn defined somewhere
+  const bgContainer1 = document.getElementById("mappopup");
+  bgContainer1.style.display = "flex";
+  const closebtn = document.getElementById("close");
+  closebtn.style.display = "block";
+
+  //console.log("Click event triggered! for category");
+
+  // Assuming you have trackExpo function defined somewhere
+  trackExpo(0, buttonId, "", ipAddress, ipAddress);
+}
+
+      //---------- mobile envinorment and mobile enivnorment code--------------------
+    </script>
+
+ <script>
+      document.addEventListener('keydown', function (event) {
+        var camera = document.getElementById('camera');
+
+        if (event.code === 'KeyQ') {
+          rotateCamera(camera, -5); // Rotate left
+          //console.log("right")
+        } else if (event.code === 'KeyE') {
+          rotateCamera(camera, 0.1);  // Rotate right
+        }
+      });
+
+      function rotateCamera(camera, angle) {
+        // Adjust the camera's rotation around the Y-axis
+        camera.object3D.rotation.y += angle;
+      }
+    </script>
+    <a-scene id="scene1" cursor="rayOrigin:mouse" joystick>
+      <a-assets>
+        <a-asset-item
+          id="lobby"
+          src="assets/lobbymodels/lobbymt-update 3.glb"
+          timeout="10000"
+        ></a-asset-item>
+        <!-- <a-asset-item
+          id="info3d"
+          src="assets/lobbymodels/info 3d icon 1.glb"
+          timeout="10000"
+        ></a-asset-item> -->
+
+        <img id="youtube" src="assets/icons/youtube.png" />
+        <img id="instagram" src="assets/icons/instagram.png" />
+        <img id="linkedin" src="assets/icons/linkedin.png" />
+        <img id="facebook" src="assets/icons/facebook.png" />
+        <img id="info" src="assets/icons/expo-dir.png" />
+        <img id="phone" src="assets/icons/phonelogo.png" />
+        <img id="whatsapp-icon" src="assets/icons/whatsappicon.png" />
+        <img id="website-icon" src="assets/icons/website.png" />
+        <img id="mail-icon" src="assets/icons/emaillogo.png" />
+        <img id="close-icon" src="assets/icons/close.png" />
+        <img id="mclogo" src="assets/icons/marketcentrallogo.png" />
+        <img id="eventcalender" src="assets/Eventcalendar.png" />
+        <img id="up-arrow" src="assets/up-arrow.png" />
+        <img id="down-arrow" src="assets/down-arrow.png" />
+        <img id="left-arrow" src="assets/left-arrow.png" />
+        <img id="right-arrow" src="assets/right-arrow.png" />
+        <img id="mouseimg" src="assets/360 mouse.png" />
+        <img id="bg-plane" src="assets/desktop-move-plane.png">
+        <a-asset-item
+          id="lobbynavmesh"
+          src="assets/lobbymodels/nav dummy 2.glb"
+        ></a-asset-item>
+      
+        <img id="sky" src="assets/skyimages/skyimage.png" />
+        <video id="mcvideoleft" autoplay loop="true" src="assets/videos/display 2 2.mp4" webkit-playsinline
+        playsinline  
+        ></video>
+        <video id="mcvideoright" autoplay loop="true" src="assets/videos/display 1 (1).mp4"  webkit-playsinline
+        playsinline  
+        ></video>
+      </a-assets>
+      <a-entity gltf-model="#lobby" id="lobby-model">
+     
+<!-- <a-entity light="type: ambient; color: #fff"></a-entity>
+<a-entity light="type: directional; color: #fff; intensity: 0.5" position="0 0 0"></a-entity> -->
+ 
+
+        <a-entity
+          gltf-model="#lobbynavmesh"
+          class="navmesh"
+          position="0 0.4 0"
+          visible="false"
+        >
+  
+      </a-entity>
+      
+        <a-entity
+        camera
+        id="camera"
+        user-height="1.6"
+        position="0.1 2 -31"
+        look-controls="magicWindowTrackingEnabled:false"
+        touchEabled="true"
+        wasd-controls="acceleration:25"
+        xr-mode-ui="enabled: false"
+        simple-navmesh-constraint="navmesh:.navmesh;fall:0.5;height:1.6;"
+      ></a-entity>
+        <a-plane
+          position="0 2.8 -37.5"
+          rotation="0 0 0"
+          width="3"
+          height="1.5"
+          color="#27406C"
+          opacity="1"
+          scale="3 3 3"
+          id="instrcutionPanel"
+          visible="flase"
+        >
+        <a-image src="assets/Rectangle.png" position="0 0 0.01" width="2.5" height="1.25" ></a-image>
+          <a-text
+            id="instructionText"
+            value="Welcome To MTEXPO \n \n Press  Arrow Keys on your keyboard to move.\nTry now!"
+            align="center"
+            color="white"
+            position="0 0.3 0.01"
+            width="2.5"
+            height="2.5"
+          ></a-text>
+          <a-entity id="keyboardIcons" position="-0.5 -0.4 0.2">
+            <!-- <a-plane width="0.6" height="0.6" material="src: #upArrow"  position="1 0 -1"></a-plane> -->
+
+            <a-plane
+              width="0.2"
+              height="0.2"
+              material="src: #up-arrow"
+              position="0.5 0.25 0.1"
+              id="uparrow"
+              animation__blink="property: material.opacity; to: 0.3; dur: 3000; easing: linear; loop: true"
+            ></a-plane>
+            <a-plane
+              width="0.2"
+              id="downarrow"
+              height="0.2"
+              material="src: #down-arrow"
+              position="0.5 0 0.1"
+              animation__blink="property: material.opacity; to: 0.3; dur: 3000; easing: linear; loop: true"
+            ></a-plane>
+            <!-- <a-entity
+            width="0.1"
+            height="0.1"
+            geometry="primitive: plane"
+            material="src: #upArrow"
+            position="1 0 0.1"
+          ></a-entity> -->
+            <a-plane
+              width="0.2"
+              id="rightarrow"
+              height="0.2"
+              material="src: #right-arrow"
+              position="0.75 0 0.1"
+              animation__blink="property: material.opacity; to: 0.3; dur: 3000; easing: linear; loop: true"
+            ></a-plane>
+            <a-plane
+              width="0.2"
+              height="0.2"
+              id="leftarrow"
+              material="src: #left-arrow"
+              position="0.25 0 0.1"
+              animation__blink="property: material.opacity; to: 0.3; dur: 3000; easing: linear; loop: true"
+            ></a-plane>
+          </a-entity>
+          <!-- Mouse Icon -->
+          <a-entity id="mouseIcon" position="-0.5 -0.2 0.2" visible="false">
+            <a-plane
+              width="0.5"
+              height="0.5"
+              material="src: #mouseimg"
+              position="0.5 -0.1 0.1"
+              animation__blink="property: material.opacity; to: 0.3; dur: 3000; easing: linear; loop: true"
+            ></a-plane>
+            <!-- <a-circle radius="0.2" color="#3498db"></a-circle> -->
+          </a-entity>
+        </a-plane>
+        <!-- Keyboard Icons -->
+        <a-sky src="#sky" rotation="0 90 0"></a-sky>
+        <a-plane
+          id="category-map"
+          color="white"
+          position="14.5 2 -57"
+          width="3"
+          height="0.8"
+          cursor-listener3
+          rotation="0 -20 0"
+          event-set__enter="_event: mouseenter; material.color: lightblue"
+          event-set__leave="_event: mouseleave; material.color: white"
+        >
+          <a-text
+            value="Category Map"
+            align="center"
+            width="9"
+            height="9"
+            depth="1"
+            color="black"
+            position="0 0 0.1"
+          ></a-text>
+        </a-plane>
+        <a-plane
+        id="category-map"
+        color="black"
+        visible="false"
+        position="14.5 2 -57"
+        width="10"
+        height="7.5"
+        cursor-listener3
+        rotation="0 -20 0"
+      >
+      </a-plane>
+        <!-- rotation="0 -40 90" -->
+        <a-plane   position="14 2 -42"
+        rotation="0 -45 90"
+        id="category-map"
+        width="3.35"
+        height="2.5"
+        cursor-listener3
+        visible="false"
+        color="black">
+        </a-plane>
+        <a-plane   position="-13.5 2 -42"
+        rotation="0 45 90"
+        id="visit-webinar"
+        width="3.4"
+        height="2.5"
+        cursor-listener="targetPage:webinar.html"
+        visible="false"
+        color="black">
+        </a-plane>
+        <a-video
+          src="#mcvideoright"
+          width="11"
+          height="4.47"
+          position="15.3 10.7 -58.2"
+          rotation="0 -20 0"
+          repeat="1"
+        ></a-video>
+        <a-video
+          src="#mcvideoleft"
+          width="11"
+          height="4.47"
+          position="-14.5 10.7 -58"
+          rotation="0 20 0" 
+        ></a-video>
+
+        <a-plane
+          color="white"
+          id="visit-webinar"
+          position="-14.3 2 -57.5"
+          width="3"
+          height="0.8"
+          cursor-listener="targetPage:webinar.html"
+          rotation="0 20 0"
+          event-set__enter="_event: mouseenter; material.color: lightblue"
+          event-set__leave="_event: mouseleave; material.color: white"
+        >
+          <a-text
+            value="Visit Webinar"
+            align="center"
+            width="9"
+            height="9"
+            depth="1"
+            color="black"
+            position="0 0 0.1"
+          ></a-text>
+        </a-plane>
+        <!--  -->
+        <a-plane
+        id="visit-webinar"
+        position="-14.3 2 -57.5"
+        width="10"
+        height="7.5"
+        cursor-listener="targetPage:webinar.html"
+        rotation="0 20 0"
+        color="black"
+        visible="false"
+      >
+      </a-plane>
+        <a-image
+          id="instagram"
+          src="#instagram"
+          position="-3.7 1.4 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:https://www.instagram.com/_marketcentral/?_gl=1*pkzkzb*_ga*ODU1NTg2NTM5LjE2OTE4NDM1ODE.*_ga_PGGTB73FL0*MTcwMjM3NDAxNS4zNy4xLjE3MDIzNzQwMjUuNTAuMC4w"
+        ></a-image>
+        <a-image
+          id="linkedin"
+          src="#linkedin"
+          position="-3.7 0.85 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:https://www.linkedin.com/showcase/marketcentral/posts/?feedView=all"
+        ></a-image>
+        <a-image
+          id="youtube"
+          src="#youtube"
+          position="-3.22 1.15 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:https://www.youtube.com/channel/UCf_0cdvzynO4mwNenGwa7IQ"
+        ></a-image>
+        <a-image
+          id="facebook"
+          src="#facebook"
+          position="-4.2 1.15 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:https://www.facebook.com/MKTCTL/?_gl=1*fjqnu5*_ga*ODU1NTg2NTM5LjE2OTE4NDM1ODE.*_ga_PGGTB73FL0*MTcwMjM3NDAxNS4zNy4xLjE3MDIzNzQwMjUuNTAuMC4w"
+        ></a-image>
+        <a-image
+          id="mail"
+          src="#mail-icon"
+          position="4.0 1.14 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:mailto:expo@marketcentral.in"
+        ></a-image>
+        <a-image
+          id="contact"
+          src="#phone"
+          position="3.55 1.42 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:tel:+918008900100"
+        ></a-image>
+        <a-image
+          id="whatsapp"
+          src="#whatsapp-icon"
+          position="3.55 0.88 -39.7"
+          width="0.42"
+          height="0.42"
+          cursor-listener="targetPage:https://api.whatsapp.com/send/?phone=918008544800"
+        ></a-image>
+        <!-- <a-image src="#info"  position="-3.65 1.8 -42.8" width="0.7" height="0.7"
+                event-set__openimage1="_event: mouseenter; _target:#popup;visible:true"></a-image>
+                <a-image src="#phone"  position="3.65 1.8 -42.8" width="0.7" height="0.7" cursor-listener="targetPage:tel:4046623456"></a-image> -->
+        <!-- <a-video src="#video" position="0 1 0" width="5" height="4"></a-video> -->
+      </a-entity>
+      <a-plane id="helpdesk"   position="-0.2 2 -41" width="5" height="1.5"  visible="false" 
+      cursor-listeneriframe></a-plane>
+      <a-plane id="helpdesk-1"   position="-0.2 0.65 -37.8" width="5" height="1.5"  visible="false"  
+      cursor-listeneriframe></a-plane>
+      <a-image
+        id="info-btn"
+        src="#info"
+        position="1.35 0.55 -38.3"
+        width="0.4"
+        height="0.4"
+      
+        cursor-listeneriframe
+        animation="property: material.opacity; from: 1; to: 0.2; dur: 1500; dir: alternate; loop: true"
+      >
+      
+        <a-plane
+          position="0.8 0.3 0.75"
+          id="popup1"
+          width="1.25"
+          height="0.5"
+          color="black"
+          opacity="0.5"
+          visible="false"
+        >
+          <a-text
+            value="Expo Directory"
+            width="3.5"
+            height="3.5"
+            color="white"
+            align="center"
+            position="0 0 0.25"
+          ></a-text>
+        </a-plane>
+      </a-image>
+     
+    
+
+      <!-- <a-box
+      position="-0.2 0.5 -37.89"
+      width="1"
+      height="1"
+      depth="1"
+      color="blue"
+      animation="property: rotation; to: 0 0 360; loop: true; dur: 5000"
+    ></a-box> -->
+
+      <!-- camera -->
+      <!-- <a-camera  wasd-controls="acceleration:50" simple-navmesh-constraint="navmesh:.navmesh;fall:0.5;height:1.6;"></a-camera> -->
+      <!-- <a-entity
+        camera
+        id="camera"
+        user-height="1.6"
+        position="0.1 2 -28"
+        look-controls="magicWindowTrackingEnabled:false"
+        touchEabled="true"
+        wasd-controls="acceleration:25"
+        xr-mode-ui="enabled: false"
+        simple-navmesh-constraint="navmesh:.navmesh;fall:0.5;height:1.6;"
+      ></a-entity> -->
+    </a-scene>
+    <script>
+      $(".iframeImg").click(function () {
+        $(".iframetag").css("display", "none");   
+      });
+    </script>
+    <script>
+      var currentVisitors = 10;
+      var totalVisitors = 20;
+      let apiurl =
+        "https://dev.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails";
+      let apivariable;
+      let requestBody;
+
+      requestBody = {
+        start: "1",
+        end: "1",
+        category: "0",
+        uno: "0",
+      };
+
+      // const fetchDataFromAPI = () => {
+      //   fetch(apiurl, {
+      //     method: "POST",
+      //     body: JSON.stringify(requestBody),
+      //   })
+      //     .then((response) => {
+      //       if (response.ok) {
+      //         // loadingIcon.style.display = 'none';
+      //         const urlObject = new URL(apiurl);
+
+      //         // document.getElementById('stallnumber').setAttribute('value', `Hall No ${x}`);
+      //         // document.getElementById('nameboard').setAttribute('value', `Visit Hall ${x}`);
+      //         // Extract parameters from the pathname
+      //         //   let pathSegments = urlObject.pathname.split('/');
+      //         //   let start = pathSegments[pathSegments.length - 2];
+      //         //    let end = pathSegments[pathSegments.length - 1];
+      //         //    if(parseInt(start)>10){
+      //         //        previousbutton.setAttribute('visible',true)
+      //         //    }else{
+      //         //       previousbutton.setAttribute('visible',false)
+      //         //     }
+      //         return response.json();
+      //       } else {
+      //         //console.log(`failed url is :${apiurl}`);
+      //         throw new Error(
+      //           `Network response was not ok.and failed url is :${apiurl}`
+      //         );
+      //       }
+      //     })
+
+      //     .then((data) => {
+      //       //console.log("Fetched data:", data);
+
+      //       apivariable = data;
+      //       //console.log(data);
+      //       currentVisitors = apivariable.count.TodaysVisitorCount;
+
+      //       // Increase total visitors by 2
+      //       totalVisitors = apivariable.count.TotalVisitorCount;
+
+      //       // Update the placeholder text with actual data
+      //       document.getElementById("currentVisitors").textContent =
+      //         "Visitors: " + currentVisitors;
+      //       document.getElementById("totalVisitors").textContent =
+      //         "Total Visitors: " + totalVisitors;
+      //     });
+      // };
+      // fetchDataFromAPI();
+      // Increase current visitors by 2
+
+
+      // Call the updateVisitors function every 2 seconds
+      // setInterval(updateVisitors, 100);
+      //document.getElementById('').remove()
+    </script>
+    <script>
+      let count=0;
+      //   let isMouseDragging = false;
+      // document
+      //   .getElementById("camera")
+      //   .setAttribute("look-controls", "enabled:false");
+      //    document.getElementById('cam').removeAttribute('wasd-controls');
+
+      // function switchToLookAround() {
+      //   document
+      //     .getElementById("keyboardIcons")
+      //     .setAttribute("visible", "false");
+      //   document.getElementById("mouseIcon").setAttribute("visible", "true");
+      //   document
+      //     .getElementById("instructionText")
+      //     .setAttribute("value", "Click and Drag Mouse to Look Around");
+      //     document.addEventListener("click", function () {
+
+      //    isMouseDragging = true;
+      //  });
+
+      //  document.addEventListener("mousemove", function (event) {
+      //   if (isMouseDragging) {
+      //     // document
+      //     //   .getElementById("cam")
+      //     //   .setAttribute("look-controls", "enabled:true");
+      //     document.getElementById('camera').setAttribute('look-controls','enabled:true')
+      //     switchToLookAround();
+
+      //     //  document.getElementById('instrcutionPanel').remove();
+
+      //   } else {
+      //     switchToWalk();
+      //   }
+      // });
+      // }
+      // start
+      function switchToLookAround() {
+        // document.getElementById("mouse-audio").setAttribute("src","url(assets/Audio/To look arround righ.mp3)")
+        document
+          .getElementById("keyboardIcons")
+          .setAttribute("visible", "false");
+        document.getElementById("mouseIcon").setAttribute("visible", "true");
+        document
+          .getElementById("instructionText")
+          .setAttribute(
+            "value",
+            "Click and Drag your Mouse to Look Around.\nTry Now!"
+          );
+        document
+          .getElementById("camera")
+          .setAttribute("look-controls", "enabled:true");
+
+        let isMouseDragging = false;
+
+        document.addEventListener("click", function () {
+          isMouseDragging = true;
+      //    //console.log(`the vakue of is dragging is ${isMouseDragging}`)
+        });
+
+
+
+        document.addEventListener("mousemove", function (event) {
+          if (isMouseDragging) {
+            //  document.getElementById('instrcutionPanel').remove()
+            //console.log("remove code block is working")
+            setTimeout(function () {
+              document.getElementById("instrcutionPanel").remove();
+            }, 2000);
+            // You may want to handle mouse drag here
+            // For example, update camera position based on mouse movement
+
+            // Uncomment the following line if you want to enable look controls on mouse drag
+            // document.getElementById('camera').setAttribute('look-controls', 'enabled: true');
+          }
+        });
+      }
+        // document.addEventListener("mouseup", function () {
+        //   isMouseDragging = false;
+        //   switchToWalk();
+        // });
+
+      
+      
+
+      // function switchToWalk() {
+      //   // Add code to handle switching to walking mode if needed
+      // }
+
+      // end
+      // function switchToWalk() {
+      //   document
+      //     .getElementById("keyboardIcons")
+      //     .setAttribute("visible", "true");
+      //   document.getElementById("mouseIcon").setAttribute("visible", "false");
+      //   document
+      //     .getElementById("instructionText")
+      //     .setAttribute("value", "Use Arrow Keys to Walk");
+      // }
+
+      document.addEventListener("mouseup", function () {
+        isMouseDragging = false;
+      });
+      // function switchToBackWalk(){
+      //   document 
+      //     .getElementById("instructionText")
+      //     .setAttribute(
+      //       "value",
+      //       "Welcome To MTEXPO \n \n Click Down Arrow on your Keyboard to move backward Try Now!"
+      //     );
+        // document.getElementById("backarrow-audio").setAttribute("src","url(assets/Audio/To move backward use.mp3)")
+        document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowRight" ||
+          event.key === "ArrowUp" ||
+          event.key === "ArrowDown"
+        ) {
+          document
+            .getElementById("camera")
+            .setAttribute("wasd-controls", "enabled:true");
+  //console.log("code is executed");
+          switchToLookAround();
+          // document.getElementById('instrcutionPanel').remove();
+        }
+      });
+        
+
+      // document.addEventListener("mousemove", function (event) {
+      //   if (isMouseDragging) {
+      //     // document
+      //     //   .getElementById("cam")
+      //     //   .setAttribute("look-controls", "enabled:true");
+
+      //     switchToLookAround();
+
+      //     //  document.getElementById('instrcutionPanel').remove();
+
+      //   } else {
+      //     switchToWalk();
+      //   }
+      // });
+
+      // Event listener for left arrow key
+      // document.addEventListener("keydown", function (event) {
+      //   if (
+      //     // event.key === "ArrowLeft" ||
+      //     // event.key === "a" ||
+      //     // event.key === "ArrowRight" ||
+      //     event.key === "ArrowUp" //||
+      //     //event.key === "ArrowDown"
+      //   ) {
+      //     // document
+      //     //   .getElementById("cam")
+      //     //   .setAttribute("wasd-controls", "enabled:true");
+      //    if(count==0){
+
+        
+      //     switchToBackWalk();
+      //     count=+1;
+      //    }
+      //     // document.getElementById('instrcutionPanel').remove();
+      //   }
+      // });
+
+      // document.addEventListener("keydown", function (event) {
+      //   if (
+      //     event.key === "ArrowLeft" ||
+      //     event.key === "a" ||
+      //     event.key === "ArrowRight" ||
+      //     event.key === "ArrowDown" ||
+      //     //event.key === "ArrowDown"
+      //   ) {
+      //     // document
+      //     //   .getElementById("cam")
+      //     //   .setAttribute("wasd-controls", "enabled:true");
+      //     switchToLookAround();
+      //     // document.getElementById('instrcutionPanel').remove();
+      //   }
+      // });
+    
+      // Event listener for right arrow key
+      // document.addEventListener("keydown", function (event) {
+      //   if (event.key === "ArrowRight") {
+      //     switchToWalk();
+      //   }
+      // });
+      document.getElementById("lobby-model").addEventListener("model-loaded", function () {
+        // After the model is loaded, hide the loading icon
+        setInterval(hideLoadingIcon,3000); 
+      });
+    </script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
+</script>
+<script> 
+  window.dataLayer = window.dataLayer || [];  
+ function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  
+   gtag('config', 'G-PGGTB73FL0'); 
+
+</script>
+
+    </script>
+  
+  </body>
+</html>

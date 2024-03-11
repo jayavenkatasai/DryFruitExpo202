@@ -1,0 +1,53 @@
+.chat-room{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+}
+.form-items{
+    display: flex;
+}
+.chat-bg{
+    padding:20px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* #startChatBtn{
+    width: 150px;
+    height:50px;
+    border-radius: 16px;
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 20px;
+}
+#startChatBtn:hover {
+    background-color: rgb(19, 127, 215);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+} */
+#messageTools{
+    display: flex;
+  
+}
+#message {
+    /* Add any additional styles for the input field if needed */
+    flex: 1; /* Take up remaining space */
+}
+
+#submit {
+    /* Add any additional styles for the submit button if needed */
+    margin-left: 5px; /* Add spacing between the input field and the button */
+    
+}

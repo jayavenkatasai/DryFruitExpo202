@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-family: "Roboto", sans-serif;
+            background: linear-gradient(180deg, rgba(161, 196, 253, 0.20) 0%, rgba(194, 233, 251, 0.60) 100%);
+        }
+        .messageHeading{
+            color: #000;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            text-align:center;
+            padding:24px;
+            border-bottom:1px solid #F1F1F1;
+        }
+        .minimizedChats {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px 16px;
+        }
+        .maximizedChat {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 24px;
+           
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+        }
+        .chatSectionContents {
+            background-color: #fff;
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            height:100vh;
+        }
+        .minimizedChats a{
+            color: #131313;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            text-decoration:none;
+            display:flex;
+            gap:15px;
+            align-items:center;
+            padding:10px;
+            background-color: #F4F9FF;
+            border-radius: 12px;
+            border: 1px solid #F4F9FF; 
+            max-width:100%;
+            cursor: pointer;
+        }
+        .minimizedChats span{
+            color:#1957B0;
+            border-radius: 79.167px;
+            border: 1px solid #1957B0;
+            background: #FFF;
+            height:30px;
+            width:30px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .chatDetails{
+            color:#000;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            text-align:center;
+            border-bottom:1px solid #F1F1F1;
+            padding:24px;
+        }
+        p {
+            margin: 0;
+        }
+        .senderName,.receiverName{
+            color: #1957B0;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+        }
+        .receiverChat p,.senderChat p{
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            border-radius: 12px;
+            background: #F1F1F1; 
+            padding: 8px 16px; 
+        }
+        .receiverChat {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+        .senderChat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .leftChatSection{
+            width:30%;
+        }
+        .mblmaxChat{
+            width: 70%;
+        }
+        .rightChatSection {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 1px solid #F1F1F1;
+            height: 98vh;
+            overflow-y: scroll;
+        }
+        .sendSection ::placeholder{
+            color:#000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            opacity:0.4;
+        }
+        .sendSection input {
+            border-radius: 12px;
+            border: 2px solid #CACACA;
+            background: #FFF;
+            padding: 14px 20px;
+            width: 100%;
+        }
+        .sendSection a{
+            border-radius: 12px;
+            background: #1957B0; 
+            padding: 8px 21px; 
+            color:#fff;
+            text-decoration:none;
+        }
+        .sendSection {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            width: 94%;
+            padding: 24px;
+        }
+        .rightChatSection::-webkit-scrollbar {
+            display: none;
+        }
+        .rightChatSection{
+            -ms-overflow-style: none;
+             scrollbar-width: none; 
+        }
+        .minimizedChats .active {
+            border: 1px solid #1957B0; 
+            background: #E1EDFF; 
+        }
+        .backArrow {
+            position: absolute;
+            top: 30px;
+            display: none;
+            left: 35px;
+            cursor: pointer;
+        }
+        @media only screen and (max-width:767px){
+            .mblmaxChat{
+                display:none;
+            }
+            .leftChatSection {
+                width: 100%;
+            }
+            .mblmaxChat{
+                width:100%;
+            }
+            .sendSection {
+                width: unset;
+            }
+            .chatDetails {
+                padding: 24px 60px;
+            }
+            .minimizedChats a.active:hover .mblmaxChat {
+                display: block;
+            }
+        }
+        @media only screen and (max-width:767px){
+            .maximizedChat,.sendSection{
+                padding: 24px 12px;
+            }
+            .sendSection input {
+                padding: 12px 10px;
+            }
+        }
+        @media only screen and (max-width:400px){
+            .chatDetails {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chatSection">
+        <div class="chatSectionContents">
+            <div class="leftChatSection">
+                <p class="messageHeading">Messages</p>
+                <div class="minimizedChats">
+                    <a ><span>AK</span>Akshay Kumar</a>
+                    <a ><span>SK</span>Siddharth Kumar</a>
+                    <a ><span>NC</span>Nidhi Choudary</a>
+                </div>
+            </div>
+            <div class="mblmaxChat">
+                <div class="rightChatSection">
+                    <div class="rightClassContents">
+                        <img class="backArrow" src="./MCCHAT/arrow-left.svg">
+                        <p class="chatDetails"><span class="owner">Akshay</span> chats with <span class="customer">Deepika</span></p>
+                        <div class="maximizedChat">
+                            <div class="senderChat">
+                                <span class="senderName">Akshay</span>
+                                <p>Hey Deepika, have you heard about the MTExpo online for machine tools?</p>
+                            </div>
+                            <div class="receiverChat">
+                                <span class="receiverName">Deepika</span>
+                                <p>Yeah, I got the invite. When is it?</p>
+                            </div>
+                            <div class="senderChat">
+                                <span class="senderName">Akshay</span>
+                                <p>Feb 26th to March 10th. You interested?</p>
+                            </div>
+                            <div class="receiverChat">
+                                <span class="receiverName">Deepika</span>
+                                <p>Maybe. What's on?</p>
+                            </div>
+                            <div class="senderChat">
+                                <span class="senderName">Akshay</span>
+                                <p>Keynote talks, workshops, and cool machinery displays.</p>
+                            </div>
+                            <div class="receiverChat">
+                                <span class="receiverName">Deepika</span>
+                                <p>Sounds good. I'll check my schedule.</p>
+                            </div>
+                            
+                            <div class="senderChat">
+                                <span class="senderName">Akshay</span>
+                                <p>Cool, let me know if you decide to join!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sendSection">
+                        <input type="text" placeholder="Type a message">
+                        <a href="">Send</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+          $('.minimizedChats a').click(function(){
+            $('.minimizedChats a.active').removeClass('active');
+            $(this).addClass('active');
+            // $('.leftChatSection').css('display','none');
+            // $('.mblmaxChat').css('display','block');
+            // $('.backArrow').css('display','block');
+         })
+         function handleScreenSizeChange(mql) {
+    if (mql.matches) {
+        $('.minimizedChats a').click(function(){
+            $('.minimizedChats a.active').removeClass('active');
+            $(this).addClass('active');
+            $('.leftChatSection').css('display','none');
+            $('.mblmaxChat').css('display','block');
+            $('.backArrow').css('display','block');
+         })
+         $('.backArrow').click(function(){
+            $('.leftChatSection').css('display','block');
+            $('.mblmaxChat').css('display','none');
+            $('.backArrow').css('display','none');
+         })
+    } else {
+        // Screen width is greater than 767 pixels
+        // You can add additional logic here if needed
+    }
+}
+
+// Create a MediaQueryList object
+var mql = window.matchMedia('(max-width: 767px)');
+
+// Initial check of the screen size
+console.log(mql)
+alert("hi")
+handleScreenSizeChange(mql);
+
+// Add a listener for screen size changes
+mql.addListener(handleScreenSizeChange);
+
+    </script>
+</body>
+</html>
