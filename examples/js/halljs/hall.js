@@ -148,33 +148,33 @@ const fetchDataFromAPI = () => {
                             let height;
                             switch (imageIndex) {
                                 case 0:
-                                    position = "5 1.12 17.55";
-                                    width = "0.6";
-                                    height = "0.6";
+                                    position = "2.362 2.185 3.162";
+                                    width = "0.8";
+                                    height = "0.8";
                                     break;
                                 //center second row
                                 case 1:
-                                    position = "3.000  3.252 2.724";
-                                    width = "0.6";
-                                    height = "0.6";
+                                    position = "1.5 2.802 1";
+                                    width = "0.8";
+                                    height = "0.8";
                                     break;
                                 //left second row
                                 case 2:
-                                    position = "4.6 1.23 16.1";
-                                    width = "0.6";
-                                    height = "0.6";
+                                    position = "0.5 3.380 -0.8";
+                                    width = "0.8";
+                                    height = "0.8";
                                     break;
                                 //right second row
                                 case 3:
-                                    position = "4.45 1.29 15.35";
-                                    width = "0.6";
-                                    height = "0.6";
+                                    position = "1.5 2.802 -2.7";
+                                    width = "0.8";
+                                    height = "0.8";
                                     break;
                                 //first layer rightsidemiddle
                                 case 4:
-                                    position = "4.4 1.14 14.6";
-                                    width = "0.6";
-                                    height = "0.6";
+                                    position = "2.362 2.185 -4.7";
+                                    width = "0.8";
+                                    height = "0.8";
                                     break;
                             
                                 // first layer leftside right 
