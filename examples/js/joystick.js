@@ -11,7 +11,7 @@ function initJoystick() {
 
 
   var p = document.createElement("p");
-  p.setAttribute("style", "text-align: center; font-size: 16px; font-family: Roboto; opacity: 1;margin-top:-2px;color:black;position:relative;z-index:1000;font-weight:400");
+  p.setAttribute("style", "text-align: center; font-size: 16px; font-family: Roboto; opacity: 1;margin-top:-2px;color:black;position:relative;z-index:999;font-weight:400");
   p.innerHTML = "Hold and drag";
   d.appendChild(p);
   // create image element

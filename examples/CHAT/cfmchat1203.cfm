@@ -454,12 +454,8 @@
 			// to your application.
 			Pusher.logToConsole=true;
 // Generate a unique ID for each user.
- if(!localStorage.getItem('CustomerID')){
 		var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
-        localStorage.setItem('CustomerID',currentUserID)
-        alert('your guid is',localStorage.getItem('CustomerID'))
-        console.log('your guid is',localStorage.getItem('CustomerID'))
- }
+		console.log(currentUserID)
 			var server = new Pusher("1847dd0c5202f9b24097", {
   cluster: "ap2",
   encrypted:false,
@@ -508,7 +504,7 @@ function initiatechat(){
 					 type: "POST",
 					 url: "https://stage.marketcentral.in/rest/virtualExpo/general/insertChat",
 					// dataType: 'json',
-					//  contentType: 'application/json',
+					 contentType: 'application/json',
 					 data: JSON.stringify(data),// now data come in this function
 					 success: function (data, status, jqXHR) {
 						 console.log(data);

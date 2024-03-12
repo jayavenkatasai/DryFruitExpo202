@@ -322,7 +322,8 @@
 		
 
 var channels=[];
-
+var currentUserID= localStorage.getItem('CustomerID')
+console.log("the customer ID is ", currentUserID)
 // 		$.get(
 // 						"./getchannels.cfm",
 // 						{
@@ -394,7 +395,7 @@ var channels=[];
 // 					);	
 
 $.ajax({
-    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChat/0/6F95AB83-FC0C-2F60-3F16481E2E5E7FF1/0/0",
+    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChat/"+currentUserID+"/0/0/0",
     type: 'GET',
     dataType: 'json',
     success: function(response) {

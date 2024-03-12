@@ -42,8 +42,7 @@ const fetchDataFromAPI = () => {
                 console.log(apivariable)
                 
                 data.stalls.forEach((stall, stallIndex) => {
-                        const stallContainerId = `stall${stallIndex + 1}`;
-                        alert("into products1")
+                        const stallContainerId = `stall${stallIndex + 1}`;  
 //                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");
@@ -134,11 +133,11 @@ const fetchDataFromAPI = () => {
                     if (stall.products && stall.products.length) {
                         let numberOfImages = stall.products.length;  //10
                         console.log(numberOfImages)
-    alert("into products")
+
                         // Create a unique ID for each stall
                         //  const stallContainerId = `stall${stallIndex + 1}`;       
                         // Loop through images in the current stall
-                        for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
+                        for (let imageIndex = 0; imageIndex < 6; imageIndex++) {
                             const imageUrl = stall.products[imageIndex].producturl;
                             const imageDescription = stall.products[imageIndex].productname;
 
@@ -149,32 +148,32 @@ const fetchDataFromAPI = () => {
                             switch (imageIndex) {
                                 case 0:
                                     position = "2.362 2.185 3.162";
-                                    width = "0.8";
-                                    height = "0.8";
+                                    width = "2";
+                                    height = "2";
                                     break;
                                 //center second row
                                 case 1:
                                     position = "1.5 2.802 1";
-                                    width = "0.8";
-                                    height = "0.8";
+                                    width = "2";
+                                    height = "2";
                                     break;
                                 //left second row
                                 case 2:
                                     position = "0.5 3.380 -0.8";
-                                    width = "0.8";
-                                    height = "0.8";
+                                    width = "2";
+                                    height = "2";
                                     break;
                                 //right second row
                                 case 3:
                                     position = "1.5 2.802 -2.7";
-                                    width = "0.8";
-                                    height = "0.8";
+                                    width = "2";
+                                    height = "2";
                                     break;
                                 //first layer rightsidemiddle
                                 case 4:
                                     position = "2.362 2.185 -4.7";
-                                    width = "0.8";
-                                    height = "0.8";
+                                    width = "2";
+                                    height = "2";
                                     break;
                             
                                 // first layer leftside right 
@@ -197,7 +196,14 @@ const fetchDataFromAPI = () => {
                             imageElement.setAttribute("height", height);
                             imageElement.setAttribute("src", imageUrl);
                             imageElement.setAttribute("rotation", "0 90 0");
-                            //imageElement.addEventListener('click', function () {
+                            imageElement.addEventListener('click', function () {
+                              
+                                document.getElementById('popup').style.display='flex'
+                               document.getElementById('productimge').setAttribute('src',imageUrl)
+                               document.getElementById('prdt-name').textContent=imageDescription
+                               document.getElementById('cost').textContent=stall.products[imageIndex].price
+                               document.getElementById('prdt-units').textContent=stall.products[imageIndex].unit
+                               document.getElementById('visit-prdt-btn').setAttribute('href',stall.products[imageIndex].productlink)
                                 // Update the text and image source of the popup
                                 // document.getElementById(`popup${stallIndex + 1}`).setAttribute("visible", true);
                                 // document.getElementById(`productName${stallIndex + 1}`).setAttribute("value", imageDescription);
@@ -222,35 +228,35 @@ const fetchDataFromAPI = () => {
 
 
                                 // trackExpo(stall.uno, "product", imageDescription, ipAddress);
-                          //  });
+                           });
 
 
-                            // Create popup element
-                            const popupElement = document.createElement("a-entity");
+                            // // Create popup element
+                            // const popupElement = document.createElement("a-entity");
 
-                            popupElement.setAttribute("id", `popup-img${imageIndex + 1}_${stallContainerId}`);
+                            // popupElement.setAttribute("id", `popup-img${imageIndex + 1}_${stallContainerId}`);
 
 
-                            // Create the content inside the popup
-                            const popupContent = `
-                                            <a-plane color="#333" width="5" height="2"></a-plane>
-                                            <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="20"></a-text>
-                                        `;
+                            // // Create the content inside the popup
+                            // const popupContent = `
+                            //                 <a-plane color="#333" width="5" height="2"></a-plane>
+                            //                 <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="20"></a-text>
+                            //             `;
 
-                            popupElement.innerHTML = popupContent;
+                            // popupElement.innerHTML = popupContent;
                             // Append image and popup to the container
                             containerEntity.appendChild(imageElement);
-                            containerEntity.appendChild(popupElement);
-                            popupElement.setAttribute("position", "0.8 -0.65 0");
-                            popupElement.setAttribute("rotation", "0 90 0");
-                            popupElement.setAttribute("scale", "0.2 0.2 0.2");
-                            // popupElement.setAttribute("width","0.1")
-                            // popupElement.setAttribute("height","0.1")
-                            popupElement.setAttribute("visible", "false");
-                            //popupElement.setAttribute("visible", "false");
-                            console.log("the popup is the following");
-                            console.log(popupElement); 8
-                            // Append container entity to the scene
+                            //containerEntity.appendChild(popupElement);
+                            // popupElement.setAttribute("position", "0.8 -0.65 0");
+                            // popupElement.setAttribute("rotation", "0 90 0");
+                            // popupElement.setAttribute("scale", "0.2 0.2 0.2");
+                            // // popupElement.setAttribute("width","0.1")
+                            // // popupElement.setAttribute("height","0.1")
+                            // popupElement.setAttribute("visible", "false");
+                            // //popupElement.setAttribute("visible", "false");
+                            // console.log("the popup is the following");
+                            // console.log(popupElement); 8
+                            // Append container entity to the 
                             document.getElementById(stallContainerId).appendChild(containerEntity);
 
                             // imageElement.addEventListener('mouseenter', function () {

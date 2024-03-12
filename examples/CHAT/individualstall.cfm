@@ -460,12 +460,14 @@
 		// var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
         // localStorage.setItem('currentUserID',currentUserID)
         // alert(localStorage.getItem('currentUserID'))
-        if (!localStorage.getItem('currentUserID')) {
-    var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
-    localStorage.setItem('currentUserID', currentUserID);
+//         if (!localStorage.getItem('currentUserID')) {
+//     var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
+//     localStorage.setItem('currentUserID', currentUserID);
     
-}
-currentUserID=localStorage.getItem('currentUserID');
+// }
+
+var currentUserID =localStorage.getItem('CustomerID');
+currentUserID=localStorage.getItem('CustomerID');
 alert(localStorage.getItem('currentUserID'));
 		console.log(currentUserID)
 			var server = new Pusher("1847dd0c5202f9b24097", {
@@ -537,7 +539,7 @@ function initiatechat(){
     }
     });
     $.ajax({
-    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/6F95AB83-FC0C-2F60-3F16481E2E5E7FF1/0/0/0",
+    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/"+currentUserID+"/0/0/"+stallId+"",
     type: 'GET',
     dataType: 'json',
     success: function(response) {
@@ -617,8 +619,6 @@ console.log("the vhannel name is" + channaleName)
     success: function(response) {
      console.log(response);
 	 response.forEach(function(chatData) {
-
-
 	//	var textAlignment = (chatData.USER_ID === business) ? 'right' : 'left';
 
 // var chatItem = $("<div class='senderChat'>").css('text-align', textAlignment).append(

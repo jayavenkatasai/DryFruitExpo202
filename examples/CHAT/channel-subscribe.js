@@ -133,7 +133,7 @@ function bindChannel(stallId,form){
 					}
 					
 					selectedChannelobj.trigger("client-sendmessage", {
-                        userID: handleLabel.text(),
+                        userID:stallId,
                         message:message.val(),
                         channel:selectedChannel
                       });
