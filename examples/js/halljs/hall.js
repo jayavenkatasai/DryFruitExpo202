@@ -1,3 +1,5 @@
+
+
 // Function to fetch data from the API and update the scene
 let requestBody={
     start:'1',
@@ -44,6 +46,8 @@ const fetchDataFromAPI = () => {
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
+                        
+                        document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
 //                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");

@@ -508,7 +508,7 @@ function initiatechat(){
 					 type: "POST",
 					 url: "https://stage.marketcentral.in/rest/virtualExpo/general/insertChat",
 					// dataType: 'json',
-					//  contentType: 'application/json',
+					 contentType: 'application/json',
 					 data: JSON.stringify(data),// now data come in this function
 					 success: function (data, status, jqXHR) {
 						 console.log(data);
