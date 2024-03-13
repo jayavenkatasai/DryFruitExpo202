@@ -322,7 +322,7 @@
 		
 
 var channels=[];
-var currentUserID= localStorage.getItem('CustomerID')
+// var currentUserID= localStorage.getItem('CustomerID')
 console.log("the customer ID is ", currentUserID)
 // 		$.get(
 // 						"./getchannels.cfm",
@@ -395,7 +395,7 @@ console.log("the customer ID is ", currentUserID)
 // 					);	
 
 $.ajax({
-    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChat/"+currentUserID+"/0/0/0",
+    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChat/0/"+currentUserID+"/0/0",
     type: 'GET',
     dataType: 'json',
     success: function(response) {
@@ -639,6 +639,7 @@ mql.addListener(handleScreenSizeChange);
 </script>
 <script>
 var business = "<cfoutput>#url.bname#</cfoutput>";
+var currentUserID ="<cfoutput>#url.uid#</cfoutput>";
 //    document.getElementById("handleLabel").textContent = business;
    	document.getElementById("owner-head").textContent=business
     document.getElementById("handleLabel").textContent=business

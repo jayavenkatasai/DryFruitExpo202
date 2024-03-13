@@ -442,8 +442,8 @@
 		// website. It is a Flash proxy to the standard Web
 		// Sockets interface.
 		WebSocket.__swfLocation = "./WebSocketMain.swf";
-       console.log(localStorage.getItem('name'))
-        alert(localStorage.getItem('name'))
+    //    console.log(localStorage.getItem('name'))
+    //     alert(localStorage.getItem('name'))
 		// When the DOM is ready, init the scripts.
 		$(function(){
 			// This is the user ID. This allows us to track the user
@@ -466,10 +466,12 @@
     
 // }
 
-var currentUserID =localStorage.getItem('CustomerID');
-currentUserID=localStorage.getItem('CustomerID');
-alert(localStorage.getItem('currentUserID'));
+// var currentUserID =localStorage.getItem('CustomerID');
+// currentUserID=localStorage.getItem('CustomerID');
+// alert(localStorage.getItem('currentUserID'));
 		console.log(currentUserID)
+console.log(business)
+console.log(customername)
 			var server = new Pusher("1847dd0c5202f9b24097", {
   cluster: "ap2",
   encrypted:false,
@@ -539,7 +541,7 @@ function initiatechat(){
     }
     });
     $.ajax({
-    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/"+currentUserID+"/0/0/"+stallId+"",
+    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/0/"+currentUserID+"/0/"+stallId+"",
     type: 'GET',
     dataType: 'json',
     success: function(response) {
@@ -595,6 +597,7 @@ window.onload=initiatechat();
 	  });
 var business = "<cfoutput>#url.bname#</cfoutput>";
 var customername ="<cfoutput>#url.name#</cfoutput>";
+var currentUserID ="<cfoutput>#url.uid#</cfoutput>";
 
 		
  //document.getElementById("b-name").textContent = business;

@@ -439,8 +439,8 @@
 		// website. It is a Flash proxy to the standard Web
 		// Sockets interface.
 		WebSocket.__swfLocation = "./WebSocketMain.swf";
-       console.log(localStorage.getItem('name'))
-        alert(localStorage.getItem('name'))
+    //    console.log(localStorage.getItem('name'))
+    //     alert(localStorage.getItem('name'))
 		// When the DOM is ready, init the scripts.
 		$(function(){
 			// This is the user ID. This allows us to track the user
@@ -454,12 +454,12 @@
 			// to your application.
 			Pusher.logToConsole=true;
 // Generate a unique ID for each user.
- if(!localStorage.getItem('CustomerID')){
-		var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
-        localStorage.setItem('CustomerID',currentUserID)
-        alert('your guid is',localStorage.getItem('CustomerID'))
-        console.log('your guid is',localStorage.getItem('CustomerID'))
- }
+//  if(!localStorage.getItem('CustomerID')){
+// 		var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
+//         localStorage.setItem('CustomerID',currentUserID)
+//         alert('your guid is',localStorage.getItem('CustomerID'))
+//         console.log('your guid is',localStorage.getItem('CustomerID'))
+//  }
 			var server = new Pusher("1847dd0c5202f9b24097", {
   cluster: "ap2",
   encrypted:false,
@@ -496,6 +496,7 @@ function initiatechat(){
 		$("#channel").text("channel:"+channaleName)
 		listenChannel(server,stallId,channaleName)
 		bindChannel(currentUserID,$("form"))//here is loop hole
+
 			 var data = {
 					   user_id:currentUserID,
 					   stall_Id:stallId,
@@ -504,10 +505,12 @@ function initiatechat(){
 					   anonymous_Name:cname,
 					   isclosed:0
 					   }
+                // alert(JSON.stringify(data))
+                console.log(JSON.stringify(data));
 				 $.ajax({
 					 type: "POST",
 					 url: "https://stage.marketcentral.in/rest/virtualExpo/general/insertChat",
-					// dataType: 'json',
+					 dataType: 'json',
 					 contentType: 'application/json',
 					 data: JSON.stringify(data),// now data come in this function
 					 success: function (data, status, jqXHR) {
@@ -525,7 +528,7 @@ function initiatechat(){
     dataType: 'json',
     success: function(response) {
      console.log(response);
-     alert("the data is" +response)
+    // alert("the data is" +response)
     }
 });
 			} else {
@@ -541,7 +544,7 @@ window.onload=initiatechat();
 	  });
 var business = "<cfoutput>#url.bname#</cfoutput>";
 var customername ="<cfoutput>#url.name#</cfoutput>";
-
+var currentUserID ="<cfoutput>#url.uid#</cfoutput>";
 		
  //document.getElementById("b-name").textContent = business;
   document.getElementById("v-name").textContent = business;
