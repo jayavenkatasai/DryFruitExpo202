@@ -175,30 +175,6 @@
     #iframe-container {
 
       position: fixed;
-      z-index: 999;
-      top: 150px;
-      left: 20px;
-      display: block;
-      width: 100px;
-      height: 200px
-    }
-
-    #iframe-url {
-
-      position: fixed;
-      z-index: 999;
-      top: 150px;
-      left: 20px;
-      display: block;
-      width: 500px;
-      height: 500px;
-      border: 0px;
-    }
-
-    #iframe-container {
-
-      position: fixed;
-      z-index: 999;
       top: 150px;
       left: 20px;
       display: none;
@@ -209,7 +185,28 @@
     #iframe-url {
 
       position: fixed;
-      z-index: 999;
+      top: 150px;
+      left: 20px;
+      display: none;
+      width: 500px;
+      height: 500px;
+      border: 0px;
+    }
+
+    #iframe-container {
+
+      position: fixed;
+  
+      top: 150px;
+      left: 20px;
+      display: none;
+      width: 100px;
+      height: 200px
+    }
+
+    #iframe-url {
+
+      position: fixed;
       top: 150px;
       left: 20px;
       display: none;
@@ -252,6 +249,10 @@
     oninput="document.getElementById('player').setAttribute('player-info', 'name', this.value)" />
   <!-- <div id="iframe-container">
     <iframe id="iframe-url" src=""></iframe>
+  </div> -->
+
+  <!-- <div id="iframe-container2">
+    <iframe id="iframe-url2" src=""></iframe>
   </div> -->
   <script>
     window.onload = function () {
@@ -318,7 +319,7 @@
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
             <!-- <a-box color="blue" position=""></a-box> -->
             <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-              <a-text value="12345" color="black"></a-text>
+              <a-text id="txtval1" value="12345" color="black"></a-text>
             </a-entity>
           </a-entity>
       </a-plane>
@@ -332,7 +333,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt2" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="12345" color="black"></a-text>
+            <a-text id="txtval2" value="12345" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -346,7 +347,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt3" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="123456" color="black"></a-text>
+            <a-text id="txtval3" value="123456" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -360,7 +361,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt4" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval4" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -374,7 +375,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt5" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval5" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -388,7 +389,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt6" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval6" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -402,7 +403,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt7" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval7" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -417,7 +418,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt8" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval8" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -432,7 +433,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt9" rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval9" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -446,7 +447,7 @@
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
           <a-entity id="txt10" h rotation="0 90 0" scale="1 1 1" position="6 2 14.25">
-            <a-text value="1234567" color="black"></a-text>
+            <a-text id="txtval10" value="1234567" color="black"></a-text>
           </a-entity>
         </a-entity>
       </a-plane>
@@ -588,6 +589,7 @@
           // Perform your alert action here
           //    //console.log('Camera is near the stall');
           alert(`Camera is near the stall is ${id} and value is ${textValue}`);
+          //document.getElementById("iframe-url").setAttribute('src', `http://chatapp.mc.in/cfmchat.cfm?stallid=${textValue}&bname=${textValue}sai&name=${localStorage.getItem('name')}`)
           this.triggered = true;
         }
       },

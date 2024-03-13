@@ -43,6 +43,7 @@ const fetchDataFromAPI = () => {
                 
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
+                        document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
 //                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");
@@ -204,6 +205,8 @@ const fetchDataFromAPI = () => {
                                document.getElementById('cost').textContent=stall.products[imageIndex].price
                                document.getElementById('prdt-units').textContent=stall.products[imageIndex].unit
                                document.getElementById('visit-prdt-btn').setAttribute('href',stall.products[imageIndex].productlink)
+                               
+                               
                                 // Update the text and image source of the popup
                                 // document.getElementById(`popup${stallIndex + 1}`).setAttribute("visible", true);
                                 // document.getElementById(`productName${stallIndex + 1}`).setAttribute("value", imageDescription);

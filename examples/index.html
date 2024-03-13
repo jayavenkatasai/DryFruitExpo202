@@ -1,60 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Networked-Aframe Examples</title>
-    <meta name="description" content="Collection of examples for networked-aframe" />
-    <style>
-      html {
-        background: #33425b;
-        color: #fafafa;
-        font-family: monospace;
-        font-size: 20px;
-        padding: 10px 20px;
-      }
-      h1 {
-        font-weight: 300;
-      }
-      a {
-        color: #fafafa;
-        /*display: block;*/
-        padding: 15px 0;
-      }
-      body > div {
-        margin: 20px 0;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/intro.css" />
   </head>
   <body>
-    <h1>Networked-Aframe Examples</h1>
-    <div>
-      <a href="intro.html">Basic</a>
-      <span>Simple avatars with synced color</span>
+    <div class="intro">
+      <div
+        class="introContents"
+        style="
+          background-image: url('assets/background_images/digitalIntroImg.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        "
+      >
+        <div class="introText">
+          <h4 class="welcomeText">Welcome to</h4>
+          <h3 class="hsptltext">Hospital and Medical <span>Supplies Expo</span></h3>
+          <div class="inputText">
+            <img src="assets/icons/userIcon.png" />
+            <input type="text" placeholder="Enter name" id="name-value" />
+          </div>
+          <div class="enterExpoButton" id="enterExpo-btn">
+            <button id="submit-link">Enter Expo</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <style>
-      .github-corner:hover .octo-arm {
-        animation: octocat-wave 560ms ease-in-out;
-      }
-      @keyframes octocat-wave {
-        0%,
-        100% {
-          transform: rotate(0);
-        }
-        20%,
-        60% {
-          transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-          transform: rotate(10deg);
-        }
-      }
-      @media (max-width: 500px) {
-        .github-corner:hover .octo-arm {
-          animation: none;
-        }
-        .github-corner .octo-arm {
-          animation: octocat-wave 560ms ease-in-out;
-        }
-      }
-    </style>
   </body>
+  <script src="/js/introjs/intro.js"></script>
 </html>
