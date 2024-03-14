@@ -4,6 +4,28 @@ p,h1,h2,h3,h4,h5,h6{
 body{
     font-family: "Roboto", sans-serif;
 }
+#iframe-container {
+
+    position: fixed;
+z-index:9999;
+    top: 150px;
+    left: 20px;
+    display: none;
+    width: 100px;
+    height: 200px
+  }
+
+  #iframe-url {
+
+    position: fixed;
+    z-index:999;
+    top: 150px;
+    left: 20px;
+    display: block;
+    width: 500px;
+    height: 500px;
+    border: 0px;
+  }
 .productName,.productPrice{
     color: #FFF;
     font-size: 32px;

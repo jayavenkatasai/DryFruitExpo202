@@ -1,15 +1,50 @@
+ // Get the query string from the current URL
+ const queryString = window.location.search;
+
+ // Create a new URLSearchParams object from the query string
+ const urlParams = new URLSearchParams(queryString);
+
+ // Get the value of a specific parameter
+ var category = urlParams.get('category');
+ category = category.replace(/\s/g, '');
+
+window.onload = function () {
+    let newColor = window.ntExample.randomColor();
+    document.getElementById('player').setAttribute('player-info', 'color', newColor);
+    document.querySelector('#color-changer').style.backgroundColor = newColor;
+    document.querySelector('#color-changer').style.color = newColor;
+    setname();
+  };
+  function setname() {
+   // alert('hey')
+    var name = localStorage.getItem('UserName');
+    document.getElementById('player').setAttribute('player-info', 'name', name)
+    // localStorage.setItem('name',name)
+    // alert(localStorage.getItem('UserName'))
+  }
+function markStallVisited(stallId) {
+    let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
+    visitedStalls.push(stallId);
+    localStorage.setItem('visitedStalls', JSON.stringify(visitedStalls));
+   }
+   // Function to check if a stall has been visited
+   function isStallVisited(stallId) {
+    let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
+    return visitedStalls.includes(stallId);
+   }
 
 
 // Function to fetch data from the API and update the scene
 let requestBody={
+    exhibition_ID:'3',
     start:'1',
     end:'20',
     category:"0",
-    businesscategorylevel1:"Finishing Machines",
+    businesscategorylevel1:"Medical Waste Disposal",
     uno:'0'
 }
 const fetchDataFromAPI = () => {
-    let apiurl = 'https://dev.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
+    let apiurl = 'https://stage.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
     fetch(apiurl,
         {
             method: 'POST',
@@ -48,6 +83,35 @@ const fetchDataFromAPI = () => {
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
                         
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
+                       // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
+                        document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
+                        if(stall.websiteLink){
+                        document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink}`)
+                        }
+                        if(stall.vendorInfo.email){
+                            document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:mailto:${stall.vendorInfo.email}`)
+                            }
+                        if (stall.broucherlinkAvailable) {
+                                document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.broucherlink}`)
+                        }
+                        if (stall.businesscard) {
+                            document.getElementById(`businesscard${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.businesscard}`)
+                    }
+                    if(stall.vendorInfo.contactNumber){
+                        document.getElementById(`phone${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:tel:91+${stall.vendorInfo.contactNumber}`)
+                    }
+
+                         //document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
+                document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
+              //  document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");
+                document.getElementById(`vendorphoneno${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.contactNumber);
+                document.getElementById(`vendorimage${stallIndex + 1}`).setAttribute("src", stall.vendorInfo.vendorimage);
+                document.getElementById(`vendorbusinessname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.companyname);
+                document.getElementById(`vendorlogo${stallIndex + 1}`).setAttribute("src", stall.logo);
+                document.getElementById(`stallno${stallIndex + 1}`).setAttribute("value", stall.name);
+
+                       // console.log(`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
+
 //                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");

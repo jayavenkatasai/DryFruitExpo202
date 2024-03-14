@@ -1,7 +1,7 @@
  // Fetch data from the API
 // Wrap your code in a DOMContentLoaded event listener to ensure it executes after the DOM has loaded
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://stage.marketcentral.in/rest/virtualExpo/general/getBusinesses')
+    fetch('https://stage.marketcentral.in/rest/virtualExpo/general/getBusinesses/3')
         .then(response => response.json())
         .then(data => {
             // Log the response to the console
