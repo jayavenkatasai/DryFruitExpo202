@@ -18,6 +18,7 @@
 <script src="/js/simple-navmesh-constraint.js"></script> 
   <script src="/js/joystick.js"></script>
   <script src="/js/Custom_components/custome_component.js"></script>
+  <script src="js/track js/ua-parser.js"></script>
   <script src="js/ip-address.js"></script>
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   <script>
@@ -62,6 +63,7 @@
   </script>
 
   <script>
+
     window.ntExample = {
       randomColor: () => {
         return '#' + new THREE.Color(Math.random(), Math.random(), Math.random()).getHexString();
@@ -118,20 +120,95 @@
 </head>
 
 <body>
-
-  <div class="popUp" id="popup">
-    <div class="popUpContents">
-        <img class="closeIcon" src="images/closeButton.png">
-        <img class="productImg" id="productimge"src="images/productImg.png">
-        <div class="productDetails">
-            <div class="priceDetails">
-                <p class="productName" id="prdt-name">Product Name</p>
-                <p class="productPrice" id="prd-price">Price : <span class="price" id="cost">₹2,795</span>/<span class="productWeight" id="prdt-units"> kilogram(kg)</span></p>    
-            </div>
-            <a class="visitProductButton" href="" id="visit-prdt-btn" target="_blank">Visit Product</a>
-           </div>
-    </div>
+<!-- old -->
+<!-- new -->
+<div class="digitalPopUp" id="popup">
+  <div class="digitalPopUpContents">
+      <img class="closeImg" src="images/digitalClose.png">
+      <div class="productDetailsSection">
+          <img class="productImg" src="images/product.png"  id="productimge">
+          <div class="productDetails">
+              <p class="productName" id="prdt-name">Discover Hidden Treasures:</p>
+              <p class="productPrice" id="prd-price">Price : <span class="original-price" id="cost">₹2,795</span>/<span class="prodWeight"  id="prdt-units">kilogram(kg)</span></span> </p>
+              <div class="productButtons d-flex">
+                  <a class="visitButton" id="visit-prdt-btn" target="_blank" href="">Visit Product</a>
+                  <a class="shareButton" href="">Share Product</a>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
+<!--sharestall and product  -->
+<div id="popup-overlay">
+  <div id="popup-card">
+     <h6 class="inviteText">Invite</h6>
+     <div class="copySection">
+         <p id="urlText">Stall Link</p>
+         <div class="copyButtonSection">
+             <input type="text" id="currentURL" readonly>
+             <img class="global" src="assets/icons/global.png">
+             <button id="copyButton" onClick="copyToClipboard()">Copy</button>
+         </div>
+     </div>
+      <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png"></button>
+  </div>
+</div>
+<!-- sharestall -->
+<!-- bottom icons -->
+<div id="mapSection" class="mapSectionlass">
+  <div id="mapText" class="mapTextClass">
+      <div id="pagination">
+          <img id="mapbutton1" src="assets/arrow-circle-left.png"  style="width:40px;height:40px">
+          <img id="mapbutton2" src="assets/arrow-circle-left (1).png"  style="width:40px;height:40px">
+      </div>
+      <div id="Backbtn">
+          <button id="closeIcon">
+           <img src="assets/icons/blueCloseIcon.png">
+          </button>
+      </div>
+  </div>
+
+</div>
+<div class="iframetag" id="totalIframe">
+  <div class="iframetagContent">
+      <img class="iframeImg" src="assets/blueCloseIcon.png">
+      <iframe id="iframe-expoDir" src="about:blank" width="800px" height="500px" allowfullscreen></iframe>
+  </div>
+</div>
+<div id="hallButtonsContents">
+  <div id="hallButtons">
+      <div class="tooltipone">
+          <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png">
+          <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png">
+      </div>
+      <div class="tooltiptwo">
+          <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png">
+          <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png">
+      </div>
+      <div class="tooltipthree">
+          <a href="lobby.html">
+              <img class="desktopExitImg" src="assets/icons/exitimg.png">
+              <img class="mblExitImg" src="assets/icons/blueExit.png">
+          </a>
+      </div>
+      <!-- <div class="tooltipFour">
+           <img class="shareIcon desktopShare" onClick="showPopup()" src="assets/icons/shareImg.png">
+           <img class="shareIcon mblShare" onClick="showPopup()" src="assets/icons/blueShareImg.png">
+      </div> -->
+      <!-- <div class="">
+          <a href="">
+              <img src="assets/shareImg.png">
+          </a>
+      </div> -->
+      <!-- <div class="tooltipFour">
+          <a href="lobby.html">
+              <img src="assets/shareImg.png">
+          </a>
+      </div> -->
+
+  </div>
+</div>
+<!-- bottom icons -->
   <!-- <button id="restartButton">Restart Scene</button> -->
   <!-- This <button> and <input> will overlay on top of the A-Frame canvas--this style is all you need.
          Note the onclick and oninput attributes; on every call, they will run .setAttribute() for the player-info
@@ -172,6 +249,15 @@
     
   </script> -->
   <script src="js/halljs/hall.js"></script>
+  <!-- iframe for expo directory -->
+  <!-- <div class="iframetag" id="totalIframe">
+    <div class="iframetagContent">
+        <img class="iframeImg" src="assets/icons/blueCloseIcon.png">
+        <iframe id="iframe-expoDir" src="" width="800px" height="500px" allowfullscreen></iframe>
+    </div>
+  </div> -->
+  <!-- end of iframe for expo directory -->
+ 
   <a-scene id="scene1" networked-scene="
         debug: true;
         adapter: wseasyrtc;
@@ -615,186 +701,49 @@
       <a-entity id="pp10" gltf-model="#chat-icon" position="25.2 5.29 -16.3" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity>
       <a-entity distance-trigger></a-entity>
       <a-plane height="150" width="70" position="1.5 0.1 -53.775" color="red" rotation="90 0 0" side="double" visible="false" class="navmesh"></a-plane>
+      <a-plane color="skyblue"width="1" height="0.4" position="8 2.5 1.8" rotation="0 180 0" id="next-hall" visible="true" side="double"
+     >
+      <a-text value="Next Hall" align="center" height="5" width="5" color="black" position="0 0 0.01"></a-text>
+     </a-plane>
+     <a-plane color="skyblue" width="1.6" height="0.4" position="12 2.5 1.8"rotation="0 180 0" id="prev-hall" visible="true" side="double">
+      <a-text value="Previous Hall" align="center" height="5" width="5" color="black" position="0 0 0.01"></a-text>
+     </a-plane>
     </a-entity>
+
   </a-scene>
   <script>
-
-    document.getElementById('scene1').setAttribute('networked-scene', `room:${category}`)
-    console.log(category)
+    document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`)
+    console.log(networkcategory)
    // alert(category)
   </script>
-  <script>
-// function markStallVisited(stallId) {
-//  let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
-//  visitedStalls.push(stallId);
-//  localStorage.setItem('visitedStalls', JSON.stringify(visitedStalls));
-// }
-// // Function to check if a stall has been visited
-// function isStallVisited(stallId) {
-//  let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
-//  return visitedStalls.includes(stallId);
-// }
+ 
 
-    // AFRAME.registerComponent('distance-trigger', {
-    //   init: function () {
-    //     this.camera = document.getElementById('player');
-    //     this.triggers = document.querySelectorAll('.trigger');
-    //     this.distanceThreshold = 5; // Adjust as needed
-    //     this.shownBoxes = new Set();
-    //     this.triggeredBoxes = new Set();
-    //     this.triggerEnterEvent = this.triggerEnterEvent.bind(this);
-    //     this.triggerLeaveEvent = this.triggerLeaveEvent.bind(this);
-    //   },
-    //   update: function () {
-    //     this.triggers.forEach(trigger => {
-    //       trigger.addEventListener('triggerenter', this.triggerEnterEvent);
-    //       trigger.addEventListener('triggerleave', this.triggerLeaveEvent);
-    //     });
-    //   },
-    //   remove: function () {
-    //     this.triggers.forEach(trigger => {
-    //       trigger.removeEventListener('triggerenter', this.triggerEnterEvent);
-    //       trigger.removeEventListener('triggerleave', this.triggerLeaveEvent);
-    //     });
-    //   },
-    //   triggerEnterEvent: function (event) {
-    //     const boxId = event.target.getAttribute('id');
-    //     const textValue = event.target.querySelector('a-text').getAttribute('value');
-    //     const message = 'Camera entered ' + boxId + '\nText value: ' + textValue;
-    //     if (!this.shownBoxes.has(boxId)) {
-    //       alert('Camera entered ' + message);
-    //       this.shownBoxes.add(boxId);
-    //       this.triggeredBoxes.add(boxId);
-    //       //this.createAText(boxId);
-    //      // document.getElementById("iframe-url").setAttribute('src', `http://chatapp.mc.in/cfmchat.cfm?stallid=${textValue}&bname=${textValue}sai&name=${localStorage.getItem('name')}`)
-    //     }
-    //     const textElement = document.getElementById(`txt${boxId}`);
-    //     textElement.setAttribute('visible', 'true');
-    //     textElement.setAttribute('animation', 'property: opacity; from: 1; to: 0; dur: 1000; easing: linear; loop: true');
-    //   },
-    //   triggerLeaveEvent: function (event) {
-    //     const boxId = event.target.getAttribute('id');
-    //     const textElement = document.getElementById(`txt${boxId}`);
-    //     textElement.setAttribute('visible', 'false');
-    //     textElement.removeAttribute('animation');
-    //   },
-    //   createAText: function (boxId) {
-    //     const box = document.getElementById(boxId);
-    //     const text = document.createElement('a-text');
-    //     text.setAttribute('id', `txt${boxId}`)
-    //     text.setAttribute('position', '0 0 0');
-    //     text.setAttribute('value', 'This is ' + boxId);
-    //     text.setAttribute('color', 'black'); // Change text color if necessary
-    //     text.setAttribute('scale', '2 2 2'); // Adjust text size if necessary
-    //     text.setAttribute('visible', 'false');
-    //     box.appendChild(text);
-    //   },
-    //   tick: function () {
-    //     var cameraPosition = this.camera.object3D.position;
-    //     var self = this;
 
-    //     this.triggers.forEach((trigger) => {
-    //       // Get updated position of the trigger
-    //       var triggerPosition = trigger.object3D.position;
-    //       //  //console.log("trigger position")
-    //       //   //console.log(triggerPosition)
-    //       var distance = self.distance3D(cameraPosition, triggerPosition);
-    //       // //console.log("the distance is ")
-    //       // //console.log(distance)
-    //       var boxId = trigger.getAttribute('id');
-
-    //       if (distance <= self.distanceThreshold && !self.shownBoxes.has(boxId)) {
-    //         trigger.emit('triggerenter');
-    //       } else if (distance > self.distanceThreshold && self.triggeredBoxes.has(boxId)) {
-    //         trigger.emit('triggerleave');
-    //         self.triggeredBoxes.delete(boxId);
-    //       }
-    //     });
-    //   },
-    //   distance3D: function (point1, point2) {
-    //     var dx = point1.x - point2.x;
-    //     var dy = point1.y - point2.y;
-    //     var dz = point1.z - point2.z;
-    //     return Math.sqrt(dx * dx + dy * dy + dz * dz);
-    //   }
-    // });
-
-    // AFRAME.registerComponent('alert-on-approach', {
-    //   init: function () {
-    //     this.triggered = false;
-    //     this.camera = document.getElementById('player');
-
-    //     this.stall = this.el;
-    //     var id = this.stall.getAttribute('id');
-       
-
-    //     var textValue = document.getElementById(id).querySelector('a-entity').querySelector('a-text').getAttribute('value');
-     
-    //     this.distanceThreshold = 6; // Adjust this threshold as needed
-
-    //     this.checkDistance = this.checkDistance.bind(this);
-    //     // var resetButton = document.getElementById('restartButton');
-    //     // resetButton.addEventListener('click', () => {
-    //     //   this.triggered = false;
-    //     //   //console.log("triggerd")
-    //     // });
-    //     // resetButton.addEventListener('click', this.reset);
-
-    //   },
-    //   tick: function () {
-    //     this.checkDistance();
-    //   },
-    //   checkDistance: function () {
-    //     var cameraPosition = this.camera.getAttribute('position');
-    //     var stallPosition = this.stall.getAttribute('position');
-    //     var id = this.stall.getAttribute('id')
-    //     var textValue = document.getElementById(id).querySelector('a-entity').querySelector('a-text').getAttribute('value');
-    //     var numericPart = id.match(/\d+/)[0]
-    //     var bname = document.getElementById(`bname${numericPart}`).getAttribute('value');
-        
-    //  //   console.log(bname)
-    //     //  //console.log("stall position is")
-    //     //  //console.log(stallPosition)
-    //     //  //console.log("camera position is")
-    //     //  //console.log(cameraPosition)
-    //     var distance = this.camera.object3D.position.distanceTo(stallPosition);
-    //     //  //console.log("the distance is")
-    //     //  //console.log(distance)
-    //     //  //console.log(distance < this.distanceThreshold)
-    //     if (distance < this.distanceThreshold && !this.triggered) {
-    //       // Perform your alert action here
-    //       //    //console.log('Camera is near the stall');
-    //       if(!isStallVisited(textValue)){
-    //       alert(`Camera is near the stall is ${id} and value is ${textValue} and bname is${bname}`);
-    //       document.getElementById("iframe-url").setAttribute('src', `https://stage.marketcentral.in/expo/CHAT/cfmchat.cfm?stallid=${textValue}&bname=${bname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
-    //       console.log(`https://stage.marketcentral.in/expo/CHAT/cfmchat.cfm?stallid=${textValue}&bname=${bname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
-    //       this.triggered = true;
-    //       markStallVisited(textValue);
-    //       }
-    //     }
-    //   },
-    // });
-    // $.ajax({
-    //   url: "https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses",
-    //   type: 'GET',
-    //   dataType: 'json',
-    //   success: function (response) {
-    //     console.log(response);
-    //     alert(response)
-    //   }
-    // }); 
-    // Function to mark a stall as visited
-
-// if (!isStallVisited(this.stallId)) {
-//       // Invoke your function here
-//       markStallVisited(this.stallId);
-//     }
-
-  </script>
   <script>
     $('.closeIcon').click(function(){
         $('.popUp').css('display','none');
     })
+    $('.closeImg').click(function(){
+            $('.digitalPopUp').css('display','none');
+        })
+      $('.iframeImg').click(function(){
+    $('.iframetag').css('display','none');
+    $('.iframetagContent').removeClass('active');
+
+});
+$('.infoIcon').click(function(){
+    $('.iframetagContent').toggleClass('active');
+    $('#totalIframe').css('display','flex');
+    $('#mapSection').removeClass('activeOne');
+});
+$('.mapIcon').click(function(){
+    $('#mapSection').toggleClass('activeOne');
+    $('.iframetagContent').removeClass('active');
+});
+$('#closeIcon').click(function(){
+       // $('#mapSection').attr('style', 'display: none!important');
+       $('#mapSection').removeClass('activeOne');
+   });
 </script>
 </body>
 

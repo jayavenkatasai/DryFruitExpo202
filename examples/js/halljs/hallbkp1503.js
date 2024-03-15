@@ -5,13 +5,9 @@
  const urlParams = new URLSearchParams(queryString);
 
  // Get the value of a specific parameter
- var categoryparam = urlParams.get('category');
-//  categoryparam = categoryparam.replace(/\s/g, '');
- var networkcategory= categoryparam.replace(/\s/g, '')
- var parser = new UAParser();
- var result = parser.getResult();
- var useragent =result.device.type
- var os =result.os.name
+ var category = urlParams.get('category');
+ category = category.replace(/\s/g, '');
+
 window.onload = function () {
     let newColor = window.ntExample.randomColor();
     document.getElementById('player').setAttribute('player-info', 'color', newColor);
@@ -80,49 +76,15 @@ function closePopup1() {
     popupOverlay.style.display = 'none';
 }
 
-
-// remove entities
-function removeEntities(stalls) {
-    stalls.forEach((stall, stallIndex) => {
-    let numberOfImages = stall.products.length;
-    const stallContainerId = `stall${stallIndex + 1}`;
-    // document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible","false");
-    // document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
-    for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
-        let containerEntityId = `container${imageIndex + 1}_${stallContainerId}`;
-        let parentElement = document.getElementById(stallContainerId);
-        let entityToRemove = document.getElementById(containerEntityId);
-        //document.getElementById(`popupcard${stallIndex + 1}`).setAttribute("visible", false);
-        if (parentElement && entityToRemove) {
-            // Remove the entity from the parent element
-            parentElement.removeChild(entityToRemove);
-
-    //         let popupCardElement = document.getElementById(`popup${stallIndex + 1}`);
-    // if (popupCardElement) {
-    //     popupCardElement.setAttribute("visible", false);
-    // } else {
-    //    // console.warn(`Popup card with ID '${popupCardId}' not found.`);
-    // }
-        } else {
-            console.warn(`Entity with ID '${containerEntityId}' not found in parent with ID '${stallContainerId}'.`);
-        }
-    }
-});
-}
-
 // Function to fetch data from the API and update the scene
 let requestBody={
     exhibition_ID:'3',
     start:'1',
-    end:'10',
+    end:'20',
     category:"0",
-    businesscategorylevel1:categoryparam,
+    businesscategorylevel1:"Emergency Medical Supplies",
     uno:'0'
 }
-console.log(requestBody)
-let apivariable;
-
-
 const fetchDataFromAPI = () => {
     let apiurl = 'https://stage.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
     fetch(apiurl,
@@ -348,7 +310,10 @@ const fetchDataFromAPI = () => {
                             imageElement.setAttribute("id", `img${imageIndex + 1}_${stallContainerId}`); //img1 img2 img3 img4 img5 img6 img7 img8 img9 
                             imageElement.setAttribute("width", width);
                             imageElement.setAttribute("height", height);
-                           imageElement.setAttribute("src", imageUrl); 
+                           
+                           imageElement.setAttribute("src", imageUrl);
+                            
+                          
                             imageElement.setAttribute("rotation", "0 90 0");
                             imageElement.addEventListener('click', function () {
                             document.getElementById('popup').style.display='flex'
@@ -446,204 +411,4 @@ const fetchDataFromAPI = () => {
         });
 };
 fetchDataFromAPI();
-document.addEventListener("DOMContentLoaded", function() {
 
-const previousbutton = document.getElementById('prev-hall');
-document.getElementById('next-hall').addEventListener('click',function(){
-    removeEntities(apivariable.stalls); 
-    console.log(apivariable.stalls);
-    let start1=apivariable.stalls[0].start
-    console.log(start1)
-    let end1=apivariable.stalls[0].end
-    console.log(end1)
-    //removeEntities(apivariable.stalls);
-    start= parseInt(end1)+1;
-    console.log(`the next start is ${start}`)
-    end=parseInt(start)+9;
-    console.log(`the next start is ${start}`)
-    console.log(end)
-    console.log('Start:', start); // Output: 1
-    console.log('End:', end); 
-    requestBody = {
-    exhibition_ID:'3',
-    start: `${start}`,
-    end: `${end}`,
-    category:"0",
-    businesscategorylevel1:categoryparam,
-    uno:'0'
-}; 
- fetchDataFromAPI()
-})
-previousbutton.addEventListener('click',function(){
-    removeEntities(apivariable.stalls); 
-    console.log("button is clicked for nex button")
-                let start1=apivariable.stalls[0].start
-                console.log(start1)
-                let end1=apivariable.stalls[0].end
-               start= parseInt(start1)-10;
-               end=parseInt(start)+9;
-               console.log('Start:', start1); // Output: 1
-               console.log('End:', end1);
-           //    debugger
-               requestBody = {
-                exhibition_ID:'3',
-                start: `${start}`,
-                end: `${end}`,
-                category:"0",
-                businesscategorylevel1:categoryparam,
-                uno:'0'
-                // Add other data as needed
-            };
-            fetchDataFromAPI()   
-})
-})
-
-
-if(useragent=="mobile"){
-  document.getElementById("iframe-expoDir").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm")
-}else{
-  document.getElementById("iframe-expoDir").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectory.cfm")
-}
-
-var bgContainer = document.getElementById('mapText');
-var cards = [];
-// category map js
-
-fetch('https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses/3')
-.then(response => response.json())
-.then(apiData => {
-    data = apiData; // Assign data from API to the global variable
-    console.log(data);
-    createCards(data);
-     // Enter fullscreen mode
-    //  const doc = window.document;
-    // const docEl = doc.documentElement;
-    // const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-    // requestFullScreen.call(docEl);
- 
-})
-.catch(error => console.error('Error fetching data:', error));
-
-document.getElementById('mapbutton1').addEventListener('click',showPrevious );
-document.getElementById('mapbutton2').addEventListener('click', showNext);
-
-function createCards(data) {
-for (var i = 0; i < data.length; i++) {
-    var card = document.createElement('div');
-    card.className = 'card';
-    card.id = 'card' + (i + 1);
-
-    var img = document.createElement('img');
-    img.id = 'img' + (i + 1);
-    img.src = `assets/categoryimages/${data[i].CATEGORY}.png`;
-    img.style.width = '50px';
-    img.style.height = '50px';
-
-    var h3 = document.createElement('h3');
-    h3.id = `categoryname${i + 1}`;
-    h3.textContent = data[i].CATEGORY;
-
-    var button = document.createElement('button');
-    button.id = 'button' + (i + 1);
-    button.textContent = 'Visit';
-    button.dataset.categoryIndex = i;
-    button.addEventListener('click', openLink);
-
-    card.appendChild(img);
-    card.appendChild(h3);
-    card.appendChild(button);
-
-    bgContainer.appendChild(card);
-    cards.push(card);
-}
-
-showCard(currentIndex);
-}
-function showCard(index) {
-for (var i = 0; i < cards.length; i++) {
-    cards[i].style.display = 'none';
-}
-
-for (var i = 0; i < 10 ; i++) {
-    if([index + i]<cards.length){
-    cards[index + i].style.display = 'flex';
-    document.getElementById('mapbutton2').style.display="flex"
-    }
-    else{
-        document.getElementById('mapbutton2').style.display="none"
-    }
-}
-}
-
-function showNext() {
-currentIndex = (currentIndex + 10) % cards.length;
-console.log(currentIndex)
-buttonid+=1;
-console.log(`the button is ${buttonid}`)
-if(buttonid>=1){
-console.log("before execution")
-document.getElementById('mapbutton1').style.display="flex"
-
-}
-showCard(currentIndex);
-
-}
-
-function showPrevious() {
-currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-console.log(`the before button index is ${currentIndex}`)
-buttonid-=1;
-if(buttonid==0){
-console.log("before execution")
-document.getElementById('mapbutton1').style.display="none"
-document.getElementById('mapbutton2').style.display="flex"
-
-}
-showCard(currentIndex);
-
-}
-// function showCard(index) {
-//     for (var i = 0; i < cards.length; i++) {
-//         cards[i].style.display = 'none';
-//     }
-
-//     for (var i = 0; i < 10 ; i++) {
-//         cards[index + i].style.display = 'flex';
-//     }
-// }
-
-// function showNext() {
-//     currentIndex = (currentIndex + 10) % cards.length;
-//     showCard(currentIndex);
-// }
-
-// function showPrevious() {
-//     currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-//     showCard(currentIndex);
-// }
-
-function closePopup() {
-var popupcontainer = document.getElementById('mappopup');
-popupcontainer.style.display = 'none';
-}
-
-document.getElementById('close').addEventListener('click', closePopup);
-
-function openLink(event) {
-var index = event.currentTarget.dataset.categoryIndex;
-
-// Assuming 'data' is the array obtained from the API
-var categories = data.map(item => item.CATEGORY);
-
-// Generate links based on categories
-var links = categories.map(category => `hall.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`);
-var categoriesselect=categories.map(category=>category);
-console.log(`the categories select is ${categoriesselect}`)
-console.log(categoriesselect)
-console.log(links);
-console.log(categoriesselect[index])
-//  trackExpo(0,categoriesselect[index],"")
-//trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
-// Open the link in the same window
-// window.location.href = links[index];
-}
