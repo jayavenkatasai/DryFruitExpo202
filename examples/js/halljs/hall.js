@@ -732,6 +732,7 @@ if(useragent=="mobile"){
 
 var bgContainer = document.getElementById('mapText');
 var cards = [];
+var currentIndex=0;
 // category map js
 
 fetch('https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses/3')
