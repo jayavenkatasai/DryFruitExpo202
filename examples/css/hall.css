@@ -834,3 +834,18 @@ z-index:9999;
     font-family: Roboto;
     cursor: pointer;
   }
+  #chat-icon123 {
+    position: fixed;
+    bottom: 25%;
+    right: 20px;
+    z-index: 9999999; /* Ensure the icon is above other content */
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust position for smaller screens */
+    #chat-icon123 {
+        bottom: 10px;
+        right: 10px;
+    }
+}

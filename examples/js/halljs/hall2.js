@@ -65,3 +65,11 @@ if(os=="iOS"|| os=="Mac OS"){
     document.getElementById("fullscreenButton").style.display="none"
   //   console.log("os code executed")
   }
+
+document.getElementById('chat-img').addEventListener('click',function(){
+    alert("trigger")
+    var chaturl=`https://stage.marketcentral.in/expo/CHAT/visitorpannel.cfm?stallid=123&bname=testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`
+
+    window.open(chaturl,'_blank')
+
+})

@@ -642,7 +642,33 @@ if(c){
    // console.log(`the c value is ${c}`)
     c=c+1
 }
+// posistioning the camera to original
+var stallPosition= document.getElementById('hall1').getAttribute('position')
+// Assuming 'stall1' has attributes x, y, and z
+var stallX = stallPosition.x;
+console.log(`posistion-of-stall is ${stallX}`)
+var stallY = stallPosition.y;
+console.log(`posistion-of-stall is ${stallY}`)
+var stallZ = stallPosition.z;
+
+console.log(`posistion-of-stall is ${stallZ}`)
+
+// Perform some math operations on stallX, stallY, stallZ
+var newX = stallX+0; // for example, adding 2 to the x position
+var newY = stallY+2; // subtracting 1 from the y position
+var newZ = stallZ+0; // multiplying the z position by 2
+document.getElementById('player').removeAttribute('look-controls')
+
+document.getElementById('player').setAttribute('rotation', { 
+x: 0, 
+y:  0, 
+z: 0
+});
+// Set the new position to the 'camera'
+document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+
  fetchDataFromAPI()
+ document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
 })
 previousbutton.addEventListener('click',function(){
     removeEntities(apivariable.stalls); 
@@ -669,7 +695,31 @@ previousbutton.addEventListener('click',function(){
                 c=c-1
             }
             b=b-1;
-            fetchDataFromAPI()   
+            var stallPosition= document.getElementById('hall1').getAttribute('position')
+// Assuming 'stall1' has attributes x, y, and z
+var stallX = stallPosition.x;
+console.log(`posistion-of-stall is ${stallX}`)
+var stallY = stallPosition.y;
+console.log(`posistion-of-stall is ${stallY}`)
+var stallZ = stallPosition.z;
+
+console.log(`posistion-of-stall is ${stallZ}`)
+
+// Perform some math operations on stallX, stallY, stallZ
+var newX = stallX+0; // for example, adding 2 to the x position
+var newY = stallY+2; // subtracting 1 from the y position
+var newZ = stallZ+0; // multiplying the z position by 2
+document.getElementById('player').removeAttribute('look-controls')
+
+document.getElementById('player').setAttribute('rotation', { 
+x: 0, 
+y:  0, 
+z: 0
+});
+// Set the new position to the 'camera'
+document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+fetchDataFromAPI()   
+document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
 })
 })
 

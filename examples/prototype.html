@@ -121,6 +121,9 @@
 
 <body>
   <button id="fullscreenButton">Enter Full Screen</button>
+  <div id="chat-icon123">
+    <image id="chat-img" src="assets/icons/conversation-chat-bubble-bubbles.svg" style="height: 50px; width:50px"></image>
+  </div>
 <!-- old -->
 <!-- new -->
 
@@ -303,7 +306,7 @@
                      <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
     </a-assets>
    
-    <a-entity gltf-model="#hallmodel">
+    <a-entity gltf-model="#hallmodel" id="hall1">
       <!-- camera start -->
    
      <a-entity id="player" user-height="2"  camera position="0 2.5 0" wasd-controls networked="template:#head-template;"
