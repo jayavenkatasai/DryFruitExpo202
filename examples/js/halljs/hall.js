@@ -1,11 +1,14 @@
  // Get the query string from the current URL
  const queryString = window.location.search;
-
+let c;
  // Create a new URLSearchParams object from the query string
  const urlParams = new URLSearchParams(queryString);
-
+ var startValue = urlParams.get('start');
+ var endValue = urlParams.get('end');
+ var hallnum = urlParams.get('hallnum');
  // Get the value of a specific parameter
  var categoryparam = urlParams.get('category');
+ let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
  var networkcategory= categoryparam.replace(/\s/g, '')
  var parser = new UAParser();
@@ -109,7 +112,9 @@ function removeEntities(stalls) {
     }
 });
 }
-
+document.getElementById('fullscreenButton').addEventListener('click', function() {
+    toggleFullScreen();
+  });
 // Function to fetch data from the API and update the scene
 let requestBody={
     exhibition_ID:'3',
@@ -119,10 +124,16 @@ let requestBody={
     businesscategorylevel1:categoryparam,
     uno:'0'
 }
+// category map body!!
+if(startValue){
+    c=hallnum;
+    console.log(`The value of c is ${c}`)
+    requestBody.start=startValue;
+    requestBody.end=endValue;
+}
+
 console.log(requestBody)
 let apivariable;
-
-
 const fetchDataFromAPI = () => {
     let apiurl = 'https://stage.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
     fetch(apiurl,
@@ -157,7 +168,128 @@ const fetchDataFromAPI = () => {
             } else {
                 apivariable = data;
                 console.log(apivariable)
-                
+                 // banners logic
+                 if(c){
+                    console.log("we have the c as switch case")
+                    console.log(c)
+                    c = parseInt(c);
+                switch (c) {
+                    case 1:
+                    var bannerElements = document.getElementById("ban");
+                  bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')
+                    break;
+                    case 2:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner2.glb')
+                    break;
+                    case 3:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb')
+                    break;
+                    case 4:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner4.glb');
+                        }    
+                    }
+                    break;
+                    case 5:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner5.glb');
+                        }    
+                    }
+                    break;
+                    case 6:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner6.glb');
+                        }    
+                    }
+                    break;
+                    case 7:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner7.glb');
+                        }    
+                    }
+                    break;
+                    case 8:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner8.glb');
+                        }    
+                    }
+                    break;
+                    case 9:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner9.glb');
+                        }    
+                    }
+                    break;
+                    case 10:
+                    if (bannerElements.length > 0) {
+                          for (var i = 0; i < bannerElements.length; i++) {
+                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner10.glb');
+                        }    
+                    }
+                    break;
+                }
+                console.log("The switch case is exceuted succesfully")
+                }
+                else{
+                    console.log("switch case odd is behaving")
+                    switch (b) {
+                    case 1:
+                        alert("success1")
+                    //var bannerElements = document.getElementsByClassName("banner1");
+                    var bannerElements = document.getElementById("ban");
+                     bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')   
+                    break;
+                    case 2:
+                         alert("success2")
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner2.glb') 
+                    break;
+                    case 3:
+                        alert("success3")
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 4:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 5:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 6:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 7:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 8:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 9:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                    case 10:
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                    break;
+                }
+
+
+                }
+                // banners logic end 
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
@@ -189,9 +321,41 @@ const fetchDataFromAPI = () => {
                 document.getElementById(`vendorbusinessname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.companyname);
                 document.getElementById(`vendorlogo${stallIndex + 1}`).setAttribute("src", stall.logo);
                 document.getElementById(`stallno${stallIndex + 1}`).setAttribute("value", stall.name);
+                document.getElementById(`board-name`).setAttribute('value',categoryparam)
                 document.getElementById(`sharebutton${stallIndex + 1}`).addEventListener('click',function(){
                     share(stall.uno,stall.name)
                 });
+                if(apivariable.Hallcount.nextHall=="yes"){
+                    document.getElementById("next-hall").setAttribute('visible','true')
+                    //   document.getElementById("next-hall1").setAttribute('visible','true')
+                    //     document.getElementById("next-hall2").setAttribute('visible','true')
+                }
+                else{
+                    document.getElementById("next-hall").setAttribute('visible','false')
+                    //  document.getElementById("next-hall1").setAttribute('visible','false')
+                    //     document.getElementById("next-hall2").setAttribute('visible','false')
+                }
+                if(apivariable.Hallcount.PrevHall=="yes"){
+                    document.getElementById("prev-hall").setAttribute('visible','true')
+                    //   document.getElementById("next-hall1").setAttribute('visible','true')
+                    //     document.getElementById("next-hall2").setAttribute('visible','true')
+                }
+                else{
+                    document.getElementById("prev-hall").setAttribute('visible','false')
+                    //  document.getElementById("next-hall1").setAttribute('visible','false')
+                    //     document.getElementById("next-hall2").setAttribute('visible','false')
+                }
+                if(apivariable.Hallcount.nextHall=="yes"){
+                    document.getElementById("next-hall").setAttribute('visible','true')
+                    //   document.getElementById("next-hall1").setAttribute('visible','true')
+                    //     document.getElementById("next-hall2").setAttribute('visible','true')
+                }
+                else{
+                    document.getElementById("next-hall").setAttribute('visible','false')
+                    //  document.getElementById("next-hall1").setAttribute('visible','false')
+                    //     document.getElementById("next-hall2").setAttribute('visible','false')
+                }
+              
 
 
                        // console.log(`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
@@ -277,6 +441,7 @@ const fetchDataFromAPI = () => {
 //                     );
 
 
+
                     //numberOfImages2 = data.stalls.length;
                    
                     /// -----Here for copy code popup endd----
@@ -357,7 +522,18 @@ const fetchDataFromAPI = () => {
                             document.getElementById('cost').textContent=stall.products[imageIndex].price
                             document.getElementById('prdt-units').textContent=stall.products[imageIndex].unit
                             document.getElementById('visit-prdt-btn').setAttribute('href',stall.products[imageIndex].productlink)
-                               
+                            document.getElementById('share-prdt').addEventListener('click', function showPopup() {
+                                    // var currentURL1 = window.location.href;
+                                    // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+                                    var newURL = `${stall.products[imageIndex].productlink}`;
+                                    var popupOverlay = document.getElementById('popup-overlay');
+                                    var currentURLInput = document.getElementById('currentURL');
+                                    currentURLInput.value = newURL;
+                                    document.getElementById('urlText').textContent = "Product Link"
+                                    popupOverlay.style.display = 'flex';
+                                    // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
+                                    // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
+                                })
                                
                                 // Update the text and image source of the popup
                                 // document.getElementById(`popup${stallIndex + 1}`).setAttribute("visible", true);
@@ -368,18 +544,7 @@ const fetchDataFromAPI = () => {
                                 // document.getElementById(`visitiproduct${stallIndex + 1}`).setAttribute("cursor-listener",
                                 //     `targetPage:${stall.products[imageIndex].productlink}; uno: ${stall.uno}; type: visiting-website-via-products; pdtname: ${imageDescription}`);
                                 // document.getElementById(`shareproduct${stallIndex + 1}`).addEventListener('click',
-                                //     function showPopup() {
-                                //         // var currentURL1 = window.location.href;
-                                //         // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-                                //         var newURL = `${stall.products[imageIndex].productlink}`;
-                                //         var popupOverlay = document.getElementById('popup-overlay');
-                                //         var currentURLInput = document.getElementById('currentURL');
-                                //         currentURLInput.value = newURL;
-                                //         document.getElementById('urlText').textContent = "Product Link"
-                                //         popupOverlay.style.display = 'flex';
-                                //         trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
-                                //         gtag("event", "share-stall", { 'page_title': "Hall-Page" });
-                                //     });
+                        //  );
 
 
                                 // trackExpo(stall.uno, "product", imageDescription, ipAddress);
@@ -387,40 +552,40 @@ const fetchDataFromAPI = () => {
 
 
                             // // Create popup element
-                            // const popupElement = document.createElement("a-entity");
+                            const popupElement = document.createElement("a-entity");
 
-                            // popupElement.setAttribute("id", `popup-img${imageIndex + 1}_${stallContainerId}`);
+                            popupElement.setAttribute("id", `popup-img${imageIndex + 1}_${stallContainerId}`);
 
 
-                            // // Create the content inside the popup
-                            // const popupContent = `
-                            //                 <a-plane color="#333" width="5" height="2"></a-plane>
-                            //                 <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="20"></a-text>
-                            //             `;
+                            // Create the content inside the popup
+                            const popupContent = `
+                                            <a-plane color="#333" width="5" height="2"></a-plane>
+                                            <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="20" position="0 0 0.25"></a-text>
+                                        `;
 
-                            // popupElement.innerHTML = popupContent;
+                            popupElement.innerHTML = popupContent;
                             // Append image and popup to the container
                             containerEntity.appendChild(imageElement);
-                            //containerEntity.appendChild(popupElement);
-                            // popupElement.setAttribute("position", "0.8 -0.65 0");
-                            // popupElement.setAttribute("rotation", "0 90 0");
-                            // popupElement.setAttribute("scale", "0.2 0.2 0.2");
-                            // // popupElement.setAttribute("width","0.1")
-                            // // popupElement.setAttribute("height","0.1")
-                            // popupElement.setAttribute("visible", "false");
-                            // //popupElement.setAttribute("visible", "false");
+                            containerEntity.appendChild(popupElement);
+                            popupElement.setAttribute("position", "0.8 1.5 0");
+                            popupElement.setAttribute("rotation", "0 90 0");
+                            popupElement.setAttribute("scale", "0.5 0.5 0.5");
+                            // popupElement.setAttribute("width","0.1")
+                            // popupElement.setAttribute("height","0.1")
+                            popupElement.setAttribute("visible", "false");
+                            //popupElement.setAttribute("visible", "false");
                             // console.log("the popup is the following");
                             // console.log(popupElement); 8
                             // Append container entity to the 
                             document.getElementById(stallContainerId).appendChild(containerEntity);
 
-                            // imageElement.addEventListener('mouseenter', function () {
-                            //     document.getElementById(`popup-img${imageIndex + 1}_${stallContainerId}`).setAttribute('visible', 'true');
-                            // })
+                            imageElement.addEventListener('mouseenter', function () {
+                                document.getElementById(`popup-img${imageIndex + 1}_${stallContainerId}`).setAttribute('visible', 'true');
+                            })
 
-                            // imageElement.addEventListener('mouseleave', function () {
-                            //     document.getElementById(`popup-img${imageIndex + 1}_${stallContainerId}`).setAttribute('visible', 'false');
-                            // })
+                            imageElement.addEventListener('mouseleave', function () {
+                                document.getElementById(`popup-img${imageIndex + 1}_${stallContainerId}`).setAttribute('visible', 'false');
+                            })
 
 
                         }
@@ -472,6 +637,11 @@ document.getElementById('next-hall').addEventListener('click',function(){
     businesscategorylevel1:categoryparam,
     uno:'0'
 }; 
+b=b+1;
+if(c){
+   // console.log(`the c value is ${c}`)
+    c=c+1
+}
  fetchDataFromAPI()
 })
 previousbutton.addEventListener('click',function(){
@@ -494,6 +664,11 @@ previousbutton.addEventListener('click',function(){
                 uno:'0'
                 // Add other data as needed
             };
+            if(c){
+                console.log(`the c value is ${c}`)
+                c=c-1
+            }
+            b=b-1;
             fetchDataFromAPI()   
 })
 })
@@ -636,7 +811,7 @@ var index = event.currentTarget.dataset.categoryIndex;
 var categories = data.map(item => item.CATEGORY);
 
 // Generate links based on categories
-var links = categories.map(category => `hall.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`);
+var links = categories.map(category => `prototype.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`);
 var categoriesselect=categories.map(category=>category);
 console.log(`the categories select is ${categoriesselect}`)
 console.log(categoriesselect)
@@ -645,5 +820,6 @@ console.log(categoriesselect[index])
 //  trackExpo(0,categoriesselect[index],"")
 //trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
 // Open the link in the same window
-// window.location.href = links[index];
+window.location.href = links[index];
 }
+  

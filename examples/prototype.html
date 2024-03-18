@@ -120,8 +120,10 @@
 </head>
 
 <body>
+  <button id="fullscreenButton">Enter Full Screen</button>
 <!-- old -->
 <!-- new -->
+
 <div class="digitalPopUp" id="popup">
   <div class="digitalPopUpContents">
       <img class="closeImg" src="images/digitalClose.png">
@@ -132,12 +134,13 @@
               <p class="productPrice" id="prd-price">Price : <span class="original-price" id="cost">₹2,795</span>/<span class="prodWeight"  id="prdt-units">kilogram(kg)</span></span> </p>
               <div class="productButtons d-flex">
                   <a class="visitButton" id="visit-prdt-btn" target="_blank" href="">Visit Product</a>
-                  <a class="shareButton" href="">Share Product</a>
+                  <a class="shareButton" id="share-prdt" >Share Product</a>
               </div>
           </div>
       </div>
   </div>
 </div>
+
 <!--sharestall and product  -->
 <div id="popup-overlay">
   <div id="popup-card">
@@ -153,6 +156,7 @@
       <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png"></button>
   </div>
 </div>
+
 <!-- sharestall -->
 <!-- bottom icons -->
 <div id="mapSection" class="mapSectionlass">
@@ -227,7 +231,7 @@
   <div id="iframe-container">
     <iframe id="iframe-url" src=""></iframe>
   </div>
-
+  
   <!-- <div id="iframe-container2">
     <iframe id="iframe-url2" src=""></iframe>
   </div> -->
@@ -246,9 +250,12 @@
       // localStorage.setItem('name',name)
       // alert(localStorage.getItem('UserName'))
     }
-    
+   
   </script> -->
+
   <script src="js/halljs/hall.js"></script>
+  <script src="js/halljs/hall2.js"></script>
+  <!--  -->
   <!-- iframe for expo directory -->
   <!-- <div class="iframetag" id="totalIframe">
     <div class="iframetagContent">
@@ -292,6 +299,8 @@
                   <img id="website-icon" src="assets/icons/websitelogo.png">
                   <img id="vendor-image" src="assets/icons/vendor-image.jpg">
                      <img id="share-button" src="assets/icons/shareicon.png">
+                     <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
+                     <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
     </a-assets>
    
     <a-entity gltf-model="#hallmodel">
@@ -301,8 +310,12 @@
     visible="true" xr-mode-ui="enabled:false" look-controls="magicWindowTrackingEnabled:false" simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
     touchEabled="true">
   </a-entity>
-
-
+<a-entity id="board" gltf-model="#display-board" position="0 1 0" >
+  <a-plane id="category-name-board" position="0 2.1 -6.75" color="red" height="0.5" width="1.8">
+    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="15" width="2" height="2" color="black"></a-text>
+  </a-plane>
+</a-entity>
+<a-entity id="ban" gltf-model="#banner" position="0 1 0"></a-entity>
       <!-- camera end -->
       <!-- stall 1 -->
       <a-plane position="-26.677 0.100 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"

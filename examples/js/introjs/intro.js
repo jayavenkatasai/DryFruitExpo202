@@ -17,7 +17,8 @@ if(!localStorage.getItem('GUID')){
 guid=localStorage.getItem('GUID')
 console.log(guid);
 // Example usage
-if (!sessionStorage.getItem('anotherPageLoaded')) {
+
+if (!localStorage.getItem('UserName')) {
 document.getElementById("submit-link").addEventListener('click',function(){
     var names = document.getElementById("name-value").value;
     names=names.trim();
