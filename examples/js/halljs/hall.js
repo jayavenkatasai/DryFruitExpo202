@@ -70,7 +70,7 @@ function copyToClipboard() {
     // Copy the URL to the clipboard
     navigator.clipboard.writeText(currentURL)
         .then(function () {
-            alert('URL copied to clipboard!');
+          //  alert('URL copied to clipboard!');
         })
         .catch(function (err) {
             console.error('Unable to copy to clipboard', err);
@@ -242,18 +242,18 @@ const fetchDataFromAPI = () => {
                     console.log("switch case odd is behaving")
                     switch (b) {
                     case 1:
-                        alert("success1")
+                       // alert("success1")
                     //var bannerElements = document.getElementsByClassName("banner1");
                     var bannerElements = document.getElementById("ban");
                      bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')   
                     break;
                     case 2:
-                         alert("success2")
+                        // alert("success2")
                         var bannerElements = document.getElementById("ban");
                         bannerElements.setAttribute('gltf-model','assets/banners/banner2.glb') 
                     break;
                     case 3:
-                        alert("success3")
+                       // alert("success3")
                         var bannerElements = document.getElementById("ban");
                         bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
                     break;
