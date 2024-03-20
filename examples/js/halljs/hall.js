@@ -1,4 +1,7 @@
  // Get the query string from the current URL
+
+ // calling apis on onload and unload
+
  const queryString = window.location.search;
 let c;
  // Create a new URLSearchParams object from the query string
@@ -8,9 +11,16 @@ let c;
  var hallnum = urlParams.get('hallnum');
  // Get the value of a specific parameter
  var categoryparam = urlParams.get('category');
+ if (categoryparam.includes('||')) {
+    // Replace '||' with another string
+    categoryparam = categoryparam.replace(/\|\|/g, '&');
+  }
+         
+ console.log(`the categoryparam is ${categoryparam}`)
  let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
- var networkcategory= categoryparam.replace(/\s/g, '')
+var networkcategory = categoryparam.replace(/[,\s&:/]/g, '').substring(0, 12);
+console.log(`the networked param is ${networkcategory}`)
  var parser = new UAParser();
  var result = parser.getResult();
  var useragent =result.device.type
@@ -611,8 +621,9 @@ const fetchDataFromAPI = () => {
         });
 };
 fetchDataFromAPI();
-document.addEventListener("DOMContentLoaded", function() {
 
+document.addEventListener("DOMContentLoaded", function() {
+    updatestatus()
 const previousbutton = document.getElementById('prev-hall');
 document.getElementById('next-hall').addEventListener('click',function(){
     removeEntities(apivariable.stalls); 
@@ -670,6 +681,7 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
  fetchDataFromAPI()
  document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
 })
+
 previousbutton.addEventListener('click',function(){
     removeEntities(apivariable.stalls); 
     console.log("button is clicked for nex button")
@@ -873,4 +885,4 @@ console.log(categoriesselect[index])
 // Open the link in the same window
 window.location.href = links[index];
 }
-  
+ 

@@ -73,3 +73,4 @@ document.getElementById('chat-img').addEventListener('click',function(){
     window.open(chaturl,'_blank')
 
 })
+

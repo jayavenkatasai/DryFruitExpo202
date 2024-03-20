@@ -294,7 +294,7 @@
 
       </template>
        <!-- //hallmodel  -->
-      <a-asset-item id="hallmodel" src="assets/hallmodel/hall layout empty.glb"></a-asset-item>
+      <a-asset-item id="hallmodel" src="assets/hallmodel/Hall layout with lighting 10.glb"></a-asset-item>
       <img id="broucher-icon" src="assets/icons/broucherlogo.png">
       <img id="phone-icon" src="assets/icons/phonelogo.png">
           <img id="email-icon" src="assets/icons/emaillogo.png">
@@ -319,6 +319,7 @@
   </a-plane>
 </a-entity>
 <a-entity id="ban" gltf-model="#banner" position="0 1 0"></a-entity>
+<a-entity id="five-hall" gltf-model="url(assets/hallmodel/Hall with lighting5.glb)"></a-entity>
       <!-- camera end -->
       <!-- stall 1 -->
       <a-plane position="-26.677 0.100 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
@@ -717,12 +718,12 @@
       <a-entity id="pp10" gltf-model="#chat-icon" position="25.2 5.29 -16.3" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity>
       <a-entity distance-trigger></a-entity>
       <a-plane height="150" width="70" position="1.5 0.1 -53.775" color="red" rotation="90 0 0" side="double" visible="false" class="navmesh"></a-plane>
-      <a-plane color="skyblue"width="1" height="0.4" position="8 2.5 1.8" rotation="0 180 0" id="next-hall" visible="true" side="double"
+      <a-plane color="skyblue"width="2.5" height="1" position="10 2.5 25.848" rotation="0 180 0" id="next-hall" visible="true" side="double"
      >
-      <a-text value="Next Hall" align="center" height="5" width="5" color="black" position="0 0 0.01"></a-text>
+      <a-text value="Next Hall" align="center" height="10" width="10" color="black" position="0 0 0.01"></a-text>
      </a-plane>
-     <a-plane color="skyblue" width="1.6" height="0.4" position="12 2.5 1.8"rotation="0 180 0" id="prev-hall" visible="true" side="double">
-      <a-text value="Previous Hall" align="center" height="5" width="5" color="black" position="0 0 0.01"></a-text>
+     <a-plane color="skyblue" width="2.5" height="1" position="14 2.5 25.848"rotation="0 180 0" id="prev-hall" visible="true" side="double">
+      <a-text value="Previous Hall" align="center" height="9" width="9" color="black" position="0 0 0.01"></a-text>
      </a-plane>
     </a-entity>
 
@@ -731,6 +732,55 @@
     document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`)
     console.log(networkcategory)
    // alert(category)
+ 
+   function updatestatus(){
+    console.log("it is triggerd1")
+    var uid= localStorage.getItem('GUID')
+    console.log("it is triggerd")
+     const data = {
+         exhibition_ID: 3,
+         visitor_guid: uid,
+         is_closed:0
+       };
+       // Convert data to a JSON string
+       const dataString = JSON.stringify(data);
+       // Use navigator.sendBeacon to send data to the server
+       const result = navigator.sendBeacon(
+         "https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
+         dataString
+       );
+ 
+       // Log the result of the sendBeacon call
+       if (result) {
+         console.log("Data successfully queued for sending.");
+       } else {
+         console.log("Failed to queue data for sending.");
+       }
+ }
+ 
+window.addEventListener("beforeunload", function (e) {
+    debugger
+    var uid= localStorage.getItem('GUID')
+    const data = {
+        exhibition_ID: 3,
+        visitor_guid: uid,
+        is_closed:1
+      };
+    // Convert data to a JSON string
+    const dataString = JSON.stringify(data);
+    // Use navigator.sendBeacon to send data to the server
+    const result = navigator.sendBeacon(
+        "https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
+        dataString
+      );
+
+      // Log the result of the sendBeacon call
+      if (result) {
+        console.log("Data successfully queued for sending.");
+      } else {
+        console.log("Failed to queue data for sending.");
+      }
+  });
   </script>
   <script>
     $('.closeIcon').click(function(){
