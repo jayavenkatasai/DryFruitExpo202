@@ -296,7 +296,7 @@ const fetchDataFromAPI = () => {
                         bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
                     break;
                 }
-
+                     checkhallfive(apivariable.stalls.length);
 
                 }
                 // banners logic end 
@@ -886,3 +886,20 @@ console.log(categoriesselect[index])
 window.location.href = links[index];
 }
  
+function checkhallfive(x){
+   if(x<=5){
+    document.getElementById('five-hall').setAttribute('visible','true')
+    // document.getElementById('area5').setAttribute('rotation','90 -90 0')
+    // document.getElementById('area5').removeAttribute('position')
+   
+    document.getElementById('area5').setAttribute('rotation','90 -90 0')
+    document.getElementById('area5').setAttribute('position','1.109 0.000 -65')
+    document.getElementById('pp5').setAttribute('rotation','0 0 0')
+    document.getElementById('pp5').setAttribute('position','-6.028 5.2 -67.506')
+    // document.getElementById('navmeshid').removeAttribute('gltf-model')
+    // document.getElementById('navmeshid').setAttribute('gltf-model','url(assets/hallmodels/nav mesh test 5.glb)')
+    // document.getElementById('navmeshid').setAttribute('position','0 0 0')
+    // document.getElementById('navmeshid').setAttribute('visible','false')
+
+   }
+}
