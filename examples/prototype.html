@@ -122,14 +122,14 @@
 <body>
   <button id="fullscreenButton">Enter Full Screen</button>
   <div id="chat-icon123">
-    <image id="chat-img" src="assets/icons/conversation-chat-bubble-bubbles.svg" style="height: 50px; width:50px"></image>
+    <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width:100px"></image>
   </div>
 <!-- old -->
 <!-- new -->
 
 <div class="digitalPopUp" id="popup">
   <div class="digitalPopUpContents">
-      <img class="closeImg" src="images/digitalClose.png">
+      <img class="closeImg" src="assets/icons/blueCloseIcon.png">
       <div class="productDetailsSection">
           <img class="productImg" src="images/product.png"  id="productimge">
           <div class="productDetails">
@@ -178,7 +178,7 @@
 </div>
 <div class="iframetag" id="totalIframe">
   <div class="iframetagContent">
-      <img class="iframeImg" src="assets/blueCloseIcon.png">
+      <img class="iframeImg" src="assets/icons/blueCloseIcon.png">
       <iframe id="iframe-expoDir" src="about:blank" width="800px" height="500px" allowfullscreen></iframe>
   </div>
 </div>
@@ -314,8 +314,8 @@
     touchEabled="true">
   </a-entity>
 <a-entity id="board" gltf-model="#display-board" position="0 1 0" >
-  <a-plane id="category-name-board" position="0 2.1 -6.75" color="red" height="0.5" width="1.8">
-    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="15" width="2" height="2" color="black"></a-text>
+  <a-plane id="category-name-board" position="0 2.1 -6.75" color="#0080BF" height="0.5" width="1.8">
+    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="18" width="2" height="2" color="white"></a-text>
   </a-plane>
 </a-entity>
 <a-entity id="ban" gltf-model="#banner" position="0 1 0"></a-entity>
@@ -324,7 +324,7 @@
       <!-- stall 1 -->
       <a-plane position="-26.677 0.100 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
        class="trigger" alert-on-approach id="area1">
-        <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1">
           <!-- <a-plane color="#FBFBFB" id="popup1" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane> -->
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -359,13 +359,13 @@
           </a-entity>
           <a-text id="bname1" value="12345" color="black"></a-text>
       </a-plane>
-      <a-entity id="pp1" gltf-model="#chat-icon" position="-25.5 5.487 -5.078" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener  look-at="[camera]"></a-entity>
+      <a-entity id="pp1" gltf-model="#chat-icon" position="-25 5.487 -3.8" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity>
       <!-- <a-box id="pp1" position="-26.677 0.100 -0.829" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
 
       <!-- stall 2 -->
       <a-plane position="25.098 0.100 -9.410" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area2">
-        <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="0.85 0.85 0.85" rotation="-90 0 0">
+        <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="1 1 1" rotation="-90 0 0">
           <a-plane color="#FBFBFB" id="popup2" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -399,13 +399,13 @@
 <a-text id="stallno2" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> 
         </a-entity>
       </a-plane>
-      <a-entity id="pp3" gltf-model="#chat-icon" position="-25.5 5.487 -35.5" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp3" gltf-model="#chat-icon" position="-26 5.487 -34" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
       <!-- <a-box id="pp2" position="-26.584 0.100 -33.151" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       
       <!-- stall 3 -->
       <a-plane position="-26.584 0.100 -41.96" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area3">
-        <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup3" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -440,11 +440,11 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp3" position="-27.857 0.100 -74.749" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp5" gltf-model="#chat-icon" position="-28 5.35 -64" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp5" gltf-model="#chat-icon" position="-28 5.35 -63" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
       <!-- stall 4 -->
       <a-plane position="24.85 0.100 -38.856" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area4">
-        <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup4" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -479,11 +479,11 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp4" position="-29.919 0.100 -113.891" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp7" gltf-model="#chat-icon" position="-25.2 5.3 -93.5" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp7" gltf-model="#chat-icon" position="-25.2 5.3 -92.5" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
 <!-- stall 5 -->
       <a-plane position="-27.857 0.100 -71.2" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area5">
-        <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup5" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -518,11 +518,11 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp5" position="-20.346 0.100 -126.424" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp9" gltf-model="#chat-icon" position="-16.5 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp9" gltf-model="#chat-icon" position="-17.5 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
 <!-- stall 6-->
       <a-plane position="24.961 0.100 -67.721" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area6">
-        <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup6" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -557,11 +557,11 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp6" position="12.197 0.100 -117.155" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp10" gltf-model="#chat-icon" position="9.1 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp10" gltf-model="#chat-icon" position="8 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
       <!-- stall 7 -->
       <a-plane position="-25 0.100 -100.71" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area7">
-        <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup7" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -596,12 +596,12 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp7" position="23.621 0.100 -88.070" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp8" gltf-model="#chat-icon" position="25.5 5.29 -104.2" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp8" gltf-model="#chat-icon" position="25.5 5.29 -105.5" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
 
 <!-- stall 8-->
       <a-plane position="25.454 0.100 -97.305" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area8">
-        <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup8" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -636,12 +636,12 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp8" position="23.621 0.100 -60" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp6" gltf-model="#chat-icon" position="25.2 5.29 -74.8" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp6" gltf-model="#chat-icon" position="25.2 5.29 -76" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
 
       <!-- stall 9 -->
       <a-plane position="-9.555 0.100 -121.016" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area9">
-        <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup9" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -676,11 +676,11 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp9" position="23.621 0.100 -35" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp4" gltf-model="#chat-icon" position="25.2 5.29 -46" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
+      <a-entity id="pp4" gltf-model="#chat-icon" position="25.2 5.29 -47" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity>
 <!-- stall 10 -->
       <a-plane position="16.257 0.100 -120.676" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area10">
-        <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="0.85 0.85 0.85">
+        <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
           <a-plane color="#FBFBFB" id="popup10" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" id="txt1"></a-entity> -->
@@ -715,15 +715,19 @@
         </a-entity>
       </a-plane>
       <!-- <a-box id="pp10" position="23.621 0.100 -5" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
-      <a-entity id="pp2" gltf-model="#chat-icon" position="25.2 5.29 -16.3" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity>
+      <a-entity id="pp2" gltf-model="#chat-icon" position="24 5.29 -17" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity>
       <a-entity distance-trigger></a-entity>
       <a-plane height="150" width="70" position="1.5 0.1 -53.775" color="red" rotation="90 0 0" side="double" visible="false" class="navmesh"></a-plane>
-      <a-plane color="skyblue"width="2.5" height="1" position="10 2.5 25.848" rotation="0 180 0" id="next-hall" visible="true" side="double"
+      <a-plane color="skyblue"width="2.5" height="1" position="9 2.5 27" rotation="0 180 0" id="next-hall" visible="true" side="double"
      >
       <a-text value="Next Hall" align="center" height="10" width="10" color="black" position="0 0 0.01"></a-text>
      </a-plane>
-     <a-plane color="skyblue" width="2.5" height="1" position="14 2.5 25.848"rotation="0 180 0" id="prev-hall" visible="true" side="double">
+     <a-plane color="skyblue" width="2.5" height="1" position="13 2.5 27"rotation="0 180 0" id="prev-hall" visible="true" side="double">
       <a-text value="Previous Hall" align="center" height="9" width="9" color="black" position="0 0 0.01"></a-text>
+     </a-plane>
+
+      <a-plane color="skyblue" width="7" height="7" position="-12 2.5 27" rotation="0 180 0" id="lobby-button" visible="false" side="double"  cursor-listener5="targetPage:lobby.html">
+     
      </a-plane>
     </a-entity>
 

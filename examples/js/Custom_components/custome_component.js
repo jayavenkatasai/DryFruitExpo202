@@ -229,6 +229,20 @@ AFRAME.registerComponent('cursor-listener', {
        
     }
 });
+        AFRAME.registerComponent('cursor-listener5', {
+            schema: {
+                targetPage: { type: 'string' }
+            },
+            init: function () {
+                var data = this.data;
+
+                this.el.addEventListener('click', function () {
+                
+                    window.location.href = data.targetPage;
+                   
+                });
+            }
+        });
 document.addEventListener("wheel", function (e) {
   // Get camera entity
   var cam = document.getElementById("player"); // Replace "yourCameraId" with the actual ID of your camera entity

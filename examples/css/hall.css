@@ -183,7 +183,7 @@ iframe {
 }
 #hallButtons {
     border-radius: 6px;
-    background: #1D1D1D;
+    background: #0080BF;
     display: flex !important;
     align-items: center;
     gap: 26px;
