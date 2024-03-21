@@ -11,12 +11,15 @@ let c;
  var hallnum = urlParams.get('hallnum');
  // Get the value of a specific parameter
  var categoryparam = urlParams.get('category');
+ checkurlparm(categoryparam);
  if (categoryparam.includes('||')) {
     // Replace '||' with another string
     categoryparam = categoryparam.replace(/\|\|/g, '&');
   }
          
+
  console.log(`the categoryparam is ${categoryparam}`)
+ 
  let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
 var networkcategory = categoryparam.replace(/[,\s&:/]/g, '').substring(0, 12);
@@ -774,7 +777,8 @@ for (var i = 0; i < data.length; i++) {
 
     var img = document.createElement('img');
     img.id = 'img' + (i + 1);
-    img.src = `assets/categoryimages/${data[i].CATEGORY}.png`;
+    img.src = `assets/categorymap_images/category${data[i].CATEGORY}.png`;
+    img.src = `assets/categorymap_images/category${i+1}.png`;
     img.style.width = '50px';
     img.style.height = '50px';
 
@@ -903,4 +907,10 @@ function checkhallfive(x){
     // document.getElementById('navmeshid').setAttribute('visible','false')
 
    }
+}
+function checkurlparm(urlparameter){
+    console.log("triggerd checkurlparam")
+ if(!urlparameter){
+    window.location.replace("categorymapdynmic.html")
+ }
 }
