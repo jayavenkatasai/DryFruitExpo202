@@ -174,6 +174,7 @@ const fetchDataFromAPI = () => {
 
             if (data.data) {
                 console.log(data.data.message);
+                //need to do navigation stop and popup showing no vendors available
              
             } else {
                 apivariable = data;

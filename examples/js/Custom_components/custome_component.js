@@ -25,7 +25,7 @@ AFRAME.registerComponent('distance-trigger', {
       const textValue = event.target.querySelector('a-text').getAttribute('value');
       const message = 'Camera entered ' + boxId + '\nText value: ' + textValue;
       if (!this.shownBoxes.has(boxId)) {
-        alert('Camera entered ' + message);
+       // alert('Camera entered ' + message);
         this.shownBoxes.add(boxId);
         this.triggeredBoxes.add(boxId);
         //this.createAText(boxId);
@@ -128,7 +128,8 @@ AFRAME.registerComponent('distance-trigger', {
         // Perform your alert action here
         //    //console.log('Camera is near the stall');
         if(!isStallVisited(textValue)){
-        alert(`Camera is near the stall is ${id} and value is ${textValue} and bname is${bname}`);
+        //alert(`Camera is near the stall is ${id} and value is ${textValue} and bname is${bname}`);
+        console.log(`Camera is near the stall is ${id} and value is ${textValue} and bname is${bname}`);
         document.getElementById("iframe-url").setAttribute('src', `https://stage.marketcentral.in/expo/CHAT/cfmchat.cfm?stallid=${textValue}&bname=${bname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
         console.log(`https://stage.marketcentral.in/expo/CHAT/cfmchat.cfm?stallid=${textValue}&bname=${bname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
         this.triggered = true;
