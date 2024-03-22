@@ -387,7 +387,7 @@ AFRAME.registerComponent('activate-on-approach', {
      
       if (!this.textElement.components['type-on']) {
         this.textElement.setAttribute('type-on', {
-          message: `Hello ${localStorage.getItem('UserName')} Sai, how are you?`,
+          message: `Hello ${localStorage.getItem('UserName')}, how are you?`,
           delay: 100
         });
       }

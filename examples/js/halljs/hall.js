@@ -310,7 +310,7 @@ const fetchDataFromAPI = () => {
                         
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
-                        document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
+                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
                         if(stall.websiteLink){
                         document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink}`)
                         }
@@ -899,8 +899,8 @@ function checkhallfive(x){
    
     document.getElementById('area5').setAttribute('rotation','90 -90 0')
     document.getElementById('area5').setAttribute('position','1.109 0.000 -65')
-    document.getElementById('pp5').setAttribute('rotation','0 0 0')
-    document.getElementById('pp5').setAttribute('position','-6.028 5.2 -67.506')
+    // document.getElementById('pp5').setAttribute('rotation','0 0 0')
+    // document.getElementById('pp5').setAttribute('position','-6.028 5.2 -67.506')
     // document.getElementById('navmeshid').removeAttribute('gltf-model')
     // document.getElementById('navmeshid').setAttribute('gltf-model','url(assets/hallmodels/nav mesh test 5.glb)')
     // document.getElementById('navmeshid').setAttribute('position','0 0 0')

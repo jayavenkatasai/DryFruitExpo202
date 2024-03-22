@@ -785,7 +785,7 @@ z-index:9999;
 	width: 15% !important;
 }
 #mapText {
-	background-color: rgba(251,251,251,1);
+background: #F1FDFF;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -810,7 +810,7 @@ z-index:9999;
 .card button {
 	padding: 7px 10px;
 	border-radius: 5px;
-	background: #1B3D6E;
+    background: #F65927;
 	color: #fff;
 	width: 100%;
 	max-width: 155px;
