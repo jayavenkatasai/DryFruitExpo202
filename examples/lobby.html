@@ -1,39 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
     <title>Hospital And Medical Supplies Expo</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/intro.css" />
-    
-    <script src="js/ip-address.js"></script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-  </head>
-  <body>
-    <div class="intro">
-      <div
-        class="introContents"
-        style="
-          background-image: url('assets/background_images/digitalIntroImg.png');
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-        "
-      >
-        <div class="introText">
-          <h4 class="welcomeText">Coming Soon</h4>
-          <h3 class="hsptltext">Stay Tuned<span>For Lobby</span></h3>
-      
+    <meta name="description" content="Nametag — Networked-Aframe" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
+  <script src="/easyrtc/easyrtc.js"></script>
+  <script src="/dist/networked-aframe.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+  <script src="/js/spawn-in-circle.component.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
+  <link rel="stylesheet" href="css/lobby.css">
+  <!-- <script src="/js/script.js"></script>-->
+  <script src="/js/simple-navmesh-constraint.js"></script>
+  <script src="/js/joystick.js"></script>
+
+  <script src="js/Custom_components/custome_component.js"></script>
+  <script src="js/track js/ua-parser.js"></script>
+ 
+</head>
+<body>
+  <!--  -->
+  <button id="fullscreenButton">Enter Full Screen</button>
+  <div id="snackbarContent">
+  <div id="snackbar">Poor internet connection detected. Please ensure a stable internet connection</div>
+</div>
+  <!-- <div class="orientation-screen">
+      <h1 id="device-orientation">Screen Orientation is</h1>
+  </div> -->
+  <div class="iframetag" id="totalIframe">
+    <div class="iframetagContent">
+      <img class="iframeImg" src="assets/blueCloseIcon.png" />
+      <iframe
+        width="800px"
+        height="500px"
+        id="iframe-expo"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+<div id="parent">
+<div id="mappopup">
+
+   <div id="bg">
+    <image src="assets/loadingicon-1.png" id="apiload" class="rotating"  height="50px" width="50px"></image>
+        <div id="pagination">
+          <img
+            id="mapbutton1"
+            src="assets/arrow-circle-left.png"
+            style="width: 40px; height: 40px"
+          />
+          <img
+            id="mapbutton2"
+            src="assets/arrow-circle-left (1).png"
+            style="width: 40px; height: 40px"
+          />
+        </div>
+        <div id="Backbtn">
+          <button id="close">
+            <img src="assets/blueCloseIcon.png" />
+          </button>
         </div>
       </div>
     </div>
-  </body>
-  <!-- <script src="/js/introjs/intro.js"></script> -->
+  </div>
+  <!--  -->
+    <a-scene cursor="rayOrigin:mouse"> 
+        <a-assets>
+ 
+            <!-- //hallmodel  -->
+            <a-asset-item id="lobbymodel" src="assets/lobbymodels/lobby draft3.glb"></a-asset-item>
+        </a-assets>
+ 
+        <a-entity gltf-model="#lobbymodel">
+            <!-- category map  -->
+            <a-plane position="3.5 1.2 -2.5" width="5" height="3" rotation="0 0 0.5" color="red" visible="true" cursor-listener3></a-plane>
+            <a-plane id="category-map" color="white" position="3.5 1.2 -2.5" width="3" height="0.8" rotation="0 0 0"
+            cursor-listener3 >
+                <a-text value="Category Map" align="center" width="9" height="9" depth="1" color="black"
+                    position="0 0 0.1"></a-text>
+            </a-plane>
+            <!-- visit webinar  -->
+            <a-plane position="-3.5 1.2 -2.5" width="5" height="3" rotation="0 0 0" color="red" visible="false"  cursor-listener="targetPage:welcomeback.html"></a-plane>
+            <a-plane color="white" id="visit-webinar" position="-3.5 1.2 -2.5" width="3" height="0.8"
+                cursor-listener="targetPage:welcomeback.html" rotation="0 0 0"
+               >
+                <a-text value="Visit Webinar" align="center" width="9" height="9" depth="1" color="black"
+                    position="0 0 0.1"></a-text>
+            </a-plane>
+          <a-plane  position="-3.500 1.2 4.063" width="5" height="3" cursor-listeneriframe></a-plane>
+        </a-entity>
+        <a-entity camera id="camera" user-height="2" position="0 2 10" look-controls="magicWindowTrackingEnabled:false"
+            touchEabled="true" wasd-controls="acceleration:50" xr-mode-ui="enabled: false"></a-entity>
+    </a-scene>
+    <script src="js/lobbyjs/lobby.js"></script>
+    </body>
+ 
 </html>
