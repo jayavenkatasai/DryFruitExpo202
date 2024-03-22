@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -40,6 +40,57 @@
         // e.preventDefault();
         // e.returnValue = "";
         console.log("trigger2");
+      });
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-plane color="red" width="2" height="2" position="-1 1.5 -3.5">
+      <a-entity
+        position="0 0 0.25"
+        text="value: Letter by Letter Animation; color: black;width:10;height:10"
+        id="text"
+      
+      ></a-entity>
+    </a-plane>
+    </a-scene>
+
+    <script>
+      AFRAME.registerComponent("type-on", {
+        schema: {
+          message: { type: "string", default: "" },
+          delay: { type: "number", default: 50 }
+        },
+        init: function () {
+          this.el.setAttribute("text", { value: "" });
+          this.typeNextLetter();
+        },
+        typeNextLetter: function () {
+          var message = this.data.message;
+          var delay = this.data.delay;
+          var currentIndex = this.el.getAttribute("text").value.length;
+
+          if (currentIndex < message.length) {
+            var currentText = this.el.getAttribute("text").value;
+            var nextLetter = message[currentIndex];
+            this.el.setAttribute("text", { value: currentText + nextLetter });
+            setTimeout(
+              this.typeNextLetter.bind(this),
+              delay
+            );
+          }
+        }
+      });
+
+      document.querySelector("#text").setAttribute("type-on", {
+        message: `Hai sai How can i Help you`,
+        delay: 100
       });
     </script>
   </body>
