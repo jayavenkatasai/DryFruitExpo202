@@ -88,7 +88,7 @@ html, body {
           top: 0;
         }
         #bg {
-          background-color: rgba(251, 251, 251, 1);
+          background-color: #F1FDFF;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
@@ -129,7 +129,7 @@ html, body {
         .card button {
           padding: 7px 10px;
           border-radius: 5px;
-          background: #1b3d6e;
+          background: #F65927;
           color: #fff;
           width: 100%;
           max-width: 155px;
