@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="category">
                 <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
                 <p class="categoryName">${category.CATEGORY}</p>
-                <a href="prototype.html?category=${category.CATEGORY}" class="visitCategory" target="_self">Visit</a>
+                <a href="prototype.html?category=${encrypt(category.CATEGORY)}" class="visitCategory" target="_self">Visit</a>
             </div>
         `;
     }

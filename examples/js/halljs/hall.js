@@ -10,7 +10,7 @@ let c;
  var endValue = urlParams.get('end');
  var hallnum = urlParams.get('hallnum');
  // Get the value of a specific parameter
- var categoryparam = urlParams.get('category');
+ var categoryparam = decrypt(urlParams.get('category'));
  checkurlparm(categoryparam);
  if (categoryparam.includes('||')) {
     // Replace '||' with another string
@@ -55,7 +55,11 @@ function markStallVisited(stallId) {
 function share(uno,name){
     var currentURL1 = window.location.href;
     var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-    var newURL = `${baseURL}sharestall.html?uno=${uno}&stallno=${name}`;
+    console.log(typeof uno)
+    console.log(uno)
+    var newURL = `${baseURL}sharestall.html?uno=${encryptWithCasePreservation(uno.toString())}&stallno=${name}`;
+
+    console.log(newURL)
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
     document.getElementById('urlText').textContent = "Stall Link"
@@ -83,7 +87,7 @@ function copyToClipboard() {
     // Copy the URL to the clipboard
     navigator.clipboard.writeText(currentURL)
         .then(function () {
-          //  alert('URL copied to clipboard!');
+          alert('URL copied to clipboard!');
         })
         .catch(function (err) {
             console.error('Unable to copy to clipboard', err);
@@ -177,6 +181,7 @@ const fetchDataFromAPI = () => {
 
             if (data.data) {
                 console.log(data.data.message);
+               
                 //need to do navigation stop and popup showing no vendors available
              
             } else {
@@ -879,7 +884,7 @@ var index = event.currentTarget.dataset.categoryIndex;
 var categories = data.map(item => item.CATEGORY);
 
 // Generate links based on categories
-var links = categories.map(category => `prototype.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`);
+var links = categories.map(category => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`);
 var categoriesselect=categories.map(category=>category);
 console.log(`the categories select is ${categoriesselect}`)
 console.log(categoriesselect)

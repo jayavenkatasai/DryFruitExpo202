@@ -161,7 +161,7 @@ function createCards(data) {
 
     // Generate links based on categories
     var links = categories.map(
-      (category) => `prototype.html?category=${encodeURIComponent(category.replace(/&/g, '||'))}`
+      (category) => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`
     );
     var categoriesselect = categories.map((category) => category);
     //console.log(`the categories select is ${categoriesselect}`);
