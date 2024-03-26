@@ -52,7 +52,14 @@ document.getElementById("submit-link").addEventListener('click',function(){
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                window.location.replace("categorymapdynmic.html")
+                document.querySelectorAll('.introText').forEach(function(element) {
+                    element.style.display = "none";
+                });
+                
+                document.querySelectorAll('.threeImages').forEach(function(element) {
+                    element.style.display = "block";
+                });
+              //  window.location.replace("categorymapdynmic.html")
                 // const responseData = await response.json();
                 // console.log('Response:', responseData);
                 
@@ -79,16 +86,38 @@ else{
     window.location.replace("welcomeback.html")
 }
 
-function displayImageId(img) {
-    // Remove border from previously selected image
-    document.querySelectorAll('.image-container img').forEach(function(img) {
-        img.classList.remove('selected');
+// $('.images img').click(function(){
+//     $('.continueExpoButton button').css("background","#F65927");
+//     $('.images img').removeClass("mainImg");
+//     $(this).addClass("mainImg")
+//     // $(this).removeClass("active")
+// })
+// Select all elements with class 'images' and 'continueExpoButton'
+var imageElements = document.querySelectorAll('.images img');
+var continueExpoButton = document.querySelector('.continueExpoButton button');
+
+// Iterate over each image element and attach click event listeners
+imageElements.forEach(function(img) {
+    img.addEventListener('click', function() {
+        // Change background color of button
+        continueExpoButton.style.background = "#F65927";
+
+        // Remove 'mainImg' class from all images
+        imageElements.forEach(function(img) {
+            img.classList.remove("mainImg");
+        });
+
+        // Add 'mainImg' class to the clicked image
+        this.classList.add("mainImg");
     });
+});
 
-    // Add border to the clicked image
-    img.classList.add('selected');
+document.querySelector('.continueExpoButton').addEventListener('click',function(){
+    window.location.replace("categorymapdynmic.html")
+})
 
-    // Display the ID of the clicked image
+function displayImageId(img) {
+
     document.getElementById('displayId').textContent = img.id;
    localStorage.setItem('Avthar',img.id) 
  }

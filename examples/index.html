@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/intro.css" />
-    
+      
     <script src="js/ip-address.js"></script>
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   </head>
@@ -34,22 +34,37 @@
             <img src="assets/icons/userIcon.png" />
             <input type="text" placeholder="Enter name" id="name-value" />
           </div>
-          <h2>Choose Your Avthar</h2>
-          <br>
-          <div class="image-container">
-            <img src="assets/Avthars/Avthar1.png" id="avthar1" onclick="displayImageId(this)" class="selected"> 
-            <img src="assets/Avthars/Avthar2.png" id="avthar2" onclick="displayImageId(this)">
-            <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)">
-           </div>
-           
-<div class="image-id">
-  <h2 id="displayId"></h2>
- </div>
+       
+
           <div class="enterExpoButton" id="enterExpo-btn">
             <button id="submit-link">Enter Expo</button>
           </div>
         </div>
+        
+        <div class="threeImages" style="text-align: center;">
+          <h2>Choose Your Avthar</h2>
+        <br>
+          <div class="threeImagesContents">
+              <div class="images">
+                  <img class="mainImg" src="assets/Avthars/Avthar1.png" id="avthar1" onclick="displayImageId(this)" >
+              </div>
+              <div class="images">
+                  <img src="assets/Avthars/Avthar2.png" id="avthar2" onclick="displayImageId(this)" >
+              </div>
+              <div class="images">
+                  <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
+              </div>
+          </div>
+          <div class="image-id">
+            <h2 id="displayId"></h2>
+           </div>
+          <div class="continueExpoButton">
+              <button>Continue</button>
+          </div>
       </div>
+      
+    </div>
+</div>
     </div>
   </body>
   <script src="/js/introjs/intro.js"></script>
