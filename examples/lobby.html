@@ -18,7 +18,7 @@
     <!-- <script src="/js/script.js"></script>-->
     <script src="/js/simple-navmesh-constraint.js"></script>
     <script src="/js/joystick.js"></script>
-
+    <script src="js/Custom_components/cursor-listener.js"></script>
     <script src="js/Custom_components/custome_component.js"></script>
     <script src="js/track js/ua-parser.js"></script>
   </head>
@@ -95,14 +95,15 @@
         ></a-image>
         <!-- category map  -->
         <a-plane
-          position="3.5 1.2 -2.5"
-          width="5"
-          height="3"
-          rotation="0 0 0.5"
-          color="red"
-          visible="false"
-          cursor-listener3
-        ></a-plane>
+        position="4 1.11 -2.7"
+        width="4.39"
+        height="2.1"
+        rotation="0 0 0"
+        material="color: grey"
+        animation="property: components.material.material.color; type: color; from: grey; to: white; dur: 2000; loop: true"
+        visible="true"
+        cursor-listener3
+      ></a-plane>
         <!-- <a-plane
           id="category-map"
           color="white"
@@ -124,12 +125,14 @@
         </a-plane> -->
         <!-- visit webinar  -->
         <a-plane
-          position="-3.5 1.2 -2.5"
-          width="5"
-          height="3"
+          position="-4 1.11 -2.7"
+          width="4.39"
+          height="2.1"
           rotation="0 0 0"
-          color="red"
-          visible="false"
+             id="visit-webinar"
+          material="color: grey"
+          animation="property: components.material.material.color; type: color; from: grey; to: white; dur: 2000; loop: true"
+          visible="true"
           cursor-listener="targetPage:webinar.html"
         ></a-plane>
         <!-- <a-plane

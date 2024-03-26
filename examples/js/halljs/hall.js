@@ -19,7 +19,7 @@ let c;
          
 
  console.log(`the categoryparam is ${categoryparam}`)
- 
+
  let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
 var networkcategory = categoryparam.replace(/[,\s&:/]/g, '').substring(0, 12);
@@ -181,7 +181,11 @@ const fetchDataFromAPI = () => {
 
             if (data.data) {
                 console.log(data.data.message);
-               
+               if(data.data.message==='No Records Found'){
+                document.getElementById('overLaySection').style.display="flex";
+                document.getElementById('player').removeAttribute('wasd-controls')
+                document.getElementById("scene1").removeAttribute('joystick');
+               }
                 //need to do navigation stop and popup showing no vendors available
              
             } else {
@@ -625,6 +629,8 @@ const fetchDataFromAPI = () => {
         })
         .catch(error => {
             // Handle fetch errors
+            document.getElementById('overLaySection').style.display="flex";
+            document.querySelector('h3').textContent = 'Something Went Wrong Please Try Again Later';
             console.error('Error fetching data:', error);
 
         });

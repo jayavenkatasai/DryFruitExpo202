@@ -74,3 +74,8 @@ document.getElementById('chat-img').addEventListener('click',function(){
 
 })
 
+
+
+function avtharassign(avthar){
+    document.getElementById('boy-character').setAttribute('src',`assets/3dmodels/${avthar}.glb`)
+}

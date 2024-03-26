@@ -29,11 +29,22 @@
       >
         <div class="introText">
           <h4 class="welcomeText">Welcome to</h4>
-          <h3 class="hsptltext">Hospital and Medical <span>Supplies Expo</span></h3>
+          <h4 class="hsptltext">Hospital and Medical <span>Supplies Expo</span></h4>
           <div class="inputText">
             <img src="assets/icons/userIcon.png" />
             <input type="text" placeholder="Enter name" id="name-value" />
           </div>
+          <h2>Choose Your Avthar</h2>
+          <br>
+          <div class="image-container">
+            <img src="assets/Avthars/Avthar1.png" id="avthar1" onclick="displayImageId(this)" class="selected"> 
+            <img src="assets/Avthars/Avthar2.png" id="avthar2" onclick="displayImageId(this)">
+            <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)">
+           </div>
+           
+<div class="image-id">
+  <h2 id="displayId"></h2>
+ </div>
           <div class="enterExpoButton" id="enterExpo-btn">
             <button id="submit-link">Enter Expo</button>
           </div>

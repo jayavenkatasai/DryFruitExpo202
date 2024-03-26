@@ -138,3 +138,19 @@ p,h1,h2,h3,h4,h5,h6{
   border: none;
   cursor: pointer;
 }
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+ }
+ .image-container img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+ }
+ .image-id {
+    text-align: center;
+ }
+ .selected {
+    border: 2px solid blue;
+ }

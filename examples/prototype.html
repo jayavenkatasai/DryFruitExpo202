@@ -117,6 +117,9 @@
         if (secondNametag) secondNametag.setAttribute('value', this.data.name);
       }
     });
+
+    //document.getElementById('model').setAttribute('gltf-model','url(assets/3dmodels/avthar1.glb)')
+   
   </script>
   
 </head>
@@ -128,6 +131,11 @@
   </div>
 <!-- old -->
 <!-- new -->
+<div id="overLaySection">
+  <div id="overLayContent">
+      <h3>Currently No vendors are available in this category</h3>
+  </div>
+</div>
 
 <div class="digitalPopUp" id="popup">
   <div class="digitalPopUpContents">
@@ -280,11 +288,11 @@
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
       <a-asset-item id="stall" src="assets/stallmodel/stall with avatar empty.glb"></a-asset-item>
        <!-- //3dcharacter  -->
-      <a-mixin id="boy-character" src="assets/3dmodels/Male_LongSleeve.glb" person-events-component>
-      </a-mixin>
+      <a-asset-item id="boy-character" src="assets/3dmodels/avthar1.glb" >
+      </a-asset-item>
       <template id="head-template">
         <a-entity class="avatar">
-          <a-entity gltf-model="#boy-character" class="model" position="0 -4 2" visible="true" scale="1 1 1"
+          <a-entity id="model-id" gltf-model="#boy-character" class="model" position="0 -4 2" visible="true" scale="2 2 2"
             rotation="0 180 0">
           </a-entity>
           <a-plane color="red" position="0.25 1.25 2" scale="2 0.5 0.1" side="double" look-at="[camera]">
@@ -293,7 +301,6 @@
             <a-text class="nametag" value="?" position="0 0.1 1.2" align="center" color="black"></a-text>
           </a-plane>
         </a-entity>
-
       </template>
        <!-- //hallmodel  -->
       <a-asset-item id="hallmodel" src="assets/hallmodel/Hall layout with lighting 10.glb"></a-asset-item>
@@ -844,6 +851,15 @@ $('#closeIcon').click(function(){
        // $('#mapSection').attr('style', 'display: none!important');
        $('#mapSection').removeClass('activeOne');
    });
+   document.addEventListener('DOMContentLoaded', function() {
+   console.log(document.getElementById('player'))
+   console.log(document.getElementById('boy-character'))
+   let avthar = localStorage.getItem('Avthar')
+   avtharassign(avthar)
+  // document.getElementById('boy-character').setAttribute('src','assets/3dmodels/avthar2.glb')
+   //document.querySelector('#player').querySelector('#model-id').setAttribute('gltf-model', 'url(assets/3dmodels/avthar2.glb)');
+
+   })
 </script>
 </body>
 

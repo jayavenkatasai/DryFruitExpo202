@@ -4,8 +4,9 @@ let c;
  // Create a new URLSearchParams object from the query string
  const urlParams = new URLSearchParams(queryString);
  var hallnum = urlParams.get('hallnum')
- var cid = decodeURIComponent(urlParams.get("uno"));
-
+ var cid = urlParams.get("uno");
+ checkurlparm(cid);
+cid= decodeURIComponent(urlParams.get("uno"));
  cid=decryptWithCasePreservation(cid)
 
  console.log(typeof cid)
@@ -61,7 +62,7 @@ let requestBody={
     uno:cid
 }
 
-// checkurlparm(cid);
+
 console.log(requestBody)
 let apivariable;
 const fetchDataFromAPI = () => {

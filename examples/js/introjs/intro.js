@@ -78,3 +78,18 @@ document.getElementById("submit-link").addEventListener('click',function(){
 else{
     window.location.replace("welcomeback.html")
 }
+
+function displayImageId(img) {
+    // Remove border from previously selected image
+    document.querySelectorAll('.image-container img').forEach(function(img) {
+        img.classList.remove('selected');
+    });
+
+    // Add border to the clicked image
+    img.classList.add('selected');
+
+    // Display the ID of the clicked image
+    document.getElementById('displayId').textContent = img.id;
+   localStorage.setItem('Avthar',img.id) 
+ }
+ localStorage.setItem('Avthar','avthar1')
