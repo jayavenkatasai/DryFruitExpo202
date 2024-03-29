@@ -1,3 +1,7 @@
+//urlendpoint 
+var urlendpoint = 'https://stage.marketcentral.in';
+
+
 function generateGUID() {
     // Generate random hexadecimal digits
     function s4() {
@@ -31,7 +35,7 @@ document.getElementById("submit-link").addEventListener('click',function(){
        // alert(guid);
        
         var apiname=localStorage.getItem('UserName')
-        const url = 'https://stage.marketcentral.in/rest/virtualExpo/general/AddVisitors';
+        const url = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
         const requestBody = {
             exhibition_ID: 3,
             visitor_guid: guid,
@@ -93,24 +97,16 @@ else{
 //     // $(this).removeClass("active")
 // })
 // Select all elements with class 'images' and 'continueExpoButton'
-var imageElements = document.querySelectorAll('.images img');
-var continueExpoButton = document.querySelector('.continueExpoButton button');
-
-// Iterate over each image element and attach click event listeners
-imageElements.forEach(function(img) {
-    img.addEventListener('click', function() {
-        // Change background color of button
-        continueExpoButton.style.background = "#F65927";
-
-        // Remove 'mainImg' class from all images
-        imageElements.forEach(function(img) {
-            img.classList.remove("mainImg");
+document.querySelectorAll('.images').forEach(function(image) {
+    image.addEventListener('click', function() {
+        document.querySelector('.continueExpoButton button').style.background = "#F65927";
+        document.querySelectorAll('.images').forEach(function(img) {
+            img.classList.remove('mainImg');
         });
-
-        // Add 'mainImg' class to the clicked image
-        this.classList.add("mainImg");
+        this.classList.add('mainImg');
     });
 });
+
 
 document.querySelector('.continueExpoButton').addEventListener('click',function(){
     window.location.replace("categorymapdynmic.html")
@@ -118,7 +114,7 @@ document.querySelector('.continueExpoButton').addEventListener('click',function(
 
 function displayImageId(img) {
 
-    document.getElementById('displayId').textContent = img.id;
+    // document.getElementById('displayId').textContent = img.id;
    localStorage.setItem('Avthar',img.id) 
  }
  localStorage.setItem('Avthar','avthar1')

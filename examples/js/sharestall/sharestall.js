@@ -1,4 +1,5 @@
-
+//urlendpoint 
+var urlendpoint = 'https://stage.marketcentral.in';
 const queryString = window.location.search;
 let c;
  // Create a new URLSearchParams object from the query string
@@ -66,7 +67,7 @@ let requestBody={
 console.log(requestBody)
 let apivariable;
 const fetchDataFromAPI = () => {
-    let apiurl = 'https://stage.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
+    let apiurl = `${urlendpoint}/rest/virtualExpo/general/virtualExhibitionDetails`;
     fetch(apiurl,
         {
             method: 'POST',
@@ -315,7 +316,7 @@ var cards = [];
 var currentIndex=0;
 // category map js
 
-fetch('https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses/3')
+fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/3`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable

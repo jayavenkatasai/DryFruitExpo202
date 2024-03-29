@@ -28,8 +28,12 @@
         "
       >
         <div class="introText">
+          <div class="logoContents">
+              <img class="logoImg" src="assets/logo/digiExpoLogo.png">
+              <img class="poweredBy" src="assets/logo/poweredByImg.png">
+          </div>
           <h4 class="welcomeText">Welcome to</h4>
-          <h4 class="hsptltext">Hospital and Medical <span>Supplies Expo</span></h4>
+          <h4 class="hsptltext">Hospital and Medical Supplies Expo</span></h4>
           <div class="inputText">
             <img src="assets/icons/userIcon.png" />
             <input type="text" placeholder="Enter name" id="name-value" />
@@ -42,21 +46,23 @@
         </div>
         
         <div class="threeImages" style="text-align: center;">
-          <h2>Choose Your Avthar</h2>
+          <h2>Choose Your Avatar</h2>
         <br>
           <div class="threeImagesContents">
-              <div class="images">
-                  <img class="mainImg" src="assets/Avthars/Avthar1.png" id="avthar1" onclick="displayImageId(this)" >
+              <div class="images" id="avthar1" onclick="displayImageId(this)">
+                  <img class="maleAvtar" src="assets/Avthars/Avthar1.png" >
+                  <img class="chosenMaleAvtar" src="assets/Avthars/chosenMaleAvatar.png" >
               </div>
-              <div class="images">
-                  <img src="assets/Avthars/Avthar2.png" id="avthar2" onclick="displayImageId(this)" >
+              <div class="images" id="avthar2" onclick="displayImageId(this)">
+                  <img class="femaleAvtar" src="assets/Avthars/Avthar2.png">
+                  <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png">
               </div>
-              <div class="images">
+              <!-- <div class="images">
                   <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
-              </div>
+              </div> -->
           </div>
           <div class="image-id">
-            <h2 id="displayId"></h2>
+            <!-- <h2 id="displayId"></h2> -->
            </div>
           <div class="continueExpoButton">
               <button>Continue</button>

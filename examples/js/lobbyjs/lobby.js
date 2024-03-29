@@ -1,4 +1,6 @@
-
+//urlendpoint 
+var urlendpoint = 'https://stage.marketcentral.in';
+const endpoint_ExhibitionId = '3';
 var bgContainer = document.getElementById("bg");
 console.log(bgContainer)
 var ang=0;
@@ -14,7 +16,7 @@ AFRAME.registerComponent("cursor-listener3", {
         // alert("component called")
         // Extract button ID from the element
         fetch(
-    "https://stage.marketcentral.in/rest/virtualExpo/general/getBusinesses/3"
+    `${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`
   )
     .then((response) => response.json())
     .then((apiData) => {
@@ -196,10 +198,10 @@ var os =result.os.name
 //console.log(`the os type is ${os}`)
 //console.log(`the device type is ${useragent}`)
 if(useragent=="mobile"){
-  document.getElementById("iframe-expo").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm")
+  document.getElementById("iframe-expo").setAttribute("src",`${urlendpoint}/expo/expoDirectoryMobile.cfm`)
   // $(".webinarAndExpocard").css("display", "flex");
 }else{
-  document.getElementById("iframe-expo").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectory.cfm")
+  document.getElementById("iframe-expo").setAttribute("src",`${urlendpoint}/expo/expoDirectory.cfm`)
   // $(".webinarAndExpocard").css("display", "none");
 }
 if(os=="iOS"|| os=="Mac OS"){

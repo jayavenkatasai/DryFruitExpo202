@@ -1,4 +1,9 @@
- // Get the query string from the current URL
+//urlendpoint 
+var urlendpoint = 'https://stage.marketcentral.in';
+const endpoint_ExhibitionId = '3';
+
+
+// Get the query string from the current URL
 
  // calling apis on onload and unload
 
@@ -18,7 +23,14 @@ let c;
   }
          
 
- console.log(`the categoryparam is ${categoryparam}`)
+console.log(`the categoryparam is ${categoryparam}`)
+ 
+
+
+if (!localStorage.getItem('UserName'))
+{
+ window.location.replace("index.html")
+    }
 
  let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
@@ -152,7 +164,7 @@ if(startValue){
 console.log(requestBody)
 let apivariable;
 const fetchDataFromAPI = () => {
-    let apiurl = 'https://stage.marketcentral.in/rest/virtualExpo/general/virtualExhibitionDetails';
+    let apiurl = `${urlendpoint}/rest/virtualExpo/general/virtualExhibitionDetails`;
     fetch(apiurl,
         {
             method: 'POST',
@@ -181,10 +193,11 @@ const fetchDataFromAPI = () => {
 
             if (data.data) {
                 console.log(data.data.message);
-               if(data.data.message==='No Records Found'){
-                document.getElementById('overLaySection').style.display="flex";
-                document.getElementById('player').removeAttribute('wasd-controls')
-                document.getElementById("scene1").removeAttribute('joystick');
+               if(data.data.message==='No records found'){
+                // document.getElementById('overLaySection').style.display="flex";
+                // document.getElementById('player').removeAttribute('wasd-controls')
+                   // document.getElementById("scene1").removeAttribute('joystick');
+                    window.location.replace("categorymapdynmic.html")
                }
                 //need to do navigation stop and popup showing no vendors available
              
@@ -199,7 +212,7 @@ const fetchDataFromAPI = () => {
                 switch (c) {
                     case 1:
                     var bannerElements = document.getElementById("ban");
-                  bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')
+                  bannerElements.setAttribute('gltf-model','assets/hallmodel/Hall 1 grp.glb')
                     break;
                     case 2:
                         var bannerElements = document.getElementById("ban");
@@ -268,7 +281,7 @@ const fetchDataFromAPI = () => {
                        // alert("success1")
                     //var bannerElements = document.getElementsByClassName("banner1");
                     var bannerElements = document.getElementById("ban");
-                     bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')   
+                     bannerElements.setAttribute('gltf-model','assets/hallmodel/Hall 1 grp.glb')   
                     break;
                     case 2:
                         // alert("success2")
@@ -752,9 +765,9 @@ document.getElementById('player').setAttribute('look-controls', 'magicWindowTrac
 
 
 if(useragent=="mobile"){
-  document.getElementById("iframe-expoDir").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm")
+  document.getElementById("iframe-expoDir").setAttribute("src",`${urlendpoint}/expo/expoDirectoryMobile.cfm`)
 }else{
-  document.getElementById("iframe-expoDir").setAttribute("src","https://stage.marketcentral.in/expo/expoDirectory.cfm")
+  document.getElementById("iframe-expoDir").setAttribute("src",`${urlendpoint}/expo/expoDirectory.cfm`)
 }
 
 var bgContainer = document.getElementById('mapText');
@@ -762,7 +775,7 @@ var cards = [];
 var currentIndex=0;
 // category map js
 
-fetch('https://dev.marketcentral.in/rest/virtualExpo/general/getBusinesses/3')
+fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable
@@ -910,18 +923,23 @@ function checkhallfive(x){
    
     document.getElementById('area5').setAttribute('rotation','90 -90 0')
     document.getElementById('area5').setAttribute('position','1.109 0.000 -65')
-    // document.getElementById('pp5').setAttribute('rotation','0 0 0')
-    // document.getElementById('pp5').setAttribute('position','-6.028 5.2 -67.506')
-    // document.getElementById('navmeshid').removeAttribute('gltf-model')
-    // document.getElementById('navmeshid').setAttribute('gltf-model','url(assets/hallmodels/nav mesh test 5.glb)')
-    // document.getElementById('navmeshid').setAttribute('position','0 0 0')
-    // document.getElementById('navmeshid').setAttribute('visible','false')
+    document.getElementById('bubble5').setAttribute('rotation','0 0 0')
+    document.getElementById('bubble5').setAttribute('position','-4 5.2 -67.506')
+    document.getElementById('navmeshmodel_10').removeAttribute('gltf-model')
+    document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @5 navmesh.glb)')
+    document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
+    document.getElementById('navmeshmodel_10').setAttribute('visible','true')
 
    }
 }
 function checkurlparm(urlparameter){
     console.log("triggerd checkurlparam")
- if(!urlparameter){
-    window.location.replace("categorymapdynmic.html")
+    if (!urlparameter) {
+        if (!localStorage.getItem('UserName')) {
+            window.location.replace("index.html")
+        }
+        else {
+            window.location.replace("categorymapdynmic.html")
+        }
  }
 }
