@@ -212,7 +212,7 @@ const fetchDataFromAPI = () => {
                 switch (c) {
                     case 1:
                     var bannerElements = document.getElementById("ban");
-                  bannerElements.setAttribute('gltf-model','assets/hallmodel/Hall 1 grp.glb')
+                  bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')
                     break;
                     case 2:
                         var bannerElements = document.getElementById("ban");
@@ -281,7 +281,7 @@ const fetchDataFromAPI = () => {
                        // alert("success1")
                     //var bannerElements = document.getElementsByClassName("banner1");
                     var bannerElements = document.getElementById("ban");
-                     bannerElements.setAttribute('gltf-model','assets/hallmodel/Hall 1 grp.glb')   
+                     bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')   
                     break;
                     case 2:
                         // alert("success2")
@@ -295,31 +295,31 @@ const fetchDataFromAPI = () => {
                     break;
                     case 4:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner4.glb') 
                     break;
                     case 5:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner5.glb') 
                     break;
                     case 6:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner6.glb') 
                     break;
                     case 7:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner7.glb') 
                     break;
                     case 8:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner8.glb') 
                     break;
                     case 9:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner9.glb') 
                     break;
                     case 10:
                         var bannerElements = document.getElementById("ban");
-                        bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner10.glb') 
                     break;
                 }
                      checkhallfive(apivariable.stalls.length);
@@ -943,3 +943,10 @@ function checkurlparm(urlparameter){
         }
  }
 }
+
+
+
+/// loading 
+
+
+    

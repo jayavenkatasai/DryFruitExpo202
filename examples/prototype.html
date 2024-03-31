@@ -127,7 +127,12 @@
 <body>
 
 <!--start of the loading -->
-<div class="container">
+
+
+<!-- Loading icon -->
+<div class="loading-container" id="loading-cnt">
+    <!-- <div class="loading-icon"></div> -->
+  
    <div class="heart-rate">
       <svg
         version="1.0"
@@ -155,7 +160,11 @@
         </circle>
       </svg>
     </div>
-    </div>
+  
+    <p>Loading The Data Please Wait</p>
+</div>
+
+
 <!-- end of the loading -->
 
 
@@ -346,7 +355,7 @@
                   <img id="vendor-image" src="assets/icons/vendor-image.jpg">
                      <img id="share-button" src="assets/icons/shareicon.png">
                      <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
-                     <a-asset-item id="banner" src="assets/hallmodel/Hall 1 grp.glb"></a-asset-item>
+                     <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
                            <a-asset-item id="navmesh_10" src="assets/navmesh/Hall @10 navmesh.glb"></a-asset-item>
                              <a-asset-item id="navmesh_5" src="assets/navmesh/Hall @5 navmesh.glb"></a-asset-item>
     </a-assets>
@@ -364,7 +373,7 @@
     <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="18" width="2" height="2" color="white"></a-text>
   </a-plane>
 </a-entity>
-<a-entity id="ban" gltf-model="#banner" position="0 1 30"></a-entity>
+<a-entity id="ban" gltf-model="#banner" position="0 1 10"></a-entity>
 
 <a-entity id="five-hall" gltf-model="url(assets/hallmodel/Hall with lighting5.glb)" visible="false"></a-entity>
       <!-- camera end -->
@@ -898,6 +907,24 @@ $('#closeIcon').click(function(){
    //document.querySelector('#player').querySelector('#model-id').setAttribute('gltf-model', 'url(assets/3dmodels/avthar2.glb)');
 
    })
+</script>
+
+<script>
+
+        document.getElementById("hall1").addEventListener("model-loaded", function () {
+        // After the model is loaded, hide the loading icon
+        setInterval(hideLoadingIcon,3000);
+      });
+     
+   function hideLoadingIcon() {
+    // Hide the loading icon without affecting the iframe
+    $('.loading-container').fadeOut('slow', function () {
+        $(this).css('visibility', 'hidden');
+          $(".loading-container").css("visibility", "hidden");
+    });
+ 
+
+}
 </script>
 </body>
 

@@ -1,3 +1,104 @@
+/* loading start */
+ /* body {
+        background-image: url("assets/background_images/Group.png");
+        background-position: center;
+        background-size: cover;
+        font-size: 100%;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      } */
+
+.heart-rate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("assets/background_images/digitalIntroImg.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 99;
+} */
+
+      .heartbeat-polyline {
+        fill: none;
+        stroke: #0080bf;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+        animation: heartbeat 2s infinite;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+        50% {
+          points: 0, 45.486 38.514, 45.486 44.595, 50 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+        100% {
+          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+      }
+
+
+
+/* end of the loading */
+
+           
+.loading-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(255, 255, 255, 0.8);
+ z-index: 10000;
+ visibility: visible;
+
+}
+
+.loading-container p {
+ margin-top: 12%;
+ font-size: 16px;
+ color: #333;
+ visibility: visible;
+}
+
+
+
+
+
+
+
+
 html, body {
     overscroll-behavior-x: none;
   }
@@ -361,11 +462,11 @@ html, body {
           }
         } */
    
-        .loading-container p {
+        /* .loading-container p {
           margin-top: 10px;
           font-size: 16px;
           color: #333;
-        }
+        } */
         #totalIframe {
           z-index: 999;
           position: relative;
