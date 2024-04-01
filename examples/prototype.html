@@ -370,17 +370,16 @@
   </a-entity>
 <a-entity id="board" gltf-model="#display-board" position="0 1 0" >
   <a-plane id="category-name-board" position="0 2.1 -6.75" color="#0080BF" height="0.5" width="1.8">
-    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="18" width="2" height="2" color="white"></a-text>
+    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="20" width="2" height="2" color="white"></a-text>
   </a-plane>
 </a-entity>
 <a-entity id="ban" gltf-model="#banner" position="0 1 10"></a-entity>
-
 <a-entity id="five-hall" gltf-model="url(assets/hallmodel/Hall with lighting5.glb)" visible="false"></a-entity>
       <!-- camera end -->
       <!-- stall 1 -->
       <a-plane position="-26.677 0.100 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
        class="trigger" alert-on-approach id="area1">
-        <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1" visible="false">
           <!-- <a-plane color="#FBFBFB" id="popup1" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane> -->
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -407,7 +406,7 @@
             position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton1" rotation="0 90 0" align="right"
-           position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+           position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname1" value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
             <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -424,7 +423,7 @@
       <!-- stall 2 -->
       <a-plane position="25.098 0.100 -9.410" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area2">
-        <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="1 1 1" rotation="-90 0 0">
+        <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="1 1 1" rotation="-90 0 0" visible="false">
           <a-plane color="#FBFBFB" id="popup2" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -451,7 +450,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton2" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname2"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -467,7 +466,7 @@
       <!-- stall 3 -->
       <a-plane position="-26.584 0.100 -41.96" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area3">
-        <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup3" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -494,7 +493,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton3" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname3"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -509,7 +508,7 @@
       <!-- stall 4 -->
       <a-plane position="24.85 0.100 -38.856" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area4">
-        <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup4" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -536,7 +535,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton4" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname4"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -551,7 +550,7 @@
 <!-- stall 5 -->
       <a-plane position="-27.857 0.100 -71.2" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area5">
-        <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup5" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -578,7 +577,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton5" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname5"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -593,7 +592,7 @@
 <!-- stall 6-->
       <a-plane position="24.961 0.100 -67.721" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area6">
-        <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup6" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -620,7 +619,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton6" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname6"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -635,7 +634,7 @@
       <!-- stall 7 -->
       <a-plane position="-25 0.100 -100.71" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area7">
-        <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup7" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -662,7 +661,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton7" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname7"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -678,7 +677,7 @@
 <!-- stall 8-->
       <a-plane position="25.454 0.100 -97.305" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area8">
-        <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup8" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -705,7 +704,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton8" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname8"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -721,7 +720,7 @@
       <!-- stall 9 -->
       <a-plane position="-9.555 0.100 -121.016" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area9">
-        <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup9" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -748,7 +747,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton9" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname9"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">
@@ -764,7 +763,7 @@
 <!-- stall 10 -->
       <a-plane position="16.257 0.100 -120.676" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area10">
-        <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1">
+        <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-plane color="#FBFBFB" id="popup10" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -791,7 +790,7 @@
           position="4.3 8.3 8.16"></a-image>
 
 <a-image src="#share-button"  id="sharebutton10" rotation="0 90 0" align="right"
-         position="4 1.3 6.2" width="0.9" height="0.3"></a-image>
+         position="4 1.3 6.2" width="1.3" height="0.5"></a-image>
 
 <a-text id="vendorbusinessname10"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.3 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4.3 6.1 -7.3" rotation="0 90 0" width="2.5" height="0.6">

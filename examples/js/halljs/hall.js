@@ -118,6 +118,7 @@ function removeEntities(stalls) {
     stalls.forEach((stall, stallIndex) => {
     let numberOfImages = stall.products.length;
     const stallContainerId = `stall${stallIndex + 1}`;
+    document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
     // document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible","false");
     // document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
     for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
@@ -329,7 +330,7 @@ const fetchDataFromAPI = () => {
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
-                        
+                        document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","true");
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
                         // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
