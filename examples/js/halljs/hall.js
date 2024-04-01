@@ -1,5 +1,17 @@
 //urlendpoint 
-var urlendpoint = 'https://stage.marketcentral.in';
+var urlendpoint = '';
+
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
 const endpoint_ExhibitionId = '3';
 
 
@@ -77,6 +89,7 @@ function share(uno,name){
     document.getElementById('urlText').textContent = "Stall Link"
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
+    tracking(uno, "share-stall", "")
    // trackExpo(uno, "vendorshare", " ", ipAddress)
    // trackinga("sharestall")
 }
@@ -335,19 +348,19 @@ const fetchDataFromAPI = () => {
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
                         // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
                         if(stall.websiteLink){
-                        document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink}`)
+                        document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink};uno:${stall.uno};type:websitevisit`)
                         }
                         if(stall.vendorInfo.email){
-                            document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:mailto:${stall.vendorInfo.email}`)
+                            document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:mailto:${stall.vendorInfo.email};uno:${stall.uno};type:email`)
                             }
                         if (stall.broucherlinkAvailable) {
-                                document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.broucherlink}`)
+                                document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.broucherlink};uno:${stall.uno};type:broucher`)
                         }
                         if (stall.businesscard) {
-                            document.getElementById(`businesscard${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.businesscard}`)
+                            document.getElementById(`businesscard${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.businesscard};uno:${stall.uno};type:businesscard`)
                     }
                     if(stall.vendorInfo.contactNumber){
-                        document.getElementById(`phone${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:tel:91+${stall.vendorInfo.contactNumber}`)
+                        document.getElementById(`phone${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:tel:91+${stall.vendorInfo.contactNumber};uno:${stall.uno};type:conatctnumber`)
                     }
 
                          //document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
@@ -559,6 +572,9 @@ const fetchDataFromAPI = () => {
                             document.getElementById('cost').textContent=stall.products[imageIndex].price
                             document.getElementById('prdt-units').textContent=stall.products[imageIndex].unit
                             document.getElementById('visit-prdt-btn').setAttribute('href',stall.products[imageIndex].productlink)
+                         
+                            document.getElementById('visit-prdt-btn').setAttribute('onclick', `tracking(${stall.uno}, "visit-product-website",''); return true;`);
+                            
                             document.getElementById('share-prdt').addEventListener('click', function showPopup() {
                                     // var currentURL1 = window.location.href;
                                     // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
@@ -569,6 +585,7 @@ const fetchDataFromAPI = () => {
                                     document.getElementById('urlText').textContent = "Product Link"
                                     popupOverlay.style.display = 'flex';
                                     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
+                                    tracking(stall.uno, "share-product", imageDescription)
                                     // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
                                 })
                                
@@ -585,6 +602,7 @@ const fetchDataFromAPI = () => {
 
 
                                 // trackExpo(stall.uno, "product", imageDescription, ipAddress);
+                                tracking(stall.uno, "product", imageDescription)
                            });
 
 

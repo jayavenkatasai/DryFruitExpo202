@@ -14,15 +14,17 @@ AFRAME.registerComponent('cursor-listener', {
             console.log('Click event triggered!');
             console.log('Target page:', data.targetPage);
             window.open(data.targetPage, '_blank');
-            // console.log('Uno:', data.uno);
-            // console.log('Type:', data.type);
-            // console.log('pdtname:', data.pdtname);
-            // if(data.pdtname!=null){
-            //    trackExpo( data.uno, data.type,data.pdtname,ipAddress)
-            // }
-            // else{
-            //     trackExpo( data.uno, data.type,"",ipAddress)
-            // }
+            console.log('Uno:', data.uno);
+            console.log('Type:', data.type);
+            console.log('pdtname:', data.pdtname);
+            if(data.pdtname!=null){
+              // trackExpo( data.uno, data.type,data.pdtname,ipAddress)
+               tracking(data.uno, data.type,data.pdtname)
+            }
+            else{
+              //  trackExpo( data.uno, data.type,"",ipAddress)
+                tracking(data.uno, data.type,"")
+            }
            
             // Redirect to the specified page
            
@@ -48,9 +50,9 @@ AFRAME.registerComponent('cursor-listener', {
                 var data = this.data;
 
                 this.el.addEventListener('click', function () {
-                
-                    window.location.href = data.targetPage;
                    
+                    window.location.href = data.targetPage;
+                    sendBeaconapilobby(0,"lobby-button","")
                 });
             }
         });

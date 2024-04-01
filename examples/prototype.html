@@ -237,16 +237,16 @@
 </div>
 <div id="hallButtonsContents">
   <div id="hallButtons">
-      <div class="tooltipone">
+      <div class="tooltipone"  onclick="tracking(0, 'category-map', ''); return true;">
           <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png">
           <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png">
       </div>
-      <div class="tooltiptwo">
+      <div class="tooltiptwo"  onclick="tracking(0, 'expo-directory', ''); return true;">
           <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png">
           <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png">
       </div>
       <div class="tooltipthree">
-          <a href="lobby.html">
+        <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
               <img class="desktopExitImg" src="assets/icons/exitimg.png">
               <img class="mblExitImg" src="assets/icons/blueExit.png">
           </a>
@@ -309,6 +309,9 @@
    
   </script> -->
 <script src="js/encrypt.js"></script>
+<script src="js/track js/track.js"></script>
+<script src="js/track js/trackapi.js"></script>
+
   <script src="js/halljs/hall.js"></script>
   <script src="js/halljs/hall2.js"></script>
   <!--  -->
@@ -331,7 +334,7 @@
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
       <a-asset-item id="stall" src="assets/stallmodel/stall texture4.glb"></a-asset-item>
        <!-- //3dcharacter  -->
-      <a-asset-item id="boy-character" src="assets/3dmodels/avthar1.glb" >
+      <a-asset-item id="boy-character" src="assets/3dmodels/avthar1.glb">
       </a-asset-item>
       <template id="head-template">
         <a-entity class="avatar">

@@ -1,7 +1,19 @@
-//urlendpoint 
-var urlendpoint = 'https://stage.marketcentral.in';
 
+var urlendpoint = '';
 
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
+// alert(urlendpoint)
+// Now you can use baseUrl for API calls
 function generateGUID() {
     // Generate random hexadecimal digits
     function s4() {
@@ -109,6 +121,8 @@ document.querySelectorAll('.images').forEach(function(image) {
 
 
 document.querySelector('.continueExpoButton').addEventListener('click',function(){
+    // trackExpo(0, "enter-expo-3", "", ipAddress)
+    sendBeaconapilobby(0, "enter-HMS-expo", "")
     window.location.replace("categorymapdynmic.html")
 })
 

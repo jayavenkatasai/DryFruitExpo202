@@ -21,6 +21,7 @@
     <script src="js/Custom_components/cursor-listener.js"></script>
     <script src="js/Custom_components/custome_component.js"></script>
     <script src="js/track js/ua-parser.js"></script>
+    
   </head>
   <body>
 
@@ -62,6 +63,33 @@
 
 
 <!-- end of the loading -->
+<div class="helpPopUp">
+  <div class="helpPopUpMainContent">
+      <div class="helpPopUpContents">
+          <div class="helpcloseIcon">
+              <img src="assets/icons/closeButton 1.png">
+          </div>
+          <div class="helpPopUpText">
+              <div class="helpTextHeading"><h2 class="helpText">Help Desk</h2></div>
+              <div class="mediaIcons">
+                  <a href="https://www.marketcentral.in" target="_blank" onclick="tracking(0, 'marketcentral-website', ''); return true;"><img src="assets/icons/web 1.png"></a>
+                  <a href="tel:+918008900100" target="_blank" onclick="tracking(0, 'marketcentral-phone', ''); return true;"><img src="assets/icons/call 2.png"></a>
+                  <a href="mailto:expo@marketcentral.in" target="_blank" onclick="tracking(0, 'marketcentral-mail', ''); return true;"><img src="assets/icons/Mail 1.png"></a>
+                  <a href="https://api.whatsapp.com/send/?phone=918008544800" target="_blank" onclick="tracking(0, 'marketcentral-whatsapp', ''); return true;" ><img src="assets/icons/whatsapp 1.png"></a>
+              </div>
+              <div class="followSection">
+                  <p class="followText">Follow us</p>
+                  <div class="linkedImgs">
+                      <a href="https://www.facebook.com/MKTCTL/" onclick="tracking(0, 'marketcentral-facebook', ''); return true;" target="_blank"><img src="assets/icons/facebook 1.png" > </a>
+                      <a href="https://www.instagram.com/_marketcentral/"  onclick="tracking(0, 'marketcentral-instagram', ''); return true;"  target="_blank"><img src="assets/icons/insta 1.png"></a>
+                      <a href="https://www.youtube.com/channel/UCf_0cdvzynO4mwNenGwa7IQ"  onclick="tracking(0, 'marketcentral-youtube', ''); return true;"  target="_blank"><img src="assets/icons/youtube 1.png"></a>
+                      <a href="https://www.linkedin.com/showcase/marketcentral"  onclick="tracking(0, 'marketcentral-linkedin', ''); return true;"  target="_blank"><img src="assets/icons/linkedin 1.png"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
     <!--  -->
     <button id="fullscreenButton">Enter Full Screen</button>
@@ -102,37 +130,30 @@
         <img id="email-icon" src="assets/icons/emaillogo.png" />
         <img id="whatsapp-icon" src="assets/icons/whatsappicon.png" />
         <img id="expodirectory-icon" src="assets/icons/infoimg.png" />
-        <img id="side-banners" src="assets/background_images/Marketing Banner.png" />
+        <img id="side-banners" src="assets/background_assets/icons/Marketing Banner.png" />
       </a-assets>
 
       <a-entity gltf-model="#lobbymodel" id="lobby1">
-        <a-image
-          id="mail"
-          src="#email-icon"
-          position="10.3 1.8 2.4"
-          rotation="0 -30 0"
-          width="0.42"
-          height="0.42"
-          cursor-listener="targetPage:mailto:expo@marketcentral.in"
-        ></a-image>
-        <a-image
-          id="contact"
-          src="#phone-icon"
-          position="10.3 1.2 2.4"
-          rotation="0 -30 0"
-          width="0.42"
-          height="0.42"
-          cursor-listener="targetPage:tel:+918008900100"
-        ></a-image>
-        <a-image
-          id="whatsapp"
-          src="#whatsapp-icon"
-          position="10.3 0.6 2.4"
-          rotation="0 -30 0"
-          width="0.42"
-          height="0.42"
-          cursor-listener="targetPage:https://api.whatsapp.com/send/?phone=918008544800"
-        ></a-image>
+        <a-plane
+        id="expodirectoryplane"
+        color="red"
+        position="10 1.8 2.4"
+        rotation="0 -30 0"
+        width="5"
+        height="3"
+        visible="false"
+        cursor-listeneriframe
+      ></a-plane>
+      <a-plane
+      id="helpdeskplane"
+      color="red"
+      rotation="0 40 0"
+      visible="false"
+      position="-10 1.2 2.5"
+      width="5"
+      height="3"
+    ></a-plane>
+    
         <!-- category map  -->
         <a-plane
         position="4 1.11 -2.7"
@@ -173,7 +194,7 @@
           material="color: grey"
           animation="property: components.material.material.color; type: color; from: grey; to: white; dur: 2000; loop: true"
           visible="true"
-          cursor-listener="targetPage:webinar.html"
+          cursor-listener="targetPage:webinar.html;type:visit-webinar"
         ></a-plane>
         <!-- <a-plane
           color="white"
@@ -203,18 +224,10 @@
           visible="false"
         ></a-plane>
 
-        <a-image
-          src="#expodirectory-icon"
-          position="-10.3 1.2 2.5"
-          width="0.42"
-          height="0.42"
-          cursor-listeneriframe
-          rotation="0 40 0"
-        ></a-image>
 
-        <a-image src="#side-banners" position="-10 5.2 0.1" width="4" height="2" rotation="0 56 0"></a-image>
-        
-  <a-image src="#side-banners"  position="10 5.2 0.1" width="4" height="2" rotation="0 -56 0"></a-image>
+        <!-- <a-image src="#side-banners" position="-10 5.2 0.1" width="4" height="2" rotation="0 56 0"></a-image>
+         -->
+  <!-- <a-image src="#side-banners"  position="10 5.2 0.1" width="4" height="2" rotation="0 -56 0"></a-image> -->
       </a-entity>
       <a-entity
         camera
@@ -226,8 +239,12 @@
         xr-mode-ui="enabled: false"
       ></a-entity>
     </a-scene>
+    <script src="js/ip-address.js"></script>
     <script src="js/encrypt.js"></script>
+    <script src="js/track js/trackapi.js"></script>
+    <script src="js/track js/track.js"></script>
     <script src="js/lobbyjs/lobby.js"></script>
+
    
     <script>
       document.querySelector('[camera]').setAttribute('camera', 'zoom:2');
@@ -246,7 +263,13 @@
         $(this).css('visibility', 'hidden');
           $(".loading-container").css("visibility", "hidden");
     });
+
 }
+
+        $('.helpcloseIcon').click(function(){
+            $('.helpPopUp').css('display','none');
+        })
+
 </script>
   </body>
 </html>

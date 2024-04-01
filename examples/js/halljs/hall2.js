@@ -1,6 +1,16 @@
 //urlendpoint 
-var urlendpoint = 'https://stage.marketcentral.in';
-
+var urlendpoint = ' ';
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
 var parser = new UAParser();
 var result = parser.getResult();
 var useragent =result.device.type
@@ -76,9 +86,28 @@ document.getElementById('chat-img').addEventListener('click',function(){
     window.open(chaturl,'_blank')
 
 })
-
-
-
 function avtharassign(avthar){
-    document.getElementById('boy-character').setAttribute('src',`assets/3dmodels/${avthar}.glb`)
+// alert(`trigger:${avthar}`)
+
+var headTemplate = document.getElementById('head-template').content;
+
+var modelEntity = headTemplate.querySelector('#model-id');
+modelEntity.setAttribute('gltf-model', `url(assets/3dmodels/${avthar}.glb)`);
+console.log(`trigger:success2`)
+    // document.getElementById('model-id').setAttribute('gltf-model',``)
+ 
 }
+// Assuming you have a reference to the template content
+
+
+// // Function to change the GLTF model dynamically
+// function changeModel(modelURL) {
+//     // Find the entity with the model ID
+//     var modelEntity = headTemplate.querySelector('#model-id');
+    
+//     // Set the GLTF model attribute to the new URL
+//     modelEntity.setAttribute('gltf-model', modelURL);
+// }
+
+// // Example usage: change the model to a different GLTF file
+// changeModel('#new-boy-character');

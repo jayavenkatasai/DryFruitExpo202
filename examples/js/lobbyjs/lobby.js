@@ -1,8 +1,19 @@
 //urlendpoint 
-var urlendpoint = 'https://stage.marketcentral.in';
+var urlendpoint = '';
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+  urlendpoint = 'https://stage.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+  urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+  urlendpoint = 'https://stage.marketcentral.in';
+}
 const endpoint_ExhibitionId = '3';
 var bgContainer = document.getElementById("bg");
-console.log(bgContainer)
+
 var ang=0;
 var currentIndex = 0;
 var cards = [];
@@ -36,7 +47,7 @@ AFRAME.registerComponent("cursor-listener3", {
         //console.log("Button clicked:", buttonId);
 
         // Call your custom function with the button name
-      //  trackExpo(0, buttonId, "",ipAddress,ipAddress);
+      //  tracking(0, buttonId, "");
       //console.log(`the ip at second is :${ipAddress}`)
         const bgContainer1 = document.getElementById("mappopup");
         bgContainer1.style.display = "flex";
@@ -64,6 +75,7 @@ AFRAME.registerComponent("cursor-listener3", {
        
 
        // trackExpo(0, buttonId, "",ipAddress);
+       tracking(0,buttonId,"")
         //console.log(`the ip at third  is :${ipAddress}`)
       });
     },
@@ -174,10 +186,11 @@ function createCards(data) {
     // gtag("event",categoriesselect[index], {
     //      'page_title':"lobby-Page"
     //   });
-    // trackExpoCategory(0, categoriesselect[index], "", links[index],ipAddress);
+   //  trackExpoCategory(0, categoriesselect[index], "", links[index],ipAddress);
+     sendBeaconapicategorylb(0,categoriesselect[index],"",links[index])
     //console.log(`the ip at fourth is :${ipAddress}`)
     //Open the link in the same window
-    window.location.href = links[index];
+  //  window.location.href = links[index];
   }
 
 //   $(document).ready(function () {
@@ -193,10 +206,14 @@ function createCards(data) {
 var parser = new UAParser();
 var result = parser.getResult();
 var useragent =result.device.type
+var browser=result.browser.name
 var os =result.os.name
+var userAgent = navigator.userAgent;
+
 //console.log(`the device type is ${useragent}`)
 //console.log(`the os type is ${os}`)
 //console.log(`the device type is ${useragent}`)
+// alert(browser)
 if(useragent=="mobile"){
   document.getElementById("iframe-expo").setAttribute("src",`${urlendpoint}/expo/expoDirectoryMobile.cfm`)
   // $(".webinarAndExpocard").css("display", "flex");
@@ -273,3 +290,9 @@ if(os=="iOS"|| os=="Mac OS"){
   document.getElementById("fullscreenButton").style.display="none"
 //   console.log("os code executed")
 }
+
+document.getElementById('helpdeskplane').addEventListener('click',function(){
+  tracking(0,"helpdeskplane","")
+     document.querySelector('.helpPopUp').style.display='block'
+     
+})

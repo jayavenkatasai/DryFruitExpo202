@@ -1,5 +1,16 @@
 //urlendpoint 
-var urlendpoint = 'https://stage.marketcentral.in';
+var urlendpoint = '';
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+    urlendpoint = 'https://stage.marketcentral.in';
+}
 const queryString = window.location.search;
 let c;
  // Create a new URLSearchParams object from the query string
