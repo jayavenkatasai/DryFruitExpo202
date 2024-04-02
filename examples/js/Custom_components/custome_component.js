@@ -286,7 +286,7 @@ AFRAME.registerComponent('activate-on-approach', {
     const distance = cameraPosition.distanceTo(elPosition);
 
     // Toggle visibility and apply 'type-on' component based on distance
-    if (distance < 15) {
+    if (distance < 13) {
       this.targetElement.setAttribute('visible', true);
      
       if (!this.textElement.components['type-on']) {

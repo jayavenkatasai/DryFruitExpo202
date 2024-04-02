@@ -11,7 +11,7 @@ function initJoystick() {
 
 
   var p = document.createElement("p");
-  p.setAttribute("style", "text-align: center; font-size: 16px; font-family: Roboto; opacity: 1;margin-top:-2px;color:black;position:relative;z-index:999;font-weight:400");
+  p.setAttribute("style", "text-align: center; font-size: 16px; font-family: Roboto; opacity: 1;margin-bottom:15px;color:black;position:relative;z-index:999;font-weight:400;pointer-events: none;");
   p.innerHTML = "Hold and drag";
   d.appendChild(p);
   // create image element
@@ -55,7 +55,7 @@ function createJoystick() {
   var f; var ang; var x_vec; var y_vec; var cam;
 
   function updatePosition(data) {
-    f = data.force;
+    f = 6;
     ang = data.angle.radian
     cam = document.getElementById("player");
 

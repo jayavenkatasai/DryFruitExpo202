@@ -197,9 +197,14 @@
             .welcomeText {
                 padding: 100px 0 0px 0;
             }
-            .logoImg {
+            /* .logoImg {
                 max-width: 200px;
                 object-fit: contain;
+            } */
+            .logoImg {
+
+                max-width: 200px;
+            
             }
             /* .inputText {
                 max-width: 300px;
@@ -260,3 +265,16 @@
                 max-width: 300px;
             }
         }
+        @media only screen and (max-width:1600px){
+            .hsptltext {
+                color: #0080BF;
+                font-size: 45px;
+                font-weight: 600;
+            }
+            .introText {
+                margin-bottom: 40px;
+            }
+            .logoImg {
+                max-width: 150px;
+            }
+            }

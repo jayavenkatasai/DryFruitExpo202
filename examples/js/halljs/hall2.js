@@ -11,6 +11,7 @@ else if (window.location.href.includes('www') || window.location.href.includes('
 else {
     urlendpoint = 'https://stage.marketcentral.in';
 }
+
 var parser = new UAParser();
 var result = parser.getResult();
 var useragent =result.device.type
