@@ -163,9 +163,13 @@
   
     <p>Loading The Data Please Wait</p>
 </div>
+
+
 <!-- end of the loading -->
+
+
   <button id="fullscreenButton">Enter Full Screen</button>
-  <!-- <button id="nextbutton">nexthall</button> -->
+ 
   <div id="chat-icon123">
     <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width:100px"></image>
   </div>
@@ -364,7 +368,7 @@
       <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
       <!-- camera start -->
   
-     <a-entity id="player" user-height="2"  camera position="0 2.5 0" wasd-controls networked="template:#head-template;"
+     <a-entity id="player" user-height="2"  camera="active:false" position="0 2.5 0" wasd-controls networked="template:#head-template;"
     visible="true" xr-mode-ui="enabled:false" look-controls="magicWindowTrackingEnabled:false" simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
     touchEabled="true">
   </a-entity>
@@ -500,6 +504,9 @@
 <a-text id="stallno3" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> 
         </a-entity>
       </a-plane>
+      <a-entity id="came3"  position="-16 2 -41.96" rotation="0 90 0">
+        <a-camera active="true"></a-camera>
+      </a-entity>
       <!-- <a-box id="pp3" position="-27.857 0.100 -74.749" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp5" gltf-model="#chat-icon" position="-28 5.35 -63" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
          <a-image id="bubble5"  position="-28 6.08 -66" rotation="0 90 0" scale="1 1 1" width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -802,7 +809,7 @@
       <a-image id="bubble2"  position="24 6.08 -14" rotation="0 -90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
         <a-text id="bubbletxt2" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
-
+      <a-entity distance-trigger></a-entity>
       <a-entity gltf-model="#navmesh_10"  side="double" visible="true" class="navmesh" id="navmeshmodel_10"></a-entity>
       <a-plane color="skyblue"width="2.5" height="1" position="9 2.5 27" rotation="0 180 0" id="next-hall" visible="true" side="double"
      >

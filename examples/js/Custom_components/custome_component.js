@@ -1,89 +1,5 @@
 var usernamelocal=localStorage.getItem('UserName');
 var guidd = localStorage.getItem('GUID')
-AFRAME.registerComponent('distance-trigger', {
-    init: function () {
-      this.camera = document.getElementById('player');
-      this.triggers = document.querySelectorAll('.trigger');
-      this.distanceThreshold = 5; // Adjust as needed
-      this.shownBoxes = new Set();
-      this.triggeredBoxes = new Set();
-      this.triggerEnterEvent = this.triggerEnterEvent.bind(this);
-      this.triggerLeaveEvent = this.triggerLeaveEvent.bind(this);
-    },
-    update: function () {
-      this.triggers.forEach(trigger => {
-        trigger.addEventListener('triggerenter', this.triggerEnterEvent);
-        trigger.addEventListener('triggerleave', this.triggerLeaveEvent);
-      });
-    },
-    remove: function () {
-      this.triggers.forEach(trigger => {
-        trigger.removeEventListener('triggerenter', this.triggerEnterEvent);
-        trigger.removeEventListener('triggerleave', this.triggerLeaveEvent);
-      });
-    },
-    triggerEnterEvent: function (event) {
-      const boxId = event.target.getAttribute('id');
-      const textValue = event.target.querySelector('a-text').getAttribute('value');
-      const message = 'Camera entered ' + boxId + '\nText value: ' + textValue;
-      if (!this.shownBoxes.has(boxId)) {
-       // alert('Camera entered ' + message);
-        this.shownBoxes.add(boxId);
-        this.triggeredBoxes.add(boxId);
-        //this.createAText(boxId);
-       // document.getElementById("iframe-url").setAttribute('src', `http://chatapp.mc.in/cfmchat.cfm?stallid=${textValue}&bname=${textValue}sai&name=${localStorage.getItem('name')}`)
-      }
-      const textElement = document.getElementById(`txt${boxId}`);
-      textElement.setAttribute('visible', 'true');
-      textElement.setAttribute('animation', 'property: opacity; from: 1; to: 0; dur: 1000; easing: linear; loop: true');
-    },
-    triggerLeaveEvent: function (event) {
-      const boxId = event.target.getAttribute('id');
-      const textElement = document.getElementById(`txt${boxId}`);
-      textElement.setAttribute('visible', 'false');
-      textElement.removeAttribute('animation');
-    },
-    createAText: function (boxId) {
-      const box = document.getElementById(boxId);
-      const text = document.createElement('a-text');
-      text.setAttribute('id', `txt${boxId}`)
-      text.setAttribute('position', '0 0 0');
-      text.setAttribute('value', 'This is ' + boxId);
-      text.setAttribute('color', 'black'); // Change text color if necessary
-      text.setAttribute('scale', '2 2 2'); // Adjust text size if necessary
-      text.setAttribute('visible', 'false');
-      box.appendChild(text);
-    },
-    tick: function () {
-      var cameraPosition = this.camera.object3D.position;
-      var self = this;
-
-      this.triggers.forEach((trigger) => {
-        // Get updated position of the trigger
-        var triggerPosition = trigger.object3D.position;
-        //  //console.log("trigger position")
-        //   //console.log(triggerPosition)
-        var distance = self.distance3D(cameraPosition, triggerPosition);
-        // //console.log("the distance is ")
-        // //console.log(distance)
-        var boxId = trigger.getAttribute('id');
-
-        if (distance <= self.distanceThreshold && !self.shownBoxes.has(boxId)) {
-          trigger.emit('triggerenter');
-        } else if (distance > self.distanceThreshold && self.triggeredBoxes.has(boxId)) {
-          trigger.emit('triggerleave');
-          self.triggeredBoxes.delete(boxId);
-        }
-      });
-    },
-    distance3D: function (point1, point2) {
-      var dx = point1.x - point2.x;
-      var dy = point1.y - point2.y;
-      var dz = point1.z - point2.z;
-      return Math.sqrt(dx * dx + dy * dy + dz * dz);
-    }
-  });
-
   AFRAME.registerComponent('alert-on-approach', {
     init: function () {
       this.triggered = false;
@@ -286,7 +202,7 @@ AFRAME.registerComponent('activate-on-approach', {
     const distance = cameraPosition.distanceTo(elPosition);
 
     // Toggle visibility and apply 'type-on' component based on distance
-    if (distance < 13) {
+    if (distance < 14) {
       this.targetElement.setAttribute('visible', true);
      
       if (!this.textElement.components['type-on']) {

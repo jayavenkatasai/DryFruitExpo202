@@ -2,18 +2,18 @@
 var urlendpoint = '';
 
 if (window.location.href.includes('digiexpodev.marketcentral')) {
-    urlendpoint = 'https://www.marketcentral.in';
+    urlendpoint = 'https://stage.marketcentral.in';
 }
 // Check if the URL contains "www" or "expodev"
 else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
-    urlendpoint = 'https://www.marketcentral.in';
+    urlendpoint = 'https://stage.marketcentral.in';
 }
 else if(window.location.href.includes('localhost')){
     urlendpoint = 'https://stage.marketcentral.in';
 }
 // Default to some other URL
 else {
-    urlendpoint = 'https://www.marketcentral.in';
+    urlendpoint = 'https://stage.marketcentral.in';
 }
 // alert(urlendpoint)
 // Now you can use baseUrl for API calls
