@@ -85,7 +85,7 @@ if(os=="iOS"|| os=="Mac OS"){
 
 document.getElementById('chat-img').addEventListener('click',function(){
     //alert("trigger")
-    var chaturl=`${urlendpoint}/expo/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`
+    var chaturl=`https://stage.marketcentral.in/expo/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`
 
     window.open(chaturl,'_blank')
 

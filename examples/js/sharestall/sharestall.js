@@ -133,8 +133,14 @@ const fetchDataFromAPI = () => {
                         if(stall.vendorInfo.email){
                             document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:mailto:${stall.vendorInfo.email}`)
                             }
-                        if (stall.broucherlinkAvailable) {
+                        if (stall.broucherlinkAvailable=="yes") {
                                 document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.broucherlink}`)
+                        }
+                        else{
+                            document.getElementById(`broucher${stallIndex + 1}`).addEventListener('click',function(){
+                                document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute('visible','true')
+                            })
+                           
                         }
                         if (stall.businesscard) {
                             document.getElementById(`businesscard${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.businesscard}`)
