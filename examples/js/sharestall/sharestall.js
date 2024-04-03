@@ -1,18 +1,18 @@
 //urlendpoint 
 var urlendpoint = '';
 if (window.location.href.includes('digiexpodev.marketcentral')) {
-    urlendpoint = 'https://stage.marketcentral.in';
+    urlendpoint = 'https://www.marketcentral.in';
 }
 // Check if the URL contains "www" or "expodev"
 else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
-    urlendpoint = 'https://stage.marketcentral.in';
+    urlendpoint = 'https://www.marketcentral.in';
 }
 else if(window.location.href.includes('localhost')){
     urlendpoint = 'https://stage.marketcentral.in';
 }
 // Default to some other URL
 else {
-    urlendpoint = 'https://stage.marketcentral.in';
+    urlendpoint = 'https://www.marketcentral.in';
 }
 const queryString = window.location.search;
 let c;
@@ -179,33 +179,33 @@ const fetchDataFromAPI = () => {
                             let height;
                             switch (imageIndex) {
                                 case 0:
-                                    position = "2.362 2.185 3.162";
-                                    width = "2";
-                                    height = "2";
+                                    position = "2.362 2.6 3";
+                                    width = "1.6";
+                                    height = "1.6";
                                     break;
                                 //center second row
                                 case 1:
-                                    position = "1.5 2.802 1";
-                                    width = "2";
-                                    height = "2";
+                                    position = "1.5 3.17 1";
+                                    width = "1.6";
+                                    height = "1.6";
                                     break;
                                 //left second row
                                 case 2:
-                                    position = "0.5 3.380 -0.8";
-                                    width = "2";
-                                    height = "2";
+                                    position = "0.5 3.8 -0.8";
+                                    width = "1.6";
+                                    height = "1.6";
                                     break;
                                 //right second row
                                 case 3:
-                                    position = "1.5 2.802 -2.7";
-                                    width = "2";
-                                    height = "2";
+                                    position = "1.5 3.2 -2.7";
+                                    width = "1.6";
+                                    height = "1.6";
                                     break;
                                 //first layer rightsidemiddle
                                 case 4:
-                                    position = "2.362 2.185 -4.7";
-                                    width = "2";
-                                    height = "2";
+                                    position = "2.362 2.6 -4.7";
+                                    width = "1.6";
+                                    height = "1.6";
                                     break;
                             
                                 // first layer leftside right 
@@ -328,6 +328,7 @@ fetchDataFromAPI();
 var bgContainer = document.getElementById('mapText');
 var cards = [];
 var currentIndex=0;
+let buttonid=0;
 // category map js
 
 fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/3`)
