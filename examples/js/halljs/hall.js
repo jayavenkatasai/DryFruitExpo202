@@ -382,6 +382,7 @@ const fetchDataFromAPI = () => {
                 document.getElementById(`vendorimage${stallIndex + 1}`).setAttribute("src", stall.vendorInfo.vendorimage);
                 document.getElementById(`vendorbusinessname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.companyname);
                 document.getElementById(`vendorlogo${stallIndex + 1}`).setAttribute("src", stall.logo);
+                document.getElementById(`vendorlogo2${stallIndex + 1}`).setAttribute("src", stall.logo);
                 document.getElementById(`stallno${stallIndex + 1}`).setAttribute("value", stall.name);
                 document.getElementById(`board-name`).setAttribute('value',categoryparam)
                 document.getElementById(`sharebutton${stallIndex + 1}`).addEventListener('click',function(){

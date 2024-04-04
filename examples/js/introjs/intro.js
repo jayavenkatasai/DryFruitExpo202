@@ -95,7 +95,9 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
         
 
     }else{
-        alert("Name Should not contain special charcters and numbers")
+        validateName(names)
+       
+       
     }
     // alert(names)
     // console.log(`the local storage name is${localStorage.getItem('UserName')}`)
@@ -135,3 +137,59 @@ function displayImageId(img) {
    localStorage.setItem('Avthar',img.id) 
  }
  localStorage.setItem('Avthar','avthar1')
+
+
+ function validateName(names) {
+    let nameInput = document.getElementById("name-value");
+    let nameContainer = document.getElementById("name-container");
+    let name = names
+    let errorMessage = document.getElementById("error-message");
+    let errorPopup = document.getElementById("error-popup");
+
+    // Check if name is empty
+ 
+    if (name.trim() === "") {
+        nameInput.focus();
+        nameContainer.style.borderColor = "red";
+        errorMessage.textContent = "Please enter your name";
+       // alert("Please enter your name");
+        showPopup();
+        return;
+    }
+    else if (name.length < 3 || /[^a-zA-Z]/.test(name)) {
+        // Check if name has less than three characters
+        if (name.length < 3) {
+            errorMessage.textContent = "Name should contain minimum 3 characters";
+          //  alert("Name should contain minimum 3 characters");
+            showPopup();
+        }
+        // Check if name contains special characters
+        if (/[^a-zA-Z]/.test(name)) {
+            errorMessage.textContent = "Name should not contain special characters and numbers";
+        //    alert("Name should not contain special characters and numbers");
+            showPopup();
+        }
+
+        nameInput.focus();
+        nameContainer.style.borderColor = "red";
+        return;
+    }
+
+    // If name passes validation, reset border color
+    nameContainer.style.borderColor = "";
+    hidePopup();
+}
+
+function showPopup() {
+    let errorPopup = document.getElementById("error-popup");
+    let overlay = document.getElementById("overlay");
+    errorPopup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function hidePopup() {
+    let errorPopup = document.getElementById("error-popup");
+    let overlay = document.getElementById("overlay");
+    errorPopup.style.display = "none";
+    overlay.style.display = "none";
+}

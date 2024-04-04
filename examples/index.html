@@ -37,11 +37,16 @@
           </div>
           <h4 class="welcomeText">Welcome to</h4>
           <h4 class="hsptltext">Hospital and Medical Supplies Expo</span></h4>
-          <div class="inputText">
+          <div class="inputText" id="name-container">
             <img src="assets/icons/userIcon.png" />
             <input type="text" placeholder="Enter name" id="name-value" />
           </div>
-       
+        <div id="overlay"></div>
+          <div id="error-popup" class="popup">
+            <span id="error-message"></span>
+            <span id="close-icon" onclick="hidePopup()">X</span>
+        
+      </div>
 
           <div class="enterExpoButton" id="enterExpo-btn">
             <button id="submit-link">Enter Expo</button>

@@ -335,7 +335,8 @@
       <!-- //stallmodel  -->
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
       <a-asset-item id="stall" src="assets/stallmodel/new stall with avatar 1.glb"></a-asset-item>
-       <!-- //3dcharacter  -->
+      <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand.glb"></a-asset-item>
+      <!-- //3dcharacter  -->
       <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb">
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb">
       </a-asset-item>
@@ -351,8 +352,9 @@
           </a-plane>
         </a-entity>
       </template>
+      
        <!-- //hallmodel  -->
-      <a-asset-item id="hallmodel" src="assets/hallmodel/Hall design 1.glb"></a-asset-item>
+      <a-asset-item id="hallmodel" src="assets/hallmodel/new hall design 1.glb"></a-asset-item>
       <img id="broucher-icon" src="assets/icons/broucherlogo.png">
       <img id="phone-icon" src="assets/icons/phonelogo.png">
           <img id="email-icon" src="assets/icons/emaillogo.png">
@@ -367,7 +369,7 @@
     </a-assets>
    
     <a-entity gltf-model="#hallmodel" id="hall1">
-      <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
+      <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
       <!-- camera start -->
   
      <a-entity id="player" user-height="2"  camera position="0 2.5 0" wasd-controls networked="template:#head-template;"
@@ -383,9 +385,13 @@
 <a-entity id="five-hall" gltf-model="url(assets/hallmodel/Hall with lighting5.glb)" visible="false"></a-entity>
       <!-- camera end -->
       <!-- stall 1 -->
-      <a-plane position="-26.677 0.100 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
+      <a-plane position="-26.677 -0.05 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
        class="trigger" alert-on-approach id="area1">
         <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1" visible="false">
+          <a-entity id="advertise1" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo21" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <!-- <a-plane color="#FBFBFB" id="popup1" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="true"></a-plane> -->
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -409,7 +415,7 @@
               <a-plane src="#vendor-image" width="1.5" height="1.5" id="vendorimage1" rotation="0 90 0"
             position="4 1.7 8.4"></a-plane>
 
-<a-text id="vendorname1" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname1" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno1" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo1" rotation="0 90 0"
             position="4.5 8.35 8.16"></a-image>
@@ -420,6 +426,7 @@
 <a-text id="vendorbusinessname1" value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
             <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno1" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> </a-plane>
+
           </a-entity>
           <a-text id="bname1" value="12345" color="black"></a-text>
       </a-plane>
@@ -430,9 +437,13 @@
       <!-- <a-box id="pp1" position="-26.677 0.100 -0.829" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
 
       <!-- stall 2 -->
-      <a-plane position="25.098 0.100 -9.410" color="white" width="15" height="15" rotation="90 180 0" side="double"
+      <a-plane position="25.098 -0.05 -9.410" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area2">
         <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="1 1 1" rotation="-90 0 0" visible="false">
+          <a-entity id="advertise2" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo22" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup2" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -456,7 +467,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage2" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname2" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname2" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno2" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo2" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -476,9 +487,13 @@
       <!-- <a-box id="pp2" position="-26.584 0.100 -33.151" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       
       <!-- stall 3 -->
-      <a-plane position="-26.584 0.100 -41.96" color="white" width="15" height="15" rotation="90 0 0" side="double"
+      <a-plane position="-26.584 -0.05 -41.96" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area3">
         <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise3" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo23" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup3" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -502,7 +517,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage3" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname3" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname3" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno3" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo3" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -521,9 +536,13 @@
         <a-text id="bubbletxt5" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
       <!-- stall 4 -->
-      <a-plane position="24.85 0.100 -38.856" color="white" width="15" height="15" rotation="90 180 0" side="double"
+      <a-plane position="24.85 -0.05 -38.856" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area4">
         <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise4" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo24" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup4" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -547,7 +566,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage4" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname4" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname4" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno4" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo4" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -566,9 +585,13 @@
         <a-text id="bubbletxt7" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
 <!-- stall 5 -->
-      <a-plane position="-27.857 0.100 -71.2" color="white" width="15" height="15" rotation="90 0 0" side="double"
+      <a-plane position="-27.857 -0.05 -71.2" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area5">
         <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise5" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo25" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup5" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -592,7 +615,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage5" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname5" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname5" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno5" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo5" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -611,9 +634,13 @@
         <a-text id="bubbletxt9" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
 <!-- stall 6-->
-      <a-plane position="24.961 0.100 -67.721" color="white" width="15" height="15" rotation="90 180 0" side="double"
+      <a-plane position="24.961 -0.05 -67.721" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area6">
         <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise6" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo26" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup6" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -637,7 +664,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage6" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname6" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname6" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno6" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo6" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -656,9 +683,13 @@
         <a-text id="bubbletxt10" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
       <!-- stall 7 -->
-      <a-plane position="-25 0.100 -100.71" color="white" width="15" height="15" rotation="90 0 0" side="double"
+      <a-plane position="-25 -0.05 -100.71" color="white" width="15" height="15" rotation="90 0 0" side="double"
         class="trigger" alert-on-approach id="area7">
         <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise7" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo27" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup7" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -682,7 +713,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage7" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname7" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname7" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno7" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo7" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -702,9 +733,13 @@
       </a-image>
 
 <!-- stall 8-->
-      <a-plane position="25.454 0.100 -97.305" color="white" width="15" height="15" rotation="90 180 0" side="double"
+      <a-plane position="25.454 -0.05 -97.305" color="white" width="15" height="15" rotation="90 180 0" side="double"
         class="trigger" alert-on-approach id="area8">
         <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise8" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo28" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup8" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -728,7 +763,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage8" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname8" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname8" value="Kishore" color="black" scale="1 1 1" wrap-count="50" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno8" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo8" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -748,9 +783,13 @@
       </a-image>
 
       <!-- stall 9 -->
-      <a-plane position="-9.555 0.100 -121.016" color="white" width="15" height="15" rotation="90 -90 0" side="double"
+      <a-plane position="-9.555 -0.05 -121.016" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area9">
         <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise9" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo29" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup9" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -774,7 +813,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage9" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname9" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname9" value="Kishore" color="black" wrap-count="50" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno9" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo9" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -794,9 +833,13 @@
         <a-text id="bubbletxt4" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
 <!-- stall 10 -->
-      <a-plane position="16.257 0.100 -120.676" color="white" width="15" height="15" rotation="90 -90 0" side="double"
+      <a-plane position="16.257 -0.05 -120.676" color="white" width="15" height="15" rotation="90 -90 0" side="double"
         class="trigger" alert-on-approach id="area10">
         <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
+          <a-entity id="advertise10" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
+            <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo210" rotation="0 0 0"
+          position="0 2.152 0.05"></a-plane>
+          </a-entity>
           <a-plane color="#FBFBFB" id="popup10" rotation="0 90 0" position="5.2 2 14.25" width="2.5" height="1.2"
             visible="false"></a-plane>
           <!-- <a-entity text="value:helloo;color:black" position="6 2 14.25" visible="false" id="txt1"></a-entity> -->
@@ -820,7 +863,7 @@
             <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorimage10" rotation="0 90 0"
           position="3.9 1.7 8.4"></a-image>
 
-<a-text id="vendorname10" value="Kishore" color="black" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
+<a-text id="vendorname10" value="Kishore" color="black" wrap-count="50" scale="1 1 1" align="left" position="3.9 2.2 7.4" rotation="0 90 0"></a-text>
 <a-text id="vendorphoneno10" value="6574865748" color="black" scale="1 1 1" align="left" position="3.9 1.8 7.4" rotation="0 90 0"></a-text>
 <a-image src="#vendor-image" width="1.5" height="1.5" id="vendorlogo10" rotation="0 90 0"
           position="4.5 8.35 8.16"></a-image>
@@ -839,7 +882,7 @@
         <a-text id="bubbletxt2" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
       </a-image>
 
-      <a-entity gltf-model="#navmesh_10"  side="double" visible="true" class="navmesh" id="navmeshmodel_10"></a-entity>
+      <a-entity gltf-model="#navmesh_10"  side="double" visible="false" class="navmesh" id="navmeshmodel_10"></a-entity>
       <a-plane color="skyblue"width="2.5" height="1" position="9 2.5 27" rotation="0 180 0" id="next-hall" visible="true" side="double"
      >
       <a-text value="Next Hall" align="center" height="10" width="10" color="black" position="0 0 0.01"></a-text>

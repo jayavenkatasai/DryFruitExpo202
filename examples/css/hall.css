@@ -427,6 +427,7 @@ z-index:9999;
 .shareButton{
     color: #F65927; 
     border: 1px solid #F65927; 
+    cursor: pointer;
 }
 .productButtons{
     gap:10px;
@@ -858,15 +859,6 @@ z-index:9999;
     top: 4px;
     right: 3px;
 }
-
-
-
-
-
-
-
-
-
 .card {
 	display: flex;
 	flex-direction: column;
@@ -942,18 +934,10 @@ background: #F1FDFF;
   }
   #chat-icon123 {
     position: fixed;
-    bottom: 25%;
+    bottom: 125px;
     right: 20px;
     z-index: 9999999; /* Ensure the icon is above other content */
     cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    /* Adjust position for smaller screens */
-    #chat-icon123 {
-        bottom: 10px;
-        right: 10px;
-    }
 }
 
 #overLaySection{
@@ -972,6 +956,4 @@ background: #F1FDFF;
 justify-content: center;
  color:#F8F8F8;
  font-family: roboto;
-    
-
-   }
+}
