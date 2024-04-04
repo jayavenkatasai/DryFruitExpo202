@@ -796,9 +796,9 @@ document.getElementById('player').setAttribute('look-controls', 'magicWindowTrac
 
 
 if(useragent=="mobile"){
-  document.getElementById("iframe-expoDir").setAttribute("src",`${urlendpoint}/expo/expoDirectoryMobile.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm`)
 }else{
-  document.getElementById("iframe-expoDir").setAttribute("src",`${urlendpoint}/expo/expoDirectory.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectory.cfm`)
 }
 
 var bgContainer = document.getElementById('mapText');
