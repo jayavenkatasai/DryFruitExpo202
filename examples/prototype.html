@@ -22,6 +22,7 @@
   <script src="/js/Custom_components/custome_component.js"></script>
   <script src="js/track js/ua-parser.js"></script>
   <script src="js/ip-address.js"></script>
+
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   <script>
     // // Get the query string from the current URL
@@ -35,7 +36,7 @@
     // category = category.replace(/\s/g, '');
 
     // alert(category)
-   
+ 
     // Temporary workaround for template declaration; see issue 167
     NAF.schemas.getComponentsOriginal = NAF.schemas.getComponents;
     NAF.schemas.getComponents = (template) => {
@@ -52,8 +53,12 @@
             'player-info',
             {
               selector: '.model',
-              component: 'gltf-model'
+              component: 'gltf-model',
+          //     data: {
+          //       url: `url(assets/3dmodels/${avthar}.glb)` // Replace '#default-model-url' with the actual URL or ID of the default model
+          // }
             }
+            
 
           ]
         });
@@ -331,11 +336,12 @@
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
       <a-asset-item id="stall" src="assets/stallmodel/new stall with avatar 1.glb"></a-asset-item>
        <!-- //3dcharacter  -->
-      <a-asset-item id="boy-character" src="assets/3dmodels/avthar1.glb">
+      <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb">
+        <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb">
       </a-asset-item>
       <template id="head-template">
         <a-entity class="avatar">
-          <a-entity id="model-id" gltf-model="#boy-character" class="model" position="0 -0.5 2" visible="true" scale="3 3 3"
+          <a-entity id="model-id" gltf-model="#avthar1" class="model" position="0 -0.5 2" visible="true" scale="3 3 3"
             rotation="0 180 0">
           </a-entity>
           <a-plane color="#0080bf" position="0 2.7 2" scale="2 0.5 0.1" side="double" look-at="[camera]">
@@ -866,7 +872,7 @@
        const dataString = JSON.stringify(data);
        // Use navigator.sendBeacon to send data to the server
        const result = navigator.sendBeacon(
-         "https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
+         "https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
          dataString
        );
  
@@ -890,7 +896,7 @@ window.addEventListener("beforeunload", function (e) {
     const dataString = JSON.stringify(data);
     // Use navigator.sendBeacon to send data to the server
     const result = navigator.sendBeacon(
-        "https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
+        "https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
         dataString
       );
 
@@ -930,7 +936,7 @@ $('#closeIcon').click(function(){
    document.addEventListener('DOMContentLoaded', function() {
    console.log(document.getElementById('player'))
    console.log(document.getElementById('boy-character'))
-   let avthar = localStorage.getItem('Avthar')
+
    avtharassign(avthar)
   // document.getElementById('boy-character').setAttribute('src','assets/3dmodels/avthar2.glb')
    //document.querySelector('#player').querySelector('#model-id').setAttribute('gltf-model', 'url(assets/3dmodels/avthar2.glb)');
@@ -954,6 +960,28 @@ $('#closeIcon').click(function(){
  
 
 }
+// AFRAME.registerComponent("update-gltf-model", {
+//   schema: {
+//     src: {type: 'model'},
+//     sync: {default: false}
+//   },
+//   update() {
+//     if (this.data.src && this.data.sync) {
+//       this.el.setAttribute('gltf-model', this.data.src);
+//     }
+//   }
+// });
+
+
+
+// Function to handle avatar selection
+
+// Example usage
+let avthar = localStorage.getItem('Avthar');
+
+// let avthar = localStorage.getItem('Avthar')
+// document.getElementById('player').setAttribute('update-gltf-model', 'src', '#' + avthar);
+// console.log(document.getElementById('player').getAttribute('update-gltf-model'))
 </script>
 </body>
 

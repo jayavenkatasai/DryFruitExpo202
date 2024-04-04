@@ -8,7 +8,7 @@ else if (window.location.href.includes('www') || window.location.href.includes('
     urlendpoint = 'https://www.marketcentral.in';
 }
 else if(window.location.href.includes('localhost')){
-    urlendpoint = 'https://stage.marketcentral.in';
+    urlendpoint = 'https://www.marketcentral.in';
 }
 // Default to some other URL
 else {

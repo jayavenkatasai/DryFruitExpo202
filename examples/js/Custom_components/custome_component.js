@@ -229,3 +229,4 @@ AFRAME.registerComponent('activate-on-approach', {
   }
 });
 
+

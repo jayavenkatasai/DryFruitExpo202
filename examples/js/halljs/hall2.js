@@ -8,7 +8,7 @@ else if (window.location.href.includes('www') || window.location.href.includes('
     urlendpoint = 'https://www.marketcentral.in';
 }
 else if(window.location.href.includes('localhost')){
-    urlendpoint = 'https://stage.marketcentral.in';
+    urlendpoint = 'https://www.marketcentral.in';
 }
 // Default to some other URL
 else {
@@ -90,6 +90,7 @@ document.getElementById('chat-img').addEventListener('click',function(){
     window.open(chaturl,'_blank')
 
 })
+
 function avtharassign(avthar){
 // alert(`trigger:${avthar}`)
 
