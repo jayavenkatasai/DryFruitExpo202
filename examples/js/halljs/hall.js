@@ -1,4 +1,5 @@
 //urlendpoint 
+
 var urlendpoint = '';
 
 if (window.location.href.includes('digiexpodev.marketcentral')) {
@@ -95,6 +96,22 @@ function share(uno,name){
     tracking(uno, "share-stall", "")
    // trackExpo(uno, "vendorshare", " ", ipAddress)
    // trackinga("sharestall")
+}
+if(useragent=='mobile'){
+
+    if(!localStorage.getItem('intiated')){
+            localStorage.setItem('intiated','true')
+        document.getElementById('instruction-pannel').style.display='flex'
+        document.getElementById('closeiconimgipp').addEventListener('click',function(){
+            document.getElementById('instruction-pannel').style.display='none'
+        })
+    }else{
+   document.getElementById('instruction-pannel').style.display='none'
+    }
+ 
+}
+else{
+    document.getElementById('instruction-pannel').style.display='none'
 }
 
 // function showPopup() {
@@ -977,7 +994,6 @@ function checkurlparm(urlparameter){
         }
  }
 }
-
 
 
 /// loading 
