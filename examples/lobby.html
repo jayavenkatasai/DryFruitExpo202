@@ -21,45 +21,19 @@
     <script src="js/Custom_components/cursor-listener.js"></script>
     <script src="js/Custom_components/custome_component.js"></script>
     <script src="js/track js/ua-parser.js"></script>
-    
+    <script src="js/track js/tracking-ga.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
+    </script>
   </head>
   <body>
 
 
     <!-- start of loading icon -->
-<div class="loading-container" id="loading-cnt">
-    <!-- <div class="loading-icon"></div> -->
-  
-   <div class="heart-rate">
-      <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        width="250px"
-        height="180px"
-        viewBox="0 0 150 73"
-        enable-background="new 0 0 150 73"
-        xml:space="preserve"
-      >
-        <polyline
-          class="heartbeat-polyline"
-          points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
-        />
-        <circle r="4" fill="#45D2FE">
-          <animateMotion
-            dur="3s"
-            repeatCount="indefinite"
-            fill="freeze"
-            path="M0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
-          />
-        </circle>
-      </svg>
+    <div class="loading-container" id="loading-cnt">
+      <img src="assets/loading/tenor.gif" alt="Loading GIF">
+      <p class="loading-text">Please Wait We are setting up</p>
     </div>
-  
-    <p>Loading The Data Please Wait</p>
-</div>
+    
 
 
 <!-- end of the loading -->
@@ -125,7 +99,7 @@
     <a-scene cursor="rayOrigin:mouse">
       <a-assets>
         <!-- //hallmodel  -->
-        <a-asset-item id="lobbymodel" src="assets/lobbymodels/lobby draft-final7.glb"></a-asset-item>
+        <a-asset-item id="lobbymodel" src="assets/lobbymodels/lobby optimized.glb"></a-asset-item>
         <img id="phone-icon" src="assets/icons/phonelogo.png" />
         <img id="email-icon" src="assets/icons/emaillogo.png" />
         <img id="whatsapp-icon" src="assets/icons/whatsappicon.png" />
@@ -137,7 +111,7 @@
         <a-plane
         id="expodirectoryplane"
         color="red"
-        position="10 1.8 2.4"
+        position="8.894 0.578 1.203"
         rotation="0 -30 0"
         width="5"
         height="3"
@@ -149,7 +123,7 @@
       color="red"
       rotation="0 40 0"
       visible="false"
-      position="-10 1.2 2.5"
+      position="-8.479 1.2 0.349"
       width="5"
       height="3"
     ></a-plane>
@@ -257,12 +231,10 @@
         setInterval(hideLoadingIcon,3000);
       });
      
-   function hideLoadingIcon() {
-    // Hide the loading icon without affecting the iframe
-    $('.loading-container').fadeOut('slow', function () {
-        $(this).css('visibility', 'hidden');
+     
+      function hideLoadingIcon() {
           $(".loading-container").css("visibility", "hidden");
-    });
+          $(".loading-text").css("visibility", "hidden");
 
 }
 
@@ -270,6 +242,14 @@
             $('.helpPopUp').css('display','none');
         })
 
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
+</script>
+<script> 
+  window.dataLayer = window.dataLayer || [];  
+ function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  
+   gtag('config', 'G-PGGTB73FL0'); 
 </script>
   </body>
 </html>

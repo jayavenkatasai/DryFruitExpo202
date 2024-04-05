@@ -1,3 +1,22 @@
+let pagetitle = window.location.href
+if(pagetitle.includes('lobby')){
+pagetitle ='lobby'
+}
+else if(pagetitle.includes('prototype')){
+  pagetitle ='prototype'
+}
+else if(pagetitle.includes('sharestall')){
+  pagetitle ='sharestall'
+}
+else if(pagetitle.includes('index')){
+  pagetitle ='index'
+
+}else if(pagetitle.includes('category')){
+  pagetitle ='category'
+}
+else{
+  pagetitle=pagetitle
+}
 var urlendpoint = '';
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
@@ -19,6 +38,12 @@ var parser = new UAParser();
 var result = parser.getResult();
 
 var browser=result.browser.name
+
+async function trackinga(dataparameter,pagetitle){
+  gtag("event", dataparameter, {
+    'page_title':pagetitle
+  });
+  }
 function tracking(uno=0,track_type,pname=""){
     const requestBody = {
         "U_NO":uno,
@@ -29,6 +54,7 @@ function tracking(uno=0,track_type,pname=""){
         "ipaddress":ipAddress,
         "exhibition_ID":3
     }
+     trackinga(track_type,pagetitle)
     async function postData(url, data) {
         try {
             const response = await fetch(url, {
@@ -67,6 +93,7 @@ const requestBodybeacon = {
     "ipaddress":ipAddress,
     "exhibition_ID":3
 }
+trackinga(track_type,pagetitle)
 var data =  JSON.stringify(requestBodybeacon);
 const result = navigator.sendBeacon(
    url,
@@ -93,6 +120,7 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
         "ipaddress":ipAddress,
         "exhibition_ID":3
     }
+    trackinga(track_type,pagetitle)
     var data =  JSON.stringify(requestBodybeacon);
     const result = navigator.sendBeacon(
        url,
@@ -108,7 +136,7 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
     }
 
 
-    function sendBeaconapicategorylb (uno=0,track_type,pname="",links){
+    function sendBeaconapicategorylb (uno=0,track_type,pname="",links,pagetitle){
         const requestBodybeacon = {
             "U_NO":uno,
             "track_type":track_type,
@@ -118,6 +146,7 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
             "ipaddress":ipAddress,
             "exhibition_ID":3
         }
+        trackinga(track_type,pagetitle)
         var data =  JSON.stringify(requestBodybeacon);
         const result = navigator.sendBeacon(
            url,
@@ -132,3 +161,5 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
             console.log("Failed to queue data for sending.");
           }
         }
+
+      

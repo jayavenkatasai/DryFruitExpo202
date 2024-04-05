@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="category">
                 <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
                 <p class="categoryName">${category.CATEGORY}</p>
-                <a href="prototype.html?category=${encrypt(category.CATEGORY)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); return false;">Visit</a>
+                <a href="prototype.html?category=${encrypt(category.CATEGORY)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">Visit</a>
             </div>
         `;
     }

@@ -1,4 +1,8 @@
 
+// require('dotenv').config(); // Load environment variables from .env file
+
+// const apiEndpoint = process.env.API_ENDPOINT ;
+// alert(apiEndpoint)
 var urlendpoint = '';
 
 if (window.location.href.includes('digiexpodev.marketcentral')) {

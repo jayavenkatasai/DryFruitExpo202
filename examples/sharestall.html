@@ -22,46 +22,18 @@
   <!-- <script src="/js/Custom_components/custome_component.js"></script> -->
   <script src="js/track js/ua-parser.js"></script>
   <script src="js/ip-address.js"></script>
+  <script src="js/track js/tracking-ga.js"></script>
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
+  </script>
 </head>
 
 <body>
 
-      <!-- start of loading icon -->
-<div class="loading-container" id="loading-cnt">
-    <!-- <div class="loading-icon"></div> -->
-  
-   <div class="heart-rate">
-      <svg
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        width="250px"
-        height="180px"
-        viewBox="0 0 150 73"
-        enable-background="new 0 0 150 73"
-        xml:space="preserve"
-      >
-        <polyline
-          class="heartbeat-polyline"
-          points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
-        />
-        <circle r="4" fill="#45D2FE">
-          <animateMotion
-            dur="3s"
-            repeatCount="indefinite"
-            fill="freeze"
-            path="M0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
-          />
-        </circle>
-      </svg>
-    </div>
-  
-    <p>Loading The Data Please Wait</p>
-</div>
-
+  <div class="loading-container" id="loading-cnt">
+    <img src="assets/loading/tenor.gif" alt="Loading GIF">
+    <p class="loading-text">Please Wait We are setting up</p>
+  </div>
 
 <!-- end of the loading -->
   <button id="fullscreenButton">Enter Full Screen</button>
@@ -206,12 +178,12 @@
     <a-assets>
       <!-- //stallmodel  -->
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
-      <a-asset-item id="stall" src="assets/stallmodel/new stall with avatar 1.glb"></a-asset-item>
+      <a-asset-item id="stall" src="assets/stallmodel/stallcompress.glb"></a-asset-item>
        <!-- //3dcharacter  -->
       <a-mixin id="boy-character" src="assets/3dmodels/Male_LongSleeve.glb" person-events-component>
       </a-mixin>
        <!-- //hallmodel  -->
-      <a-asset-item id="hallmodel" src="assets/hallmodel/new hall design 1.glb"></a-asset-item>
+      <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized.glb"></a-asset-item>
       <img id="broucher-icon" src="assets/icons/broucherlogo.png">
       <img id="phone-icon" src="assets/icons/phonelogo.png">
           <img id="email-icon" src="assets/icons/emaillogo.png">
@@ -220,7 +192,7 @@
                   <img id="vendor-image" src="assets/icons/vendor-image.jpg">
                      <img id="share-button" src="assets/icons/shareicon.png">
                      <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
-                     <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
+            <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
     </a-assets>
    
     <a-entity gltf-model="#hallmodel" id="hall1">
@@ -328,15 +300,19 @@ $('#closeIcon').click(function(){
         setInterval(hideLoadingIcon,3000);
       });
      
-   function hideLoadingIcon() {
-    // Hide the loading icon without affecting the iframe
-    $('.loading-container').fadeOut('slow', function () {
-        $(this).css('visibility', 'hidden');
+      function hideLoadingIcon() {
           $(".loading-container").css("visibility", "hidden");
-    });
- 
+          $(".loading-text").css("visibility", "hidden");
 
 }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
+</script>
+<script> 
+  window.dataLayer = window.dataLayer || [];  
+ function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  
+   gtag('config', 'G-PGGTB73FL0'); 
 </script>
 </body>
 

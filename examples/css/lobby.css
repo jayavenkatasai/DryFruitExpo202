@@ -68,30 +68,32 @@
 
 /* end of the loading */
 
-           
 .loading-container {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background-color: rgba(255, 255, 255, 0.8);
- z-index: 10000;
- visibility: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 10000;
+  visibility: visible;
+}
 
+.loading-container img {
+  width: 100px; /* Adjust this value to your desired width */
+  height: 100px; /* Adjust this value to your desired height */
 }
 
 .loading-container p {
- margin-top: 12%;
- font-size: 16px;
- color: #333;
- visibility: visible;
+  margin-top: 12px; /* Adjust this value to your desired margin */
+  font-size: 16px;
+  color: #333;
+  visibility: visible;
 }
-
 
 
 

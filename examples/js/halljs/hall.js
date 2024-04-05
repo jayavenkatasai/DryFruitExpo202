@@ -942,6 +942,7 @@ console.log(`the categories select is ${categoriesselect}`)
 console.log(categoriesselect)
 console.log(links);
 console.log(categoriesselect[index])
+trackinga(categoriesselect[index],'prototype')
 //  trackExpo(0,categoriesselect[index],"")
 //trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
 // Open the link in the same window
