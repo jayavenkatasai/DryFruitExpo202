@@ -1,4 +1,5 @@
 /* loading start */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
  /* body {
         background-image: url("assets/background_images/Group.png");
         background-position: center;
@@ -13,7 +14,9 @@
         align-items: center;
         height: 100vh;
       } */
-
+body{
+    font-family: "Nunito", sans-serif;
+}
 .heart-rate {
   position: absolute;
   top: 0;
@@ -308,7 +311,7 @@ iframe {
     gap: 26px;
     padding: 12px;
     position: absolute;
-    z-index: 999999999999999999;
+    z-index: 9999;
     margin-bottom: 30px;
     bottom: 0;
  }
@@ -358,7 +361,7 @@ z-index:9999;
         overflow-y: scroll;
     }
     #closeIcon {
-        position: fixed;
+        position: absolute;
         right: 4%;
     }
     #pagination{
@@ -495,8 +498,12 @@ z-index:9999;
     .mapIcon {
         width: 28px;
     }
+    #chat-ui-room {
+        width: 100%;
+        height: 100%;
+    }
     .infoIcon {
-        width: 29px;
+        width: 27px;
     }
     .tooltipthree a img {
         width: 27px;
@@ -513,6 +520,13 @@ z-index:9999;
              .tooltipthree:hover::after{
                  display: none!important;
          }
+         .iframetagContent.active {
+            width: 98%;
+        }
+        #iframe-expoDir {
+            height: 250px;
+            width: 100%;
+        }
  }
  @media only screen and (max-width:760px){
     .tooltipone::before {
@@ -539,6 +553,13 @@ z-index:9999;
         .tooltipthree::after {
             right: 41px;
         }
+        .categoryHalls {
+            padding: 9px!important;
+        }
+.anchorToggleButton {
+	font-size: 14px;
+
+}
  
  }
  .iframetag{
@@ -565,7 +586,7 @@ z-index:9999;
  }
  .iframeImg {
     position: absolute;
-    top: 8px;
+    top: 20px;
     right: 2%;
     max-width: 31px;
     cursor: pointer;
@@ -621,14 +642,25 @@ z-index:9999;
     display:flex;
     gap: 15px;
 }
+
 #popUp {
-    height: 100vh;
-    width: 100%;
-    display: none;
-    align-items: center;
-    background-color: rgba(0,0,0,0.1);
-    position: relative;
-    z-index:999;
+
+	height: 100vh;
+
+	width: 100%;
+
+	display: none;
+
+	align-items: center;
+
+	background-color: rgba(0,0,0,0.1);
+
+	position: absolute;
+
+	z-index: 9999;
+
+	top: 0;
+
 }
 .closeIcon {
     position: absolute;
@@ -672,27 +704,27 @@ z-index:9999;
     max-width: 450px;
     width: 100%;
 }
-.inviteText{
-    color: #121212;
+.inviteText {
+    color: #585858;
     text-align: center;
     font-size: 28px;
     font-weight: 600;
     line-height: 20px;
-    padding:40px 0 28px 0;
-    margin:0;
+    padding: 40px 0 28px 0;
+    margin: 0;
+}
+#urlText {
+    color: #363636;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 5px;
 }
 .copySection {
     width: 85%;
     margin: auto;
-    padding-bottom:40px;
-}
-#urlText{
-    color:#363636;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    margin:0;
-    padding-bottom:5px;
+    padding-bottom: 40px;
 }
 .global {
     position: absolute;
@@ -856,7 +888,7 @@ z-index:9999;
         overflow-y: scroll;
     }
     #closeIcon {
-        position: fixed;
+        position: absolute;
         right: 4%;
     }
     #pagination{
@@ -872,17 +904,14 @@ z-index:9999;
     cursor: pointer;
 }
 @media only screen and (max-width:550px){
-    iframe{
-        width: 340px!important;
-    }
          #mapbutton2 {
              right: 0px!important;
          }
  } 
  #Backbtn {
-    position: absolute;
-    top: 4px;
-    right: 3px;
+	position: absolute;
+	top: 7px;
+	right: 5px;
 }
 .card {
 	display: flex;
@@ -961,7 +990,7 @@ background: #F1FDFF;
     position: fixed;
     bottom: 125px;
     right: 20px;
-    z-index: 9999999; /* Ensure the icon is above other content */
+    z-index: 9; /* Ensure the icon is above other content */
     cursor: pointer;
 }
 
@@ -991,7 +1020,7 @@ justify-content: center;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
-    z-index: 9999999;
+    z-index: 99999999;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1009,6 +1038,10 @@ justify-content: center;
     }
     .desktopExpoFrame {
       display: none;
+    }
+    .productImg {
+        height: 150px;
+        width: 150px;
     }
     .webinarAndExpocardContents {
         max-width: 276px;
@@ -1044,4 +1077,39 @@ justify-content: center;
     margin-top: 8px; /* Adjust top margin as needed */
     margin-right: -10px; /* Adjust right margin as needed */
     cursor: pointer; /* Add cursor pointer for better UX */
+  }
+
+  #chat-ui-room {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    border: none;
+    z-index: 9999; /* Adjust z-index as needed */
+  }
+
+  #chatui {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  #chat-ui-room2 {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    border: none;
+    z-index: 10000; /* Adjust z-index as needed */
+  }
+
+  #chatui2 {
+    width: 100%;
+    height: 100%;
   }

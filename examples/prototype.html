@@ -131,12 +131,12 @@
 
 <body>
 <!-- orientation -->
-<div id="orientationScreen">
+<!-- <div id="orientationScreen">
   <div class="orientationScreenContents" id="orientat-content">
     <img src="assets/icons/rotatePhone.gif" />
     <h3>Rotate your mobile</h3>
   </div>
-</div>
+</div> -->
 <!-- orientation ending -->
 <!--start of the loading -->
 
@@ -145,7 +145,7 @@
 <!-- start of loading icon -->
 <div class="loading-container" id="loading-cnt">
   <img src="assets/loading/tenor.gif" alt="Loading GIF">
-  <p class="loading-text">Please Wait We are setting up</p>
+  <p class="loading-text">Please wait while your virtual experience loads!</p>
 </div>
 <div id="instruction-pannel">
   <image id="instructionimg"src="assets/icons/Walkthrough.png">
@@ -167,7 +167,13 @@
       <h3>Currently No vendors are available in this category</h3>
   </div>
 </div>
+<div id="chat-ui-room">
+  <iframe id="chatui" src="" width="800px" height="500px" allowfullscreen></iframe>
+</div>
 
+<div id="chat-ui-room2">
+  <iframe id="chatui2" src="" width="800px" height="500px" allowfullscreen></iframe>
+</div>
 <div class="digitalPopUp" id="popup">
   <div class="digitalPopUpContents">
       <img class="closeImg" src="assets/icons/blueCloseIcon.png">
@@ -188,7 +194,7 @@
 <!--sharestall and product  -->
 <div id="popup-overlay">
   <div id="popup-card">
-     <h6 class="inviteText">Invite</h6>
+     <h6 class="inviteText">Share Stall Link</h6>
      <div class="copySection">
          <p id="urlText">Stall Link</p>
          <div class="copyButtonSection">
@@ -358,13 +364,15 @@
       <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
       <!-- camera start -->
   
-     <a-entity id="player" user-height="2"  camera position="0 2.5 0" wasd-controls networked="template:#head-template;"
+     <a-entity id="player" user-height="2"  camera position="0 2.5 17.4" wasd-controls networked="template:#head-template;"
     visible="true" xr-mode-ui="enabled:false" look-controls="magicWindowTrackingEnabled:false" simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
     touchEabled="true">
   </a-entity>
-<a-entity id="board" gltf-model="#display-board" position="0 1 0" >
-  <a-plane id="category-name-board" position="0 2.1 -6.75" color="#0080BF" height="0.5" width="1.8">
-    <a-text id="board-name" value="Dental Supplies" position="0 0 0.2" align="center" wrap-count="20" width="2" height="2" color="white"></a-text>
+  <a-entity rounded-box="radius:0.3" position="0 2.1 -5" ></a-entity>
+<a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2">
+  
+  <a-plane id="category-name-board"  position="0 2.1 -6.8" color="#0080BF" height="0.5" width="1.8">
+    <a-text id="board-name" value="Dental Supplies" position="0 0 0" align="center" wrap-count="20" width="1.8" height="1.8" color="white"></a-text>
   </a-plane>
 </a-entity>
 <a-entity id="ban" gltf-model="#banner" position="0 1 10"></a-entity>
@@ -1018,7 +1026,7 @@ let avthar = localStorage.getItem('Avthar');
   gtag('js', new Date());  
    gtag('config', 'G-PGGTB73FL0'); 
 </script>
-<script>
+<!-- <script>
   
 function checkOrientation() {
     //  const deviceOrientationElement = document.getElementById('device-orientation');
@@ -1079,7 +1087,7 @@ window.addEventListener("orientationchange", () => {
 window.onload =function(){
   checkOrientation();
 }
-</script>
+</script> -->
 </body>
 
 </html>

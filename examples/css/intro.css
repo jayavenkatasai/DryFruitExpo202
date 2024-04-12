@@ -323,3 +323,7 @@
     background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
     z-index: 9998; /* Ensure overlay is below popup */
 }
+
+#namevalue{
+    color:#0080BF
+}

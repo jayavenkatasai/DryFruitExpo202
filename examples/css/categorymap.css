@@ -16,7 +16,7 @@ p,h1,h2,h3,h4,h5,h6{
     text-align:center;
 }
 .categoryMap{
-    padding:100px 0;
+    padding:100px 0 170px 0;
     background: #F1FDFF; 
 }
 .categoryName {
@@ -24,32 +24,37 @@ p,h1,h2,h3,h4,h5,h6{
     font-size: 22px;
     font-weight: 500;
     padding-bottom: 5px;
-    max-width: 215px;
     margin: auto;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 95%;
 }
 .category a {
     color: #FFF;
+    position: absolute;
     font-weight: 600;
     border-radius: 5px;
     background: #F65927;
     padding: 8px 12px;
     text-decoration: none;
     max-width: 115px;
+    width:100%;
     display: block;
     text-align: center;
     margin: 0 auto;
     font-size: 16px;
+    bottom: 10px;
 }
-.category{
-    padding: 16px 0; 
-    border-radius: 10px;
-    border: 2px solid #F65927;
-    background: #FFF;
-    text-align:center;
+.category {
+	padding: 16px 0;
+	border-radius: 10px;
+	border: 2px solid #F65927;
+	background: #FFF;
+	text-align: center;
+	position: relative;
+	padding-bottom: 65px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .category img {
     width: 100%;
@@ -108,18 +113,27 @@ p,h1,h2,h3,h4,h5,h6{
 }
 }
 @media only screen and (max-width:850px){
-.categoryContents{
-    grid-template-columns: repeat(2,1fr);
-}
 .arrows img {
     max-width: 35px;
 }
 .arrows {
     top: -40px;
 }
+.category img {
+    height: 75px;
+}
+.categoryContents{
+    gap:10px;
+}
+}
+@media only screen and (max-width:600px){
+.categoryContents{
+    grid-template-columns: repeat(2,1fr);
+}
 }
 @media only screen and (max-width:550px){
-.categoryContents{
-    grid-template-columns: repeat(1,1fr);
+.categoryName {
+    max-width: 172px;
+    font-size: 16px;
 }
 }

@@ -257,53 +257,32 @@ const fetchDataFromAPI = () => {
                         bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb')
                     break;
                     case 4:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner4.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner4.glb')
                     break;
                     case 5:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner5.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner5.glb')
                     break;
                     case 6:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner6.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner6.glb')
                     break;
                     case 7:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner7.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner7.glb')
                     break;
                     case 8:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner8.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner8.glb')
                     break;
                     case 9:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner9.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner9.glb')
                     break;
                     case 10:
-                    if (bannerElements.length > 0) {
-                          for (var i = 0; i < bannerElements.length; i++) {
-                         bannerElements[i].setAttribute('gltf-model',  'assets/banners/banner10.glb');
-                        }    
-                    }
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model','assets/banners/banner10.glb')
                     break;
                 }
                 console.log("The switch case is exceuted succesfully")

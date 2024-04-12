@@ -96,3 +96,37 @@ document.addEventListener("wheel", function (e) {
   // Set the new position to the camera
   cam.setAttribute("position", newPosition);
 });
+
+
+AFRAME.registerComponent('cursor-listener-chat', {
+    schema: {
+        targetPage: { type: 'string' },
+        uno: { type: 'string' },
+        type: { type: 'string' },
+        pdtname: { type: 'string' }
+    },
+    init: function () {
+        var data = this.data;
+        var iframe = document.getElementById('chatui2'); // Assuming the iframe ID is 'chatui'
+        var container =document.getElementById('chat-ui-room2')
+        this.el.addEventListener('click', function () {
+            console.log('Click event triggered!');
+            console.log('Target page:', data.targetPage);
+         
+            if( container.style.display=='block'){
+                container.style.display='none'
+            }else{
+                container.style.display='block'
+            }
+            iframe.setAttribute('src', data.targetPage); // Set the src attribute of the iframe
+            console.log('Uno:', data.uno);
+            console.log('Type:', data.type);
+            console.log('pdtname:', data.pdtname);
+            if (data.pdtname != null) {
+                tracking(data.uno, data.type, data.pdtname);
+            } else {
+                tracking(data.uno, data.type, "");
+            }
+        });
+    }
+});
