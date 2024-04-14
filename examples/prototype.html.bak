@@ -14,8 +14,6 @@
   <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
   <script src="/js/spawn-in-circle.component.js"></script>
   <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@09ee625/src/instanced-mesh.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-gltf-model-plus@fc902ac/dist/gltf-model-plus.min.js"></script>
   <link rel="stylesheet" href="css/hall.css">
   <!-- <script src="/js/script.js"></script>-->
 <script src="/js/simple-navmesh-constraint.js"></script> 
@@ -183,7 +181,7 @@
           <img class="productImg" src="images/product.png"  id="productimge">
           <div class="productDetails">
               <p class="productName" id="prdt-name">Discover Hidden Treasures:</p>
-              <p class="productPrice" id="prd-price">Price : <span class="original-price" id="cost">₹2,795</span>/<span class="prodWeight"  id="prdt-units">kilogram(kg)</span> </p>
+              <p class="productPrice" id="prd-price">Price : <span class="original-price" id="cost">₹2,795</span>/<span class="prodWeight"  id="prdt-units">kilogram(kg)</span></span> </p>
               <div class="productButtons d-flex">
                   <a class="visitButton" id="visit-prdt-btn" target="_blank" href="">Visit Product</a>
                   <a class="shareButton" id="share-prdt" >Share Product</a>
@@ -334,17 +332,15 @@
         debug: true;
         adapter: wseasyrtc;
     " joystick xr-mode-ui="enabled: false"
-    cursor="rayOrigin:mouse"
-    stats
-   >
+    cursor="rayOrigin:mouse">
     <a-assets>
       <!-- //stallmodel  -->
       <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
-      <a-asset-item id="stall" src="assets/stallmodel/stallcompresswithoutavatar.glb"></a-asset-item>
+      <a-asset-item id="stall" src="assets/stallmodel/stallcompress.glb"></a-asset-item>
       <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand.glb"></a-asset-item>
       <!-- //3dcharacter  -->
-      <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
-      <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb">
+      <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb">
+        <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb">
       </a-asset-item>
       <template id="head-template">
         <a-entity class="avatar">
@@ -360,7 +356,7 @@
       </template>
       
        <!-- //hallmodel  -->
-      <a-asset-item id="hallmodel" src="assets/hallmodel/hallreduced1__ktx2.glb"></a-asset-item>
+      <a-asset-item id="hallmodel" src="assets/hallmodel/hallreduced1.glb"></a-asset-item>
       <img id="broucher-icon" src="assets/icons/broucherlogo.png">
       <img id="phone-icon" src="assets/icons/phonelogo.png">
           <img id="email-icon" src="assets/icons/emaillogo.png">
@@ -398,11 +394,10 @@
       <!-- hall -door  -->
         <a-entity gltf-model="#halldoor" id="halldoor1" position="0 0.3 -1.8" rotation="0 0 0" scale="1 1 1" visible="true"></a-entity>
       <!-- stall 1 -->
-      <a-entity id="mesh1" gltf-model="#stall" instanced-mesh>
-        
-      </a-entity>
-        <a-entity  id="stall1" position="-26.677 -0.05 -11.412"  rotation="0 0 0"  scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
-          <a-entity   id="advertise1" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5" >
+      <a-plane position="-26.677 -0.05 -11.412" color="white" width="15" height="15" rotation="90 0 0" side="double"
+       class="trigger" alert-on-approach id="area1">
+        <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1" visible="false">
+          <a-entity id="advertise1" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo21" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
           </a-entity>
@@ -452,8 +447,9 @@
       <!-- <a-box id="pp1" position="-26.677 0.100 -0.829" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
 
       <!-- stall 2 -->
-     
-        <a-entity id="stall2" position="25.098 -0.05 -9.410" scale="1 1 1" rotation="0 180 0" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="25.098 -0.05 -9.410" color="white" width="15" height="15" rotation="90 180 0" side="double"
+        class="trigger" alert-on-approach id="area2">
+        <a-entity gltf-model="#stall" id="stall2" position="-0.047 0.398 -0.104" scale="1 1 1" rotation="-90 0 0" visible="false">
           <a-entity id="advertise2" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo22" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -492,10 +488,8 @@
 <a-text id="vendorbusinessname2"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno2" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> 
-    
+        </a-entity>
       </a-plane>
-</a-entity>
-
       <!-- <a-entity id="pp3" gltf-model="#chat-icon" position="-26 5.487 -34" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
       <a-image id="bubble3"  position="-26 6.08 -37" rotation="0 90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
         <a-text id="bubbletxt3" position="0 0.5 0.1" value="hello sai how are you" height="5" width="5" align="center" wrap-count="20" color="#004C72"></a-text>
@@ -505,8 +499,9 @@
       <!-- <a-box id="pp2" position="-26.584 0.100 -33.151" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       
       <!-- stall 3 -->
-     
-        <a-entity id="stall3" rotation="0 0 0" position="-26.584 -0.05 -41.96"scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="-26.584 -0.05 -41.96" color="white" width="15" height="15" rotation="90 0 0" side="double"
+        class="trigger" alert-on-approach id="area3">
+        <a-entity gltf-model="#stall" id="stall3" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise3" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo23" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -545,10 +540,8 @@
 <a-text id="vendorbusinessname3"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno3" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> 
-      
+        </a-entity>
       </a-plane>
-    </a-entity>
-
       <!-- <a-box id="pp3" position="-27.857 0.100 -74.749" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp5" gltf-model="#chat-icon" position="-28 5.35 -63" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
          <a-image id="bubble5"  position="-28 6.08 -66" rotation="0 90 0" scale="1 1 1" width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -557,8 +550,9 @@
 
       </a-image>
       <!-- stall 4 -->
-      
-        <a-entity id="stall4" position="24.85 -0.05 -38.856"  rotation="0 180 0"  scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="24.85 -0.05 -38.856" color="white" width="15" height="15" rotation="90 180 0" side="double"
+        class="trigger" alert-on-approach id="area4">
+        <a-entity gltf-model="#stall" id="stall4" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise4" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo24" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -597,9 +591,8 @@
 <a-text id="vendorbusinessname4"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno4" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text> 
-      
+        </a-entity>
       </a-plane>
-    </a-entity>
       <!-- <a-box id="pp4" position="-29.919 0.100 -113.891" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp7" gltf-model="#chat-icon" position="-25.2 5.3 -92.5" rotation="0 90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
           <a-image id="bubble7"  position="-25.2 6.08 -96" rotation="0 90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -608,8 +601,9 @@
 
       </a-image>
 <!-- stall 5 -->
-    
-        <a-entity  position="-27.857 -0.05 -71.2"  id="stall5" rotation="0 0 0"scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="-27.857 -0.05 -71.2" color="white" width="15" height="15" rotation="90 0 0" side="double"
+        class="trigger" alert-on-approach id="area5">
+        <a-entity gltf-model="#stall" id="stall5" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise5" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo25" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -648,9 +642,8 @@
 <a-text id="vendorbusinessname5"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno5" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
-     
+        </a-entity>
       </a-plane>
-    </a-entity>
       <!-- <a-box id="pp5" position="-20.346 0.100 -126.424" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp9" gltf-model="#chat-icon" position="-17.5 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
      <a-image id="bubble9"  position="-15 6.08 -121.1" rotation="0 0 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -659,8 +652,9 @@
 
       </a-image>
 <!-- stall 6-->
- 
-        <a-entity  id="stall6" rotation="0 180 0" position="24.961 -0.05 -67.721"  scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="24.961 -0.05 -67.721" color="white" width="15" height="15" rotation="90 180 0" side="double"
+        class="trigger" alert-on-approach id="area6">
+        <a-entity gltf-model="#stall" id="stall6" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise6" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo26" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -699,10 +693,8 @@
 <a-text id="vendorbusinessname6"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno6" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
-   
+        </a-entity>
       </a-plane>
-    </a-entity>
-
       <!-- <a-box id="pp6" position="12.197 0.100 -117.155" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp10" gltf-model="#chat-icon" position="8 5.3 -121.1" rotation="0 0 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
       <a-image id="bubble10"  position="11 6.08 -121.1" rotation="0 0 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -711,8 +703,9 @@
 
       </a-image>
       <!-- stall 7 -->
- 
-        <a-entity   position="-25 -0.05 -100.71" id="stall7" rotation="0 0 0"  scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="-25 -0.05 -100.71" color="white" width="15" height="15" rotation="90 0 0" side="double"
+        class="trigger" alert-on-approach id="area7">
+        <a-entity gltf-model="#stall" id="stall7" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise7" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo27" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -751,10 +744,8 @@
 <a-text id="vendorbusinessname7"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno7" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
-      
+        </a-entity>
       </a-plane>
-    </a-entity>
-
       <!-- <a-box id="pp7" position="23.621 0.100 -88.070" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp8" gltf-model="#chat-icon" position="25.5 5.29 -105.5" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
       <a-image id="bubble8"  position="25.5 6.08 -102" rotation="0 -90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -764,8 +755,9 @@
       </a-image>
 
 <!-- stall 8-->
-    
-        <a-entity  id="stall8" rotation="0 180 0" position="25.454 -0.05 -97.305" scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="25.454 -0.05 -97.305" color="white" width="15" height="15" rotation="90 180 0" side="double"
+        class="trigger" alert-on-approach id="area8">
+        <a-entity gltf-model="#stall" id="stall8" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise8" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo28" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -804,10 +796,8 @@
 <a-text id="vendorbusinessname8"value="Medical Manufacturing Technologies" color="black" scale="2 2 2" align="center" position="4.5 8.5 1" rotation="0 90 0"></a-text>
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno8" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
-     
+        </a-entity>
       </a-plane>
-    </a-entity>
-
       <!-- <a-box id="pp8" position="23.621 0.100 -60" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp6" gltf-model="#chat-icon" position="25.2 5.29 -76" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
       <a-image id="bubble6"  position="25.2 6.08 -73" rotation="0 -90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -817,8 +807,9 @@
       </a-image>
 
       <!-- stall 9 -->
-     
-        <a-entity  position="-9.555 -0.05 -121.016" id="stall9" rotation="0 -90 0"  scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="-9.555 -0.05 -121.016" color="white" width="15" height="15" rotation="90 -90 0" side="double"
+        class="trigger" alert-on-approach id="area9">
+        <a-entity gltf-model="#stall" id="stall9" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise9" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo29" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -858,10 +849,8 @@
           <a-plane color="#F65927"  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
 <a-text id="stallno9" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
 
-   
+        </a-entity>
       </a-plane>
-    </a-entity>
-
       <!-- <a-box id="pp9" position="23.621 0.100 -35" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp4" gltf-model="#chat-icon" position="25.2 5.29 -47" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener></a-entity> -->
       <a-image id="bubble4"  position="25.2 6.08 -44" rotation="0 -90 0" scale="1 1 1" width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
@@ -870,8 +859,9 @@
 
       </a-image>
 <!-- stall 10 -->
-
-        <a-entity  id="stall10" rotation="0 -90 0" position="16.257 -0.05 -120.676" scale="1 1 1" visible="false" instanced-mesh-member="mesh:#mesh1">
+      <a-plane position="16.257 -0.05 -120.676" color="white" width="15" height="15" rotation="90 -90 0" side="double"
+        class="trigger" alert-on-approach id="area10">
+        <a-entity gltf-model="#stall" id="stall10" rotation="-90 0 0" position="-1.542 0.813 0.100" scale="1 1 1" visible="false">
           <a-entity id="advertise10" gltf-model="#adversting_stand" position="3 0 13" rotation="0 90 0" look-at="[camera]" scale="2.5 2.5 2.5">
             <a-plane src="#vendor-image" width="1" height="0.910" id="vendorlogo210" rotation="0 0 0"
           position="0 2.152 0.05"></a-plane>
@@ -912,9 +902,6 @@
 <a-text id="stallno10" value="Stall No : 01" color="white" scale="2 2 2" align="center" position="0 0 0.05"></a-text>
         </a-entity>
       </a-plane>
-
-    </a-entity>
-
       <!-- <a-box id="pp10" position="23.621 0.100 -5" pulse-on-approach cursor-listener scale="1 1 1" color="red"></a-box> -->
       <!-- <a-entity id="pp2" gltf-model="#chat-icon" position="24 5.29 -17" rotation="0 -90 0" scale="0.3 0.3 0.3" pulse-on-approach cursor-listener ></a-entity> -->
       <a-image id="bubble2"  position="24 6.08 -14" rotation="0 -90 0" scale="1 1 1"  width="6.2" height="2.5" src="assets/icons/R.png" visible="false"  >
