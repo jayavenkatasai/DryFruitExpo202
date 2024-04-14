@@ -56,20 +56,7 @@ console.log(`the networked param is ${networkcategory}`)
  var result = parser.getResult();
  var useragent =result.device.type
  var os =result.os.name
-window.onload = function () {
-    let newColor = window.ntExample.randomColor();
-    document.getElementById('player').setAttribute('player-info', 'color', newColor);
-    document.querySelector('#color-changer').style.backgroundColor = newColor;
-    document.querySelector('#color-changer').style.color = newColor;
-    setname();
-  };
-  function setname() {
-   // alert('hey')
-    var name = localStorage.getItem('UserName');
-    document.getElementById('player').setAttribute('player-info', 'name', name)
-    // localStorage.setItem('name',name)
-    // alert(localStorage.getItem('UserName'))
-  }
+
 function markStallVisited(stallId) {
     let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
     visitedStalls.push(stallId);

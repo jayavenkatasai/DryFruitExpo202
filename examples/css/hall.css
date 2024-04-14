@@ -525,6 +525,12 @@ z-index:9999;
  }
  }
  @media only screen and (max-width:992px){
+    .indidualChatIcons a{
+        display:flex!important;
+    }
+    .visitorMsgIcons a{
+        display:flex!important;
+    }
     .mapIcon {
         width: 28px;
     }
@@ -1157,3 +1163,32 @@ justify-content: center;
     width: 100%;
     height: 100%;
   }
+  .visitorChatClose{
+            cursor:pointer;
+        }
+        .visitorMsgIcons {
+            position: absolute;
+            top: 32px;
+            right: 33px;
+            display:flex;
+            gap:10px;
+            align-items:center;
+        }
+        .visitorMsgIcons a{
+            display:none;
+        }
+
+        .indidualChatIcons {
+            position: absolute;
+            top: 17px;
+            right: 24px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+                .individualChatClose{
+                    cursor:pointer;
+                }
+                .indidualChatIcons a{
+                    display:none;
+                }

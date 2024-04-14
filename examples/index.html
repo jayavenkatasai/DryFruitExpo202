@@ -4,22 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hospital And Medical Supplies Expo</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png">
+    <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
-    </script>
-  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+
     <link rel="stylesheet" href="css/intro.css" />
-      
+
     <script src="js/ip-address.js"></script>
     <script src="js/track js/tracking-ga.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   
+
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   </head>
   <body>
@@ -35,74 +34,77 @@
       >
         <div class="introText">
           <div class="logoContents">
-              <img class="logoImg" src="assets/logo/digiExpoLogo.png">
-              <a href="https://www.marketcentral.in/market/index.cfm"
-              target="_blank" id="marketcentral-website-visit" onclick="tracking(0, 'marketcentral-website-visit', ''); return true;"><img class="poweredBy" src="assets/logo/poweredByImg.png"></a>
+            <img class="logoImg" src="assets/logo/digiExpoLogo.png" />
+            <a
+              href="https://www.marketcentral.in/market/index.cfm"
+              target="_blank"
+              id="marketcentral-website-visit"
+              onclick="tracking(0, 'marketcentral-website-visit', ''); return true;"
+              ><img class="poweredBy" src="assets/logo/poweredByImg.png"
+            /></a>
           </div>
           <h4 class="welcomeText">Welcome to</h4>
-          <h4 class="hsptltext">Hospital and Medical Supplies Expo</span></h4>
+          <h4 class="hsptltext">Hospital and Medical Supplies Expo</h4>
           <div class="inputText" id="name-container">
             <img src="assets/icons/userIcon.png" />
             <input type="text" placeholder="Enter name" id="name-value" />
           </div>
-        <div id="overlay"></div>
+          <div id="overlay"></div>
           <div id="error-popup" class="popup">
             <span id="error-message"></span>
             <span id="close-icon" onclick="hidePopup()">X</span>
-        
-      </div>
+          </div>
 
           <div class="enterExpoButton" id="enterExpo-btn">
             <button id="submit-link">Enter Expo</button>
           </div>
         </div>
-        
-        <div class="threeImages" style="text-align: center;">
+
+        <div class="threeImages" style="text-align: center">
           <h2>Choose Your Avatar</h2>
-        <br>
+          <br />
           <div class="threeImagesContents">
-              <div class="images" id="avthar1" onclick="displayImageId(this)">
-                  <img class="maleAvtar" src="assets/Avthars/Avthar1.png" >
-                  <img class="chosenMaleAvtar" src="assets/Avthars/chosenMaleAvatar.png" >
-              </div>
-              <div class="images" id="avthar2" onclick="displayImageId(this)">
-                  <img class="femaleAvtar" src="assets/Avthars/Avthar2.png">
-                  <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png">
-              </div>
-              <!-- <div class="images">
+            <div class="images" id="avthar1" onclick="displayImageId(this)">
+              <img class="maleAvtar" src="assets/Avthars/Avthar1.png" />
+              <img class="chosenMaleAvtar" src="assets/Avthars/chosenMaleAvatar.png" />
+            </div>
+            <div class="images" id="avthar2" onclick="displayImageId(this)">
+              <img class="femaleAvtar" src="assets/Avthars/Avthar2.png" />
+              <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png" />
+            </div>
+            <!-- <div class="images">
                   <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
               </div> -->
           </div>
           <div class="image-id">
             <!-- <h2 id="displayId"></h2> -->
-           </div>
-          <div class="continueExpoButton">
-              <button>Continue</button>
           </div>
+          <div class="continueExpoButton">
+            <button>Continue</button>
+          </div>
+        </div>
       </div>
-      
-    </div>
-</div>
     </div>
   </body>
-  
+
   <script>
-  window.onload = function() {
-    tracking(0, "exhibition3","")
-  //  trackExpo(0, "exhibition3", "", ipAddress);
-};
+    window.onload = function () {
+      tracking(0, 'exhibition3', '');
+      //  trackExpo(0, "exhibition3", "", ipAddress);
+    };
   </script>
   <script src="js/track js/ua-parser.js"></script>
   <script src="js/encrypt.js"></script>
   <script src="js/track js/trackapi.js"></script>
   <script src="js/track js/track.js"></script>
   <script src="/js/introjs/intro.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0">
-  </script>
-  <script> 
-    window.dataLayer = window.dataLayer || [];  
-   function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());  
-     gtag('config', 'G-PGGTB73FL0'); 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PGGTB73FL0');
   </script>
 </html>

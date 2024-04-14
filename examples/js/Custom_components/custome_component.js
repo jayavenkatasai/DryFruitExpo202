@@ -78,7 +78,7 @@ AFRAME.registerComponent('activate-on-approach', {
 
       if (!this.textElement.components['type-on']) {
         this.textElement.setAttribute('type-on', {
-          message: `Hello ${localStorage.getItem('UserName')}, how are you?`,
+          message: `Hello ${localStorage.getItem('UserName')}, how can i help you?`,
           delay: 100
         });
       }
@@ -95,6 +95,15 @@ AFRAME.registerComponent('activate-on-approach', {
 
       // Set cursor listener attribute
       this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
+    //   document.getElementById('indivdualChatFullScreen').addEventListener('click',function(){
+    //     //alert("trigger")
+       
+    //         var chaturl = `https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`;
+            
+    //         tracking(0, 'visitor-chat-icon', ipAddress);
+    //         window.open(chaturl, '_blank'); 
+    
+    // })
     } else {
       this.targetElement.setAttribute('visible', this.originalVisibility);
       if (this.textElement.components['type-on']) {

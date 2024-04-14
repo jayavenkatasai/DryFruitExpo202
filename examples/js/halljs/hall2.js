@@ -95,11 +95,39 @@ document.getElementById('chat-img').addEventListener('click',function(){
         tracking(0, 'visitor-chat-icon', ipAddress);
         chatRoom.style.display = "block";
         document.getElementById('chatui').setAttribute('src', chaturl);
-        lockScreenOrientation();
+   
     }
   
 
 })
+
+
+document.getElementById('mblchatplaceholder').addEventListener('click',function(){
+    //alert("trigger")
+    var chatRoom = document.getElementById('chat-ui-room');
+    if (chatRoom.style.display === "block") {
+        // If visible, hide it
+        chatRoom.style.display = "none";
+    } else {
+        // If not visible, show it
+        var chaturl = `https://stage.marketcentral.in/expo/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
+        tracking(0, 'visitor-chat-icon', ipAddress);
+        chatRoom.style.display = "block";
+        document.getElementById('chatui').setAttribute('src', chaturl);
+   
+    }
+  
+
+})
+// document.getElementById('visitorChatFullScreen').addEventListener('click',function(){
+//     //alert("trigger")
+   
+//         var chaturl = `https://stage.marketcentral.in/expo/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
+        
+//         tracking(0, 'visitor-chat-icon', ipAddress);
+//         window.open(chaturl, '_blank'); 
+//         return false;
+// })
 
 function avtharassign(avthar){
 // alert(`trigger:${avthar}`)
@@ -143,15 +171,3 @@ document.getElementById('nextbutton').addEventListener('click',function(){
      console.log(cam.getAttribute('position'))
 
 })
-
-
-function lockScreenOrientation() {
-    if (screen.orientation && screen.orientation.lock) {
-        // Lock screen orientation to portrait mode
-        screen.orientation.lock('portrait').catch(function(error) {
-            console.error('Could not lock screen orientation:', error);
-        });
-    } else {
-        console.warn('Screen orientation lock API not supported.');
-    }
-}
