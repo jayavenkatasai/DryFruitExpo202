@@ -322,7 +322,8 @@
 		
 
 var channels=[];
-
+// var currentUserID= localStorage.getItem('CustomerID')
+console.log("the customer ID is ", currentUserID)
 // 		$.get(
 // 						"./getchannels.cfm",
 // 						{
@@ -394,16 +395,13 @@ var channels=[];
 // 					);	
 
 $.ajax({
-    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/0/0/0/"+stallId,
+    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChat/0/"+currentUserID+"/0/0",
     type: 'GET',
     dataType: 'json',
     success: function(response) {
-	console.log(response);
-    
         const channels = response.map(channel => channel.CHANNEL_NAME);
         listenChannels(server, stallId, channels);
-	
-
+		console.log(response);
         bindChannel(stallId, $("form"));
         let htmlcontent = "";
         var i=0;
@@ -427,10 +425,6 @@ $.ajax({
  server.bind("error", function (err) {
   console.log(err)
 });
-
-			// Get references to our DOM elements.
-			
-
 		});
 
  function init(channaleName,index){
@@ -447,14 +441,12 @@ console.log(channaleName)
 	//To do get history of messages from cf api
 	var chatLog = $( ".maximizedChat" );
 	$.ajax({
-    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChatHistory/0/"+channaleName,
+    url: "https://dev.marketcentral.in/rest/virtualExpo/general/getChatHistory/0/"+channaleName,
     type: 'GET',
     dataType: 'json',
     success: function(response) {
      console.log(response);
 	 response.forEach(function(chatData) {
-
-
 	//	var textAlignment = (chatData.USER_ID === business) ? 'right' : 'left';
 
 // var chatItem = $("<div class='senderChat'>").css('text-align', textAlignment).append(
@@ -497,10 +489,7 @@ console.log(channaleName)
         console.error('Error fetching data:', error);
         // Handle errors
     }
-});
-	
-  
-
+});  
 	selectChannel(channaleName,index)
  }
  function toTitleCase(word) {
@@ -548,7 +537,6 @@ console.log(channaleName)
 	 <div class="chatSection">
         <div class="chatSectionContents">
             <div class="leftChatSection">
-            
                 <p class="messageHeading">Messages</p>
                 <div class="minimizedChats">
                     <a ><span>AK</span>Akshay Kumar</a>
@@ -651,6 +639,7 @@ mql.addListener(handleScreenSizeChange);
 </script>
 <script>
 var business = "<cfoutput>#url.bname#</cfoutput>";
+var currentUserID ="<cfoutput>#url.uid#</cfoutput>";
 //    document.getElementById("handleLabel").textContent = business;
    	document.getElementById("owner-head").textContent=business
     document.getElementById("handleLabel").textContent=business

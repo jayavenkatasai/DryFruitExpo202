@@ -209,17 +209,15 @@
 		.chatLogo img {
 					max-width: 100px;
 				}
+				 
 				.welcomeScreenText {
 					padding: 20px 0;
 				}
 				.enterText {
 					padding: 20px 0 11px 0;
 				}
-                .maximizedChat {
-            height: 45vh;
-        }
 		}
-@media only screen and (max-width:767px){
+		        @media only screen and (max-width:767px){
             .welcomeScreen{
                 height:100%;
                 margin-top:50px;
@@ -422,8 +420,10 @@
         <span id="typeLabel" rel="">Unknown</span> is typing.
     </div>
             <div class="sendSection">
+               
 				  <input  id="message" type="text" name="message">
 				   <input  id="submit" type="submit" value="Send">
+
             </div>
 			</form>
         </div>
@@ -457,12 +457,21 @@
 			// to your application.
 			Pusher.logToConsole=true;
 // Generate a unique ID for each user.
-//  if(!localStorage.getItem('CustomerID')){
-// 		var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
-//         localStorage.setItem('CustomerID',currentUserID)
-//         alert('your guid is',localStorage.getItem('CustomerID'))
-//         console.log('your guid is',localStorage.getItem('CustomerID'))
-//  }
+		// var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
+        // localStorage.setItem('currentUserID',currentUserID)
+        // alert(localStorage.getItem('currentUserID'))
+//         if (!localStorage.getItem('currentUserID')) {
+//     var currentUserID ="<cfoutput>#createUUID()#</cfoutput>";
+//     localStorage.setItem('currentUserID', currentUserID);
+    
+// }
+
+// var currentUserID =localStorage.getItem('CustomerID');
+// currentUserID=localStorage.getItem('CustomerID');
+// alert(localStorage.getItem('currentUserID'));
+		console.log(currentUserID)
+console.log(business)
+console.log(customername)
 			var server = new Pusher("1847dd0c5202f9b24097", {
   cluster: "ap2",
   encrypted:false,
@@ -495,45 +504,86 @@ function initiatechat(){
 		document.getElementById("end-name").textContent = name;	
 		 $('.welcomeScreen').css('display','none');
             $('.mblmaxChat').css('display','block');
-        const channaleName="private-"+stallId+"-"+currentUserID+"-"+cname;
-		$("#channel").text("channel:"+channaleName)
-		listenChannel(server,stallId,channaleName)
-		bindChannel(currentUserID,$("form"))//here is loop hole
-
-			 var data = {
-					   user_id:currentUserID,
-					   stall_Id:stallId,
-					   channel_Name:channaleName,
-					   anonymous_Id:currentUserID,
-					   anonymous_Name:cname,
-					   isclosed:0
-					   }
-                // alert(JSON.stringify(data))
-                console.log(JSON.stringify(data));
-				 $.ajax({
-					 type: "POST",
-					 url: "https://stage.marketcentral.in/rest/virtualExpo/general/insertChat",
-					 dataType: 'json',
-					 contentType: 'application/json',
-					 data: JSON.stringify(data),// now data come in this function
-					 success: function (data, status, jqXHR) {
-						 console.log(data);
-					 },
-					 error: function (jqXHR, status) {
-						 // error handler
-						 console.log(jqXHR);
-						 //alert('fail' + status);
-					 }
-				  });
+        // const channaleName="private-"+stallId+"-"+currentUserID+"-"+cname;
+		// $("#channel").text("channel:"+channaleName)
+		// listenChannel(server,stallId,channaleName)
+		// bindChannel(currentUserID,$("form"))//here is loop hole
+			//  var data = {
+			// 		   user_id:currentUserID,
+			// 		   stall_Id:stallId,
+			// 		   channel_Name:channaleName,
+			// 		   anonymous_Id:currentUserID,
+			// 		   anonymous_Name:cname,
+			// 		   isclosed:0
+			// 		   }
+			// 	 $.ajax({
+			// 		 type: "POST",
+			// 		 url: "https://stage.marketcentral.in/rest/virtualExpo/general/insertChat",
+			// 		// dataType: 'json',
+			// 		 contentType: 'application/json',
+			// 		 data: JSON.stringify(data),// now data come in this function
+			// 		 success: function (data, status, jqXHR) {
+			// 			 console.log(data);
+			// 		 },
+			// 		 error: function (jqXHR, status) {
+			// 			 // error handler
+			// 			 console.log(jqXHR);
+			// 			 //alert('fail' + status);
+			// 		 }
+			// 	  });
                 $.ajax({
     url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChatHistory/"+cname+"/0",
     type: 'GET',
     dataType: 'json',
     success: function(response) {
      console.log(response);
-    // alert("the data is" +response)
+     alert(response)
     }
+    });
+    $.ajax({
+    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChat/0/"+currentUserID+"/0/"+stallId+"",
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+        const channels = response.map(channel => channel.CHANNEL_NAME);
+        // listenChannels(server, stallId, channels);
+        listenChannel(server,stallId,channels[0])
+		console.log(response);
+        alert("The response is" ,response)
+        bindChannel(currentUserID, $("form"));
+        let htmlcontent = "";
+        var i=0;
+        channels.forEach(d=>{
+		    const channelParts = d.split('-');
+            const customername = channelParts[channelParts.length - 1];
+		    var titleCaseCustomer = toTitleCase(customername);
+		    var firstTwoCharacters = customername.substring(0, 2).toUpperCase();
+            htmlcontent=htmlcontent+"<a  onClick=\"init('"+d+"',"+i+")\"><span>"+firstTwoCharacters+"</span>"+titleCaseCustomer+"</a><br>";
+            console.log(d);
+            console.log(i);
+		    //htmlcontent += "<a data-d='" + d + "'data-i='" + i + "' onClick=\"init('" + d + "'," + i + ")\" ><span>" + firstTwoCharacters + "</span>" + titleCaseCustomer + "</a><br>";
+          
+		    i++;
+           
+         })
+           init(channels[0], 0);
+        
+        // $("#channels").html(htmlcontent);
+		// $(".minimizedChats").html(htmlcontent)
+    }
+    
+
 });
+
+
+ server.bind("error", function (err) {
+  console.log(err)
+});
+
+			// Get references to our DOM elements.
+			
+
+		
 			} else {
 				// alert("Please enter your name to start the chat.");
 				 alert("Name should contain at least 3 alphabetical characters and no special characters.");
@@ -548,10 +598,87 @@ window.onload=initiatechat();
 var business = "<cfoutput>#url.bname#</cfoutput>";
 var customername ="<cfoutput>#url.name#</cfoutput>";
 var currentUserID ="<cfoutput>#url.uid#</cfoutput>";
+
 		
  //document.getElementById("b-name").textContent = business;
   document.getElementById("v-name").textContent = business;
+function init(channaleName,index){
+console.log("the vhannel name is" + channaleName)
+    var cname=channaleName
+	console.log(cname)
+	var channelParts = cname.split('-');
+    var customername = channelParts[channelParts.length - 1];
+	var titleCaseCustomer = toTitleCase(customername);
+	console.log(titleCaseCustomer)
+	//document.getElementById("customer-head").textContent=titleCaseCustomer
+     
+	clearscreen()
+	//To do get history of messages from cf api
+	var chatLog = $( ".maximizedChat" );
+	$.ajax({
+    url: "https://stage.marketcentral.in/rest/virtualExpo/general/getChatHistory/0/"+channaleName,
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+     console.log(response);
+	 response.forEach(function(chatData) {
+	//	var textAlignment = (chatData.USER_ID === business) ? 'right' : 'left';
 
+// var chatItem = $("<div class='senderChat'>").css('text-align', textAlignment).append(
+//     $("<span class='handle'>").text(chatData.USER_ID),
+//     $("<span class='message'>").text(chatData.MESSAGE)
+// );
+
+        // Create a chat item HTML structure for each response item
+        // var chatItem = $("<div class='chatItem' >").css('text-align', textAlignment).append(
+        //     $("<span class='handle'>").text(chatData.USER_ID),
+        //     $("<span class='message'>").text(chatData.MESSAGE)
+        // );
+		if(chatData.USER_ID === business){
+			  var chatItem = $("<div class='senderChat' style='text-align: right;'>" +
+							"<span class='senderName'>" +
+						   chatData.USER_ID+
+							"</span>" + 
+							"<p>" +
+							chatData.MESSAGE+
+						"</p>" +
+						"</div>")
+		}else{
+			 var chatItem = $("<div class='receiverChat' style='text-align: right;'>" +
+							"<span class='receiverName'>" +
+						   chatData.USER_ID+
+							"</span>" + 
+							"<p>" +
+							chatData.MESSAGE+
+						"</p>" +
+						"</div>")
+		}
+        // Append the chat item to the chat log
+        chatLog.append(chatItem);
+    });
+
+    // Scroll the chat log to the bottom
+  
+    },
+    error: function(xhr, status, error) {
+        console.error('Error fetching data:', error);
+        // Handle errors
+    }
+});
+selectChannel(channaleName,index)
+ }
+ function toTitleCase(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+ function clearscreen(){
+//	document.getElementById("chatLog").innerHTML = "";
+	//document.getElementById("maximizedChatid").innerHTML = "";
+	//     $('.maximizedChat').click(function() {
+    //     // Remove content from inner classes
+    //     $(this).find('.senderChat,.senderName, .receiverChat,.receiverName').remove();
+    // });
+
+ }
 	</script>
 
 </html>

@@ -131,6 +131,11 @@ body{
     width: 30px;
     height: 30px;
 }
+.tooltipone, .tooltiptwo, .tooltipthree{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
 #mapbutton1 {
     /* position: fixed;
     top: 50%;
@@ -184,10 +189,10 @@ align-items: center;
 .tooltipFour{
     display: none;
 }
-.tooltipone {
+/* .tooltipone {
     display: flex;
     align-items: center;
-}
+} */
 #hallButtonsContents {
    height: 100%;
    width: 100%;
@@ -303,17 +308,40 @@ iframe {
 .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour {
     height: 40px;
 }
-#hallButtons {
+.labelText{
+    font-size: 12px;
+    color: #fff;
+    display:block;
+    text-align: center;
+}
+#hallButtons{
     border-radius: 6px;
     background: #0080BF;
     display: flex !important;
     align-items: center;
     gap: 26px;
-    padding: 12px;
+    padding: 12px 12px 25px 12px;
     position: absolute;
-    z-index: 9999;
+    z-index: 99;
     margin-bottom: 30px;
     bottom: 0;
+ }
+ .mblchatDisplay{
+    border-radius: 6px;
+    background: #0080BF;
+    display: none;
+    align-items: center;
+    gap: 26px;
+    padding: 12px 12px 25px 12px;
+    position: absolute;
+    z-index: 99;
+    margin-bottom: 30px;
+    bottom: 0;
+ }
+ 
+ .mblchatDisplay{
+     margin-left: 230px;
+     
  }
  .tooltipthree a{
     width:100%;
@@ -333,7 +361,7 @@ z-index:9999;
   }
   #mapSection {
     position: relative;
-    z-index: 99999;
+    z-index: 999;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -357,9 +385,11 @@ z-index:9999;
         max-width: 25px;
     }
     #mapText {
-        height: 180px;
-        overflow-y: scroll;
-    }
+	height: 79%;
+	overflow-y: scroll;
+	position: absolute;
+	top: -4%;
+}
     #closeIcon {
         position: absolute;
         right: 4%;
@@ -498,9 +528,18 @@ z-index:9999;
     .mapIcon {
         width: 28px;
     }
-    #chat-ui-room {
-        width: 100%;
-        height: 100%;
+    #totalIframe{
+        display: unset !important;;
+    }
+    .mblchatDisplay{
+        display: flex!important;
+    }
+    #chat-icon123 {
+	display: none;
+}
+    #chat-ui-room,#chat-ui-room2{
+        width: 100%!important;
+        height: 100%!important;
     }
     .infoIcon {
         width: 27px;
@@ -508,9 +547,9 @@ z-index:9999;
     .tooltipthree a img {
         width: 27px;
     }
-    #hallButtons {
+    #hallButtons,.mblchatDisplay{
         gap: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
     }
     .tooltipone:hover::before,
              .tooltipone:hover::after,
@@ -524,9 +563,10 @@ z-index:9999;
             width: 98%;
         }
         #iframe-expoDir {
-            height: 250px;
+            height: 91vh;
             width: 100%;
         }
+
  }
  @media only screen and (max-width:760px){
     .tooltipone::before {
@@ -573,7 +613,7 @@ z-index:9999;
 }
 .iframetagContent {
     position: relative;
-    z-index: 99999;
+    z-index: 999;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -684,7 +724,7 @@ z-index:9999;
 }
 
 #popup-overlay {
-    z-index:999;
+    z-index:9999;
     display: none;
     position: fixed;
     top: 0;
@@ -853,9 +893,11 @@ z-index:9999;
         max-width: 25px;
     }
     #mapText {
-        height: 180px;
-        overflow-y: scroll;
-    }
+	height: 79%;
+	overflow-y: scroll;
+	position: absolute;
+	top: -4%;
+}
     #closeIcon {
         position: fixed;
         right: 4%;
@@ -884,9 +926,11 @@ z-index:9999;
         max-width: 25px;
     }
     #mapText {
-        height: 180px;
-        overflow-y: scroll;
-    }
+	height: 79%;
+	overflow-y: scroll;
+	position: absolute;
+	top: -4%;
+}
     #closeIcon {
         position: absolute;
         right: 4%;
@@ -964,7 +1008,7 @@ background: #F1FDFF;
   }
 
   #fullscreenButton{
-    z-index:99999;
+    z-index:999;
     position: relative;
     top:1%;
     left:1%;

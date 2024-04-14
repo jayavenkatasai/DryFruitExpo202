@@ -548,7 +548,6 @@ console.log(channaleName)
 	 <div class="chatSection">
         <div class="chatSectionContents">
             <div class="leftChatSection">
-            
                 <p class="messageHeading">Messages</p>
                 <div class="minimizedChats">
                     <a ><span>AK</span>Akshay Kumar</a>

@@ -537,6 +537,7 @@ console.log(channaleName)
 	 <div class="chatSection">
         <div class="chatSectionContents">
             <div class="leftChatSection">
+            <img class="backArrow" src="./arrow-left.svg">
                 <p class="messageHeading">Messages</p>
                 <div class="minimizedChats">
                     <a ><span>AK</span>Akshay Kumar</a>

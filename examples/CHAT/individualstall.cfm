@@ -216,6 +216,7 @@
 				.enterText {
 					padding: 20px 0 11px 0;
 				}
+
 		}
 		        @media only screen and (max-width:767px){
             .welcomeScreen{
@@ -235,7 +236,7 @@
                 padding:0 12px 24px 12px;
             }
             .maximizedChat {
-                height: 79vh;
+                height: 46vh;
             }
         }
         @media only screen and (max-width:500px){
