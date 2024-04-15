@@ -134,7 +134,7 @@ body{
     width: 30px;
     height: 30px;
 }
-.tooltipone, .tooltiptwo, .tooltipthree{
+.tooltipone, .tooltiptwo, .tooltipthree,.tooltipChat{
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -202,7 +202,7 @@ align-items: center;
    display: flex;
    justify-content: center;
 }
- .tooltipone,.tooltiptwo,.tooltipthree{
+ .tooltipone,.tooltiptwo,.tooltipthree,.tooltipChat{
    position: relative;
    cursor: pointer;
 }
@@ -523,7 +523,7 @@ z-index:9999;
     align-items: center;
 }
 @media only screen and (max-width:1000px){
-    .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour {
+    .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour,.tooltipChat{
      height: 27px;
  }
  }
@@ -550,7 +550,7 @@ z-index:9999;
         width: 100%!important;
         height: 100%!important;
     }
-    .infoIcon {
+    .infoIcon,.chatIcon{
         width: 27px;
     }
     .tooltipthree a img {
@@ -976,6 +976,7 @@ z-index:9999;
 	border: 1px solid #5E5E5E;
 	/* margin: 5px; */
 	width: 15% !important;
+    justify-content: space-between;
 }
 #mapText {
 background: #F1FDFF;
