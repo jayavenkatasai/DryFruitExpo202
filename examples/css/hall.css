@@ -28,7 +28,9 @@ body{
   align-items: center;
   z-index: 999;
 }
-
+.tooltipthree a {
+	text-decoration: none!important;
+}
 /* .container {
   position: relative;
   display: flex;
@@ -535,7 +537,7 @@ z-index:9999;
         width: 28px;
     }
     #totalIframe{
-        display: unset !important;;
+        align-items: unset !important;;
     }
     .mblchatDisplay{
         display: flex!important;

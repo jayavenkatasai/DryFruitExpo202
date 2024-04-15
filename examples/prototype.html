@@ -116,12 +116,12 @@
   <body>
 
     <!-- orientation -->
-    <div id="orientationScreen">
+    <!-- <div id="orientationScreen">
       <div class="orientationScreenContents" id="orientat-content">
         <img src="assets/icons/rotatePhone.gif" />
         <h3>Rotate your mobile</h3>
       </div>
-    </div>
+    </div> -->
     <!-- orientation ending -->
 
     <!-- start of loading icon -->
@@ -651,7 +651,10 @@
             ></a-text>
           </a-plane>
         </a-entity>
-        <a-text id="bname1" value="12345" color="black"></a-text>
+  <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
+            <a-text id="txtval1" value="12345" color="black"></a-text>
+            <a-text id="bname1" value="12345" color="black"></a-text>
+          </a-entity>
         <a-image
           id="bubble1"
           position="-25 6.086 -6.489"
