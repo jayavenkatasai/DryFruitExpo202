@@ -247,10 +247,10 @@ html, body {
         }
         .card h3 {
           height: 25px;
-          overflow: hidden !important;
-          text-overflow: ellipsis;
+          /* overflow: hidden !important;
+          text-overflow: ellipsis; */
           width: 100%;
-          white-space: nowrap;
+          /* white-space: nowrap; */
           text-align: center;
           margin: 20px 0;
           font-size: 20px;

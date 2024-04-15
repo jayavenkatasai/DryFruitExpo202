@@ -225,6 +225,12 @@
                 width: 100px;
                 border-radius: 8px;
             }
+            /* .hsptltext {
+                font-size: 30px;
+            } */
+            .introContents{
+                height:unset!important;
+            }
             .threeImages h2 {
                 font-size: 30px;
                 margin-bottom: 0;

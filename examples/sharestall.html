@@ -26,8 +26,16 @@
   <body>
     <div class="loading-container" id="loading-cnt">
       <img src="assets/loading/tenor.gif" alt="Loading GIF" />
-      <p class="loading-text">Please Wait We are setting up</p>
+      <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
+      <!-- orientation -->
+      <div id="orientationScreen">
+        <div class="orientationScreenContents" id="orientat-content">
+          <img src="assets/icons/rotatePhone.gif" />
+          <h3>Rotate your mobile</h3>
+        </div>
+      </div>
+      <!-- orientation ending -->
 
     <!-- end of the loading -->
     <!-- full screen code -->
@@ -66,6 +74,7 @@
             <img class="global" src="assets/icons/global.png" />
             <button id="copyButton" onClick="copyToClipboard()">Copy</button>
           </div>
+          <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
         </div>
         <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png" /></button>
       </div>
@@ -122,6 +131,7 @@
         <!-- //stallmodel  -->
         <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
         <a-asset-item id="stall" src="assets/stallmodel/stallcompresswithoutavatar.glb"></a-asset-item>
+        <a-asset-item id="stallavatar" src="assets/Avthars/avatarreductech.glb"></a-asset-item>
         <!-- //3dcharacter  -->
         <a-mixin id="boy-character" src="assets/3dmodels/avthar1.glb" person-events-component> </a-mixin>
         <!-- //hallmodel  -->
@@ -139,7 +149,7 @@
       <a-entity gltf-model="#hallmodel" id="hall1">
         <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
         <!-- camera start -->
-        <a-entity rotation="0 90 0" position="-10 2.5 -12">
+        <a-entity rotation="0 90 0" position="-13 2.5 -12">
           <a-entity
             id="player"
             user-height="2"
@@ -155,7 +165,7 @@
         <!-- camera end -->
         <!-- stall 1 -->
         <a-plane
-          position="-26.677 0.100 -11.412"
+        position="-26.677 -0.5 -11.412"
           color="white"
           width="15"
           height="15"
@@ -165,6 +175,15 @@
           alert-on-approach
           id="area1"
         >
+
+<a-entity
+          id="stall-avatar1"
+         position="-0.38 0.4 0.5"
+          rotation="0 0 0"
+          scale="1 1 1"
+        gltf-model="#stallavatar"
+        >
+        </a-entity>
           <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1">
             <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
               <a-text id="txtval1" value="12345" color="black"></a-text>
@@ -355,5 +374,139 @@
       gtag('js', new Date());
       gtag('config', 'G-PGGTB73FL0');
     </script>
+
+    <script>
+      var parser = new UAParser();
+var result = parser.getResult();
+var useragent =result.device.type
+var os =result.os.name
+
+
+    document.getElementById('fullscreenButton').addEventListener('click', function() {
+
+    toggleFullScreen();
+
+  });
+
+    
+function toggleFullScreen() {
+    var elem = document.documentElement;
+    var fullscreenButton = document.getElementById('fullscreenButton');
+  
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  
+        // Enter fullscreen mode
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        // Exit fullscreen mode
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+  }
+  
+
+  
+  // Update button text based on full-screen state
+  function updateButton() {
+    var fullscreenButton = document.getElementById('fullscreenButton');
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+  }
+  
+  // Event listeners for fullscreen change and visibility change
+  document.addEventListener('fullscreenchange', updateButton);
+  document.addEventListener('mozfullscreenchange', updateButton);
+  document.addEventListener('webkitfullscreenchange', updateButton);
+  document.addEventListener('MSFullscreenChange', updateButton);
+  document.addEventListener('visibilitychange', updateButton);
+// full screen and exit full screen code
+//console.log(`The os is ${os}`)
+
+if(os=="iOS"|| os=="Mac OS"){
+    document.getElementById("fullscreenButton").style.display="none"
+  //   console.log("os code executed")
+  }
+    </script>
+     <script>
+  
+      function checkOrientation() {
+          //  const deviceOrientationElement = document.getElementById('device-orientation');
+          const orientationscreen = document.getElementById("orientationScreen");
+          //console.log(`the orientation screen is ${orientationscreen}`);
+         
+          //  alert("triggering")
+           console.log("trigger")
+          if (window.orientation === 90 || window.orientation === -90) {
+            //console.log("Device is in landscape orientation");
+            //   deviceOrientationElement.textContent = "it is in landscape mode";
+            //  deviceOrientationElement.style.display = "none";
+            document.getElementById("orientat-content").style.display = "none";
+            //console.log(`before hitting the black screen`);
+            orientationscreen.style.display = "none";
+      
+            //console.log(`the blackscreen is ${orientationscreen}`);
+            //console.log(orientationscreen);
+            //console.log(`after hitting the black screen`);
+          
+          } else {
+            //console.log("Device is in portrait orientation");
+            //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
+            //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
+            orientationscreen.style.display = "block";
+            document.getElementById("orientat-content").style.display = "flex";
+          }
+        }
+      
+      
+        
+      window.addEventListener("resize", checkOrientation, false);
+      
+      function disableCheckAfterOrientationChange() {
+        // Remove the event listener after the user enters landscape mode
+        window.removeEventListener("orientationchange", checkOrientation);
+        // Set up a new event listener to re-enable orientation checking
+        window.addEventListener("orientationchange", enableCheckAfterPortrait);
+      }
+      
+      function enableCheckAfterPortrait() {
+        // Remove the event listener after the user enters portrait mode again
+        window.removeEventListener(
+          "orientationchange",
+          enableCheckAfterPortrait
+        );
+        // Set up a new event listener to check orientation on further changes
+        window.addEventListener("orientationchange", checkOrientation);
+      }
+      
+      // Listen for changes in orientationcameraq
+      window.addEventListener("orientationchange", () => {
+        checkOrientation();
+        disableCheckAfterOrientationChange();
+      });
+      
+      
+      window.onload =function(){
+        checkOrientation();
+      }
+      </script>
   </body>
 </html>

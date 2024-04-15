@@ -84,10 +84,17 @@ function share(uno,name){
    // trackExpo(uno, "vendorshare", " ", ipAddress)
    // trackinga("sharestall")
 }
-if(useragent=='mobile'){
+// if(useragent=='mobile'){
 
     if(!localStorage.getItem('intiated')){
             localStorage.setItem('intiated','true')
+            if(useragent=='mobile'){
+                document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough.png')
+            }
+            else{
+                document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough.png')
+            }
+          //  document.getElementById('instructionimg').setAttribute('src','assets/icons/Walkthrough1.png')
         document.getElementById('instruction-pannel').style.display='flex'
         document.getElementById('closeiconimgipp').addEventListener('click',function(){
             document.getElementById('instruction-pannel').style.display='none'
@@ -96,10 +103,10 @@ if(useragent=='mobile'){
    document.getElementById('instruction-pannel').style.display='none'
     }
  
-}
-else{
-    document.getElementById('instruction-pannel').style.display='none'
-}
+// }
+// else{
+//     document.getElementById('instruction-pannel').style.display='none'
+// }
 
 // function showPopup() {
 //     // Get the current URL
@@ -115,11 +122,11 @@ else{
 function copyToClipboard() {
     // Get the current URL
     var currentURL = document.getElementById('currentURL').value;
-
     // Copy the URL to the clipboard
     navigator.clipboard.writeText(currentURL)
-        .then(function () {
-          alert('URL copied to clipboard!');
+        .then(function () { 
+            // alert('URL copied to clipboard!');
+                document.getElementById('url-copied-alert-txt').style.display = 'block';
         })
         .catch(function (err) {
             console.error('Unable to copy to clipboard', err);
@@ -129,6 +136,7 @@ function copyToClipboard() {
 function closePopup1() {
     // Close the popup
     var popupOverlay = document.getElementById('popup-overlay');
+    document.getElementById('url-copied-alert-txt').style.display = 'none';
     popupOverlay.style.display = 'none';
 }
 
