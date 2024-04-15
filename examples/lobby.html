@@ -25,6 +25,14 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
   </head>
   <body>
+    <!-- orientation starts -->
+    <div id="orientationScreen">
+      <div class="orientationScreenContents" id="orientat-content">
+        <img src="assets/icons/rotatePhone.gif" />
+        <h3>Rotate your mobile</h3>
+      </div>
+    </div>
+    <!-- orientation ends -->
     <!-- start of loading icon -->
     <div class="loading-container" id="loading-cnt">
       <img src="assets/loading/tenor.gif" alt="Loading GIF" />
@@ -278,5 +286,81 @@
       gtag('js', new Date());
       gtag('config', 'G-PGGTB73FL0');
     </script>
+    <script>
+  
+      function checkOrientation() {
+        var parser = new UAParser();
+       var result = parser.getResult();
+       var useragent =result.device.type
+       var os =result.os.name
+        if(useragent=='mobile'){
+      
+        
+          //  const deviceOrientationElement = document.getElementById('device-orientation');
+          const orientationscreen = document.getElementById("orientationScreen");
+          //console.log(`the orientation screen is ${orientationscreen}`);
+         
+          //  alert("triggering")
+           console.log("trigger")
+          if (window.orientation === 90 || window.orientation === -90) {
+            //console.log("Device is in landscape orientation");
+            //   deviceOrientationElement.textContent = "it is in landscape mode";
+            //  deviceOrientationElement.style.display = "none";
+            document.getElementById("orientat-content").style.display = "none";
+            //console.log(`before hitting the black screen`);
+            orientationscreen.style.display = "none";
+      
+            //console.log(`the blackscreen is ${orientationscreen}`);
+            //console.log(orientationscreen);
+            //console.log(`after hitting the black screen`);
+          
+          } else {
+            //console.log("Device is in portrait orientation");
+            //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
+            //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
+            orientationscreen.style.display = "block";
+            document.getElementById("orientat-content").style.display = "flex";
+          }
+      
+        }
+        else{
+          orientationscreen.style.display = "none";
+          alert("new")
+        }
+        }
+      
+      
+        
+      window.addEventListener("resize", checkOrientation, false);
+      
+      function disableCheckAfterOrientationChange() {
+        // Remove the event listener after the user enters landscape mode
+        window.removeEventListener("orientationchange", checkOrientation);
+        // Set up a new event listener to re-enable orientation checking
+        window.addEventListener("orientationchange", enableCheckAfterPortrait);
+      }
+      
+      function enableCheckAfterPortrait() {
+        // Remove the event listener after the user enters portrait mode again
+        window.removeEventListener(
+          "orientationchange",
+          enableCheckAfterPortrait
+        );
+        // Set up a new event listener to check orientation on further changes
+        window.addEventListener("orientationchange", checkOrientation);
+      }
+      
+      // Listen for changes in orientationcameraq
+      window.addEventListener("orientationchange", () => {
+        checkOrientation();
+        disableCheckAfterOrientationChange();
+      });
+      
+      
+      window.onload =function(){
+       
+        checkOrientation();
+      }
+      </script>
   </body>
 </html>

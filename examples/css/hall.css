@@ -1066,7 +1066,7 @@ justify-content: center;
  font-family: roboto;
 }
 #orientationScreen {
-    display: none !important;
+    display: none ;
   }
   .orientationScreenContents {
     height: 100%;
@@ -1104,9 +1104,9 @@ justify-content: center;
             height: 200px;
             object-fit: contain;
         } */
-    #orientationScreen {
-      display: block !important;
-    }
+    /* #orientationScreen {
+      display: none ;
+    } */
   }
   #instruction-pannel {
     display: flex;

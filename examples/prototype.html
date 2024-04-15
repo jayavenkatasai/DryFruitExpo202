@@ -290,6 +290,7 @@
     <script src="js/track js/trackapi.js"></script>
     <script src="js/halljs/hall.js"></script>
     <script src="js/halljs/hall2.js"></script>
+    <script src="js/halljs/webinar-notify.js"></script>
     <!-- js files end -->
     <!-- ////////////////////////////////////////////////////////////A-FRAME///////////////////////////////////////////// -->
     <!-- a-frame codee starts here -->
@@ -2647,6 +2648,13 @@
     <script>
   
 function checkOrientation() {
+  var parser = new UAParser();
+ var result = parser.getResult();
+ var useragent =result.device.type
+ var os =result.os.name
+  if(useragent=='mobile'){
+
+  
     //  const deviceOrientationElement = document.getElementById('device-orientation');
     const orientationscreen = document.getElementById("orientationScreen");
     //console.log(`the orientation screen is ${orientationscreen}`);
@@ -2672,6 +2680,12 @@ function checkOrientation() {
       orientationscreen.style.display = "block";
       document.getElementById("orientat-content").style.display = "flex";
     }
+
+  }
+  else{
+    orientationscreen.style.display = "none";
+    alert("new")
+  }
   }
 
 
@@ -2703,6 +2717,7 @@ window.addEventListener("orientationchange", () => {
 
 
 window.onload =function(){
+ 
   checkOrientation();
 }
 </script>
