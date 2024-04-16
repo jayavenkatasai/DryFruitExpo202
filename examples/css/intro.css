@@ -4,7 +4,6 @@
             margin:0;
         }
         .introContents{
-            background-color: #fff;
             height: 100vh;
         }
         .introText {
@@ -121,6 +120,7 @@
             display:flex;
             gap:30px;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             margin-bottom:30px;
         }
@@ -228,9 +228,6 @@
             /* .hsptltext {
                 font-size: 30px;
             } */
-            .introContents{
-                height:unset!important;
-            }
             .threeImages h2 {
                 font-size: 30px;
                 margin-bottom: 0;

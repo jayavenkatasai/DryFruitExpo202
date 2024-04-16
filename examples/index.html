@@ -20,9 +20,203 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <style>
+      *{
+          margin: 0;
+      }
+      body{
+          font-family: "Nunito", sans-serif;
+          margin:15px;
+      }
+
+      
+      .welcomeIntro{
+          color: #8FDAFF;
+          font-size: 55px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal; 
+          padding-bottom: 20px;
+      }
+      .welcomeHsptlText{
+          color: #FFF;
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          text-transform: uppercase; 
+          padding-bottom:70px;
+      }
+      .intro{
+          background-color:#007FBE;
+          height:95vh;
+      }
+      .introContents,.introSections{
+          height:100%;
+      }
+      .sectionOne ::placeholder,.sectionOne input{
+          color: #344054;
+          text-align: center;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 20px;
+      }
+      .sectionOne input{
+          padding: 18px;
+          border-radius: 8px;
+           border: 1px solid rgba(0, 9, 57, 0.10);
+          background:#FFF;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+          font-family: "Nunito", sans-serif;
+      }
+      .enterExpoButton{
+          margin-top:15px;
+          border-radius:12px;
+          background: #F65927; 
+          color: #FFF;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal; 
+          padding:17px 0;
+          border:none;
+          font-family: "Nunito", sans-serif;
+      }
+      .sectionOne input,.enterExpoButton{
+          max-width:400px;
+          width:100%;
+      }
+      .sectionOne{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          padding-left:50px;
+          width:40%;
+      }
+      .sectionOne,.sectionTwo{
+          height:100%;
+          /* width:100%; */
+      }
+      .introSections{
+          display:flex;
+          align-items:center;
+          gap:60px;
+      }
+      .sectionTwo img{
+          width:100%;
+        height: 100%;
+          object-fit: contain;
+      }
+      .sectionTwo{
+          position: relative;
+          z-index: 9;
+      }
+      .sectionTwo::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          background-color: #fff;
+          z-index: -1;
+          height: 100%;
+          width: 50%;
+          left: 50%;
+      }
+      .welcomeHsptlText span{
+          display: block;
+      }
+      .wrongText{
+          color:#fff;
+          font-size:14px;
+          font-weight:600;
+          display: none
+      }
+      @media only screen and (max-width:767px){
+          .introSections{
+              flex-direction:column;
+          }
+          .sectionOne{
+              padding:0;
+              width:95%;
+              margin:auto;
+          }
+          .welcomeIntro {
+              font-size: 35px;
+              padding:20px 0 0 0;
+          }
+          .welcomeHsptlText {
+              font-size: 37px;
+              padding-bottom: 30px;
+          }
+          .sectionOne ::placeholder,.sectionOne input{
+              font-size:18px;
+              padding: 10px;
+          }
+          .enterExpoButton{
+              font-size:18px;
+              padding: 10px;
+          }
+          .sectionTwo::before{
+              display:none;
+          }
+          .sectionTwo img{
+              height:unset;
+          }
+          .introSections {
+              gap: 20px;
+          }
+      }
+  </style>
   </head>
   <body>
+    <!-- intro new -->
     <div class="intro">
+      <div class="introContents">
+          <div class="introSections">
+              <div class="sectionOne">
+                  <p class="welcomeIntro">Welcome to</p>
+                  <p class="welcomeHsptlText">Hospital & Medical Supplies Expo</p>
+                  <div  id="name-container">
+                  <input type="text" placeholder="Enter your name" id="name-value">
+                  </div>
+                  <p class="wrongText">* Please enter minimum 3 characters</p>
+                  <div id="overlay"></div>
+                  <div id="error-popup" class="popup">
+                    <span id="error-message"></span>
+                    <span id="close-icon" onclick="hidePopup()">X</span>
+                  </div>
+                  <button class="enterExpoButton" type="submit" id="enterExpo-btn">Enter Expo</button>
+              </div>
+              <div class="sectionTwo">
+                  <img src="assets/icons/introImage.png">
+              </div>
+          </div>
+      </div>
+      <div class="threeImages" style="text-align: center">
+        <h2>Choose Your Avatar</h2>
+        <br />
+        <div class="threeImagesContents">
+          <div class="images" id="avthar1" onclick="displayImageId(this)">
+            <img class="maleAvtar" src="assets/Avthars/Avthar1.png" />
+            <img class="chosenMaleAvtar" src="assets/Avthars/chosenMaleAvatar.png" />
+          </div>
+          <div class="images" id="avthar2" onclick="displayImageId(this)">
+            <img class="femaleAvtar" src="assets/Avthars/Avthar2.png" />
+            <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png" />
+          </div>
+          <!-- <div class="images">
+                <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
+            </div> -->
+        </div>
+        <div class="image-id">
+          <!-- <h2 id="displayId"></h2> -->
+        </div>
+        <div class="continueExpoButton">
+          <button>Continue</button>
+        </div>
+      </div>
+  </div>
+    <!-- new intro bkp -->
+    <!-- <div class="intro">
       <div
         class="introContents"
         style="
@@ -72,19 +266,19 @@
               <img class="femaleAvtar" src="assets/Avthars/Avthar2.png" />
               <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png" />
             </div>
-            <!-- <div class="images">
+             <div class="images">
                   <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
               </div> -->
-          </div>
-          <div class="image-id">
+          <!-- </div>
+          <div class="image-id"> -->
             <!-- <h2 id="displayId"></h2> -->
-          </div>
+          <!-- </div>
           <div class="continueExpoButton">
             <button>Continue</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 
   <script>

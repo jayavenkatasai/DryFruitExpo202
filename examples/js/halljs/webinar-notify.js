@@ -33,19 +33,25 @@ function checkWebinarStatus(webinarStartTime, webinarEndTime) {
 
     // Extract current date and time
     const currentDate = currentDateTime.getDate();
-    const currentHour = currentDateTime.getHours();
+    const currentHour = currentDateTime.getHours()-12;
 
     // Extract webinar start and end date and time
     const webinarStartDate = webinarStartDateTime.getDate();
     console.log(webinarStartDate)
     const webinarStartHour = webinarStartDateTime.getHours();
+    console.log(webinarStartHour)
+    console.log(`the webinarStartHour  is ${webinarStartHour}`)
     const webinarEndHour = webinarEndDateTime.getHours();
-
+    console.log(webinarEndHour)
+    console.log(`the webinarEndHour  is ${webinarEndHour}`)
+console.log(`the current hour is ${currentHour}`)
+   
     // Check if current date matches webinar start date
     if (currentDate <= webinarStartDate) {
         // Check if current hour is between webinar start and end hours
-        if (currentHour >= webinarStartHour && currentHour < webinarEndHour) {
+        if (currentHour >= webinarStartHour && currentHour <= webinarEndHour) {
             // need to write the ui webinar popup 
+            document.querySelector('.webinarPopUp').style.display='flex'
             console.log("Webinar is live.");
         } else {
             console.log("Webinar is not live...");

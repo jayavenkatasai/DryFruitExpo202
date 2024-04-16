@@ -78,6 +78,7 @@ function share(uno,name){
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
     document.getElementById('urlText').textContent = "Stall Link"
+    document.querySelector('.inviteText').textContent = "Share Stall Link"
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
     tracking(uno, "share-stall", "")
@@ -146,7 +147,13 @@ function removeEntities(stalls) {
     stalls.forEach((stall, stallIndex) => {
     let numberOfImages = stall.products.length;
     const stallContainerId = `stall${stallIndex + 1}`;
+    document.getElementById(`stall${stallIndex + 1}`).removeAttribute("instanced-mesh-member");
+    document.getElementById(`stall-avatar${stallIndex + 1}`).removeAttribute("instanced-mesh-member");
     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
+    document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible","false");
+    document.getElementById(`bubble${stallIndex + 1}`).removeAttribute('activate-on-approach')
+    document.getElementById(`bubble${stallIndex + 1}`).setAttribute('visible','false')
+
     // document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible","false");
     // document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
     for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
@@ -336,7 +343,12 @@ const fetchDataFromAPI = () => {
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
+
                         document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","true");
+                        document.getElementById(`stall${stallIndex + 1}`).setAttribute("instanced-mesh-member","mesh:#mesh1");
+                        document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible","true");
+                        document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("instanced-mesh-member","mesh:#mesh2");
+                   
                         document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
@@ -587,6 +599,7 @@ const fetchDataFromAPI = () => {
                                     var currentURLInput = document.getElementById('currentURL');
                                     currentURLInput.value = newURL;
                                     document.getElementById('urlText').textContent = "Product Link"
+                                    document.querySelector('.inviteText').textContent = "Share Product Link"
                                     popupOverlay.style.display = 'flex';
                                     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
                                     tracking(stall.uno, "share-product", imageDescription)
@@ -946,14 +959,14 @@ function checkhallfive(x){
     // document.getElementById('area5').setAttribute('rotation','90 -90 0')
     // document.getElementById('area5').removeAttribute('position')
    
-    document.getElementById('area5').setAttribute('rotation','90 -90 0')
-    document.getElementById('area5').setAttribute('position','1.109 0.000 -65')
+    document.getElementById('stall5').setAttribute('rotation','0 -90 0')
+    document.getElementById('stall5').setAttribute('position','1.109 0.000 -65')
     document.getElementById('bubble5').setAttribute('rotation','0 0 0')
     document.getElementById('bubble5').setAttribute('position','-4 5.2 -67.506')
     document.getElementById('navmeshmodel_10').removeAttribute('gltf-model')
     document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @5 navmesh.glb)')
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
-    document.getElementById('navmeshmodel_10').setAttribute('visible','true')
+    document.getElementById('navmeshmodel_10').setAttribute('visible','false')
 
    }
 }

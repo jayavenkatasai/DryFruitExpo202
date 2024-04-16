@@ -163,9 +163,9 @@
     <div id="chat-ui-room">
       <iframe id="chatui" src="" width="800px" height="500px" allowfullscreen></iframe>
       <div class="visitorMsgIcons">
-        <!-- <a href="" id="visitorChatFullScreen"
+        <a href="" id="visitorChatFullScreen"
           ><img class="visitorChatFullScreen" src="assets/icons/blueCloseIcon.png"
-        /></a> -->
+        /></a>
         <img class="visitorChatClose" src="assets/icons/blueCloseIcon.png" />
       </div>
     </div>
@@ -173,9 +173,9 @@
     <div id="chat-ui-room2">
       <iframe id="chatui2" src="" width="800px" height="500px" allowfullscreen></iframe>
       <div class="indidualChatIcons">
-        <!-- <a href="" id="indivdualChatFullScreen"
+        <a href="" id="indivdualChatFullScreen"
           ><img class="visitorChatFullScreen" src="assets/icons/blueCloseIcon.png"
-        /></a> -->
+        /></a>
         <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
       </div>
     </div>
@@ -244,18 +244,18 @@
       <div id="hallButtons">
         <div class="tooltipone" onclick="tracking(0, 'category-map', ''); return true;">
           <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" />
-          <!-- <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" /> -->
+          <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" />
           <p class="labelText">Category</p>
         </div>
         <div class="tooltiptwo" onclick="tracking(0, 'expo-directory', ''); return true;">
           <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png" />
-          <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
+          <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" />
           <p class="labelText">Explore</p>
         </div>
         <div class="tooltipthree">
           <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
             <img class="desktopExitImg" src="assets/icons/exitimg.png" />
-            <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
+            <img class="mblExitImg" src="assets/icons/blueExit.png" />
             <p class="labelText">Exit</p>
           </a>
         </div>
@@ -265,7 +265,7 @@
       </div>
       <div class="mblchatDisplay" id="mblchatplaceholder">
         <div class="tooltipChat">
-          <img class="chatIcon" src="assets/icons/chaticon.png" />
+          <img class="chatIcon" src="assets/icons/infoimg.png" />
           <p class="labelText">Chat</p>
         </div>
       </div>
@@ -2706,6 +2706,7 @@ function checkOrientation() {
   }
   else{
     orientationscreen.style.display = "none";
+    alert("new")
   }
   }
 

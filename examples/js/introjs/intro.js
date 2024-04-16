@@ -75,13 +75,18 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                document.querySelectorAll('.introText').forEach(function(element) {
+                document.querySelectorAll('.introContents').forEach(function(element) {
                     element.style.display = "none";
                 });
                 
                 document.querySelectorAll('.threeImages').forEach(function(element) {
                     element.style.display = "block";
                 });
+               
+            
+                document.querySelector('.intro').style.background='#F1FDFF'
+
+
               //  window.location.replace("categorymapdynmic.html")
                 // const responseData = await response.json();
                 // console.log('Response:', responseData);
@@ -156,22 +161,30 @@ function displayImageId(img) {
         nameInput.focus();
         nameContainer.style.borderColor = "red";
         errorMessage.textContent = "Please enter your name";
+        document.querySelector('.wrongText').style.display='block'
+        document.querySelector('.wrongText').textContent='* Please enter your name'
        // alert("Please enter your name");
-        showPopup();
+       // showPopup();
         return;
     }
     else if (name.length < 3 || /[^a-zA-Z]/.test(name)) {
         // Check if name has less than three characters
         if (name.length < 3) {
             errorMessage.textContent = "Name should contain minimum 3 characters";
+         
+            document.querySelector('.wrongText').style.display='block'
+            document.querySelector('.wrongText').textContent='* Name should contain minimum 3 characters'
           //  alert("Name should contain minimum 3 characters");
-            showPopup();
+          //  showPopup();
         }
         // Check if name contains special characters
         if (/[^a-zA-Z]/.test(name)) {
             errorMessage.textContent = "Name should not contain special characters and numbers";
+            document.querySelector('.wrongText').style.display='block'
+            document.querySelector('.wrongText').textContent='* Name should not contain special characters and numbers'
+            
         //    alert("Name should not contain special characters and numbers");
-            showPopup();
+           // showPopup();
         }
 
         nameInput.focus();
@@ -181,7 +194,7 @@ function displayImageId(img) {
 
     // If name passes validation, reset border color
     nameContainer.style.borderColor = "";
-    hidePopup();
+    //hidePopup();
 }
 
 function showPopup() {

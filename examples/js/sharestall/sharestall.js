@@ -41,6 +41,7 @@ function share(uno,name){
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
     document.getElementById('urlText').textContent = "Stall Link"
+    document.querySelector('.inviteText').textContent = "Share Stall Link"
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
 }
@@ -249,6 +250,7 @@ const fetchDataFromAPI = () => {
                                     var currentURLInput = document.getElementById('currentURL');
                                     currentURLInput.value = newURL;
                                     document.getElementById('urlText').textContent = "Product Link"
+                                    document.querySelector('.inviteText').textContent = "Share Product Link"
                                     popupOverlay.style.display = 'flex';
                                     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
                                     // gtag("event", "share-stall", { 'page_title': "Hall-Page" });

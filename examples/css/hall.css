@@ -43,32 +43,6 @@ body{
   z-index: 99;
 } */
 
-      .heartbeat-polyline {
-        fill: none;
-        stroke: #0080bf;
-        stroke-width: 3;
-        stroke-miterlimit: 10;
-        animation: heartbeat 2s infinite;
-      }
-
-      @keyframes heartbeat {
-        0% {
-          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
-            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-        }
-        50% {
-          points: 0, 45.486 38.514, 45.486 44.595, 50 50.676, 45.486 57.771,
-            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-        }
-        100% {
-          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
-            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-        }
-      }
-
 
 
 /* end of the loading */
@@ -180,7 +154,7 @@ display:none;
 justify-content: center;
 align-items: center;
 }
-.mblMapIcon,.mblInfoIcon,.mblExitImg,.mblShare{
+/* .mblMapIcon,.mblInfoIcon,.mblExitImg,.mblShare{
     display:none;
 }
 .tooltipone:hover .desktopMapIcon, .tooltiptwo:hover  .desktopInfoIcon, .tooltipthree:hover  .desktopExitImg,.tooltipFour:hover .desktopShare{
@@ -188,7 +162,7 @@ align-items: center;
 }
 .tooltipone:hover .mblMapIcon, .tooltiptwo:hover .mblInfoIcon, .tooltipthree:hover .mblExitImg,.tooltipFour:hover .mblShare{
     display:block;
-}
+} */
 .tooltipFour{
     display: none;
 }
@@ -206,7 +180,7 @@ align-items: center;
    position: relative;
    cursor: pointer;
 }
-
+/* 
 .tooltipone::before {
 
 position: absolute;
@@ -303,7 +277,7 @@ width: 100px;
 .tooltipthree:hover::before,
 .tooltipthree:hover::after{
    display: block!important;
-}
+} */
 iframe {
    border: none;
    border-radius: 5px;
@@ -989,7 +963,7 @@ background: #F1FDFF;
 	border-radius: 10px;
 }
 .card h3 {
-	height: 25px;
+	font-family: "Nunito", sans-serif;
 	/* overflow: hidden !important;
 	text-overflow: ellipsis; */
 	width: 100%;
@@ -1010,6 +984,7 @@ background: #F1FDFF;
 	max-width: 155px;
 	border: none;
 	cursor: pointer;
+    font-family: "Nunito", sans-serif;
 }
 @media only screen and (max-width: 1090px) {
     .card {
@@ -1089,6 +1064,14 @@ justify-content: center;
   @media only screen and (max-width: 992px) {
     .mblExpoFrame {
       display: block;
+
+    }
+    #mapbutton1 {
+        left: 8%;
+    }
+    #mapbutton2 {
+        right: 0;
+        left: 89%
     }
     .desktopExpoFrame {
       display: none;
@@ -1201,3 +1184,49 @@ justify-content: center;
 #url-copied-alert-txt{
     display: none;
 }
+
+/* webinar popup css */
+.joinText{
+    color: #464646;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+}
+.sessionText{
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    background: #F65927;
+    padding: 8px 17px;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+}
+.webinarPopUpFlex{
+    max-width:320px;
+    width:100%;
+    padding:30px 0;
+    position: relative;
+    z-index: 99;
+    border-radius: 10px;
+    background: #F1FDFF;
+}
+.webinarPopUpContents{
+    text-align: center;
+}
+.webinarPopUp{
+    display: none;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.webinarClose{
+    position: absolute;
+    right:10px;
+    cursor: pointer;
+    top:10px;
+}
+/* webinar popup ends */
