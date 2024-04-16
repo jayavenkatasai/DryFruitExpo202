@@ -29,12 +29,12 @@
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
       <!-- orientation -->
-      <div id="orientationScreen">
+      <!-- <div id="orientationScreen">
         <div class="orientationScreenContents" id="orientat-content">
           <img src="assets/icons/rotatePhone.gif" />
           <h3>Rotate your mobile</h3>
         </div>
-      </div>
+      </div> -->
       <!-- orientation ending -->
 
     <!-- end of the loading -->
@@ -147,6 +147,14 @@
         <img id="share-button" src="assets/icons/shareicon.png" />
       </a-assets>
       <a-entity gltf-model="#hallmodel" id="hall1">
+        <a-entity
+        id="stall-avatar1"
+       position="-27.175 -0.059 -10.968"
+        rotation="0 0 0"
+        scale="1 1 1"
+      gltf-model="#stallavatar"
+      >
+      </a-entity>
         <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
         <!-- camera start -->
         <a-entity rotation="0 90 0" position="-13 2.5 -12">
@@ -164,6 +172,7 @@
         </a-entity>
         <!-- camera end -->
         <!-- stall 1 -->
+     
         <a-plane
         position="-26.677 -0.5 -11.412"
           color="white"
@@ -176,14 +185,7 @@
           id="area1"
         >
 
-<a-entity
-          id="stall-avatar1"
-         position="-0.38 0.4 0.5"
-          rotation="0 0 0"
-          scale="1 1 1"
-        gltf-model="#stallavatar"
-        >
-        </a-entity>
+
           <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1">
             <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
               <a-text id="txtval1" value="12345" color="black"></a-text>
