@@ -29,12 +29,12 @@
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
       <!-- orientation -->
-      <!-- <div id="orientationScreen">
+      <div id="orientationScreen">
         <div class="orientationScreenContents" id="orientat-content">
           <img src="assets/icons/rotatePhone.gif" />
           <h3>Rotate your mobile</h3>
         </div>
-      </div> -->
+      </div>
       <!-- orientation ending -->
 
     <!-- end of the loading -->
@@ -451,6 +451,13 @@ if(os=="iOS"|| os=="Mac OS"){
      <script>
   
       function checkOrientation() {
+        var parser = new UAParser();
+       var result = parser.getResult();
+       var useragent =result.device.type
+       var os =result.os.name
+        if(useragent=='mobile'){
+      
+        
           //  const deviceOrientationElement = document.getElementById('device-orientation');
           const orientationscreen = document.getElementById("orientationScreen");
           //console.log(`the orientation screen is ${orientationscreen}`);
@@ -476,6 +483,12 @@ if(os=="iOS"|| os=="Mac OS"){
             orientationscreen.style.display = "block";
             document.getElementById("orientat-content").style.display = "flex";
           }
+      
+        }
+        else{
+          orientationscreen.style.display = "none";
+          alert("new")
+        }
         }
       
       
@@ -507,6 +520,7 @@ if(os=="iOS"|| os=="Mac OS"){
       
       
       window.onload =function(){
+       
         checkOrientation();
       }
       </script>
