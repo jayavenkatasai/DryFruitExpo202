@@ -80,7 +80,7 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
                 });
                 
                 document.querySelectorAll('.threeImages').forEach(function(element) {
-                    element.style.display = "block";
+                    element.style.display = "flex";
                 });
                
             
@@ -159,7 +159,7 @@ function displayImageId(img) {
  
     if (name.trim() === "") {
         nameInput.focus();
-        nameContainer.style.borderColor = "red";
+        nameInput.style.border = "2px solid red";
         errorMessage.textContent = "Please enter your name";
         document.querySelector('.wrongText').style.display='block'
         document.querySelector('.wrongText').textContent='* Please enter your name'
@@ -188,12 +188,12 @@ function displayImageId(img) {
         }
 
         nameInput.focus();
-        nameContainer.style.borderColor = "red";
+        nameInput.style.borderColor = "red";
         return;
     }
 
     // If name passes validation, reset border color
-    nameContainer.style.borderColor = "";
+    nameContainer.style.borderColor = "black";
     //hidePopup();
 }
 

@@ -129,6 +129,31 @@
         /* max-width: 329px; */
         width: 280px;
       }
+      .speakerDetails p {
+        color: #000;
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        background-color: #fff;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 10px 40px 10px 20px;
+      }
+      .speakerText span {
+        text-transform: uppercase;
+      }
+      .speakerDetails {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 999;
+        top: 30%;
+        gap: 20px;
+      }
+      .speakerDetails p span {
+        display: block;
+      }
       .webinarsharebtn {
         background-color: transparent;
         border: none;
@@ -215,6 +240,22 @@
         .poweredimg img {
           max-width: 200px;
         }
+        .speakerText span,.speakerComapny span {
+    text-transform: uppercase;
+    /* MAX-WIDTH: 100PX; */
+    max-width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* .speakerComapny span {
+    text-transform: uppercase;
+    
+    max-width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+} */
         .webinarSectionMbl iframe {
           height: 55%;
           max-width: 400px;
@@ -224,6 +265,27 @@
         .webinarsharebtn img {
           max-width: 120px;
         }
+        .speakerDetails p {
+    color: #000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: #fff;
+    /* border-top-right-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    padding: 5PX 20PX;
+    BORDER-RADIUS: 10PX;
+}
+        .speakerDetails {
+    display: flex;
+    flex-direction: ROW;
+    position: fixed;
+    z-index: 999;
+    top: 2px;
+    LEFT: 25%;
+    gap: 20px;
+}
       }
       @media only screen and (max-width: 910px) {
         iframe {
@@ -274,7 +336,13 @@
             <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
           </div>
         </div>
-        <div class="poweredimg">
+<!-- speaker sectio code -->
+<div class="speakerDetails">
+  <p class="speakerText">Speaker : <span class="speakerName">sreenivas pusarla</span></p>
+  <p class="speakerComapny">Company : <span class="cmpnyName">3D LABS INDIA</span></p>
+</div>
+<!-- end of speaker section code -->
+<div class="poweredimg">
           <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank">
             <img src="assets/MicrosoftTeams-image (41).png" />
           </a>
@@ -297,6 +365,12 @@
             <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
           </div>
         </div>
+        <!-- speaker details2 -->
+        <div class="speakerDetails">
+          <p class="speakerText">Speaker : <span class="speakerName">sreenivas pusarla</span></p>
+          <p class="speakerComapny">Company : <span class="cmpnyName">3D LABS INDIA</span></p>
+        </div>
+         <!-- end of speaker details2 -->
         <div class="poweredimg">
           <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
             <img src="assets/MicrosoftTeams-image (41).png" />

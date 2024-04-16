@@ -19,8 +19,59 @@
         margin: auto;
       }
       .introContents{
-          background-color:#a2cfe5;
-          height:95vh;
+          background-color:rgb(241, 253, 255);
+          height:100vh;
+      }
+      .enterExpoButton{
+          margin-top:15px;
+          border-radius:12px;
+          background: #F65927; 
+          color: #FFF;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal; 
+          padding:17px 0;
+          border:none;
+          font-family: "Nunito", sans-serif;
+      }
+      .enterExpoButton{
+        max-width:400px;
+      }
+      @media only screen and (max-width:767px){
+          .introSections{
+              flex-direction:column;
+          }
+          .sectionOne{
+              padding:0;
+              width:95%;
+              margin:auto;
+          }
+          .welcomeIntro {
+              font-size: 35px;
+              padding:20px 0 0 0;
+          }
+          .welcomeHsptlText {
+              font-size: 37px;
+              padding-bottom: 30px;
+          }
+          .sectionOne ::placeholder,.sectionOne input{
+              font-size:18px;
+              padding: 10px;
+          }
+          .enterExpoButton{
+              font-size:18px;
+              padding: 10px;
+          }
+          .sectionTwo::before{
+              display:none;
+          }
+          .sectionTwo img{
+              height:unset;
+          }
+          .introSections {
+              gap: 20px;
+          }
       }
     </style>
   </head>
@@ -34,7 +85,7 @@
           <h4 class="welcomeText" id="nametext">Welcome Back <span id="namevalue"></span></h4>
           <h3 class="hsptltext welcomeBackHsptlText">Hospital and Medical <span>Supplies Expo</span></h3>
 
-          <div class="enterExpoButton" id="enterExpo-btn">
+          <div class="continueExpoButton" id="enterExpo-btn">
             <button id="submit-link">Continue to Expo</button>
           </div>
         </div>

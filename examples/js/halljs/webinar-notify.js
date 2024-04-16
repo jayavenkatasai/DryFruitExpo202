@@ -20,6 +20,8 @@ fetch(apiurl,{
     console.log('Fetched-data123:', data);
     data.forEach(webinar => {
         checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
+        document.querySelector('.speakerName').textContent=webinar.WEBINAR_SPEAKER
+        document.querySelector('.cmpnyName').textContent=webinar.WEBINAR_CONDUCTED_BY
     });
 }).catch(error => {
     console.log(error)

@@ -58,7 +58,7 @@
         .inputText img{
             max-width:15px;
         }
-        .enterExpoButton button,.continueExpoButton button{
+     .continueExpoButton  button {
             color: #FFF;
             font-size: 25px;
             font-family: "Nunito", sans-serif;
@@ -68,26 +68,28 @@
             background-color:transparent;
             border: transparent;
             cursor: pointer;
+            width: 100%;
         }
-        .continueExpoButton button{
-            width:100%;
+        .continueExpoButton button {
+            /* width:100%; */
+            width: 328px !important;
             text-align:center;
             background-color: rgba(246, 89, 39);
         }
-        .enterExpoButton,.continueExpoButton button{
+        .continueExpoButton button {
             border-radius: 8px;
             background: #F65927; 
             padding:10px 0;
             margin:25px auto 0 auto;
             cursor: pointer;
         }
-        .enterExpoButton,.continueExpoButton button{
+       .continueExpoButton button {
             max-width: 328px;
         }
-        .enterExpoButton button,.continueExpoButton button{
+       .continueExpoButton button {
             font-size:18px;
         }
-        /* .continueExpoButton button{
+        /* .continueExpoButton button button{
             width:100%;
             border-radius: 8px;
             text-align:center;
@@ -97,9 +99,10 @@
             cursor: pointer;
             background-color: rgba(246, 89, 39);
         } */
-        .continueExpoButton{
+        .continueExpoButton button{
             text-align:center;
             cursor: pointer;
+            width: 100%;
         }
         .threeImages h2{
             color: #464646;
@@ -135,7 +138,12 @@
             cursor: pointer;
         }
         .threeImages{
-            display:none;
+            text-align: center;
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
         }
         .logoImg{
             max-width:250px;
@@ -163,10 +171,10 @@
                 font-size:50px;
                 padding-bottom: 15px;
             }
-            .enterExpoButton button,.continueExpoButton button{
+            .enterExpoButton button,.continueExpoButton button {
                 font-size: 18px;
             }
-            /* .enterExpoButton,.continueExpoButton{
+            /* .enterExpoButton,.continueExpoButton button{
                 padding: 10px 0;
                 max-width: 175px;
                 margin: 25px auto 0 auto;
@@ -215,7 +223,7 @@
             /* .enterExpoButton {
                 max-width: 140px;
             } */
-            .enterExpoButton button,.continueExpoButton button{
+            .enterExpoButton button,.continueExpoButton button button {
                 font-size: 16px;
             }
         }
@@ -235,14 +243,14 @@
             .threeImagesContents {
                 margin-bottom: 15px;
             }
-            .continueExpoButton button{
+            .continueExpoButton button {
                 margin:0 auto;
             }
-            .continueExpoButton {
-                max-width: 148px;
+            .continueExpoButton button {
+               max-width: 200px;
                 margin: 0 auto;
             }
-            .continueExpoButton button {
+            .continueExpoButton button  {
                 padding: 8px 0;
                 margin-top: 10px;
             }
@@ -329,4 +337,7 @@
 
 #namevalue{
     color:#0080BF
+}
+#name-container{
+    display: flex;
 }
