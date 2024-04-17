@@ -681,6 +681,8 @@ const fetchDataFromAPI = () => {
             document.getElementById('overLaySection').style.display="flex";
             document.querySelector('h3').textContent = 'Something Went Wrong Please Try Again Later';
             console.error('Error fetching data:', error);
+            document.getElementById('player').removeAttribute('wasd-controls')
+            document.getElementById("scene1").removeAttribute('joystick');
 
         });
 };
