@@ -90,6 +90,7 @@ AFRAME.registerComponent('activate-on-approach', {
 
       if (!isStallVisited(stallnum)) {
         document.getElementById("iframe-url").setAttribute('src', `https://stage.marketcentral.in/expo/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+        trackinga(`visitor passed through - ${stallnum}`,'hall')
         markStallVisited(stallnum);
       }
 

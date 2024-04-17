@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    
     <style>
       *{
           margin: 0;
@@ -28,7 +29,14 @@
           font-family: "Nunito", sans-serif;
           margin:15px;
       }
-
+      .sectionTwo a img {
+        max-width: 145px;
+    }
+    .sectionTwo a{
+      position: absolute;
+        left: 50%;
+        bottom:2%;
+    }
       
       .welcomeIntro{
           color: #8FDAFF;
@@ -54,20 +62,43 @@
       .introContents,.introSections{
           height:100%;
       }
-      .sectionOne ::placeholder,.sectionOne input{
+      .sectionOne ::placeholder,.nameInput{
           color: #344054;
           text-align: center;
           font-size: 25px;
           font-weight: 400;
           line-height: 20px;
       }
-      .sectionOne input{
+      .radioButtonOne,.radioButtonTwo {
+	display: flex;
+	align-items: center;
+}
+      .radioButtons span{
+        color: #fff;
+        font-size: 22px;
+      }
+      .radioButtons{
+        display:flex;
+        gap: 30px;
+        padding-bottom: 10px;
+      }
+      .radioButtons input {
+	height: 20px;
+	width: 17px;
+}
+.radioButtons span{
+  padding-left: 5px;
+}
+      .nameInput{
           padding: 18px;
           border-radius: 8px;
-           /* border: 1px solid rgba(0, 9, 57, 0.10); */
+           border: 1px solid rgba(0, 9, 57, 0.10);
           background:#FFF;
-          /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15); */
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
           font-family: "Nunito", sans-serif;
+      }
+      .nameInput:focus{
+        outline:transparent;
       }
       .enterExpoButton{
           margin-top:15px;
@@ -81,8 +112,9 @@
           padding:17px 0;
           border:none;
           font-family: "Nunito", sans-serif;
+          cursor: pointer;
       }
-      .sectionOne input{
+      .nameInput{
           max-width:360px;
           width:100%;
       }
@@ -137,6 +169,17 @@
           .introSections{
               flex-direction:column;
           }
+          .radioButtons span {
+	font-size: 18px;
+}
+          .introPoweredBy {
+              width: 95%;
+              margin: auto;
+              text-align: end;
+          }
+          .sectionTwo a{
+            position: unset;
+          }
           .sectionOne{
               padding:0;
               width:95%;
@@ -150,13 +193,14 @@
               font-size: 37px;
               padding-bottom: 30px;
           }
-          .sectionOne ::placeholder,.sectionOne input{
+          .sectionOne ::placeholder,.nameInput{
               font-size:18px;
               padding: 10px;
           }
           .enterExpoButton{
               font-size:18px;
               padding: 10px;
+              cursor: pointer;
           }
           .sectionTwo::before{
               display:none;
@@ -178,8 +222,13 @@
               <div class="sectionOne">
                   <p class="welcomeIntro">Welcome to</p>
                   <p class="welcomeHsptlText">Hospital & Medical Supplies Expo</p>
+                  <div class="radioButtons">
+                    <div class="radioButtonOne"><input type="radio" name="language" value="english" checked><span>English</span></div>
+                    <div class="radioButtonTwo"><input type="radio" name="language" value="hindi" ><span>हिंदी</span></div>
+                    
+                  </div>
                   <div  id="name-container">
-                  <input type="text" placeholder="Enter your name" id="name-value">
+                  <input class="nameInput" type="text" placeholder="Enter your name" id="name-value">
                   </div>
                   <p class="wrongText">* Please enter minimum 3 characters</p>
                   <div id="overlay"></div>
@@ -191,11 +240,15 @@
               </div>
               <div class="sectionTwo">
                   <img src="assets/icons/introImage.png">
+                  <div class="introPoweredBy">
+                    <a href="https://www.marketcentral.in"><img src="assets/icons/introMcImg.png"></a>
+                  </div>
+                  
               </div>
           </div>
       </div>
       <div class="threeImages" style="text-align: center">
-        <h2>Choose Your Avatar</h2>
+        <h2 class="Avthar-text">Choose Your Avatar</h2>
         <br />
         <div class="threeImagesContents">
           <div class="images" id="avthar1" onclick="displayImageId(this)">
@@ -214,7 +267,7 @@
           <!-- <h2 id="displayId"></h2> -->
         </div>
         <div class="continueExpoButton">
-          <button>Continue</button>
+          <button class="continue-text">Continue</button>
         </div>
       </div>
   </div>
@@ -304,4 +357,5 @@
     gtag('js', new Date());
     gtag('config', 'G-PGGTB73FL0');
   </script>
+  <script src="js/translatorjs/introtranslator.js"></script>
 </html>

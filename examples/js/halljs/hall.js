@@ -354,7 +354,7 @@ const fetchDataFromAPI = () => {
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
                         // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
                         if(stall.websiteLink){
-                        document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink};uno:${stall.uno};type:websitevisit`)
+                        document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink};uno:${stall.uno};type:websitevisit;websitename:${stall.vendorInfo.companyname}`)
                         }
                         if(stall.vendorInfo.email){
                             document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:mailto:${stall.vendorInfo.email};uno:${stall.uno};type:email`)
@@ -806,6 +806,9 @@ if(useragent=="mobile"){
   document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm`)
 }else{
   document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectory.cfm`)
+
+  document.querySelector(".scenea").removeAttribute('joystick');
+
 }
 
 var bgContainer = document.getElementById('mapText');

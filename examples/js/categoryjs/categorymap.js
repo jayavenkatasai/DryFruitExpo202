@@ -1,7 +1,34 @@
-
-
 var urlendpoint = '';
 var exhibition_ID=3;
+const hindiCategories = {
+    "Diagnostic Supplies, Products & Equipment": "डायग्नोस्टिक सप्लाईज़, प्रोडक्ट्स और इक्विपमेंट",
+    "Durable medical equipment": "ड्यूरेबल मेडिकल इक्विपमेंट",
+    "Emergency Medical Supplies & Equipment": "इमर्जेंसी मेडिकल सप्लाईज़ और इक्विपमेंट",
+    "Home medical equipments/ supplies": "होम मेडिकल इक्विपमेंट्स/ सप्लाईज़",
+    "Implantable Devices": "इम्प्लांटेबल डिवाइसेस",
+    "Medical Education Supplies": "मेडिकल एजुकेशन सप्लाईज़",
+    "Medical Software": "मेडिकल सॉफ्टवेयर",
+    "Medical Uniforms, Scrubs & Apparel": "मेडिकल यूनिफ़ॉर्म्स, स्क्रब्स और अपारल",
+    "Medical/ surgical instruments": "मेडिकल/ सर्जिकल इंस्ट्रूमेंट्स",
+    "Patient care": "पेशेंट केयर",
+    "Patient mobility aids": "पेशेंट मोबिलिटी एड्स",
+    "Sterile Processing & Infection Control": "स्टेराइल प्रोसेसिंग और इन्फेक्शन कंट्रोल"
+};
+const visitTranslations = {
+    "english": 
+    {
+       "visittext": "Visit",
+       "categoryheading":"Choose Category"
+    },
+   
+    "hindi":
+    {
+        "visittext": "देखें",
+        "categoryheading":"श्रेणी का चयन करें"
+     },
+    
+};
+
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
 }
@@ -23,17 +50,25 @@ document.addEventListener("DOMContentLoaded", function() {
             // Log the response to the console
             console.log(data);
             // Call function to populate categories with the fetched data
+            const language = localStorage.getItem('languageselection')
+            const categoryheading = visitTranslations[language].categoryheading;
+            console.log(categoryheading)
+            document.querySelector('.categoryheading').textContent = categoryheading;
             populateCategories(data);
+          
+
         })
         .catch(error => console.error('Error fetching data:', error));
 
     // Function to dynamically generate category HTML
-    function generateCategoryHTML(category, index) {
+    function generateCategoryHTML(categoryName, index,category) {
+        const language = localStorage.getItem('languageselection')
+        const visitText = visitTranslations[language].visittext;
         return `
             <div class="category">
                 <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
-                <p class="categoryName">${category.CATEGORY}</p>
-                <a href="prototype.html?category=${encrypt(category.CATEGORY)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">Visit</a>
+                <p class="categoryName">${categoryName}</p>
+                <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
             </div>
         `;
     }
@@ -43,6 +78,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const categoriesContainer = document.getElementById('categoryContents');
         // Clear previous content
         categoriesContainer.innerHTML = '';
+        const language = localStorage.getItem('languageselection')
+        const visitText = visitTranslations[language];
+        // Iterate over each category and generate HTML
+        data.forEach((category, index) => {
+            const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
+            const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY);
+            categoriesContainer.innerHTML += categoryHTML;
+        });
         // Iterate over each category and generate HTML
         data.forEach((category, index) => {
             const categoryHTML = generateCategoryHTML(category, index);

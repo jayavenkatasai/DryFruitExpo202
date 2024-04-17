@@ -44,7 +44,12 @@ async function trackinga(dataparameter,pagetitle){
     'page_title':pagetitle
   });
   }
-function tracking(uno=0,track_type,pname=""){
+  // async function trackinga_website(dataparameter,pagetitle){
+  //   gtag("event", dataparameter, {
+  //     'page_title':pagetitle
+  //   });
+  //   }
+function tracking(uno=0,track_type,pname="",websitename){
     const requestBody = {
         "U_NO":uno,
         "track_type":track_type,
@@ -54,7 +59,7 @@ function tracking(uno=0,track_type,pname=""){
         "ipaddress":ipAddress,
         "exhibition_ID":3
     }
-     trackinga(track_type,pagetitle)
+     trackinga(websitename,pagetitle)
     async function postData(url, data) {
         try {
             const response = await fetch(url, {

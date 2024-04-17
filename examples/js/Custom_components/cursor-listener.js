@@ -5,7 +5,9 @@ AFRAME.registerComponent('cursor-listener', {
         targetPage: { type: 'string' },
         uno: { type: 'string' },
         type: { type: 'string' },
-        pdtname: { type: 'string' }
+        pdtname: { type: 'string' },
+        websitename:{type: 'string'}
+
     },
     init: function () {
         var data = this.data;
@@ -19,11 +21,11 @@ AFRAME.registerComponent('cursor-listener', {
             console.log('pdtname:', data.pdtname);
             if(data.pdtname!=null){
               // trackExpo( data.uno, data.type,data.pdtname,ipAddress)
-               tracking(data.uno, data.type,data.pdtname)
+               tracking(data.uno, data.type,data.pdtname,data.websitename)
             }
             else{
               //  trackExpo( data.uno, data.type,"",ipAddress)
-                tracking(data.uno, data.type,"")
+                tracking(data.uno, data.type,"",websitename)
             }
            
             // Redirect to the specified page
