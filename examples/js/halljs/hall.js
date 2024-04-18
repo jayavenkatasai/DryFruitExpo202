@@ -803,9 +803,9 @@ document.getElementById('player').setAttribute('look-controls', 'magicWindowTrac
 
 
 if(useragent=="mobile"){
-  document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectoryMobile.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo.marketcentral.in/expoDirectoryMobile.cfm`)
 }else{
-  document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectory.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo.marketcentral.in/expoDirectory.cfm`)
 
 
 }
