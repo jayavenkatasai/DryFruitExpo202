@@ -505,6 +505,10 @@ z-index:9999;
     .indidualChatIcons a{
         display:flex!important;
     }
+    #chat-ui-room,#chat-ui-room2{
+        top: 0;
+        bottom: unset;
+    }
     .visitorMsgIcons a{
         display:flex!important;
     }
@@ -1017,7 +1021,7 @@ background: #F1FDFF;
   }
   #chat-icon123 {
     position: fixed;
-    bottom: 125px;
+    bottom: 20px;
     right: 20px;
     z-index: 9; /* Ensure the icon is above other content */
     cursor: pointer;
@@ -1118,17 +1122,18 @@ justify-content: center;
 	right: 3px;
 }
 
-  #chat-ui-room {
-    position: fixed;
-    display: none;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 500px;
-    overflow: hidden;
-    border: none;
-    z-index: 9999; /* Adjust z-index as needed */
-  }
+#chat-ui-room {
+	position: fixed;
+	display: none;
+	/* top: 0; */
+	right: 0;
+	width: 400px;
+	height: 500px;
+	overflow: hidden;
+	border: none;
+	z-index: 9999;
+	bottom: 135px;
+}
 
   #chatui {
     width: 100%;
@@ -1139,12 +1144,13 @@ justify-content: center;
   #chat-ui-room2 {
     position: fixed;
     display: none;
-    top: 0;
+    /* top: 0; */
     right: 0;
     width: 400px;
     height: 500px;
     overflow: hidden;
     border: none;
+    bottom: 135px;
     z-index: 10000; /* Adjust z-index as needed */
   }
 

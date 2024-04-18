@@ -13,11 +13,15 @@
             margin: 0;
             padding:0;
         }
-        .welcomeText {
+        .welcomeText,#namevalue{
             font-size: 45px;
             font-weight: 600;
             color: #F65927;
             padding:50px 0 0px 0;
+            display: inline;
+        }
+        span#namevalue{
+            padding-left: 10px;
         }
         .hsptltext{
             color: #0080BF; 
@@ -163,7 +167,7 @@
             display:none;
         }
         @media only screen and (max-width:1300px){
-            .welcomeText {
+            .welcomeText,#namevalue{
                 font-size: 35px;
                 padding-bottom: 10px;
             }
@@ -181,7 +185,7 @@
             } */
         }
         @media only screen and (max-width:992px){
-            .welcomeText {
+            .welcomeText,#namevalue{
                 font-size: 35px;
             }
             .hsptltext{
@@ -202,7 +206,7 @@
             .inputText{
                 margin-top:60px;
             }
-            .welcomeText {
+            .welcomeText,#namevalue{
                 padding: 100px 0 0px 0;
             }
             /* .logoImg {

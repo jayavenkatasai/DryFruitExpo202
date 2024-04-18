@@ -807,7 +807,6 @@ if(useragent=="mobile"){
 }else{
   document.getElementById("iframe-expoDir").setAttribute("src",`https://stage.marketcentral.in/expo/expoDirectory.cfm`)
 
-  document.querySelector(".scenea").removeAttribute('joystick');
 
 }
 

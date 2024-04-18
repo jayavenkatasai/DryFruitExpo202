@@ -1,4 +1,4 @@
-const data = {
+const datalanguage = {
     "english": 
     {
        "labelchat": "Chat",
@@ -29,12 +29,12 @@ const exit = document.querySelector('.labelexit')
 const category = document.querySelector('.labelcategory')
 const fullscreenButton = document.querySelector('#fullscreenButton')
 const buttonText = fullscreenButton.textContent;
-chat.textContent=data[language].labelchat
-explore.textContent=data[language].labelexplore
-exit.textContent=data[language].labelexit
-category.textContent=data[language].labelcategory
+chat.textContent=datalanguage[language].labelchat
+explore.textContent=datalanguage[language].labelexplore
+exit.textContent=datalanguage[language].labelexit
+category.textContent=datalanguage[language].labelcategory
 if(buttonText=="Enter Full Screen"){
-    fullscreenButton.textContent=data[language].fullscreenButton
+    fullscreenButton.textContent=datalanguage[language].fullscreenButton
 }
 // else{
 //     fullscreenButton.textContent=data[language].Exitfullscreen
