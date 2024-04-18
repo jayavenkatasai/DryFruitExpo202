@@ -287,6 +287,7 @@ const fetchDataFromAPI = () => {
                         bannerElements.setAttribute('gltf-model','assets/banners/banner10.glb')
                     break;
                 }
+                checkhallfive(apivariable.stalls.length);
                 console.log("The switch case is exceuted succesfully")
                 }
                 else{
