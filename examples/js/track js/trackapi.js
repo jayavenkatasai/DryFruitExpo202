@@ -79,7 +79,7 @@ function tracking(uno=0,track_type,pname="",websitename){
             
         } catch (error) {
             console.error('There was a problem with the request:', error);
-            alert(error)
+            //alert(error)
         }
     }
     postData(url, requestBody);

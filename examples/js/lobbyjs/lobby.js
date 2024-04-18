@@ -87,6 +87,7 @@ AFRAME.registerComponent("cursor-listener3", {
   .getElementById("mapbutton1")
   .addEventListener("click", showPrevious);
 document.getElementById("mapbutton2").addEventListener("click", showNext);
+var halllang = localStorage.getItem('languageselection')
 function createCards(data) {
   for (var i = 0; i < data.length; i++) {
       var card = document.createElement('div');
@@ -102,6 +103,11 @@ function createCards(data) {
   
       var h3 = document.createElement('h3');
       h3.id = `categoryname${i + 1}`;
+      if(halllang =="hindi"){
+        h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;  
+    }else{
+        h3.textContent = data[i].CATEGORY;
+    }
       h3.textContent = data[i].CATEGORY;
   
       var button = document.createElement('button');

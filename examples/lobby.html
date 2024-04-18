@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -152,6 +153,7 @@
       </a-assets>
 
       <a-entity gltf-model="#lobbymodel" id="lobby1">
+      
         <a-plane
           id="expodirectoryplane"
           color="red"
@@ -214,6 +216,8 @@
           visible="true"
           cursor-listener="targetPage:webinar.html;type:visit-webinar"
         ></a-plane>
+        
+        
         <!-- <a-plane
           color="white"
           id="visit-webinar"
@@ -329,7 +333,7 @@
         }
         else{
           orientationscreen.style.display = "none";
-          alert("new")
+          //alert("new")
         }
         }
       

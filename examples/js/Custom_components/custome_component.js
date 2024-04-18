@@ -1,7 +1,15 @@
 var usernamelocal=localStorage.getItem('UserName');
 var guidd = localStorage.getItem('GUID')
-  
+const textlanguage = localStorage.getItem('languageselection')
+let message = '';
 
+if (textlanguage === 'hindi') {
+  // Message in Hindi
+  message = `नमस्ते ${localStorage.getItem('UserName')}, आपकी कैसे सहायता कर सकता हूँ?`;
+} else {
+  // Default message in English
+  message = `Hello ${localStorage.getItem('UserName')}, how can I help you?`;
+}
 
 // text animation word by word
 AFRAME.registerComponent("type-on", {
@@ -10,18 +18,18 @@ AFRAME.registerComponent("type-on", {
     delay: { type: "number", default: 50 }
   },
   init: function () {
-    this.el.setAttribute("text", { value: "" });
+    this.el.setAttribute("troika-text", { value: "" });
     this.typeNextLetter();
   },
   typeNextLetter: function () {
     var message = this.data.message;
     var delay = this.data.delay;
-    var currentIndex = this.el.getAttribute("text").value.length;
+    var currentIndex = this.el.getAttribute("troika-text").value.length;
 
     if (currentIndex < message.length) {
-      var currentText = this.el.getAttribute("text").value;
+      var currentText = this.el.getAttribute("troika-text").value;
       var nextLetter = message[currentIndex];
-      this.el.setAttribute("text", { value: currentText + nextLetter });
+      this.el.setAttribute("troika-text", { value: currentText + nextLetter });
       setTimeout(
         this.typeNextLetter.bind(this),
         delay
@@ -46,7 +54,7 @@ AFRAME.registerComponent('activate-on-approach', {
     this.originalVisibility = this.el.getAttribute('visible');
 
     // Find the text element within the target element
-    this.textElement = this.el.querySelector('a-text');
+    this.textElement = this.el.querySelector('a-troika-text');
     if (!this.textElement) {
       console.error('Text element not found');
       return;
@@ -78,7 +86,7 @@ AFRAME.registerComponent('activate-on-approach', {
 
       if (!this.textElement.components['type-on']) {
         this.textElement.setAttribute('type-on', {
-          message: `Hello ${localStorage.getItem('UserName')}, how can i help you?`,
+          message: message,
           delay: 100
         });
       }

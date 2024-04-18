@@ -88,12 +88,23 @@ function share(uno,name){
 // if(useragent=='mobile'){
 
     if(!localStorage.getItem('intiated')){
+        var halllang = localStorage.getItem('languageselection')
             localStorage.setItem('intiated','true')
             if(useragent=='mobile'){
-                document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough.png')
+                if(halllang=='hindi'){
+                    document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough_hindi.png')
+                }else{
+                    document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough.png')
+                }
+               
             }
             else{
-                document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough.png')
+                if(halllang=='hindi'){
+                    document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough_hindi.png')
+                }else{
+                    document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough.png')
+                }
+                
             }
           //  document.getElementById('instructionimg').setAttribute('src','assets/icons/Walkthrough1.png')
         document.getElementById('instruction-pannel').style.display='flex'
@@ -152,6 +163,7 @@ function removeEntities(stalls) {
     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible","false");
     document.getElementById(`bubble${stallIndex + 1}`).removeAttribute('activate-on-approach')
+
     document.getElementById(`bubble${stallIndex + 1}`).setAttribute('visible','false')
 
     // document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible","false");
@@ -344,13 +356,17 @@ const fetchDataFromAPI = () => {
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
-
                         document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","true");
                         document.getElementById(`stall${stallIndex + 1}`).setAttribute("instanced-mesh-member","mesh:#mesh1");
                         document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible","true");
                         document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("instanced-mesh-member","mesh:#mesh2");
-                   
                         document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
+                        if(halllang=='hindi'){
+                            document.getElementById(`notetext${stallIndex + 1}`).setAttribute('value',"नोट: चैट करने के लिए यहां क्लिक करें")
+                        }else{
+                           
+                            document.querySelector(`#notetext${stallIndex + 1}`).setAttribute('value',"Note: Click here to chat")
+                        }
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
                         // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
@@ -817,7 +833,7 @@ var currentIndex=0;
 let buttonid=0;
 // category map js
 
-fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
+fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable
@@ -834,7 +850,7 @@ fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_Exhibiti
 
 document.getElementById('mapbutton1').addEventListener('click',showPrevious );
 document.getElementById('mapbutton2').addEventListener('click', showNext);
-
+var halllang = localStorage.getItem('languageselection')
 function createCards(data) {
 for (var i = 0; i < data.length; i++) {
     var card = document.createElement('div');
@@ -850,8 +866,11 @@ for (var i = 0; i < data.length; i++) {
 
     var h3 = document.createElement('h3');
     h3.id = `categoryname${i + 1}`;
-    h3.textContent = data[i].CATEGORY;
-
+    if(halllang =="hindi"){
+        h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;  
+    }else{
+        h3.textContent = data[i].CATEGORY;
+    }
     var button = document.createElement('button');
     button.id = 'button' + (i + 1);
     button.textContent = 'Visit';
@@ -957,13 +976,13 @@ trackinga(categoriesselect[index],'prototype')
 // Open the link in the same window
 window.location.href = links[index];
 }
- 
+
+
 function checkhallfive(x){
    if(x<=5){
     document.getElementById('five-hall').setAttribute('visible','true')
     // document.getElementById('area5').setAttribute('rotation','90 -90 0')
     // document.getElementById('area5').removeAttribute('position')
-   
     document.getElementById('stall5').setAttribute('rotation','0 -90 0')
     document.getElementById('stall5').setAttribute('position','1.109 0.000 -65')
     document.getElementById('bubble5').setAttribute('rotation','0 0 0')
@@ -972,7 +991,6 @@ function checkhallfive(x){
     document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @5 navmesh.glb)')
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
     document.getElementById('navmeshmodel_10').setAttribute('visible','false')
-
    }
 }
 function checkurlparm(urlparameter){

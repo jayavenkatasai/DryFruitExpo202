@@ -14,9 +14,9 @@ var data = {
       "welcomeIntro": "Welcome to",
       "welcomeHsptlText": 
           "Hospital & Medical Supplies Expo",
-       "enterExpoButton":"Enter Expo",
+       "enterExpoButton":"Continue",
        "Avthartext":"Choose Your Avatar",
-       "continuetext":"Continue",
+       "continuetext":"Enter Expo",
        "nameplaceholder":"Please Enter Your Name"
     },
     "hindi": 
@@ -24,9 +24,9 @@ var data = {
       "welcomeIntro": "आपका स्वागत है",
       "welcomeHsptlText": 
           "अस्पताल एवं चिकित्सा आपूर्ति एक्सपो",
-       "enterExpoButton":"एक्सपो दर्ज करें",
+       "enterExpoButton":"जारी रखना",
        "Avthartext":"अपना अवतार चुनें",
-       "continuetext":"जारी रखना",
+       "continuetext":"एक्सपो दर्ज करें",
        "nameplaceholder":"कृपया अपना नाम दर्ज करें"
     }
   }
@@ -50,8 +50,7 @@ function updateUI(language) {
     welcomeIntro.textContent = data[language].welcomeIntro;
     welcomeHsptlText.textContent = data[language].welcomeHsptlText;
     enterExpoButton.textContent = data[language].enterExpoButton;
-    Avthartext.textContent = data[language].Avthartext;
-    continuetext.textContent = data[language].continuetext;
+ 
     nameInput.placeholder = data[language].nameplaceholder;
 }
 

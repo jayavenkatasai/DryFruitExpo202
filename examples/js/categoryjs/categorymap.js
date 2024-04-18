@@ -17,7 +17,7 @@ const hindiCategories = {
 const visitTranslations = {
     "english": 
     {
-       "visittext": "Visit",
+       "visittext": "Visit hall",
        "categoryheading":"Choose Category"
     },
    
@@ -61,14 +61,20 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error('Error fetching data:', error));
 
     // Function to dynamically generate category HTML
-    function generateCategoryHTML(categoryName, index,category) {
+    function generateCategoryHTML(categoryName, index,category,categorynew) {
         const language = localStorage.getItem('languageselection')
         const visitText = visitTranslations[language].visittext;
         return `
             <div class="category">
                 <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
                 <p class="categoryName">${categoryName}</p>
-                <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
+                <div class="visitHallButton">
+                    <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
+                </div>
+                <div class="vendorsAndhallCount">
+                    <p class="vendorsAccount"><span><img src="assets/icons/blueExit.png"></span>${categorynew.PARTICIPANT_COUNT}</p>
+                    <p class="hallCount"><span><img src="assets/icons/blueExit.png"></span>${categorynew.HALL_COUNT}</p>
+                </div>
             </div>
         `;
     }
@@ -83,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Iterate over each category and generate HTML
         data.forEach((category, index) => {
             const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
-            const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY);
+            const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY,category);
             categoriesContainer.innerHTML += categoryHTML;
         });
         // Iterate over each category and generate HTML
