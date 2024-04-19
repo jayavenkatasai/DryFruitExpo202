@@ -70,9 +70,6 @@ if (urlParams.has('lan')) {
    if(selectedLanguage=='hindi'){
     document.querySelector('.inputone').removeAttribute('checked')
     document.querySelector('.inputtwo').setAttribute('checked','true')
-   }else if(selectedLanguage=='english'){
-    document.querySelector('.inputtwo').removeAttribute('checked')
-    document.querySelector('.inputone').setAttribute('checked','true')
    }
 }
 
