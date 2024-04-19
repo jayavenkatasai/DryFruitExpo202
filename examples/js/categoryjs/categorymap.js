@@ -18,13 +18,15 @@ const visitTranslations = {
     "english": 
     {
        "visittext": "Visit hall",
-       "categoryheading":"Get Started"
+       "categoryheading":"Get Started",
+       "categoryDescription": "Find what you need by Category"
     },
    
     "hindi":
     {
-        "visittext": "देखें",
-        "categoryheading":"श्रेणी का चयन करें"
+        "visittext": "विजिट हॉल",
+        "categoryheading":"शुरू हो जाओ",
+        "categoryDescription": "श्रेणी के आधार पर खोजें कि आपको क्या चाहिए"
      },
     
 };
@@ -52,8 +54,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // Call function to populate categories with the fetched data
             const language = localStorage.getItem('languageselection')
             const categoryheading = visitTranslations[language].categoryheading;
+            const categoryDescription = visitTranslations[language].categoryDescription;
             console.log(categoryheading)
             document.querySelector('.categoryheading').textContent = categoryheading;
+            document.querySelector('.categoryDescription').textContent = categoryDescription;
             populateCategories(data);
         })
         .catch(error => console.error('Error fetching data:', error));

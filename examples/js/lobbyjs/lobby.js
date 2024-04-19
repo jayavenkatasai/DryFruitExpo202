@@ -14,9 +14,13 @@ else if(window.location.href.includes('localhost')){
 else {
   urlendpoint = 'https://www.marketcentral.in';
 }
+var lobbylanguage = localStorage.getItem('languageselection')
 const endpoint_ExhibitionId = '3';
 var bgContainer = document.getElementById("bg");
-
+if(lobbylanguage =='hindi'){
+  document.getElementById('lobby1').removeAttribute('gltf-model')
+  document.getElementById('lobby1').setAttribute('gltf-model','url(assets/lobbymodels/hindilobby.glb)')
+}
 var ang=0;
 var currentIndex = 0;
 var cards = [];

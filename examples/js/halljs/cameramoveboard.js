@@ -16,9 +16,9 @@ var cameraY = parseFloat(cameraPosition.y);
 var cameraZ = parseFloat(cameraPosition.z);
 
 // Adjust camera position relative to the board position
-var adjustedX = boardX + 5; // Add X positions
+var adjustedX = boardX -13; // Add X positions
 var adjustedY = boardY + 2; // Add Y positions and add 1 for some additional height
-var adjustedZ = boardZ - 15; // Add Z positions
+var adjustedZ = boardZ - 12; // Add Z positions
 
 let count=1;
 boardposition.addEventListener('click',function(){

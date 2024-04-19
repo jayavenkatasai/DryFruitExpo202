@@ -6,6 +6,7 @@
 
 // alert(urlendpoint)
 // Now you can use baseUrl for API calls
+
 function generateGUID() {
     // Generate random hexadecimal digits
     function s4() {
@@ -28,6 +29,8 @@ if(!localStorage.getItem('GUID')){
 }
 guid=localStorage.getItem('GUID')
 console.log(guid);
+var languageselectionitem=localStorage.getItem('languageselection')
+console.log(languageselectionitem)
 // Example usage
 if(localStorage.getItem('sessionActive')&& localStorage.getItem('passed')){
     const sessionData = JSON.parse(localStorage.getItem('sessionActive'));
@@ -57,6 +60,16 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
     if(/^[a-zA-Z\s]{3,}$/.test(names)){
         localStorage.setItem('UserName',names)
         window.location.href='Avthar.html';   
+    }
+    else if (names.length > 16) {
+        errorMessage.textContent = "Name should not exceed 16 characters";
+        document.querySelector('.wrongText').style.display = 'block';
+        if(languageselectionitem=="hindi"){
+            document.querySelector('.wrongText').textContent = '* नाम 16 अक्षरों से अधिक नहीं होना चाहिए';
+        }else{
+            document.querySelector('.wrongText').textContent = '* Name should not exceed 16 characters';
+        }
+        
     }else{
         validateName(names) 
     }
@@ -78,7 +91,13 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
         nameInput.style.border = "2px solid red";
         errorMessage.textContent = "Please enter your name";
         document.querySelector('.wrongText').style.display='block'
-        document.querySelector('.wrongText').textContent='* Please enter your name'
+        if(languageselectionitem=="hindi"){
+            document.querySelector('.wrongText').textContent='* कृपया अपना नाम दर्ज करें'
+        }
+        else{
+            document.querySelector('.wrongText').textContent='* Please enter your name'
+        }
+        
        // alert("Please enter your name");
        // showPopup();
         return;
@@ -89,7 +108,12 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
             errorMessage.textContent = "Name should contain minimum 3 characters";
          
             document.querySelector('.wrongText').style.display='block'
-            document.querySelector('.wrongText').textContent='* Name should contain minimum 3 characters'
+            if(languageselectionitem=="hindi"){
+                document.querySelector('.wrongText').textContent='* नाम में कम से कम 3 अक्षर होने चाहिए'
+            }else{
+                document.querySelector('.wrongText').textContent='* Name should contain minimum 3 characters'
+            }
+            
           //  alert("Name should contain minimum 3 characters");
           //  showPopup();
         }
@@ -97,7 +121,12 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
         if (/[^a-zA-Z]/.test(name)) {
             errorMessage.textContent = "Name should not contain special characters and numbers";
             document.querySelector('.wrongText').style.display='block'
-            document.querySelector('.wrongText').textContent='* Name should not contain special characters and numbers'
+            if(languageselectionitem=="hindi"){
+                document.querySelector('.wrongText').textContent='* नाम में विशेष वर्ण और संख्याएँ नहीं होनी चाहिए'
+            }else{
+                document.querySelector('.wrongText').textContent='* Name should not contain special characters and numbers'
+            }
+           
             
         //    alert("Name should not contain special characters and numbers");
            // showPopup();

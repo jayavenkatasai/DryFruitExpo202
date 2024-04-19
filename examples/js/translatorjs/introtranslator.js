@@ -7,7 +7,9 @@ const continuetext = document.querySelector('.continue-text');
 const nameInput = document.getElementById('name-value');
 const englishRadio = document.querySelector('input[value="english"]');
 const hindiRadio = document.querySelector('input[value="hindi"]');
-
+const chooseText = document.querySelector('.chooseText')
+const TermsText = document.querySelector('.TermsText')
+const termc =document.querySelector('.termc')
 var data = {
     "english": 
     {
@@ -17,7 +19,10 @@ var data = {
        "enterExpoButton":"Continue",
        "Avthartext":"Choose Your Avatar",
        "continuetext":"Enter Expo",
-       "nameplaceholder":"Please Enter Your Name"
+       "nameplaceholder":"Please Enter Your Name",
+       "chooseText":"Choose a language :",
+       "TermsText":"By clicking on continue, you accept MarketCentral's",
+       "Termsandcond":"Terms & Conditions"
     },
     "hindi": 
     {
@@ -27,7 +32,10 @@ var data = {
        "enterExpoButton":"जारी रखना",
        "Avthartext":"अपना अवतार चुनें",
        "continuetext":"एक्सपो दर्ज करें",
-       "nameplaceholder":"कृपया अपना नाम दर्ज करें"
+       "nameplaceholder":"कृपया अपना नाम दर्ज करें",
+       "chooseText":"एक भाषा चुनें :",
+       "TermsText":"जारी रखें पर क्लिक करके, आप MarketCentral के नियम और शर्तों को स्वीकार करते हैं",
+       "Termsandcond":"नियम और शर्तों को स्वीकार करते हैं"
     }
   }
 
@@ -50,8 +58,10 @@ function updateUI(language) {
     welcomeIntro.textContent = data[language].welcomeIntro;
     welcomeHsptlText.textContent = data[language].welcomeHsptlText;
     enterExpoButton.textContent = data[language].enterExpoButton;
- 
+    chooseText.textContent=data[language].chooseText;
     nameInput.placeholder = data[language].nameplaceholder;
+    TermsText.textContent=data[language].TermsText
+  //  termc.textContent=data[language].Termsandcond
 }
 
 // Set initial language to English
@@ -68,6 +78,7 @@ if (urlParams.has('lan')) {
     // If 'lan' parameter is 'hindi', set selectedLanguage to 'hindi', otherwise keep it 'english'
     selectedLanguage = languageParam === 'hindi' ? 'hindi' : 'english';
    if(selectedLanguage=='hindi'){
+    termc.href='hindit&c.html'
     document.querySelector('.inputone').removeAttribute('checked')
     document.querySelector('.inputtwo').setAttribute('checked','true')
    }
@@ -79,6 +90,11 @@ updateUI(selectedLanguage);
 function languageChangeHandler(event) {
     selectedLanguage = event.target.value;
     localStorage.setItem('languageselection',selectedLanguage)
+    if(selectedLanguage=="hindi"){
+        termc.href='hindit&c.html'
+    }else{
+        termc.href='expot&c.html'
+    }
     updateUI(selectedLanguage);
 }
 
@@ -88,3 +104,4 @@ hindiRadio.addEventListener('change', languageChangeHandler);
 if(!localStorage.getItem('languageselection')){
     localStorage.setItem('languageselection',selectedLanguage)
 }
+
