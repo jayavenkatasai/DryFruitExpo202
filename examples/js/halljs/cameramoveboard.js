@@ -1,4 +1,4 @@
-var boardposition = document.getElementById('category-name-board')
+var boardposition = document.getElementById('board')
 var positioncord=boardposition.getAttribute('position')
 var cameras = document.getElementById('player');
 var camerastand = document.getElementById('rig');
@@ -23,7 +23,7 @@ var adjustedZ = boardZ - 15; // Add Z positions
 let count=1;
 boardposition.addEventListener('click',function(){
     
-    if(count<=1){
+    if(count<=10){
         cameras.remove('look-controls')
         //camerastand.setAttribute('rotation', { x: 0, y: boardrotationy+90, z: 0 });
         cameras.setAttribute('position', { x: adjustedX, y: adjustedY, z: adjustedZ });

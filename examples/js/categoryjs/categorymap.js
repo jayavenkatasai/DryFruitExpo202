@@ -18,7 +18,7 @@ const visitTranslations = {
     "english": 
     {
        "visittext": "Visit hall",
-       "categoryheading":"Choose Category"
+       "categoryheading":"Get Started"
     },
    
     "hindi":
@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(categoryheading)
             document.querySelector('.categoryheading').textContent = categoryheading;
             populateCategories(data);
-          
-
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -64,17 +62,33 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateCategoryHTML(categoryName, index,category,categorynew) {
         const language = localStorage.getItem('languageselection')
         const visitText = visitTranslations[language].visittext;
+        const hallCount = categorynew.HALL_COUNT;
+        let dropdownItemsHTML = ''; // Initialize an empty string to store dropdown items
+
+        for (let i = 0; i < hallCount; i++) {
+            let startpoint = i * 10 + 1;
+            let endpoint = (i + 1) * 10;
+            dropdownItemsHTML += `<a class="dropdown-item" href="prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${i + 1}">Hall ${i + 1}</a>`;
+        }
+    
         return `
             <div class="category">
                 <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
                 <p class="categoryName">${categoryName}</p>
-                <div class="visitHallButton">
-                    <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
+                <div class="dropdownSection">
+                    <div class="visitHallButton">
+                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
+                    </div>
+                    <div class="dropdown">
+                    <button type="button" class="btn btn-primary numberToggle dropdown-toggle" data-toggle="dropdown">
+                        1
+                    </button>
+                    <div class="dropdown-menu">
+                        ${dropdownItemsHTML}
+                    </div>
+                </div> 
                 </div>
-                <div class="vendorsAndhallCount">
-                    <p class="vendorsAccount"><span><img src="assets/icons/blueExit.png"></span>${categorynew.PARTICIPANT_COUNT}</p>
-                    <p class="hallCount"><span><img src="assets/icons/blueExit.png"></span>${categorynew.HALL_COUNT}</p>
-                </div>
+
             </div>
         `;
     }

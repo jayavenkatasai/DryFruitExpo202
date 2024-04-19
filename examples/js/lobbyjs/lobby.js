@@ -302,6 +302,6 @@ if(os=="iOS"|| os=="Mac OS"){
 
 document.getElementById('helpdeskplane').addEventListener('click',function(){
   tracking(0,"helpdeskplane","")
-     document.querySelector('.helpPopUp').style.display='block'
+     document.querySelector('.helpPopUp').style.display='flex'
      
 })

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,235 +21,297 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-    
+
     <style>
-      *{
-          margin: 0;
+      * {
+        margin: 0;
       }
-      body{
-          font-family: "Nunito", sans-serif;
-          margin:15px;
+      body {
+        font-family: 'Nunito', sans-serif;
+        margin: 15px;
       }
       .sectionTwo a img {
         max-width: 145px;
-    }
-    .sectionTwo a{
-      position: absolute;
+      }
+      .sectionTwo a {
+        position: absolute;
         left: 51%;
-        bottom:2%;
-    }
-      
-      .welcomeIntro{
-          color: #8FDAFF;
-          font-size: 55px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal; 
-          padding-bottom: 20px;
+        bottom: 2%;
       }
-      .welcomeHsptlText{
-          color: #FFF;
-          font-size: 50px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 120%;
-          text-transform: uppercase; 
-          padding-bottom:70px;
+
+      .welcomeIntro {
+        color: #8fdaff;
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-bottom: 20px;
       }
-      .intro{
-          background-color:#007FBE;
-          height:95vh;
+      .welcomeHsptlText {
+        color: #fff;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: uppercase;
+        padding-bottom: 50px;
       }
-      .introContents,.introSections{
-          height:100%;
+      .intro {
+        background-color: #007fbe;
+        height: 95vh;
       }
-      .sectionOne ::placeholder,.nameInput{
-          color: #344054;
-          text-align: center;
-          font-size: 25px;
-          font-weight: 400;
-          line-height: 20px;
+      .introContents,
+      .introSections {
+        height: 100%;
       }
-      .radioButtonOne,.radioButtonTwo {
-	display: flex;
-	align-items: center;
-}
-      .radioButtons span{
+      .sectionOne ::placeholder,
+      .nameInput {
+        color: #344054;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+      .radioButtonOne,
+      .radioButtonTwo {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        width: 120px;
+        justify-content: center;
+        position: relative;
+      }
+      .radioButtonOne input,
+      .radioButtonTwo input {
+        opacity: 1;
+        z-index: 1;
+        accent-color: #F65927;
+      }
+      .overLay {
+        height: 20px;
+        width: 20px;
+        background: #fff;
+        border-radius: 50%;
+        left: 9px;
+        position: absolute;
+        z-index: 0;
+        opacity: 0;
+      }
+      .radioButtons span {
         color: #fff;
         font-size: 22px;
       }
-      .radioButtons{
-        display:flex;
+      .TermsText {
+        color: #fff;
+        font-size: 16px;
+        padding-top:5px;
+      }
+      .TermsText a {
+        color: #fff;
+        text-decoration: underline;
+        display: block;
+        font-weight:700;
+      }
+      .radioButtons {
+        display: flex;
         gap: 30px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
       }
       .radioButtons input {
-	height: 20px;
-	width: 17px;
-}
-.radioButtons span{
-  padding-left: 5px;
-}
-      .nameInput{
-          padding: 18px;
-          border-radius: 8px;
-           border: 1px solid rgba(0, 9, 57, 0.10);
-          background:#FFF;
-          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-          font-family: "Nunito", sans-serif;
+        height: 20px;
+        width: 20px;
       }
-      .nameInput:focus{
-        outline:transparent;
+      .radioButtons span {
+        padding-left: 5px;
       }
-      .enterExpoButton{
-          margin-top:15px;
-          border-radius:12px;
-          background: #F65927; 
-          color: #FFF;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: normal; 
-          padding:17px 0;
-          border:none;
-          font-family: "Nunito", sans-serif;
-          cursor: pointer;
+      .nameInput {
+        padding: 18px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 9, 57, 0.1);
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        font-family: 'Nunito', sans-serif;
       }
-      .nameInput{
-          max-width:360px;
-          width:100%;
+      .nameInput:focus {
+        outline: transparent;
       }
-      .enterExpoButton{
-        max-width:400px;
+      .enterExpoButton {
+        margin-top: 15px;
+        border-radius: 12px;
+        background: #f65927;
+        color: #fff;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 17px 0;
+        border: none;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
       }
-      .sectionOne{
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          padding-left:50px;
-          width:40%;
+      .nameInput {
+        max-width: 360px;
+        width: 100%;
       }
-      .sectionOne,.sectionTwo{
-          height:100%;
-          /* width:100%; */
+      .enterExpoButton {
+        max-width: 400px;
       }
-      .introSections{
-          display:flex;
-          align-items:center;
-          gap:60px;
+      .sectionOne {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 50px;
+        width: 40%;
       }
-      .sectionTwo img{
-          width:100%;
+      .sectionOne,
+      .sectionTwo {
         height: 100%;
-          object-fit: contain;
+        /* width:100%; */
       }
-      .sectionTwo{
-          position: relative;
-          z-index: 9;
+      .introSections {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+      .sectionTwo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .sectionTwo {
+        position: relative;
+        z-index: 9;
       }
       .sectionTwo::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          background-color: #fff;
-          z-index: -1;
-          height: 100%;
-          width: 50%;
-          left: 50%;
+        content: '';
+        position: absolute;
+        top: 0;
+        background-color: #fff;
+        z-index: -1;
+        height: 100%;
+        width: 50%;
+        left: 50%;
       }
-      .welcomeHsptlText span{
-          display: block;
+      .welcomeHsptlText span {
+        display: block;
       }
-      .wrongText{
-          color:#fff;
-          font-size:14px;
-          font-weight:600;
-          display: none
+      .wrongText {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        display: none;
       }
-      @media only screen and (max-width:767px){
-          .introSections{
-              flex-direction:column;
-          }
-          .enterExpoButton {
-    max-width: 385px;
-}
-          .radioButtons span {
-	font-size: 18px;
-}
-          .introPoweredBy {
-              width: 95%;
-              margin: auto;
-              text-align: end;
-          }
-          .sectionTwo a{
-            position: unset;
-          }
-          .sectionOne{
-              padding:0;
-              width:95%;
-              margin:auto;
-          }
-          .welcomeIntro {
-              font-size: 35px;
-              padding:20px 0 0 0;
-          }
-          .welcomeHsptlText {
-              font-size: 37px;
-              padding-bottom: 30px;
-          }
-          .sectionOne ::placeholder,.nameInput{
-              font-size:18px;
-              padding: 10px;
-          }
-          .enterExpoButton{
-              font-size:18px;
-              padding: 10px;
-              cursor: pointer;
-          }
-          .sectionTwo::before{
-              display:none;
-          }
-          .sectionTwo img{
-              height:unset;
-          }
-          .introSections {
-              gap: 20px;
-          }
+      .chooseText {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 700;
+        padding-bottom: 10px;
       }
-  </style>
+      @media only screen and (max-width: 992px) {
+        .introSections {
+          flex-direction: column;
+        }
+        .intro {
+          height: unset;
+        }
+        .enterExpoButton {
+          max-width: 385px;
+        }
+        .radioButtons span {
+          font-size: 18px;
+        }
+        .introPoweredBy {
+          width: 95%;
+          margin: auto;
+          text-align: end;
+        }
+        .sectionTwo a {
+          position: unset;
+        }
+        .sectionOne {
+          padding: 0;
+          width: 95%;
+          margin: auto;
+        }
+        .welcomeIntro {
+          font-size: 35px;
+          padding: 20px 0 0 0;
+        }
+        .welcomeHsptlText {
+          font-size: 37px;
+          padding-bottom: 30px;
+        }
+        .sectionOne ::placeholder,
+        .nameInput {
+          font-size: 18px;
+          padding: 10px;
+        }
+        .enterExpoButton {
+          font-size: 18px;
+          padding: 10px;
+          cursor: pointer;
+        }
+        .sectionTwo::before {
+          display: none;
+        }
+        .sectionTwo img {
+          height: unset;
+        }
+        .introSections {
+          gap: 20px;
+        }
+      }
+      @media only screen and (max-width:436px){
+        .TermsText a{
+          display: unset!important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- intro new -->
     <div class="intro">
       <div class="introContents">
-          <div class="introSections">
-              <div class="sectionOne">
-                  <p class="welcomeIntro">Welcome to</p>
-                  <p class="welcomeHsptlText">Hospital & Medical Supplies Expo</p>
-                  <div class="radioButtons">
-                    <div class="radioButtonOne"><input type="radio" name="language" value="english" checked><span>English</span></div>
-                    <div class="radioButtonTwo"><input type="radio" name="language" value="hindi" ><span>हिंदी</span></div>
-                    
-                  </div>
-                  <div  id="name-container">
-                  <input class="nameInput" type="text" placeholder="Enter your name" id="name-value">
-                  </div>
-                  <p class="wrongText">* Please enter minimum 3 characters</p>
-                  <div id="overlay"></div>
-                  <div id="error-popup" class="popup">
-                    <span id="error-message"></span>
-                    <span id="close-icon" onclick="hidePopup()">X</span>
-                  </div>
-                  <button class="enterExpoButton" type="submit" id="enterExpo-btn">Continue</button>
+        <div class="introSections">
+          <div class="sectionOne">
+            <p class="welcomeIntro">Welcome to</p>
+            <p class="welcomeHsptlText">Hospital & Medical Supplies Expo</p>
+            <p class="chooseText">Choose a language :</p>
+            <div class="radioButtons">
+              <div class="radioButtonOne">
+                <input type="radio" name="language" value="english" checked />
+                <div class="overLay"></div>
+                <span>English</span>
               </div>
-              <div class="sectionTwo">
-                  <img src="assets/icons/introImage.png">
-                  <div class="introPoweredBy">
-                    <a href="https://www.marketcentral.in"><img src="assets/icons/introMcImg.png"></a>
-                  </div>
-                  
+              <div class="radioButtonTwo">
+                <input type="radio" name="language" value="hindi" />
+                <div class="overLay"></div>
+                <span>हिंदी</span>
               </div>
+            </div>
+            <div id="name-container">
+              <input class="nameInput" type="text" placeholder="Enter your name" id="name-value" />
+            </div>
+            <p class="wrongText">* Please enter minimum 3 characters</p>
+            <div id="overlay"></div>
+            <div id="error-popup" class="popup">
+              <span id="error-message"></span>
+              <span id="close-icon" onclick="hidePopup()">X</span>
+            </div>
+            <button class="enterExpoButton" type="submit" id="enterExpo-btn">Continue</button>
+            <p class="TermsText">
+              *By clicking on continue, you accept MarketCentral's <a target="_blank" href="expot&c.html">Terms & Conditions</a>
+            </p>
           </div>
+          <div class="sectionTwo">
+            <img src="assets/icons/introImage.png" />
+            <div class="introPoweredBy">
+              <a href="https://www.marketcentral.in"><img src="assets/icons/introMcImg.png" /></a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="threeImages" style="text-align: center">
         <h2 class="Avthar-text">Choose Your Avatar</h2>
@@ -256,7 +319,7 @@
         <div class="threeImagesContents">
           <div class="images" id="avthar1" onclick="displayImageId(this)">
             <img class="maleAvtar" src="assets/Avthars/Avthar1.png" />
-            <img class="chosenMaleAvtar"maleAvtar src="assets/Avthars/chosenMaleAvatar.png" />
+            <img class="chosenMaleAvtar" maleAvtar src="assets/Avthars/chosenMaleAvatar.png" />
           </div>
           <div class="images" id="avthar2" onclick="displayImageId(this)">
             <img class="femaleAvtar" src="assets/Avthars/Avthar2.png" />
@@ -272,8 +335,9 @@
         <div class="continueExpoButton">
           <button class="continue-text">Continue</button>
         </div>
+        <!-- <p class="TermsText">By clicking on continue, you accept MarketCentral's <a href="">Terms & Conditions</a></p> -->
       </div>
-  </div>
+    </div>
     <!-- new intro bkp -->
     <!-- <div class="intro">
       <div
@@ -328,10 +392,10 @@
              <div class="images">
                   <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
               </div> -->
-          <!-- </div>
+    <!-- </div>
           <div class="image-id"> -->
-            <!-- <h2 id="displayId"></h2> -->
-          <!-- </div>
+    <!-- <h2 id="displayId"></h2> -->
+    <!-- </div>
           <div class="continueExpoButton">
             <button>Continue</button>
           </div>

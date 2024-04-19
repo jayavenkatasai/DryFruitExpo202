@@ -17,7 +17,7 @@ var data = {
       "welcomeHsptlText": 
           "Hospital & Medical Supplies Expo",
        "enterExpoButton":"Continue",
-       "Avthartext":"Choose Your Avatar",
+       "Avthartext":"Choose your profile",
        "continuetext":"Enter Expo",
        "nameplaceholder":"Please Enter Your Name"
     },

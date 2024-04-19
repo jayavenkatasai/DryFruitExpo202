@@ -3,7 +3,11 @@
     <meta charset="utf-8" />
     <title>Hospital And Medical Supplies Expo</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
-    <meta name="description" content="Nametag — Networked-Aframe" />
+    <meta name="meta title" content="Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today.">
+    <meta name="keywords" content="healthcare innovation, medical supplies expo, virtual event hall, Digital healthcare solutions,
+    Interactive expo experience, hospital and medical supplies, Marketcentral expo, smbxl expo, 3D expo marketcentral,.">
+    <meta name="description" content="Get a chance to interact with products and industry experts, attend a live demonstration, and learn about the latest advancements in patient care.">
+    <title>Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today.</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -134,7 +138,7 @@
     <div id="orientationScreen">
       <div class="orientationScreenContents" id="orientat-content">
         <img src="assets/icons/rotatePhone.gif" />
-        <h3>Rotate your mobile</h3>
+        <h3 class="rotateyourmobile">Rotate your mobile</h3>
       </div>
     </div>
     <!-- orientation ending -->
@@ -202,7 +206,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>`
     </div>
 
     <!--sharestall and product  -->
@@ -339,6 +343,7 @@
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
         <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized ver 3.glb"></a-asset-item>
         <img id="broucher-icon" src="assets/icons/broucherlogo.png" />
+        <img id="leftarrow-icon" src="assets/icons/left arrow.png" />
         <img id="phone-icon" src="assets/icons/phonelogo.png" />
         <img id="email-icon" src="assets/icons/emaillogo.png" />
         <img id="businesscard-icon" src="assets/icons/businescardlogo.png" />
@@ -357,23 +362,26 @@
               rotation="0 180 0"
             >
             </a-entity>
-            <a-plane color="#0080bf" position="0 1.9 2" scale="2 0.5 0.1" side="double" look-at="[camera]">
+            <a-plane color="#0080bf" position="0 1.9 2" width="1.2" height="0.4" side="double" look-at="[camera]">
               <a-text
                 class="nametag"
                 value="?"
-                rotation="0 180 0"
-                position="0 0.1 -0.25"
+               
+                position="0 0.03 0"
                 align="center"
                 color="white"
+                width="1"
+                height="1"
+                wrap-count="10"
               ></a-text>
-              <a-text
+              <!-- <a-text
                 class="nametag"
                 value="?"
                 position="0 0.1 1.2"
                 align="center"
                 color="white"
                 wrap-count="50"
-              ></a-text>
+              ></a-text> -->
             </a-plane>
           </a-entity>
         </template>
@@ -400,17 +408,52 @@
         <!-- camera end -->
         <!-- category name board -->
         <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2">
-          <a-plane id="category-name-board" position="0 2.1 -6.8" color="#0080BF" height="0.5" width="1.8">
+          <a-plane id="category-name-board" position="0 1.8 -6.8" color="#0080BF" height="0.8" width="1.8">
             <a-text
               id="board-name"
               value="Dental Supplies"
               position="0 0 0"
               align="center"
               wrap-count="20"
-              width="1.8"
-              height="1.8"
+              width="2.2"
+              height="2.2"
               color="white"
             ></a-text>
+            <a-text
+             
+            value="Hall no : 01"
+            position="0 -0.6 0"
+            align="center"
+            wrap-count="20"
+            width="2.5"
+            height="2.5"
+            color="black"
+          ></a-text>
+           <a-image
+          src="#leftarrow-icon"
+          width="0.5"
+          height="0.5"
+       
+       
+          position="-0.4 -1 0.019"
+        >
+       <a-text
+           
+            value="Go left"
+            position="0.548 0.01 -0.08"
+            align="center"
+            wrap-count="20"
+            width="2.4"
+            height="2.4"
+            color="black"
+          ></a-text>
+     
+      </a-image>
+
+
+
+
+
           </a-plane>
         </a-entity>
         <!-- category name board end -->

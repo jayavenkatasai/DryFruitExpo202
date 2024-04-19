@@ -19,7 +19,9 @@ const datalanguage = {
         "jointhewebinar":"Join the Webinar",
         "jointhesession":"Join the session",
         "URLcopiedtoclipboard":"URL copied to clipboard!",
-        "Rotateyourmobile":"Rotate your mobile"
+         "HelpDesk":"Help Desk",
+         "followus":"follow us",
+         "Rotateyourmobile":"Rotate your mobile"
     },
    
     "hindi":
@@ -42,43 +44,19 @@ const datalanguage = {
          "jointhewebinar":"वेबिनार में शामिल हों",
          "jointhesession":"सत्र में शामिल हों",
          "URLcopiedtoclipboard":"URL क्लिपबोर्ड पर कॉपी किया गया!",
-         "Rotateyourmobile":"अपने मोबाइल को घुमाएं"
+         "HelpDesk":"सहायता केंद्र",
+         "followus":"सोशल मीडिया पर हमें फॉलो करें",
+         "Rotateyourmobile":"Rotate your mobile"
      },
     
 };
 
 const language = localStorage.getItem('languageselection')
-
-const chat = document.querySelector('.labelchat')
-const explore = document.querySelector('.labelexplore')
-const exit = document.querySelector('.labelexit')
-const category = document.querySelector('.labelcategory')
-const fullscreenButton = document.querySelector('#fullscreenButton')
-const loadingtext = document.querySelector('.loading-text')
-const copytext = document.getElementById('copyButton')
-const urlcopied = document.querySelector('.url-copied-alert')
-const visitButton = document.querySelector('.visitButton')
-const shareproduct = document.querySelector('.shareButton')
-const joinText = document.querySelector('joinText')
-const sessionText= document.querySelector('.sessionText')
+const helpdesk = document.querySelector('.helpText')
+const followus = document.querySelector('.followText')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
-const buttonText = fullscreenButton.textContent;
-chat.textContent=datalanguage[language].labelchat
-explore.textContent=datalanguage[language].labelexplore
-exit.textContent=datalanguage[language].labelexit
-category.textContent=datalanguage[language].labelcategory
-loadingtext.textContent=datalanguage[language].loadingtext
-copytext.textContent=datalanguage[language].URLcopiedtoclipboard
-urlcopied.textContent = datalanguage[language].copy
-visitButton.textContent = datalanguage[language].visitproduct
-shareproduct.textContent= datalanguage[language].shareproduct
-joinText.textContent=datalanguage[language].joinText
-sessionText.textContent =datalanguage[language].jointhesession
+const loadingtext = document.querySelector('.loading-text')
+helpdesk.textContent=datalanguage[language].HelpDesk
+followus.textContent=datalanguage[language].followus
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
-if(buttonText=="Enter Full Screen"){
-    fullscreenButton.textContent=datalanguage[language].fullscreenButton
-}
-// else{
-//     fullscreenButton.textContent=data[language].Exitfullscreen
-// }
-
+loadingtext.textContent=datalanguage[language].loadingtext

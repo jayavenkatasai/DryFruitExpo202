@@ -10,7 +10,38 @@ p,h1,h2,h3,h4,h5,h6{
     color: #F65927;
     font-size: 50px;
     font-weight: 600;
+    padding-bottom:5px;
+}
+.categoryDescription{
+    color: #464646;
+    font-size:22px;
+    text-align:center;
     padding-bottom:40px;
+}
+.numberToggle{
+    background-color: transparent!important;
+    color: #363636!important;
+    border-color:#F65927!important;
+}
+.numberToggle:hover{
+    background-color: transparent!important;
+    color: #363636!important;
+    border-color:#F65927!important;
+}
+.numberToggle:focus{
+    outline:none!important;
+    background-color: transparent!important;
+    color: #363636!important;
+    box-shadow:none!important;
+    border-color:#F65927!important;
+}
+.dropdown-menu.show{
+    height:175px;
+    overflow:scroll;
+}
+.dropdown-item:focus, .dropdown-item:hover{
+    border-color:#F65927!important;
+    color:#363636;
 }
 .categoryheading{
     text-align:center;
@@ -24,7 +55,7 @@ p.categoryName {
     padding-top: 10px;
 }
 .categoryMap{
-    padding:100px 0 170px 0;
+    padding:60px 0 170px 0;
     background: #F1FDFF; 
 }
 .categoryName {
@@ -34,6 +65,26 @@ p.categoryName {
     padding-bottom: 5px;
     margin: auto;
     width: 95%;
+}
+.dropdownSection {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.dropdownSection select {
+	padding: 6px;
+	background: transparent;
+	border: 2px solid #F65927;
+	border-radius: 4px;
+    cursor: pointer;
+}
+.wrapper{
+    width:200px;
+    padding:20px;
+    height: 150px;
+}
+.dropdownSection option{
+    background-color: #fff;
 }
 .vendorsAndhallCount{
     position: relative;
@@ -60,7 +111,7 @@ p.categoryName {
 .vendorsAndhallCount p {
 	font-size: 14px;
 }
-.category a {
+.visitCategory {
     color: #FFF;
     position: relative;
     font-weight: 600;
@@ -75,11 +126,14 @@ p.categoryName {
     margin: 0 auto;
     font-size: 16px;
     bottom: 10px;
-    left: 10px;
-    margin:20px 0 10px 0;
+    margin:20px 0 0 0;
+}
+.visitCategory:hover{
+    color: #FFF;
+    text-decoration:none;
 }
 .category {
-	padding: 16px 0;
+	padding: 16px 0 5px 0;
 	border-radius: 10px;
 	border: 2px solid #F65927;
 	background: #FFF;
@@ -124,7 +178,7 @@ p.categoryName {
 .categoryName {
     font-size: 18px;
 }
-.category a {
+.visitCategory{
     max-width: 100px;
     font-size: 14px;
 }
@@ -141,6 +195,10 @@ p.categoryName {
 .category img {
     height: 100px;
 }
+.categoryDescription {
+	font-size: 18px;
+	padding-bottom: 20px;
+}
 
 .categoryContents{
     grid-template-columns: repeat(3,1fr);
@@ -154,11 +212,11 @@ p.categoryName {
     .vendorsAndhallCount {
         padding-left: 0;
     }
-    .category a,.vendorsAndhallCount{
+    .visitCategory,.vendorsAndhallCount{
         position: relative!important;
         left: unset!important;
     }
-    .category a{
+    .visitCategory{
         margin-top:20px;
     }
 

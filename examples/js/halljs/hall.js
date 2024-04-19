@@ -1,7 +1,7 @@
 //urlendpoint 
 
 var urlendpoint = '';
-
+var selectedLanguages = localStorage.getItem('languageselection')
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
 }
@@ -77,8 +77,14 @@ function share(uno,name){
     console.log(newURL)
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
-    document.getElementById('urlText').textContent = "Stall Link"
-    document.querySelector('.inviteText').textContent = "Share Stall Link"
+    if(selectedLanguages=='hindi'){
+        document.getElementById('urlText').textContent = "स्टाल लिंक"
+        document.querySelector('.inviteText').textContent = "Share Stall Link"
+    }else{
+        document.getElementById('urlText').textContent = "Stall Link"
+        document.querySelector('.inviteText').textContent = "Share Stall Link"
+    }
+   
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
     tracking(uno, "share-stall", "")
@@ -615,8 +621,13 @@ const fetchDataFromAPI = () => {
                                     var popupOverlay = document.getElementById('popup-overlay');
                                     var currentURLInput = document.getElementById('currentURL');
                                     currentURLInput.value = newURL;
+                                    if(selectedLanguages=='hindi'){
+                                        document.getElementById('urlText').textContent = "उत्पाद लिंक"
+                                    document.querySelector('.inviteText').textContent = "उत्पाद लिंक साझा करें"
+                                    }else{
                                     document.getElementById('urlText').textContent = "Product Link"
                                     document.querySelector('.inviteText').textContent = "Share Product Link"
+                                    }
                                     popupOverlay.style.display = 'flex';
                                     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
                                     tracking(stall.uno, "share-product", imageDescription)

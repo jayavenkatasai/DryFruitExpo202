@@ -55,7 +55,24 @@ function updateUI(language) {
 }
 
 // Set initial language to English
+
 let selectedLanguage = "english";
+
+// Get the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Check if the 'lan' parameter exists in the URL
+if (urlParams.has('lan')) {
+    // Get the value of the 'lan' parameter
+    const languageParam = urlParams.get('lan');
+    // If 'lan' parameter is 'hindi', set selectedLanguage to 'hindi', otherwise keep it 'english'
+    selectedLanguage = languageParam === 'hindi' ? 'hindi' : 'english';
+   if(selectedLanguage=='hindi'){
+    document.querySelector('.inputone').removeAttribute('checked')
+    document.querySelector('.inputtwo').setAttribute('checked','true')
+   }
+}
+
 updateUI(selectedLanguage);
 
 // Event listener for language change
