@@ -152,6 +152,10 @@
         .logoImg{
             max-width:250px;
         }
+        .termc {
+            color: #fff;
+            font-weight: 700;
+        }
         .logoContents{
             display:flex;
             flex-direction:column;

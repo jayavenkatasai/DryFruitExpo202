@@ -195,6 +195,9 @@ p.categoryName {
 .category img {
     height: 100px;
 }
+.dropdown-item {
+	padding: 5px 11px !important;
+}
 .categoryDescription {
 	font-size: 18px;
 	padding-bottom: 20px;
