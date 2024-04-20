@@ -24,16 +24,17 @@
     <link rel="stylesheet" href="css/hall.css" />
     <!-- <script src="/js/script.js"></script>-->
     <script src="/js/simple-navmesh-constraint.js"></script>
-    <script src="/js/joystick.js"></script>
+  
     <script src="js/Custom_components/cursor-listener.js"></script>
     <script src="/js/Custom_components/custome_component.js"></script>
     <script src="js/track js/ua-parser.js"></script>
     <script src="js/ip-address.js"></script>
     <script src="js/track js/tracking-ga.js"></script>
-
+   
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script src="js/Custom_components/camerlook.js"></script>
+    <script src="/js/joystick.js"></script>
    
     <script>
       // networked aframe start
@@ -2897,8 +2898,26 @@ document.getElementById('player').setAttribute('player-info', 'name', name)
    document.body.classList.remove('no-scroll');
 });
 </script>
-<script src="js/halljs/joystickremoval.js"></script>
+
 <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
 <script src="js/halljs/cameramoveboard.js"></script>
+<script src="js/halljs/joystickremoval.js"></script>
+<!-- <script>
+  var parser = new UAParser();
+var result = parser.getResult();
+var useragent =result.device.type
+var os =result.os.name
+console.log(useragent)
+if(useragent=="mobile"){
+
+}else{
+  // document.querySelector(".scenea").removeAttribute('joystick');
+  
+  document.getElementById('np').style.right = '165px';
+  //document.querySelector('#np').style.bottom = '20px';
+  
+}
+
+</script> -->
   </body>
 </html>
