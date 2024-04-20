@@ -265,6 +265,7 @@ const fetchDataFromAPI = () => {
                     c = parseInt(c);
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${c}.glb`)
+                    document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${c}`)
                 // switch (c) {
                 //     case 1:
                 //     var bannerElements = document.getElementById("ban");
@@ -314,6 +315,7 @@ const fetchDataFromAPI = () => {
                     console.log("switch case odd is behaving")
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${b}.glb`)
+                    document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${b}`)
                 //     switch (b) {
                 //     case 1:
                 //        // alert("success1")
@@ -764,7 +766,7 @@ console.log(`posistion-of-stall is ${stallZ}`)
 
 // Perform some math operations on stallX, stallY, stallZ
 var newX = stallX+0; // for example, adding 2 to the x position
-var newY = stallY+2; // subtracting 1 from the y position
+var newY = stallY; // subtracting 1 from the y position
 var newZ = stallZ+0; // multiplying the z position by 2
 document.getElementById('player').removeAttribute('look-controls')
 
@@ -827,9 +829,10 @@ y:  0,
 z: 0
 });
 // Set the new position to the 'camera'
-document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+//document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
 fetchDataFromAPI()   
 document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
+document.getElementById('player').setAttribute('wasd-controls', 'enabled:true');
 })
 })
 
