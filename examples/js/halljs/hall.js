@@ -840,9 +840,9 @@ document.getElementById('player').setAttribute('wasd-controls', 'enabled:true');
 
 
 if(useragent=="mobile"){
-  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo.marketcentral.in/expoDirectoryMobile.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
 }else{
-  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo.marketcentral.in/expoDirectory.cfm`)
+  document.getElementById("iframe-expoDir").setAttribute("src",`https://expo1.marketcentral.in/expoDirectory.cfm`)
 
 
 }

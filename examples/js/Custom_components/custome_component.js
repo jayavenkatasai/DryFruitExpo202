@@ -97,13 +97,13 @@ AFRAME.registerComponent('activate-on-approach', {
       var stallnum = document.getElementById(`txtval${numericPart}`).getAttribute('value');
 
       if (!isStallVisited(stallnum)) {
-        document.getElementById("iframe-url").setAttribute('src', `https://expo.marketcentral.in/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+        document.getElementById("iframe-url").setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
         trackinga(`visitor passed through - ${stallnum}`,'hall')
         markStallVisited(stallnum);
       }
 
       // Set cursor listener attribute
-      this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://expo.marketcentral.in/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
+      this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
     //   document.getElementById('indivdualChatFullScreen').addEventListener('click',function(){
     //     //alert("trigger")
        

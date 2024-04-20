@@ -91,7 +91,7 @@ document.getElementById('chat-img').addEventListener('click',function(){
         chatRoom.style.display = "none";
     } else {
         // If not visible, show it
-        var chaturl = `https://expo.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
+        var chaturl = `https://expo1.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
         tracking(0, 'visitor-chat-icon', ipAddress);
         chatRoom.style.display = "block";
         document.getElementById('chatui').setAttribute('src', chaturl);
@@ -110,7 +110,7 @@ document.getElementById('mblchatplaceholder').addEventListener('click',function(
         chatRoom.style.display = "none";
     } else {
         // If not visible, show it
-        var chaturl = `https://expo.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
+        var chaturl = `https://expo1.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${localStorage.getItem('UserName')}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`;
         tracking(0, 'visitor-chat-icon', ipAddress);
         chatRoom.style.display = "block";
         document.getElementById('chatui').setAttribute('src', chaturl);

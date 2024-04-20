@@ -228,10 +228,10 @@ var userAgent = navigator.userAgent;
 //console.log(`the device type is ${useragent}`)
 // alert(browser)
 if(useragent=="mobile"){
-  document.getElementById("iframe-expo").setAttribute("src",`https://expo.marketcentral.in/expoDirectoryMobile.cfm`)
+  document.getElementById("iframe-expo").setAttribute("src",`https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
   // $(".webinarAndExpocard").css("display", "flex");
 }else{
-  document.getElementById("iframe-expo").setAttribute("src",`https://expo.marketcentral.in/expoDirectory.cfm`)
+  document.getElementById("iframe-expo").setAttribute("src",`https://expo1.marketcentral.in/expoDirectory.cfm`)
   // $(".webinarAndExpocard").css("display", "none");
 }
 if(os=="iOS"|| os=="Mac OS"){
