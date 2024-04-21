@@ -1,13 +1,23 @@
 // Load required modules
 const http = require("http"); // http server core module
+const https = require("https");
 const path = require("path");
 const express = require("express"); // web framework external module
+
+const fs = require("fs");
+const privateKey = fs.readFileSync(path.resolve(__dirname, "localhost-key.pem"), "utf8");
+const certificate = fs.readFileSync(path.resolve(__dirname, "localhost.pem"), "utf8");
+
+const credentials = { key: privateKey, cert: certificate };
 
 // Set process name
 process.title = "networked-aframe-server";
 
 // Get port or default to 8080
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8443;
+
+// Threshold for instancing a room
+const maxOccupantsInRoom = 20;
 
 // Setup and configure Express http server.
 const app = express();
@@ -29,10 +39,10 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.static(path.resolve(__dirname, "..", "examples")));
 
 // Start Express http server
-const webServer = http.createServer(app);
+const webServer = https.createServer(credentials,app);
 const io = require("socket.io")(webServer);
 
-const rooms = {};
+const rooms = new Map();
 
 io.on("connection", socket => {
   console.log("user connected", socket.id);
@@ -42,27 +52,63 @@ io.on("connection", socket => {
   socket.on("joinRoom", data => {
     const { room } = data;
 
-    if (!rooms[room]) {
-      rooms[room] = {
+    curRoom = room;
+    let roomInfo = rooms.get(room);
+    if (!roomInfo) {
+      roomInfo = {
         name: room,
         occupants: {},
+        occupantsCount: 0
       };
+      rooms.set(room, roomInfo);
+    }
+
+    if (roomInfo.occupantsCount >= maxOccupantsInRoom) {
+      // If room is full, search for spot in other instances
+      let availableRoomFound = false;
+      const roomPrefix = `${room}--`;
+      let numberOfInstances = 1;
+      for (const [roomName, roomData] of rooms.entries()) {
+        if (roomName.startsWith(roomPrefix)) {
+          numberOfInstances++;
+          if (roomData.occupantsCount < maxOccupantsInRoom) {
+            availableRoomFound = true;
+            curRoom = roomName;
+            roomInfo = roomData;
+            break;
+          }
+        }
+      }
+
+      if (!availableRoomFound) {
+        // No available room found, create a new one
+        const newRoomNumber = numberOfInstances + 1;
+        curRoom = `${roomPrefix}${newRoomNumber}`;
+        roomInfo = {
+          name: curRoom,
+          occupants: {},
+          occupantsCount: 0
+        };
+        rooms.set(curRoom, roomInfo)
+      }
     }
 
     const joinedTime = Date.now();
-    rooms[room].occupants[socket.id] = joinedTime;
-    curRoom = room;
+    roomInfo.occupants[socket.id] = joinedTime;
+    roomInfo.occupantsCount++;
 
-    console.log(`${socket.id} joined room ${room}`);
-    socket.join(room);
+    console.log(`${socket.id} joined room ${curRoom}`);
+    socket.join(curRoom);
 
     socket.emit("connectSuccess", { joinedTime });
-    const occupants = rooms[room].occupants;
+    const occupants = roomInfo.occupants;
     io.in(curRoom).emit("occupantsChanged", { occupants });
   });
 
   socket.on("send", data => {
     io.to(data.to).emit("send", data);
+    // console.log("the data is send")
+    // console.log(data)
   });
 
   socket.on("broadcast", data => {
@@ -71,16 +117,18 @@ io.on("connection", socket => {
 
   socket.on("disconnect", () => {
     console.log('disconnected: ', socket.id, curRoom);
-    if (rooms[curRoom]) {
+    const roomInfo = rooms.get(curRoom);
+    if (roomInfo) {
       console.log("user disconnected", socket.id);
 
-      delete rooms[curRoom].occupants[socket.id];
-      const occupants = rooms[curRoom].occupants;
+      delete roomInfo.occupants[socket.id];
+      roomInfo.occupantsCount--;
+      const occupants = roomInfo.occupants;
       socket.to(curRoom).broadcast.emit("occupantsChanged", { occupants });
 
-      if (Object.keys(occupants).length === 0) {
+      if (roomInfo.occupantsCount === 0) {
         console.log("everybody left room");
-        delete rooms[curRoom];
+        rooms.delete(curRoom);
       }
     }
   });
