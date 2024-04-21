@@ -36,7 +36,7 @@ const url=`${urlendpoint}/rest/virtualExpo/general/insertTrackingDetails`
 
 var parser = new UAParser();
 var result = parser.getResult();
-
+var guid = localStorage.getItem('GUID')
 var browser=result.browser.name
 
 async function trackinga(dataparameter,pagetitle){
@@ -57,7 +57,8 @@ function tracking(uno=0,track_type,pname="",websitename){
         "Source":"Direct",
         "browser":browser,
         "ipaddress":ipAddress,
-        "exhibition_ID":3
+        "exhibition_ID":3,
+        "visitor_guid":guid
     }
      trackinga(websitename,pagetitle)
     async function postData(url, data) {
@@ -96,7 +97,8 @@ const requestBodybeacon = {
     "Source":"Direct",
     "browser":browser,
     "ipaddress":ipAddress,
-    "exhibition_ID":3
+    "exhibition_ID":3,
+    "visitor_guid":guid
 }
 trackinga(track_type,pagetitle)
 var data =  JSON.stringify(requestBodybeacon);
@@ -123,7 +125,8 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
         "Source":"Direct",
         "browser":browser,
         "ipaddress":ipAddress,
-        "exhibition_ID":3
+        "exhibition_ID":3,
+        "visitor_guid":guid
     }
     trackinga(track_type,pagetitle)
     var data =  JSON.stringify(requestBodybeacon);
@@ -149,7 +152,8 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
             "Source":"Direct",
             "browser":browser,
             "ipaddress":ipAddress,
-            "exhibition_ID":3
+            "exhibition_ID":3,
+            "visitor_guid":guid
         }
         trackinga(track_type,pagetitle)
         var data =  JSON.stringify(requestBodybeacon);
