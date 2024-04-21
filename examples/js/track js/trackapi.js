@@ -104,6 +104,7 @@ const requestBodybeacon = {
 }
 trackinga(track_type,pagetitle)
 var data =  JSON.stringify(requestBodybeacon);
+console.log(requestBodybeacon)
 const result = navigator.sendBeacon(
    url,
     data
@@ -111,7 +112,7 @@ const result = navigator.sendBeacon(
 
   // Log the result of the sendBeacon call
   if (result) {
-  //  console.log(data)
+    console.log(data)
   //  console.log("Data successfully queued for sending.");
   
   } else {

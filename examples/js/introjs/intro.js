@@ -59,6 +59,7 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
     //alert(names.length)
     if(/^[a-zA-Z\s]{3,}$/.test(names)){
         localStorage.setItem('UserName',names)
+        sendbeaconapi(0,localStorage.getItem('languageselection'),'','')
         window.location.href='Avthar.html';   
     }
     else if (names.length > 16) {

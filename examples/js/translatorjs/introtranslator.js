@@ -90,7 +90,7 @@ updateUI(selectedLanguage);
 function languageChangeHandler(event) {
     selectedLanguage = event.target.value;
     localStorage.setItem('languageselection',selectedLanguage)
-    tracking(0,selectedLanguage,'','')
+   // tracking(0,selectedLanguage,'','')
     if(selectedLanguage=="hindi"){
         termc.href='hindit&c.html'
     }else{
@@ -104,6 +104,6 @@ englishRadio.addEventListener('change', languageChangeHandler);
 hindiRadio.addEventListener('change', languageChangeHandler);
 if(!localStorage.getItem('languageselection')){
     localStorage.setItem('languageselection',selectedLanguage)
-    tracking(0,selectedLanguage,'','')
+    //tracking(0,selectedLanguage,'','')
 }
 
