@@ -60,7 +60,7 @@ AFRAME.registerComponent("cursor-listener3", {
         bgContainer1.style.display = "flex";
         const closebtn = document.getElementById("close");
         closebtn.style.display = "block";
-        console.log("Click event triggered! for category");
+       // console.log("Click event triggered! for category");
       //  alert("test fail")
       });
     },

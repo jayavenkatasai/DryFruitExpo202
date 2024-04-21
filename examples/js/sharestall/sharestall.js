@@ -24,13 +24,13 @@ let c;
 cid= decodeURIComponent(urlParams.get("uno"));
  cid=decryptWithCasePreservation(cid)
 
- console.log(typeof cid)
- console.log(cid)
-//  cid=parseInt(cid);//   console.log(cid)
+ //console.log(typeof cid)
+ //console.log(cid)
+//  cid=parseInt(cid);//   //console.log(cid)
  var parser = new UAParser();
  var result = parser.getResult();
  var useragent =result.device.type
- console.log(useragent)
+ //console.log(useragent)
  var os =result.os.name
 
 function share(uno,name){
@@ -79,7 +79,7 @@ let requestBody={
 }
 
 
-console.log(requestBody)
+//console.log(requestBody)
 let apivariable;
 const fetchDataFromAPI = () => {
     let apiurl = `${urlendpoint}/rest/virtualExpo/general/virtualExhibitionDetails`;
@@ -94,29 +94,29 @@ const fetchDataFromAPI = () => {
 
             if (response.ok) {
                 const urlObject = new URL(apiurl);
-                console.log(`before api change url :${apiurl}`);
+                //console.log(`before api change url :${apiurl}`);
 
                 return response.json();
             }
             else {
                
-                console.log(`failed url is :${apiurl}`)
+                //console.log(`failed url is :${apiurl}`)
                 throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
             }
         })
 
         .then(data => {
 
-            console.log('Fetched-data123:', data);
+            //console.log('Fetched-data123:', data);
 
             if (data.data) {
-                console.log(data.data.message);
+                //console.log(data.data.message);
                
                 //need to do navigation stop and popup showing no vendors available
              
             } else {
                 apivariable = data;
-                console.log(apivariable)
+                //console.log(apivariable)
                  // banners logic
             
                 
@@ -166,18 +166,18 @@ const fetchDataFromAPI = () => {
                    
                     /// -----Here for copy code popup endd----
                     // Ensure that stall.products exists and has a length
-                    console.log(stall.products && stall.products.length)
-                    console.log(stall.products.length)
+                    //console.log(stall.products && stall.products.length)
+                    //console.log(stall.products.length)
                     if (stall.products && stall.products.length) {
                         let numberOfImages = stall.products.length;  //10
-                        console.log(numberOfImages)
+                        //console.log(numberOfImages)
 
                         // Create a unique ID for each stall
                         //  const stallContainerId = `stall${stallIndex + 1}`;       
                         // Loop through images in the current stall
                         for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
                             const imageUrl = stall.products[imageIndex].producturl;
-                            console.log(imageUrl)
+                            //console.log(imageUrl)
                             const imageDescription = stall.products[imageIndex].productname;
 
                             // Define positions based on image index using a switch statement
@@ -295,8 +295,8 @@ const fetchDataFromAPI = () => {
                             // popupElement.setAttribute("height","0.1")
                             popupElement.setAttribute("visible", "false");
                             //popupElement.setAttribute("visible", "false");
-                            // console.log("the popup is the following");
-                            // console.log(popupElement); 8
+                            // //console.log("the popup is the following");
+                            // //console.log(popupElement); 8
                             // Append container entity to the 
                             document.getElementById(stallContainerId).appendChild(containerEntity);
 
@@ -317,7 +317,7 @@ const fetchDataFromAPI = () => {
                     }
                 });
                 // Handle the fetched data as needed
-                console.log('Fetched data:', data);
+                //console.log('Fetched data:', data);
                 // Reset the A-Frame scene
                 // const scene = document.querySelector('a-scene');
                 // scene.innerHTML = '';
@@ -343,7 +343,7 @@ fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/3`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable
-    console.log(data);
+    //console.log(data);
     createCards(data);
      // Enter fullscreen mode
     //  const doc = window.document;
@@ -408,11 +408,11 @@ for (var i = 0; i < 10 ; i++) {
 
 function showNext() {
 currentIndex = (currentIndex + 10) % cards.length;
-console.log(currentIndex)
+//console.log(currentIndex)
 buttonid+=1;
-console.log(`the button is ${buttonid}`)
+//console.log(`the button is ${buttonid}`)
 if(buttonid>=1){
-console.log("before execution")
+//console.log("before execution")
 document.getElementById('mapbutton1').style.display="flex"
 
 }
@@ -422,10 +422,10 @@ showCard(currentIndex);
 
 function showPrevious() {
 currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-console.log(`the before button index is ${currentIndex}`)
+//console.log(`the before button index is ${currentIndex}`)
 buttonid-=1;
 if(buttonid==0){
-console.log("before execution")
+//console.log("before execution")
 document.getElementById('mapbutton1').style.display="none"
 document.getElementById('mapbutton2').style.display="flex"
 
@@ -449,17 +449,17 @@ var categories = data.map(item => item.CATEGORY);
 // Generate links based on categories
 var links = categories.map(category => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`);
 var categoriesselect=categories.map(category=>category);
-console.log(`the categories select is ${categoriesselect}`)
-console.log(categoriesselect)
-console.log(links);
-console.log(categoriesselect[index])
+//console.log(`the categories select is ${categoriesselect}`)
+//console.log(categoriesselect)
+//console.log(links);
+//console.log(categoriesselect[index])
 //  trackExpo(0,categoriesselect[index],"")
 //trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
 // Open the link in the same window
 window.location.href = links[index];
 }
 function checkurlparm(urlparameter){
-    console.log("triggerd checkurlparam")
+    //console.log("triggerd checkurlparam")
  if(!urlparameter){
     window.location.replace("index.html")
  }

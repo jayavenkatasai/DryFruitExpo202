@@ -3,11 +3,23 @@
     <meta charset="utf-8" />
     <title>Hospital And Medical Supplies Expo</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
-    <meta name="meta title" content="Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today.">
-    <meta name="keywords" content="healthcare innovation, medical supplies expo, virtual event hall, Digital healthcare solutions,
-    Interactive expo experience, hospital and medical supplies, Marketcentral expo, smbxl expo, 3D expo marketcentral,.">
-    <meta name="description" content="Get a chance to interact with products and industry experts, attend a live demonstration, and learn about the latest advancements in patient care.">
-    <title>Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today.</title>
+    <meta
+      name="meta title"
+      content="Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today."
+    />
+    <meta
+      name="keywords"
+      content="healthcare innovation, medical supplies expo, virtual event hall, Digital healthcare solutions,
+    Interactive expo experience, hospital and medical supplies, Marketcentral expo, smbxl expo, 3D expo marketcentral,."
+    />
+    <meta
+      name="description"
+      content="Get a chance to interact with products and industry experts, attend a live demonstration, and learn about the latest advancements in patient care."
+    />
+    <title>
+      Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest
+      trends today.
+    </title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -24,18 +36,18 @@
     <link rel="stylesheet" href="css/hall.css" />
     <!-- <script src="/js/script.js"></script>-->
     <script src="/js/simple-navmesh-constraint.js"></script>
-  
+
     <script src="js/Custom_components/cursor-listener.js"></script>
     <script src="/js/Custom_components/custome_component.js"></script>
     <script src="js/track js/ua-parser.js"></script>
     <script src="js/ip-address.js"></script>
     <script src="js/track js/tracking-ga.js"></script>
-   
+
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script src="js/Custom_components/camerlook.js"></script>
     <script src="/js/joystick.js"></script>
-   
+
     <script>
       // networked aframe start
       // Temporary workaround for template declaration; see issue 167
@@ -54,7 +66,7 @@
               'player-info',
               {
                 selector: '.model',
-                component: 'gltf-model',
+                component: 'gltf-model'
               }
             ]
           });
@@ -129,7 +141,9 @@
         <img class="webinarClose" src="assets/icons/blueCloseIcon.png" />
         <div class="webinarPopUpContents">
           <p class="joinText">Join the Webinar</p>
-          <a class="sessionText" href="webinar.html" target="_blank"  onclick="tracking(0, 'webinar', '')">Join the session</a>
+          <a class="sessionText" href="webinar.html" target="_blank" onclick="tracking(0, 'webinar', '')"
+            >Join the session</a
+          >
         </div>
       </div>
     </div>
@@ -207,7 +221,8 @@
             </div>
           </div>
         </div>
-      </div>`
+      </div>
+      `
     </div>
 
     <!--sharestall and product  -->
@@ -296,14 +311,14 @@
 
     <input
       id="username-overlay"
-      style="z-index: 100; bottom: 24px; left: 48px; position: fixed; display: none;"
+      style="z-index: 100; bottom: 24px; left: 48px; position: fixed; display: none"
       oninput="document.getElementById('player').setAttribute('player-info', 'name', this.value)"
     />
 
     <div id="iframe-container">
       <iframe id="iframe-url" src=""></iframe>
     </div>
-     
+
     <!-- js files -->
     <script src="js/translatorjs/halltranslator.js"></script>
     <script src="js/encrypt.js"></script>
@@ -325,30 +340,23 @@
       joystick
       xr-mode-ui="enabled: false"
       cursor="rayOrigin:mouse"
-  
     >
       <!-- assets for initial load -->
       <a-assets>
         <!-- //stallmodel  -->
-        <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
         <a-asset-item id="stall" src="assets/stallmodel/stallcompresswithoutavatar.glb"></a-asset-item>
         <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand.glb"></a-asset-item>
         <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
         <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
         <a-asset-item id="navmesh_10" src="assets/navmesh/Hall @10 navmesh.glb"></a-asset-item>
-        <a-asset-item id="navmesh_5" src="assets/navmesh/Hall @5 navmesh.glb"></a-asset-item>
+        <!-- <a-asset-item id="navmesh_5" src="assets/navmesh/Hall @5 navmesh.glb"></a-asset-item> -->
         <a-asset-item id="halldoor" src="assets/doors/Hall door.glb"></a-asset-item>
         <a-asset-item id="stallavatar" src="assets/Avthars/avatarreductech.glb"></a-asset-item>
         <!-- //3dcharacter  -->
         <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
         <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized ver 3.glb"></a-asset-item>
-        <img id="broucher-icon" src="assets/icons/broucherlogo.png" />
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" />
-        <img id="phone-icon" src="assets/icons/phonelogo.png" />
-        <img id="email-icon" src="assets/icons/emaillogo.png" />
-        <img id="businesscard-icon" src="assets/icons/businescardlogo.png" />
-        <img id="website-icon" src="assets/icons/websitelogo.png" />
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" />
         <img id="share-button" src="assets/icons/shareicon.png" />
         <template id="head-template">
@@ -367,7 +375,6 @@
               <a-text
                 class="nametag"
                 value="?"
-               
                 position="0 0.03 0"
                 align="center"
                 color="white"
@@ -393,22 +400,22 @@
         <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
         <!-- camera start -->
         <a-entity id="rig">
-        <a-entity
-          id="player"
-          camera
-          position="0 2.5 17.4"
-          wasd-controls
-          networked="template:#head-template;"
-          visible="true"
-          xr-mode-ui="enabled:false"
-          look-controls="magicWindowTrackingEnabled:false"
-          simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
-        >
-      </a-entity>
+          <a-entity
+            id="player"
+            camera
+            position="0 2.5 17.4"
+            wasd-controls
+            networked="template:#head-template;"
+            visible="true"
+            xr-mode-ui="enabled:false"
+            look-controls="magicWindowTrackingEnabled:false"
+            simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
+          >
+          </a-entity>
         </a-entity>
         <!-- camera end -->
         <!-- category name board -->
-        
+
         <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2">
           <a-plane id="category-name-board" position="0 1.8 -6.8" color="#0080BF" height="0.8" width="1.8">
             <a-text
@@ -422,41 +429,26 @@
               color="white"
             ></a-text>
             <a-text
-             
-            value="Hall no : 01"
-            position="0 -0.6 0"
-            align="center"
-            wrap-count="20"
-            width="2.5"
-            height="2.5"
-            color="black"
-            id="text-hallvalue"
-          ></a-text>
-           <a-image
-          src="#leftarrow-icon"
-          width="0.5"
-          height="0.5"
-       
-       
-          position="-0.4 -1 0.019"
-        >
-       <a-text
-           
-            value="Go left"
-            position="0.548 0.01 -0.08"
-            align="center"
-            wrap-count="20"
-            width="2.4"
-            height="2.4"
-            color="black"
-          ></a-text>
-     
-      </a-image>
-
-
-
-
-
+              value="Hall no : 01"
+              position="0 -0.6 0"
+              align="center"
+              wrap-count="20"
+              width="2.5"
+              height="2.5"
+              color="black"
+              id="text-hallvalue"
+            ></a-text>
+            <a-image src="#leftarrow-icon" width="0.5" height="0.5" position="-0.4 -1 0.019">
+              <a-text
+                value="Go left"
+                position="0.548 0.01 -0.08"
+                align="center"
+                wrap-count="20"
+                width="2.4"
+                height="2.4"
+                color="black"
+              ></a-text>
+            </a-image>
           </a-plane>
         </a-entity>
         <!-- category name board end -->
@@ -477,107 +469,19 @@
         <a-entity id="mesh2" gltf-model="#stallavatar" instanced-mesh></a-entity>
         <!-- instance mesh code end -->
         <!-- avatar models -->
-        <a-entity
-          id="stall-avatar1"
-          position="-27 0 -11"
-          rotation="0 0 0"
-          scale="1 1 1"
-       
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar2"
-          position="26 0 -10"
-          rotation="0 180 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar3"
-          position="-27 0 -42"
-          rotation="0 0 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar4"
-          position="26 0 -39"
-          rotation="0 180 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar5"
-          position="-28 0 -71"
-          rotation="0 0 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar6"
-          position="26 0 -68"
-          rotation="0 180 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar7"
-          position="-27 0 -101"
-          rotation="0 0 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar8"
-          position="26 0 -97"
-          rotation="0 180 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar9"
-          position="-10 0 -121"
-          rotation="0 -90 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
-        <a-entity
-          id="stall-avatar10"
-          position="16 0 -121"
-          rotation="0 -90 0"
-          scale="1 1 1"
-           
-          visible="false"
-        >
-        </a-entity>
+        <a-entity id="stall-avatar1" position="-27 0 -11" rotation="0 0 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar2" position="26 0 -10" rotation="0 180 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar3" position="-27 0 -42" rotation="0 0 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar4" position="26 0 -39" rotation="0 180 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar5" position="-28 0 -71" rotation="0 0 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar6" position="26 0 -68" rotation="0 180 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar7" position="-27 0 -101" rotation="0 0 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar8" position="26 0 -97" rotation="0 180 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar9" position="-10 0 -121" rotation="0 -90 0" scale="1 1 1" visible="false"> </a-entity>
+        <a-entity id="stall-avatar10" position="16 0 -121" rotation="0 -90 0" scale="1 1 1" visible="false"> </a-entity>
         <!-- avatar models  end-->
         <!-- stall1 -->
-        <a-entity
-          id="stall1"
-          position="-26.677 -0.05 -11.412"
-          rotation="0 0 0"
-          scale="1 1 1"
-          visible="false"
-           
-          
-        >
+        <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise1"
             gltf-model="#adversting_stand"
@@ -684,7 +588,7 @@
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -726,30 +630,27 @@
             ></a-text>
           </a-plane>
         </a-entity>
-  <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
-            <a-text id="txtval1" value="12345" color="black"></a-text>
-            <a-text id="bname1" value="12345" color="black"></a-text>
-          </a-entity>
+        <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
+          <a-text id="txtval1" value="12345" color="black"></a-text>
+          <a-text id="bname1" value="12345" color="black"></a-text>
+        </a-entity>
         <a-image
           id="bubble1"
           position="-25 6.086 -6.489"
           rotation="0 90 0"
           scale="1 1 1"
-          
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
-
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
             id="bubbletxt1"
             position="0 0.5 0.1"
             value="hello sai how are you"
-            
             font-size="0.35"
             max-width="5"
-           
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -758,7 +659,7 @@
             id="notetext1"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -767,14 +668,7 @@ class="note-text"
           ></a-troika-text>
         </a-image>
         <!-- stall 2 -->
-        <a-entity
-          id="stall2"
-          position="25.098 -0.05 -9.410"
-          scale="1 1 1"
-          rotation="0 180 0"
-          visible="false"
-           
-        >
+        <a-entity id="stall2" position="25.098 -0.05 -9.410" scale="1 1 1" rotation="0 180 0" visible="false">
           <a-entity
             id="advertise2"
             gltf-model="#adversting_stand"
@@ -892,7 +786,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -941,7 +835,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -949,8 +844,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -959,7 +854,7 @@ class="note-text"
             id="notetext3"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -968,14 +863,7 @@ class="note-text"
           ></a-troika-text>
         </a-image>
         <!-- stall 3 -->
-        <a-entity
-          id="stall3"
-          rotation="0 0 0"
-          position="-26.584 -0.05 -41.96"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity id="stall3" rotation="0 0 0" position="-26.584 -0.05 -41.96" scale="1 1 1" visible="false">
           <a-entity
             id="advertise3"
             gltf-model="#adversting_stand"
@@ -1093,7 +981,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -1143,7 +1031,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -1151,8 +1040,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -1161,7 +1050,7 @@ class="note-text"
             id="notetext5"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -1171,14 +1060,7 @@ class="note-text"
         </a-image>
         <!-- stall 4 -->
 
-        <a-entity
-          id="stall4"
-          position="24.85 -0.05 -38.856"
-          rotation="0 180 0"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity id="stall4" position="24.85 -0.05 -38.856" rotation="0 180 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise4"
             gltf-model="#adversting_stand"
@@ -1296,7 +1178,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -1345,7 +1227,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -1353,8 +1236,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -1363,7 +1246,7 @@ class="note-text"
             id="notetext7"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -1373,14 +1256,7 @@ class="note-text"
         </a-image>
         <!-- stall 5 -->
 
-        <a-entity
-          position="-27.857 -0.05 -71.2"
-          id="stall5"
-          rotation="0 0 0"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity position="-27.857 -0.05 -71.2" id="stall5" rotation="0 0 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise5"
             gltf-model="#adversting_stand"
@@ -1497,7 +1373,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -1546,7 +1422,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -1554,8 +1431,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -1564,7 +1441,7 @@ class="note-text"
             id="notetext9"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -1573,14 +1450,7 @@ class="note-text"
           ></a-troika-text>
         </a-image>
         <!-- stall 6-->
-        <a-entity
-          id="stall6"
-          rotation="0 180 0"
-          position="24.961 -0.05 -67.721"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity id="stall6" rotation="0 180 0" position="24.961 -0.05 -67.721" scale="1 1 1" visible="false">
           <a-entity
             id="advertise6"
             gltf-model="#adversting_stand"
@@ -1696,7 +1566,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -1743,7 +1613,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -1751,8 +1622,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -1761,7 +1632,7 @@ class="note-text"
             id="notetext10"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -1770,14 +1641,7 @@ class="note-text"
           ></a-troika-text>
         </a-image>
         <!-- stall 7 -->
-        <a-entity
-          position="-25 -0.05 -100.71"
-          id="stall7"
-          rotation="0 0 0"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity position="-25 -0.05 -100.71" id="stall7" rotation="0 0 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise7"
             gltf-model="#adversting_stand"
@@ -1894,7 +1758,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -1943,7 +1807,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -1951,8 +1816,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -1961,7 +1826,7 @@ class="note-text"
             id="notetext8"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -1972,14 +1837,7 @@ class="note-text"
 
         <!-- stall 8-->
 
-        <a-entity
-          id="stall8"
-          rotation="0 180 0"
-          position="25.454 -0.05 -97.305"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity id="stall8" rotation="0 180 0" position="25.454 -0.05 -97.305" scale="1 1 1" visible="false">
           <a-entity
             id="advertise8"
             gltf-model="#adversting_stand"
@@ -2096,7 +1954,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -2145,7 +2003,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -2153,8 +2012,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -2163,7 +2022,7 @@ class="note-text"
             id="notetext6"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -2173,14 +2032,7 @@ class="note-text"
         </a-image>
 
         <!-- stall 9 -->
-        <a-entity
-          position="-9.555 -0.05 -121.016"
-          id="stall9"
-          rotation="0 -90 0"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity position="-9.555 -0.05 -121.016" id="stall9" rotation="0 -90 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise9"
             gltf-model="#adversting_stand"
@@ -2297,7 +2149,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -2346,7 +2198,8 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
           <a-troika-text
@@ -2354,8 +2207,8 @@ class="note-text"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -2364,7 +2217,7 @@ class="note-text"
             id="notetext4"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -2373,14 +2226,7 @@ class="note-text"
           ></a-troika-text>
         </a-image>
         <!-- stall 10 -->
-        <a-entity
-          id="stall10"
-          rotation="0 -90 0"
-          position="16.257 -0.05 -120.676"
-          scale="1 1 1"
-          visible="false"
-           
-        >
+        <a-entity id="stall10" rotation="0 -90 0" position="16.257 -0.05 -120.676" scale="1 1 1" visible="false">
           <a-entity
             id="advertise10"
             gltf-model="#adversting_stand"
@@ -2496,7 +2342,7 @@ class="note-text"
             color="black"
             scale="1 1 1"
             align="left"
-              position="3.9 1.8 7.65"
+            position="3.9 1.8 7.65"
             rotation="0 90 0"
           ></a-text>
           <a-image
@@ -2545,16 +2391,17 @@ class="note-text"
           scale="1 1 1"
           width="6.2"
           height="2.5"
-         src="assets/icons/R.png" class="indchaticon"
+          src="assets/icons/R.png"
+          class="indchaticon"
           visible="false"
         >
-        <a-troika-text
+          <a-troika-text
             id="bubbletxt2"
             position="0 0.5 0.1"
             value="hello sai how are you"
             height="5"
-                 font-size="0.35"
-      max-width="5"
+            font-size="0.35"
+            max-width="5"
             align="center"
             wrap-count="20"
             color="#004C72"
@@ -2563,7 +2410,7 @@ class="note-text"
             id="notetext2"
             position="0 -0.15 0.1"
             value="Note : Click here to chat"
-class="note-text"
+            class="note-text"
             height="3"
             width="3"
             align="center"
@@ -2623,13 +2470,13 @@ class="note-text"
     <!-- a-scene close -->
     <script>
       document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`);
-     // console.log(networkcategory);
+      // console.log(networkcategory);
       // alert(category)
 
       function updatestatus() {
-       // console.log('it is triggerd1');
+        // console.log('it is triggerd1');
         var uid = localStorage.getItem('GUID');
-       // console.log('it is triggerd');
+        // console.log('it is triggerd');
         const data = {
           exhibition_ID: 3,
           visitor_guid: uid,
@@ -2645,12 +2492,11 @@ class="note-text"
 
         // Log the result of the sendBeacon call
         if (result) {
-        //  console.log('Data successfully queued for sending.');
+          //  console.log('Data successfully queued for sending.');
         } else {
-      //    console.log('Failed to queue data for sending.');
+          //    console.log('Failed to queue data for sending.');
         }
       }
-
     </script>
     <script>
       $('.closeIcon').click(function () {
@@ -2677,7 +2523,7 @@ class="note-text"
         $('#mapSection').removeClass('activeOne');
       });
       document.addEventListener('DOMContentLoaded', function () {
-       // console.log(document.getElementById('player'));
+        // console.log(document.getElementById('player'));
         // console.log(document.getElementById('boy-character'));
 
         avtharassign(avthar);
@@ -2721,167 +2567,158 @@ class="note-text"
       });
     </script>
     <script>
+      // function checkOrientation() {
 
-// function checkOrientation() {
- 
-//   if(useragent=='mobile'){
+      //   if(useragent=='mobile'){
 
-  
-//     //  const deviceOrientationElement = document.getElementById('device-orientation');
-//     const orientationscreen = document.getElementById("orientationScreen");
-//     //console.log(`the orientation screen is ${orientationscreen}`);
-   
-//     //  alert("triggering")
-//      console.log("trigger")
-//     if (window.orientation === 90 || window.orientation === -90) {
-//       //console.log("Device is in landscape orientation");
-//       //   deviceOrientationElement.textContent = "it is in landscape mode";
-//       //  deviceOrientationElement.style.display = "none";
-//       document.getElementById("orientat-content").style.display = "none";
-//       //console.log(`before hitting the black screen`);
-//       orientationscreen.style.display = "none";
+      //     //  const deviceOrientationElement = document.getElementById('device-orientation');
+      //     const orientationscreen = document.getElementById("orientationScreen");
+      //     //console.log(`the orientation screen is ${orientationscreen}`);
 
-//       //console.log(`the blackscreen is ${orientationscreen}`);
-//       //console.log(orientationscreen);
-//       //console.log(`after hitting the black screen`);
-    
-//     } else {
-//       //console.log("Device is in portrait orientation");
-//       //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
-//       //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
-//       orientationscreen.style.display = "block";
-//       document.getElementById("orientat-content").style.display = "flex";
-//     }
+      //     //  alert("triggering")
+      //      console.log("trigger")
+      //     if (window.orientation === 90 || window.orientation === -90) {
+      //       //console.log("Device is in landscape orientation");
+      //       //   deviceOrientationElement.textContent = "it is in landscape mode";
+      //       //  deviceOrientationElement.style.display = "none";
+      //       document.getElementById("orientat-content").style.display = "none";
+      //       //console.log(`before hitting the black screen`);
+      //       orientationscreen.style.display = "none";
 
-//   }
-//   else{
-//     orientationscreen.style.display = "none";
-//   }
-//   }
+      //       //console.log(`the blackscreen is ${orientationscreen}`);
+      //       //console.log(orientationscreen);
+      //       //console.log(`after hitting the black screen`);
 
+      //     } else {
+      //       //console.log("Device is in portrait orientation");
+      //       //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
+      //       //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
+      //       orientationscreen.style.display = "block";
+      //       document.getElementById("orientat-content").style.display = "flex";
+      //     }
 
-  
-// window.addEventListener("resize", checkOrientation, false);
+      //   }
+      //   else{
+      //     orientationscreen.style.display = "none";
+      //   }
+      //   }
 
-// function disableCheckAfterOrientationChange() {
-//   // Remove the event listener after the user enters landscape mode
-//   window.removeEventListener("orientationchange", checkOrientation);
-//   // Set up a new event listener to re-enable orientation checking
-//   window.addEventListener("orientationchange", enableCheckAfterPortrait);
-// }
+      // window.addEventListener("resize", checkOrientation, false);
 
-// function enableCheckAfterPortrait() {
-//   // Remove the event listener after the user enters portrait mode again
-//   window.removeEventListener(
-//     "orientationchange",
-//     enableCheckAfterPortrait
-//   );
-//   // Set up a new event listener to check orientation on further changes
-//   window.addEventListener("orientationchange", checkOrientation);
-// }
+      // function disableCheckAfterOrientationChange() {
+      //   // Remove the event listener after the user enters landscape mode
+      //   window.removeEventListener("orientationchange", checkOrientation);
+      //   // Set up a new event listener to re-enable orientation checking
+      //   window.addEventListener("orientationchange", enableCheckAfterPortrait);
+      // }
 
-// // Listen for changes in orientationcameraq
-// window.addEventListener("orientationchange", () => {
-//   checkOrientation();
-//   disableCheckAfterOrientationChange();
-// });
+      // function enableCheckAfterPortrait() {
+      //   // Remove the event listener after the user enters portrait mode again
+      //   window.removeEventListener(
+      //     "orientationchange",
+      //     enableCheckAfterPortrait
+      //   );
+      //   // Set up a new event listener to check orientation on further changes
+      //   window.addEventListener("orientationchange", checkOrientation);
+      // }
 
+      // // Listen for changes in orientationcameraq
+      // window.addEventListener("orientationchange", () => {
+      //   checkOrientation();
+      //   disableCheckAfterOrientationChange();
+      // });
 
-// window.onload =function(){
- 
-//   checkOrientation();
-// }
-</script>
+      // window.onload =function(){
 
-<script>
-  // Function to check orientation
-  var parser = new UAParser();
- var result = parser.getResult();
- var useragent =result.device.type
- var os =result.os.name
-  function checkOrientation() {
-   // const useragent = 'mobile'; // Assuming this is set somewhere in your code
-  
-    if (useragent === 'mobile') {
-      const orientationscreen = document.getElementById("orientationScreen");
-      if (window.orientation === 90 || window.orientation === -90) {
-        document.getElementById("orientat-content").style.display = "none";
-        orientationscreen.style.display = "none";
-      } else {
-        orientationscreen.style.display = "block";
-        document.getElementById("orientat-content").style.display = "flex";
+      //   checkOrientation();
+      // }
+    </script>
+
+    <script>
+      // Function to check orientation
+      var parser = new UAParser();
+      var result = parser.getResult();
+      var useragent = result.device.type;
+      var os = result.os.name;
+      function checkOrientation() {
+        // const useragent = 'mobile'; // Assuming this is set somewhere in your code
+
+        if (useragent === 'mobile') {
+          const orientationscreen = document.getElementById('orientationScreen');
+          if (window.orientation === 90 || window.orientation === -90) {
+            document.getElementById('orientat-content').style.display = 'none';
+            orientationscreen.style.display = 'none';
+          } else {
+            orientationscreen.style.display = 'block';
+            document.getElementById('orientat-content').style.display = 'flex';
+          }
+        } else {
+          document.getElementById('orientationScreen').style.display = 'none';
+        }
       }
-    } else {
-      document.getElementById("orientationScreen").style.display = "none";
-    }
-  }
-  
-  // Function to enable orientation checking
-  function enableOrientationCheck() {
-    window.addEventListener("orientationchange", checkOrientation);
-    checkOrientation();
-  }
-  
-  // Function to disable orientation checking
-  function disableOrientationCheck() {
-    window.removeEventListener("orientationchange", checkOrientation);
-  }
-  
-  // Function to handle button click for enabling orientation check
-  function enableOrientationButtonClickHandler() {
-    enableOrientationCheck();
-  }
-  
-  // Function to handle button click for stopping orientation check
-  function stopOrientationButtonClickHandler() {
-    disableOrientationCheck();
-  }
-  
-  // Example button click event listeners
-  const enableOrientationButton = document.querySelector('.tooltipChat');
-  enableOrientationButton.addEventListener('click', stopOrientationButtonClickHandler);
-  
-  const stopOrientationButton = document.querySelector('.visitorChatClose');
-  stopOrientationButton.addEventListener('click', enableOrientationButtonClickHandler);
-  const enableOrientationButton1 = document.querySelector('.indchaticon');
-  enableOrientationButton1.addEventListener('click', stopOrientationButtonClickHandler);
-  const stopOrientationButton1 = document.querySelector('.individualChatClose');
-  stopOrientationButton1.addEventListener('click', enableOrientationButtonClickHandler);
-  // Initialize orientation check
-  enableOrientationCheck();
-  
-  </script>
-<script>
 
-setname();
+      // Function to enable orientation checking
+      function enableOrientationCheck() {
+        window.addEventListener('orientationchange', checkOrientation);
+        checkOrientation();
+      }
 
-function setname() {
+      // Function to disable orientation checking
+      function disableOrientationCheck() {
+        window.removeEventListener('orientationchange', checkOrientation);
+      }
 
-// alert(localStorage.getItem('UserName'))
-// alert('hey')
-var name = localStorage.getItem('UserName');
-document.getElementById('player').setAttribute('player-info', 'name', name)
-// localStorage.setItem('name',name)
-// alert(localStorage.getItem('UserName'))
-}
-</script>
-<script>
-  $('.webinarClose').click(function () {
-    $('.webinarPopUp').css('display', 'none');
-  });
+      // Function to handle button click for enabling orientation check
+      function enableOrientationButtonClickHandler() {
+        enableOrientationCheck();
+      }
 
-</script>
-<script>
-    $(window).on("load", function() {
-   document.body.classList.remove('no-scroll');
-});
-</script>
+      // Function to handle button click for stopping orientation check
+      function stopOrientationButtonClickHandler() {
+        disableOrientationCheck();
+      }
 
-<script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
-<script src="js/halljs/cameramoveboard.js"></script>
-<script src="js/halljs/joystickremoval.js"></script>
-<script src="js/unload.js"></script>
-<!-- <script>
+      // Example button click event listeners
+      const enableOrientationButton = document.querySelector('.tooltipChat');
+      enableOrientationButton.addEventListener('click', stopOrientationButtonClickHandler);
+
+      const stopOrientationButton = document.querySelector('.visitorChatClose');
+      stopOrientationButton.addEventListener('click', enableOrientationButtonClickHandler);
+      const enableOrientationButton1 = document.querySelector('.indchaticon');
+      enableOrientationButton1.addEventListener('click', stopOrientationButtonClickHandler);
+      const stopOrientationButton1 = document.querySelector('.individualChatClose');
+      stopOrientationButton1.addEventListener('click', enableOrientationButtonClickHandler);
+      // Initialize orientation check
+      enableOrientationCheck();
+    </script>
+    <script>
+      setname();
+
+      function setname() {
+        // alert(localStorage.getItem('UserName'))
+        // alert('hey')
+        var name = localStorage.getItem('UserName');
+        document.getElementById('player').setAttribute('player-info', 'name', name);
+        // localStorage.setItem('name',name)
+        // alert(localStorage.getItem('UserName'))
+      }
+    </script>
+    <script>
+      $('.webinarClose').click(function () {
+        $('.webinarPopUp').css('display', 'none');
+      });
+    </script>
+    <script>
+      $(window).on('load', function () {
+        document.body.classList.remove('no-scroll');
+      });
+    </script>
+
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+    <script src="js/halljs/cameramoveboard.js"></script>
+    <script src="js/halljs/joystickremoval.js"></script>
+    <script src="js/unload.js"></script>
+    <!-- <script>
   var parser = new UAParser();
 var result = parser.getResult();
 var useragent =result.device.type
@@ -2898,6 +2735,5 @@ if(useragent=="mobile"){
 }
 
 </script> -->
-
   </body>
 </html>

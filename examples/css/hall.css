@@ -147,7 +147,7 @@ body{
              right: 2.5%;
          }
  }
-#overLaySection{
+/* #overLaySection{
 position: absolute;
 z-index: 99999;
 width: 100%;
@@ -156,7 +156,7 @@ background-color: rgba(0,0,0,0.8);
 display:none;
 justify-content: center;
 align-items: center;
-}
+} */
 /* .mblMapIcon,.mblInfoIcon,.mblExitImg,.mblShare{
     display:none;
 }
