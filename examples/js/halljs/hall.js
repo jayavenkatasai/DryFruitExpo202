@@ -379,6 +379,12 @@ const fetchDataFromAPI = () => {
                            
                             document.querySelector(`#notetext${stallIndex + 1}`).setAttribute('value',"Note: Click here to chat")
                         }
+                        document.getElementById(`bubble${stallIndex + 1}`).addEventListener('click',function(){
+                            tracking(stall.uno,"chat","","")
+                            console.log("trackdone")
+                            chattracking_ga(stall.vendorInfo.companyname)
+
+                        })
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
                         // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
@@ -989,7 +995,9 @@ var categoriesselect=categories.map(category=>category);
 //console.log(categoriesselect)
 //console.log(links);
 //console.log(categoriesselect[index])
+//database
 trackinga(categoriesselect[index],'prototype')
+sendbeaconapi(0,categoriesselect[index],"")
 //  trackExpo(0,categoriesselect[index],"")
 //trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
 // Open the link in the same window

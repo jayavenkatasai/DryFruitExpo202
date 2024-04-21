@@ -54,7 +54,7 @@ AFRAME.registerComponent("cursor-listener3", {
         //console.log("Button clicked:", buttonId);
 
         // Call your custom function with the button name
-      //  tracking(0, buttonId, "");
+      tracking(0, buttonId, "");
       //console.log(`the ip at second is :${ipAddress}`)
         const bgContainer1 = document.getElementById("mappopup");
         bgContainer1.style.display = "flex";
@@ -191,6 +191,7 @@ function createCards(data) {
       (category) => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`
     );
     var categoriesselect = categories.map((category) => category);
+    sendbeaconapi(0,categoriesselect[index],"")
     //console.log(`the categories select is ${categoriesselect}`);
     //console.log(categoriesselect);
     //console.log(links);
@@ -200,10 +201,11 @@ function createCards(data) {
     //      'page_title':"lobby-Page"
     //   });
    //  trackExpoCategory(0, categoriesselect[index], "", links[index],ipAddress);
-     sendBeaconapicategorylb(0,categoriesselect[index],"",links[index])
+    // sendBeaconapicategorylb(0,categoriesselect[index],"",links[index])
+    
     //console.log(`the ip at fourth is :${ipAddress}`)
     //Open the link in the same window
-  //  window.location.href = links[index];
+   window.location.href = links[index];
   }
 
 //   $(document).ready(function () {

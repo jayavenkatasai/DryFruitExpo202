@@ -49,7 +49,7 @@ async function trackinga(dataparameter,pagetitle){
   //     'page_title':pagetitle
   //   });
   //   }
-function tracking(uno=0,track_type,pname="",websitename){
+function tracking(uno=0,track_type,pname="",websitename=""){
     const requestBody = {
         "U_NO":uno,
         "track_type":track_type,
@@ -60,6 +60,7 @@ function tracking(uno=0,track_type,pname="",websitename){
         "exhibition_ID":3,
         "visitor_guid":guid
     }
+    console.log(requestBody)
      trackinga(websitename,pagetitle)
     async function postData(url, data) {
         try {
@@ -74,6 +75,7 @@ function tracking(uno=0,track_type,pname="",websitename){
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+           
           //  window.location.replace("categorymapdynmic.html")
             // const responseData = await response.json();
             // console.log('Response:', responseData);
@@ -111,7 +113,7 @@ const result = navigator.sendBeacon(
   if (result) {
     console.log(data)
     console.log("Data successfully queued for sending.");
-    window.location.href =`prototype.html?category=${encrypt(category.CATEGORY)}`
+   // window.location.href =`prototype.html?category=${encrypt(category.CATEGORY)}`
   } else {
     console.log("Failed to queue data for sending.");
   }
@@ -146,7 +148,8 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
 
 
     function sendBeaconapicategorylb (uno=0,track_type,pname="",links,pagetitle){
-        const requestBodybeacon = {
+        const requestBodybeacon = 
+        {
             "U_NO":uno,
             "track_type":track_type,
             "pname":pname,
@@ -172,4 +175,10 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
           }
         }
 
-      
+        async function chattracking_ga(websiteName) {
+          const eventLabel = websiteName + " chat";
+          gtag("event", "chat_tracking", {
+              'event_category': 'Chat',
+              'event_label': eventLabel
+          });
+      }
