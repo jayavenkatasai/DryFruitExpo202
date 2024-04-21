@@ -22,14 +22,14 @@ fetch(apiurl,{
         //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
         if(webinar.NOTIFY===true){
             if( document.querySelector('.webinarPopUp')){
-                alert("pass")
+              //  alert("pass")
                 document.querySelector('.webinarPopUp').style.display='flex'
                 
             }
             document.querySelector('.thumbnail_img').style.display='none'
             document.querySelector('.webinar_video_link').setAttribute('src',webinar.WEBINAR_LINK)
         }else{
-            alert("false")
+           // alert("false")
             document.querySelector('.thumbnail_img').style.display='block'
             document.querySelector('.thumbnail_img').src=webinar.WEBINAR_LINK
         }
