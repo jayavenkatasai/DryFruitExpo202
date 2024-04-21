@@ -60,7 +60,7 @@ function tracking(uno=0,track_type,pname="",websitename=""){
         "exhibition_ID":3,
         "visitor_guid":guid
     }
-    console.log(requestBody)
+ //   console.log(requestBody)
      trackinga(websitename,pagetitle)
     async function postData(url, data) {
         try {
@@ -111,11 +111,12 @@ const result = navigator.sendBeacon(
 
   // Log the result of the sendBeacon call
   if (result) {
-   // console.log(data)
+ //  console.log(data)
    // console.log("Data successfully queued for sending.");
-   // window.location.href =`prototype.html?category=${encrypt(category.CATEGORY)}`
+  
   } else {
     console.log("Failed to queue data for sending.");
+      window.location.href =`prototype.html?category=${encrypt(category.CATEGORY)}`
   }
 }
 
