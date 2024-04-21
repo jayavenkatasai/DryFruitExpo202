@@ -111,8 +111,8 @@ const result = navigator.sendBeacon(
 
   // Log the result of the sendBeacon call
   if (result) {
- //  console.log(data)
-   // console.log("Data successfully queued for sending.");
+  //  console.log(data)
+  //  console.log("Data successfully queued for sending.");
   
   } else {
     console.log("Failed to queue data for sending.");

@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p class="categoryName">${categoryName}</p>
                 <div class="dropdownSection">
                     <div class="visitHallButton">
-                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category}', ''); trackinga('${category}','category_page');return false;">${visitText}</a>
+                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category}', ''); trackinga('${category}','category_page');return true;">${visitText}</a>
                     </div>
                     <div class="dropdown">
                     <button type="button" class="btn btn-primary numberToggle dropdown-toggle" data-toggle="dropdown">
