@@ -193,7 +193,7 @@
       <div class="digitalPopUpContents">
         <img class="closeImg" src="assets/icons/blueCloseIcon.png" />
         <div class="productDetailsSection">
-          <img class="productImg" src="images/product.png" id="productimge" />
+          <img class="productImg" src="" id="productimge" />
           <div class="productDetails">
             <p class="productName" id="prdt-name">Discover Hidden Treasures:</p>
             <p class="productPrice" id="prd-price">
@@ -2623,13 +2623,13 @@ class="note-text"
     <!-- a-scene close -->
     <script>
       document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`);
-      console.log(networkcategory);
+     // console.log(networkcategory);
       // alert(category)
 
       function updatestatus() {
-        console.log('it is triggerd1');
+       // console.log('it is triggerd1');
         var uid = localStorage.getItem('GUID');
-        console.log('it is triggerd');
+       // console.log('it is triggerd');
         const data = {
           exhibition_ID: 3,
           visitor_guid: uid,
@@ -2645,9 +2645,9 @@ class="note-text"
 
         // Log the result of the sendBeacon call
         if (result) {
-          console.log('Data successfully queued for sending.');
+        //  console.log('Data successfully queued for sending.');
         } else {
-          console.log('Failed to queue data for sending.');
+      //    console.log('Failed to queue data for sending.');
         }
       }
 
@@ -2677,7 +2677,7 @@ class="note-text"
         $('#mapSection').removeClass('activeOne');
       });
       document.addEventListener('DOMContentLoaded', function () {
-        console.log(document.getElementById('player'));
+       // console.log(document.getElementById('player'));
         // console.log(document.getElementById('boy-character'));
 
         avtharassign(avthar);
@@ -2898,5 +2898,6 @@ if(useragent=="mobile"){
 }
 
 </script> -->
+
   </body>
 </html>

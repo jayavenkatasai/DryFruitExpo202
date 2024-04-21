@@ -1,5 +1,4 @@
 //urlendpoint 
-
 var urlendpoint = '';
 var selectedLanguages = localStorage.getItem('languageselection')
 if (window.location.href.includes('digiexpodev.marketcentral')) {
@@ -39,7 +38,7 @@ let c;
   }
          
 
-console.log(`the categoryparam is ${categoryparam}`)
+//console.log(`the categoryparam is ${categoryparam}`)
  
 
 
@@ -51,7 +50,7 @@ if (!localStorage.getItem('UserName'))
  let b= 1;
 //  categoryparam = categoryparam.replace(/\s/g, '');
 var networkcategory = categoryparam.replace(/[,\s&:/]/g, '').substring(0, 12);
-console.log(`the networked param is ${networkcategory}`)
+//console.log(`the networked param is ${networkcategory}`)
  var parser = new UAParser();
  var result = parser.getResult();
  var useragent =result.device.type
@@ -70,11 +69,11 @@ function markStallVisited(stallId) {
 function share(uno,name){
     var currentURL1 = window.location.href;
     var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-    console.log(typeof uno)
-    console.log(uno)
+    //console.log(typeof uno)
+    //console.log(uno)
     var newURL = `${baseURL}sharestall.html?uno=${encryptWithCasePreservation(uno.toString())}&stallno=${name}`;
 
-    console.log(newURL)
+    //console.log(newURL)
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
     if(selectedLanguages=='hindi'){
@@ -211,12 +210,12 @@ let requestBody={
 // category map body!!
 if(startValue){
     c=hallnum;
-    console.log(`The value of c is ${c}`)
+    //console.log(`The value of c is ${c}`)
     requestBody.start=startValue;
     requestBody.end=endValue;
 }
 
-console.log(requestBody)
+//console.log(requestBody)
 let apivariable;
 const fetchDataFromAPI = () => {
     let apiurl = `${urlendpoint}/rest/virtualExpo/general/virtualExhibitionDetails`;
@@ -231,23 +230,23 @@ const fetchDataFromAPI = () => {
 
             if (response.ok) {
                 const urlObject = new URL(apiurl);
-                console.log(`before api change url :${apiurl}`);
+                //console.log(`before api change url :${apiurl}`);
 
                 return response.json();
             }
             else {
                
-                console.log(`failed url is :${apiurl}`)
+                //console.log(`failed url is :${apiurl}`)
                 throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
             }
         })
 
         .then(data => {
 
-            console.log('Fetched-data123:', data);
+            //console.log('Fetched-data123:', data);
 
             if (data.data) {
-                console.log(data.data.message);
+                //console.log(data.data.message);
                if(data.data.message==='No records found'){
                 // document.getElementById('overLaySection').style.display="flex";
                 // document.getElementById('player').removeAttribute('wasd-controls')
@@ -258,11 +257,11 @@ const fetchDataFromAPI = () => {
              
             } else {
                 apivariable = data;
-                console.log(apivariable)
+                //console.log(apivariable)
                  // banners logic
                  if(c){
-                    console.log("we have the c as switch case")
-                    console.log(c)
+                    //console.log("we have the c as switch case")
+                    //console.log(c)
                     c = parseInt(c);
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${c}.glb`)
@@ -310,10 +309,10 @@ const fetchDataFromAPI = () => {
                 //     break;
                 // }
                 checkhallfive(apivariable.stalls.length);
-                console.log("The switch case is exceuted succesfully")
+                //console.log("The switch case is exceuted succesfully")
                 }
                 else{
-                    console.log("switch case odd is behaving")
+                    //console.log("switch case odd is behaving")
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${b}.glb`)
                     document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${b}`)
@@ -454,7 +453,7 @@ const fetchDataFromAPI = () => {
               
 
 
-                       // console.log(`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
+                       // //console.log(`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
 
 //                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
 //                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
@@ -542,18 +541,18 @@ const fetchDataFromAPI = () => {
                    
                     /// -----Here for copy code popup endd----
                     // Ensure that stall.products exists and has a length
-                    console.log(stall.products && stall.products.length)
-                    console.log(stall.products.length)
+                    // //console.log(stall.products && stall.products.length)
+                    // //console.log(stall.products.length)
                     if (stall.products && stall.products.length) {
                         let numberOfImages = stall.products.length;  //10
-                        console.log(numberOfImages)
+                        ////console.log(numberOfImages)
 
                         // Create a unique ID for each stall
                         //  const stallContainerId = `stall${stallIndex + 1}`;       
                         // Loop through images in the current stall
                         for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
                             const imageUrl = stall.products[imageIndex].producturl;
-                            console.log(imageUrl)
+                            // //console.log(imageUrl)
                             const imageDescription = stall.products[imageIndex].productname;
 
                             // Define positions based on image index using a switch statement
@@ -596,7 +595,7 @@ const fetchDataFromAPI = () => {
                                 // ...
                                 default:
                                     // Default case for handling unexpected image indices
-                                    console.error(`Unhandled image index: ${imageIndex}`);
+                                   // console.error(`Unhandled image index: ${imageIndex}`);
                                     break;
                             }
                             const containerEntity = document.createElement("a-entity");
@@ -682,8 +681,8 @@ const fetchDataFromAPI = () => {
                             // popupElement.setAttribute("height","0.1")
                             popupElement.setAttribute("visible", "false");
                             //popupElement.setAttribute("visible", "false");
-                            // console.log("the popup is the following");
-                            // console.log(popupElement); 8
+                            // //console.log("the popup is the following");
+                            // //console.log(popupElement); 8
                             // Append container entity to the 
                             document.getElementById(stallContainerId).appendChild(containerEntity);
 
@@ -704,7 +703,7 @@ const fetchDataFromAPI = () => {
                     }
                 });
                 // Handle the fetched data as needed
-                console.log('Fetched data:', data);
+                ////console.log('Fetched data:', data);
                 // Reset the A-Frame scene
                 // const scene = document.querySelector('a-scene');
                 // scene.innerHTML = '';
@@ -729,19 +728,19 @@ document.addEventListener("DOMContentLoaded", function() {
 const previousbutton = document.getElementById('prev-hall');
 document.getElementById('next-hall').addEventListener('click',function(){
     removeEntities(apivariable.stalls); 
-    console.log(apivariable.stalls);
+    //console.log(apivariable.stalls);
     let start1=apivariable.stalls[0].start
-    console.log(start1)
+    //console.log(start1)
     let end1=apivariable.stalls[0].end
-    console.log(end1)
+    //console.log(end1)
     //removeEntities(apivariable.stalls);
     start= parseInt(end1)+1;
-    console.log(`the next start is ${start}`)
+    //console.log(`the next start is ${start}`)
     end=parseInt(start)+9;
-    console.log(`the next start is ${start}`)
-    console.log(end)
-    console.log('Start:', start); // Output: 1
-    console.log('End:', end); 
+    //console.log(`the next start is ${start}`)
+    //console.log(end)
+    //console.log('Start:', start); // Output: 1
+    //console.log('End:', end); 
     requestBody = {
     exhibition_ID:'3',
     start: `${start}`,
@@ -752,19 +751,19 @@ document.getElementById('next-hall').addEventListener('click',function(){
 }; 
 b=b+1;
 if(c){
-   // console.log(`the c value is ${c}`)
+   // //console.log(`the c value is ${c}`)
     c=c+1
 }
 // posistioning the camera to original
 var stallPosition= document.getElementById('hall1').getAttribute('position')
 // Assuming 'stall1' has attributes x, y, and z
 var stallX = stallPosition.x;
-console.log(`posistion-of-stall is ${stallX}`)
+//console.log(`posistion-of-stall is ${stallX}`)
 var stallY = stallPosition.y;
-console.log(`posistion-of-stall is ${stallY}`)
+//console.log(`posistion-of-stall is ${stallY}`)
 var stallZ = stallPosition.z;
 
-console.log(`posistion-of-stall is ${stallZ}`)
+//console.log(`posistion-of-stall is ${stallZ}`)
 
 // Perform some math operations on stallX, stallY, stallZ
 var newX = stallX+0; // for example, adding 2 to the x position
@@ -786,14 +785,14 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
 
 previousbutton.addEventListener('click',function(){
     removeEntities(apivariable.stalls); 
-    console.log("button is clicked for nex button")
+    //console.log("button is clicked for nex button")
                 let start1=apivariable.stalls[0].start
-                console.log(start1)
+                //console.log(start1)
                 let end1=apivariable.stalls[0].end
                start= parseInt(start1)-10;
                end=parseInt(start)+9;
-               console.log('Start:', start1); // Output: 1
-               console.log('End:', end1);
+               //console.log('Start:', start1); // Output: 1
+               //console.log('End:', end1);
            //    debugger
                requestBody = {
                 exhibition_ID:'3',
@@ -805,19 +804,19 @@ previousbutton.addEventListener('click',function(){
                 // Add other data as needed
             };
             if(c){
-                console.log(`the c value is ${c}`)
+                //console.log(`the c value is ${c}`)
                 c=c-1
             }
             b=b-1;
             var stallPosition= document.getElementById('hall1').getAttribute('position')
 // Assuming 'stall1' has attributes x, y, and z
 var stallX = stallPosition.x;
-console.log(`posistion-of-stall is ${stallX}`)
+//console.log(`posistion-of-stall is ${stallX}`)
 var stallY = stallPosition.y;
-console.log(`posistion-of-stall is ${stallY}`)
+//console.log(`posistion-of-stall is ${stallY}`)
 var stallZ = stallPosition.z;
 
-console.log(`posistion-of-stall is ${stallZ}`)
+//console.log(`posistion-of-stall is ${stallZ}`)
 
 // Perform some math operations on stallX, stallY, stallZ
 var newX = stallX+0; // for example, adding 2 to the x position
@@ -857,7 +856,7 @@ fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${end
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable
-    console.log(data);
+    //console.log(data);
     createCards(data);
      // Enter fullscreen mode
     //  const doc = window.document;
@@ -925,11 +924,11 @@ for (var i = 0; i < 10 ; i++) {
 
 function showNext() {
 currentIndex = (currentIndex + 10) % cards.length;
-console.log(currentIndex)
+//console.log(currentIndex)
 buttonid+=1;
-console.log(`the button is ${buttonid}`)
+//console.log(`the button is ${buttonid}`)
 if(buttonid>=1){
-console.log("before execution")
+//console.log("before execution")
 document.getElementById('mapbutton1').style.display="flex"
 
 }
@@ -939,10 +938,10 @@ showCard(currentIndex);
 
 function showPrevious() {
 currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-console.log(`the before button index is ${currentIndex}`)
+//console.log(`the before button index is ${currentIndex}`)
 buttonid-=1;
 if(buttonid==0){
-console.log("before execution")
+//console.log("before execution")
 document.getElementById('mapbutton1').style.display="none"
 document.getElementById('mapbutton2').style.display="flex"
 
@@ -986,10 +985,10 @@ var categories = data.map(item => item.CATEGORY);
 // Generate links based on categories
 var links = categories.map(category => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`);
 var categoriesselect=categories.map(category=>category);
-console.log(`the categories select is ${categoriesselect}`)
-console.log(categoriesselect)
-console.log(links);
-console.log(categoriesselect[index])
+//console.log(`the categories select is ${categoriesselect}`)
+//console.log(categoriesselect)
+//console.log(links);
+//console.log(categoriesselect[index])
 trackinga(categoriesselect[index],'prototype')
 //  trackExpo(0,categoriesselect[index],"")
 //trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
@@ -1014,7 +1013,7 @@ function checkhallfive(x){
    }
 }
 function checkurlparm(urlparameter){
-    console.log("triggerd checkurlparam")
+    //console.log("triggerd checkurlparam")
     if (!urlparameter) {
         if (!localStorage.getItem('UserName')) {
             window.location.replace("index.html")

@@ -136,7 +136,7 @@ var headTemplate = document.getElementById('head-template').content;
 
 var modelEntity = headTemplate.querySelector('#model-id');
 modelEntity.setAttribute('gltf-model', `url(assets/3dmodels/${avthar}.glb)`);
-console.log(`trigger:success2`)
+//console.log(`trigger:success2`)
     // document.getElementById('model-id').setAttribute('gltf-model',``)
  
 }
@@ -168,6 +168,6 @@ document.getElementById('nextbutton').addEventListener('click',function(){
    
      cam.setAttribute('look-controls', 'magicWindowTrackingEnabled:false')
  
-     console.log(cam.getAttribute('position'))
+     //console.log(cam.getAttribute('position'))
 
 })

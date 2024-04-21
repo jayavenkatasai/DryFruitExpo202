@@ -28,9 +28,9 @@ if(!localStorage.getItem('GUID')){
     }));
 }
 guid=localStorage.getItem('GUID')
-console.log(guid);
+//console.log(guid);
 var languageselectionitem=localStorage.getItem('languageselection')
-console.log(languageselectionitem)
+//console.log(languageselectionitem)
 // Example usage
 if(localStorage.getItem('sessionActive')&& localStorage.getItem('passed')){
     const sessionData = JSON.parse(localStorage.getItem('sessionActive'));

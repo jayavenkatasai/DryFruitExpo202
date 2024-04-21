@@ -109,6 +109,7 @@ const result = navigator.sendBeacon(
 
   // Log the result of the sendBeacon call
   if (result) {
+    console.log(data)
     console.log("Data successfully queued for sending.");
     window.location.href =`prototype.html?category=${encrypt(category.CATEGORY)}`
   } else {

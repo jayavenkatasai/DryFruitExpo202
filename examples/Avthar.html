@@ -18,7 +18,7 @@
     <script src="js/ip-address.js"></script>
     <script src="js/track js/tracking-ga.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <link rel="preload" href="/dist/networked-aframe.js" as="script">
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script src="js/introjs/Avthar.js"></script>
  
@@ -275,10 +275,10 @@
       });
      
     }
-    window.onload = function () {
-      tracking(0, 'exhibition3', '');
-      //  trackExpo(0, "exhibition3", "", ipAddress);
-    };
+    // window.onload = function () {
+    //   tracking(0, 'exhibition3', '');
+    //   //  trackExpo(0, "exhibition3", "", ipAddress);
+    // };
     $('#avthar2').click(function(){
       $('.threeImagesContents').addClass('imagesSelection');
     })

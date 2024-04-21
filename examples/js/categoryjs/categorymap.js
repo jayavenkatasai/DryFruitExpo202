@@ -50,12 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             // Log the response to the console
-            console.log(data);
+            //console.log(data);
             // Call function to populate categories with the fetched data
             const language = localStorage.getItem('languageselection')
             const categoryheading = visitTranslations[language].categoryheading;
             const categoryDescription = visitTranslations[language].categoryDescription;
-            console.log(categoryheading)
+           // console.log(categoryheading)
             document.querySelector('.categoryheading').textContent = categoryheading;
             document.querySelector('.categoryDescription').textContent = categoryDescription;
             populateCategories(data);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let i = 0; i < hallCount; i++) {
             let startpoint = i * 10 + 1;
             let endpoint = (i + 1) * 10;
-            dropdownItemsHTML += `<a class="dropdown-item" href="prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${i + 1}">Hall ${i + 1}</a>`;
+            dropdownItemsHTML += `<a class="dropdown-item" onclick="sendbeaconapi(0, '${category}', '')" href="prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${i + 1}">Hall ${i + 1} </a>`;
         }
     
         return `
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p class="categoryName">${categoryName}</p>
                 <div class="dropdownSection">
                     <div class="visitHallButton">
-                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category.CATEGORY}', ''); trackinga('${category.CATEGORY}','category_page');return false;">${visitText}</a>
+                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category}', ''); trackinga('${category}','category_page');return false;">${visitText}</a>
                     </div>
                     <div class="dropdown">
                     <button type="button" class="btn btn-primary numberToggle dropdown-toggle" data-toggle="dropdown">

@@ -6,25 +6,25 @@ fetch(apiurl,{
    
     if (response.ok) {
         const urlObject = new URL(apiurl);
-        console.log(`before api change url :${apiurl}`);
+       // console.log(`before api change url :${apiurl}`);
 
         return response.json();
     }
     else {
        
-        console.log(`failed url is :${apiurl}`)
+       // console.log(`failed url is :${apiurl}`)
         throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
     }
 }).then(data => {
 
-    console.log('Fetched-data123:', data);
+    //console.log('Fetched-data123:', data);
     data.forEach(webinar => {
         checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
         document.querySelector('.speakerName').textContent=webinar.WEBINAR_SPEAKER
         document.querySelector('.cmpnyName').textContent=webinar.WEBINAR_CONDUCTED_BY
     });
 }).catch(error => {
-    console.log(error)
+    //console.log(error)
 })
 }
 // Function to check if the webinar is live
@@ -39,14 +39,14 @@ function checkWebinarStatus(webinarStartTime, webinarEndTime) {
 
     // Extract webinar start and end date and time
     const webinarStartDate = webinarStartDateTime.getDate();
-    console.log(webinarStartDate)
+   // console.log(webinarStartDate)
     const webinarStartHour = webinarStartDateTime.getHours();
-    console.log(webinarStartHour)
-    console.log(`the webinarStartHour  is ${webinarStartHour}`)
+   // console.log(webinarStartHour)
+   // console.log(`the webinarStartHour  is ${webinarStartHour}`)
     const webinarEndHour = webinarEndDateTime.getHours();
-    console.log(webinarEndHour)
-    console.log(`the webinarEndHour  is ${webinarEndHour}`)
-console.log(`the current hour is ${currentHour}`)
+  //  console.log(webinarEndHour)
+  //  console.log(`the webinarEndHour  is ${webinarEndHour}`)
+//console.log(`the current hour is ${currentHour}`)
    
     // Check if current date matches webinar start date
     if (currentDate <= webinarStartDate) {
