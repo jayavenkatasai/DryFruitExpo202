@@ -764,6 +764,50 @@
       .helpcloseIcon{
           cursor: pointer;
       }
+      @media only screen and (max-width:1470px){
+        .helpText {
+              font-size: 22px;
+              margin-top:0;
+          }
+          /* .helpPopUpMainContent{
+          
+        } */
+          .helpTextHeading {
+              margin-bottom: 0;
+          }
+          .mediaIcons img {
+              max-width: 35px;
+          }
+          .followText {
+              font-size: 20px;
+              margin-bottom:15px;
+          }
+          .linkedImgs img {
+              max-width: 30px;
+          }
+          .followSection {
+            padding: 10px 0;
+          }
+          .mediaIcons {
+              margin-bottom: 20px;
+          }
+          .helpPopUpContents {
+              max-width: 500px;
+          }
+          .followSection {
+              width: 85%;
+          }
+          .linkedImgs,.mediaIcons{
+              gap: 10px;
+          }
+          .helpPopUpContents{
+            padding:15px 0;
+          }
+          .followText{
+            padding-bottom: 0;
+            margin-top: 0;
+          }
+      }
       @media only screen and (max-width:992px){
           .helpText {
               font-size: 22px;
