@@ -23,7 +23,12 @@ fetch(apiurl,{
         if(webinar.NOTIFY===true){
             if( document.querySelector('.webinarPopUp')){
               //  alert("pass")
-                document.querySelector('.webinarPopUp').style.display='flex'
+                // Wait for 1 minute (60 seconds)
+setTimeout(function() {
+    // Select the element with class 'webinarPopUp' and set its display style to 'flex'
+    document.querySelector('.webinarPopUp').style.display = 'flex';
+}, 60000); // 60000 milliseconds = 60 seconds = 1 minute
+
                 
             }
             document.querySelector('.thumbnail_img').style.display='none'
