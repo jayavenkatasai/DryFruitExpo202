@@ -113,6 +113,7 @@ function share(uno,name){
             }
           //  document.getElementById('instructionimg').setAttribute('src','assets/icons/Walkthrough1.png')
         document.getElementById('instruction-pannel').style.display='flex'
+        tracking(0,`Hall:${categoryparam}`,'',"")
         document.getElementById('closeiconimgipp').addEventListener('click',function(){
             document.getElementById('instruction-pannel').style.display='none'
         })
@@ -727,6 +728,7 @@ const fetchDataFromAPI = () => {
         })
         .catch(error => {
             // Handle fetch errors
+            tracking(0,`Error in Hall-${error}`)
             document.getElementById('overLaySection').style.display="flex";
             document.querySelector('h3').textContent = 'Something Went Wrong Please Try Again Later';
             console.error('Error fetching data:', error);

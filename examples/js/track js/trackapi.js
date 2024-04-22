@@ -60,7 +60,7 @@ function tracking(uno=0,track_type,pname="",websitename=""){
         "exhibition_ID":3,
         "visitor_guid":guid
     }
- //   console.log(requestBody)
+   console.log(requestBody)
      trackinga(websitename,pagetitle)
     async function postData(url, data) {
         try {

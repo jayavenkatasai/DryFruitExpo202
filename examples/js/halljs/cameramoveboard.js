@@ -24,7 +24,8 @@ let count=1;
 boardposition.addEventListener('click',function(){
     
     if(count<=10){
-        cameras.remove('look-controls')
+        cameras.remove('look-controls') 
+        tracking(0, "display-board", "")
         //camerastand.setAttribute('rotation', { x: 0, y: boardrotationy+90, z: 0 });
         cameras.setAttribute('position', { x: adjustedX, y: adjustedY, z: adjustedZ });
     // Rotate the camera over 90 degrees (assuming you want to rotate it around the Y axis)

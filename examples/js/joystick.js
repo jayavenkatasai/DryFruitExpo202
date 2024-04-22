@@ -60,9 +60,14 @@ function createJoystick() {
 
    var manager = nipplejs.create(options);
    bindNipple();
-
+   var isFirstMove = true;
    function bindNipple () {
                manager.on('move', function (evt, data) {
+                if (isFirstMove) {
+                  console.log(`Joystick moved for the first time! joystick-movement:${categoryparam}`);
+                  tracking(0,`joystick-movement:${categoryparam}`,'')
+                  isFirstMove = false; // Update flag to indicate first move has occurred
+              }
                    moveData = data;
                });
                manager.on('end', function (evt, data) {
