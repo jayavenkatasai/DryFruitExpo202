@@ -170,6 +170,17 @@
         .images.mainImg .maleAvtar,.images.mainImg .femaleAvtar{
             display:none;
         }
+        @media only screen and (max-width:1450px){
+            .welcomeHsptlText {
+                font-size: 45px!important;
+            }
+            .nameInput {
+                padding: 11px;
+            }
+            .enterExpoButton {
+                padding: 12px 0;
+            }
+        }
         @media only screen and (max-width:1300px){
             .welcomeText,#namevalue{
                 font-size: 35px;

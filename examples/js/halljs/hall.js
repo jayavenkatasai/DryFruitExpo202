@@ -1008,6 +1008,7 @@ window.location.href = links[index];
 function checkhallfive(x){
    if(x<=5){
     document.getElementById('five-hall').setAttribute('visible','true')
+    document.getElementById('five-hall').setAttribute('position','0 0 0')
     // document.getElementById('area5').setAttribute('rotation','90 -90 0')
     // document.getElementById('area5').removeAttribute('position')
     document.getElementById('stall5').setAttribute('rotation','0 -90 0')
