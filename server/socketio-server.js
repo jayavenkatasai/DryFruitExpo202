@@ -1,139 +1,114 @@
 // Load required modules
 const http = require("http"); // http server core module
-const https = require("https");
 const path = require("path");
 const express = require("express"); // web framework external module
-
-const fs = require("fs");
-const privateKey = fs.readFileSync(path.resolve(__dirname, "localhost-key.pem"), "utf8");
-const certificate = fs.readFileSync(path.resolve(__dirname, "localhost.pem"), "utf8");
-
-const credentials = { key: privateKey, cert: certificate };
-
+ 
 // Set process name
 process.title = "networked-aframe-server";
-
+ 
 // Get port or default to 8080
-const port = process.env.PORT || 8443;
-
-// Threshold for instancing a room
-const maxOccupantsInRoom = 20;
-
+const port = process.env.PORT || 7000;
+ 
 // Setup and configure Express http server.
 const app = express();
-
+ 
 // Serve the bundle in-memory in development (needs to be before the express.static)
 if (process.env.NODE_ENV === "development") {
   const webpackMiddleware = require("webpack-dev-middleware");
   const webpack = require("webpack");
   const config = require("../webpack.config");
-
+ 
   app.use(
     webpackMiddleware(webpack(config), {
       publicPath: "/dist/"
     })
   );
 }
-
+ 
 // Serve the files from the examples folder
 app.use(express.static(path.resolve(__dirname, "..", "examples")));
-
+ 
 // Start Express http server
-const webServer = https.createServer(credentials,app);
+const webServer = http.createServer(app);
 const io = require("socket.io")(webServer);
-
-const rooms = new Map();
-
+ 
+const rooms = {};
+ 
 io.on("connection", socket => {
   console.log("user connected", socket.id);
-
-  let curRoom = null;
-
+ 
   socket.on("joinRoom", data => {
-    const { room } = data;
-
-    curRoom = room;
-    let roomInfo = rooms.get(room);
-    if (!roomInfo) {
-      roomInfo = {
-        name: room,
-        occupants: {},
-        occupantsCount: 0
-      };
-      rooms.set(room, roomInfo);
-    }
-
-    if (roomInfo.occupantsCount >= maxOccupantsInRoom) {
-      // If room is full, search for spot in other instances
-      let availableRoomFound = false;
-      const roomPrefix = `${room}--`;
-      let numberOfInstances = 1;
-      for (const [roomName, roomData] of rooms.entries()) {
-        if (roomName.startsWith(roomPrefix)) {
-          numberOfInstances++;
-          if (roomData.occupantsCount < maxOccupantsInRoom) {
-            availableRoomFound = true;
-            curRoom = roomName;
-            roomInfo = roomData;
-            break;
-          }
+    let { room } = data;
+ 
+    if (!rooms[room] || Object.keys(rooms[room].occupants).length >= 3) {
+      // If the room doesn't exist or is full, find an available room
+      let availableRoom = null;
+      for (const [roomName, roomData] of Object.entries(rooms)) {
+        if (Object.keys(roomData.occupants).length < 3) {
+          availableRoom = roomName;
+          break;
         }
       }
-
-      if (!availableRoomFound) {
-        // No available room found, create a new one
-        const newRoomNumber = numberOfInstances + 1;
-        curRoom = `${roomPrefix}${newRoomNumber}`;
-        roomInfo = {
-          name: curRoom,
+ 
+      if (availableRoom) {
+        // If an available room is found, join it
+        room = availableRoom;
+        socket.join(room);
+        rooms[room].occupants[socket.id] = Date.now();
+        console.log(`${socket.id} joined room ${room}`);
+      } else {
+        // If no available room is found, create a new one
+        const newRoomNumber = Object.keys(rooms).length + 1;
+        room = `basic-room-${newRoomNumber}`;
+        rooms[room] = {
+          name: room,
           occupants: {},
-          occupantsCount: 0
         };
-        rooms.set(curRoom, roomInfo)
+        socket.join(room);
+        rooms[room].occupants[socket.id] = Date.now();
+        console.log(`${socket.id} joined room ${room}`);
       }
+    } else {
+      // If the requested room exists and has available space, join it
+      socket.join(room);
+      rooms[room].occupants[socket.id] = Date.now();
+      console.log(`${socket.id} joined room ${room}`);
     }
-
-    const joinedTime = Date.now();
-    roomInfo.occupants[socket.id] = joinedTime;
-    roomInfo.occupantsCount++;
-
-    console.log(`${socket.id} joined room ${curRoom}`);
-    socket.join(curRoom);
-
-    socket.emit("connectSuccess", { joinedTime });
-    const occupants = roomInfo.occupants;
-    io.in(curRoom).emit("occupantsChanged", { occupants });
+ 
+    // Emit success message to the joined user
+    socket.emit("connectSuccess", { joinedTime: Date.now() });
+ 
+    // Broadcast to the room that occupants have changed
+    const occupants = rooms[room].occupants;
+    io.in(room).emit("occupantsChanged", { occupants });
   });
-
+ 
   socket.on("send", data => {
     io.to(data.to).emit("send", data);
-    // console.log("the data is send")
-    // console.log(data)
   });
-
+ 
   socket.on("broadcast", data => {
-    socket.to(curRoom).broadcast.emit("broadcast", data);
+    socket.to(data.room).broadcast.emit("broadcast", data);
   });
-
+ 
   socket.on("disconnect", () => {
-    console.log('disconnected: ', socket.id, curRoom);
-    const roomInfo = rooms.get(curRoom);
-    if (roomInfo) {
-      console.log("user disconnected", socket.id);
-
-      delete roomInfo.occupants[socket.id];
-      roomInfo.occupantsCount--;
-      const occupants = roomInfo.occupants;
-      socket.to(curRoom).broadcast.emit("occupantsChanged", { occupants });
-
-      if (roomInfo.occupantsCount === 0) {
-        console.log("everybody left room");
-        rooms.delete(curRoom);
+    console.log('disconnected: ', socket.id);
+    for (const roomName of Object.keys(rooms)) {
+      if (rooms[roomName].occupants[socket.id]) {
+        delete rooms[roomName].occupants[socket.id];
+        const occupants = rooms[roomName].occupants;
+        socket.to(roomName).broadcast.emit("occupantsChanged", { occupants });
+ 
+        if (Object.keys(occupants).length === 0) {
+          console.log("everybody left room", roomName);
+          delete rooms[roomName];
+        }
+        break;
       }
     }
   });
 });
-
+ 
 webServer.listen(port, () => {
   console.log("listening on http://localhost:" + port);
 });

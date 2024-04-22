@@ -265,13 +265,13 @@
     overflow: hidden;
     white-space: nowrap;
 } */
-        .webinarSectionMbl iframe,
+        /* .webinarSectionMbl iframe,
         .thumbnail_img {
           height: 55%;
           max-width: 400px;
           top: 13.5%;
           margin-left: 10px;
-        }
+        } */
         .webinarsharebtn img {
           max-width: 120px;
         }
@@ -308,6 +308,13 @@
       @media only screen and (max-width: 760px) {
         .webinarBackButton {
           display: block;
+        }
+        .webinarSectionMbl iframe,
+        .thumbnail_img {
+          height: 55%;
+          max-width: 400px;
+          top: 13.5%;
+          margin-left: 10px;
         }
       }
       @media only screen and (max-width: 500px) {
@@ -357,7 +364,7 @@
           </a>
         </div>
       </div>
-      <div class="webinarSectionMbl" id="webinarMobile">
+      <!-- <div class="webinarSectionMbl" id="webinarMobile">
         <div class="webinarBackButton">
           <a href="lobby.html" class="backBtnText">Back</a>
         </div>
@@ -367,16 +374,9 @@
           <div class="youTubeVideo">
             <image src="" class="thumbnail_img" id="mbl_img"></image>
             <iframe src="" frameborder="0" allowfullscreen class="webinarvideo_link"></iframe>
-            <!--<iframe,.thumbnail_img src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
-            <!--<iframe,.thumbnail_img src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
+            
           </div>
-        </div>
-        <!-- speaker details2 -->
-        <div class="speakerDetails" id="speakerdetail2">
-          <p class="speakerText">Speaker : <span class="speakerName">sreenivas pusarla</span></p>
-          <p class="speakerComapny">Company : <span class="cmpnyName">3D LABS INDIA</span></p>
-        </div>
-        <!-- end of speaker details2 -->
+        </div> --> 
         <div class="poweredimg">
           <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
             <img src="assets/icons/poweredbyMC.png" />
@@ -401,9 +401,48 @@
       </div>
     </div>
     <!-- <script>
+         var apiurl = 'https://www.marketcentral.in/rest/virtualExpo/general/getWebinar/3';
+      function fetchapiforwebinar() {
+        fetch(apiurl, {
+          method: 'GET'
+        })
+          .then((response) => {
+            if (response.ok) {
+              const urlObject = new URL(apiurl);
+              // console.log(`before api change url :${apiurl}`);
+
+              return response.json();
+            } else {
+              // console.log(`failed url is :${apiurl}`)
+              throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
+            }
+          })
+          .then((data) => {
+            //console.log('Fetched-data123:', data);
+            data.forEach((webinar) => {
+              //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
+              if (webinar.NOTIFY === true) {
+                if (document.querySelector('.webinarPopUp')) {
+                  document.querySelector('.webinarPopUp').style.display = 'flex';
+                }
+                document.querySelector('.thumbnail_img').style.display = 'none';
+                document.querySelector('.webinarvideo_link').setAttribute('src', webinar.WEBINAR_LINK);
+              } else {
+                alert('false');
+                document.querySelector('.thumbnail_img').style.display = 'block';
+                document.querySelector('.thumbnail_img').src = webinar.WEBINAR_LINK;
+              }
+              console.log(webinar);
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      fetchapiforwebinar();
       function checkOrientation() {
         const orientationscreen = document.getElementById('webinarDesktop');
-        console.log(`the orientation screen is ${orientationscreen}`);
+
         if (window.orientation === 90 || window.orientation === -90) {
           console.log('Device is in landscape orientation');
 
@@ -515,9 +554,9 @@
                 document.querySelector('.thumbnail_img').style.display = 'none';
                 document.querySelector('.webinarvideo_link').setAttribute('src', webinar.WEBINAR_LINK);
               } else {
-                alert('false');
                 document.querySelector('.thumbnail_img').style.display = 'block';
                 document.querySelector('.thumbnail_img').src = webinar.WEBINAR_LINK;
+                document.querySelector('.webinarvideo_link').style.display='none'
               }
               console.log(webinar);
             });
@@ -553,7 +592,31 @@
       >
       </iframe>
     </noscript>
-
+    <script>
+      $(window).on('load', function () {
+        var uid = localStorage.getItem('GUID');
+          const data = {
+        exhibition_ID: 3,
+        visitor_guid: uid,
+        is_closed: 0
+        };
+      // Convert data to a JSON string
+      const dataString = JSON.stringify(data);
+      // Use navigator.sendBeacon to send data to the server
+      const result = navigator.sendBeacon(
+        'https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+        dataString
+      );
+  
+      // Log the result of the sendBeacon call
+      if (result) {
+        console.log('Data successfully queued for sending.');
+      } else {
+        console.log('Failed to queue data for sending.');
+      }
+      });
+      
+    </script>
     <script src="js/unload.js"></script>
   </body>
 </html>
