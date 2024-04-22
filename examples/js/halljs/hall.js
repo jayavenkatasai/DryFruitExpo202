@@ -423,6 +423,14 @@ const fetchDataFromAPI = () => {
                 document.getElementById(`vendorlogo2${stallIndex + 1}`).setAttribute("src", stall.logo);
                 document.getElementById(`stallno${stallIndex + 1}`).setAttribute("value", stall.name);
                 document.getElementById(`board-name`).setAttribute('value',categoryparam)
+                document.getElementById('five-hall').setAttribute('visible','false')
+                // ----
+                document.getElementById('stall5').setAttribute('rotation','0 0 0')
+                document.getElementById('stall5').setAttribute('position','-27.857 -0.05 -71.2')
+                document.getElementById('bubble5').setAttribute('rotation','0 90 0')
+                document.getElementById('bubble5').setAttribute('position','-28 6.08 -6')
+            
+                // 
                 document.getElementById(`sharebutton${stallIndex + 1}`).addEventListener('click',function(){
                     share(stall.uno,stall.name)
                 });
@@ -1017,6 +1025,11 @@ function checkhallfive(x){
     document.getElementById('bubble5').setAttribute('position','-4 5.2 -67.506')
     document.getElementById('navmeshmodel_10').removeAttribute('gltf-model')
     document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @5 navmesh.glb)')
+    document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
+    document.getElementById('navmeshmodel_10').setAttribute('visible','false')
+   }else{
+    document.getElementById('navmeshmodel_10').removeAttribute('gltf-model')
+    document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @10 navmesh.glb)')
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
     document.getElementById('navmeshmodel_10').setAttribute('visible','false')
    }
