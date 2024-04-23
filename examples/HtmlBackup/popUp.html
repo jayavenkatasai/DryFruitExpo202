@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p,h1,h2,h3,h4,h5,h6{
+            margin: 0;
+        }
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+        .productName,.productPrice{
+            color: #FFF;
+            font-size: 32px;
+            font-weight: 500;
+            padding-bottom:14px;
+        }
+        .price{
+            color:#FFF;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .productWeight{
+            color:#FFF;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .visitProductButton{
+            color: #121212;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 9px 17px; 
+            border-radius: 5px;
+            background: #FFF; 
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .popUpContents{
+            border-radius: 10px;
+            background: #7E90A2; 
+            max-width:570px;
+            margin:0 auto;
+            width: 100%;
+            padding:45px 30px;
+            position: relative;
+            display:flex;
+            gap: 15px;
+        }
+        .popUp {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0,0,0,0.1);
+        }
+        .closeIcon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+            max-width:30px;
+        }
+        .productDetails {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .productImg {
+            height: 240px;
+            width: 240px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        @media only screen and (max-width:700px){
+            .productImg {
+                height: 150px;
+                width: 150px;
+            }
+            .productName, .productPrice {
+                font-size: 22px;
+                padding-bottom: 5px;
+            }
+            .price {
+                font-size: 18px;
+            }
+            .visitProductButton {
+                font-size: 14px;
+            }
+            .popUpContents{
+                max-width:380px;
+            }
+            .closeIcon {
+                max-width: 21px;
+            }
+        }
+        @media only screen and (max-width:452px){
+            .productImg {
+                height: 120px;
+                width: 120px;
+            }
+            .productName, .productPrice {
+                font-size: 18px;
+            }
+            .price {
+                font-size: 14px;
+            }
+            .popUpContents{
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="popUp">
+        <div class="popUpContents">
+            <img class="closeIcon" src="images/closeButton.png">
+            <img class="productImg" src="images/productImg.png">
+            <div class="productDetails">
+                <div class="priceDetails">
+                    <p class="productName">Product Name</p>
+                    <p class="productPrice">Price : <span class="price">₹2,795</span>/<span class="productWeight">kilogram(kg)</span></p>    
+                </div>
+                <a class="visitProductButton" href="">Visit Product</a>
+               </div>
+        </div>
+    </div>
+    <script>
+        $('.closeIcon').click(function(){
+            $('.popUp').css('display','none');
+        })
+    </script>
+</body>
+</html>

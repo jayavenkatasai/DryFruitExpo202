@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keyphrase" content="Exclusive 3D platform" />
-    <meta name="meta title" content="Check out the exclusive 3D platform for live streams at the Hospital & Medical supplies expo">
-    <meta name="keywords" content="healthcare innovation, medical supplies expo, virtual event hall, Digital healthcare solutions,
-    Interactive expo experience, hospital and medical supplies, Marketcentral expo, smbxl expo, 3D expo marketcentral">
-    <meta name="description" content="At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical equipment products showcase.">
-    <title>At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical equipment products showcase.</title>
+    <meta
+      name="meta title"
+      content="Check out the exclusive 3D platform for live streams at the Hospital & Medical supplies expo"
+    />
+    <meta
+      name="keywords"
+      content="healthcare innovation, medical supplies expo, virtual event hall, Digital healthcare solutions,
+    Interactive expo experience, hospital and medical supplies, Marketcentral expo, smbxl expo, 3D expo marketcentral"
+    />
+    <meta
+      name="description"
+      content="At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical equipment products showcase."
+    />
+    <title>
+      At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical
+      equipment products showcase.
+    </title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
-    <script src="js/ip-address.js"></script>
-    <script src="jslibrary/track.js"></script>
-    <script src="js/track js/tracking-ga.js"></script>
     <script src="js/track js/ua-parser.js"></script>
+    <script src="js/track js/track.js"></script>
+    <script src="js/track js/tracking-ga.js"></script>
+
     <script src="js/track js/trackapi.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/track js/fullstory.js"></script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
       /* .webinarSectionMbl{
@@ -137,7 +147,7 @@
         text-transform: uppercase;
       }
       .speakerDetails {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: fixed;
         z-index: 999;
@@ -171,7 +181,8 @@
         justify-content: center;
         align-items: center;
       }
-      iframe {
+      iframe,
+      .thumbnail_img {
         max-width: 1058px;
         width: 100%;
         position: absolute;
@@ -202,30 +213,34 @@
         display: none;
       }
       @media only screen and (max-width: 1700px) {
-        iframe {
+        iframe,
+        .thumbnail_img {
           max-width: 963px;
         }
       }
       @media only screen and (max-width: 1600px) {
-        iframe {
+        iframe,
+        .thumbnail_img {
           top: 13.5%;
           height: 56%;
         }
-        iframe {
+        iframe,
+        .thumbnail_img {
           max-width: 859px;
         }
       }
       @media only screen and (max-width: 1600px) {
-        iframe {
+        iframe,
+        .thumbnail_img {
           max-width: 759px;
         }
       }
       /* @media only screen and (max-width:1550px){
-            iframe {
+            iframe,.thumbnail_img {
                 max-width: 866px;
                 top: 20.5%;
             }
-            iframe {
+            iframe,.thumbnail_img {
                 height:45%;
             }
         } */
@@ -233,15 +248,16 @@
         .poweredimg img {
           max-width: 200px;
         }
-        .speakerText span,.speakerComapny span {
-    text-transform: uppercase;
-    /* MAX-WIDTH: 100PX; */
-    max-width: 120px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-/* .speakerComapny span {
+        .speakerText span,
+        .speakerComapny span {
+          text-transform: uppercase;
+          /* MAX-WIDTH: 100PX; */
+          max-width: 120px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        /* .speakerComapny span {
     text-transform: uppercase;
     
     max-width: 120px;
@@ -249,7 +265,8 @@
     overflow: hidden;
     white-space: nowrap;
 } */
-        .webinarSectionMbl iframe {
+        .webinarSectionMbl iframe,
+        .thumbnail_img {
           height: 55%;
           max-width: 400px;
           top: 13.5%;
@@ -259,29 +276,30 @@
           max-width: 120px;
         }
         .speakerDetails p {
-    color: #000;
-    font-family: 'Nunito', sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    background-color: #fff;
-    /* border-top-right-radius: 10px; */
-    /* border-bottom-right-radius: 10px; */
-    padding: 5PX 20PX;
-    BORDER-RADIUS: 10PX;
-}
+          color: #000;
+          font-family: 'Nunito', sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          background-color: #fff;
+          /* border-top-right-radius: 10px; */
+          /* border-bottom-right-radius: 10px; */
+          padding: 5px 20px;
+          border-radius: 10px;
+        }
         .speakerDetails {
-    display: flex;
-    flex-direction: ROW;
-    position: fixed;
-    z-index: 999;
-    top: 2px;
-    LEFT: 25%;
-    gap: 20px;
-}
+          display: none;
+          flex-direction: ROW;
+          position: fixed;
+          z-index: 999;
+          top: 2px;
+          left: 25%;
+          gap: 20px;
+        }
       }
       @media only screen and (max-width: 910px) {
-        iframe {
+        iframe,
+        .thumbnail_img {
           max-width: 884px;
           top: 20.5%;
           margin: 0;
@@ -320,25 +338,22 @@
         <div class="webinarSectionContents" id="webinarSectionContents">
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
+            <image src="" class="thumbnail_img" id="dsktp_img"></image>
             <iframe
-            src="https://www.youtube.com/embed/qjEhxuNAs0A"
+              src="https://www.youtube.com/embed/live_stream?channel=UCwm40sB0oYr4n9qT_8Hx0nA&autoplay=1"
               frameborder="0"
               allowfullscreen
+              class="webinarvideo_link"
             ></iframe>
-            <!--<iframe src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe>-->
-            <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
+            <!--<iframe,.thumbnail_img src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
+            <!--<iframe,.thumbnail_img src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
           </div>
         </div>
-<!-- speaker sectio code -->
-<!-- <div class="speakerDetails">
-  <p class="speakerText">Speaker : <span class="speakerName">sreenivas pusarla</span></p>
-  <p class="speakerComapny">Company : <span class="cmpnyName">3D LABS INDIA</span></p>
-</div> -->
-<!-- end of speaker section code -->
-<div class="poweredimg">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank">
-            <img src="assets/icons/poweredbyMC.png">
+        <!-- speaker sectio code -->
+        <!-- end of speaker section code -->
+        <div class="poweredimg">
+          <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank">
+            <img src="assets/icons/poweredbyMC.png" />
           </a>
         </div>
       </div>
@@ -350,23 +365,20 @@
         <div class="webinarSectionContents">
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
-            <iframe
-              src="https://youtu.be/qjEhxuNAs0A"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-            <!--<iframe src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe>-->
-            <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
+            <image src="" class="thumbnail_img" id="mbl_img"></image>
+            <iframe src="" frameborder="0" allowfullscreen class="webinarvideo_link"></iframe>
+            <!--<iframe,.thumbnail_img src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
+            <!--<iframe,.thumbnail_img src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe,.thumbnail_img>-->
           </div>
         </div>
         <!-- speaker details2 -->
-        <!-- <div class="speakerDetails">
+        <div class="speakerDetails" id="speakerdetail2">
           <p class="speakerText">Speaker : <span class="speakerName">sreenivas pusarla</span></p>
           <p class="speakerComapny">Company : <span class="cmpnyName">3D LABS INDIA</span></p>
-        </div> -->
-         <!-- end of speaker details2 -->
+        </div>
+        <!-- end of speaker details2 -->
         <div class="poweredimg">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
+          <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
             <img src="assets/icons/poweredbyMC.png" />
           </a>
         </div>
@@ -388,7 +400,7 @@
         </button>
       </div>
     </div>
-    <script>
+    <!-- <script>
       function checkOrientation() {
         const orientationscreen = document.getElementById('webinarDesktop');
         console.log(`the orientation screen is ${orientationscreen}`);
@@ -434,7 +446,7 @@
         checkOrientation();
         disableCheckAfterOrientationChange();
       });
-    </script>
+    </script> -->
     <script>
       document.getElementById('marketcentral-website-visit').addEventListener('click', function () {
         trackExpo(0, 'marketcentral-website-visit', '');
@@ -450,7 +462,7 @@
         var currentURLInput = document.getElementById('currentURL');
         currentURLInput.value = currentURL;
         popupOverlay.style.display = 'flex';
-        // trackExpo(0, 'webinar share', ' ');
+        trackExpo(0, 'webinar share', ' ');
         tracking(0, 'webinar share', ' ', '');
       }
 
@@ -474,49 +486,50 @@
         var popupOverlay = document.getElementById('popup-overlay');
         popupOverlay.style.display = 'none';
       }
-      window.onload = function() {
-if(!localStorage.getItem('GUID')){
-  
-function generateGUID() {
-    // Generate random hexadecimal digits
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    }
-    
-    // Concatenate random hexadecimal digits to form a GUID
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-}
-var guid;
-guid = generateGUID();
-localStorage.setItem('GUID',guid)
-tracking(0,'webinar-page','')
-console.log(guid)
-}else{
-  tracking(0,'webinar-page','')
-}
-
-};
-
     </script>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() {
-     dataLayer.push(arguments);
-   }
-   gtag('js', new Date());
-   gtag('config', 'G-PGGTB73FL0');
- </script>
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-K7WV592"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      >
-      </iframe>
-    </noscript>
+    <script>
+      var apiurl = 'https://www.marketcentral.in/rest/virtualExpo/general/getWebinar/3';
+      function fetchapiforwebinar() {
+        fetch(apiurl, {
+          method: 'GET'
+        })
+          .then((response) => {
+            if (response.ok) {
+              const urlObject = new URL(apiurl);
+              // console.log(`before api change url :${apiurl}`);
+
+              return response.json();
+            } else {
+              // console.log(`failed url is :${apiurl}`)
+              throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
+            }
+          })
+          .then((data) => {
+            //console.log('Fetched-data123:', data);
+            data.forEach((webinar) => {
+              //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
+              if (webinar.NOTIFY === true) {
+                if (document.querySelector('.webinarPopUp')) {
+                  document.querySelector('.webinarPopUp').style.display = 'flex';
+                }
+                document.querySelector('.thumbnail_img').style.display = 'none';
+                document.querySelector('.webinarvideo_link').setAttribute('src', webinar.WEBINAR_LINK);
+              } else {
+                alert('false');
+                document.querySelector('.thumbnail_img').style.display = 'block';
+                document.querySelector('.thumbnail_img').src = webinar.WEBINAR_LINK;
+              }
+              console.log(webinar);
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      fetchapiforwebinar();
+      // checks the webinar status for every 5 minutes and updates ui
+      // setInterval(fetchapiforwebinar,300000);
+    </script>
 
     <script>
       (function (w, d, s, l, i) {
@@ -530,31 +543,17 @@ console.log(guid)
         f.parentNode.insertBefore(j, f);
       })(window, document, 'script', 'dataLayer', 'GTM-K7WV592');
     </script>
-       <script src="js/unload.js"></script>
-       <script>
-        $(window).on('load', function () {
-          var uid = localStorage.getItem('GUID');
-            const data = {
-          exhibition_ID: 3,
-          visitor_guid: uid,
-          is_closed: 0
-          };
-        // Convert data to a JSON string
-        const dataString = JSON.stringify(data);
-        // Use navigator.sendBeacon to send data to the server
-        const result = navigator.sendBeacon(
-          'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
-          dataString
-        );
-    
-        // Log the result of the sendBeacon call
-        if (result) {
-          console.log('Data successfully queued for sending.');
-        } else {
-          console.log('Failed to queue data for sending.');
-        }
-        });
-        
-      </script>
+
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K7WV592"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      >
+      </iframe>
+    </noscript>
+
+    <script src="js/unload.js"></script>
   </body>
 </html>

@@ -20,7 +20,6 @@
       Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest
       trends today.
     </title>
-   
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -48,7 +47,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script src="js/Custom_components/camerlook.js"></script>
     <script src="/js/joystick.js"></script>
-    <script src="js/track js/fullstory.js"></script>
+
     <script>
       // networked aframe start
       // Temporary workaround for template declaration; see issue 167
@@ -325,7 +324,7 @@
     <script src="js/encrypt.js"></script>
     <script src="js/track js/track.js"></script>
     <script src="js/track js/trackapi.js"></script>
-    <script src="js/halljs/hallv2.js"></script>
+    <script src="js/halljs/hall.js"></script>
     <script src="js/halljs/hall2.js"></script>
     <script src="js/halljs/webinar-notify.js"></script>
     <!-- js files end -->
@@ -2470,7 +2469,7 @@
     </a-scene>
     <!-- a-scene close -->
     <script>
-      document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}v2`);
+      document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`);
       // console.log(networkcategory);
       // alert(category)
 
@@ -2649,7 +2648,6 @@
           if (window.orientation === 90 || window.orientation === -90) {
             document.getElementById('orientat-content').style.display = 'none';
             orientationscreen.style.display = 'none';
-            tracking(0,'orientation-made','')
           } else {
             orientationscreen.style.display = 'block';
             document.getElementById('orientat-content').style.display = 'flex';
@@ -2724,7 +2722,7 @@
       const dataString = JSON.stringify(data);
       // Use navigator.sendBeacon to send data to the server
       const result = navigator.sendBeacon(
-        'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+        'https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
         dataString
       );
   

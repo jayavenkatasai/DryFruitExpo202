@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0;
+        }
+        body{
+            font-family: "Nunito", sans-serif;
+        }
+        .helpPopUpContents{
+            max-width:760px;
+            background-color:#F1FDFF;
+            border-radius:10px;
+            padding:50px 0;
+            width:100%;
+        }
+        .helpText{
+            color: #464646;
+            text-align: center;
+            font-size: 49px;
+            font-weight: 600;
+            border-bottom:1px solid #F65927;
+            /* display:flex; */
+            padding-bottom:10px;
+        }
+        .followText{
+            color: #464646;
+            font-size: 32px;
+            font-weight: 600;
+            text-align:center;
+            padding-bottom:20px;
+        }
+        .helpPopUpContents{
+            position: relative;
+        }
+        .helpcloseIcon{
+            position: absolute;
+            right:10px;
+            top:10px;
+        }
+        .linkedImgs{
+            display:flex;
+            justify-content: center;
+            gap:14px;
+        }
+        .mediaIcons{
+            display:flex;
+            justify-content: center;
+            gap:19px;
+        }
+        .followSection {
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.20);
+            padding: 20px 0;
+            max-width: 620px;
+            margin: auto;
+        }
+        .helpTextHeading{
+            display:flex;
+            justify-content: center;
+            margin-bottom:50px;
+        }
+        .mediaIcons{
+            margin-bottom:50px;
+        }
+        .helpPopUpMainContent{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+        }
+        .helpcloseIcon{
+            cursor: pointer;
+        }
+        @media only screen and (max-width:767px){
+            .helpText {
+                font-size: 30px;
+            }
+            .helpTextHeading {
+                margin-bottom: 30px;
+            }
+            .mediaIcons img {
+                max-width: 50px;
+            }
+            .followText {
+                font-size: 25px;
+            }
+            .linkedImgs img {
+                max-width: 35px;
+            }
+            .mediaIcons {
+                margin-bottom: 30px;
+            }
+            .helpPopUpContents {
+                max-width: 450px;
+            }
+            .followSection {
+                width: 85%;
+            }
+            .linkedImgs,.mediaIcons{
+                gap: 10px;
+            }
+        }
+        @media only screen and (max-width:470px){
+            .helpPopUpContents {
+                width:95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="helpPopUp">
+        <div class="helpPopUpMainContent">
+            <div class="helpPopUpContents">
+                <div class="closeIcon">
+                    <img src="images/closeButton.png">
+                </div>
+                <div class="helpPopUpText">
+                    <div class="helpTextHeading"><h2 class="helpText">Help Desk</h2></div>
+                    <div class="mediaIcons">
+                        <a href=""><img src="images/web.png"></a>
+                        <a href=""><img src="images/call.png"></a>
+                        <a href=""><img src="images/Mail.png"></a>
+                        <a href=""><img src="images/whatsapp.png"></a>
+                    </div>
+                    <div class="followSection">
+                        <p class="followText">Follow us</p>
+                        <div class="linkedImgs">
+                            <a href="https://www.facebook.com/MKTCTL/"><img src="images/facebook.png"></a>
+                            <a href="https://www.instagram.com/_marketcentral/"><img src="images/insta.png"></a>
+                            <a href="https://www.youtube.com/channel/UCf_0cdvzynO4mwNenGwa7IQ"><img src="images/youtube.png"></a>
+                            <a href="https://www.linkedin.com/showcase/marketcentral"><img src="images/linkedin.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.helpcloseIcon').click(function(){
+            $('.helpPopUp').css('display','none');
+        })
+    </script>
+</body>
+</html>

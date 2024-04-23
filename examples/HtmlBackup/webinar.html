@@ -10,15 +10,11 @@
     <meta name="description" content="At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical equipment products showcase.">
     <title>At the Hospital and medical supplies expo online, attend insightful online webinars, live demo series and medical equipment products showcase.</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
-    <script src="js/ip-address.js"></script>
     <script src="jslibrary/track.js"></script>
     <script src="js/track js/tracking-ga.js"></script>
     <script src="js/track js/ua-parser.js"></script>
     <script src="js/track js/trackapi.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/track js/fullstory.js"></script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
       /* .webinarSectionMbl{
@@ -321,7 +317,7 @@
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
             <iframe
-            src="https://www.youtube.com/embed/qjEhxuNAs0A"
+            src="https://www.youtube.com/embed/t95L5Y_YM9U"
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -336,8 +332,7 @@
 </div> -->
 <!-- end of speaker section code -->
 <div class="poweredimg">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank">
+          <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank">
             <img src="assets/icons/poweredbyMC.png">
           </a>
         </div>
@@ -351,7 +346,7 @@
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
             <iframe
-              src="https://youtu.be/qjEhxuNAs0A"
+              src="https://www.youtube.com/embed/t95L5Y_YM9U"
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -366,7 +361,7 @@
         </div> -->
          <!-- end of speaker details2 -->
         <div class="poweredimg">
-          <a href="https://www.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
+          <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
             <img src="assets/icons/poweredbyMC.png" />
           </a>
         </div>
@@ -474,40 +469,8 @@
         var popupOverlay = document.getElementById('popup-overlay');
         popupOverlay.style.display = 'none';
       }
-      window.onload = function() {
-if(!localStorage.getItem('GUID')){
-  
-function generateGUID() {
-    // Generate random hexadecimal digits
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    }
-    
-    // Concatenate random hexadecimal digits to form a GUID
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-}
-var guid;
-guid = generateGUID();
-localStorage.setItem('GUID',guid)
-tracking(0,'webinar-page','')
-console.log(guid)
-}else{
-  tracking(0,'webinar-page','')
-}
-
-};
-
     </script>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() {
-     dataLayer.push(arguments);
-   }
-   gtag('js', new Date());
-   gtag('config', 'G-PGGTB73FL0');
- </script>
+
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-K7WV592"
@@ -543,7 +506,7 @@ console.log(guid)
         const dataString = JSON.stringify(data);
         // Use navigator.sendBeacon to send data to the server
         const result = navigator.sendBeacon(
-          'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+          'https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
           dataString
         );
     

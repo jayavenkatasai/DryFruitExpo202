@@ -31,7 +31,6 @@
     <script src="js/track js/tracking-ga.js"></script>
     <script src="js/track js/trackapi.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-    <script src="js/track js/fullstory.js"></script>
   </head>
   <body>
     <!-- orientation starts -->
@@ -387,7 +386,7 @@
         const dataString = JSON.stringify(data);
         // Use navigator.sendBeacon to send data to the server
         const result = navigator.sendBeacon(
-          'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+          'https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
           dataString
         );
     

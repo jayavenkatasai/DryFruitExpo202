@@ -1,0 +1,533 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hospital And Medical Supplies Expo</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
+    <meta name="description" content="Nametag — Networked-Aframe" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
+    <script src="/easyrtc/easyrtc.js"></script>
+    <script src="/dist/networked-aframe.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="/js/spawn-in-circle.component.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <link rel="stylesheet" href="css/hall.css" />
+    <script src="/js/simple-navmesh-constraint.js"></script>
+    <script src="js/Custom_components/cursor-listener.js"></script>
+    <script src="js/track js/ua-parser.js"></script>
+    <script src="js/ip-address.js"></script>
+    <script src="js/track js/tracking-ga.js"></script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+  </head>
+
+  <body>
+    <div class="loading-container" id="loading-cnt">
+      <img src="assets/loading/tenor.gif" alt="Loading GIF" />
+      <p class="loading-text">Please wait while your virtual experience loads!</p>
+    </div>
+      <!-- orientation -->
+      <div id="orientationScreen">
+        <div class="orientationScreenContents" id="orientat-content">
+          <img src="assets/icons/rotatePhone.gif" />
+          <h3>Rotate your mobile</h3>
+        </div>
+      </div>
+      <!-- orientation ending -->
+
+    <!-- end of the loading -->
+    <!-- full screen code -->
+    <button id="fullscreenButton">Enter Full Screen</button>
+
+    <!-- product popup -->
+    <div class="digitalPopUp" id="popup">
+      <div class="digitalPopUpContents">
+        <img class="closeImg" src="assets/icons/blueCloseIcon.png" />
+        <div class="productDetailsSection">
+          <img class="productImg" src="images/product.png" id="productimge" />
+          <div class="productDetails">
+            <p class="productName" id="prdt-name">Discover Hidden Treasures:</p>
+            <p class="productPrice" id="prd-price">
+              Price : <span class="original-price" id="cost">₹2,795</span>/<span class="prodWeight" id="prdt-units"
+                >kilogram(kg)</span
+              >
+            </p>
+            <div class="productButtons d-flex">
+              <a class="visitButton" id="visit-prdt-btn" target="_blank" href="">Visit Product</a>
+              <a class="shareButton" id="share-prdt">Share Product</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--sharestall and product  -->
+    <div id="popup-overlay">
+      <div id="popup-card">
+        <h6 class="inviteText">Share Stall Link</h6>
+        <div class="copySection">
+          <p id="urlText">Stall Link</p>
+          <div class="copyButtonSection">
+            <input type="text" id="currentURL" readonly />
+            <img class="global" src="assets/icons/global.png" />
+            <button id="copyButton" onClick="copyToClipboard()">Copy</button>
+          </div>
+          <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
+        </div>
+        <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png" /></button>
+      </div>
+    </div>
+    <!-- sharestall -->
+    <!-- bottom icons(navigation) -->
+    <div id="mapSection" class="mapSectionlass">
+      <div id="mapText" class="mapTextClass">
+        <div id="pagination">
+          <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px" />
+          <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" />
+        </div>
+        <div id="Backbtn">
+          <button id="closeIcon">
+            <img src="assets/icons/blueCloseIcon.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="iframetag" id="totalIframe">
+      <div class="iframetagContent">
+        <img class="iframeImg" src="assets/icons/blueCloseIcon.png" />
+        <iframe id="iframe-expoDir" src="about:blank" width="800px" height="500px" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div id="hallButtonsContents">
+      <div id="hallButtons">
+        <div class="tooltipone">
+          <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" />
+          <p class="labelText">Category</p>
+
+          <!-- <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" /> -->
+        </div>
+        <div class="tooltiptwo">
+          <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png" />
+          <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
+          <p class="labelText">Explore</p>
+
+        </div>
+        <div class="tooltipthree">
+          <a href="lobby.html">
+            <img class="desktopExitImg" src="assets/icons/exitimg.png" />
+            <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
+            <p class="labelText">Exit</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="iframe-container">
+      <iframe id="iframe-url" src=""></iframe>
+    </div>
+    <!-- js files -->
+    <script src="js/encrypt.js"></script>
+    <script src="js/sharestall/sharestall.js"></script>
+    <!-- //////////////////////////////////////////////////////////////////////////////A-FRAME/////////////////////////////////////////// -->
+    <a-scene id="scene1" xr-mode-ui="enabled: false" cursor="rayOrigin:mouse">
+      <a-assets>
+        <!-- //stallmodel  -->
+        <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>
+        <a-asset-item id="stall" src="assets/stallmodel/stallcompresswithoutavatar.glb"></a-asset-item>
+        <a-asset-item id="stallavatar" src="assets/Avthars/avatarreductech.glb"></a-asset-item>
+        <!-- //3dcharacter  -->
+        <a-mixin id="boy-character" src="assets/3dmodels/avthar1.glb" person-events-component> </a-mixin>
+        <!-- //hallmodel  -->
+        <a-asset-item id="hallmodel" src="assets/hallmodel/hall for single stall.glb"></a-asset-item>
+        <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
+        <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
+        <img id="broucher-icon" src="assets/icons/broucherlogo.png" />
+        <img id="phone-icon" src="assets/icons/phonelogo.png" />
+        <img id="email-icon" src="assets/icons/emaillogo.png" />
+        <img id="businesscard-icon" src="assets/icons/businescardlogo.png" />
+        <img id="website-icon" src="assets/icons/websitelogo.png" />
+        <img id="vendor-image" src="assets/icons/vendor-image.jpg" />
+        <img id="share-button" src="assets/icons/shareicon.png" />
+      </a-assets>
+      <a-entity gltf-model="#hallmodel" id="hall1">
+        <a-entity
+        id="stall-avatar1"
+       position="-27.175 -0.059 -10.968"
+        rotation="0 0 0"
+        scale="1 1 1"
+      gltf-model="#stallavatar"
+      >
+      </a-entity>
+        <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
+        <!-- camera start -->
+        <a-entity rotation="0 90 0" position="-13 2.5 -10.5">
+          <a-entity
+            id="player"
+            user-height="2"
+            camera
+            visible="true"
+            xr-mode-ui="enabled:false"
+            look-controls="magicWindowTrackingEnabled:false;enabled:false"
+            simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2.5;"
+            touchEabled="true"
+          >
+          </a-entity>
+        </a-entity>
+        <!-- camera end -->
+        <!-- stall 1 -->
+     
+        <a-plane
+        position="-26.677 -0.5 -11.412"
+          color="white"
+          width="15"
+          height="15"
+          rotation="90 0 0"
+          side="double"
+          class="trigger"
+          alert-on-approach
+          id="area1"
+        >
+
+
+          <a-entity gltf-model="#stall" id="stall1" position="-0.047 0.398 -0.104" rotation="-90 0 0" scale="1 1 1">
+            <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
+              <a-text id="txtval1" value="12345" color="black"></a-text>
+            </a-entity>
+            <a-plane
+              width="1.05"
+              height="0.85"
+              id="website1"
+              rotation="0 90 0"
+              visible="false"
+              position="4 4 -8.3"
+            ></a-plane>
+            <a-plane
+              width="1.05"
+              height="0.85"
+              id="email1"
+              rotation="0 90 0"
+              visible="false"
+              position="4 2.86 -8.3"
+            ></a-plane>
+            <a-plane
+              width="1.05"
+              height="0.85"
+              id="phone1"
+              rotation="0 90 0"
+              visible="false"
+              position="4 1.66 -8.3"
+            ></a-plane>
+            <a-plane
+              width="1.05"
+              height="0.85"
+              id="broucher1"
+              rotation="0 90 0"
+              visible="false"
+              position="4 3.4 -6.87"
+            ></a-plane>
+            <a-plane
+              position="4 4.5 -6.615"
+              id="broucherinfo1"
+              visible="false"
+              width="2"
+              height="0.8"
+              opacity="1"
+              color="black"
+              rotation="0 90 0"
+            >
+              <a-text
+                value="No Brochure"
+                id="brouchertext1"
+                width="5.8"
+                height="5.8"
+                rotation="0 0 0"
+                color="white"
+                align="center"
+                position="0 0 0.05"
+              ></a-text>
+            </a-plane>
+            <a-plane
+              width="1.05"
+              height="0.85"
+              id="businesscard1"
+              rotation="0 90 0"
+              visible="false"
+              position="4 2.19 -6.87"
+            ></a-plane>
+            <a-image
+              src="#vendor-image"
+              width="1.5"
+              height="1.5"
+              id="vendorimage1"
+              rotation="0 90 0"
+              position="3.9 1.7 8.4"
+            ></a-image>
+            <a-text
+              id="vendorname1"
+              value="Kishore"
+              color="black"
+              scale="1 1 1"
+              align="left"
+              position="3.9 2.2 7.65"
+              rotation="0 90 0"
+            ></a-text>
+            <a-text
+              id="vendorphoneno1"
+              value="6574865748"
+              color="black"
+              scale="1 1 1"
+              align="left"
+              position="3.9 1.8 7.65"
+              rotation="0 90 0"
+            ></a-text>
+            <a-image
+              src="#vendor-image"
+              width="1.5"
+              height="1.5"
+              id="vendorlogo1"
+              rotation="0 90 0"
+              position="4.5 8.35 8.16"
+            ></a-image>
+
+            <a-image
+              src="#share-button"
+              id="sharebutton1"
+              rotation="0 90 0"
+              align="right"
+              position="4 1.3 6.2"
+              width="1.3"
+              height="0.5"
+            ></a-image>
+
+            <a-text
+              id="vendorbusinessname1"
+              value="Medical Manufacturing Technologies"
+              color="black"
+              scale="2 2 2"
+              align="center"
+              position="4.5 8.5 1"
+              rotation="0 90 0"
+            ></a-text>
+            <a-plane color="#F65927" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+              <a-text
+                id="stallno1"
+                value="Stall No : 01"
+                color="white"
+                scale="2 2 2"
+                align="center"
+                position="0 0 0.05"
+              ></a-text>
+            </a-plane>
+          </a-entity>
+          <a-text id="bname1" value="12345" color="black"></a-text>
+        </a-plane>
+      </a-entity>
+    </a-scene>
+    <script>
+      $('.closeIcon').click(function () {
+        $('.popUp').css('display', 'none');
+      });
+      $('.closeImg').click(function () {
+        $('.digitalPopUp').css('display', 'none');
+      });
+      $('.iframeImg').click(function () {
+        $('.iframetag').css('display', 'none');
+        $('.iframetagContent').removeClass('active');
+      });
+      $('.infoIcon').click(function () {
+        $('.iframetagContent').toggleClass('active');
+        $('#totalIframe').css('display', 'flex');
+        $('#mapSection').removeClass('activeOne');
+      });
+      $('.mapIcon').click(function () {
+        $('#mapSection').toggleClass('activeOne');
+        $('.iframetagContent').removeClass('active');
+      });
+      $('#closeIcon').click(function () {
+        // $('#mapSection').attr('style', 'display: none!important');
+        $('#mapSection').removeClass('activeOne');
+      });
+      if (useragent == 'mobile') {
+        console.log('mobile-block');
+        document
+          .getElementById('iframe-expoDir')
+          .setAttribute('src', 'https://expo1.marketcentral.in/expoDirectoryMobile.cfm');
+      } else {
+        document
+          .getElementById('iframe-expoDir')
+          .setAttribute('src', 'https://expo1.marketcentral.in/expoDirectory.cfm');
+      }
+    </script>
+
+    <script>
+      document.getElementById('hall1').addEventListener('model-loaded', function () {
+        // After the model is loaded, hide the loading icon
+        setInterval(hideLoadingIcon, 3000);
+      });
+
+      function hideLoadingIcon() {
+        $('.loading-container').css('visibility', 'hidden');
+        $('.loading-text').css('visibility', 'hidden');
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-PGGTB73FL0');
+    </script>
+
+    <script>
+      var parser = new UAParser();
+var result = parser.getResult();
+var useragent =result.device.type
+var os =result.os.name
+
+
+    document.getElementById('fullscreenButton').addEventListener('click', function() {
+
+    toggleFullScreen();
+
+  });
+
+    
+function toggleFullScreen() {
+    var elem = document.documentElement;
+    var fullscreenButton = document.getElementById('fullscreenButton');
+  
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  
+        // Enter fullscreen mode
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        // Exit fullscreen mode
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+  }
+  
+
+  
+  // Update button text based on full-screen state
+  function updateButton() {
+    var fullscreenButton = document.getElementById('fullscreenButton');
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        fullscreenButton.textContent = 'Exit Full Screen';
+    } else {
+        fullscreenButton.textContent = 'Enter Full Screen';
+    }
+  }
+  
+  // Event listeners for fullscreen change and visibility change
+  document.addEventListener('fullscreenchange', updateButton);
+  document.addEventListener('mozfullscreenchange', updateButton);
+  document.addEventListener('webkitfullscreenchange', updateButton);
+  document.addEventListener('MSFullscreenChange', updateButton);
+  document.addEventListener('visibilitychange', updateButton);
+// full screen and exit full screen code
+//console.log(`The os is ${os}`)
+
+if(os=="iOS"|| os=="Mac OS"){
+    document.getElementById("fullscreenButton").style.display="none"
+  //   console.log("os code executed")
+  }
+    </script>
+     <script>
+  
+      function checkOrientation() {
+        var parser = new UAParser();
+       var result = parser.getResult();
+       var useragent =result.device.type
+       var os =result.os.name
+        if(useragent=='mobile'){
+      
+        
+          //  const deviceOrientationElement = document.getElementById('device-orientation');
+          const orientationscreen = document.getElementById("orientationScreen");
+          //console.log(`the orientation screen is ${orientationscreen}`);
+         
+          //  alert("triggering")
+           console.log("trigger")
+          if (window.orientation === 90 || window.orientation === -90) {
+            //console.log("Device is in landscape orientation");
+            //   deviceOrientationElement.textContent = "it is in landscape mode";
+            //  deviceOrientationElement.style.display = "none";
+            document.getElementById("orientat-content").style.display = "none";
+            //console.log(`before hitting the black screen`);
+            orientationscreen.style.display = "none";
+      
+            //console.log(`the blackscreen is ${orientationscreen}`);
+            //console.log(orientationscreen);
+            //console.log(`after hitting the black screen`);
+          
+          } else {
+            //console.log("Device is in portrait orientation");
+            //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
+            //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
+            orientationscreen.style.display = "block";
+            document.getElementById("orientat-content").style.display = "flex";
+          }
+      
+        }
+        else{
+          orientationscreen.style.display = "none";
+          alert("new")
+        }
+        }
+      
+      
+        
+      window.addEventListener("resize", checkOrientation, false);
+      
+      function disableCheckAfterOrientationChange() {
+        // Remove the event listener after the user enters landscape mode
+        window.removeEventListener("orientationchange", checkOrientation);
+        // Set up a new event listener to re-enable orientation checking
+        window.addEventListener("orientationchange", enableCheckAfterPortrait);
+      }
+      
+      function enableCheckAfterPortrait() {
+        // Remove the event listener after the user enters portrait mode again
+        window.removeEventListener(
+          "orientationchange",
+          enableCheckAfterPortrait
+        );
+        // Set up a new event listener to check orientation on further changes
+        window.addEventListener("orientationchange", checkOrientation);
+      }
+      
+      // Listen for changes in orientationcameraq
+      window.addEventListener("orientationchange", () => {
+        checkOrientation();
+        disableCheckAfterOrientationChange();
+      });
+      
+      
+      window.onload =function(){
+       
+        checkOrientation();
+      }
+      </script>
+  </body>
+</html>

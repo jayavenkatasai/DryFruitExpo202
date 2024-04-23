@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heartbeat Monitor Animation Example</title>
+    <style>
+      body {
+        background-image: url("assets/background_images/Group.png");
+        background-position: center;
+        background-size: cover;
+        font-size: 100%;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .heart-rate {
+        position: relative;
+      }
+
+      .heartbeat-polyline {
+        fill: none;
+        stroke: #0080bf;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+        animation: heartbeat 2s infinite;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+        50% {
+          points: 0, 45.486 38.514, 45.486 44.595, 50 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+        100% {
+          points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
+            45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
+            45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="heart-rate">
+      <svg
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="250px"
+        height="180px"
+        viewBox="0 0 150 73"
+        enable-background="new 0 0 150 73"
+        xml:space="preserve"
+      >
+        <polyline
+          class="heartbeat-polyline"
+          points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+        />
+        <circle r="4" fill="#45D2FE">
+          <animateMotion
+            dur="3s"
+            repeatCount="indefinite"
+            fill="freeze"
+            path="M0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+          />
+        </circle>
+      </svg>
+    </div>
+  </body>
+</html>

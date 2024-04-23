@@ -9,7 +9,7 @@ window.addEventListener('beforeunload', function (e) {
     const dataString = JSON.stringify(data);
     // Use navigator.sendBeacon to send data to the server
     const result = navigator.sendBeacon(
-      'https://stage.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+      'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
       dataString
     );
 
