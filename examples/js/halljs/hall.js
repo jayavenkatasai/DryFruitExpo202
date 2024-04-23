@@ -429,7 +429,7 @@ const fetchDataFromAPI = () => {
                 document.getElementById('stall5').setAttribute('rotation','0 0 0')
                 document.getElementById('stall5').setAttribute('position','-27.857 -0.05 -71.2')
                 document.getElementById('bubble5').setAttribute('rotation','0 90 0')
-                document.getElementById('bubble5').setAttribute('position','-28 6.08 -6')
+                document.getElementById('bubble5').setAttribute('position','-28 6.08 -66')
             
                 // 
                 document.getElementById(`sharebutton${stallIndex + 1}`).addEventListener('click',function(){
@@ -1034,6 +1034,8 @@ function checkhallfive(x){
     document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @10 navmesh.glb)')
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
     document.getElementById('navmeshmodel_10').setAttribute('visible','false')
+    document.getElementById('bubble5').setAttribute('rotation','0 90 0')
+    document.getElementById('bubble5').setAttribute('position','-25 6.086 -6.489')
    }
 }
 function checkurlparm(urlparameter){
