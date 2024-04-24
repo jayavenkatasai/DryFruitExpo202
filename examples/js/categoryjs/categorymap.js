@@ -59,8 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.categoryheading').textContent = categoryheading;
             document.querySelector('.categoryDescription').textContent = categoryDescription;
             populateCategories(data);
+           
         })
+      
         .catch(error => console.error('Error fetching data:', error));
+       
 
     // Function to dynamically generate category HTML
     function generateCategoryHTML(categoryName, index,category,categorynew) {
@@ -109,12 +112,24 @@ document.addEventListener("DOMContentLoaded", function() {
             const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
             const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY,category);
             categoriesContainer.innerHTML += categoryHTML;
+          //  document.getElementsByClassName('visitHallButton').style.display='flex'
+          const visitHallButtons = document.getElementsByClassName('visitHallButton');
+          for (let button of visitHallButtons) {
+              button.style.display = 'flex';
+          }
         });
+
         // Iterate over each category and generate HTML
         data.forEach((category, index) => {
-            const categoryHTML = generateCategoryHTML(category, index);
+            const categoryHTML = generateCategoryHTML(category, index,category.CATEGORY);
             categoriesContainer.innerHTML += categoryHTML;
+            const visitHallButtons = document.getElementsByClassName('visitHallButton');
+            for (let button of visitHallButtons) {
+                button.style.display = 'flex';
+            }
+            
         });
+         
     }
 
 });

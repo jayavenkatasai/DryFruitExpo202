@@ -16,7 +16,7 @@ var data = {
       "welcomeIntro": "Welcome to",
       "welcomeHsptlText": 
           "Hospital & Medical Supplies Expo",
-       "enterExpoButton":"Continue",
+       "enterExpoButton":"Enter Expo",
        "Avthartext":"Choose Your Avatar",
        "continuetext":"Enter Expo",
        "nameplaceholder":"Please Enter Your Name",
@@ -29,7 +29,7 @@ var data = {
       "welcomeIntro": "आपका स्वागत है",
       "welcomeHsptlText": 
           "अस्पताल एवं चिकित्सा आपूर्ति एक्सपो",
-       "enterExpoButton":"जारी रखना",
+       "enterExpoButton":"एक्सपो में प्रवेश करें",
        "Avthartext":"अपना अवतार चुनें",
        "continuetext":"एक्सपो दर्ज करें",
        "nameplaceholder":"कृपया अपना नाम दर्ज करें",

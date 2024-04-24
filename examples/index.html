@@ -36,7 +36,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-    <script src="js/track js/fullstory.js"></script>
+
     <link rel="preconnect" href="
     https://dev.visualwebsiteoptimizer.com"
     />
@@ -478,7 +478,7 @@
               <span id="error-message"></span>
               <span id="close-icon" onclick="hidePopup()">X</span>
             </div>
-            <button class="enterExpoButton" type="submit" id="enterExpo-btn">Continue</button>
+            <button class="enterExpoButton" type="submit" id="enterExpo-btn">Enter Expo</button>
             <div class="termsSection">
               <p class="TermsText">*By clicking on continue, you accept MarketCentral's</p>
               <a target="_blank" onclick="sendbeaconapi(0, 'terms and conditions', '')" class="termc" href="expot&c.html">Terms & Conditions</a>
@@ -649,4 +649,9 @@
     }
   </script>
   <script src="js/translatorjs/introtranslator.js"></script>
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      sendbeaconapi(0,"indexpage-dropoff","")
+})
+  </script>
 </html>

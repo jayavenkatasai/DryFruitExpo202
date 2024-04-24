@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms and Conditions</title>
-    <script src="js/track js/fullstory.js"></script>
+    <script src="js/ip-address.js"></script>
+    <script src="js/track js/tracking-ga.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script type='text/javascript' id='vwoCode'>
         window._vwo_code || (function() {
         var account_id=881014,
@@ -720,11 +723,44 @@
         </div>
     </section>
 </body>
+<script src="js/track js/ua-parser.js"></script>
+<script src="js/encrypt.js"></script>
+<script src="js/track js/trackapi.js"></script>
+<script src="js/track js/track.js"></script>
 <script>
         window.onload = function () {
       tracking(0, 'expotandc', '');
       //  trackExpo(0, "exhibition3", "", ipAddress);
     };
 </script>
+<script>
+    window.addEventListener('beforeunload', function (e) {
+  var uid = localStorage.getItem('GUID');
+  const data = {
+    exhibition_ID: 3,
+    visitor_guid: uid,
+    is_closed: 1
+  };
+  // Convert data to a JSON string
+  const dataString = JSON.stringify(data);
+  // Use navigator.sendBeacon to send data to the server
+  const result = navigator.sendBeacon(
+    'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
+    dataString
+  );
+
+  // Log the result of the sendBeacon call
+  if (result) {
+    console.log('Data successfully queued for sending.');
+  } else {
+    console.log('Failed to queue data for sending.');
+  }
+});
+  </script>
+   <script>
+    window.addEventListener('beforeunload', function (e) {
+      sendbeaconapi(0,"tandc-dropoff","")
+})
+  </script>
 
 </html>
