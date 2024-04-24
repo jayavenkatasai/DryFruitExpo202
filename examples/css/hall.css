@@ -20,6 +20,19 @@ body{
     padding: 0;
     overflow: hidden;
 }
+/* chat slide */
+.slideText{
+    font-size: 16px;
+    padding:5px 10px;
+    background-color: #F65927;
+    color:#fff;
+    position: absolute;
+    z-index: 99999;
+    right:10px;
+    top:10px;
+    display: block;
+}
+/* chat slide */
 .heart-rate {
   position: absolute;
   top: 0;

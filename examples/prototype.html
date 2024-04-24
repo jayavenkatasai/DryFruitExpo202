@@ -137,6 +137,11 @@
   </head>
 
   <body>
+     <!-- chat noifiction slide -->
+     <div class="chatSlide">
+      <p class="slideText">You've received a new message</p>
+    </div>
+    <!-- chat noifiction slide -->
     <!-- webinar popup -->
     <div class="webinarPopUp">
       <div class="webinarPopUpFlex">
@@ -178,7 +183,7 @@
       <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"></image>
     </div> -->
     <div id="chat-icon123">
-      <div class="notification">20</div>
+      <div class="notification" id="desktop-notification">20</div>
       <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"></image>
     </div>
     <!-- error message  -->
@@ -302,7 +307,7 @@
     </div> -->
     <div class="mblchatDisplay" id="mblchatplaceholder">
       <div class="tooltipChat">
-        <div class="smallScreenChatNotification">20</div>
+        <div class="smallScreenChatNotification" id="smallscreennot">20</div>
         <img class="chatIcon" src="assets/icons/chaticon.png" />
         <p class="labelText labelchat">Chat</p>
       </div>
@@ -2755,6 +2760,7 @@
     <script src="js/halljs/cameramoveboard.js"></script>
     <script src="js/halljs/joystickremoval.js"></script>
     <script src="js/unload.js"></script>
+    <script src="js/halljs/notification.js"></script>
     <!-- <script>
   var parser = new UAParser();
 var result = parser.getResult();
