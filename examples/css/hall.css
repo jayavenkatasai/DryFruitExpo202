@@ -30,7 +30,7 @@ body{
     z-index: 99999;
     right:10px;
     top:10px;
-    display: block;
+    display: none;
 }
 /* chat slide */
 .heart-rate {

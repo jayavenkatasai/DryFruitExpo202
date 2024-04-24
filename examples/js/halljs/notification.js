@@ -44,6 +44,7 @@ async function notification() {
             document.getElementById('desktop-notification').textContent = data.data.message;
             // alert("hey")
             document.getElementById('smallscreennot').textContent = data.data.message;
+            document.querySelector('.slideText').style.display='block'
             // alert("hey")
             
             // alert("hey")
@@ -56,6 +57,7 @@ async function notification() {
             document.getElementById('desktop-notification').style.display = "none";
             document.getElementById('smallscreennot').style.display = 'none';
             document.querySelector('.chatSlide').style.display = 'none';
+            document.querySelector('.slideText').style.display='none'
         }
 
     } catch (error) {
