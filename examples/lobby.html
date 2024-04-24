@@ -370,13 +370,18 @@
       
       
       window.onload =function(){
-       
-        checkOrientation();
+ 
+      tracking(0,'lobbypage','','')
+
       }
       </script>
        <script src="js/unload.js"></script>
        <script>
         $(window).on('load', function () {
+    
+      tracking(0, 'lobbypage', '');
+      //  trackExpo(0, "exhibition3", "", ipAddress);
+
           var uid = localStorage.getItem('GUID');
             const data = {
           exhibition_ID: 3,
