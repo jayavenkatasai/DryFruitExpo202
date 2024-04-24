@@ -36,7 +36,6 @@ var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
                 //alert(response.ok);
                 if (!response.ok) {
                     //throw new Error('Network response was not ok');
-                    console.log("sucessfully sending");
                     // need to add to error log
                     window.location.href="categorymapdynmic.html"
                 }else{
@@ -105,7 +104,6 @@ var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
            
            // sendBeaconapilobby(0, "enter-HMS-expo", "")
             postData(addvisitorurl, requestBody)
-            console.log(requestBody)
             localStorage.setItem('passed','true')
            // window.location.href="categorymapdynmic.html"
         })

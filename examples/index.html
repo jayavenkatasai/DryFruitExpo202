@@ -27,10 +27,7 @@
       rel="stylesheet"
     />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-    <link rel="preconnect" href="
-    https://dev.visualwebsiteoptimizer.com"
-    />
-   
+  
 
     <link rel="stylesheet" href="css/intro.css" />
 
@@ -39,6 +36,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script src="js/track js/fullstory.js"></script>
 
     <style>
       * {
@@ -469,7 +467,7 @@
             <button class="enterExpoButton" type="submit" id="enterExpo-btn">Continue</button>
             <div class="termsSection">
               <p class="TermsText">*By clicking on continue, you accept MarketCentral's</p>
-              <a target="_blank" class="termc" href="expot&c.html">Terms & Conditions</a>
+              <a target="_blank" onclick="sendbeaconapi(0, 'terms and conditions', '')" class="termc" href="expot&c.html">Terms & Conditions</a>
             </div>
           </div>
           <div class="sectionTwo">

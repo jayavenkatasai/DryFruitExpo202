@@ -97,6 +97,8 @@ document.getElementById('chat-img').addEventListener('click',function(){
         document.getElementById('chatui').setAttribute('src', chaturl);
    
     }
+  
+
 })
 
 
