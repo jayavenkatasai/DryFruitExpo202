@@ -17,6 +17,29 @@ function generateGUID() {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 }
+
+
+// 
+var urlendpoint = '';
+
+if (window.location.href.includes('digiexpodev.marketcentral')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Check if the URL contains "www" or "expodev"
+else if (window.location.href.includes('www') || window.location.href.includes('expodev')) {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+else if(window.location.href.includes('localhost')){
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// Default to some other URL
+else {
+    urlendpoint = 'https://www.marketcentral.in';
+}
+// API CALLLLLLLL
+
+       
+// 
 var guid;
 guid = generateGUID();
 // console.log(guid)
@@ -32,7 +55,7 @@ guid=localStorage.getItem('GUID')
 var languageselectionitem=localStorage.getItem('languageselection')
 //console.log(languageselectionitem)
 // Example usage
-if(localStorage.getItem('sessionActive')&& localStorage.getItem('passed')){
+if(localStorage.getItem('sessionActive')){
     const sessionData = JSON.parse(localStorage.getItem('sessionActive'));
     console.log("madee")
     // Check if session is active
@@ -52,6 +75,37 @@ if(localStorage.getItem('sessionActive')&& localStorage.getItem('passed')){
     }
 }
 
+// var apiname=localStorage.getItem('UserName')
+// console.log(apiname)
+var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
+       
+      //  console.log(requestBody) 
+        function postData(url, data) {
+            
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                console.log(response);
+                //alert(response.ok);
+                if (!response.ok) {
+                    //throw new Error('Network response was not ok');
+                    // need to add to error log
+                 
+                    window.location.href="categorymapdynmic.html"
+                }else{
+                    window.location.href="categorymapdynmic.html"
+                    console.log(requestBody) 
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the request:', error);
+               // alert(error)
+            });
+        }
+
+
 // if (!localStorage.getItem('UserName')) {
 document.getElementById("enterExpo-btn").addEventListener('click',function(){
     var names = document.getElementById("name-value").value;
@@ -60,7 +114,15 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
     if(/^[a-zA-Z\s]{3,}$/.test(names)){
         localStorage.setItem('UserName',names)
         sendbeaconapi(0,localStorage.getItem('languageselection'),'','')
-        window.location.href='Avthar.html';   
+        const requestBody = {
+            exhibition_ID: 3,
+            visitor_guid: guid,
+            visitor_name: localStorage.getItem('UserName'),
+            ipaddress: ipAddress
+        };
+        console.log(requestBody)
+       // window.location.href='Avthar.html'; 
+        postData(addvisitorurl, requestBody)  
     }
     else if (names.length > 16) {
         errorMessage.textContent = "Name should not exceed 16 characters";
