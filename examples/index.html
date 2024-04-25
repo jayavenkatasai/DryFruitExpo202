@@ -469,10 +469,10 @@
                 <span>हिंदी</span>
               </div>
             </div>
-            <div id="name-container">
+            <!-- <div id="name-container">
               <input class="nameInput" type="text" placeholder="Enter your name" id="name-value" />
             </div>
-            <p class="wrongText">* Please enter minimum 3 characters</p>
+            <p class="wrongText">* Please enter minimum 3 characters</p> -->
             <div id="overlay"></div>
             <div id="error-popup" class="popup">
               <span id="error-message"></span>
@@ -629,6 +629,7 @@
       //  trackExpo(0, "exhibition3", "", ipAddress);
     };
   </script>
+
   <script src="js/track js/ua-parser.js"></script>
   <script src="js/encrypt.js"></script>
   <script src="js/track js/trackapi.js"></script>
@@ -653,5 +654,6 @@
     window.addEventListener('beforeunload', function (e) {
       sendbeaconapi(0,"indexpage-dropoff","")
 })
+
   </script>
 </html>

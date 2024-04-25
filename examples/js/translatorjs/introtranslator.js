@@ -59,7 +59,7 @@ function updateUI(language) {
     welcomeHsptlText.textContent = data[language].welcomeHsptlText;
     enterExpoButton.textContent = data[language].enterExpoButton;
     chooseText.textContent=data[language].chooseText;
-    nameInput.placeholder = data[language].nameplaceholder;
+   // nameInput.placeholder = data[language].nameplaceholder;
     TermsText.textContent=data[language].TermsText
   //  termc.textContent=data[language].Termsandcond
 }
@@ -103,6 +103,7 @@ function languageChangeHandler(event) {
 englishRadio.addEventListener('change', languageChangeHandler);
 hindiRadio.addEventListener('change', languageChangeHandler);
 if(!localStorage.getItem('languageselection')){
+   
     localStorage.setItem('languageselection',selectedLanguage)
     //tracking(0,selectedLanguage,'','')
 }
