@@ -156,18 +156,18 @@ modelEntity.setAttribute('gltf-model', `url(assets/3dmodels/${avthar}.glb)`);
 // changeModel('#new-boy-character');
 
 
-document.getElementById('nextbutton').addEventListener('click',function(){
+// document.getElementById('nextbutton').addEventListener('click',function(){
 
-     var cam=document.getElementById('player')
+//      var cam=document.getElementById('player')
     
-     cam.removeAttribute('look-controls')
-     cam.removeAttribute('position')
-     cam.setAttribute('posistion','-26.677 2 -11.412')
-     cam.setAttribute('userheight',4)
-     cam.setAttribute('rotation','0 90 0')
+//      cam.removeAttribute('look-controls')
+//      cam.removeAttribute('position')
+//      cam.setAttribute('posistion','-26.677 2 -11.412')
+//      cam.setAttribute('userheight',4)
+//      cam.setAttribute('rotation','0 90 0')
    
-     cam.setAttribute('look-controls', 'magicWindowTrackingEnabled:false')
+//      cam.setAttribute('look-controls', 'magicWindowTrackingEnabled:false')
  
-     //console.log(cam.getAttribute('position'))
+//      //console.log(cam.getAttribute('position'))
 
-})
+// })

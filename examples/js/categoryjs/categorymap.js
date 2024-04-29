@@ -118,18 +118,6 @@ document.addEventListener("DOMContentLoaded", function() {
               button.style.display = 'flex';
           }
         });
-
-        // Iterate over each category and generate HTML
-        data.forEach((category, index) => {
-            const categoryHTML = generateCategoryHTML(category, index,category.CATEGORY);
-            categoriesContainer.innerHTML += categoryHTML;
-            const visitHallButtons = document.getElementsByClassName('visitHallButton');
-            for (let button of visitHallButtons) {
-                button.style.display = 'flex';
-            }
-            
-        });
-         
     }
 
 });

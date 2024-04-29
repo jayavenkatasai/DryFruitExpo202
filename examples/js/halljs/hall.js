@@ -87,11 +87,7 @@ function share(uno,name){
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
     tracking(uno, "share-stall", "")
-   // trackExpo(uno, "vendorshare", " ", ipAddress)
-   // trackinga("sharestall")
 }
-// if(useragent=='mobile'){
-
     if(!localStorage.getItem('intiated')){
         var halllang = localStorage.getItem('languageselection')
             localStorage.setItem('intiated','true')
@@ -111,7 +107,6 @@ function share(uno,name){
                 }
                 
             }
-          //  document.getElementById('instructionimg').setAttribute('src','assets/icons/Walkthrough1.png')
         document.getElementById('instruction-pannel').style.display='flex'
         tracking(0,`Hall:${categoryparam}`,'',"")
         document.getElementById('closeiconimgipp').addEventListener('click',function(){
@@ -120,22 +115,7 @@ function share(uno,name){
     }else{
    document.getElementById('instruction-pannel').style.display='none'
     }
- 
-// }
-// else{
-//     document.getElementById('instruction-pannel').style.display='none'
-// }
 
-// function showPopup() {
-//     // Get the current URL
-//     var currentURL = window.location.href;
-
-//     // Display the popup with the current URL
-//     var popupOverlay = document.getElementById('popup-overlay');
-//     var currentURLInput = document.getElementById('currentURL');
-//     currentURLInput.value = currentURL;
-//     popupOverlay.style.display = 'flex';
-// }
 
 function copyToClipboard() {
     // Get the current URL
@@ -249,13 +229,8 @@ const fetchDataFromAPI = () => {
             if (data.data) {
                 //console.log(data.data.message);
                if(data.data.message==='No records found'){
-                // document.getElementById('overLaySection').style.display="flex";
-                // document.getElementById('player').removeAttribute('wasd-controls')
-                   // document.getElementById("scene1").removeAttribute('joystick');
                     window.location.replace("categorymapdynmic.html")
                }
-                //need to do navigation stop and popup showing no vendors available
-             
             } else {
                 apivariable = data;
                 //console.log(apivariable)
@@ -267,102 +242,15 @@ const fetchDataFromAPI = () => {
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${c}.glb`)
                     document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${c}`)
-                // switch (c) {
-                //     case 1:
-                //     var bannerElements = document.getElementById("ban");
-                //   bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')
-                //     break;
-                //     case 2:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner2.glb')
-                //     break;
-                //     case 3:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb')
-                //     break;
-                //     case 4:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner4.glb')
-                //     break;
-                //     case 5:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner5.glb')
-                //     break;
-                //     case 6:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner6.glb')
-                //     break;
-                //     case 7:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner7.glb')
-                //     break;
-                //     case 8:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner8.glb')
-                //     break;
-                //     case 9:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner9.glb')
-                //     break;
-                //     case 10:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner10.glb')
-                //     break;
-                // }
                 checkhallfive(apivariable.stalls.length);
-                //console.log("The switch case is exceuted succesfully")
                 }
                 else{
                     //console.log("switch case odd is behaving")
-                    var bannerElements = document.getElementById("ban");
-                    bannerElements.setAttribute('gltf-model',`assets/banners/banner${b}.glb`)
-                    document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${b}`)
-                //     switch (b) {
-                //     case 1:
-                //        // alert("success1")
-                //     //var bannerElements = document.getElementsByClassName("banner1");
-                //     var bannerElements = document.getElementById("ban");
-                //      bannerElements.setAttribute('gltf-model','assets/banners/banner1.glb')   
-                //     break;
-                //     case 2:
-                //         // alert("success2")
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner2.glb') 
-                //     break;
-                //     case 3:
-                //        // alert("success3")
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner3.glb') 
-                //     break;
-                //     case 4:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner4.glb') 
-                //     break;
-                //     case 5:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner5.glb') 
-                //     break;
-                //     case 6:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner6.glb') 
-                //     break;
-                //     case 7:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner7.glb') 
-                //     break;
-                //     case 8:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner8.glb') 
-                //     break;
-                //     case 9:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner9.glb') 
-                //     break;
-                //     case 10:
-                //         var bannerElements = document.getElementById("ban");
-                //         bannerElements.setAttribute('gltf-model','assets/banners/banner10.glb') 
-                //     break;
-                // }
+                    if(b>1){
+                        var bannerElements = document.getElementById("ban");
+                        bannerElements.setAttribute('gltf-model',`assets/banners/banner${b}.glb`)
+                        document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${b}`)
+                    };
                      checkhallfive(apivariable.stalls.length);
                 }
                 // banners logic end 
@@ -387,8 +275,6 @@ const fetchDataFromAPI = () => {
 
                         })
                         document.getElementById(`bname${stallIndex + 1}`).setAttribute('value',stall.vendorInfo.companyname)
-                       // document.getElementById(`pp${stallIndex + 1}`).setAttribute(`targetPage:${`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`}`)
-                        // document.getElementById(`pp${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`);
                         if(stall.websiteLink){
                         document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",`targetPage:${stall.websiteLink};uno:${stall.uno};type:websitevisit;websitename:${stall.vendorInfo.companyname}`)
                         }
@@ -465,99 +351,6 @@ const fetchDataFromAPI = () => {
                     //  document.getElementById("next-hall1").setAttribute('visible','false')
                     //     document.getElementById("next-hall2").setAttribute('visible','false')
                 }
-              
-
-
-                       // //console.log(`https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.companyname}testing&name=${localStorage.getItem('UserName')}&uid=${localStorage.getItem('GUID')}`)
-
-//                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible", "true");
-//                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.vendorName);
-//                     document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible", "true");
-//                     document.getElementById(`vendorBusinessname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.contactNumber);
-//                     document.getElementById(`vendorimage${stallIndex + 1}`).setAttribute("src", stall.vendorInfo.vendorimage);
-//                     document.getElementById(`businessname${stallIndex + 1}`).setAttribute("value", stall.vendorInfo.companyname);
-//                     document.getElementById(`stall${stallIndex + 1}logo1`).setAttribute("src", stall.logo);
-//                     document.getElementById(`stallvalue${stallIndex + 1}`).setAttribute("value", stall.name);
-//                     document.getElementById(`website${stallIndex + 1}`).setAttribute("cursor-listener",
-//                         `targetPage:${stall.websiteLink};uno:${stall.uno};type:websitevisit`);
-//                     if (document.getElementById(`broucher-dum1${stallIndex + 1}`)) {
-//                         document.getElementById(`broucher-dum1${stallIndex + 1}`).remove()
-//                     }
-//                     if (document.getElementById(`call-dum1${stallIndex + 1}`)) {
-//                         document.getElementById(`call-dum1${stallIndex + 1}`).remove()
-//                     }
-//                     if (document.getElementById(`mail-dum1${stallIndex + 1}`)) {
-//                         document.getElementById(`mail-dum1${stallIndex + 1}`).remove()
-//                     }
-//                     if (document.getElementById(`business-dum1${stallIndex + 1}`)) {
-//                         document.getElementById(`business-dum1${stallIndex + 1}`).remove()
-//                     }
-//                     if (document.getElementById(`brc-dum1${stallIndex + 1}`)) {
-//                         document.getElementById(`brc-dum1${stallIndex + 1}`).remove()
-//                     }
-//                     document.getElementById(`business${stallIndex + 1}`).setAttribute("cursor-listener",
-//                         `targetPage:${stall.businesscard};uno:${stall.uno};type:businesscard`)
-//                     document.getElementById(`mail${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:mailto:${stall.vendorInfo.email};uno:${stall.uno};type:vendoremail`);
-//                     document.getElementById(`phone${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:tel:+91${stall.vendorInfo.contactNumber};uno:${stall.uno};type:vendorcontact`);
-//                     if (stall.broucherlinkAvailable == "yes") {
-//                         let dumimAage = document.getElementById(`broucher-dum${stallIndex + 1}`)
-//                         if (dumimAage) {
-//                             dumimAage.remove();
-//                         }
-//                         document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener",
-//                             `targetPage:${stall.broucherlink};uno:${stall.uno};type:vendorbroucher`)
-//                         document.getElementById(`brouchertext${stallIndex + 1}`).setAttribute("value", "Broucher")
-//                     } else {
-
-//                         const containerEntityb = document.createElement("a-entity");
-//                         containerEntityb.setAttribute("position", "5.39 0.6 10.64");
-//                         containerEntityb.setAttribute("rotation", "0 90 0");
-
-//                         containerEntityb.setAttribute("id", `broucher-dum${stallIndex + 1}`);
-//                         const planedummy = document.createElement("a-circle");
-// planedummy.setAttribute("position", "0 0 0");
-//                         planedummy.setAttribute("visible", "false");
-//                         planedummy.setAttribute("radius", "0.15");
-//                         planedummy.setAttribute("color", "red");
-//                         planedummy.setAttribute("height", "5");
-//                         planedummy.setAttribute("width", "5");
-// document.getElementById(stallContainerId).appendChild(containerEntityb)
-//                         containerEntityb.appendChild(planedummy)
-//                         planedummy.addEventListener("mouseenter", function () { document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute("visible", "true") });
-//                         planedummy.addEventListener("mouseleave", function () { document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute("visible", "false") });
-//                         document.getElementById(`broucher${stallIndex + 1}`).removeAttribute("cursor-listener");
-//                         document.getElementById(`brouchertext${stallIndex + 1}`).setAttribute("value", "No Broucher")
-//                         document.getElementById(`broucherinfo${stallIndex + 1}`).addEventListener("click", function () {
-//                             document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute("visible", "true")
-//                         })
-
-//                     };
-//                     /// -----Here for copy code popup
-//                     document.getElementById(`chatstall${stallIndex + 1}`).setAttribute('cursor-listener', `targetPage:Chat/cfmchat.cfm?stallid=${stall.uno}&bname=${stall.vendorInfo.vendorName}`);
-//                     document.getElementById(`sharestall${stallIndex + 1}`).addEventListener('click',
-//                         function showPopup() {
-//                             var currentURL1 = window.location.href;
-//                             var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-//                             var newURL = `${baseURL}sharestall.html?uno=${stall.uno}&stallno=${stall.name}`;
-//                             var popupOverlay = document.getElementById('popup-overlay');
-//                             var currentURLInput = document.getElementById('currentURL');
-//                             document.getElementById('urlText').textContent = "Stall Link"
-//                             currentURLInput.value = newURL;
-//                             popupOverlay.style.display = 'flex';
-//                             trackExpo(stall.uno, "vendorshare", " ", ipAddress)
-//                             trackinga("sharestall")
-//                         }
-
-//                     );
-
-
-
-                    //numberOfImages2 = data.stalls.length;
-                   
-                    /// -----Here for copy code popup endd----
-                    // Ensure that stall.products exists and has a length
-                    // //console.log(stall.products && stall.products.length)
-                    // //console.log(stall.products.length)
                     if (stall.products && stall.products.length) {
                         let numberOfImages = stall.products.length;  //10
                         ////console.log(numberOfImages)
@@ -655,20 +448,6 @@ const fetchDataFromAPI = () => {
                                     tracking(stall.uno, "share-product", imageDescription)
                                     // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
                                 })
-                               
-                                // Update the text and image source of the popup
-                                // document.getElementById(`popup${stallIndex + 1}`).setAttribute("visible", true);
-                                // document.getElementById(`productName${stallIndex + 1}`).setAttribute("value", imageDescription);
-                                // document.getElementById(`popupimage${stallIndex + 1}`).setAttribute("src", imageUrl);
-                                // document.getElementById(`productPrice${stallIndex + 1}`).setAttribute("value", `Price: ${stall.products[imageIndex].price} / ${stall.products[imageIndex].unit}`);
-                                // Make the popuplane1 visible
-                                // document.getElementById(`visitiproduct${stallIndex + 1}`).setAttribute("cursor-listener",
-                                //     `targetPage:${stall.products[imageIndex].productlink}; uno: ${stall.uno}; type: visiting-website-via-products; pdtname: ${imageDescription}`);
-                                // document.getElementById(`shareproduct${stallIndex + 1}`).addEventListener('click',
-                        //  );
-
-
-                                // trackExpo(stall.uno, "product", imageDescription, ipAddress);
                                 tracking(stall.uno, "product", imageDescription)
                            });
 
@@ -717,13 +496,7 @@ const fetchDataFromAPI = () => {
                         console.error(`Products array missing or empty for stall ${stallIndex + 1}`);
                     }
                 });
-                // Handle the fetched data as needed
-                ////console.log('Fetched data:', data);
-                // Reset the A-Frame scene
-                // const scene = document.querySelector('a-scene');
-                // scene.innerHTML = '';
-                // // Update the A-Frame scene with the new data
-                // updateSceneWithData(data);
+
             }
         })
         .catch(error => {
@@ -732,9 +505,6 @@ const fetchDataFromAPI = () => {
             document.getElementById('overLaySection').style.display="flex";
             document.querySelector('h3').textContent = 'Something Went Wrong Please Try Again Later';
             console.error('Error fetching data:', error);
-            document.getElementById('player').removeAttribute('wasd-controls')
-            document.getElementById("scene1").removeAttribute('joystick');
-
         });
 };
 fetchDataFromAPI();
@@ -965,32 +735,13 @@ document.getElementById('mapbutton2').style.display="flex"
 showCard(currentIndex);
 
 }
-// function showCard(index) {
-//     for (var i = 0; i < cards.length; i++) {
-//         cards[i].style.display = 'none';
-//     }
-
-//     for (var i = 0; i < 10 ; i++) {
-//         cards[index + i].style.display = 'flex';
-//     }
-// }
-
-// function showNext() {
-//     currentIndex = (currentIndex + 10) % cards.length;
-//     showCard(currentIndex);
-// }
-
-// function showPrevious() {
-//     currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-//     showCard(currentIndex);
-// }
 
 function closePopup() {
 var popupcontainer = document.getElementById('mappopup');
 popupcontainer.style.display = 'none';
 }
 
-document.getElementById('close').addEventListener('click', closePopup);
+document.getElementById('closeIcon').addEventListener('click', closePopup);
 
 function openLink(event) {
 var index = event.currentTarget.dataset.categoryIndex;
@@ -1001,16 +752,10 @@ var categories = data.map(item => item.CATEGORY);
 // Generate links based on categories
 var links = categories.map(category => `prototype.html?category=${encrypt(category.replace(/&/g, '||'))}`);
 var categoriesselect=categories.map(category=>category);
-//console.log(`the categories select is ${categoriesselect}`)
-//console.log(categoriesselect)
-//console.log(links);
-//console.log(categoriesselect[index])
 //database
 trackinga(categoriesselect[index],'prototype')
 sendbeaconapi(0,categoriesselect[index],"")
-//  trackExpo(0,categoriesselect[index],"")
-//trackExpoCategory(0,categoriesselect[index],"",links[index],ipAddress)
-// Open the link in the same window
+
 window.location.href = links[index];
 }
 
@@ -1049,9 +794,4 @@ function checkurlparm(urlparameter){
         }
  }
 }
-
-
-/// loading 
-
-
     

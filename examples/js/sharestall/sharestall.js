@@ -220,7 +220,7 @@ const fetchDataFromAPI = () => {
                                 // ...
                                 default:
                                     // Default case for handling unexpected image indices
-                                    console.error(`Unhandled image index: ${imageIndex}`);
+                                    // console.error(`Unhandled image index: ${imageIndex}`);
                                     break;
                             }
                             const containerEntity = document.createElement("a-entity");
@@ -438,7 +438,7 @@ var popupcontainer = document.getElementById('mappopup');
 popupcontainer.style.display = 'none';
 }
 
-document.getElementById('close').addEventListener('click', closePopup);
+document.getElementById('closeIcon').addEventListener('click', closePopup);
 
 function openLink(event) {
 var index = event.currentTarget.dataset.categoryIndex;
