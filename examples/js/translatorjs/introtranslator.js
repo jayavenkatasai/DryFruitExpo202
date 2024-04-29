@@ -22,7 +22,7 @@ var data = {
        "nameplaceholder":"Please Enter Your Name",
        "chooseText":"Choose a language :",
        "TermsText":"By clicking on continue, you accept MarketCentral's",
-       "Termsandcond":"Terms & Conditions"
+       "termc":"Terms & Conditions"
     },
     "hindi": 
     {
@@ -35,7 +35,7 @@ var data = {
        "nameplaceholder":"कृपया अपना नाम दर्ज करें",
        "chooseText":"एक भाषा चुनें :",
        "TermsText":"जारी रखें पर क्लिक करके, आप MarketCentral के नियम और शर्तों को स्वीकार करते हैं",
-       "Termsandcond":"नियम और शर्तों को स्वीकार करते हैं"
+       "termc":"नियम और शर्तों को स्वीकार करते हैं"
     }
   }
 
@@ -61,7 +61,7 @@ function updateUI(language) {
     chooseText.textContent=data[language].chooseText;
    // nameInput.placeholder = data[language].nameplaceholder;
     TermsText.textContent=data[language].TermsText
-  //  termc.textContent=data[language].Termsandcond
+    termc.textContent=data[language].termc
 }
 
 // Set initial language to English

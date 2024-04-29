@@ -116,7 +116,7 @@ AFRAME.registerComponent('cursor-listener-chat', {
             console.log('Target page:', data.targetPage);
          
            
-                container.style.display='block'
+            container.style.display='block'
             
             iframe.setAttribute('src', data.targetPage); // Set the src attribute of the iframe
             console.log('Uno:', data.uno);

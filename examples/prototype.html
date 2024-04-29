@@ -431,11 +431,11 @@
       <a-entity gltf-model="#hallmodel" id="hall1">
         <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
         <!-- camera start -->
-        <a-entity id="rig">
+        <a-entity id="rig"   position="0 2.5 17.4">
           <a-entity
             id="player"
             camera
-            position="0 2.5 17.4"
+          
             wasd-controls
             networked="template:#head-template;"
             visible="true"

@@ -45,6 +45,9 @@
       body {
         font-family: 'Nunito', sans-serif;
       }
+      .video-image {
+        z-index:9999
+      }
       #popup-overlay {
         z-index: 999;
         display: none;
@@ -185,7 +188,7 @@
         justify-content: center;
         align-items: center;
       }
-      iframe {
+      iframe, .video-image {
         max-width: 1058px;
         width: 100%;
         position: absolute;
@@ -216,30 +219,30 @@
         display: none;
       }
       @media only screen and (max-width: 1700px) {
-        iframe {
+        iframe, .video-image {
           max-width: 963px;
         }
       }
       @media only screen and (max-width: 1600px) {
-        iframe {
+        iframe, .video-image {
           top: 13.5%;
           height: 56%;
         }
-        iframe {
+        iframe, .video-image {
           max-width: 859px;
         }
       }
       @media only screen and (max-width: 1600px) {
-        iframe {
+        iframe, .video-image {
           max-width: 759px;
         }
       }
       /* @media only screen and (max-width:1550px){
-            iframe {
+            iframe, .video-image {
                 max-width: 866px;
                 top: 20.5%;
             }
-            iframe {
+            iframe, .video-image {
                 height:45%;
             }
         } */
@@ -263,11 +266,13 @@
     overflow: hidden;
     white-space: nowrap;
 } */
-        .webinarSectionMbl iframe {
+
+        .webinarSectionMbl iframe, .video-image {
           height: 55%;
           max-width: 400px;
           top: 13.5%;
           margin-left: 10px;
+          object-fit: cover;
         }
         .webinarsharebtn img {
           max-width: 120px;
@@ -332,15 +337,16 @@
           <a href="lobby.html" class="backBtnText">Back</a>
         </div>
         <div class="webinarSectionContents" id="webinarSectionContents">
-          <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
+          <img class="auditoriumImg" id="dsktp-img" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
+            <img class="video-image" id="dsktp-img"  src="./assets/background_images/BG.jpg">
             <iframe class="video-link" id="dsktp"
             src="https://www.youtube.com/embed/BGRUdH3UBh0"
               frameborder="0"
               allowfullscreen
             ></iframe>
-            <!--<iframe src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe>-->
-            <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
+            <!--<iframe, .video-image src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe, .video-image>-->
+            <!--<iframe, .video-image src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe, .video-image>-->
           </div>
         </div>
 <!-- speaker sectio code -->
@@ -363,13 +369,14 @@
         <div class="webinarSectionContents">
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
+            <img class="video-image" id="mbl-img" src="./assets/background_images/BG.jpg">
             <iframe class="video-link" id="mbl"
               src="https://www.youtube.com/embed/BGRUdH3UBh0"
               frameborder="0"
               allowfullscreen
             ></iframe>
-            <!--<iframe src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe>-->
-            <!--<iframe src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe>-->
+            <!--<iframe, .video-image src="https://success.zoom.us/wc/join/88312699432?pwd=bBLbVlnELVmdx2SEyBRtOY34Egy6yK.1" frameborder="0" allowfullscreen></iframe, .video-image>-->
+            <!--<iframe, .video-image src="https://www.youtube.com/embed/lTyHC5aeHbg" frameborder="0" allowfullscreen></iframe, .video-image>-->
           </div>
         </div>
         <!-- speaker details2 -->
@@ -528,7 +535,8 @@ console.log(guid)
         width="0"
         style="display: none; visibility: hidden"
       >
-      </iframe>
+      </iframe
+      >
     </noscript>
 
     <script>
@@ -619,8 +627,8 @@ if (result) {
      // Scheduled dates and times in Indian Standard Time
      var scheduledEvents = [
          { videoLink: 'https://www.youtube.com/embed/-R7dEgpWfiw', dateTime: '2024-04-26T11:30:00+05:30', companyName: 'Karur Orange Surgicals' },
-         { videoLink: 'https://youtu.be/embed/N24t43yR9Y8', dateTime: '2024-04-27T11:30:00+05:30', companyName: 'RS Respiratory Systems' },
-         { videoLink: 'https://youtu.be/embed/Id8wZFouvFk', dateTime: '2024-04-28T11:30:00+05:30', companyName: 'Medizone' }
+         { videoLink: 'https://www.youtube.com/embed/N24t43yR9Y8', dateTime: '2024-04-27T11:30:00+05:30', companyName: 'RS Respiratory Systems' },
+         { videoLink: 'https://www.youtube.com/embed/Id8wZFouvFk', dateTime: '2024-04-28T11:30:00+05:30', companyName: 'Medizone' }
      ];
  
      // Loop through scheduled events
@@ -639,6 +647,59 @@ if (result) {
      });
  });
  
+ </script>
+ <script>
+  var apiurl='https://www.marketcentral.in/rest/virtualExpo/general/getWebinar/3'
+function fetchapiforwebinar () {
+fetch(apiurl,{
+    method: 'GET'
+}).then(response=>{
+   
+    if (response.ok) {
+        const urlObject = new URL(apiurl);
+       // console.log(`before api change url :${apiurl}`);
+
+        return response.json();
+    }
+    else {
+       
+       // console.log(`failed url is :${apiurl}`)
+        throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
+    }
+}).then(data => {
+
+    //console.log('Fetched-data123:', data);
+    data.forEach(webinar => {
+        //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
+        if(webinar.NOTIFY===true){
+         //   document.querySelector('.thumbnail_img').style.display='none'
+        
+         document.getElementById('mbl-img').style.display='none'
+         document.getElementById('dsktp-img').style.display='none'
+            //document.querySelector('.webinar_video_link').setAttribute('src',webinar.WEBINAR_LINK)
+            document.getElementById('dsktp').setAttribute('src', webinar.WEBINAR_LINK);
+             document.getElementById('mbl').setAttribute('src', webinar.WEBINAR_LINK);
+        }else{
+           // alert("false")
+            // document.querySelector('.thumbnail_img').style.display='block'
+            // document.querySelector('.thumbnail_img').src=webinar.WEBINAR_LINK
+            
+         document.getElementById('mbl-img').style.display='block'
+        //  document.getElementById('mbl-img').setAttribute('src',webinar.WEBINAR_LINK) add the thumbnails images
+        //  document.getElementById('dsktp-img').setAttribute('src',) add the thumbnails images
+         document.getElementById('dsktp-img').style.display='block'
+        }
+console.log(webinar)
+    });
+}).catch(error => {
+    console.log(error)
+    
+    
+})
+}
+fetchapiforwebinar();
+// checks the webinar status for every 5 minutes and updates ui
+setInterval(fetchapiforwebinar,300000);
  </script>
   </body>
 </html>

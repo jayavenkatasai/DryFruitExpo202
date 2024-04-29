@@ -242,7 +242,7 @@ const fetchDataFromAPI = () => {
                     var bannerElements = document.getElementById("ban");
                     bannerElements.setAttribute('gltf-model',`assets/banners/banner${c}.glb`)
                     document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${c}`)
-                checkhallfive(apivariable.stalls.length);
+               // checkhallfive(apivariable.stalls.length);
                 }
                 else{
                     //console.log("switch case odd is behaving")
@@ -251,8 +251,9 @@ const fetchDataFromAPI = () => {
                         bannerElements.setAttribute('gltf-model',`assets/banners/banner${b}.glb`)
                         document.querySelector('#text-hallvalue').setAttribute('value',`Hall no : ${b}`)
                     };
-                     checkhallfive(apivariable.stalls.length);
+                    // checkhallfive(apivariable.stalls.length);
                 }
+               
                 // banners logic end 
                 data.stalls.forEach((stall, stallIndex) => {
                         const stallContainerId = `stall${stallIndex + 1}`;  
@@ -461,7 +462,7 @@ const fetchDataFromAPI = () => {
                             // Create the content inside the popup
                             const popupContent = `
                                             <a-plane color="#333" width="5" height="2"></a-plane>
-                                            <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="20" position="0 0 0.25"></a-text>
+                                            <a-text value="${imageDescription}" align="center" color="white" width="5" height="5" wrap-count="25" position="0 0 0.25"></a-text>
                                         `;
 
                             popupElement.innerHTML = popupContent;
@@ -490,14 +491,16 @@ const fetchDataFromAPI = () => {
 
 
                         }
-
+                       
                     } else {
                         // Log a message if the products array is missing or empty for the current stall
                         console.error(`Products array missing or empty for stall ${stallIndex + 1}`);
                     }
+                
                 });
 
             }
+            checkhallfive(apivariable.stalls.length);
         })
         .catch(error => {
             // Handle fetch errors
@@ -541,7 +544,7 @@ if(c){
     c=c+1
 }
 // posistioning the camera to original
-var stallPosition= document.getElementById('hall1').getAttribute('position')
+var stallPosition= document.getElementById('stall1').getAttribute('position')
 // Assuming 'stall1' has attributes x, y, and z
 var stallX = stallPosition.x;
 //console.log(`posistion-of-stall is ${stallX}`)
@@ -552,9 +555,9 @@ var stallZ = stallPosition.z;
 //console.log(`posistion-of-stall is ${stallZ}`)
 
 // Perform some math operations on stallX, stallY, stallZ
-var newX = stallX+0; // for example, adding 2 to the x position
+var newX = stallX+23; // for example, adding 2 to the x position
 var newY = stallY; // subtracting 1 from the y position
-var newZ = stallZ+0; // multiplying the z position by 2
+var newZ = stallZ+5; // multiplying the z position by 2
 document.getElementById('player').removeAttribute('look-controls')
 
 document.getElementById('player').setAttribute('rotation', { 
@@ -594,7 +597,7 @@ previousbutton.addEventListener('click',function(){
                 c=c-1
             }
             b=b-1;
-            var stallPosition= document.getElementById('hall1').getAttribute('position')
+            var stallPosition= document.getElementById('stall1').getAttribute('position')
 // Assuming 'stall1' has attributes x, y, and z
 var stallX = stallPosition.x;
 //console.log(`posistion-of-stall is ${stallX}`)
@@ -605,9 +608,11 @@ var stallZ = stallPosition.z;
 //console.log(`posistion-of-stall is ${stallZ}`)
 
 // Perform some math operations on stallX, stallY, stallZ
-var newX = stallX+0; // for example, adding 2 to the x position
-var newY = stallY+2; // subtracting 1 from the y position
-var newZ = stallZ+0; // multiplying the z position by 2
+
+// Perform some math operations on stallX, stallY, stallZ
+var newX = stallX+23; // for example, adding 2 to the x position
+var newY = stallY; // subtracting 1 from the y position
+var newZ = stallZ+5; // multiplying the z position by 2
 document.getElementById('player').removeAttribute('look-controls')
 
 document.getElementById('player').setAttribute('rotation', { 
@@ -616,7 +621,7 @@ y:  0,
 z: 0
 });
 // Set the new position to the 'camera'
-//document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
 fetchDataFromAPI()   
 document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
 document.getElementById('player').setAttribute('wasd-controls', 'enabled:true');
@@ -762,14 +767,20 @@ window.location.href = links[index];
 
 function checkhallfive(x){
    if(x<=5){
+   // alert("satisfied")
     document.getElementById('five-hall').setAttribute('visible','true')
     document.getElementById('five-hall').setAttribute('position','0 0 0')
     // document.getElementById('area5').setAttribute('rotation','90 -90 0')
     // document.getElementById('area5').removeAttribute('position')
+    document.getElementById(`stall5`).setAttribute("instanced-mesh-member","mesh:#mesh1");
+    document.getElementById('stall-avatar5').setAttribute('position','1 0 -66')
+    document.getElementById('stall-avatar5').setAttribute('rotation','0 -90 0')
     document.getElementById('stall5').setAttribute('rotation','0 -90 0')
+    document.getElementById('stall5').setAttribute('visible','true')
+;
     document.getElementById('stall5').setAttribute('position','1.109 0.000 -65')
     document.getElementById('bubble5').setAttribute('rotation','0 0 0')
-    document.getElementById('bubble5').setAttribute('position','-4 5.2 -67.506')
+    document.getElementById('bubble5').setAttribute('position','-4 6 -65')
     document.getElementById('navmeshmodel_10').removeAttribute('gltf-model')
     document.getElementById('navmeshmodel_10').setAttribute('gltf-model','url(assets/navmesh/Hall @5 navmesh.glb)')
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
@@ -780,7 +791,10 @@ function checkhallfive(x){
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
     document.getElementById('navmeshmodel_10').setAttribute('visible','false')
     document.getElementById('bubble5').setAttribute('rotation','0 90 0')
-    document.getElementById('bubble5').setAttribute('position','-25 6.086 -6.489')
+    document.getElementById('bubble5').setAttribute('position','-28 6.08 -66')
+    document.getElementById('stall-avatar5').setAttribute('position','-28 0 -71')
+    document.getElementById('stall-avatar5').setAttribute('rotation','0 0 0')
+   // alert("not satisfied")
    }
 }
 function checkurlparm(urlparameter){
