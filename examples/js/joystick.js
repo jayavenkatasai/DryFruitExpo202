@@ -83,7 +83,7 @@ function createJoystick() {
   function updatePosition(data) {
     f = 6;
     ang = data.angle.radian
-    cam = document.getElementById("player");
+    cam = document.getElementById("rig");
 
 
     x_vec = Math.cos(ang + 3.14/180*cam.getAttribute('rotation')['y']) ;

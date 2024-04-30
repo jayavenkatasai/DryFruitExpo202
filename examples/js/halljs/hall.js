@@ -626,6 +626,7 @@ document.getElementById('player').setAttribute('wasd-controls', 'enabled:true');
 
 if(useragent=="mobile"){
   document.getElementById("iframe-expoDir").setAttribute("src",`https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
+  document.getElementById("chat-icon123").style.display="none"
 }else{
   document.getElementById("iframe-expoDir").setAttribute("src",`https://expo1.marketcentral.in/expoDirectory.cfm`)
 
