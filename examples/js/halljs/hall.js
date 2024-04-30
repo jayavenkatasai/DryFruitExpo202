@@ -604,11 +604,6 @@ var stallX = stallPosition.x;
 var stallY = stallPosition.y;
 //console.log(`posistion-of-stall is ${stallY}`)
 var stallZ = stallPosition.z;
-
-//console.log(`posistion-of-stall is ${stallZ}`)
-
-// Perform some math operations on stallX, stallY, stallZ
-
 // Perform some math operations on stallX, stallY, stallZ
 var newX = stallX+23; // for example, adding 2 to the x position
 var newY = stallY; // subtracting 1 from the y position

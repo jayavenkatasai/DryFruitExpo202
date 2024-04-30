@@ -10,7 +10,7 @@ process.title = "networked-aframe-server";
 const port = process.env.PORT || 8080;
  
 // Threshold for instancing a room
-const maxOccupantsInRoom = 3;
+const maxOccupantsInRoom = 10;
  
 // Setup and configure Express http server.
 const app = express();
