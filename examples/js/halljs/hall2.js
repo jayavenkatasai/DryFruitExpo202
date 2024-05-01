@@ -129,17 +129,31 @@ document.getElementById('mblchatplaceholder').addEventListener('click',function(
 //         return false;
 // })
 
-function avtharassign(avthar){
-// alert(`trigger:${avthar}`)
+// function avtharassign(avthar){
+// // alert(`trigger:${avthar}`)
 
-var headTemplate = document.getElementById('head-template').content;
+// var headTemplate = document.getElementById('head-template').content;
 
-var modelEntity = headTemplate.querySelector('#model-id');
-modelEntity.setAttribute('gltf-model', `url(assets/3dmodels/${avthar}.glb)`);
-//console.log(`trigger:success2`)
-    // document.getElementById('model-id').setAttribute('gltf-model',``)
+// var modelEntity = headTemplate.querySelector('#model-id');
+// modelEntity.setAttribute('gltf-model', `url(assets/3dmodels/${avthar}.glb)`);
+// //console.log(`trigger:success2`)
+//     // document.getElementById('model-id').setAttribute('gltf-model',``)
  
+// }
+
+function avtharassign(avthar) {
+    // Update player-info component with the new avatar information
+    // var headTemplate = document.getElementById('head-template').content;
+    // var playerInfoComponent = headTemplate.querySelector('[player-info]');
+    // // Assuming player-info component has attributes like 'avatar'
+    // playerInfoComponent.setAttribute('avatar', avthar);
+
+    // // Update gltf-model with the new avatar model URL
+    // var modelEntity = headTemplate.querySelector('#model-id');
+    // modelEntity.setAttribute('gltf-model', `assets/3dmodels/${avthar}.glb`);
+    //alert(playerInfoComponent)
 }
+
 // Assuming you have a reference to the template content
 
 

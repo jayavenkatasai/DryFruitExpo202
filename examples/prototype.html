@@ -33,7 +33,6 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@09ee625/src/instanced-mesh.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-gltf-model-plus@341004f/dist/gltf-model-plus.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.5.0/dist/aframe-cursor-teleport-component.min.js"></script>
 
     <script src="https://unpkg.com/aframe-orbit-controls@1.3.2/dist/aframe-orbit-controls.min.js"></script>
   
@@ -51,6 +50,7 @@
     <script src="js/track js/tracking-ga.js"></script>
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.5.0/dist/aframe-cursor-teleport-component.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script src="js/Custom_components/camerlook.js"></script>
     <script src="/js/joystick.js"></script>
@@ -85,15 +85,12 @@
               // In this example, we don't sync the material.color itself, like the basic example;
               // we instead sync player-info, which includes color setting + updating.
               // (you can see an example of the other pattern in the basic.html demo)
-              'player-info',
-              {
-                selector: '.model',
-                component: 'gltf-model'
-              }
+              'player-info'
+              // {
+              //   selector: '.model',
+              //   component: 'gltf-model'
+              // }
             ]
-
-
-            
           });
         }
 
@@ -110,50 +107,51 @@
       };
 
       AFRAME.registerComponent('player-info', {
-        // notice that color and name are both listed in the schema; NAF will only keep
-        // properties declared in the schema in sync.
-        schema: {
-          name: { type: 'string', default: 'user-' + Math.round(Math.random() * 10000) },
-          color: {
-            type: 'color', // btw: color is just a string under the hood in A-Frame
-            default: window.ntExample.randomColor()
-          }
-        },
+    schema: {
+        name: { type: 'string', default: 'user-' + Math.round(Math.random() * 10000) },
+        color: { type: 'color', default: window.ntExample.randomColor() },
+        avatar: { type: 'string', default: localStorage.getItem('Avthar')} // Add the avatar attribute
+    },
 
-        init: function () {
-          this.head = this.el.querySelector('.head');
-          this.nametag = this.el.querySelector('.nametag');
+    init: function () {
+        this.head = this.el.querySelector('.head');
+        this.nametag = this.el.querySelector('.nametag');
 
-          this.ownedByLocalUser = this.el.id === 'player';
-          if (this.ownedByLocalUser) {
-            // populate the html overlay with the correct name on init
+        this.ownedByLocalUser = this.el.id === 'player';
+        if (this.ownedByLocalUser) {
             this.nametagInput = document.getElementById('username-overlay');
             this.nametagInput.value = this.data.name;
 
-            // add the initial color to the html overlay color picker button
             document.querySelector('#color-changer').style.backgroundColor = this.data.color;
             document.querySelector('#color-changer').style.color = this.data.color;
-          }
-        },
-        // here as an example, not used in current demo. Could build a user list, expanding on this.
-        listUsers: function () {
-          console.log(
+        }
+    },
+
+    listUsers: function () {
+        console.log(
             'userlist',
             [...document.querySelectorAll('[player-info]')].map((el) => el.components['player-info'].data.name)
-          );
-        },
+        );
+    },
 
-        newRandomColor: function () {
-          this.el.setAttribute('player-info', 'color', window.ntExample.randomColor());
-        },
+    newRandomColor: function () {
+        this.el.setAttribute('player-info', 'color', window.ntExample.randomColor());
+    },
 
-        update: function () {
-          if (this.head) this.head.setAttribute('material', 'color', this.data.color);
-          if (this.nametag) this.nametag.setAttribute('value', this.data.name);
-          const secondNametag = this.el.querySelector('.nametag:nth-child(2)');
-          if (secondNametag) secondNametag.setAttribute('value', this.data.name);
+    update: function () {
+        if (this.head) this.head.setAttribute('material', 'color', this.data.color);
+        if (this.nametag) this.nametag.setAttribute('value', this.data.name);
+        const secondNametag = this.el.querySelector('.nametag:nth-child(2)');
+        if (secondNametag) secondNametag.setAttribute('value', this.data.name);
+
+        // Update the avatar model when the avatar attribute changes
+        if (this.el.querySelector('.model')) {
+        //  alert(this.data.avatar)
+            this.el.querySelector('.model').setAttribute('gltf-model', `/assets/3dmodels/${this.data.avatar}.glb`);
+
         }
-      });
+    }
+});
 
       // networked aframe end
     </script>
@@ -404,7 +402,7 @@
           <a-entity></a-entity>
         </template>
         <template id="head-template">
-          <a-entity class="avatar">
+          <a-entity class="avatar" player-info>
             <a-entity
               id="model-id"
               gltf-model="#avthar1"
@@ -448,21 +446,21 @@
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
         <a-entity id="rig"  cursor-teleport="cameraRig: #rig; cameraHead: #player; collisionEntities: .collision;" 
-        movement-controls="fly:false;controls:keyboard,nipple;" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right"  scroll-controls spawn-in-circle="radius:1"  position="0 2.5 17.4" networked="template:#rig-template;"   simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:1;">
+        movement-controls="fly:false;controls:keyboard,nipple;" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 0 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2;">
           <a-entity
             id="player"
             camera
             networked="template:#head-template;"
             visible="true"
             look-controls="magicWindowTrackingEnabled:false"
-            position="0 1.52 0"
+            position="0 2 0"
           >
           </a-entity>
         </a-entity>
         <!-- camera end -->
         <!-- category name board -->
 
-        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination" class="clickable">
+        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2">
           <a-plane id="category-name-board" position="0 1.8 -6.8" color="#0080BF" height="0.8" width="1.8">
             <a-text
               id="board-name"
@@ -2475,7 +2473,6 @@
           visible="false"
           class="navmesh collision"
           id="navmeshmodel_10"
-          
         ></a-entity>
         <!-- next hall and previous and lobby buttons -->
         <a-plane
@@ -2575,8 +2572,10 @@
       document.addEventListener('DOMContentLoaded', function () {
         // console.log(document.getElementById('player'));
         // console.log(document.getElementById('boy-character'));
+        
+     // Replace 'your_avatar_name_here' with the actual avatar name
+    avtharassign(avthar);
 
-        avtharassign(avthar);
         // document.getElementById('boy-character').setAttribute('src','assets/3dmodels/avthar2.glb')
         //document.querySelector('#player').querySelector('#model-id').setAttribute('gltf-model', 'url(assets/3dmodels/avthar2.glb)');
       });
@@ -2862,21 +2861,5 @@ var newZ = stallZ+5; // multiplying the z position by 2
 document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
   })
 </script> -->
-<script>
-  AFRAME.registerComponent("character-controller", {
-    events: {
-      "navigation-start": function () {
-        if (this.el.hasAttribute("simple-navmesh-constraint")) {
-          this.el.setAttribute("simple-navmesh-constraint", "enabled", false);
-        }
-      },
-      "navigation-end": function () {
-        if (this.el.hasAttribute("simple-navmesh-constraint")) {
-          this.el.setAttribute("simple-navmesh-constraint", "enabled", true);
-        }
-      },
-    },
-  });
-  </script>
   </body>
 </html>

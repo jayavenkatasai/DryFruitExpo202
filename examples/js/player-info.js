@@ -52,7 +52,7 @@
     },
   
     init: function () {
-      // this.head = this.el.querySelector('.head');
+      this.head = this.el.querySelector('.head');
       this.nametag = this.el.querySelector('.nametag');
       this.setAnimation = this.setAnimation.bind(this);
       this.setAnimationFromState = this.setAnimationFromState.bind(this);
