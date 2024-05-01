@@ -58,47 +58,64 @@ AFRAME.registerComponent('cursor-listener', {
                 });
             }
         });
-document.addEventListener("wheel", function (e) {
-  // Get camera entity
-  var cam = document.getElementById("player"); // Replace "yourCameraId" with the actual ID of your camera entity
-
-  // Define the angle increment for navigation
-  var angIncrement = 0.1; // You can adjust this value based on your scene
-
-  // Update angle with rotation
-  ang = e.deltaY < 0 ? ang + angIncrement : ang - angIncrement;
-
-  // Calculate new position in the forward or backward direction based on the scroll direction
-  var f = 5; // You can adjust this value based on your scene
-
-  // Get the current rotation of the camera in radians
-  var camRotationY = (cam.getAttribute('rotation')['y']) * (Math.PI / 180);
-
-  // Calculate the direction based on the camera's current rotation
-  var direction = e.deltaY < 0 ? 1 : -1; // 1 for upward scroll (forward), -1 for downward scroll (backward)
-
-  var forwardDirection = {
-      x: -Math.sin(camRotationY) * direction,
-      y: 0,
-      z: -Math.cos(camRotationY) * direction
-  };
-
-  // Normalize the direction
-  var norm = Math.sqrt(forwardDirection.x ** 2 + forwardDirection.z ** 2);
-  forwardDirection.x /= norm;
-  forwardDirection.z /= norm;
-
-  // Update camera position in the forward or backward direction
-  var newPosition = {
-      x: cam.getAttribute("position")["x"] + (f / 15) * forwardDirection.x,
-      y: cam.getAttribute("position")["y"],
-      z: cam.getAttribute("position")["z"] + (f / 15) * forwardDirection.z
-  };
-
-  // Set the new position to the camera
-  cam.setAttribute("position", newPosition);
-});
-
+        // document.addEventListener("wheel", function (e) {
+        //     // Get camera entity
+        //     var cam = document.getElementById("rig"); // Replace "rig" with the actual ID of your camera entity
+        
+        //     // Define the angle increment for navigation
+        //     var angIncrement = 0.1; // You can adjust this value based on your scene
+        
+        //     // Update angle with rotation
+        //     ang = e.deltaY < 0 ? ang + angIncrement : ang - angIncrement;
+        
+        //     // Calculate new position in the forward or backward direction based on the scroll direction
+        //     var f = 5; // You can adjust this value based on your scene
+        
+        //     // Get the current rotation of the camera in radians
+        //     var camRotationY = (cam.getAttribute('rotation')['y'] % 360) * (Math.PI / 180);
+        //     if (camRotationY < 0) {
+        //         camRotationY += 2 * Math.PI; // Ensure the angle is in the range [0, 2π)
+        //     }
+        
+        //     // Calculate forward direction based on camera's rotation
+        //     var forwardDirection = {
+        //         x: -Math.sin(camRotationY),
+        //         y: 0,
+        //         z: -Math.cos(camRotationY)
+        //     };
+        
+        //     // Adjust forward direction based on rig rotation
+        //     var rigRotationY = (cam.getAttribute('rotation')['y'] % 360) * (Math.PI / 180);
+        //     if (rigRotationY < 0) {
+        //         rigRotationY += 2 * Math.PI; // Ensure the angle is in the range [0, 2π)
+        //     }
+        
+        //     // Rotate the forward direction by the rig rotation
+        //     var rotatedForwardDirection = {
+        //         x: Math.cos(rigRotationY) * forwardDirection.x + Math.sin(rigRotationY) * forwardDirection.z,
+        //         y: 0,
+        //         z: -Math.sin(rigRotationY) * forwardDirection.x + Math.cos(rigRotationY) * forwardDirection.z
+        //     };
+        
+        //     // Normalize the direction
+        //     var norm = Math.sqrt(rotatedForwardDirection.x ** 2 + rotatedForwardDirection.z ** 2);
+        //     rotatedForwardDirection.x /= norm;
+        //     rotatedForwardDirection.z /= norm;
+        
+        //     // Update camera position in the forward or backward direction
+        //     var direction = e.deltaY < 0 ? 1 : -1; // 1 for upward scroll (forward), -1 for downward scroll (backward)
+        //     var newPosition = {
+        //         x: cam.getAttribute("position")["x"] + (f / 15) * rotatedForwardDirection.x * direction,
+        //         y: cam.getAttribute("position")["y"],
+        //         z: cam.getAttribute("position")["z"] + (f / 15) * rotatedForwardDirection.z * direction
+        //     };
+        
+        //     // Set the new position to the camera
+        //     cam.setAttribute("position", newPosition);
+        // });
+        
+        
+      
 
 AFRAME.registerComponent('cursor-listener-chat', {
     schema: {

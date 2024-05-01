@@ -523,9 +523,9 @@ document.getElementById('next-hall').addEventListener('click',function(){
     let end1=apivariable.stalls[0].end
     //console.log(end1)
     //removeEntities(apivariable.stalls);
-    start= parseInt(end1)+1;
+   let  start= parseInt(end1)+1;
     //console.log(`the next start is ${start}`)
-    end=parseInt(start)+9;
+    let end=parseInt(start)+9;
     //console.log(`the next start is ${start}`)
     //console.log(end)
     //console.log('Start:', start); // Output: 1
@@ -556,17 +556,17 @@ var stallZ = stallPosition.z;
 
 // Perform some math operations on stallX, stallY, stallZ
 var newX = stallX+23; // for example, adding 2 to the x position
-var newY = stallY; // subtracting 1 from the y position
+var newY = stallY+1; // subtracting 1 from the y position
 var newZ = stallZ+5; // multiplying the z position by 2
 document.getElementById('player').removeAttribute('look-controls')
 
-document.getElementById('player').setAttribute('rotation', { 
+document.getElementById('rig').setAttribute('rotation', { 
 x: 0, 
 y:  0, 
 z: 0
 });
 // Set the new position to the 'camera'
-document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+document.getElementById('rig').setAttribute('position', { x: newX, y: newY, z: newZ });
 
  fetchDataFromAPI()
  document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
@@ -610,16 +610,16 @@ var newY = stallY; // subtracting 1 from the y position
 var newZ = stallZ+5; // multiplying the z position by 2
 document.getElementById('player').removeAttribute('look-controls')
 
-document.getElementById('player').setAttribute('rotation', { 
+document.getElementById('rig').setAttribute('rotation', { 
 x: 0, 
 y:  0, 
 z: 0
 });
 // Set the new position to the 'camera'
-document.getElementById('player').setAttribute('position', { x: newX, y: newY, z: newZ });
+document.getElementById('rig').setAttribute('position', { x: newX, y: newY, z: newZ });
 fetchDataFromAPI()   
 document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
-document.getElementById('player').setAttribute('wasd-controls', 'enabled:true');
+
 })
 })
 
