@@ -398,6 +398,8 @@
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" />
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" />
         <img id="share-button" src="assets/icons/shareicon.png" />
+        <img id="visit-stall-button" src="assets/icons/visitstall-button.png" />
+
         <template id="rig-template">
           <a-entity></a-entity>
         </template>
@@ -446,7 +448,7 @@
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
         <a-entity id="rig"  cursor-teleport="cameraRig: #rig; cameraHead: #player; collisionEntities: .collision;" 
-        movement-controls="fly:false;controls:keyboard,nipple;" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 0 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2;">
+        movement-controls="fly:false;controls:keyboard,nipple;speed:1" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 1 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:2;">
           <a-entity
             id="player"
             camera
@@ -460,7 +462,7 @@
         <!-- camera end -->
         <!-- category name board -->
 
-        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2">
+        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable">
           <a-plane id="category-name-board" position="0 1.8 -6.8" color="#0080BF" height="0.8" width="1.8">
             <a-text
               id="board-name"
@@ -477,7 +479,8 @@
               position="0 -0.6 0"
               align="center"
               wrap-count="20"
-              width="2.5"
+              width="2.5
+              "
               height="2.5"
               color="black"
               id="text-hallvalue"
@@ -524,10 +527,47 @@
         <a-entity id="stall-avatar9" position="-10 0 -121" rotation="0 -90 0" scale="1 1 1" visible="false"> </a-entity>
         <a-entity id="stall-avatar10" position="16 0 -121" rotation="0 -90 0" scale="1 1 1" visible="false"> </a-entity>
         <!-- avatar models  end-->
+        <!-- waypoint code start -->
+          <!-- stall1 -->
+          <a-image id="moveup1" src="#visit-stall-button" class="clickable"  width="2" position="-24.082 10.5 -10" rotation="0 90 0" open-link="href:#destination1"   look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination1" position="-12.5 1 -7.5" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+         <!-- stall2 -->
+          <a-image id="moveup2" class="clickable" width="2" height="0.5" position="20.5 9.8 -10" rotation="0 -90 0" src="#visit-stall-button"  open-link="href:#destination2"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination2" position="10 1 -7.5" rotation="0 90 0" color="red" side="double"></a-waypoint>
+          <!-- stall3 -->
+          <a-image id="moveup3" class="clickable" width="2" height="0.5" position="-22.1 9.8 -41" rotation="0 90 0" src="#visit-stall-button"  open-link="href:#destination3"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination3" position="-12 1 -40" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+          <!-- stall4 -->
+          <a-image id="moveup4" class="clickable" width="2" height="0.5" position="20 9.8 -39" rotation="0 -90 0" src="#visit-stall-button"  open-link="href:#destination4"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination4" position="10 1 -39" rotation="0 90 0" color="red" side="double"></a-waypoint>
+          <!-- stall5 -->
+          <a-image id="moveup5" class="clickable" width="2" height="0.5" position="-23 9.8 -70" rotation="0 90 0" src="#visit-stall-button"  open-link="href:#destination5"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination5" position="-12 1 -70" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+           <!-- stall6 -->
+          <a-image id="moveup6" class="clickable" width="2" height="0.5" position="20 9.8 -67.721" rotation="0 -90 0" src="#visit-stall-button"  open-link="href:#destination6"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination6" position="10 1 -67" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <!-- stall7 -->
+          <a-image id="moveup7" class="clickable" width="2" height="0.5" position="-20 9.8 -100.71" rotation="0 90 0" src="#visit-stall-button"  open-link="href:#destination7"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination7" position="-12 1 -100" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+           <!-- stall8 -->
+          <a-image id="moveup8" class="clickable" width="2" height="0.5" position="20 9.8 -97.305" rotation="0 -90 0" src="#visit-stall-button"  open-link="href:#destination8"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination8" position="10 1 -97" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <!-- stall9 -->
+          <a-image id="moveup9" class="clickable" width="2" height="0.5" position="-10 9.8 -116" rotation="0 0 0" src="#visit-stall-button"  open-link="href:#destination9"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination9" position="-7 1 -105" rotation="0 180 0" color="red" side="double"></a-waypoint>
+           <!-- stall10 -->
+          <a-image id="moveup10" class="clickable" width="2" height="0.5" position="15 9.8 -116" rotation="0 0 0" src="#visit-stall-button"  open-link="href:#destination10"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination10" position="13 1 -105" rotation="0 180 0" color="red" side="double"></a-waypoint>
+
+          <!-- waypoint code end -->
+          <!-- stall 5 waypoint code -->
+          <a-image id="moveup51" class="clickable" width="2" height="0.5" position="0 9.8 -60" rotation="0 0 0" open-link="href:#destination51" src="#visit-stall-button" look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination51" position="0 1 -50" rotation="0 180 0" color="red" side="double"></a-waypoint>
+          <!-- stall 5 waypoint code ends -->
         <!-- stall1 -->
-        <a-plane id="moveup" class="clickable" width="2" height="2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"   open-link="href:#destination"></a-plane>
-  
-        <a-waypoint id="destination" position="-12.5 1 -7.5" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+       
+
+        
         <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
           <a-entity
             id="advertise1"
