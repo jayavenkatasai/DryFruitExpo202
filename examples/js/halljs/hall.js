@@ -257,7 +257,7 @@ const fetchDataFromAPI = () => {
                
                 // banners logic end 
                 data.stalls.forEach((stall, stallIndex) => {
-                        const stallContainerId = `stall${stallIndex + 1}`;  
+                    const stallContainerId = `stall${stallIndex + 1}`;  
                         document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value',stall.uno)
                         document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","true");
                         document.getElementById(`moveup${stallIndex + 1}`).setAttribute("visible","true");
@@ -504,6 +504,7 @@ const fetchDataFromAPI = () => {
 
             }
             checkhallfive(apivariable.stalls.length);
+            document.getElementById(`stall${data.stalls.length}-next`).setAttribute('visible','false')
         })
         .catch(error => {
             // Handle fetch errors

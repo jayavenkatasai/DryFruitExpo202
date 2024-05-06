@@ -399,6 +399,8 @@
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" />
         <img id="share-button" src="assets/icons/shareicon.png" />
         <img id="visit-stall-button" src="assets/icons/visitstall-button.png" />
+         <img id="stall-next" src="assets/icons/next-button.png" />
+          <img id="stall-prev" src="assets/icons/previous-button.png" />
 
         <template id="rig-template">
           <a-entity></a-entity>
@@ -529,7 +531,7 @@
         <!-- avatar models  end-->
         <!-- waypoint code start -->
           <!-- stall1 -->
-          <a-image id="moveup1" src="#visit-stall-button" class="clickable"  width="2" position="-24.082 10.5 -10" rotation="0 90 0" open-link="href:#destination1"   look-at="[camera]" visible="false" scale="2 2 2"></a-image>
+          <a-image id="moveup1" src="#visit-stall-button" class="clickable"  width="2" height="0.5" position="-24.082 10.5 -10" rotation="0 90 0" open-link="href:#destination1"   look-at="[camera]" visible="false" scale="2 2 2"></a-image>
           <a-waypoint id="destination1" position="-12.5 1 -7.5" rotation="0 -90 0" color="red" side="double"></a-waypoint>
          <!-- stall2 -->
           <a-image id="moveup2" class="clickable" width="2" height="0.5" position="20.5 9.8 -10" rotation="0 -90 0" src="#visit-stall-button"  open-link="href:#destination2"  look-at="[camera]" visible="false" scale="2 2 2"></a-image>
@@ -564,11 +566,19 @@
           <a-image id="moveup51" class="clickable" width="2" height="0.5" position="0 9.8 -60" rotation="0 0 0" open-link="href:#destination51" src="#visit-stall-button" look-at="[camera]" visible="false" scale="2 2 2"></a-image>
           <a-waypoint id="destination51" position="0 1 -50" rotation="0 180 0" color="red" side="double"></a-waypoint>
           <!-- stall 5 waypoint code ends -->
-        <!-- stall1 -->
-       
-
-        
-        <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
+      
+      <!-- buttons ---next prev  -->
+      
+      
+      
+      
+      
+      
+      
+          <!-- stall1 -->
+       <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
+         <a-image id="stall1-next" class="clickable" width="2" height="0.5"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination1-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination1-next" position="36 1 0" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise1"
             gltf-model="#adversting_stand"
@@ -756,6 +766,10 @@
         </a-image>
         <!-- stall 2 -->
         <a-entity id="stall2" position="25.098 -0.05 -9.410" scale="1 1 1" rotation="0 180 0" visible="false">
+         <a-image id="stall2-next" class="clickable" width="2" height="0.5"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination2-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination2-next" position="35 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <a-image id="stall2-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination2-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination2-prev" position="35 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise2"
             gltf-model="#adversting_stand"
@@ -951,6 +965,10 @@
         </a-image>
         <!-- stall 3 -->
         <a-entity id="stall3" rotation="0 0 0" position="-26.584 -0.05 -41.96" scale="1 1 1" visible="false">
+           <a-image id="stall3-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination3-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination3-next" position="36 1 4" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <a-image id="stall3-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination3-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination3-prev" position="36 1 28" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise3"
             gltf-model="#adversting_stand"
@@ -1148,6 +1166,10 @@
         <!-- stall 4 -->
 
         <a-entity id="stall4" position="24.85 -0.05 -38.856" rotation="0 180 0" scale="1 1 1" visible="false">
+             <a-image id="stall4-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination4-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination4-next" position="35 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <a-image id="stall4-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination4-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination4-prev" position="35 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise4"
             gltf-model="#adversting_stand"
@@ -1344,6 +1366,10 @@
         <!-- stall 5 -->
 
         <a-entity position="-27.857 -0.05 -71.2" id="stall5" rotation="0 0 0" scale="1 1 1" visible="false">
+             <a-image id="stall5-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination5-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination5-next" position="36 1 4" rotation="0 90 0" color="red" side="double"></a-waypoint>
+           <a-image id="stall5-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination5-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination5-prev" position="36 1 28" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise5"
             gltf-model="#adversting_stand"
@@ -1538,6 +1564,10 @@
         </a-image>
         <!-- stall 6-->
         <a-entity id="stall6" rotation="0 180 0" position="24.961 -0.05 -67.721" scale="1 1 1" visible="false">
+           <a-image id="stall6-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination6-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination6-next" position="35 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
+          <a-image id="stall6-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination6-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination6-prev" position="35 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise6"
             gltf-model="#adversting_stand"
@@ -1729,6 +1759,10 @@
         </a-image>
         <!-- stall 7 -->
         <a-entity position="-25 -0.05 -100.71" id="stall7" rotation="0 0 0" scale="1 1 1" visible="false">
+             <a-image id="stall7-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination7-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination7-next" position="36 1 4" rotation="0 90 0" color="red" side="double"></a-waypoint>
+                <a-image id="stall7-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination7-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination7-prev" position="36 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise7"
             gltf-model="#adversting_stand"
@@ -1925,6 +1959,10 @@
         <!-- stall 8-->
 
         <a-entity id="stall8" rotation="0 180 0" position="25.454 -0.05 -97.305" scale="1 1 1" visible="false">
+             <a-image id="stall8-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination8-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination8-next" position="35 1 6" rotation="0 0 0" color="red" side="double"></a-waypoint>
+            <a-image id="stall8-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination8-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination8-prev" position="35 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise8"
             gltf-model="#adversting_stand"
@@ -2120,6 +2158,10 @@
 
         <!-- stall 9 -->
         <a-entity position="-9.555 -0.05 -121.016" id="stall9" rotation="0 -90 0" scale="1 1 1" visible="false">
+            <a-image id="stall9-next" class="clickable" width="2" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination9-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination9-next" position="18 1 -22" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+            <a-image id="stall9-prev" class="clickable" width="2" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination9-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination9-prev" position="25 1 -18" rotation="0 180 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise9"
             gltf-model="#adversting_stand"
@@ -2314,6 +2356,10 @@
         </a-image>
         <!-- stall 10 -->
         <a-entity id="stall10" rotation="0 -90 0" position="16.257 -0.05 -120.676" scale="1 1 1" visible="false">
+           <a-image id="stall10-prev" class="clickable" width="2" height="0.5"   position="6 3.4 12" rotation="0 90 0" open-link="href:#destination10-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-waypoint id="destination10-prev" position="18 1 30" rotation="0 -90 0" color="red" side="double"></a-waypoint>
+           <a-image id="stall10-next" class="clickable" width="2" height="0.5"   position="6 5 12" rotation="0 90 0" open-link="href:#destination10-next" src="#stall-next"  visible="false" scale="2 2 2"></a-image>
+          <a-waypoint id="destination10-next" position="18 1 30" rotation="0 -90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise10"
             gltf-model="#adversting_stand"
