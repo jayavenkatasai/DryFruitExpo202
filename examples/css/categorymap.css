@@ -7,13 +7,13 @@ p,h1,h2,h3,h4,h5,h6{
     padding:0;
 }
 .categoryheading{
-    color: #F65927;
+    color: #299941;
     font-size: 50px;
     font-weight: 600;
     padding-bottom:5px;
 }
 .categoryDescription{
-    color: #464646;
+    color: #5A463F;
     font-size:22px;
     text-align:center;
     padding-bottom:40px;
@@ -21,26 +21,26 @@ p,h1,h2,h3,h4,h5,h6{
 .numberToggle{
     background-color: transparent!important;
     color: #363636!important;
-    border-color:#F65927!important;
+    border-color:#299941!important;
 }
 .numberToggle:hover{
     background-color: transparent!important;
     color: #363636!important;
-    border-color:#F65927!important;
+    border-color:#299941!important;
 }
 .numberToggle:focus{
     outline:none!important;
     background-color: transparent!important;
     color: #363636!important;
     box-shadow:none!important;
-    border-color:#F65927!important;
+    border-color:#299941!important;
 }
 .dropdown-menu.show{
     height:175px;
     overflow:scroll;
 }
 .dropdown-item:focus, .dropdown-item:hover{
-    border-color:#F65927!important;
+    border-color:#299941!important;
     color:#363636;
 }
 .categoryheading{
@@ -56,10 +56,10 @@ p.categoryName {
 }
 .categoryMap{
     padding:60px 0 170px 0;
-    background: #F1FDFF; 
+    background: #F5FFF6; 
 }
 .categoryName {
-    color: #464646;
+    color: #5A463F;
     font-size: 22px;
     font-weight: 500;
     padding-bottom: 5px;
@@ -74,7 +74,7 @@ p.categoryName {
 .dropdownSection select {
 	padding: 6px;
 	background: transparent;
-	border: 2px solid #F65927;
+	border: 2px solid #299941;
 	border-radius: 4px;
     cursor: pointer;
 }
@@ -112,11 +112,11 @@ p.categoryName {
 	font-size: 14px;
 }
 .visitCategory {
-    color: #FFF;
+    color: #fff;
     position: relative;
     font-weight: 600;
     border-radius: 5px;
-    background: #F65927;
+    background: #299941;
     padding: 8px 12px;
     text-decoration: none;
     max-width: 115px;
@@ -129,14 +129,14 @@ p.categoryName {
     margin:20px 0 0 0;
 }
 .visitCategory:hover{
-    color: #FFF;
+    color: #fff;
     text-decoration:none;
 }
 .category {
 	padding: 16px 0 5px 0;
 	border-radius: 10px;
-	border: 2px solid #F65927;
-	background: #FFF;
+	border: 2px solid #299941;
+	background: #fff;
 	text-align: center;
 	position: relative;
 	text-align: center;

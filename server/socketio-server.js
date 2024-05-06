@@ -7,7 +7,7 @@ const express = require("express"); // web framework external module
 process.title = "networked-aframe-server";
  
 // Get port or default to 8080
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 7000;
  
 // Threshold for instancing a room
 const maxOccupantsInRoom = 10;
