@@ -63,6 +63,7 @@ let requestBody = {
 
     // Function to render stalls
     function renderStalls() {
+        expoContainer.innerHTML = "";
         if (!Array.isArray(stallsData.stalls)) {
             console.error('stallsData.stalls is not an array:', stallsData.stalls);
             return;
@@ -129,4 +130,10 @@ function showpopup(prdname,prdprice,prdlink){
   document.getElementById('prd-price').textContent  =prdprice
   document.getElementById('prd-link').textContent  =prdlink
   document.getElementById('popup').style.display='block'
+}
+
+function changehall(indexvalue){ 
+  requestBody.start=(indexvalue-1)*10+1,
+  requestBody.end=(indexvalue)*10,
+fetchdata();
 }
