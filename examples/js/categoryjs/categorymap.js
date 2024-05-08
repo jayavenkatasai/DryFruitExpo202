@@ -26,8 +26,90 @@ const visitTranslations = {
     {
         "visittext": "विजिट हॉल",
         "categoryheading":"शुरू हो जाओ",
-        "categoryDescription": "श्रेणी के आधार पर खोजें कि आपको क्या चाहिए"
-     },
+        "categoryDescription": "श्रेणी के आधार पर खोजें कि आपको क्या चाहिए",
+        "Diagnostic Supplies, Products & Equipment": "डायग्नोस्टिक सप्लाईज़, प्रोडक्ट्स और इक्विपमेंट",
+        "Durable medical equipment": "ड्यूरेबल मेडिकल इक्विपमेंट",
+        "Emergency Medical Supplies & Equipment": "इमर्जेंसी मेडिकल सप्लाईज़ और इक्विपमेंट",
+        "Home medical equipments/ supplies": "होम मेडिकल इक्विपमेंट्स/ सप्लाईज़",
+        "Implantable Devices": "इम्प्लांटेबल डिवाइसेस",
+        "Medical Education Supplies": "मेडिकल एजुकेशन सप्लाईज़",
+        "Medical Software": "मेडिकल सॉफ्टवेयर",
+        "Medical Uniforms, Scrubs & Apparel": "मेडिकल यूनिफ़ॉर्म्स, स्क्रब्स और अपारल",
+        "Medical/ surgical instruments": "मेडिकल/ सर्जिकल इंस्ट्रूमेंट्स",
+        "Patient care": "पेशेंट केयर",
+        "Patient mobility aids": "पेशेंट मोबिलिटी एड्स",
+        "Sterile Processing & Infection Control": "स्टेराइल प्रोसेसिंग और इन्फेक्शन कंट्रोल"
+     },"telugu": {
+        "visittext": "భేటీ హాల్",
+        "categoryheading": "ప్రారంభించు",
+        "categoryDescription": "స్థాయి ప్రకారం మీరు ఏమి కావాలనుకుంటున్నారు చూడండి",
+        "Diagnostic Supplies, Products & Equipment": "డయాగ్నోస్టిక్ సరఫరాలు, ఉత్పాదాలు మరియు సాధనాలు",
+        "Durable medical equipment": "దిగుమతి మెడికల్ ఉపకరణాలు",
+        "Emergency Medical Supplies & Equipment": "అత్యావశ్యక మెడికల్ సరఫరాలు మరియు ఉపకరణాలు",
+        "Home medical equipments/ supplies": "హోమ్ మెడికల్ ఉపకరణాలు/ సరఫరాలు",
+        "Implantable Devices": "ఇంప్లాంటబుల్ పరికరాలు",
+        "Medical Education Supplies": "మెడికల్ ఎజ్యుకేషన్ సరఫరాలు",
+        "Medical Software": "మెడికల్ సాఫ్ట్‌వేర్",
+        "Medical Uniforms, Scrubs & Apparel": "మెడికల్ యూనిఫార్మ్‌లు, స్క్రబ్స్ మరియు అపారెల్",
+        "Medical/ surgical instruments": "మెడికల్/ సర్జికల్ ఉపకరణాలు",
+        "Patient care": "పేషెంట్ సంరక్షణ",
+        "Patient mobility aids": "పేషెంట్ మాబిలిటీ సహాయాలు",
+        "Sterile Processing & Infection Control": "స్టెరైల్ ప్రాసెసింగ్ & ఇన్‌ఫెక్షన్ కంట్రోల్"
+    }
+,    "gujrathi": {
+    "visittext": "હોલ મુલાકાત",
+    "categoryheading": "શરૂ કરો",
+    "categoryDescription": "શ્રેણી પ્રમાણે શોધો શું તમે શોધો છો",
+    "Diagnostic Supplies, Products & Equipment": "નિદાનાત્મક સરનામાં, ઉત્પાદો અને સાધનો",
+    "Durable medical equipment": "ટિકાઊ તબીબી સાધનો",
+    "Emergency Medical Supplies & Equipment": "આત્મજીવન તબીબી સરનામાં અને સાધનો",
+    "Home medical equipments/ supplies": "ઘરેલું તબીબી સાધનો/ સરનામાં",
+    "Implantable Devices": "અંતર્ગત સાધનો",
+    "Medical Education Supplies": "તબીબી શિક્ષણ સરનામાં",
+    "Medical Software": "તબીબી સોફ્ટવેર",
+    "Medical Uniforms, Scrubs & Apparel": "તબીબી યુનિફોર્મ્સ, સ્ક્રબ્સ અને અપારલ",
+    "Medical/ surgical instruments": "તબીબી/ શસ્ત્રક્રિયાત્મક સાધનો",
+    "Patient care": "રોગી સારવાર",
+    "Patient mobility aids": "રોગી ચળવણી સહાયાં",
+    "Sterile Processing & Infection Control": "સ્ટેરાઇલ પ્રક્રિયા અને સંક્રમણ નિયંત્રણ"
+}
+,
+"marati": {
+    "visittext": "हॉल भेट",
+    "categoryheading": "सुरुवात करा",
+    "categoryDescription": "आपल्या आवडत्या वस्तू श्रेणीनुसार शोधा",
+    "Diagnostic Supplies, Products & Equipment": "आयुर्वेदिक आणि मेडिकल वस्तू",
+    "Durable medical equipment": "दायरात व ठोस मेडिकल साधने",
+    "Emergency Medical Supplies & Equipment": "आधारात्मक और आवश्यक आयुर्वेदिक सामग्री आणि उपकरणे",
+    "Home medical equipments/ supplies": "घरातील मेडिकल उपकरणे/साहित्य",
+    "Implantable Devices": "ईंप्लांटेबल उपकरणे",
+    "Medical Education Supplies": "मेडिकल शिक्षणाची साहित्य",
+    "Medical Software": "मेडिकल सॉफ्टवेअर",
+    "Medical Uniforms, Scrubs & Apparel": "मेडिकल युनिफॉर्म, उभ्या कपड्यांची आणि अपारल",
+    "Medical/ surgical instruments": "मेडिकल/ क्षत्रिय उपकरणे",
+    "Patient care": "रुग्ण सेवा",
+    "Patient mobility aids": "रुग्ण मोबिलिटी साहाय्या",
+    "Sterile Processing & Infection Control": "स्टेराइल प्रक्रिया आणि संक्रमण नियंत्रण"
+}
+,
+"bengali": {
+    "visittext": "হল দেখুন",
+    "categoryheading": "আরম্ভ করুন",
+    "categoryDescription": "আপনি কী খুঁজছেন সেটা শ্রেণী অনুযায়ী খুঁজে নিন",
+    "Diagnostic Supplies, Products & Equipment": "ডায়াগনস্টিক সাপ্লাইস, পণ্য এবং সরঞ্জাম",
+    "Durable medical equipment": "টিকে থাকা চিকিৎসা সরঞ্জাম",
+    "Emergency Medical Supplies & Equipment": "অত্যাবশ্যক চিকিৎসা সরঞ্জাম এবং সরঞ্জাম",
+    "Home medical equipments/ supplies": "বাড়িতে চিকিৎসা সরঞ্জাম/ সামগ্রী",
+    "Implantable Devices": "ইম্প্ল্যান্টেবল ডিভাইস",
+    "Medical Education Supplies": "চিকিৎসা শিক্ষা সরঞ্জাম",
+    "Medical Software": "চিকিৎসা সফটওয়্যার",
+    "Medical Uniforms, Scrubs & Apparel": "চিকিৎসা ইউনিফর্ম, স্ক্রাব এবং আপারেল",
+    "Medical/ surgical instruments": "চিকিৎসা/ অপারেশনাল উপকরণ",
+    "Patient care": "রোগীর যত্ন",
+    "Patient mobility aids": "রোগী চলার সাহায্য",
+    "Sterile Processing & Infection Control": "স্টেরাইল প্রসেসিং এবং সংক্রামক নিয়ন্ত্রণ"
+}
+
     
 };
 
@@ -109,7 +191,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const visitText = visitTranslations[language];
         // Iterate over each category and generate HTML
         data.forEach((category, index) => {
-            const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
+         //   const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
+        const categoryName =visitTranslations[language][category.CATEGORY] || category.CATEGORY
             const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY,category);
             categoriesContainer.innerHTML += categoryHTML;
           //  document.getElementsByClassName('visitHallButton').style.display='flex'

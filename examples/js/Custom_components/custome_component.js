@@ -1,15 +1,45 @@
 var usernamelocal=localStorage.getItem('UserName');
 var guidd = localStorage.getItem('GUID')
 const textlanguage = localStorage.getItem('languageselection')
-let message = '';
+// let message = '';
 
-if (textlanguage === 'hindi') {
-  // Message in Hindi
-  message = `नमस्ते ${localStorage.getItem('UserName')}, आपकी कैसे सहायता कर सकता हूँ?`;
-} else {
-  // Default message in English
-  message = `Hello ${localStorage.getItem('UserName')}, how can I help you?`;
+// if (textlanguage === 'hindi') {
+//   // Message in Hindi
+//   message = `नमस्ते ${localStorage.getItem('UserName')}, आपकी कैसे सहायता कर सकता हूँ?`;
+// } else {
+//   // Default message in English
+//   message = `Hello ${localStorage.getItem('UserName')}, how can I help you?`;
+// }
+
+
+
+// Define messages for different languages
+const messages = {
+  english: (userName) => `Hello ${userName}, how can I help you?`,
+  hindi: (userName) => `नमस्ते ${userName}, आपकी कैसे सहायता कर सकता हूँ?`,
+  marathi: (userName) => `नमस्कार ${userName}, आपल्याला कशी मदत करू शकतो?`,
+  gujrathi: (userName) => `હેલો ${userName}, તમને કેવી રીતે સહાય કરી શકું?`,
+  bengali: (userName) => `হ্যালো ${userName}, আমি কীভাবে সাহায্য করতে পারি?`,
+  telugu: (userName) => `హలో ${userName}, మీకు ఎలా సహాయం చేయగలను?`
+};
+
+// Function to generate message based on selected language
+function generateMessage(language, userName) {
+  if (language in messages) {
+      return messages[language](userName);
+  } else {
+      // Default to English if the selected language is not found
+      return messages.english(userName);
+  }
 }
+
+// Example usage:
+// You can call generateMessage with the selected language and user's name
+const selectedLanguagee = textlanguage; // Replace with the selected language variable
+const userName = localStorage.getItem('UserName'); // Assuming you have the user's name stored in localStorage
+const message = generateMessage(selectedLanguagee, userName);
+console.log(message); // Display the generated message
+
 
 // text animation word by word
 AFRAME.registerComponent("type-on", {

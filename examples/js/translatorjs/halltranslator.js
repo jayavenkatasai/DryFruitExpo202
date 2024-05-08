@@ -21,7 +21,6 @@ const datalanguage = {
         "URLcopiedtoclipboard":"URL copied to clipboard!",
         "Rotateyourmobile":"Rotate your mobile"
     },
-   
     "hindi":
     {
         "labelchat": "चैट",
@@ -44,11 +43,89 @@ const datalanguage = {
          "URLcopiedtoclipboard":"URL क्लिपबोर्ड पर कॉपी किया गया!",
          "Rotateyourmobile":"अपने मोबाइल को घुमाएं"
      },
-    
+     "telugu":{
+        "labelchat": "చాట్",
+        "labelexplore": "అన్వేషించు",
+        "labelexit": "నిష్క్రమణ",
+        "labelcategory": "వర్గం",
+        "fullscreenButton": "పూర్తి పర్దాలు ఎంటర్ చేయండి",
+        "Exitfullscreen": "పూర్తి పర్దాలు నిష్క్రమించండి",
+        "loadingtext": "మీ వర్చ్యువల్ అనుభవం లోడ్ అవుతోంది దయచేసి ఎప్పటికప్పుడు ఎప్పటికప్పుడు వేచి ఉంచండి",
+        "sharestalllink": "స్టాల్ లింక్‌ను భాగించు",
+        "stalllink": "స్టాల్ లింక్",
+        "copy": "కాపీ",
+        "shareproductlink": "ఉత్పత్తి లింక్‌ను భాగించు",
+        "productlink": "ఉత్పత్తి లింక్",
+        "visitproduct": "ఉత్పత్తి చూడండి",
+        "shareproduct": "ఉత్పత్తిని భాగించు",
+        "jointhewebinar": "వెబినార్‌లో చేరండి",
+        "jointhesession": "సెషన్‌లో చేరండి",
+        "URLcopiedtoclipboard": "URL క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది!",
+        "Rotateyourmobile": "మీ మొబైల్ ను తిరగడం"
+    }
+,
+"gujrathi":{
+    "labelchat": "ચેટ",
+    "labelexplore": "અન્વેષણ કરો",
+    "labelexit": "બહાર નીકળો",
+    "labelcategory": "વર્ગ",
+    "fullscreenButton": "પૂર્ણ સ્ક્રીન પ્રવેશ કરો",
+    "Exitfullscreen": "પૂર્ણ સ્ક્રીન બહાર નીકળો",
+    "loadingtext": "કૃપા કરીને આપની વર્ચ્યુઅલ અનુભવ લોડ થઈ રહ્યું છે તમે વર્ચ્યુઅલ અનુભવ લોડ થઈ રહ્યો છે",
+    "sharestalllink": "સ્ટોલ લિંક શેર કરો",
+    "stalllink": "સ્ટોલ લિંક",
+    "copy": "કૉપી કરો",
+    "shareproductlink": "ઉત્પાદ લિંક શેર કરો",
+    "productlink": "ઉત્પાદ લિંક",
+    "visitproduct": "ઉત્પાદ મુલાકાત",
+    "shareproduct": "ઉત્પાદ શેર કરો",
+    "jointhewebinar": "વેબિનારમાં જોડાઓ",
+    "jointhesession": "સેશનમાં જોડાઓ",
+    "URLcopiedtoclipboard": "URL ક્લિપબોર્ડમાં કોપી કરવામાં આવ્યું છે!",
+    "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો"
+},
+"marati":{
+    "labelchat": "चॅट",
+    "labelexplore": "अन्वेषण करा",
+    "labelexit": "बाहेर पडा",
+    "labelcategory": "श्रेणी",
+    "fullscreenButton": "पूर्णस्क्रीन प्रवेश करा",
+    "Exitfullscreen": "पूर्णस्क्रीन बाहेर पडा",
+    "loadingtext": "कृपया प्रतीक्षा करा जेव्हा आपला व्यार्चुअल अनुभव लोड होत आहे",
+    "sharestalllink": "स्टॉल लिंक सामायिक करा",
+    "stalllink": "स्टॉल लिंक",
+    "copy": "प्रतिलिपि",
+    "shareproductlink": "उत्पाद लिंक सामायिक करा",
+    "productlink": "उत्पाद लिंक",
+    "visitproduct": "उत्पाद भेटा",
+    "shareproduct": "उत्पाद सामायिक करा",
+    "jointhewebinar": "वेबिनारमध्ये सामील व्हा",
+    "jointhesession": "सत्रात सामील व्हा",
+    "URLcopiedtoclipboard": "URL क्लिपबोर्डमध्ये कॉपी केले गेले आहे!",
+    "Rotateyourmobile": "आपलं मोबाइल फेरबदला"
+},
+"bengali":{
+    "labelchat": "চ্যাট",
+    "labelexplore": "অন্বেষণ করুন",
+    "labelexit": "প্রস্থান",
+    "labelcategory": "বিভাগ",
+    "fullscreenButton": "পূর্ণ স্ক্রিনে প্রবেশ করুন",
+    "Exitfullscreen": "পূর্ণ স্ক্রিন থেকে প্রস্থান করুন",
+    "loadingtext": "আপনার ভার্চুয়াল অভিজ্ঞতা লোড হচ্ছে অনুগ্রহ করে অপেক্ষা করুন",
+    "sharestalllink": "স্টল লিংক ভাগ করুন",
+    "stalllink": "স্টল লিংক",
+    "copy": "অনুলিপি",
+    "shareproductlink": "পণ্য লিংক ভাগ করুন",
+    "productlink": "পণ্য লিংক",
+    "visitproduct": "পণ্য দেখুন",
+    "shareproduct": "পণ্য ভাগ করুন",
+    "jointhewebinar": "ওয়েবিনারে যোগদান করুন",
+    "jointhesession": "সেশনে যোগদান করুন",
+    "URLcopiedtoclipboard": "URL ক্লিপবোর্ডে কপি করা হয়েছে!",
+    "Rotateyourmobile": "আপনার মোবাইল ঘোরান"
+}
 };
-
 const language = localStorage.getItem('languageselection')
-
 const chat = document.querySelector('.labelchat')
 const explore = document.querySelector('.labelexplore')
 const exit = document.querySelector('.labelexit')

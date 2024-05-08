@@ -71,7 +71,28 @@
         left: 51%;
         bottom: 2%;
       }
-
+      .languageSection{
+        display:flex;
+        align-items: center;
+        gap:10px;
+      }
+      select {
+            background: transparent;
+            border: 1px solid #dede;
+            border-radius: 5px;
+            padding: 10px 10px;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: "Nunito", sans-serif;
+            color: #fff;
+        }
+        select option{
+            font-size: 18px;
+            font-weight: 600;
+            font-family: "Nunito", sans-serif;
+            background-color: transparent;
+            color: #363636;
+        }
       .welcomeIntro {
         color: #8fdaff;
         font-size: 55px;
@@ -243,7 +264,11 @@
         color: #fff;
         font-size: 25px;
         font-weight: 700;
-        padding-bottom: 10px;
+      }
+      @media only screen and (max-width:1300px){
+        .chooseText {
+          font-size: 18px!important;
+        }
       }
       @media only screen and (max-width: 1470px) {
         .welcomeIntro {
@@ -272,7 +297,10 @@
           padding-bottom: 30px;
         }
         .chooseText {
-          font-size: 22px;
+          font-size: 20px;
+        }
+        select {
+          font-size: 16px;
         }
         .radioButtons span {
           font-size: 18px;
@@ -356,11 +384,19 @@
         .termsSection {
           padding-bottom: 10px;
         }
+        select {
+          border: 1px solid #1a7aaa;
+          color: #1a7aaa;
+          font-size:16px;
+        }
         .mainLogo {
           display: block;
         }
         .welcomeHsptlText {
           padding-bottom: 15px;
+        }
+        .languageSection {
+          justify-content: center;
         }
         .welcomeIntro {
           color: #f65927;
@@ -379,6 +415,7 @@
         .chooseText {
           color: #1a7aaa;
           text-align: center;
+          font-size: 18px;
         }
         .radioButtonOne,
         .radioButtonTwo {
@@ -456,13 +493,25 @@
       <div class="mainLogo">
         <img class="mainLogo" src="assets/logo/H&MS Expo logo.png" />
       </div>
+      
       <div class="introContents">
         <div class="introSections">
           <div class="sectionOne">
             <p class="welcomeIntro">Welcome to</p>
             <p class="welcomeHsptlText">Hospital & Medical Supplies Expo</p>
-            <p class="chooseText">Choose a language :</p>
-            <div class="radioButtons">
+            <div class="languageSection">
+              <p class="chooseText">Choose a language :
+              </p>
+              <span class="languageDropdown"><select>
+                <!-- <option>English</option>
+                <option>Hindi</option>
+                <option>telugu</option>
+                <option>gujrathi</option>
+                <option>bengali</option>
+                <option>marathi</option> -->
+            </select></span>
+            </div>
+            <!-- <div class="radioButtons">
               <div class="radioButtonOne">
                 <input type="radio" name="language" class="inputone" value="english" checked />
                 <div class="overLay"></div>
@@ -473,7 +522,7 @@
                 <div class="overLay"></div>
                 <span>हिंदी</span>
               </div>
-            </div>
+            </div> -->
             <!-- <div id="name-container">
               <input class="nameInput" type="text" placeholder="Enter your name" id="name-value" />
             </div>

@@ -1,3 +1,37 @@
+const selectedLanguage = localStorage.getItem('languageselection') ; 
+const translations = {
+    "english": {
+        urlText: "Product Link",
+        inviteText: "Share Product Link",
+        chattext:"Note: Click here to chat"
+    },
+    "hindi": {
+        urlText: "उत्पाद लिंक",
+        inviteText: "उत्पाद लिंक साझा करें",
+        chattext:"नोट: चैट करने के लिए यहां क्लिक करें"
+    },
+    "marathi": {
+        urlText: "उत्पाद लिंक",
+        inviteText: "उत्पाद लिंक सामायिक करा",
+        chattext:"टीप: चॅट करण्यासाठी इथे क्लिक करा"
+    },
+    "gujrathi": {
+        urlText: "ઉત્પાદ લિંક",
+        inviteText: "ઉત્પાદ લિંક શેર કરો",
+        chattext:"લાખનું: ચેટ કરવા માટે અહીં ક્લિક કરો"
+    },
+    "bengali": {
+        urlText: "পণ্য লিংক",
+        inviteText: "পণ্য লিংক শেয়ার করুন",
+        chattext:"লক্ষ্য করুন: চ্যাট করার জন্য এখানে ক্লিক করুন"
+    },
+    "telugu": {
+        urlText: "ఉత్పత్తి లింక్",
+        inviteText: "ఉత్పత్తి లింక్ భాగస్వామ్యం చేయండి",
+        chattext:"గమనిక: చాట్ చేయడానికి ఇక్కడ నొక్కండి"
+    }
+};
+
 //urlendpoint 
 var urlendpoint = '';
 var selectedLanguages = localStorage.getItem('languageselection')
@@ -76,13 +110,14 @@ function share(uno,name){
     //console.log(newURL)
     var popupOverlay = document.getElementById('popup-overlay');
     var currentURLInput = document.getElementById('currentURL');
-    if(selectedLanguages=='hindi'){
-        document.getElementById('urlText').textContent = "स्टाल लिंक"
-        document.querySelector('.inviteText').textContent = "Share Stall Link"
-    }else{
-        document.getElementById('urlText').textContent = "Stall Link"
-        document.querySelector('.inviteText').textContent = "Share Stall Link"
-    }
+    // if(selectedLanguages=='hindi'){
+    //     document.getElementById('urlText').textContent = "स्टाल लिंक"
+    //     document.querySelector('.inviteText').textContent = "Share Stall Link"
+    // }else{
+    //     document.getElementById('urlText').textContent = "Stall Link"
+    //     document.querySelector('.inviteText').textContent = "Share Stall Link"
+    // }
+    setTextContent(selectedLanguage);
    
     currentURLInput.value = newURL;
     popupOverlay.style.display = 'flex';
@@ -92,20 +127,13 @@ function share(uno,name){
         var halllang = localStorage.getItem('languageselection')
             localStorage.setItem('intiated','true')
             if(useragent=='mobile'){
-                if(halllang=='hindi'){
-                    document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough_hindi.png')
-                }else{
-                    document.getElementById('instructionimg').setAttribute('src','assets/icons/mobilewalkthrough.png')
-                }
+     
+                    document.getElementById('instructionimg').setAttribute('src',`assets/icons/mobilewalkthrough_${halllang}.png`)
+              
                
             }
             else{
-                if(halllang=='hindi'){
-                    document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough_hindi.png')
-                }else{
-                    document.getElementById('instructionimg').setAttribute('src','assets/icons/desktopwalkthrough.png')
-                }
-                
+                    document.getElementById('instructionimg').setAttribute('src',`assets/icons/desktopwalkthrough_${halllang}.png`)     
             }
         document.getElementById('instruction-pannel').style.display='flex'
         tracking(0,`Hall:${categoryparam}`,'',"")
@@ -266,12 +294,13 @@ const fetchDataFromAPI = () => {
                         document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible","true");
                         document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("instanced-mesh-member","mesh:#mesh2");
                         document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
-                        if(halllang=='hindi'){
-                            document.getElementById(`notetext${stallIndex + 1}`).setAttribute('value',"नोट: चैट करने के लिए यहां क्लिक करें")
-                        }else{
+                        // if(halllang=='hindi'){
+                        //     document.getElementById(`notetext${stallIndex + 1}`).setAttribute('value',"नोट: चैट करने के लिए यहां क्लिक करें")
+                        // }else{
                            
-                            document.querySelector(`#notetext${stallIndex + 1}`).setAttribute('value',"Note: Click here to chat")
-                        }
+                        //     document.querySelector(`#notetext${stallIndex + 1}`).setAttribute('value',"Note: Click here to chat")
+                        // }
+                        setTextchatContent(selectedLanguage,stallIndex + 1)
                         document.getElementById(`bubble${stallIndex + 1}`).addEventListener('click',function(){
                             tracking(stall.uno,"chat","","")
                             console.log("trackdone")
@@ -440,13 +469,14 @@ const fetchDataFromAPI = () => {
                                     var popupOverlay = document.getElementById('popup-overlay');
                                     var currentURLInput = document.getElementById('currentURL');
                                     currentURLInput.value = newURL;
-                                    if(selectedLanguages=='hindi'){
-                                        document.getElementById('urlText').textContent = "उत्पाद लिंक"
-                                    document.querySelector('.inviteText').textContent = "उत्पाद लिंक साझा करें"
-                                    }else{
-                                    document.getElementById('urlText').textContent = "Product Link"
-                                    document.querySelector('.inviteText').textContent = "Share Product Link"
-                                    }
+                                    // if(selectedLanguages=='hindi'){
+                                    //     document.getElementById('urlText').textContent = "उत्पाद लिंक"
+                                    // document.querySelector('.inviteText').textContent = "उत्पाद लिंक साझा करें"
+                                    // }else{
+                                    // document.getElementById('urlText').textContent = "Product Link"
+                                    // document.querySelector('.inviteText').textContent = "Share Product Link"
+                                    // }
+                                    setTextContent(selectedLanguage);
                                     popupOverlay.style.display = 'flex';
                                     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
                                     tracking(stall.uno, "share-product", imageDescription)
@@ -818,3 +848,24 @@ function checkurlparm(urlparameter){
  }
 }
     
+function setTextContent(language) {
+    if (language in translations) {
+        const translation = translations[language];
+        document.getElementById('urlText').textContent = translation.urlText;
+        document.querySelector('.inviteText').textContent = translation.inviteText;
+        document.getElementById(`notetext${index + 1}`).setAttribute('value',)
+    } else {
+        // Default to English if the selected language is not found
+        document.getElementById('urlText').textContent = translations.english.urlText;
+        document.querySelector('.inviteText').textContent = translations.english.inviteText;
+        document.getElementById(`notetext${index + 1}`).setAttribute('value',)
+    }
+}
+function setTextchatContent(language,index) {
+    if (language in translations) {
+        const translation = translations[language];
+        document.getElementById(`notetext${index}`).setAttribute('value',translation.chattext)
+    } else {
+        document.getElementById(`notetext${index}`).setAttribute('value',translations.english.chattext)
+    }
+}
