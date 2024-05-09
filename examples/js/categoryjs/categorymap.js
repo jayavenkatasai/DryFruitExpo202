@@ -1,3 +1,4 @@
+
 var urlendpoint = '';
 var exhibition_ID=3;
 const hindiCategories = {
@@ -108,11 +109,8 @@ const visitTranslations = {
     "Patient care": "রোগীর যত্ন",
     "Patient mobility aids": "রোগী চলার সাহায্য",
     "Sterile Processing & Infection Control": "স্টেরাইল প্রসেসিং এবং সংক্রামক নিয়ন্ত্রণ"
-}
-
-    
+}   
 };
-
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
 }
@@ -127,80 +125,180 @@ else if(window.location.href.includes('localhost')){
 else {
     urlendpoint = 'https://www.marketcentral.in';
 }
+var dynamicpoint;
+var internetspeed_kbps;
+var internetspeed_mbps;
+
 document.addEventListener("DOMContentLoaded", function() {
-    fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/${exhibition_ID}`)
-        .then(response => response.json())
-        .then(data => {
-            // Log the response to the console
-            //console.log(data);
-            // Call function to populate categories with the fetched data
-            const language = localStorage.getItem('languageselection')
-            const categoryheading = visitTranslations[language].categoryheading;
-            const categoryDescription = visitTranslations[language].categoryDescription;
-           // console.log(categoryheading)
-            document.querySelector('.categoryheading').textContent = categoryheading;
-            document.querySelector('.categoryDescription').textContent = categoryDescription;
-            populateCategories(data);
-           
-        })
-      
-        .catch(error => console.error('Error fetching data:', error));
-       
+    // if (navigator.connection) {
+    //     console.log(`Effective network type: ${navigator.connection.effectiveType}`);
+    //     console.log(`Downlink Speed: ${navigator.connection.downlink}Mb/s`);
+    //     console.log(`Round Trip Time: ${navigator.connection.rtt}ms`);
+    //   } else {
+    //     console.log('Navigator Connection API not supported');
 
-    // Function to dynamically generate category HTML
-    function generateCategoryHTML(categoryName, index,category,categorynew) {
-        const language = localStorage.getItem('languageselection')
-        const visitText = visitTranslations[language].visittext;
-        const hallCount = categorynew.HALL_COUNT;
-        let dropdownItemsHTML = ''; // Initialize an empty string to store dropdown items
-
-        for (let i = 0; i < hallCount; i++) {
-            let startpoint = i * 10 + 1;
-            let endpoint = (i + 1) * 10;
-            dropdownItemsHTML += `<a class="dropdown-item" onclick="sendbeaconapi(0, '${category}', '')" href="prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${i + 1}">Hall ${i + 1} </a>`;
-        }
+    //   }
     
-        return `
-            <div class="category">
-                <img src="assets/categorymap_images/category${index+1}.png"> <!-- Assuming you have images with corresponding index names -->
-                <p class="categoryName">${categoryName}</p>
-                <div class="dropdownSection">
-                    <div class="visitHallButton">
-                        <a href="prototype.html?category=${encrypt(category)}" href="javascript:void(0)"class="visitCategory" target="_self" onclick="sendbeaconapi(0, '${category}', ''); trackinga('${category}','category_page');return true;">${visitText}</a>
-                    </div>
-                    <div class="dropdown">
-                    <button type="button" class="btn btn-primary numberToggle dropdown-toggle" data-toggle="dropdown">
-                        1
-                    </button>
-                    <div class="dropdown-menu">
-                        ${dropdownItemsHTML}
-                    </div>
-                </div> 
-                </div>
 
-            </div>
-        `;
+function calculateInternetSpeed(callback) {
+    var imageAddr = "https://www.sefram.com/images/products/photos/hi_res/5372DC.jpg" + "?n=" + Math.random();
+    
+    //https://www.sefram.com/images/products/photos/hi_res/5372DC.jpg
+    var startTime, endTime;
+    var downloadSize = 2 * 1024 * 1024; // Size of the file to download in bytes (2 MB)
+
+    var download = new Image();
+    download.onload = function () {
+        endTime = (new Date()).getTime();
+        showResults();
     }
 
-    // Function to populate categories with data
-    function populateCategories(data) {
-        const categoriesContainer = document.getElementById('categoryContents');
-        // Clear previous content
-        categoriesContainer.innerHTML = '';
-        const language = localStorage.getItem('languageselection')
-        const visitText = visitTranslations[language];
-        // Iterate over each category and generate HTML
-        data.forEach((category, index) => {
-         //   const categoryName = (language === 'hindi') ? hindiCategories[category.CATEGORY] : category.CATEGORY;
-        const categoryName =visitTranslations[language][category.CATEGORY] || category.CATEGORY
-            const categoryHTML = generateCategoryHTML(categoryName, index,category.CATEGORY,category);
-            categoriesContainer.innerHTML += categoryHTML;
-          //  document.getElementsByClassName('visitHallButton').style.display='flex'
-          const visitHallButtons = document.getElementsByClassName('visitHallButton');
+    startTime = (new Date()).getTime();
+    download.src = imageAddr;
+
+    function showResults() {
+        var duration = (endTime - startTime) / 1000; // Duration in seconds
+        var bitsLoaded = downloadSize * 8;
+        var speedBps = (bitsLoaded / duration).toFixed(2);
+        var speedKbps = (speedBps / 1024).toFixed(2);
+        var speedMbps = (speedKbps / 1024).toFixed(2);  
+        console.log("Download duration:", duration.toFixed(2) + " seconds");
+        console.log("Downloaded bits:", bitsLoaded);
+        console.log("Speed (Bps):", speedBps);
+        console.log("Speed (Kbps):", speedKbps);
+        console.log("Speed (Mbps):", speedMbps);
+        //alert(speedMbps)
+        internetspeed_kbps = parseInt(speedKbps);
+        internetspeed_mbps = speedMbps;
+        if (callback) {
+            callback(); // Call the callback function once the values are set
+        }
+    }
+}
+calculateInternetSpeed(function() {
+    console.log("Internetspeed in kbps:", internetspeed_kbps);
+    if (internetspeed_kbps > 100) {
+        dynamicpoint = '2d-AgriExpo/hall';
+    } else {
+        dynamicpoint = 'prototype';
+    }
+    console.log("Dynamic point:", dynamicpoint);
+});
+        console.log("Dynamic point:", dynamicpoint);
+        // Fetch data and update UI based on dynamicpoint
+        fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/${exhibition_ID}`)
+          .then(response => response.json())
+          .then(data => {
+                const language = localStorage.getItem('languageselection');
+                const categoryheading = visitTranslations[language].categoryheading;
+                const categoryDescription = visitTranslations[language].categoryDescription;
+                document.querySelector('.categoryheading').textContent = categoryheading;
+                document.querySelector('.categoryDescription').textContent = categoryDescription;
+                populateCategories(data);
+            })
+          .catch(error => console.error('Error fetching data:', error));
+        // Populate categories with data
+        // Function to dynamically generate category HTML
+        function generateCategoryHTML(categoryName, index, category, categorynew) {
+            const language = localStorage.getItem('languageselection');
+            const visitText = visitTranslations[language].visittext;
+            const hallCount = categorynew.HALL_COUNT;
+            let dropdownItemsHTML = '';
+
+            for (let i = 0; i < hallCount; i++) {
+                let startpoint = i * 10 + 1;
+                let endpoint = (i + 1) * 10;
+                dropdownItemsHTML += `<a class="dropdown-item" onclick="sendnavdropdown('${category}','${startpoint}','${endpoint}','${i + 1}')">Hall ${i + 1} </a>`;
+            }
+
+            return `
+                <div class="category">
+                    <img src="assets/categorymap_images/category${index+1}.png">
+                    <p class="categoryName">${categoryName}</p>
+                    <div class="dropdownSection">
+                        <div class="visitHallButton">
+                        <a class="visitCategory" target="_self" onclick="sendnav('${category}')">${visitText}</a>
+
+                        </div>
+                     
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary numberToggle dropdown-toggle" data-toggle="dropdown">
+                                1
+                            </button>
+                            <div class="dropdown-menu">
+                                ${dropdownItemsHTML}
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            `;
+        }
+        function populateCategories(data) {
+            
+            const categoriesContainer = document.getElementById('categoryContents');
+            categoriesContainer.innerHTML = '';
+            const language = localStorage.getItem('languageselection');
+            const visitText = visitTranslations[language].visittext;
+            data.forEach((category, index) => {
+                const categoryName = visitTranslations[language][category.CATEGORY] || category.CATEGORY;
+                const categoryHTML = generateCategoryHTML(categoryName, index, category.CATEGORY, category);
+                categoriesContainer.innerHTML += categoryHTML;      
+ const visitHallButtons = document.getElementsByClassName('visitHallButton');
           for (let button of visitHallButtons) {
               button.style.display = 'flex';
           }
-        });
-    }
+            });
+        }
+    });
+async function sendnav(category){
+// debugger
+//     console.log(dynamicpoint)
+//     sendbeaconapi(0, `${category}`, '');
+//      trackinga(`${category}`,'category_page');
+//    window.location.href =`${dynamicpoint}.html?category=${encrypt(category)}`
 
-});
+   await waitForDynamicPoint(); // Wait until dynamicpoint is defined
+    console.log(dynamicpoint);
+    
+    if (dynamicpoint === undefined) {
+        window.location.href = `prototype.html?category=${encrypt(category)}`;
+    }else{
+        window.location.href = `${dynamicpoint}.html?category=${encrypt(category)}`;
+    }
+   
+    sendbeaconapi(0, `${category}`, '');
+    trackinga(`${category}`, 'category_page');
+}
+async function sendnavdropdown(category, startpoint, endpoint, hallnum) {
+    await waitForDynamicPoint(); // Wait until dynamicpoint is defined
+    console.log(dynamicpoint);
+    
+    if (dynamicpoint === undefined) {
+        window.location.href = `prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${hallnum}`;
+    }else{
+        window.location.href = `${dynamicpoint}.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${hallnum}`;
+    }
+   
+    sendbeaconapi(0, `${category}`, '');
+    trackinga(`${category}`, 'category_page');
+  
+}
+
+async function checkDynamicPoint() {
+    return new Promise((resolve) => {
+        let interval = setInterval(() => {
+            if (typeof dynamicpoint !== 'undefined') {
+                clearInterval(interval);
+                resolve(dynamicpoint);
+            }
+        }, 1000); // Check every second
+    });
+}
+
+async function waitForDynamicPoint() {
+   // dynamicpoint = undefined; // Reset dynamicpoint
+    await checkDynamicPoint();
+    // Dynamic point is now defined, do something
+    console.log("Dynamic point is now defined:", dynamicpoint);
+    // Further actions here
+}

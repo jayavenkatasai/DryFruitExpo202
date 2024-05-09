@@ -25,7 +25,40 @@ var data = {
          "continuestatement":"एक्सपो जारी रखें",
          "suppliestext":"आपूर्ति एक्सपो"
          
-    }
+    },
+    "marathi": 
+{
+    "welcomeText": "स्वागत आहे",
+    "welcomeBackHsptlText": 
+        "रुग्णालय आणि वैद्यकीय",
+     "continuestatement":"एक्सपो सुरू ठेवा",
+     "suppliestext":"आपूर्ती एक्सपो"
+},
+"gujrathi": 
+{
+    "welcomeText": "સ્વાગત છે",
+    "welcomeBackHsptlText": 
+        "હોસ્પિટલ અને તબીબી",
+     "continuestatement":"એક્સપો ચાલુ રાખો",
+     "suppliestext":"સરપ્લાયો એક્સપો"
+},
+"bengali": 
+{
+    "welcomeText": "স্বাগতম",
+    "welcomeBackHsptlText": 
+        "হাসপাতাল এবং চিকিৎসা",
+     "continuestatement":"এক্সপো চালিয়ে যান",
+     "suppliestext":"সরবরাহ এক্সপো"
+},
+"telugu": 
+{
+    "welcomeText": "స్వాగతం",
+    "welcomeBackHsptlText": 
+        "ఆసుపత్రి మరియు వైద్యశాల",
+     "continuestatement":"ఎక్స్‌పో కొనసాగించు",
+     "suppliestext":"సరఫరా ఎక్స్‌పో"
+}
+
   }
 
 

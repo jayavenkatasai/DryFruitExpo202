@@ -2,6 +2,22 @@
 
 let stallsData;
 var urlendpoint = '';
+
+const queryString = window.location.search;
+let c;
+ // Create a new URLSearchParams object from the query string
+ const urlParams = new URLSearchParams(queryString);
+ var startValue = urlParams.get('start');
+ var endValue = urlParams.get('end');
+ var hallnum = urlParams.get('hallnum');
+ // Get the value of a specific parameter
+ var categoryparam = decrypt(urlParams.get('category'));
+ checkurlparm(categoryparam);
+ if (categoryparam.includes('||')) {
+    // Replace '||' with another string
+    categoryparam = categoryparam.replace(/\|\|/g, '&');
+  }
+      
 //var selectedLanguages = localStorage.getItem('languageselection')
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
@@ -22,10 +38,13 @@ let requestBody = {
         start: '1',
         end: '10',
         category: "0",
-        businesscategorylevel1: "Diagnostic Supplies, Products & Equipment",
+        businesscategorylevel1:categoryparam,
         uno: '0'
     };
-
+if(startValue&&endValue&&hallnum){
+    requestBody.start=startValue;
+    requestBody.end=endValue
+}
     let url = `${urlendpoint}/rest/virtualExpo/general/virtualExhibitionDetails`;
 
     const fetchdata = () => {
@@ -80,7 +99,7 @@ let requestBody = {
                 <p><strong>Email:</strong> <a href="mailto:${stall.vendorInfo.email}">${stall.vendorInfo.email}</a></p>
                 <h3>Products:</h3>
                 <ul>
-                    ${stall.products.map(product => `
+                    ${stall.products.slice(0, 5).map(product => `
                         <li>
                         <img  src="${product.producturl}" alt="${product.productname}" onclick="showpopup('${product.productname}', '${product.price}', '${product.producturl}')" >
                         </li>
@@ -88,9 +107,34 @@ let requestBody = {
                 </ul>
             `;
             expoContainer.appendChild(stallElement);
+           
         });
         // Show the first stall by default
         showStall(currentStallIndex);
+
+        const stallButtonsContainer = document.getElementById("stall-buttons");
+
+        // Loop to create 10 buttons
+        for (let i = 1; i <= stallsData.stalls.length; i++) {
+            // Create a new button div
+            const buttonDiv = document.createElement("div");
+            buttonDiv.classList.add("stall-button");
+    
+            // Set the button text dynamically
+            buttonDiv.textContent = `Stall ${i}`;
+    
+            // Set onclick event to each button
+            buttonDiv.addEventListener("click", function() {
+                // Handle click event, you can do something when button is clicked
+                console.log(`Button ${i} clicked!`);
+                showStall(i-1)
+            });
+    
+            // Append the button div to the container
+            stallButtonsContainer.appendChild(buttonDiv);
+        }
+    
+        const HallButtonsContainer = document.getElementById("hall-buttons");
     }
 
     // Function to show a specific stall
@@ -137,3 +181,15 @@ function changehall(indexvalue){
   requestBody.end=(indexvalue)*10,
 fetchdata();
 }
+function checkurlparm(urlparameter){
+    //console.log("triggerd checkurlparam")
+    if (!urlparameter) {
+        if (!localStorage.getItem('UserName')) {
+            window.location.replace("index.html")
+        }
+        else {
+            window.location.replace("categorymapdynmic.html")
+        }
+ }
+}
+   
