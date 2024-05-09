@@ -1,8 +1,5 @@
-
-
 let stallsData;
 var urlendpoint = '';
-
 const queryString = window.location.search;
 let c;
  // Create a new URLSearchParams object from the query string
@@ -17,7 +14,6 @@ let c;
     // Replace '||' with another string
     categoryparam = categoryparam.replace(/\|\|/g, '&');
   }
-      
 //var selectedLanguages = localStorage.getItem('languageselection')
 if (window.location.href.includes('digiexpodev.marketcentral')) {
     urlendpoint = 'https://www.marketcentral.in';
@@ -113,7 +109,7 @@ if(startValue&&endValue&&hallnum){
         showStall(currentStallIndex);
 
         const stallButtonsContainer = document.getElementById("stall-buttons");
-
+        stallButtonsContainer.innerHTML = "";
         // Loop to create 10 buttons
         for (let i = 1; i <= stallsData.stalls.length; i++) {
             // Create a new button div
@@ -192,4 +188,38 @@ function checkurlparm(urlparameter){
         }
  }
 }
-   
+
+let hallbtndata;
+let filterdata
+let hallbtnurl="https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/3"
+fetch(hallbtnurl)
+      .then(response => response.json())
+      .then(data => {
+        hallbtndata=data
+        filterdata = hallbtndata.filter(item=>item.CATEGORY===categoryparam)
+        console.log(filterdata)
+        const HallButtonsContainer = document.getElementById("hall-buttons");
+    // Loop to create 10 buttons
+    for (let i = 1; i <= filterdata[0].HALL_COUNT; i++) {
+        // Create a new button div
+        const buttonDiv1 = document.createElement("div");
+        buttonDiv1.classList.add("Hall-button");
+    
+        // Set the button text dynamically
+        buttonDiv1.textContent = `Hall ${i}`;
+    
+        // Set onclick event to each button
+        buttonDiv1.addEventListener("click", function() {
+            // Handle click event, you can do something when button is clicked
+            console.log(`Hall ${i} clicked!`);
+            changehall(i)
+        });
+    
+        // Append the button div to the container
+        HallButtonsContainer.appendChild(buttonDiv1);
+    }
+      })
+      .catch(error => console.error('Error fetching data:', error))
+      console.log(categoryparam)
+      
+    //  console.log(filterdata)
