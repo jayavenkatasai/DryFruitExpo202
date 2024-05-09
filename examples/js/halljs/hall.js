@@ -853,12 +853,12 @@ function setTextContent(language) {
         const translation = translations[language];
         document.getElementById('urlText').textContent = translation.urlText;
         document.querySelector('.inviteText').textContent = translation.inviteText;
-        document.getElementById(`notetext${index + 1}`).setAttribute('value',)
+        // document.getElementById(`notetext${index + 1}`).setAttribute('value',translation.)
     } else {
         // Default to English if the selected language is not found
         document.getElementById('urlText').textContent = translations.english.urlText;
         document.querySelector('.inviteText').textContent = translations.english.inviteText;
-        document.getElementById(`notetext${index + 1}`).setAttribute('value',)
+        // document.getElementById(`notetext${index + 1}`).setAttribute('value',)
     }
 }
 function setTextchatContent(language,index) {
