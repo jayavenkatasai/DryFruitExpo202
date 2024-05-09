@@ -309,7 +309,7 @@ iframe {
 }
 #hallButtons{
     border-radius: 6px;
-    background: #0080BF;
+    background: #299941;
     display: flex !important;
     align-items: center;
     gap: 26px;
@@ -472,12 +472,12 @@ z-index:9999;
 }
 .visitButton{
     color: #FFF; 
-    background: #F65927; 
-    border: 1px solid #F65927; 
+    background: #299941; 
+    border: 1px solid #299941; 
 }
 .shareButton{
-    color: #F65927; 
-    border: 1px solid #F65927; 
+    color: #299941; 
+    border: 1px solid #299941; 
     cursor: pointer;
 }
 .productButtons{
@@ -1004,7 +1004,7 @@ background: #F1FDFF;
 .card button {
 	padding: 7px 10px;
 	border-radius: 5px;
-    background: #F65927;
+    background: #299941;
 	color: #fff;
 	width: 100%;
 	max-width: 155px;
