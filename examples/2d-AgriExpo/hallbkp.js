@@ -79,31 +79,31 @@ if(startValue&&endValue&&hallnum){
     // Function to render stalls
     function renderStalls() {
 
-        let hallbtndata;
-        let filterdata
-        let hallbtnurl="https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4"
+        // let hallbtndata;
+        // let filterdata
+        // let hallbtnurl="https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4"
        
-        fetch(hallbtnurl)
-        .then(response => response.json())
-        .then(hallbtndata => {
-            // Use hallbtndata only for generating footer hall numbers
-            const hallNumbersContainer = document.querySelector('.hallNumbers');
-            const filterdata = hallbtndata.filter(item => item.CATEGORY === categoryparam);
+        // fetch(hallbtnurl)
+        // .then(response => response.json())
+        // .then(hallbtndata => {
+        //     // Use hallbtndata only for generating footer hall numbers
+        //     const hallNumbersContainer = document.querySelector('.hallNumbers');
+        //     const filterdata = hallbtndata.filter(item => item.CATEGORY === categoryparam);
             
-            if (filterdata.length > 0) {
-                let numberitems = '';
-                for (let i = 1; i <= filterdata[0].HALL_COUNT; i++) {
-                    numberitems += `<p class="numbers" data-index="${i}" onclick="changehall(${i})">${i}</p>`;
-                }
-                hallNumbersContainer.innerHTML = numberitems;
-            }
-        })
-        .catch(error => console.error('Error fetching hall button data:', error));
+        //     if (filterdata.length > 0) {
+        //         let numberitems = '';
+        //         for (let i = 1; i <= filterdata[0].HALL_COUNT; i++) {
+        //             numberitems += `<p class="numbers" data-index="${i}" onclick="changehall(${i})">${i}</p>`;
+        //         }
+        //         hallNumbersContainer.innerHTML = numberitems;
+        //     }
+        // })
+        // .catch(error => console.error('Error fetching hall button data:', error));
     
-         //     .catch(error => console.error('Error fetching data:', error))
-              console.log(categoryparam)
-              console.log(hallbtndata)
-              console.log(filterdata)
+        //  //     .catch(error => console.error('Error fetching data:', error))
+        //       console.log(categoryparam)
+        //       console.log(hallbtndata)
+        //       console.log(filterdata)
       
         stallsData.stalls.forEach((stall, index) => {
             const stallElement = document.createElement("div");
@@ -169,7 +169,13 @@ if(startValue&&endValue&&hallnum){
                     <img src="./assets/logo/leftArrow.png" onclick="showStalls(-1)">
                     <div class="hallNumbers">
                         <p class="hallHeading">Hall no:</p>
-                      
+                        ${(() => {
+                            let numberitems = '';
+                            for (let i = 1; i <= stallsData.Hallcount.Total; i++) {
+                                numberitems += `<p class="numbers"  data-index="${i}" onclick="changehall(${i})">${i}</p> `;
+                            }
+                            return numberitems;
+                        })()}
                     </div>
                     <img src="./assets/logo/rightArrow.png" onclick="showStalls(1)">
                 </div>
