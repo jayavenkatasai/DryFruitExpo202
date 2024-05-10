@@ -70,7 +70,7 @@ function closePopup1() {
 
 // Function to fetch data from the API and update the scene
 let requestBody={
-    exhibition_ID:'3',
+    exhibition_ID:'4',
     start:'1',
     end:'1',
     category:"0",

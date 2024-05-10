@@ -15,12 +15,12 @@ const textlanguage = localStorage.getItem('languageselection')
 
 // Define messages for different languages
 const messages = {
-  english: (userName) => `Hello ${userName}, how can I help you?`,
-  hindi: (userName) => `नमस्ते ${userName}, आपकी कैसे सहायता कर सकता हूँ?`,
-  marathi: (userName) => `नमस्कार ${userName}, आपल्याला कशी मदत करू शकतो?`,
-  gujrathi: (userName) => `હેલો ${userName}, તમને કેવી રીતે સહાય કરી શકું?`,
-  bengali: (userName) => `হ্যালো ${userName}, আমি কীভাবে সাহায্য করতে পারি?`,
-  telugu: (userName) => `హలో ${userName}, మీకు ఎలా సహాయం చేయగలను?`
+  english: (userName) => `Hello User, how can I help you?`,
+  hindi: (userName) => `नमस्ते User, आपकी कैसे सहायता कर सकता हूँ?`,
+  marathi: (userName) => `नमस्कार User, आपल्याला कशी मदत करू शकतो?`,
+  gujrathi: (userName) => `હેલો User, તમને કેવી રીતે સહાય કરી શકું?`,
+  bengali: (userName) => `হ্যালো User, আমি কীভাবে সাহায্য করতে পারি?`,
+  telugu: (userName) => `హలో User, మీకు ఎలా సహాయం చేయగలను?`
 };
 
 // Function to generate message based on selected language

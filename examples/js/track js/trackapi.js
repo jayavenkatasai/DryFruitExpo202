@@ -57,7 +57,7 @@ function tracking(uno=0,track_type,pname="",websitename=""){
         "Source":"Direct",
         "browser":browser,
         "ipaddress":ipAddress,
-        "exhibition_ID":3,
+        "exhibition_ID":4,
         "visitor_guid":guid
     }
    console.log(requestBody)
@@ -99,7 +99,7 @@ const requestBodybeacon = {
     "Source":"Direct",
     "browser":browser,
     "ipaddress":ipAddress,
-    "exhibition_ID":3,
+    "exhibition_ID":4,
     "visitor_guid":guid
 }
 trackinga(track_type,pagetitle)
@@ -130,7 +130,7 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
         "Source":"Direct",
         "browser":browser,
         "ipaddress":ipAddress,
-        "exhibition_ID":3,
+        "exhibition_ID":4,
         "visitor_guid":guid
     }
     trackinga(track_type,pagetitle)
@@ -158,7 +158,7 @@ function sendBeaconapilobby (uno=0,track_type,pname=""){
             "Source":"Direct",
             "browser":browser,
             "ipaddress":ipAddress,
-            "exhibition_ID":3,
+            "exhibition_ID":4,
             "visitor_guid":guid
         }
         trackinga(track_type,pagetitle)

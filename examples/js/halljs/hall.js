@@ -49,7 +49,7 @@ else if(window.location.href.includes('localhost')){
 else {
     urlendpoint = 'https://www.marketcentral.in';
 }
-const endpoint_ExhibitionId = '3';
+const endpoint_ExhibitionId = '4';
 
 
 // Get the query string from the current URL
@@ -210,7 +210,7 @@ document.getElementById('fullscreenButton').addEventListener('click', function()
   });
 // Function to fetch data from the API and update the scene
 let requestBody={
-    exhibition_ID:'3',
+    exhibition_ID:'4',
     start:'1',
     end:'10',
     category:"0",
@@ -565,7 +565,7 @@ document.getElementById('next-hall').addEventListener('click',function(){
     //console.log('Start:', start); // Output: 1
     //console.log('End:', end); 
     requestBody = {
-    exhibition_ID:'3',
+    exhibition_ID:'4',
     start: `${start}`,
     end: `${end}`,
     category:"0",
@@ -618,7 +618,7 @@ previousbutton.addEventListener('click',function(){
                //console.log('End:', end1);
            //    debugger
                requestBody = {
-                exhibition_ID:'3',
+                exhibition_ID:'4',
                 start: `${start}`,
                 end: `${end}`,
                 category:"0",

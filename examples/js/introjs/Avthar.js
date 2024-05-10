@@ -19,7 +19,7 @@ else {
 var apiname=localStorage.getItem('UserName')
 var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
         const requestBody = {
-            exhibition_ID: 3,
+            exhibition_ID: 4,
             visitor_guid: guid,
             visitor_name: apiname,
             ipaddress: ipAddress

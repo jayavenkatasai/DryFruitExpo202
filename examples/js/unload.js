@@ -1,7 +1,7 @@
 window.addEventListener('beforeunload', function (e) {
     var uid = localStorage.getItem('GUID');
     const data = {
-      exhibition_ID: 3,
+      exhibition_ID: 4,
       visitor_guid: uid,
       is_closed: 1
     };

@@ -79,25 +79,25 @@ var languageselectionitem=localStorage.getItem('languageselection')
 console.log(languageselectionitem)
 
 // Example usage
-if(localStorage.getItem('sessionActive')){
-    const sessionData = JSON.parse(localStorage.getItem('sessionActive'));
-    console.log("madee")
-    // Check if session is active
-    if (sessionData.active) {
-        // Get current time
-        const currentTime = new Date().getTime();
+// if(localStorage.getItem('sessionActive')){
+//     const sessionData = JSON.parse(localStorage.getItem('sessionActive'));
+//     console.log("madee")
+//     // Check if session is active
+//     if (sessionData.active) {
+//         // Get current time
+//         const currentTime = new Date().getTime();
          
-        // Calculate time difference in minutes
-        const timeDifference = (currentTime - sessionData.startTime) / (1000 * 60);
+//         // Calculate time difference in minutes
+//         const timeDifference = (currentTime - sessionData.startTime) / (1000 * 60);
 
-        // Check if at least 5 minutes have passed since session started
-        if (timeDifference >= 2) {
-            // Redirect to welcomeback.html
-            window.location.replace('welcomeback.html');
-            console.log("triggerd")
-        }
-    }
-}
+//         // Check if at least 5 minutes have passed since session started
+//         if (timeDifference >= 2) {
+//             // Redirect to welcomeback.html
+//             window.location.replace('welcomeback.html');
+//             console.log("triggerd")
+//         }
+//     }
+// }
 
 // var apiname=localStorage.getItem('UserName')
 // console.log(apiname)
@@ -136,7 +136,7 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
     console.log(localStorage.getItem('languageselection'))
     sendbeaconapi(0,localStorage.getItem('languageselection'),'','')
     const requestBody = {
-                exhibition_ID: 3,
+                exhibition_ID: 4,
                 visitor_guid: guid,
                 visitor_name: localStorage.getItem('UserName'),
                 ipaddress: ipAddress
