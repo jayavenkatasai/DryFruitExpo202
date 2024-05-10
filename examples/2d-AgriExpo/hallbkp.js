@@ -64,7 +64,7 @@ if(startValue&&endValue&&hallnum){
                 stallsData = data;
                 console.log(stallsData); // Log stallsData to see what it contains
                 renderStalls();
-                hallbuttonsui() // Call renderStalls after successfully fetching data
+              //  hallbuttonsui() // Call renderStalls after successfully fetching data
             }
         })
         .catch(error => {
@@ -111,8 +111,8 @@ if(startValue&&endValue&&hallnum){
      
        //     stallElement.classList.add("stallPage")
             stallElement.innerHTML = `
-            <div class="stallHeader">
-        <div class="toggler">
+        <div class="stallHeader">
+         <div class="toggler">
             <div class="dropdown">
                 <button type="button" data-toggle="dropdown">
                     <p><img src="./assets/logo/toggleImg.png">
@@ -136,6 +136,7 @@ if(startValue&&endValue&&hallnum){
             <p class="lobbyName">Lobby</p>
         </div>
     </div>
+             <div class="stallPage">
                 <div class="stallPageBg">
                     <!-- <img src="./assets/background_images/bgImg.png"> -->
                 </div>
@@ -164,11 +165,34 @@ if(startValue&&endValue&&hallnum){
                         </div>
                     </div>
                 </div>
+            </div>
+            
+
+            <div class="digitalPopUp" id="digitalPopUp_${index}">
+            <div class="digitalPopUpContents">
+                <img class="closeImg" src="images/digitalClose.png" onclick="closepopup(${index})">
+                <div class="productDetailsSection">
+                    <img class="productImg" id="productImgid_${index}" src="">
+                    <div class="productDetails">
+                        <p class="productName" id="productnameid_${index}" >Discover Hidden Treasures:</p>
+                        <p class="productPrice" id="productpriceid_${index}">Price : <span>₹2,795/kilogram(kg)</span> </p>
+                        <div class="productButtons d-flex">
+                            <a class="visitButton" id="visitButtonid_${index}">Visit Product</a>
+                            <a class="shareButton" id="shareButtonid_${index}" >Share Product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
                 <div class="footer">
                 <div class="footerContents">
                     <img src="./assets/logo/leftArrow.png" onclick="showStalls(-1)">
                     <div class="hallNumbers">
                         <p class="hallHeading">Hall no:</p>
+                        
+                       <div class="numbersMain">
                         ${(() => {
                             let numberitems = '';
                             for (let i = 1; i <= stallsData.Hallcount.Total; i++) {
@@ -176,23 +200,25 @@ if(startValue&&endValue&&hallnum){
                             }
                             return numberitems;
                         })()}
+                        </div>
                     </div>
                     <img src="./assets/logo/rightArrow.png" onclick="showStalls(1)">
                 </div>
             </div>
-        
             `;
     
             document.body.appendChild(stallElement);
     
             const productSection = document.getElementById(`productSection_${index}`);
             if (productSection) {
+                productSection.innerHTML = ''
                 stall.products.slice(0, 5).forEach(product => {
                     const productImage = document.createElement("img");
                     productImage.src = product.producturl;
                     productImage.alt = product.productname;
                     productImage.addEventListener("click", function() {
-                        showpopup(product.productname, product.price, product.producturl);
+                        showpopup(product.productname, product.price, product.producturl,product.productlink,index);
+                        console.log(product.productname)
                     });
                     productSection.appendChild(productImage);
                 });
@@ -200,6 +226,7 @@ if(startValue&&endValue&&hallnum){
                 console.error(`Product section not found for stall ${index}`);
             }
         });
+      
     
         // Show the first stall by default
       showStall(currentStallIndex);
@@ -230,7 +257,7 @@ if(startValue&&endValue&&hallnum){
     }
     
  function showStalls(index) {
-    debugger
+    //debugger
         const stalls = document.querySelectorAll('.stall');
         stalls[currentStallIndex].classList.remove('active');
         currentStallIndex = (currentStallIndex + index + stalls.length) % stalls.length;
@@ -241,12 +268,16 @@ if(startValue&&endValue&&hallnum){
     fetchdata();
 
 
-function showpopup(prdname,prdprice,prdlink){
-    document.getElementById('prd-name').textContent  =prdname
-  document.getElementById('prd-price').textContent  =prdprice
-  document.getElementById('prd-link').textContent  =prdlink
-  document.getElementById('popup').style.display='block'
-}
+    function showpopup(prdname, prdprice, prdlink, prdurl, index) {
+        document.getElementById(`productnameid_${index}`).textContent = prdname;
+        document.getElementById(`productpriceid_${index}`).textContent = `Price: ${prdprice}`;
+        document.getElementById(`productImgid_${index}`).src = prdlink;
+        document.getElementById(`visitButtonid_${index}`).addEventListener('click', function () {
+            window.open(prdurl, "_blank");
+        });
+        document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
+    }
+    
 
 function changehall(indexvalue){ 
      document.body.innerHTML = '';
@@ -287,3 +318,14 @@ function checkurlparm(urlparameter){
 //     </div>
 // </div>
 // </div>
+function closepopup(index){
+    document.querySelector(`#digitalPopUp_${index}`).style.display = "none";
+}
+//     document.querySelector('.closeImg').addEventListener('click', function() {
+     
+//     });
+// });
+
+function openlink(value){
+    window.open(value,'_blank')
+}

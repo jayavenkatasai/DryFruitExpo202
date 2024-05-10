@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p,h1,h2,h3,h4,h5,h6{
+            margin:0;
+        }
+        body{
+            font-family: "Nunito", sans-serif;
+            margin:0;
+        }
+        .productName{
+            color: #585858;
+            font-size: 18px;
+            font-weight: 700;
+            padding:0 0 3px 0;
+        }
+        .productDescription{
+            color: #585858;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .productPrice{
+            color: #585858;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 0 20px 0;
+        }
+        .productButtons a{
+            font-size: 14px; 
+            font-weight: 700; 
+            border-radius: 5px; 
+            padding: 9px 17px; 
+            text-decoration:none;
+        }
+        .visitButton{
+            color: #FFF; 
+            background: #F65927; 
+            border: 1px solid #F65927; 
+        }
+        .shareButton{
+            color: #F65927; 
+            border: 1px solid #F65927; 
+        }
+        .productButtons{
+            gap:10px;
+        }
+        .digitalPopUpContents {
+            border-radius: 10px;
+            background: #F1FDFF;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 35px 20px;
+            position: relative;
+        }
+        .closeImg{
+            position: absolute;
+            right:10px;
+            top:10px;
+            cursor:pointer;
+        }
+        .productDetailsSection{
+            display:flex;
+            gap:10px;
+            align-items:center;
+        }
+        .productImg{
+            height:230px;
+            width:230px;
+            object-fit: contain;
+        }
+        .digitalPopUp{
+            height:100vh;
+            display:flex;
+            align-items: center;
+        }
+        @media only screen and (max-width:600px){
+            .productImg {
+                height: 150px;
+                width: 150px;
+            }
+            .productButtons{
+                display:flex;
+                flex-direction:column;
+            }
+            .productButtons a{
+                max-width:120px;
+                text-align:center;
+                font-size: 12px;
+                padding: 7px 5px;
+            }
+            .productName,.productPrice{
+                font-size: 16px;
+            }
+            .productPrice{
+                padding: 10px 0 10px 0;
+            }
+            .productDescription {
+                font-size: 14px;
+            }
+        }
+        @media only screen and (max-width:400px){
+            .productDetailsSection {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+                flex-direction:column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="digitalPopUp">
+        <div class="digitalPopUpContents">
+            <img class="closeImg" src="images/digitalClose.png">
+            <div class="productDetailsSection">
+                <img class="productImg" src="images/product.png">
+                <div class="productDetails">
+                    <p class="productName">Discover Hidden Treasures:</p>
+                    <p class="productDescription">A Journey Beyond Imagination Discover Hidden Treasure</p>
+                    <p class="productPrice">Price : <span>₹2,795/kilogram(kg)</span> </p>
+                    <div class="productButtons d-flex">
+                        <a class="visitButton" href="">Visit Product</a>
+                        <a class="shareButton" href="">Share Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.closeImg').click(function(){
+            $('.digitalPopUp').css('display','none');
+        })
+    </script>
+</body>
+</html>

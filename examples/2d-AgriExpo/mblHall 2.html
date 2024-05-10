@@ -22,6 +22,129 @@
             height: 100%;
             font-family: "Montserrat", sans-serif;
         }
+        .productName{
+            color: #585858;
+            font-size: 18px;
+            font-weight: 700;
+            padding:0 0 3px 0;
+        }
+        .productDescription{
+            color: #585858;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .productPrice{
+            color: #585858;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 0 20px 0;
+        }
+        .productButtons a{
+            font-size: 14px; 
+            font-weight: 700; 
+            border-radius: 5px; 
+            padding: 9px 17px; 
+            text-decoration:none;
+        }
+        .visitButton{
+            color: #FFF; 
+            background: #F65927; 
+            border: 1px solid #F65927; 
+        }
+        .shareButton{
+            color: #F65927; 
+            border: 1px solid #F65927; 
+        }
+        .productButtons{
+            gap:10px;
+        }
+        /* .digitalPopUpContents {
+            border-radius: 10px;
+            background: #F1FDFF;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 35px 20px;
+            position: relative;
+        } */
+        .closeImg{
+            position: absolute;
+            right:10px;
+            top:10px;
+            cursor:pointer;
+        }
+        .productDetailsSection{
+            display:flex;
+            gap:10px;
+            align-items:center;
+        }
+        .productImg{
+            height:230px;
+            width:230px;
+            object-fit: contain;
+        }
+        .digitalPopUp {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: absolute; /* Change to absolute */
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+    top: 0; /* Add top: 0 */
+}
+
+.digitalPopUpContents {
+    border-radius: 10px;
+    background: #F1FDFF;
+    max-width: 600px;
+    margin: auto; /* Center horizontally */
+    padding: 35px 20px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+        /* .digitalPopUp{
+            height:100vh;
+            display:flex;
+            align-items: center;
+            position:relative;
+            z-index:999;
+            width: 100% ;
+            text-align: center;
+        } */
+        @media only screen and (max-width:767px){
+            .productImg {
+                height: 150px;
+                width: 150px;
+            }
+            .productButtons{
+                display:flex;
+                flex-direction:column;
+                align-items: center;
+
+            }
+            .productButtons a{
+                width: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 7px 5px;
+        max-width: 120px;
+            }
+            .productName,.productPrice{
+                font-size: 16px;
+            }
+            .productPrice{
+                padding: 10px 0 10px 0;
+            }
+            .productDescription {
+                font-size: 14px;
+            }
+             .productDetailsSection {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+      
         /* header css */
         .dropdown-item:focus, .dropdown-item:hover {
             color: #fff;
@@ -354,6 +477,22 @@
                 <p class="numbers">03</p>
             </div>
             <img src="./assets/logo/rightArrow.png">
+        </div>
+    </div>
+    <div class="digitalPopUp">
+        <div class="digitalPopUpContents">
+            <img class="closeImg" src="images/digitalClose.png">
+            <div class="productDetailsSection">
+                <img class="productImg" id="productImgid" src="">
+                <div class="productDetails">
+                    <p class="productName" id="productnameid" >Discover Hidden Treasures:</p>
+                    <p class="productPrice" id="productpriceid">Price : <span>₹2,795/kilogram(kg)</span> </p>
+                    <div class="productButtons d-flex">
+                        <a class="visitButton" id="visitButtonid">Visit Product</a>
+                        <a class="shareButton" id="shareButtonid" >Share Product</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
