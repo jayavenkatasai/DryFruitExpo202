@@ -184,6 +184,22 @@ if(startValue&&endValue&&hallnum){
                 </div>
             </div>
         </div>
+
+        <div id="popup-overlay_${index}" class="digitalcopyPopUp">
+        <div id="popup-card">
+          <h6 class="inviteText">Share Stall Link</h6>
+          <div class="copySection">
+            <p id="urlText">Stall Link</p>
+            <div class="copyButtonSection">
+              <input type="text" id="currentURL" readonly />
+              <img class="global" src="assets/icons/global.png" />
+              <button id="copyButton" onClick="copyToClipboard()">Copy</button>
+            </div>
+            <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
+          </div>
+          <button class="whiteCloseIcon" onClick="closePopup1(${index})"><img src="assets/icons/blueCloseIcon.png" /></button>
+        </div>
+      </div>
         
     
                 <div class="footer">
@@ -275,6 +291,10 @@ if(startValue&&endValue&&hallnum){
         document.getElementById(`visitButtonid_${index}`).addEventListener('click', function () {
             window.open(prdurl, "_blank");
         });
+        document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
+           document.getElementById(`popup-overlay_${index}`).style.display="flex"
+           
+        });
         document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
     }
     
@@ -328,4 +348,7 @@ function closepopup(index){
 
 function openlink(value){
     window.open(value,'_blank')
+}
+function  closePopup1(index){
+    document.getElementById(`popup-overlay_${index}`).style.display="none"
 }
