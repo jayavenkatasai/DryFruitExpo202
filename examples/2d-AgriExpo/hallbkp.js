@@ -191,11 +191,11 @@ if(startValue&&endValue&&hallnum){
           <div class="copySection">
             <p id="urlText">Stall Link</p>
             <div class="copyButtonSection">
-              <input type="text" id="currentURL" readonly />
+              <input type="text" id="currentURL_${index}"  class="currentURL"readonly />
               <img class="global" src="assets/icons/global.png" />
-              <button id="copyButton" onClick="copyToClipboard()">Copy</button>
+              <button id="copyButton" onClick="copyToClipboard(${index})">Copy</button>
             </div>
-            <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
+            <p class="url-copied-alert" id="url-copied-alert-txt_${index}">URL copied to clipboard!</p>
           </div>
           <button class="whiteCloseIcon" onClick="closePopup1(${index})"><img src="assets/icons/blueCloseIcon.png" /></button>
         </div>
@@ -293,7 +293,8 @@ if(startValue&&endValue&&hallnum){
         });
         document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
            document.getElementById(`popup-overlay_${index}`).style.display="flex"
-           
+           document.getElementById(`currentURL_${index}`).value=prdurl
+
         });
         document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
     }
@@ -351,4 +352,19 @@ function openlink(value){
 }
 function  closePopup1(index){
     document.getElementById(`popup-overlay_${index}`).style.display="none"
+    document.querySelector(`.url-copied-alert`).style.display="none"
+}
+
+function copyToClipboard(inex) {
+    // Get the current URL
+    var currentURL = document.getElementById(`currentURL_${inex}`).value;
+    // Copy the URL to the clipboard
+    navigator.clipboard.writeText(currentURL)
+        .then(function () { 
+            // alert('URL copied to clipboard!');
+                document.getElementById(`url-copied-alert-txt_${inex}`).style.display = 'block';
+        })
+        .catch(function (err) {
+            console.error('Unable to copy to clipboard', err);
+        });
 }

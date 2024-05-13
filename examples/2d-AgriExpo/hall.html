@@ -90,7 +90,7 @@
     z-index:9999;
     position: relative;
 }
-#currentURL {
+.currentURL {
     /* width: 100%; */
     padding: 10px 12px 10px 35px;
     color: #363636;
@@ -103,7 +103,7 @@
     /* max-width: 329px; */
     width: 280px;
 }
-#currentURL:focus{
+.currentURL:focus{
     outline:none;
 }
 .copyButtonSection {
@@ -118,7 +118,7 @@
     .copySection {
         width: 95%!important;
     }
-    #currentURL {
+    .currentURL {
         width: 230px!important;
     }
     #copyButton {
@@ -251,7 +251,9 @@
                 align-items: center;
             }
         }
-      
+        .url-copied-alert{
+            display: none;
+        }
         /* header css */
         .dropdown-item:focus, .dropdown-item:hover {
             color: #fff;
