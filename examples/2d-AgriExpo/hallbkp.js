@@ -200,8 +200,7 @@ if(startValue&&endValue&&hallnum){
           <button class="whiteCloseIcon" onClick="closePopup1(${index})"><img src="assets/icons/blueCloseIcon.png" /></button>
         </div>
       </div>
-        
-    
+       
                 <div class="footer">
                 <div class="footerContents">
                     <img src="./assets/logo/leftArrow.png" onclick="showStalls(-1)">
@@ -221,6 +220,19 @@ if(startValue&&endValue&&hallnum){
                     <img src="./assets/logo/rightArrow.png" onclick="showStalls(1)">
                 </div>
             </div>
+            <div class="sharestall"><button  id="sharestall_${index}" onClick="shaerestall(${stall.uno},${index+1},${index})">Share Stall</button></div>
+            <div class="indchat">
+            <button id="chaticon_${index}" onclick="showchat(${index}, ${stall.uno}, '${stall.vendorInfo.companyname}')">Chat</button>
+        </div>
+        
+
+            <div id="chat-ui-room2_${index}" class="chat-ui-room2">
+            <iframe id="chatui2_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
+            <div class="indidualChatIcons">
+              <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
+            </div>
+          </div>
+          
             `;
     
             document.body.appendChild(stallElement);
@@ -294,6 +306,7 @@ if(startValue&&endValue&&hallnum){
         document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
            document.getElementById(`popup-overlay_${index}`).style.display="flex"
            document.getElementById(`currentURL_${index}`).value=prdurl
+           document.getElementById('urlText').textContent = "Product Link"
 
         });
         document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
@@ -321,6 +334,23 @@ function checkurlparm(urlparameter){
         }
  }
 }
+function shaerestall(uno,name,index){
+    alert("triggerpoint")
+    var currentURL1 = window.location.href;
+    var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+    //console.log(typeof uno)
+    //console.log(uno)
+    var newURL = `${baseURL}sharestall.html?uno=${encryptWithCasePreservation(uno.toString())}&stallno=${name}`;
+    document.getElementById(`popup-overlay_${index}`).style.display="flex"
+    document.getElementById(`currentURL_${index}`).value=newURL
+    document.getElementById('urlText').textContent = "Stall Link"
+    // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
+    //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
+    //     document.getElementById(`currentURL_${index}`).value=prdurl
+    
+    //  });
+}
+
 
 
     //  console.log(filterdata)
@@ -367,4 +397,20 @@ function copyToClipboard(inex) {
         .catch(function (err) {
             console.error('Unable to copy to clipboard', err);
         });
+}
+// function showchat(index,uid,bname){
+//     alert("chat trigger");
+//     var usernamelocal = localStorage.getItem('UserName');
+//   var guidd = localStorage.getItem('GUID')
+//     document.getElementById(`chat-ui-room2_${index}`).style.display="flex"
+//     document.getElementById(`chatui2_${index}`).setAttribute('src',`https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${uid}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`)
+// }
+
+
+function showchat(index, uid, bname) {
+    alert("chat trigger");
+    var usernamelocal = localStorage.getItem('UserName');
+    var guidd = localStorage.getItem('GUID');
+    document.getElementById(`chat-ui-room2_${index}`).style.display = "flex";
+    document.getElementById(`chatui2_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${uid}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
 }
