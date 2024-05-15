@@ -339,7 +339,7 @@ var currentIndex=0;
 let buttonid=0;
 // category map js
 
-fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/3`)
+fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/4`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable
