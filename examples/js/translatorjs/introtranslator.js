@@ -1,6 +1,6 @@
 
-const welcomeIntro = document.querySelector('.welcomeIntro');
-const welcomeHsptlText = document.querySelector('.welcomeHsptlText');
+const welcomeIntro = document.querySelector('.welcomeText');
+const welcomeHsptlText = document.querySelector('.welcomeDescription');
 const enterExpoButton = document.querySelector('.enterExpoButton');
 const Avthartext = document.querySelector('.Avthar-text');
 const continuetext = document.querySelector('.continue-text');
@@ -15,7 +15,7 @@ var data = {
     {
       "welcomeIntro": "Welcome to",
       "welcomeHsptlText": 
-          "Hospital & Medical Supplies Expo",
+          "Agri products online Expo",
        "enterExpoButton":"Enter Expo",
        "Avthartext":"Choose Your Avatar",
        "continuetext":"Enter Expo",

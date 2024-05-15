@@ -199,8 +199,7 @@ if(startValue&&endValue&&hallnum){
           </div>
           <button class="whiteCloseIcon" onClick="closePopup1(${index})"><img src="assets/icons/blueCloseIcon.png" /></button>
         </div>
-      </div>
-       
+      </div>   
                 <div class="footer">
                 <div class="footerContents">
                     <img src="./assets/logo/leftArrow.png" onclick="showStalls(-1)">
