@@ -828,11 +828,12 @@ function checkhallfive(x){
     document.getElementById('navmeshmodel_10').setAttribute('position','0 0 0')
     document.getElementById('navmeshmodel_10').setAttribute('visible','false')
     document.getElementById('bubble5').setAttribute('rotation','0 90 0')
-    document.getElementById('bubble5').setAttribute('position','-28 6.08 -66')
+    document.getElementById('bubble5').setAttribute('position','-25.5 6.08 -66')
     document.getElementById('stall-avatar5').setAttribute('position','-28 0 -71')
     document.getElementById('stall-avatar5').setAttribute('rotation','0 0 0')
    // document.getElementById(`stall5`).setAttribute("instanced-mesh-member","mesh:#mesh1");
-   document.getElementById('stall5').setAttribute('visible','true')
+       document.getElementById('stall5').setAttribute('visible', 'true')
+       document.getElementById('stall5').setAttribute('position', '-26.677 -0.05 -71.2')
    // alert("not satisfied")
    }
 }

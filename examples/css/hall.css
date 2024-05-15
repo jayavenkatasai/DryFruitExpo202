@@ -447,13 +447,13 @@ z-index:9999;
     border: 0px;
   }
   .productName{
-    color: #585858;
+    color: #5A463F;
     font-size: 18px;
     font-weight: 700;
     padding:0 0 3px 0;
 }
 .productDescription{
-    color: #585858;
+    color: #5A463F;
     font-size: 16px;
     font-weight: 500;
 }
@@ -485,7 +485,7 @@ z-index:9999;
 }
 .digitalPopUpContents {
     border-radius: 10px;
-    background: #F1FDFF;
+    background: #F5FFF6;
     max-width: 600px;
     margin: 0 auto;
     padding: 35px 20px;
@@ -754,7 +754,7 @@ z-index:9999;
     width: 100%;
 }
 .inviteText {
-    color: #585858;
+    color: #5A463F;
     text-align: center;
     font-size: 28px;
     font-weight: 600;
@@ -763,7 +763,7 @@ z-index:9999;
     margin: 0;
 }
 #urlText {
-    color: #363636;
+    color: #5A463F;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -801,7 +801,7 @@ z-index:9999;
     right: 8px;
     background: none;
     border: none;
-    color: #F65927;
+    color: #299941;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -813,7 +813,7 @@ z-index:9999;
 #currentURL {
     /* width: 100%; */
     padding: 10px 12px 10px 35px;
-    color: #363636;
+    color: #5A463F;
     font-size: 14px;
     font-weight: 500;
     text-transform: lowercase;
