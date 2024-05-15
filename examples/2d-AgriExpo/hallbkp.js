@@ -254,8 +254,6 @@ if(startValue&&endValue&&hallnum){
                 console.error(`Product section not found for stall ${index}`);
             }
         });
-      
-    
         // Show the first stall by default
       showStall(currentStallIndex);
       
