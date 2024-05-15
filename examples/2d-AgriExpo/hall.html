@@ -1,208 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stall page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="encrypt.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="encrypt.js"></script>
     <style>
-           /* *{
+      /* *{
             box-sizing: border-box;
         } */
-        body{
-            margin: 0;
-            padding:0;
-            background-color:#94CD9A;
-            height: 100%;
-            font-family: "Montserrat", sans-serif;
-        }
-
-        /* share popup */
-        #popup-card {
-    border-radius: 10px;
-    background: #F1FDFF;
-    position: relative;
-    z-index: 999;
-    max-width: 450px;
-    width: 100%;
-}
-.inviteText {
-    color: #585858;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 20px;
-    padding: 40px 0 28px 0;
-    margin: 0;
-}
-#urlText {
-    color: #363636;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    margin: 0;
-    padding-bottom: 5px;
-}
-.chat-ui-room2 {
-    position: fixed;
-    display: none;
-    /* top: 0; */
-    right: 0;
-    width: 400px;
-    height: 500px;
-    overflow: hidden;
-    border: none;
-    bottom: 135px;
-    z-index: 10000; /* Adjust z-index as needed */
-  }
-   
-.copySection {
-    width: 85%;
-    margin: auto;
-    padding-bottom: 40px;
-}
-.global {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.copyButtonSection{
-    background-color: #fff;
-    border-radius:5px;
-    border: 1px solid  #363636; 
-}
-.whiteCloseIcon {
-     background-color: transparent;
-     border: none;
-     position: absolute;
-     top: 10px;
-     right: 8px;
-     cursor: pointer;
- }
- 
-#copyButton {
-    z-index: 999;
-    position: absolute;
-    top: 7px;
-    right: 8px;
-    background: none;
-    border: none;
-    color: #F65927;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-}
-#showPopupButton{
-    z-index:9999;
-    position: relative;
-}
-.currentURL {
-    /* width: 100%; */
-    padding: 10px 12px 10px 35px;
-    color: #363636;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: lowercase;
-    border-radius: 5px;
-    border: transparent;
-    background: #FFF;
-    /* max-width: 329px; */
-    width: 280px;
-}
-.currentURL:focus{
-    outline:none;
-}
-.copyButtonSection {
-    position: relative;
-    display: flex;
-}
-@media only screen and (max-width: 500px) {
- .whiteCloseIcon img {
-     width: 25px;
-     height:25px;
- }
-    .copySection {
-        width: 95%!important;
-    }
-    .currentURL {
-        width: 230px!important;
-    }
-    #copyButton {
-        top: 9px;
+      .custName {
+        color: #007a54;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        max-width: 190px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .icons img {
+        width: 28px;
+        height: 28px;
+      }
+      .chat {
+        width: 90%;
+        text-align: end;
+        padding: 15px 0 0 0;
+      }
+      .custDetails {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 11px;
+        border: 1px solid #007a54;
+        position: relative;
+        width: 90%;
+        margin: 0 auto 10px auto;
+      }
+      img.custImg {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        border-top-left-radius: 11px;
+        border-bottom-left-radius: 11px;
+      }
+      .mediaIconsSection {
+        position: absolute;
+        right: 10px;
+      }
+      img.mediaIcons {
+        height: 30px;
+      }
+      .custNum {
+        color: #edb900;
         font-size: 14px;
-    }
-}
-        .digitalPopUp {
-    height: 100vh;
-    display: none;
-    align-items: center;
-    position: absolute; /* Change to absolute */
-    z-index: 999;
-    width: 100%;
-    text-align: center;
-    top: 0; /* Add top: 0 */
-}
+        font-weight: 600;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #94cd9a;
+        height: 100%;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-.digitalPopUpContents {
-    border-radius: 10px;
-    background: #F1FDFF;
-    max-width: 600px;
-    margin: auto; /* Center horizontally */
-    padding: 35px 20px;
-    position: relative;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-        .productName{
-            color: #585858;
-            font-size: 18px;
-            font-weight: 700;
-            padding:0 0 3px 0;
+      /* share popup */
+      #popup-card {
+        border-radius: 10px;
+        background: #f1fdff;
+        position: relative;
+        z-index: 999;
+        max-width: 450px;
+        width: 100%;
+      }
+      .inviteText {
+        color: #585858;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 40px 0 28px 0;
+        margin: 0;
+      }
+
+      #urlText {
+        color: #363636;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0;
+        padding-bottom: 5px;
+      }
+      .chat-ui-room2 {
+        position: fixed;
+        display: none;
+        /* top: 0; */
+        right: 0;
+        width: 400px;
+        height: 500px;
+        overflow: hidden;
+        border: none;
+        bottom: 135px;
+        z-index: 10000; /* Adjust z-index as needed */
+      }
+
+      .copySection {
+        width: 85%;
+        margin: auto;
+        padding-bottom: 40px;
+      }
+      .global {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      .copyButtonSection {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #363636;
+      }
+      .whiteCloseIcon {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        cursor: pointer;
+      }
+
+      #copyButton {
+        z-index: 999;
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        background: none;
+        border: none;
+        color: #f65927;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      #showPopupButton {
+        z-index: 9999;
+        position: relative;
+      }
+      .currentURL {
+        /* width: 100%; */
+        padding: 10px 12px 10px 35px;
+        color: #363636;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: lowercase;
+        border-radius: 5px;
+        border: transparent;
+        background: #fff;
+        /* max-width: 329px; */
+        width: 280px;
+      }
+      .currentURL:focus {
+        outline: none;
+      }
+      .copyButtonSection {
+        position: relative;
+        display: flex;
+      }
+      @media only screen and (max-width: 500px) {
+        .whiteCloseIcon img {
+          width: 25px;
+          height: 25px;
         }
-        .productDescription{
-            color: #585858;
-            font-size: 16px;
-            font-weight: 500;
+        .copySection {
+          width: 95% !important;
         }
-        .digitalcopyPopUp{
-            display: none;
+        .currentURL {
+          width: 230px !important;
         }
-        .productPrice{
-            color: #585858;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 15px 0 20px 0;
+        #copyButton {
+          top: 9px;
+          font-size: 14px;
         }
-        .productButtons a{
-            font-size: 14px; 
-            font-weight: 700; 
-            border-radius: 5px; 
-            padding: 9px 17px; 
-            text-decoration:none;
-        }
-        .visitButton{
-            color: #FFF; 
-            background: #F65927; 
-            border: 1px solid #F65927; 
-        }
-        .shareButton{
-            color: #F65927; 
-            border: 1px solid #F65927; 
-        }
-        .productButtons{
-            gap:10px;
-        }
-        #chatui2 {
-    width: 100%;
-    height: 100%;
-  }
-        /* .digitalPopUpContents {
+      }
+      .digitalPopUp {
+        height: 100vh;
+        display: none;
+        align-items: center;
+        position: absolute; /* Change to absolute */
+        z-index: 999;
+        width: 100%;
+        text-align: center;
+        top: 0; /* Add top: 0 */
+        justify-content: center;
+      }
+
+      .digitalPopUpContents {
+        border-radius: 10px;
+        background: #f1fdff;
+        max-width: 600px;
+        margin: auto; /* Center horizontally */
+        padding: 35px 20px;
+        position: relative;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+      .productName {
+        color: #585858;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0 0 3px 0;
+      }
+      .productDescription {
+        color: #585858;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .digitalcopyPopUp {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+      }
+      .productPrice {
+        color: #585858;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0 20px 0;
+      }
+      .productButtons a {
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 9px 17px;
+        text-decoration: none;
+      }
+      .visitButton {
+        color: #fff;
+        background: #f65927;
+        border: 1px solid #f65927;
+      }
+      .shareButton {
+        color: #f65927;
+        border: 1px solid #f65927;
+      }
+      .productButtons {
+        gap: 10px;
+      }
+      #chatui2 {
+        width: 100%;
+        height: 100%;
+      }
+      /* .digitalPopUpContents {
             border-radius: 10px;
             background: #F1FDFF;
             max-width: 600px;
@@ -210,23 +267,23 @@
             padding: 35px 20px;
             position: relative;
         } */
-        .closeImg{
-            position: absolute;
-            right:10px;
-            top:10px;
-            cursor:pointer;
-        }
-        .productDetailsSection{
-            display:flex;
-            gap:10px;
-            align-items:center;
-        }
-        .productImg{
-            height:230px;
-            width:230px;
-            object-fit: contain;
-        }
-        /* .digitalPopUp{
+      .closeImg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+      }
+      .productDetailsSection {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .productImg {
+        height: 230px;
+        width: 230px;
+        object-fit: contain;
+      }
+      /* .digitalPopUp{
             height:100vh;
             display:none;
             align-items: center;
@@ -235,191 +292,192 @@
             width: 100% ;
             text-align: center;
         } */
-        @media only screen and (max-width:767px){
-            .productImg {
-                height: 150px;
-                width: 150px;
-            }
-            .productButtons{
-                display:flex;
-                flex-direction:column;
-                align-items: center;
+      @media only screen and (max-width: 767px) {
+        .productImg {
+          height: 150px;
+          width: 150px;
+        }
+        .productButtons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .productButtons a {
+          width: 100%;
+          text-align: center;
+          font-size: 12px;
+          padding: 7px 5px;
+          max-width: 120px;
+        }
+        .productName,
+        .productPrice {
+          font-size: 16px;
+        }
+        .productPrice {
+          padding: 10px 0 10px 0;
+        }
+        .productDescription {
+          font-size: 14px;
+        }
+        .productDetailsSection {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
 
-            }
-            .productButtons a{
-                width: 100%;
+      .indidualChatIcons {
+        position: absolute;
+        top: 17px;
+        right: 24px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        display: none;
+      }
+      .individualChatClose {
+        cursor: pointer;
+      }
+      #chat-ui-room {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .chat-ui-room2 {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .url-copied-alert {
+        display: none;
+      }
+      /* header css */
+      .dropdown-item:focus,
+      .dropdown-item:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #006848 !important;
+      }
+      .dropdown-menu {
+        padding: 0 !important;
+      }
+      .stallHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 20px;
+        background: #fef5df;
+      }
+      .dropdown button {
+        background-color: transparent;
+        border: none;
+      }
+      .toggler p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .toggler,
+      .lobbyName {
+        color: #007a54;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .stallHeader p {
+        margin: 0;
+      }
+      .expoHeadinng {
+        text-transform: uppercase;
+        color: #007a54;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 7px 10px 5px 11px;
+        border-radius: 5px;
+        border: 1px solid #007a54;
+      }
+      /* header css */
+      .companyNameContents img {
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+      }
+      .stallPageBg {
+        background-image: url('./assets/background_images/bgImg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 30%;
+      }
+      .stallContent {
+        width: 90%;
+        margin: auto;
+      }
+      .stallContentInner {
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 25px 22px 50px 32px;
+        background-image: linear-gradient(to bottom, #f5fff6 0%, #f5fff6 70%, #cdebd0 70%, #cdebd0 100%);
+        max-width: 360px;
+        margin: auto;
+      }
+      .companyName {
+        color: #fff;
         text-align: center;
-        font-size: 12px;
-        padding: 7px 5px;
-        max-width: 120px;
-            }
-            .productName,.productPrice{
-                font-size: 16px;
-            }
-            .productPrice{
-                padding: 10px 0 10px 0;
-            }
-            .productDescription {
-                font-size: 14px;
-            }
-             .productDetailsSection {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-                flex-direction:column;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-        
-        .indidualChatIcons {
-            position: absolute;
-            top: 17px;
-            right: 24px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            display: none;
-        }
-        .individualChatClose{
-                    cursor:pointer;
-                }
-        #chat-ui-room{
-        width: 100%!important;
-        height: 100%!important;
-    }
-    .chat-ui-room2{
-        width: 100%!important;
-        height: 100%!important;
-    }
-     .url-copied-alert{
-            display: none;
-        }
-        /* header css */
-        .dropdown-item:focus, .dropdown-item:hover {
-            color: #fff;
-            text-decoration: none;
-            background-color: #006848!important;
-        }
-        .dropdown-menu{
-            padding:0!important;
-        }
-        .stallHeader{
-            display:flex;
-            justify-content: space-between;
-            align-items:center;
-            padding: 11px 20px;
-            background: #FEF5DF; 
-        }
-        .dropdown button{
-            background-color: transparent;
-            border: none;
-        }
-        .toggler p {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .toggler,.lobbyName{
-            color: #007A54;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .stallHeader p{
-            margin: 0;
-        }
-        .expoHeadinng{
-            text-transform: uppercase;
-            color: #007A54;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 7px 10px 5px 11px;
-            border-radius: 5px;
-            border: 1px solid #007A54; 
-        }
-        /* header css */
-        .companyNameContents img {
-            height: 30px;
-            width: 30px;
-            object-fit: contain;
-        }
-        .stallPageBg{
-            background-image: url('./assets/background_images/bgImg.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding:30%;
-        }
-        .stallContent{
-            width:90%;
-            margin:auto;
-        }
-        .stallContentInner {
-            border-radius: 8px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            padding: 25px 22px 50px 32px;
-            background-image: linear-gradient(to bottom,#F5FFF6 0%,#F5FFF6 70%,#CDEBD0 70%,#CDEBD0 100%);
-            max-width:360px;
-            margin: auto;
-        }
-        .companyName {
-            color: #FFF;
-            text-align: center;
-            font-size: 15px;
-            font-weight: 600;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #007A54;
-            max-width: 184px;
-            width: 100%;
-        }
-        .companyNameContents {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            position: relative;
-            top: 3px;
-            padding-left: 18px;
-        }
-        .stallNum{
-            color: #FFF;
-            font-size: 13px;
-            font-weight: 600;
-            margin: 0;
-        }
-        .agriProductsContents{
-            display: flex;
-            position: relative;
-            z-index: 9;
-        }
-        .agriProductsContents::before {
-            content: "";
-            position: absolute;
-            /* border-top: 160px solid #007A54; */
-            /* border-left: 21px solid transparent; */
-            /* border-right: 21px solid transparent; */
-            background-image: url('./assets/logo/connector.png');
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            z-index: -1;
-            left: 6%;
-            top: -13px;
-            max-width: 314px;
-            background-size: contain;
-        }
-        .agriProductsContents::after {
-            content: "";
-            position: absolute;
-            background-image: url('./assets/logo/stage.png');
-            background-repeat: no-repeat;
-            height: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            left: 0;
-            background-size: contain;
-            top: 92%;
-            
-        }
-        /* .agriProductsContents::after {
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #007a54;
+        max-width: 184px;
+        width: 100%;
+      }
+      .companyNameContents {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        top: 3px;
+        padding-left: 18px;
+      }
+      .stallNum {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .agriProductsContents {
+        display: flex;
+        position: relative;
+        z-index: 9;
+      }
+      .agriProductsContents::before {
+        content: '';
+        position: absolute;
+        /* border-top: 160px solid #007A54; */
+        /* border-left: 21px solid transparent; */
+        /* border-right: 21px solid transparent; */
+        background-image: url('./assets/logo/connector.png');
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        left: 6%;
+        top: -13px;
+        max-width: 314px;
+        background-size: contain;
+      }
+      .agriProductsContents::after {
+        content: '';
+        position: absolute;
+        background-image: url('./assets/logo/stage.png');
+        background-repeat: no-repeat;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        background-size: contain;
+        top: 92%;
+      }
+      /* .agriProductsContents::after {
             content: "";
             position: absolute;
             border-bottom: 27px solid #F5FFF6;
@@ -435,162 +493,160 @@
             bottom: -9px;
             box-shadow: 0 10px 0 #007A54;
         } */
-        .productSection {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            justify-content: center;
-            max-width: 200px;
-            max-height: 115px;
-        }
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            max-width: 89px;
-            position: relative;
-            padding: 15px 10px;
-            z-index: 9;
-        }
-        .hallNum {
-            position: absolute;
-            right: 22px;
-            top: 6px;
-        }
-        .icons::before{
-            position: absolute;
-            content: '';
-            background-image: url('./assets/logo/iconsBg.png');
-            background-repeat: no-repeat;
-            height: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            left: 0;
-            background-size: contain;
-            top: 0%;
-
-        }
-        .productSection,.hallNum{
-            padding:20px 00px;
-        }
-        .productSection img {
-            height: 35px;
-            width: 40px;
-            object-fit: contain;
-            border-radius: 10px 10px 10px 2.5px;
-            background: #FFF; 
-            padding: 5px 4px 4px 3px;
-        }
-        .productSection {
-            padding-left: 30px;
-            padding-top: 32px;
-            padding-bottom:35px;
-        }
-        /* footer css */
-        .footer{
-            background: #F5FFF6; 
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            z-index: 9;
-        }
-        .numbersMain{
-max-width:130px;
-display: flex;
-overflow-x:scroll;
-gap: 20px;
-}
-        .footerContents {
-            width: 90%;
-            margin: auto;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .hallNumbers{
-            display: flex;
-            align-items:center;
-        }
-        .hallHeading{
-            color: #006848;
-            font-size: 12px;
-            font-weight: 600;
-            padding-right:10px;
-        }
-        .numbers{
-            color: #006848;
-            font-size: 20px;
-            font-weight: 600;
-            width: 44px;
-            height: 44px; 
-            display:flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* .numbers.active{
+      .productSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        max-width: 200px;
+        max-height: 115px;
+      }
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        max-width: 89px;
+        position: relative;
+        padding: 15px 10px;
+        z-index: 9;
+      }
+      .hallNum {
+        position: absolute;
+        right: 22px;
+        top: 6px;
+      }
+      .icons::before {
+        position: absolute;
+        content: '';
+        background-image: url('./assets/logo/iconsBg.png');
+        background-repeat: no-repeat;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        background-size: contain;
+        top: 0%;
+      }
+      .productSection,
+      .hallNum {
+        padding: 20px 00px;
+      }
+      .productSection img {
+        height: 35px;
+        width: 40px;
+        object-fit: contain;
+        border-radius: 10px 10px 10px 2.5px;
+        background: #fff;
+        padding: 5px 4px 4px 3px;
+      }
+      .productSection {
+        padding-left: 30px;
+        padding-top: 32px;
+        padding-bottom: 35px;
+      }
+      /* footer css */
+      .footer {
+        background: #f5fff6;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 9;
+      }
+      .numbersMain {
+        max-width: 130px;
+        display: flex;
+        overflow-x: scroll;
+        gap: 20px;
+      }
+      .footerContents {
+        width: 90%;
+        margin: auto;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hallNumbers {
+        display: flex;
+        align-items: center;
+      }
+      .hallHeading {
+        color: #006848;
+        font-size: 12px;
+        font-weight: 600;
+        padding-right: 10px;
+      }
+      .numbers {
+        color: #006848;
+        font-size: 20px;
+        font-weight: 600;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* .numbers.active{
             background-color: #006848;
             border-radius: 50%;
             color: #fff;
         } */
-        /* footer css */
-        @media only screen and (max-width:500px){
-            .stallContent {
-                width: 100%;
-                margin: auto;
-            }
-            .stallContentInner {
-                padding: 25px 5px 50px 5px;
-            }
+      /* footer css */
+      @media only screen and (max-width: 500px) {
+        .stallContent {
+          width: 100%;
+          margin: auto;
         }
-        @media only screen and (max-width:370px){
-            .stallContentInner {
-                max-width: 330px;
-            }
-            .productSection {
-                padding-left: 20px;
-            }
-            .agriProductsContents::before {
-                left: 4%;
-            }
-            .hallNum {
-                position: absolute;
-                right: 8px;
-                top: 4px;
-            }
-            .companyNameContents {
-                gap: 7px;
-            }
+        .stallContentInner {
+          padding: 25px 5px 50px 5px;
         }
-        .stall {
+      }
+      @media only screen and (max-width: 370px) {
+        .stallContentInner {
+          max-width: 330px;
+        }
+        .productSection {
+          padding-left: 20px;
+        }
+        .agriProductsContents::before {
+          left: 4%;
+        }
+        .hallNum {
+          position: absolute;
+          right: 8px;
+          top: 4px;
+        }
+        .companyNameContents {
+          gap: 7px;
+        }
+      }
+      .stall {
         display: none; /* Initially hide all stalls */
-       }
-    .stall.active {
+      }
+      .stall.active {
         display: block; /* Show only the active stall */
-    }
-    .footerContents p {
-	margin: 10px 0;
-}
-*{
-    box-sizing:unset!important;
-}
+      }
+      .footerContents p {
+        margin: 10px 0;
+      }
+      * {
+        box-sizing: unset !important;
+      }
     </style>
-</head>
-<body>
-   
-       
+  </head>
+  <body>
     <div class="stallPage"></div>
-        <!-- <div class="stallPageBg">
+    <!-- <div class="stallPageBg">
             <img src="./assets/background_images/bgImg.png"> 
         </div> -->
-      <!-- <div class="stallContent">
+    <!-- <div class="stallContent">
             <div class="stallContentInner"> -->
-               <!-- <div class="companyNameContents">
+    <!-- <div class="companyNameContents">
                     <img src="./assets/logo/logoImg.png">
                     <p class="companyName">Agri Expo Corp Pvt Ltd</p>
                 </div> -->
-                <!-- <div class="agriProducts">
+    <!-- <div class="agriProducts">
                     <div class="agriProductsContents">
                         <div class="productSection">
                             <img src="./assets/logo/imgOne.png">
@@ -611,9 +667,9 @@ gap: 20px;
                         </div>
                     </div>
                 </div> -->
-            <!-- </div>
+    <!-- </div>
         </div>  -->
-        <!-- <div class="footer">
+    <!-- <div class="footer">
             <div class="footerContents">
                 <img src="./assets/logo/leftArrow.png" onclick="showStalls(-1)">
                 <div class="hallNumbers">
@@ -625,7 +681,7 @@ gap: 20px;
                 <img src="./assets/logo/rightArrow.png" onclick="showStalls(1)">
             </div>
         </div> -->
-<!--    
+    <!--    
     <div class="digitalPopUp">
         <div class="digitalPopUpContents">
             <img class="closeImg" src="images/digitalClose.png">
@@ -643,12 +699,10 @@ gap: 20px;
         </div>
     </div> -->
     <script>
-        
-        // $('.closeImg').click(function(){
-        //     $('.digitalPopUp').css('display','none');
-        // })
+      // $('.closeImg').click(function(){
+      //     $('.digitalPopUp').css('display','none');
+      // })
     </script>
-
-</body>
-<script src="hallbkp.js"></script>
+  </body>
+  <script src="hallbkp.js"></script>
 </html>
