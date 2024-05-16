@@ -81,6 +81,7 @@
             border-radius: 10px;
             background: #fff;
             border: 1px solid transparent;
+            cursor: pointer;
         }
         .languageSection {
             padding-bottom: 70px;
@@ -217,6 +218,7 @@
             width: 100%;
             position: relative;
             top: 9px;
+            cursor: pointer;
         }
         .sections{
             display: flex;
@@ -532,7 +534,9 @@ gtag('config', 'G-PGGTB73FL0');
 </script>
 <script>
   if(!localStorage.getItem('Avthar')){
-  localStorage.setItem('Avthar','avthar1')
+    var randomNumber = Math.floor(Math.random() * 6) + 1;
+    console.log(randomNumber)   
+  localStorage.setItem('Avthar',`avthar${randomNumber}`)
 }
 </script>
 <script src="js/translatorjs/introtranslator.js"></script>

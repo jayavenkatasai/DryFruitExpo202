@@ -74,6 +74,8 @@
         background-color: #94cd9a;
         height: 100%;
         font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+        
       }
 
       /* share popup */
@@ -147,10 +149,16 @@
         right: 8px;
         background: none;
         border: none;
-        color: #f65927;
+        color: #299941;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
+      }
+      .visitButton:hover {
+        color: #fff;
+      }
+      .shareButton:hover {
+        color: #299941;
       }
       #showPopupButton {
         z-index: 9999;
@@ -206,7 +214,7 @@
 
       .digitalPopUpContents {
         border-radius: 10px;
-        background: #f1fdff;
+        background: #f5fff6;
         max-width: 600px;
         margin: auto; /* Center horizontally */
         padding: 35px 20px;
@@ -228,7 +236,7 @@
         display: none;
         position: absolute;
         width: 100%;
-        top: 50%;
+        top: 35%;
       }
       .productPrice {
         color: #585858;
@@ -245,12 +253,14 @@
       }
       .visitButton {
         color: #fff;
-        background: #f65927;
-        border: 1px solid #f65927;
+        background: #299941;
+        border: 1px solid #299941;
+        cursor: pointer;
       }
       .shareButton {
-        color: #f65927;
-        border: 1px solid #f65927;
+        color: #299941;
+        border: 1px solid #299941;
+        cursor: pointer;
       }
       .productButtons {
         gap: 10px;
@@ -296,6 +306,9 @@
         .productImg {
           height: 150px;
           width: 150px;
+        }
+        .digitalPopUpContents{
+          width: 300px;
         }
         .productButtons {
           display: flex;
@@ -397,6 +410,9 @@
       .companyNameContents img {
         height: 30px;
         width: 30px;
+        left:11%;
+        top:8%;
+        position: absolute;
         object-fit: contain;
       }
       .stallPageBg {
@@ -404,7 +420,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 30%;
+        padding: 19%;
+        
       }
       .stallContent {
         width: 90%;
@@ -414,7 +431,7 @@
         border-radius: 8px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         padding: 25px 22px 50px 32px;
-        background-image: linear-gradient(to bottom, #f5fff6 0%, #f5fff6 70%, #cdebd0 70%, #cdebd0 100%);
+        background-image: linear-gradient(to bottom, #f5fff6 0%, #f5fff6 80%, #cdebd0 80%, #cdebd0 100%);
         max-width: 360px;
         margin: auto;
       }
@@ -435,7 +452,7 @@
         gap: 15px;
         position: relative;
         top: 3px;
-        padding-left: 18px;
+        justify-content: center;
       }
       .stallNum {
         color: #fff;
@@ -448,6 +465,12 @@
         position: relative;
         z-index: 9;
       }
+      .chat-ui-room2 {
+        top: 0 !important;
+      }
+      iframe#chatui2_0 {
+        height: 100%;
+      }
       .agriProductsContents::before {
         content: '';
         position: absolute;
@@ -459,7 +482,7 @@
         height: 100%;
         width: 100%;
         z-index: -1;
-        left: 6%;
+        left: 10%;
         top: -13px;
         max-width: 314px;
         background-size: contain;
@@ -539,9 +562,11 @@
         border-radius: 10px 10px 10px 2.5px;
         background: #fff;
         padding: 5px 4px 4px 3px;
+        cursor: pointer;
       }
       .productSection {
-        padding-left: 30px;
+        padding-left: 38px;
+
         padding-top: 32px;
         padding-bottom: 35px;
       }
@@ -577,6 +602,26 @@
         font-weight: 600;
         padding-right: 10px;
       }
+.iframe-containerr {
+position: fixed;
+z-index:9999;
+top: 150px;
+left: 20px;
+display: none;
+width: 100px;
+height: 200px
+}
+.iframe-urll {
+
+position: fixed;
+z-index:999;
+top: 150px;
+left: 20px;
+display: none;
+width: 500px;
+height: 500px;
+border: 0px;
+}
       .numbers {
         color: #006848;
         font-size: 20px;

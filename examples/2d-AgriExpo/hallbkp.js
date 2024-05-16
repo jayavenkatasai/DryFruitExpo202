@@ -143,10 +143,10 @@ function renderStalls() {
                 <div class="stallContent" id="stallcontent">
                     <div class="stallContentInner">
                         <div class="custDetails">
-                            <img class="custImg" src="./assets/logo/id.png">
+                            <img class="custImg" src="${stall.vendorInfo.vendorimage}">
                             <div class="custNameDetails">
-                                <p class="custName">Mr. Ramakrishanan</p>
-                                <p class="custNum">9443132968</p>
+                                <p class="custName">${stall.vendorInfo.vendorName}</p>
+                                <p class="custNum">${stall.vendorInfo.contactNumber}</p>
                             </div>
                             <div class="mediaIconsSection">
                                 <img class="mediaIcons"   id="sharestall_${index}" onClick="shaerestall(${stall.uno},${index + 1},${index})"  src="./assets/logo/share stall.png">
@@ -154,7 +154,7 @@ function renderStalls() {
                             </div>
                         </div>
                         <div class="companyNameContents">
-                            <img src="${stall.vendorInfo.vendorimage}" alt="${stall.vendorInfo.vendorName}">
+                            <img src="${stall.logo}" alt="${stall.vendorInfo.vendorName}">
                             <p class="companyName">${stall.vendorInfo.companyname}</p>
                         </div>
                         <div class="agriProducts">
@@ -163,10 +163,11 @@ function renderStalls() {
                                     <!-- Product images will be added here dynamically -->
                                 </div>
                                 <div class="hallNum">
-                                    <p class="stallNum">Stall No:<span>${index + 1}</span></p>
+                                    <p class="stallNum">Stall No:<span>${index+ 1}</span></p>
                                     <div class="icons">
                                         <a href="${stall.websiteLink}" target="_blank"><img src="./assets/logo/web.png"></a>
-                                        <a href="${stall.broucherlink}" target="_blank"><img src="./assets/logo/pdf.png"></a>
+                                        ${stall.broucherlinkAvailable === 'yes' ? `<a href="${stall.broucherlink}" target="_blank" id="broucher${index + 1}"><img src="./assets/logo/pdf.png"></a>` : '<a  target="_blank"><img src="./assets/logo/pdf.png"></a>'}
+                                   
                                         <a href="${stall.businesscard}" target="_blank"><img src="./assets/logo/contact.png"></a>
                                         <a href="mailto:${stall.vendorInfo.email}" target="_blank"><img src="./assets/logo/Mail.png"></a>
                                         <a href="tel:+91${stall.vendorInfo.contactNumber}" target="_blank"><img src="./assets/logo/call.png"></a>
@@ -242,6 +243,10 @@ function renderStalls() {
             </div>
           </div>
           
+    <div id="iframe-container_${index}" class="iframe-containerr">
+    <iframe id="iframe-url_${index}" src="" class="iframe-urll"></iframe>
+  </div>
+
             `;
 
         document.body.appendChild(stallElement);
@@ -311,6 +316,7 @@ function showpopup(prdname, prdprice, prdlink, prdurl, index) {
         window.open(prdurl, "_blank");
     });
     document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
+        document.getElementById(`digitalPopUp_${index}`).style.display = "none"
         document.getElementById(`popup-overlay_${index}`).style.display = "flex"
         document.getElementById(`currentURL_${index}`).value = prdurl
         document.getElementById('urlText').textContent = "Product Link"
@@ -343,7 +349,6 @@ function checkurlparm(urlparameter) {
     }
 }
 function shaerestall(uno, name, index) {
-    alert("triggerpoint")
     var currentURL1 = window.location.href;
     var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
     //console.log(typeof uno)
@@ -391,6 +396,10 @@ function openlink(value) {
 function closePopup1(index) {
     document.getElementById(`popup-overlay_${index}`).style.display = "none"
     document.querySelector(`.url-copied-alert`).style.display = "none"
+    if(document.getElementById('urlText').textContent ==="Product Link"){
+        document.getElementById(`digitalPopUp_${index}`).style.display = "block"
+    }
+   
 }
 
 function copyToClipboard(inex) {
@@ -416,9 +425,26 @@ function copyToClipboard(inex) {
 
 
 function showchat(index, uid, bname) {
-    alert("chat trigger");
+   // alert("chat trigger");
     var usernamelocal = localStorage.getItem('UserName');
     var guidd = localStorage.getItem('GUID');
     document.getElementById(`chat-ui-room2_${index}`).style.display = "flex";
-    document.getElementById(`chatui2_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${uid}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+    if (!isStallVisited(uid)) {
+        document.getElementById(`iframe-url_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${uid}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+       // trackinga(`visitor passed through - ${uid}`,'hall')
+        markStallVisited(uid);
+      }
+    document.getElementById(`chatui2_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${uid}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
 }
+
+
+function markStallVisited(stallId) {
+    let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
+    visitedStalls.push(stallId);
+    localStorage.setItem('visitedStalls', JSON.stringify(visitedStalls));
+   }
+   // Function to check if a stall has been visited
+   function isStallVisited(stallId) {
+    let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
+    return visitedStalls.includes(stallId);
+   }

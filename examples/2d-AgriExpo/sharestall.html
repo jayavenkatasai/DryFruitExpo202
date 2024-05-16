@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stall page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -10,24 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="encrypt.js"></script>
     <style>
       /* *{
             box-sizing: border-box;
         } */
-      body{
+      body {
         margin: 0;
-        padding:0;
-        background-color:#94CD9A;
+        padding: 0;
+        background-color: #94cd9a;
         height: 100%;
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
       }
 
       /* share popup */
       #popup-card {
         border-radius: 10px;
-        background: #F1FDFF;
+        background: #f1fdff;
         position: relative;
         z-index: 999;
         max-width: 450px;
@@ -60,10 +64,10 @@
         top: 10px;
         left: 10px;
       }
-      .copyButtonSection{
+      .copyButtonSection {
         background-color: #fff;
-        border-radius:5px;
-        border: 1px solid  #363636;
+        border-radius: 5px;
+        border: 1px solid #363636;
       }
       .whiteCloseIcon {
         background-color: transparent;
@@ -81,13 +85,13 @@
         right: 8px;
         background: none;
         border: none;
-        color: #F65927;
+        color: #299941;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
       }
-      #showPopupButton{
-        z-index:9999;
+      #showPopupButton {
+        z-index: 9999;
         position: relative;
       }
       #currentURL {
@@ -99,12 +103,12 @@
         text-transform: lowercase;
         border-radius: 5px;
         border: transparent;
-        background: #FFF;
+        background: #fff;
         /* max-width: 329px; */
         width: 280px;
       }
-      #currentURL:focus{
-        outline:none;
+      #currentURL:focus {
+        outline: none;
       }
       .copyButtonSection {
         position: relative;
@@ -113,13 +117,13 @@
       @media only screen and (max-width: 500px) {
         .whiteCloseIcon img {
           width: 25px;
-          height:25px;
+          height: 25px;
         }
         .copySection {
-          width: 95%!important;
+          width: 95% !important;
         }
         #currentURL {
-          width: 230px!important;
+          width: 230px !important;
         }
         #copyButton {
           top: 9px;
@@ -136,54 +140,68 @@
         text-align: center;
         top: 0; /* Add top: 0 */
       }
-
+      .icons img {
+        width: 28px;
+        height: 28px;
+      }
       .digitalPopUpContents {
         border-radius: 10px;
-        background: #F1FDFF;
+        background: #f5fff6;
         max-width: 600px;
         margin: auto; /* Center horizontally */
         padding: 35px 20px;
         position: relative;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       }
-      .productName{
+      .productName {
         color: #585858;
         font-size: 18px;
         font-weight: 700;
-        padding:0 0 3px 0;
+        padding: 0 0 3px 0;
       }
-      .productDescription{
+      .productDescription {
         color: #585858;
         font-size: 16px;
         font-weight: 500;
       }
-      .digitalcopyPopUp{
+      .digitalcopyPopUp {
         display: none;
+        position: absolute;
+        width: 100%;
+        top: 35%;
       }
-      .productPrice{
+      .productPrice {
         color: #585858;
         font-size: 18px;
         font-weight: 600;
         padding: 15px 0 20px 0;
       }
-      .productButtons a{
+      .productButtons a {
         font-size: 14px;
         font-weight: 700;
         border-radius: 5px;
         padding: 9px 17px;
-        text-decoration:none;
+        text-decoration: none;
       }
-      .visitButton{
-       color: #FFF; 
-            background: #F65927; 
-            border: 1px solid #F65927; 
+      .visitButton {
+        color: #fff;
+        background: #299941;
+        border: 1px solid #299941;
+        cursor: pointer;
       }
-      .shareButton{
-        color: #F65927;
-        border: 1px solid #F65927;
+      .visitButton:hover {
+        color: #fff;
       }
-      .productButtons{
-        gap:10px;
+      .shareButton:hover {
+        color: #299941;
+      }
+      .shareButton {
+        color: #299941;
+        border: 1px solid #299941;
+        cursor: pointer;
+      }
+      .productButtons {
+        gap: 10px;
       }
       /* .digitalPopUpContents {
             border-radius: 10px;
@@ -193,20 +211,20 @@
             padding: 35px 20px;
             position: relative;
         } */
-      .closeImg{
+      .closeImg {
         position: absolute;
-        right:10px;
-        top:10px;
-        cursor:pointer;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
       }
-      .productDetailsSection{
-        display:flex;
-        gap:10px;
-        align-items:center;
+      .productDetailsSection {
+        display: flex;
+        gap: 10px;
+        align-items: center;
       }
-      .productImg{
-        height:230px;
-        width:230px;
+      .productImg {
+        height: 230px;
+        width: 230px;
         object-fit: contain;
       }
       /* .digitalPopUp{
@@ -218,7 +236,7 @@
             width: 100% ;
             text-align: center;
         } */
-      @media only screen and (max-width:767px){
+      @media only screen and (max-width: 767px) {
         .productImg {
           height: 150px;
           width: 150px;
@@ -226,106 +244,111 @@
         .digitalPopUpContents {
           width: 300px;
         }
-        .productButtons{
-          display:flex;
-          flex-direction:column;
+        .productButtons {
+          display: flex;
+          flex-direction: column;
           align-items: center;
-
         }
-        .productButtons a{
+        .productButtons a {
           width: 100%;
           text-align: center;
           font-size: 12px;
           padding: 7px 5px;
           max-width: 120px;
         }
-        .productName,.productPrice{
+        .productName,
+        .productPrice {
           font-size: 16px;
         }
-        .productPrice{
+        .productPrice {
           padding: 10px 0 10px 0;
         }
         .productDescription {
           font-size: 14px;
         }
         .productDetailsSection {
-          flex-direction:column;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
         }
       }
 
       /* header css */
-      .dropdown-item:focus, .dropdown-item:hover {
+      .dropdown-item:focus,
+      .dropdown-item:hover {
         color: #fff;
         text-decoration: none;
-        background-color: #006848!important;
+        background-color: #006848 !important;
       }
-      .dropdown-menu{
-        padding:0!important;
+      .dropdown-menu {
+        padding: 0 !important;
       }
-      .stallHeader{
-        display:flex;
+      .stallHeader {
+        display: flex;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
         padding: 11px 20px;
-        background: #FEF5DF;
+        background: #fef5df;
       }
-      .dropdown button{
+      .dropdown button {
         background-color: transparent;
         border: none;
       }
 
-      .lobbyName{
-        color: #007A54;
+      .lobbyName {
+        color: #007a54;
         font-size: 16px;
         font-weight: 600;
       }
-      .stallHeader p{
+      .stallHeader p {
         margin: 0;
       }
-      .expoHeadinng{
+      .expoHeadinng {
         text-transform: uppercase;
-        color: #007A54;
+        color: #007a54;
         font-size: 18px;
         font-weight: 700;
         padding: 7px 10px 5px 11px;
         border-radius: 5px;
-        border: 1px solid #007A54;
+        border: 1px solid #007a54;
       }
       /* header css */
       .companyNameContents img {
         height: 30px;
+        left: 11%;
+        top: 8%;
         width: 30px;
         object-fit: contain;
+        position: absolute;
+        /* top: 16px; */
       }
-      .stallPageBg{
+      .stallPageBg {
         background-image: url('./assets/background_images/bgImg.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding:30%;
+        padding: 19%;
       }
-      .stallContent{
-        width:90%;
-        margin:auto;
+      .stallContent {
+        width: 90%;
+        margin: auto;
       }
       .stallContentInner {
         border-radius: 8px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         padding: 25px 22px 50px 32px;
-        background-image: linear-gradient(to bottom,#F5FFF6 0%,#F5FFF6 70%,#CDEBD0 70%,#CDEBD0 100%);
-        max-width:360px;
+        background-image: linear-gradient(to bottom, #f5fff6 0%, #f5fff6 80%, #cdebd0 80%, #cdebd0 100%);
+        max-width: 360px;
         margin: auto;
       }
       .companyName {
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-size: 15px;
         font-weight: 600;
         padding: 10px;
         border-radius: 5px;
-        background-color: #007A54;
+        background-color: #007a54;
         max-width: 184px;
         width: 100%;
       }
@@ -335,21 +358,21 @@
         gap: 15px;
         position: relative;
         top: 3px;
-        padding-left: 18px;
+        justify-content: center;
       }
-      .stallNum{
-        color: #FFF;
+      .stallNum {
+        color: #fff;
         font-size: 13px;
         font-weight: 600;
         margin: 0;
       }
-      .agriProductsContents{
+      .agriProductsContents {
         display: flex;
         position: relative;
         z-index: 9;
       }
       .agriProductsContents::before {
-        content: "";
+        content: '';
         position: absolute;
         /* border-top: 160px solid #007A54; */
         /* border-left: 21px solid transparent; */
@@ -359,13 +382,13 @@
         height: 100%;
         width: 100%;
         z-index: -1;
-        left: 6%;
+        left: 10%;
         top: -13px;
         max-width: 314px;
         background-size: contain;
       }
       .agriProductsContents::after {
-        content: "";
+        content: '';
         position: absolute;
         background-image: url('./assets/logo/stage.png');
         background-repeat: no-repeat;
@@ -376,7 +399,6 @@
         left: 0;
         background-size: contain;
         top: 92%;
-      
       }
       /* .agriProductsContents::after {
             content: "";
@@ -416,7 +438,7 @@
         right: 22px;
         top: 6px;
       }
-      .icons::before{
+      .icons::before {
         position: absolute;
         content: '';
         background-image: url('./assets/logo/iconsBg.png');
@@ -428,23 +450,24 @@
         left: 0;
         background-size: contain;
         top: 0%;
-      
       }
-      .productSection,.hallNum{
-        padding:20px 00px;
+      .productSection,
+      .hallNum {
+        padding: 20px 00px;
       }
       .productSection img {
         height: 35px;
         width: 40px;
         object-fit: contain;
         border-radius: 10px 10px 10px 2.5px;
-        background: #FFF;
+        background: #fff;
         padding: 5px 4px 4px 3px;
+        cursor: pointer;
       }
       .productSection {
-        padding-left: 30px;
+        padding-left: 38px;
         padding-top: 32px;
-        padding-bottom:35px;
+        padding-bottom: 35px;
       }
 
       @media only screen and (max-width: 500px) {
@@ -457,7 +480,7 @@
         }
       }
 
-      @media only screen and (max-width:370px){
+      @media only screen and (max-width: 370px) {
         .stallContentInner {
           max-width: 330px;
         }
@@ -483,17 +506,13 @@
         display: block; /* Show only the active stall */
       }
 
-      *{
-        box-sizing:unset!important;
+      * {
+        box-sizing: unset !important;
       }
     </style>
   </head>
   <body>
-
-
     <div class="stallPage"></div>
-
-
   </body>
   <script src="sharestall.js"></script>
 </html>

@@ -434,7 +434,27 @@ z-index:9999;
     justify-content: center;
     border-radius: 10px;
 }
-
+.switch{
+    background-color: #f2bf0b;
+    color:#3c2b25;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 9999;
+    right: 10px;
+    top:5px;
+}
+#stick img{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    display: block;
+    pointer-events: none;
+    right: 10px;
+    bottom: 22px;
+    z-index: 99;
+   }
   #iframe-url {
 
     position: fixed;

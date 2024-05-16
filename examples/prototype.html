@@ -158,6 +158,9 @@
   </head>
 
   <body>
+    <div id="stick">
+      <img src="assets/icons/joystickimg.png">
+    </div>
      <!-- chat noifiction slide -->
      <div class="chatSlide">
       <p class="slideText">You've received a new message</p>
@@ -357,7 +360,7 @@
     <div id="iframe-container">
       <iframe id="iframe-url" src=""></iframe>
     </div>
-
+     <button class="switch">Switch To 2D</button>
     <!-- js files -->
 
     <script src="js/translatorjs/halltranslator.js"></script>
@@ -450,7 +453,7 @@
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
         <a-entity id="rig"  cursor-teleport="cameraRig: #rig; cameraHead: #player; collisionEntities: .collision;" 
-        movement-controls="fly:false;controls:keyboard,nipple;speed:1" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 1 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:1;">
+        movement-controls="fly:false;controls:keyboard,nipple;speed:1" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right;sideMargin:30px;bottomMargin:30px" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 1 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:1;">
           <a-entity
             id="player"
             camera
@@ -2948,4 +2951,11 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
   })
 </script> -->
   </body>
+  <script>
+    document.querySelector('.switch').addEventListener('click',function(){
+      var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
+    window.location.href = lowpolylink
+ 
+    })
+  </script>
 </html>

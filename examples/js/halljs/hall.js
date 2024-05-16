@@ -663,7 +663,7 @@ if(useragent=="mobile"){
   document.getElementById("chat-icon123").style.display="none"
 }else{
   document.getElementById("iframe-expoDir").setAttribute("src",`https://expo1.marketcentral.in/expoDirectory.cfm`)
-
+  document.getElementById("stick").style.display="none"
 
 }
 

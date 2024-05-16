@@ -177,7 +177,7 @@ function calculateInternetSpeed(callback) {
 }
 calculateInternetSpeed(function() {
     console.log("Internetspeed in kbps:", internetspeed_kbps);
-    if (internetspeed_kbps > 100) {
+    if (internetspeed_kbps < 1000) {
         dynamicpoint = '2d-AgriExpo/hall';
     } else {
         dynamicpoint = 'prototype';
