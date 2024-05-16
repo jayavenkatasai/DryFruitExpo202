@@ -163,7 +163,7 @@ function renderStalls() {
                                     <!-- Product images will be added here dynamically -->
                                 </div>
                                 <div class="hallNum">
-                                    <p class="stallNum">Stall No:<span>${index+ 1}</span></p>
+                                    <p class="stallNum">Stall No:<span>${index + 1}</span></p>
                                     <div class="icons">
                                         <a href="${stall.websiteLink}" target="_blank"><img src="./assets/logo/web.png"></a>
                                         ${stall.broucherlinkAvailable === 'yes' ? `<a href="${stall.broucherlink}" target="_blank" id="broucher${index + 1}"><img src="./assets/logo/pdf.png"></a>` : '<a  target="_blank"><img src="./assets/logo/pdf.png"></a>'}
@@ -177,7 +177,7 @@ function renderStalls() {
                         </div>
                     </div>
                 </div>
-                <div class="chat">
+                <div class="chat" onclick="showindividualchat(${index}, ${stall.uno}, '${stall.vendorInfo.companyname}')">
                      <img src="./assets/logo/mblChat.png">
                 </div>
             </div>
@@ -237,7 +237,8 @@ function renderStalls() {
           
 
             <div id="chat-ui-room2_${index}" class="chat-ui-room2">
-            <iframe id="chatui2_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
+            <img class="toDClose" id="toDClose_${index}" onclick="closechat(${index})" src="assets/icons/blueCloseIcon.png">
+            <iframe class="chatClass" id="chatui2_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
             <div class="indidualChatIcons">
               <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
             </div>
@@ -246,6 +247,14 @@ function renderStalls() {
     <div id="iframe-container_${index}" class="iframe-containerr">
     <iframe id="iframe-url_${index}" src="" class="iframe-urll"></iframe>
   </div>
+
+    <div id="chat-visitorpanel-room2_${index}" class="chat-ui-room2">
+            <img class="toDClose" id="toDCloseone_${index}" onclick="closechatone(${index})" src="assets/icons/blueCloseIcon.png">
+            <iframe class="chatClassone" id="chatui3_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
+            <div class="indidualChatIcons">
+              <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
+            </div>
+    </div>
 
             `;
 
@@ -396,10 +405,10 @@ function openlink(value) {
 function closePopup1(index) {
     document.getElementById(`popup-overlay_${index}`).style.display = "none"
     document.querySelector(`.url-copied-alert`).style.display = "none"
-    if(document.getElementById('urlText').textContent ==="Product Link"){
-        document.getElementById(`digitalPopUp_${index}`).style.display = "block"
+    if (document.getElementById('urlText').textContent === "Product Link") {
+        document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
     }
-   
+
 }
 
 function copyToClipboard(inex) {
@@ -425,15 +434,15 @@ function copyToClipboard(inex) {
 
 
 function showchat(index, uid, bname) {
-   // alert("chat trigger");
+    // alert("chat trigger");
     var usernamelocal = localStorage.getItem('UserName');
     var guidd = localStorage.getItem('GUID');
     document.getElementById(`chat-ui-room2_${index}`).style.display = "flex";
     if (!isStallVisited(uid)) {
         document.getElementById(`iframe-url_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${uid}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
-       // trackinga(`visitor passed through - ${uid}`,'hall')
+        // trackinga(`visitor passed through - ${uid}`,'hall')
         markStallVisited(uid);
-      }
+    }
     document.getElementById(`chatui2_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${uid}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
 }
 
@@ -442,9 +451,29 @@ function markStallVisited(stallId) {
     let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
     visitedStalls.push(stallId);
     localStorage.setItem('visitedStalls', JSON.stringify(visitedStalls));
-   }
-   // Function to check if a stall has been visited
-   function isStallVisited(stallId) {
+}
+// Function to check if a stall has been visited
+function isStallVisited(stallId) {
     let visitedStalls = JSON.parse(localStorage.getItem('visitedStalls')) || [];
     return visitedStalls.includes(stallId);
-   }
+}
+
+function closechat(index) {
+    document.getElementById(`chat-ui-room2_${index}`).style.display = "none"
+}
+
+
+function closechatone(index) {
+    document.getElementById(`chat-visitorpanel-room2_${index}`).style.display = "none"
+}
+
+
+
+function showindividualchat(index, uid, bname) {
+    // alert("chat trigger");
+    var usernamelocal = localStorage.getItem('UserName');
+    var guidd = localStorage.getItem('GUID');
+    document.getElementById(`chat-visitorpanel-room2_${index}`).style.display = "flex";
+    document.getElementById(`chatui3_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${usernamelocal}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${guidd}`);
+}
+
