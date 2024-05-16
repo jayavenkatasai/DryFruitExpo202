@@ -128,10 +128,7 @@ else {
 var dynamicpoint;
 var internetspeed_kbps;
 var internetspeed_mbps;
-var parser = new UAParser();
-var result = parser.getResult();
-var useragent =result.device.type
-var os =result.os.name
+
 document.addEventListener("DOMContentLoaded", function() {
     // if (navigator.connection) {
     //     console.log(`Effective network type: ${navigator.connection.effectiveType}`);
@@ -180,12 +177,8 @@ function calculateInternetSpeed(callback) {
 }
 calculateInternetSpeed(function() {
     console.log("Internetspeed in kbps:", internetspeed_kbps);
-    if (internetspeed_kbps > 700) {
-    //    if(useragent=="mobile"){
-    //     dynamicpoint = '2d-AgriExpo/hall';
-    //    }
-     //  dynamicpoint = 'prototype';
-     dynamicpoint = '2d-AgriExpo/hall';
+    if (internetspeed_kbps < 100) {
+        dynamicpoint = '2d-AgriExpo/hall';
     } else {
         dynamicpoint = 'prototype';
     }

@@ -66,6 +66,73 @@ const fetchdata = () => {
             console.error('Fetch Error:', error);
         });
 };
+function shaerestall(uno, name, index) {
+    var currentURL1 = window.location.href;
+    var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+    //console.log(typeof uno)
+    //console.log(uno)
+    var newURL = `${baseURL}sharestall.html?uno=${encryptWithCasePreservation(uno.toString())}&stallno=${name}`;
+    document.getElementById(`popup-overlay_${index}`).style.display = "flex"
+    document.getElementById(`currentURL`).value = newURL
+    document.getElementById('urlText').textContent = "Stall Link"
+    // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
+    //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
+    //     document.getElementById(`currentURL_${index}`).value=prdurl
+ 
+    //  });
+}
+ 
+function shaerestallurl(uno, name, index) {
+    var currentURL1 = window.location.href;
+    var baseURL = currentURL1
+    console.log(currentURL1)
+    // alert(currentURL1)
+    //console.log(uno)
+ 
+    document.getElementById(`popup-overlay_${index}`).style.display = "flex"
+    document.getElementById(`currentURL`).value = currentURL1
+    document.getElementById('urlText').textContent = "Stall Link"
+    // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
+    //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
+    //     document.getElementById(`currentURL_${index}`).value=prdurl
+ 
+    //  });
+}
+ 
+ 
+function closepopup(index) {
+    document.querySelector(`#digitalPopUp_${index}`).style.display = "none";
+}
+//     document.querySelector('.closeImg').addEventListener('click', function() {
+ 
+//     });
+// });
+ 
+function openlink(value) {
+    window.open(value, '_blank')
+}
+function closePopup1(index) {
+    document.getElementById(`popup-overlay_${index}`).style.display = "none"
+    document.querySelector(`.url-copied-alert`).style.display = "none"
+    if (document.getElementById('urlText').textContent === "Product Link") {
+        document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
+    }
+ 
+}
+ 
+function copyToClipboard(inex) {
+    // Get the current URL
+    var currentURL = document.getElementById(`currentURL`).value;
+    // Copy the URL to the clipboard
+    navigator.clipboard.writeText(currentURL)
+        .then(function () {
+            // alert('URL copied to clipboard!');
+            document.getElementById(`url-copied-alert-txt`).style.display = 'block';
+        })
+        .catch(function (err) {
+            console.error('Unable to copy to clipboard', err);
+        });
+}
 
 const expoContainer = document.getElementById("expo-container");
 
@@ -96,6 +163,17 @@ function renderStalls() {
                 </div>
                 <div class="stallContent" id="stallcontent">
                     <div class="stallContentInner">
+                    <div class="custDetails">
+                    <img class="custImg" src="${stall.vendorInfo.vendorimage}">
+                    <div class="custNameDetails">
+                        <p class="custName">${stall.vendorInfo.vendorName}</p>
+                        <p class="custNum">${stall.vendorInfo.contactNumber}</p>
+                    </div>
+                    <div class="mediaIconsSection">
+                        <img class="mediaIcons"   id="sharestall_${index}" onClick="shaerestallurl(${stall.uno},${index + 1},${index})"  src="./assets/logo/share stall.png">
+                       
+                    </div>
+                </div>
                         <div class="companyNameContents">
                             <img src="${stall.vendorInfo.vendorimage}" alt="${stall.vendorInfo.vendorName}">
                             <p class="companyName">${stall.vendorInfo.companyname}</p>
@@ -228,8 +306,11 @@ function showpopup(prdname, prdprice, prdlink, prdurl, index) {
         window.open(prdurl, "_blank");
     });
     document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
+        document.getElementById(`digitalPopUp_${index}`).style.display = "none"
         document.getElementById(`popup-overlay_${index}`).style.display = "flex"
-
+        document.getElementById(`currentURL`).value = prdurl
+        document.getElementById('urlText').textContent = "Product Link"
+ 
     });
     document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
 }
@@ -286,5 +367,10 @@ function openlink(value) {
     window.open(value, '_blank')
 }
 function closePopup1(index) {
+    if (document.getElementById('urlText').textContent === "Product Link") {
+        document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
+    }
+    // document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
+    document.getElementById(`url-copied-alert-txt`).style.display = "none"
     document.getElementById(`popup-overlay_${index}`).style.display = "none"
 }

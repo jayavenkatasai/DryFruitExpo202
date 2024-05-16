@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital And Medical Supplies Expo</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+
+    <link rel="stylesheet" href="css/Avthar.css" />
+
+    <script src="js/ip-address.js"></script>
+    <script src="js/track js/tracking-ga.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preload" href="/dist/networked-aframe.js" as="script">
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script src="js/introjs/Avthar.js"></script>
+
+ 
+    <style>
+      *{
+          margin: 0;
+      }
+      body{
+          font-family: "Nunito", sans-serif;
+          margin:15px;
+      }
+      .sectionTwo a img {
+        max-width: 145px;
+    }
+    .sectionTwo a{
+      position: absolute;
+        left: 51%;
+        bottom:2%;
+    }
+      
+      .welcomeIntro{
+          color: #8FDAFF;
+          font-size: 55px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal; 
+          padding-bottom: 20px;
+      }
+      .welcomeHsptlText{
+          color: #FFF;
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          text-transform: uppercase; 
+          padding-bottom:70px;
+      }
+      .intro{
+          background-color:#F1FDFF;
+          height:95vh;
+      }
+      .introContents,.introSections{
+          height:100%;
+      }
+      .sectionOne ::placeholder,.nameInput{
+          color: #344054;
+          text-align: center;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 20px;
+      }
+      .radioButtonOne,.radioButtonTwo {
+	display: flex;
+	align-items: center;
+}
+      .radioButtons span{
+        color: #fff;
+        font-size: 22px;
+      }
+      .radioButtons{
+        display:flex;
+        gap: 30px;
+        padding-bottom: 10px;
+      }
+      .radioButtons input {
+	height: 20px;
+	width: 17px;
+}
+.radioButtons span{
+  padding-left: 5px;
+}
+      .nameInput{
+          padding: 18px;
+          border-radius: 8px;
+           border: 1px solid rgba(0, 9, 57, 0.10);
+          background:#FFF;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+          font-family: "Nunito", sans-serif;
+      }
+      .nameInput:focus{
+        outline:transparent;
+      }
+      .enterExpoButton{
+          margin-top:15px;
+          border-radius:12px;
+          background: #F65927; 
+          color: #FFF;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal; 
+          padding:17px 0;
+          border:none;
+          font-family: "Nunito", sans-serif;
+          cursor: pointer;
+      }
+      .nameInput{
+          max-width:360px;
+          width:100%;
+      }
+      .enterExpoButton{
+        max-width:400px;
+      }
+      .sectionOne{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          padding-left:50px;
+          width:40%;
+      }
+      .sectionOne,.sectionTwo{
+          height:100%;
+          /* width:100%; */
+      }
+      .introSections{
+          display:flex;
+          align-items:center;
+          gap:60px;
+      }
+      .sectionTwo img{
+          width:100%;
+        height: 100%;
+          object-fit: contain;
+      }
+      .sectionTwo{
+          position: relative;
+          z-index: 9;
+      }
+      .sectionTwo::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          background-color: #fff;
+          z-index: -1;
+          height: 100%;
+          width: 50%;
+          left: 50%;
+      }
+      .welcomeHsptlText span{
+          display: block;
+      }
+      .wrongText{
+          color:#fff;
+          font-size:14px;
+          font-weight:600;
+          display: none
+      }
+      @media only screen and (max-width:767px){
+          .introSections{
+              flex-direction:column;
+          }
+          .enterExpoButton {
+    max-width: 385px;
+}
+          .radioButtons span {
+	font-size: 18px;
+}
+          .introPoweredBy {
+              width: 95%;
+              margin: auto;
+              text-align: end;
+          }
+          .sectionTwo a{
+            position: unset;
+          }
+          .sectionOne{
+              padding:0;
+              width:95%;
+              margin:auto;
+          }
+          .welcomeIntro {
+              font-size: 35px;
+              padding:20px 0 0 0;
+          }
+          .welcomeHsptlText {
+              font-size: 37px;
+              padding-bottom: 30px;
+          }
+          .sectionOne ::placeholder,.nameInput{
+              font-size:18px;
+              padding: 10px;
+          }
+          .enterExpoButton{
+              font-size:18px;
+              padding: 10px;
+              cursor: pointer;
+          }
+          .sectionTwo::before{
+              display:none;
+          }
+          .sectionTwo img{
+              height:unset;
+          }
+          .introSections {
+              gap: 20px;
+          }
+      }
+  </style>
+  </head>
+  <body>
+    <!-- intro new -->
+    <div class="intro">
+      
+      <div class="threeImages" style="text-align: center">
+        <h2 class="Avthar-text">Choose your profile</h2>
+        <p class="avtharDescription"> This is how you'll appear on the Expo.</p>
+        <br />
+        <div class="threeImagesContents">
+          <div class="images" id="avthar1" onclick="displayImageId(this)">
+            <img class="maleAvtar" src="assets/Avthars/chosenMaleAvatar.png" />
+            <img class="chosenMaleAvtar" src="assets/Avthars/Avthar1.png" />
+          </div>
+          <div class="images" id="avthar2" onclick="displayImageId(this)">
+            <img class="femaleAvtar" src="assets/Avthars/Avthar2.png" />
+            <img class="chosenFemaleAvtar" src="assets/Avthars/chosenFemaleAvtar.png" />
+          </div>
+          <!-- <div class="images">
+                <img src="assets/Avthars/Avthar3.png" id="avthar3" onclick="displayImageId(this)" >
+            </div> -->
+        </div>
+        <div class="image-id">
+          <!-- <h2 id="displayId"></h2> -->
+        </div>
+        <div class="continueExpoButton">
+          <button class="continue-text">Enter Expo</button>
+        </div>
+      </div>
+  </div>
+  </body>
+
+  <script>
+    if(!localStorage.getItem('Avthar')){
+      localStorage.setItem('Avthar','avthar1')
+    }
+     function displayImageId(img) {
+                localStorage.setItem('Avthar',img.id) 
+              }
+    if(localStorage.getItem('Avthar')=='avthar2'){
+      document.querySelector('.chosenFemaleAvtar').style.display="block";
+   
+      document.querySelectorAll('#avthar2').forEach(function(img) {
+                        img.classList.add('mainImg');
+              // document.querySelector('#avthar1').classList.remove('mainImg')
+              $('.threeImagesContents').addClass('imagesSelectionBefore');
+              $('#avthar2').click(function(){
+      $('.threeImagesContents').addClass('imagesSelectionAfter');
+      $('.threeImagesContents').removeClass('imagesSelectionBefore');
+    })
+    $('#avthar1').click(function(){
+      $('.threeImagesContents').removeClass('imagesSelectionAfter');
+      $('.threeImagesContents').addClass('imagesSelectionBefore');
+      $('.threeImagesContents').addClass('imagesSelectionMedium');
+    })
+      });
+     
+    }
+    window.onload = function () {
+      tracking(0, 'avtharpage', '');
+      //  trackExpo(0, "exhibition3", "", ipAddress);
+    };
+    $('#avthar2').click(function(){
+      $('.threeImagesContents').addClass('imagesSelection');
+    })
+    $('#avthar1').click(function(){
+      $('.threeImagesContents').removeClass('imagesSelection');
+    })
+  
+
+  </script>
+
+
+
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PGGTB73FL0');
+  </script>
+  <script src="js/translatorjs/Avthartranslator.js"></script>
+  <script src="js/track js/ua-parser.js"></script>
+  <script src="js/encrypt.js"></script>
+  <script src="js/track js/trackapi.js"></script>
+  <script src="js/track js/track.js"></script>
+</html>

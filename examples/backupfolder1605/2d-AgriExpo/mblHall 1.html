@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="encrypt.js"></script>
     <style>
         body{
             margin: 0;
@@ -15,6 +14,19 @@
             background-color:#94CD9A;
             height: 100%;
             font-family: "Montserrat", sans-serif;
+        }
+        /* header css */
+        .stallHeader{
+            display:flex;
+            justify-content: space-between;
+            padding: 11px 20px;
+            background: #FEF5DF; 
+        }
+        /* header css */
+        .companyNameContents img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
         }
         .stallPageBg{
             background-image: url('./assets/background_images/bgImg.png');
@@ -30,26 +42,29 @@
         .stallContentInner {
             border-radius: 8px;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            padding: 25px 22px 25px 32px;
+            padding: 25px 22px 50px 32px;
             background-image: linear-gradient(to bottom,#F5FFF6 0%,#F5FFF6 70%,#CDEBD0 70%,#CDEBD0 100%);
             max-width:360px;
             margin: auto;
         }
-        .companyName{
+        .companyName {
             color: #FFF;
             text-align: center;
             font-size: 15px;
             font-weight: 600;
             padding: 10px;
-            border-radius:5px;
+            border-radius: 5px;
             background-color: #007A54;
+            max-width: 184px;
+            width: 100%;
         }
         .companyNameContents {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             position: relative;
             top: 3px;
+            padding-left: 18px;
         }
         .stallNum{
             color: #FFF;
@@ -65,16 +80,18 @@
         .agriProductsContents::before {
             content: "";
             position: absolute;
-            /* border-top: 160px solid #007A54;
-            border-left: 21px solid transparent;
-            border-right: 21px solid transparent; */
+            /* border-top: 160px solid #007A54; */
+            /* border-left: 21px solid transparent; */
+            /* border-right: 21px solid transparent; */
             background-image: url('./assets/logo/connector.png');
             background-repeat: no-repeat;
             height: 100%;
             width: 100%;
             z-index: -1;
-            left: 4%;
+            left: 6%;
             top: -13px;
+            max-width: 314px;
+            background-size: contain;
         }
         .agriProductsContents::after {
             content: "";
@@ -86,10 +103,10 @@
             height: 100%;
             z-index: -1;
             left: 0;
+            background-size: contain;
             top: 92%;
             
         }
-      
         /* .agriProductsContents::after {
             content: "";
             position: absolute;
@@ -120,12 +137,12 @@
             gap: 5px;
             max-width: 89px;
             position: relative;
-            padding: 10px;
-            z-index:9;
+            padding: 15px 10px;
+            z-index: 9;
         }
         .hallNum {
             position: absolute;
-            right: 46px;
+            right: 22px;
             top: 6px;
         }
         .icons::before{
@@ -136,36 +153,76 @@
             height: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            z-index: -1;
             left: 0;
+            background-size: contain;
             top: 0%;
 
         }
         .productSection,.hallNum{
             padding:20px 00px;
         }
-        .productSection a img {
+        .productSection img {
             height: 35px;
             width: 40px;
             object-fit: contain;
-        }
-        .productSection a{
             border-radius: 10px 10px 10px 2.5px;
             background: #FFF; 
             padding: 5px 4px 4px 3px;
         }
         .productSection {
-            padding-left: 22px;
+            padding-left: 30px;
             padding-top: 32px;
+            padding-bottom:35px;
+        }
+        @media only screen and (max-width:500px){
+            .stallContent {
+                width: 100%;
+                margin: auto;
+            }
+            .stallContentInner {
+                padding: 25px 5px 50px 5px;
+            }
+        }
+        @media only screen and (max-width:370px){
+            .stallContentInner {
+                max-width: 330px;
+            }
+            .productSection {
+                padding-left: 20px;
+            }
+            .agriProductsContents::before {
+                left: 4%;
+            }
+            .hallNum {
+                position: absolute;
+                right: 8px;
+                top: 4px;
+            }
+            .companyNameContents {
+                gap: 7px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="stallHeader">
+        <div class="toggler">
+            <p><img src="./assets/logo/toggleImg.png">
+                Stalls</p>
+        </div>
+        <div class="expoHeading">
+            <p class="expoHeadinng">AGRI EXPO</p>
+        </div>
+        <div class="lobbyClass">
+            <p class="lobbyName">Lobby</p>
+        </div>
+    </div>
     <div class="stallPage">
         <div class="stallPageBg">
             <!-- <img src="./assets/background_images/bgImg.png"> -->
         </div>
-        <!-- <div class="stallContent">
+        <div class="stallContent">
             <div class="stallContentInner">
                 <div class="companyNameContents">
                     <img src="./assets/logo/logoImg.png">
@@ -183,19 +240,17 @@
                         <div class="hallNum">
                             <p class="stallNum">Stall No:<span> 1</span></p>
                             <div class="icons">
-                                <a href=""><img src="./assets/logo/web.png"></a>
-                                <a href=""><img src="./assets/logo/pdf.png"></a>
-                                <a href=""><img src="./assets/logo/contact.png"></a>
-                                <a href=""><img src="./assets/logo/Mail.png"></a>
-                                <a href=""><img src="./assets/logo/call.png"></a>
+                                <img src="./assets/logo/web.png">
+                                <img src="./assets/logo/pdf.png">
+                                <img src="./assets/logo/contact.png">
+                                <img src="./assets/logo/Mail.png">
+                                <img src="./assets/logo/call.png">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
-    <script src="hall.js"></script>
-
 </body>
 </html>

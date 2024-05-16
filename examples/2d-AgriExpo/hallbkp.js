@@ -177,8 +177,8 @@ function renderStalls() {
                         </div>
                     </div>
                 </div>
-                <div class="chat" onclick="showindividualchat(${index}, ${stall.uno}, '${stall.vendorInfo.companyname}')">
-                     <img src="./assets/logo/mblChat.png">
+                <div class="chat" >
+                     <img src="./assets/logo/mblChat.png" onclick="showindividualchat(${index}, ${stall.uno}, '${stall.vendorInfo.companyname}')">
                 </div>
             </div>
             
