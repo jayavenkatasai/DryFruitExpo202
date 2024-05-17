@@ -180,7 +180,7 @@ function calculateInternetSpeed(callback) {
 }
 calculateInternetSpeed(function() {
     console.log("Internetspeed in kbps:", internetspeed_kbps);
-    if (internetspeed_kbps > 700) {
+    if (internetspeed_kbps < 700) {
     //    if(useragent=="mobile"){
     //     dynamicpoint = '2d-AgriExpo/hall';
     //    }

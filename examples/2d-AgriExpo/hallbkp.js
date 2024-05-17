@@ -185,7 +185,7 @@ function renderStalls() {
 
             <div class="digitalPopUp" id="digitalPopUp_${index}">
             <div class="digitalPopUpContents">
-                <img class="closeImg" src="images/digitalClose.png" onclick="closepopup(${index})">
+                <img class="closeImg" src="assets/icons/blueCloseIcon.png" onclick="closepopup(${index})">
                 <div class="productDetailsSection">
                     <img class="productImg" id="productImgid_${index}" src="">
                     <div class="productDetails">
