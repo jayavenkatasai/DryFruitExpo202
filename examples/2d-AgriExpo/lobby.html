@@ -1002,14 +1002,56 @@
               width:95%;
           }
       }
+      /*  */
+      #expo-directory-section {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* High z-index to appear on top */
+    background-color: #fff;
+    display: none; /* Optional: add background color */
+}
+
+#close-icon-expo {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    cursor: pointer; /* Optional: change cursor to pointer */
+    z-index: 1001; /* Ensure it is above the iframe */
+}
+
+#iframe {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    border: none; /* Remove border if any */
+}
+
+#expo-frame {
+  width: 100% !important;
+    height: 100vh !important; /* Full viewport height minus space for the close icon */
+    border: none; /* Remove border if any */
+    position: relative;
+}
+
+      /*  */
      
 </style>
 <body>
+
     <script src="encrypt.js"></script>
 <!--  -->
+<div id="expo-directory-section">
+  <div id="close-icon-expo" >
+    <img  src="assets/icons/closeButton 1.png" >
+  </div>
+    <iframe id="expo-frame" src="https://expo1.marketcentral.in/expoDirectoryMobile.cfm"></iframe>
+ 
+</div>
     <header>
       <a class="agriExpoHeading" href="">Agri Expo</a>
   </header>
+
   <div class="lobby">
       <div class="lobbyImages">
           <div class="webinarImgSectionMain">
@@ -1035,7 +1077,7 @@
           <img src="./assets/Question.svg">
           <p class="helpDeskText">HELP DESK</p>
       </div>
-      <div class="directoryContents">
+      <div class="directoryContents" id="direct">
           <img src="./assets/FolderOpen.svg">
           <p class="directoryText">EXPO
               DIRECTORY</p>
@@ -1127,6 +1169,7 @@
           </div>
         </div>
     </div>
+   
     <!-- <button  id="webinar-btn">Webinar</button> -->
     <!-- <button id="expo-dir-btn">Expo Directory</button> -->
     <!-- <button id="helpdesk-btn">Help Desk</button> -->
@@ -1268,6 +1311,11 @@ $('.helpcloseIcon').click(function () {
       document.getElementById("webinar-btn").addEventListener("click", function() {
   window.open("webinar.html", "_blank");
 });
-
+document.getElementById("close-icon-expo").addEventListener("click",function(){
+  document.getElementById('expo-directory-section').style.display="none"
+})
+document.getElementById("direct").addEventListener("click",function(){
+  document.getElementById('expo-directory-section').style.display="block"
+})
 </script>
 </html>
