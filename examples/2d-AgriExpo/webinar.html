@@ -48,6 +48,10 @@
       .video-image {
         z-index:9999
       }
+      /* additional code for webinar 2005 */
+      .video-image{
+        display: none;
+      }
       #popup-overlay {
         z-index: 999;
         display: none;
@@ -457,7 +461,7 @@
     </script>
     <script>
       document.getElementById('marketcentral-website-visit').addEventListener('click', function () {
-        trackExpo(0, 'marketcentral-website-visit', '');
+       // trackExpo(0, 'marketcentral-website-visit', '');
       });
     </script>
     <script>
@@ -471,7 +475,7 @@
         currentURLInput.value = currentURL;
         popupOverlay.style.display = 'flex';
         // trackExpo(0, 'webinar share', ' ');
-        tracking(0, 'webinar share', ' ', '');
+       // tracking(0, 'webinar share', ' ', '');
       }
 
       function copyToClipboard() {
