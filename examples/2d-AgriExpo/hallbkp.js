@@ -166,7 +166,7 @@ function renderStalls() {
                                     <p class="stallNum">Stall No:<span>${index + 1}</span></p>
                                     <div class="icons">
                                         <a href="${stall.websiteLink}" target="_blank"><img src="./assets/logo/web.png"></a>
-                                        ${stall.broucherlinkAvailable === 'yes' ? `<a href="${stall.broucherlink}" target="_blank" id="broucher${index + 1}"><img src="./assets/logo/pdf.png"></a>` : '<a  target="_blank"><img src="./assets/logo/pdf.png"></a>'}
+                                        ${stall.broucherlinkAvailable === 'yes' ? `<a href="${stall.broucherlink}" target="_blank" id="broucher${index + 1}"><img src="./assets/logo/pdf.png"></a>` : '<a  target="_blank" onclick="alertbroucher()"><img src="./assets/logo/pdf.png" ></a>'}
                                    
                                         <a href="${stall.businesscard}" target="_blank"><img src="./assets/logo/contact.png"></a>
                                         <a href="mailto:${stall.vendorInfo.email}" target="_blank"><img src="./assets/logo/Mail.png"></a>
@@ -477,3 +477,6 @@ function showindividualchat(index, uid, bname) {
     document.getElementById(`chatui3_${index}`).setAttribute('src', `https://expo1.marketcentral.in/CHAT/visitorpannel.cfm?stallid=12&name=${usernamelocal}&bname=${localStorage.getItem('UserName')}&name=${localStorage.getItem('UserName')}&uid=${guidd}`);
 }
 
+function alertbroucher(){
+    alert("No Broucher Available")
+}
