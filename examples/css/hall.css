@@ -457,6 +457,7 @@ iframe {
   z-index: 99;
   right: 10px;
   top: 5px;
+  display: none;
 }
 #stick img {
   position: fixed;

@@ -15,7 +15,7 @@ else {
   urlendpoint = 'https://www.marketcentral.in';
 }
 var lobbylanguage = localStorage.getItem('languageselection')
-const endpoint_ExhibitionId = '4';
+const endpoint_ExhibitionId = 4;
 var bgContainer = document.getElementById("bg");
 if(lobbylanguage =='hindi'){
   document.getElementById('lobby1').removeAttribute('gltf-model')

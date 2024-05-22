@@ -66,6 +66,7 @@ function closePopup1() {
     var popupOverlay = document.getElementById('popup-overlay');
     document.getElementById('url-copied-alert-txt').style.display = 'none';
     popupOverlay.style.display = 'none';
+    document.getElementById('popup').style.opacity = 1
 }
 
 // Function to fetch data from the API and update the scene
@@ -245,6 +246,7 @@ const fetchDataFromAPI = () => {
                             document.getElementById('share-prdt').addEventListener('click', function showPopup() {
                                     // var currentURL1 = window.location.href;
                                     // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+                                    document.getElementById('popup').style.opacity = 0
                                     var newURL = `${stall.products[imageIndex].productlink}`;
                                     var popupOverlay = document.getElementById('popup-overlay');
                                     var currentURLInput = document.getElementById('currentURL');

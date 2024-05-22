@@ -132,7 +132,7 @@ function renderStalls() {
         <div class="expoHeading">
             <p class="expoHeadinng">AGRI EXPO</p>
         </div>
-        <div class="lobbyClass">
+        <div class="lobbyClass" onclick="navigatetolobby()">
             <p class="lobbyName">Lobby</p>
         </div>
     </div>
@@ -238,7 +238,7 @@ function renderStalls() {
 
             <div id="chat-ui-room2_${index}" class="chat-ui-room2">
             <img class="toDClose" id="toDClose_${index}" onclick="closechat(${index})" src="assets/icons/blueCloseIcon.png">
-            <iframe class="chatClass" id="chatui2_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
+            <iframe class="chatClass" id="chatui2_${index}" src="" width="800px" height="100%" allowfullscreen></iframe>
             <div class="indidualChatIcons">
               <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
             </div>
@@ -250,7 +250,7 @@ function renderStalls() {
 
     <div id="chat-visitorpanel-room2_${index}" class="chat-ui-room2">
             <img class="toDClose" id="toDCloseone_${index}" onclick="closechatone(${index})" src="assets/icons/blueCloseIcon.png">
-            <iframe class="chatClassone" id="chatui3_${index}" src="" width="800px" height="500px" allowfullscreen></iframe>
+            <iframe class="chatClassone" id="chatui3_${index}" src="" width="800px" height="100%" allowfullscreen></iframe>
             <div class="indidualChatIcons">
               <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
             </div>
@@ -307,6 +307,8 @@ function showStall(index) {
 
 function showStalls(index) {
     //debugger
+    document.querySelector('.digitalPopUp').style.display="none"
+    document.querySelector('.digitalcopyPopUp').style.display="none"
     const stalls = document.querySelectorAll('.stall');
     stalls[currentStallIndex].classList.remove('active');
     currentStallIndex = (currentStallIndex + index + stalls.length) % stalls.length;
@@ -479,4 +481,10 @@ function showindividualchat(index, uid, bname) {
 
 function alertbroucher(){
     alert("No Broucher Available")
+}
+
+function navigatetolobby(){
+   
+        window.location.href="lobby.html"
+
 }

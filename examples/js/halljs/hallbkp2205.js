@@ -180,25 +180,7 @@ function removeEntities(stalls) {
         document.getElementById(`moveup${stallIndex + 1}`).setAttribute("visible", "false");
         document.getElementById(`bubble${stallIndex + 1}`).setAttribute('visible', 'false')
         document.getElementById('moveup51').setAttribute('visible', 'false')
-// entity removal and adjust code
-const containerEntityb = document.createElement("a-entity");
-containerEntityb.setAttribute("position", "4.2 3.4 -6.87");
-containerEntityb.setAttribute("rotation", "0 90 0");
-containerEntityb.setAttribute("id", `broucher-dum1${stallIndex + 1}`);
-const planedummy = document.createElement("a-plane");
-planedummy.setAttribute("position","0 0 0");
-planedummy.setAttribute("visible","false");
-planedummy.setAttribute("color","red");
-planedummy.setAttribute("height","0.85");
-planedummy.setAttribute("width","1.05");
 
-document.getElementById(stallContainerId).appendChild(containerEntityb)
-containerEntityb.appendChild(planedummy)
-
-
-
-
-// end of entity adjustment
         // document.getElementById(`vendorname${stallIndex + 1}`).setAttribute("visible","false");
         // document.getElementById(`stall${stallIndex + 1}`).setAttribute("visible","false");
         for (let imageIndex = 0; imageIndex < numberOfImages; imageIndex++) {
@@ -279,26 +261,6 @@ const fetchDataFromAPI = () => {
                 }
             } else {
                 apivariable = data;
-
-
-                // new next previous
-                if (apivariable.Hallcount.nextHall == "yes") {
-                    document.getElementById("next-hall").setAttribute('visible', 'true')
-                    document.getElementById("next-hall").setAttribute("position", "9.2 3.2 27");
-                }
-                else {
-                    document.getElementById("next-hall").setAttribute('visible', 'true')
-                    document.getElementById("next-hall").setAttribute("position", "9.2 5 28");
-                }
-                if (apivariable.Hallcount.PrevHall == "yes") {
-                    document.getElementById("prev-hall").setAttribute('visible', 'true')
-                    document.getElementById("prev-hall").setAttribute("position", "13.31 3.2 27");
-                }
-                else {
-                    document.getElementById("prev-hall").setAttribute('visible', 'false')
-                    document.getElementById("prev-hall").setAttribute("position", "13.31 3.2 32");
-                }
-                // end next previous new
                 //console.log(apivariable)
                 // banners logic
                 if (c) {
@@ -337,9 +299,6 @@ const fetchDataFromAPI = () => {
 
                     //     document.querySelector(`#notetext${stallIndex + 1}`).setAttribute('value',"Note: Click here to chat")
                     // }
-                    if(document.getElementById(`broucher-dum1${stallIndex + 1}`)){
-                        document.getElementById(`broucher-dum1${stallIndex + 1}`).remove()
-                        }
                     setTextchatContent(selectedLanguage, stallIndex + 1)
                     document.getElementById(`bubble${stallIndex + 1}`).addEventListener('click', function () {
                         tracking(stall.uno, "chat", "", "")
@@ -355,44 +314,15 @@ const fetchDataFromAPI = () => {
                         document.getElementById(`email${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:mailto:${stall.vendorInfo.email};uno:${stall.uno};type:email`)
                     }
                     if (stall.broucherlinkAvailable == "yes") {
-                        let dumimAage= document.getElementById(`broucher-dum${stallIndex + 1}`)
-                        if(dumimAage){
-                          dumimAage.remove();
-                        }
                         document.getElementById(`broucher${stallIndex + 1}`).setAttribute("cursor-listener", `targetPage:${stall.broucherlink}`)
                     }
                     else {
-
-                        const containerEntityb = document.createElement("a-entity");
-                                        containerEntityb.setAttribute("position", "4.2 3.4 -6.87");
-                                        containerEntityb.setAttribute("rotation", "0 90 0");
-
-                                        containerEntityb.setAttribute("id", `broucher-dum${stallIndex + 1}`);
-                                        const planedummy = document.createElement("a-plane");
-                                    
-                                        planedummy.setAttribute("position","0 0 0");
-                                         planedummy.setAttribute("visible","false");
-
-                                        planedummy.setAttribute("color","red");
-                                         planedummy.setAttribute("height","0.85");
-                                          planedummy.setAttribute("width","1.05");
-                                        
-                                        document.getElementById(stallContainerId).appendChild(containerEntityb)
-                                        containerEntityb.appendChild(planedummy)
-                                        planedummy.addEventListener("mouseenter",function(){document.getElementById(`broucherinfo${stallIndex+1}`).setAttribute("visible","true")});
-                                     planedummy.addEventListener("mouseleave",function(){document.getElementById(`broucherinfo${stallIndex+1}`).setAttribute("visible","false")});
-                                        document.getElementById(`broucher${stallIndex + 1}`).removeAttribute("cursor-listener");
-                                        document.getElementById(`brouchertext${stallIndex + 1}`).setAttribute("value","No Broucher")
-                                        document.getElementById(`broucherinfo${stallIndex + 1}`).addEventListener("click",function(){
-                                            document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute("visible","true")
-                                        })
-
-                        // document.getElementById(`broucher${stallIndex + 1}`).addEventListener('click', function () {
-                        //     document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute('visible', 'true')
-                        // })
-                        // document.getElementById(`broucher${stallIndex + 1}`).addEventListener('mouseleave', function () {
-                        //     document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute('visible', 'false')
-                        // })
+                        document.getElementById(`broucher${stallIndex + 1}`).addEventListener('click', function () {
+                            document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute('visible', 'true')
+                        })
+                        document.getElementById(`broucher${stallIndex + 1}`).addEventListener('mouseleave', function () {
+                            document.getElementById(`broucherinfo${stallIndex + 1}`).setAttribute('visible', 'false')
+                        })
 
                     }
                     if (stall.businesscard) {
@@ -423,18 +353,36 @@ const fetchDataFromAPI = () => {
                     document.getElementById(`sharebutton${stallIndex + 1}`).addEventListener('click', function () {
                         share(stall.uno, stall.name)
                     });
-                 
-                 
-                    // if (apivariable.Hallcount.nextHall == "yes") {
-                    //     document.getElementById("next-hall").setAttribute('visible', 'true')
-                    //     //   document.getElementById("next-hall1").setAttribute('visible','true')
-                    //     //     document.getElementById("next-hall2").setAttribute('visible','true')
-                    // }
-                    // else {
-                    //     document.getElementById("next-hall").setAttribute('visible', 'false')
-                    //     //  document.getElementById("next-hall1").setAttribute('visible','false')
-                    //     //     document.getElementById("next-hall2").setAttribute('visible','false')
-                    // }
+                    if (apivariable.Hallcount.nextHall == "yes") {
+                        document.getElementById("next-hall").setAttribute('visible', 'true')
+                        //   document.getElementById("next-hall1").setAttribute('visible','true')
+                        //     document.getElementById("next-hall2").setAttribute('visible','true')
+                    }
+                    else {
+                        document.getElementById("next-hall").setAttribute('visible', 'false')
+                        //  document.getElementById("next-hall1").setAttribute('visible','false')
+                        //     document.getElementById("next-hall2").setAttribute('visible','false')
+                    }
+                    if (apivariable.Hallcount.PrevHall == "yes") {
+                        document.getElementById("prev-hall").setAttribute('visible', 'true')
+                        //   document.getElementById("next-hall1").setAttribute('visible','true')
+                        //     document.getElementById("next-hall2").setAttribute('visible','true')
+                    }
+                    else {
+                        document.getElementById("prev-hall").setAttribute('visible', 'false')
+                        //  document.getElementById("next-hall1").setAttribute('visible','false')
+                        //     document.getElementById("next-hall2").setAttribute('visible','false')
+                    }
+                    if (apivariable.Hallcount.nextHall == "yes") {
+                        document.getElementById("next-hall").setAttribute('visible', 'true')
+                        //   document.getElementById("next-hall1").setAttribute('visible','true')
+                        //     document.getElementById("next-hall2").setAttribute('visible','true')
+                    }
+                    else {
+                        document.getElementById("next-hall").setAttribute('visible', 'false')
+                        //  document.getElementById("next-hall1").setAttribute('visible','false')
+                        //     document.getElementById("next-hall2").setAttribute('visible','false')
+                    }
                     if (stall.products && stall.products.length) {
                         let numberOfImages = stall.products.length;  //10
                         ////console.log(numberOfImages)
@@ -712,11 +660,10 @@ document.addEventListener("DOMContentLoaded", function () {
 if (useragent == "mobile") {
     document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
     document.getElementById("chat-icon123").style.display = "none"
-    document.querySelector('.switch').style.display="block"
 } else {
     document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)
     document.getElementById("stick").style.display = "none"
-    document.querySelector('.switch').style.display="none"
+
 }
 
 var bgContainer = document.getElementById('mapText');
@@ -731,6 +678,11 @@ fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${end
         data = apiData; // Assign data from API to the global variable
         //console.log(data);
         createCards(data);
+        // Enter fullscreen mode
+        //  const doc = window.document;
+        // const docEl = doc.documentElement;
+        // const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        // requestFullScreen.call(docEl);
 
     })
     .catch(error => console.error('Error fetching data:', error));
