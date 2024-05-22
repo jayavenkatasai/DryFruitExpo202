@@ -165,8 +165,6 @@ function closePopup1() {
     popupOverlay.style.display = 'none';
     document.getElementById('popup').style.opacity = 1
 }
-
-
 // remove entities
 function removeEntities(stalls) {
     stalls.forEach((stall, stallIndex) => {

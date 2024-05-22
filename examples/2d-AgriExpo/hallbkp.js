@@ -331,6 +331,7 @@ function showpopup(prdname, prdprice, prdlink, prdurl, index) {
         document.getElementById(`popup-overlay_${index}`).style.display = "flex"
         document.getElementById(`currentURL_${index}`).value = prdurl
         document.getElementById('urlText').textContent = "Product Link"
+        document.body.classList.add('overlay');
 
     });
     document.querySelector(`#digitalPopUp_${index}`).style.display = 'flex';
@@ -368,6 +369,7 @@ function shaerestall(uno, name, index) {
     document.getElementById(`popup-overlay_${index}`).style.display = "flex"
     document.getElementById(`currentURL_${index}`).value = newURL
     document.getElementById('urlText').textContent = "Stall Link"
+    document.body.classList.add('overlay');
     // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
     //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
     //     document.getElementById(`currentURL_${index}`).value=prdurl
@@ -405,12 +407,13 @@ function openlink(value) {
     window.open(value, '_blank')
 }
 function closePopup1(index) {
+    document.body.classList.remove('overlay');
     document.getElementById(`popup-overlay_${index}`).style.display = "none"
     document.querySelector(`.url-copied-alert`).style.display = "none"
     if (document.getElementById('urlText').textContent === "Product Link") {
         document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
     }
-
+   
 }
 
 function copyToClipboard(inex) {

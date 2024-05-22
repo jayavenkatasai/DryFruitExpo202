@@ -22,8 +22,28 @@
         align-items: center;
         height: 100vh;
       } */
+      body{
+        position: relative;
+      }
+      body::before{
+        position: absolute;
+        content: '';
+        background-color:rgba(0,0,0,0.3);
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        display: none;
+      }
+      body.overlay::before {
+    display: block;
+}
       .helpPopUp{
         display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: 99;
+       top: 50%;
       }
       .heart-rate {
         position: absolute;
@@ -314,7 +334,14 @@
               }
               #parent {
                 height: 100%;
-                display: flex;
+                /* display: flex; */
+                top: 0;
+    position: absolute;
+    width: 100%;
+    display: none;
+                /* position: absolute!important;
+    top: 0;
+    width: 100%; */
               }
               #mappopup {
                 align-items: center;
@@ -349,7 +376,7 @@
                   max-width: 25px;
                 }
                 #bg {
-                  height: 180px !important;
+                  height: 220px !important;
                   overflow-y: scroll;
                 }
                 /* #button1{
@@ -1190,6 +1217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelector("#enter-exhib-btn");
 
   button.addEventListener("click", function () {
+    document.querySelector('#parent').style.display="block"
     fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4`)
       .then((response) => response.json())
       .then((apiData) => {
@@ -1206,6 +1234,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bgContainer1.style.display = "flex";
     const closebtn = document.getElementById("close");
     closebtn.style.display = "block";
+   
   });
 });
 
@@ -1296,15 +1325,17 @@ document.getElementById("close").addEventListener("click", closePopup);
 function closePopup() {
     var popupcontainer = document.getElementById("mappopup");
     popupcontainer.style.display = "none";
+    document.querySelector('#parent').style.display="none"
   }
 
   document.getElementById('helpdesk-btn').addEventListener('click',function(){
- 
+    document.body.classList.toggle('overlay');
      document.querySelector('.helpPopUp').style.display='flex'
      
 })
 $('.helpcloseIcon').click(function () {
         $('.helpPopUp').css('display', 'none');
+         $('body').toggleClass('overlay');
       });
 
       document.getElementById("webinar-btn").addEventListener("click", function() {
