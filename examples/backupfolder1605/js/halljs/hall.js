@@ -676,9 +676,11 @@ let buttonid=0;
 fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
 .then(response => response.json())
 .then(apiData => {
-    data = apiData; // Assign data from API to the global variable
+    data = apiData;
+    alert("passed") // Assign data from API to the global variable
     //console.log(data);
     createCards(data);
+
      // Enter fullscreen mode
     //  const doc = window.document;
     // const docEl = doc.documentElement;

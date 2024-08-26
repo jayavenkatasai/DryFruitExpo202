@@ -708,30 +708,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 if (useragent == "mobile") {
-    document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
-    document.getElementById("chat-icon123").style.display = "none"
-    document.querySelector('.switch').style.display="block"
+       document.getElementById("chat-icon123").style.display = "none"
+      document.querySelector('.switch').style.display="block"
+    document.querySelector('.tooltiptwo').addEventListener('click',function(){
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
+    })
+    
 } else {
-    document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)
-    document.getElementById("stick").style.display = "none"
-    document.querySelector('.switch').style.display="none"
+     document.getElementById("stick").style.display = "none"
+ document.querySelector('.switch').style.display="none"
+    document.querySelector('.tooltiptwo').addEventListener('click',function(){
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)  
+    })
+
 }
 
 var bgContainer = document.getElementById('mapText');
 var cards = [];
 var currentIndex = 0;
 let buttonid = 0;
-// category map js
+// // category map js
+// async function getcategorymapdata (){
+//     try{
+//         fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
+//         const response = await response.json() 
+//         await 
+//        (apiData => {
+//            data = apiData; // Assign data from API to the global variable
+//            //console.log(data);
+//            createCards(data);
+   
+//        })
+//     }catch(error){
+//         console.error(error)
+//     }
+  
+   
 
-fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`)
-    .then(response => response.json())
-    .then(apiData => {
-        data = apiData; // Assign data from API to the global variable
-        //console.log(data);
+// }
+
+async function getcategorymapdata() {
+    try {
+        const response = await fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`);
+        const data = await response.json(); // Await the response and parse it as JSON
+
+        // Use the fetched data
         createCards(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-    })
-    .catch(error => console.error('Error fetching data:', error));
+
+document.querySelector('.tooltipone').addEventListener('click',getcategorymapdata)
 
 document.getElementById('mapbutton1').addEventListener('click', showPrevious);
 document.getElementById('mapbutton2').addEventListener('click', showNext);

@@ -23,7 +23,7 @@
     />
     <script src="js/track js/tracking-ga.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-
+    <script async src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
   </head>
   <body>
@@ -132,4 +132,25 @@
     }
   });
     </script>
+      <script>window.addEventListener('load', () => {
+        const assets = document.createElement('a-assets');
+        document.body.appendChild(assets);
+  
+        const model1 = document.createElement('a-asset-item');
+        model1.setAttribute('id', 'stallavatar');
+        model1.setAttribute('src', 'assets/Avthars/avatarreductech.glb');
+        assets.appendChild(model1);
+      
+        const model2 = document.createElement('a-asset-item');
+        model2.setAttribute('id', 'avthar1');
+        model2.setAttribute('src', 'assets/3dmodels/avthar1.glb');
+        assets.appendChild(model2);
+
+        const model3 = document.createElement('a-asset-item');
+        model3.setAttribute('id', 'avthar2');
+        model3.setAttribute('src', 'assets/3dmodels/avthar2.glb');
+        assets.appendChild(model3);
+  
+        // Add more assets as needed
+      });</script>
 </html>
