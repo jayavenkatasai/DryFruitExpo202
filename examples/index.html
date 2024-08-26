@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keyphrase" content="Exclusive 3D platform" />
     <meta
       name="meta title"
@@ -26,7 +26,7 @@
       rel="stylesheet"
     />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-  
+    <script async src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
     <link rel="stylesheet" href="css/intro.css" />
 
@@ -36,522 +36,625 @@
 
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
-    <link rel="preconnect" href="
+    <link
+      rel="preconnect"
+      href="
     https://dev.visualwebsiteoptimizer.com"
     />
-    <script type='text/javascript' id='vwoCode'>
-    window._vwo_code || (function() {
-    var account_id=881014,
-    version=2.1,
-    settings_tolerance=2000,
-    hide_element='body',
-    hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
-    /* DO NOT EDIT BELOW THIS LINE */
-    f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return
-    f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var i=this.getSettings(),n=d.createElement('script'),r=this;t=t||{};if(i){n.textContent=i;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var i=this.hide_element(),n=i?i+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=n;else t.appendChild(d.createTextNode(n));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var n=d.createElement('div');n.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;';n.setAttribute('id','_vis_opt_path_hides');n.classList.add('_vis_hide_layer');t.parentNode.insertBefore(n,t.nextSibling)}var o='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:o})}else{this.load(o+'&x=true')}}};w._vwo_code=code;code.init();})();
+    <script type="text/javascript" id="vwoCode">
+      window._vwo_code ||
+        (function () {
+          var account_id = 881014,
+            version = 2.1,
+            settings_tolerance = 2000,
+            hide_element = 'body',
+            hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+            /* DO NOT EDIT BELOW THIS LINE */
+            f = false,
+            w = window,
+            d = document,
+            v = d.querySelector('#vwoCode'),
+            cK = '_vwo_' + account_id + '_settings',
+            cc = {};
+          try {
+            var c = JSON.parse(localStorage.getItem('_vwo_' + account_id + '_config'));
+            cc = c && typeof c === 'object' ? c : {};
+          } catch (e) {}
+          var stT = cc.stT === 'session' ? w.sessionStorage : w.localStorage;
+          code = {
+            use_existing_jquery: function () {
+              return typeof use_existing_jquery !== 'undefined' ? use_existing_jquery : undefined;
+            },
+            library_tolerance: function () {
+              return typeof library_tolerance !== 'undefined' ? library_tolerance : undefined;
+            },
+            settings_tolerance: function () {
+              return cc.sT || settings_tolerance;
+            },
+            hide_element_style: function () {
+              return '{' + (cc.hES || hide_element_style) + '}';
+            },
+            hide_element: function () {
+              if (performance.getEntriesByName('first-contentful-paint')[0]) {
+                return '';
+              }
+              return typeof cc.hE === 'string' ? cc.hE : hide_element;
+            },
+            getVersion: function () {
+              return version;
+            },
+            finish: function (e) {
+              if (!f) {
+                f = true;
+                var t = d.getElementById('_vis_opt_path_hides');
+                if (t) t.parentNode.removeChild(t);
+                if (e) new Image().src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e;
+              }
+            },
+            finished: function () {
+              return;
+              f;
+            },
+            addScript: function (e) {
+              var t = d.createElement('script');
+              t.type = 'text/javascript';
+              if (e.src) {
+                t.src = e.src;
+              } else {
+                t.text = e.text;
+              }
+              d.getElementsByTagName('head')[0].appendChild(t);
+            },
+            load: function (e, t) {
+              var i = this.getSettings(),
+                n = d.createElement('script'),
+                r = this;
+              t = t || {};
+              if (i) {
+                n.textContent = i;
+                d.getElementsByTagName('head')[0].appendChild(n);
+                if (!w.VWO || VWO.caE) {
+                  stT.removeItem(cK);
+                  r.load(e);
+                }
+              } else {
+                var o = new XMLHttpRequest();
+                o.open('GET', e, true);
+                o.withCredentials = !t.dSC;
+                o.responseType = t.responseType || 'text';
+                o.onload = function () {
+                  if (t.onloadCb) {
+                    return t.onloadCb(o, e);
+                  }
+                  if (o.status === 200) {
+                    _vwo_code.addScript({ text: o.responseText });
+                  } else {
+                    _vwo_code.finish('&e=loading_failure:' + e);
+                  }
+                };
+                o.onerror = function () {
+                  if (t.onerrorCb) {
+                    return t.onerrorCb(e);
+                  }
+                  _vwo_code.finish('&e=loading_failure:' + e);
+                };
+                o.send();
+              }
+            },
+            getSettings: function () {
+              try {
+                var e = stT.getItem(cK);
+                if (!e) {
+                  return;
+                }
+                e = JSON.parse(e);
+                if (Date.now() > e.e) {
+                  stT.removeItem(cK);
+                  return;
+                }
+                return e.s;
+              } catch (e) {
+                return;
+              }
+            },
+            init: function () {
+              if (d.URL.indexOf('__vwo_disable__') > -1) return;
+              var e = this.settings_tolerance();
+              w._vwo_settings_timer = setTimeout(function () {
+                _vwo_code.finish();
+                stT.removeItem(cK);
+              }, e);
+              var t;
+              if (this.hide_element() !== 'body') {
+                t = d.createElement('style');
+                var i = this.hide_element(),
+                  n = i ? i + this.hide_element_style() : '',
+                  r = d.getElementsByTagName('head')[0];
+                t.setAttribute('id', '_vis_opt_path_hides');
+                v && t.setAttribute('nonce', v.nonce);
+                t.setAttribute('type', 'text/css');
+                if (t.styleSheet) t.styleSheet.cssText = n;
+                else t.appendChild(d.createTextNode(n));
+                r.appendChild(t);
+              } else {
+                t = d.getElementsByTagName('head')[0];
+                var n = d.createElement('div');
+                n.style.cssText =
+                  'z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;';
+                n.setAttribute('id', '_vis_opt_path_hides');
+                n.classList.add('_vis_hide_layer');
+                t.parentNode.insertBefore(n, t.nextSibling);
+              }
+              var o =
+                'https://dev.visualwebsiteoptimizer.com/j.php?a=' +
+                account_id +
+                '&u=' +
+                encodeURIComponent(d.URL) +
+                '&vn=' +
+                version;
+              if (w.location.search.indexOf('_vwo_xhr') !== -1) {
+                this.addScript({ src: o });
+              } else {
+                this.load(o + '&x=true');
+              }
+            }
+          };
+          w._vwo_code = code;
+          code.init();
+        })();
     </script>
 
     <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: "Nunito", sans-serif;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Nunito', sans-serif;
+      }
+      p {
+        margin: 0;
+      }
+      .TermsText,
+      .termsSection a {
+        color: #fff;
+        font-size: 14px;
+      }
+      .poweredBy {
+        display: none;
+      }
+      .languageSection p {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+      .languageDropdown select {
+        padding: 10px;
+        font-size: 18px;
+        width: 200px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .languageSection {
+        padding-bottom: 70px;
+      }
+      .termsSection {
+        display: flex;
+        padding-top: 10px;
+        gap: 3px;
+      }
+      .termsSection a {
+        text-decoration: underline;
+      }
+      .agriIntro {
+        background-image: url('./assets/background_images/agriWelcomeBg.webp');
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 9;
+        padding: 35px 57px 71px 57px;
+      }
+      .languageSelectionContent {
+        margin-bottom: 15px;
+      }
+      .agriIntro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+      }
+      .dropdown-item.itemColor {
+        color: #299941 !important;
+      }
+      .dropdown-item:focus {
+        background-color: transparent !important;
+        color: #212529;
+      }
+      .dropDownIcon img {
+        max-width: 20px;
+        padding-left: 5px;
+      }
+      .agriIntroContents {
+        position: relative;
+      }
+      .agriIntroContents::before {
+        position: absolute;
+        content: '';
+        background-image: url('./assets/background_images/bg.png');
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+      }
+      .sectionOne {
+        padding-left: 55px;
+      }
+      .welcomeText {
+        color: #fff;
+        font-size: 35px;
+        font-weight: 600;
+        padding: 30px 0 10px 0;
+        display: block;
+      }
+      .welcomeDescription {
+        color: #fff;
+        font-size: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        max-width: 1000px;
+      }
+      .welcomeDescription span {
+        display: block;
+      }
+      .languageSelection button {
+        background-color: transparent;
+        border: transparent;
+        color: #299941;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 15px;
+        background: #cdebd0;
+        padding: 10px 0px 10px 0px;
+        max-width: 200px;
+        width: 100%;
+      }
+      .dropdownItems {
+        display: block;
+        border-radius: 15px;
+        background: #fff;
+        height: 70px;
+        overflow: scroll;
+        margin-top: 10px;
+      }
+      .dropdownItems.active {
+        display: block;
+        border-radius: 15px;
+        background: #fff;
+        height: 70px;
+        overflow: scroll;
+      }
+      .languageSelection .dropdown-menu.show {
+        border-radius: 15px;
+        background: #f5fff6;
+        max-width: 200px;
+        width: 100%;
+        padding: 10px 0;
+        top: 5px !important;
+        height: 80px;
+        overflow-y: scroll;
+      }
+      .languageSelection {
+        padding: 20px;
+        border-radius: 30px;
+        border: 2px solid #fff;
+        max-width: 245px;
+      }
+      .enterExpoButton {
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        border-radius: 50px;
+        border: 3px solid #fff;
+        background: #299941;
+        max-width: 250px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        top: 9px;
+        cursor: pointer;
+      }
+      .sections {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .sectionTwo {
+        position: absolute;
+        right: -22px;
+        z-index: 99;
+      }
+      .agriLogo img {
+        max-width: 350px;
+        padding: 55px 0;
+      }
+      .copoweredBy {
+        position: absolute;
+        width: 100%;
+        bottom: -30px;
+        right: 25px;
+      }
+      .copoweredBy img {
+        max-width: 300px;
+      }
+      @media screen and (min-width: 1400px) {
+        .welcomeText {
+          font-size: 65px;
         }
-        p{
-            margin: 0;
+        .welcomeDescription {
+          font-size: 91px;
         }
-        .TermsText,.termsSection a{
-                color: #fff;
-                font-size: 14px;
-            }
-        .poweredBy{
-            display:none;
+      }
+      @media only screen and (max-width: 1400px) {
+        .copoweredBy img {
+          max-width: 250px;
+          margin-left: 0;
         }
-        .languageSection p {
-            color: #fff;
-            font-size: 22px;
-            font-weight: 600;
-            padding-bottom: 10px;
+        .welcomeDescription {
+          max-width: 500px;
         }
-        .languageDropdown select {
-            padding: 10px;
-            font-size: 18px;
-            width: 200px;
-            border-radius: 10px;
-            background: #fff;
-            border: 1px solid transparent;
-            cursor: pointer;
+        .copoweredBy {
+          display: flex;
+          justify-content: center;
         }
-        .languageSection {
-            padding-bottom: 70px;
+      }
+      @media only screen and (max-width: 1116px) {
+        .copoweredBy img {
+          max-width: 200px;
+          margin-left: 47px;
+        }
+      }
+      @media only screen and (max-width: 1000px) {
+        .agriIntro {
+          padding: 35px 30px 71px 30px;
+        }
+        .sectionOne {
+          padding-left: 35px;
+          order: 2;
+        }
+        .welcomeDescription {
+          font-size: 45px;
+        }
+        .agriLogo img {
+          max-width: 325px;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .welcomeDescription {
+          font-size: 30px;
+        }
+        .welcomeDescription {
+          max-width: 252px;
+          width: 100%;
+          margin: auto;
+        }
+        .TermsText,
+        .termsSection a {
+          color: #fff;
+          font-size: 14px;
+        }
+        .termsSection a {
+          text-align: center;
         }
         .termsSection {
-            display: flex;
-            padding-top: 10px;
-            gap: 3px;
+          display: flex;
+          flex-direction: column;
         }
-        .termsSection a{
-            text-decoration: underline;
+        .termsSection a {
+          text-decoration: underline;
         }
-        .agriIntro{
-            background-image: url('./assets/background_images/agriWelcomeBg.webp');
-            background-size: cover;
-            height: 100vh;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            z-index: 9;
-            padding: 35px 57px 71px 57px;
+        .TermsText {
+          padding-top: 35px;
+          text-align: center;
         }
-        .languageSelectionContent {
-            margin-bottom: 15px;
+        .languageSection {
+          padding-bottom: 0;
         }
-        .agriIntro::before{
-            content: '';
-            position: absolute;
-            top:0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.30); 
-            z-index: -1;
-        }
-        .dropdown-item.itemColor{
-            color: #299941!important;
-        }
-        .dropdown-item:focus{
-            background-color: transparent!important;
-            color: #212529;
-        }
-        .dropDownIcon img {
-            max-width: 20px;
-            padding-left: 5px;
-        }
-        .agriIntroContents{
-            position: relative;
-        }
-        .agriIntroContents::before{
-            position: absolute;
-            content: '';
-            background-image: url('./assets/background_images/bg.png');
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100% 100%;
-        }
-        .sectionOne{
-            padding-left:55px;
-        }
-        .welcomeText{
-            color: #FFF;
-            font-size: 35px;
-            font-weight: 600;
-            padding:30px 0 10px 0;
-            display:block;
-        }
-        .welcomeDescription{
-            color: #FFF;
-            font-size: 50px;
-            font-weight: 800;
-            text-transform: uppercase; 
-            padding-bottom:30px;
-            max-width: 1000px;
-        }
-        .welcomeDescription span{
-            display: block;
-        }
-        .languageSelection button{
-            background-color: transparent;
-            border: transparent;
-            color: #299941;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 15px;
-            background: #CDEBD0; 
-            padding: 10px 0px 10px 0px;
-            max-width: 200px;
-            width: 100%;
-        }
-        .dropdownItems{
-            display:block;
-            border-radius: 15px;
-            background: #fff;
-            height: 70px;
-            overflow: scroll;
-            margin-top:10px;
-        }
-        .dropdownItems.active {
-            display: block;
-            border-radius: 15px;
-            background: #fff;
-            height: 70px;
-            overflow: scroll;
-        }
-        .languageSelection .dropdown-menu.show{
-            border-radius: 15px;
-            background: #F5FFF6; 
-            max-width: 200px;
-            width: 100%;
-	        padding: 10px 0;
-            top: 5px!important;
-            height: 80px;
-            overflow-y: scroll;
-        }
-        .languageSelection{
-            padding: 20px;
-            border-radius: 30px;
-            border: 2px solid #FFF;
-            max-width: 245px;
-        }
-        .enterExpoButton {
-            color: #FFF;
-            text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-            border-radius: 50px;
-            border: 3px solid #FFF;
-            background: #299941;
-            max-width: 250px;
-            text-align: center;
-            width: 100%;
-            position: relative;
-            top: 9px;
-            cursor: pointer;
-        }
-        .sections{
-            display: flex;
-            justify-content: space-between;
-            position: relative;
+        .sections {
+          flex-direction: column;
         }
         .sectionTwo {
-            position: absolute;
-            right: -22px;
-            z-index: 99;
+          position: unset;
+          order: 1;
         }
-        .agriLogo img{
-            max-width: 350px;
-            padding:55px 0;
+        .languageSelection button {
+          padding: 10px 7px;
         }
-        .copoweredBy{
-            position: absolute;
-            width: 100%;
-            bottom: -30px;
-            right: 25px;
+        .enterExpoButton {
+          top: 27px;
         }
-        .copoweredBy img{
-            max-width: 300px;
+        .languageSelectionContent {
+          margin-bottom: 0px;
         }
-        @media screen and (min-width:1400px){
-            .welcomeText{
-                font-size:65px;
-            }
-            .welcomeDescription{
-                font-size: 91px; 
-            }
+        .poweredBy {
+          display: block;
+          text-align: center;
         }
-        @media only screen and (max-width:1400px){
-            .copoweredBy img {
-                max-width: 250px;
-                margin-left: 0;
-            }
-            .welcomeDescription{
-                max-width: 500px;
-            }
-            .copoweredBy {
-                display: flex;
-                justify-content: center;
-            }
+        .agriIntro {
+          padding: 60px 30px 71px 30px;
         }
-        @media only screen and (max-width:1116px){
-            .copoweredBy img {
-                max-width: 200px;
-                margin-left: 47px;
-            }
+        .welcomeText {
+          font-size: 25px;
         }
-        @media only screen and (max-width:1000px){
-            .agriIntro {
-                padding: 35px 30px 71px 30px;
-            }
-            .sectionOne {
-                padding-left: 35px;
-                order: 2;
-            }
-            .welcomeDescription {
-                font-size: 45px;
-            }
-            .agriLogo img {
-                max-width: 325px;
-            }
+        .welcomeText {
+          padding: 30px 0 4px 0;
+          width: 100%;
+          display: block;
         }
-        /* @media only screen and (max-width:1000px){
-            .agriIntroContents::before {
-                background-image:none;
-            }
-            .agriLogo img {
-                max-width: 300px;
-            }
-            .copoweredBy{
-                position: unset;
-            }
-            .sectionTwo {
-                position: unset;
-                text-align: center;
-            }
-            .sections{
-                flex-direction: column;
-            }
-            .sectionOne {
-                order: 2;
-            }
-            .agriLogo img{
-                padding: 0;
-            }
-            .agriIntro{
-                height: unset;
-                padding: 130px 57px 71px 57px;
-            }
-            .agriLogo img {
-                position: relative;
-                margin-top: -100px;
-            }
-            .welcomeText,.welcomeDescription{
-                text-align:center;
-            }
-            .languageSelectionContent{
-                display:flex;
-                justify-content: center;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-            }
-            .languageSelection button{
-                padding: 10px 7px 10px 7px !important;
-                max-width: 100%;
-            }
-            .enterButton {
-                text-align: center;
-            }
-            .sections {
-                border: 3px solid #fff;
-                border-radius: 25px;
-            }
-            .sectionOne {
-                padding-left: 0;
-            }
-            .copoweredBy img {
-                max-width: 300px;
-                margin-left: 0;
-            }
-        } */
-        @media only screen and (max-width:767px){
-            .welcomeDescription {
-                font-size: 30px;
-            }
-            .welcomeDescription {
-                max-width: 252px;
-                width: 100%;
-                margin: auto;
-              }
-            .TermsText,.termsSection a{
-                color: #fff;
-                font-size: 14px;
-            }
-            .termsSection a{
-                text-align: center;
-            }
-            .termsSection{
-                display:flex;
-                flex-direction:column;
-            }
-            .termsSection a{
-                text-decoration: underline;
-            }
-            .TermsText {
-                padding-top: 35px;
-                text-align: center;
-            }
-            .languageSection{
-                padding-bottom:0;
-            }
-            .sections{
-                flex-direction: column;
-            }
-            .sectionTwo {
-                position: unset;
-                order: 1;
-            }
-            .languageSelection button{
-                padding: 10px 7px;
-            }
-            .enterExpoButton {
-                top: 27px;
-            }
-            .languageSelectionContent {
-                margin-bottom: 0px;
-            }
-            .poweredBy{
-                display:block;
-                text-align: center;
-            }
-            .agriIntro {
-                padding: 60px 30px 71px 30px;
-            }
-            .welcomeText {
-                font-size: 25px;
-            }
-            .welcomeText {
-                padding: 30px 0 4px 0;
-                width: 100%;
-                display:block;
-            }
-            .enterExpoButton {
-                font-size: 22px;
-                padding: 10px 0;
-            }
-            .copoweredBy img {
-                max-width: 250px;
-            }
-            .agriLogo img {
-                max-width: 135px;
-                padding: 10px 0;
-                margin-top: -47px;
-            }
-            .languageSelection button{
-                font-size:16px;
-            }
-            .agriLogo {
-                text-align: center;
-            }
-            .welcomeText,.welcomeDescription{
-                text-align:center;
-            }
-            .enterButton {
-                text-align: center;
-            }
-            .languageSelectionContent{
-                display:flex;
-                justify-content: center;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-            }
-            .sectionOne{
-                padding-left: 0;
-            }
-            .agriIntroContents::before{
-                background-image: none;
-                border: 3px solid #fff;
-                border-radius:25px;
-            }
-            .welcomeText {
-                padding: 15px 0 4px 0;
-            }
-            .languageSelectionContent {
-                padding-top: 75px;
-            }
+        .enterExpoButton {
+          font-size: 22px;
+          padding: 10px 0;
         }
-        @media only screen and (max-width:992px) and (orientation: landscape) {
-            .agriIntro{
-                height:unset;
-            }
+        .copoweredBy img {
+          max-width: 250px;
         }
+        .agriLogo img {
+          max-width: 135px;
+          padding: 10px 0;
+          margin-top: -47px;
+        }
+        .languageSelection button {
+          font-size: 16px;
+        }
+        .agriLogo {
+          text-align: center;
+        }
+        .welcomeText,
+        .welcomeDescription {
+          text-align: center;
+        }
+        .enterButton {
+          text-align: center;
+        }
+        .languageSelectionContent {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+        }
+        .sectionOne {
+          padding-left: 0;
+        }
+        .agriIntroContents::before {
+          background-image: none;
+          border: 3px solid #fff;
+          border-radius: 25px;
+        }
+        .welcomeText {
+          padding: 15px 0 4px 0;
+        }
+        .languageSelectionContent {
+          padding-top: 75px;
+        }
+      }
+      @media only screen and (max-width: 992px) and (orientation: landscape) {
+        .agriIntro {
+          height: unset;
+        }
+      }
     </style>
-</head>
-<body>
-  <script>
-    if (navigator.userAgent.includes("Instagram")) {
-        window.open("https://expo.marketcentral.in", "_blank");
-    }
-</script>
+  </head>
+  <body>
+    <script>
+      if (navigator.userAgent.includes('Instagram')) {
+        window.open('https://expo.marketcentral.in', '_blank');
+      }
+    </script>
     <div class="agriIntro">
-        <div class="agriIntroContents">
-            <div class="sections">
-                <div class="sectionOne">
-                    <p class="welcomeText">Welcome to</p>
-                    <p class="welcomeDescription">Agri products online Expo </p>
-                    <div class="languageSelectionContent">
-                        <div class="languageSection">
-                            <p class="chooseText">Choose a language :
-                            </p>
-                            <span class="languageDropdown"><select>
-                              <!-- <option>English</option>
-                              <option>Hindi</option>
-                              <option>telugu</option>
-                              <option>gujrathi</option>
-                              <option>bengali</option>
-                              <option>marathi</option> -->
-                          </select></span>
-                          </div>
-                    </div>
-                        <div class="enterButton">
-                            <button class="enterExpoButton" type="submit" id="enterExpo-btn">Enter Expo</button>
-                        </div>
-                </div>
-                <div class="sectionTwo">
-                    <div class="agriLogo">
-                        <img src="././assets/background_images/agriLogo.png">
-                    </div>
-                    <div class="poweredBy">
-                       
-                        <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
-                                             <img src="././assets/background_images/poweredBy.png">
-                                             </a>
-                    </div>
-                </div>
+      <div class="agriIntroContents">
+        <div class="sections">
+          <div class="sectionOne">
+            <p class="welcomeText">Welcome to</p>
+            <p class="welcomeDescription">Agri products online Expo</p>
+            <div class="languageSelectionContent">
+              <div class="languageSection">
+                <p class="chooseText">Choose a language :</p>
+                <span class="languageDropdown"
+                  ><select>
+                  </select></span
+                >
+              </div>
             </div>
-        </div>
-        <div class="termsSection">
-            <p class="TermsText">*By clicking on continue, you accept MarketCentral's</p>
-            <a target="_blank" class="termc" href="expot&c.html">Terms & Conditions</a>
+            <div class="enterButton">
+              <button class="enterExpoButton" type="submit" id="enterExpo-btn">Enter Expo</button>
+            </div>
           </div>
+          <div class="sectionTwo">
+            <div class="agriLogo">
+              <img src="././assets/background_images/agriLogo.png" />
+            </div>
+            <div class="poweredBy">
+              <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
+                <img src="././assets/background_images/poweredBy.png" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="termsSection">
+        <p class="TermsText">*By clicking on continue, you accept MarketCentral's</p>
+        <a target="_blank" class="termc" href="expot&c.html">Terms & Conditions</a>
+      </div>
     </div>
-    
-</body>
-<script>
-  window.onload = function () {
-    tracking(0, 'exhibition', '');
-    //  trackExpo(0, "exhibition3", "", ipAddress);
-  };
-</script>
+  </body>
+  <script>
+    window.onload = function () {
+      tracking(0, 'exhibition', '');
+      //  trackExpo(0, "exhibition3", "", ipAddress);
+    };
+  </script>
 
-<script src="js/track js/ua-parser.js"></script>
-<script src="js/encrypt.js"></script>
-<script src="js/track js/trackapi.js"></script>
-<script src="js/track js/track.js"></script>
-<script src="/js/introjs/intro.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
-<script>
-  $('.dropdown').click(function(){
+  <script src="js/track js/ua-parser.js"></script>
+  <script src="js/encrypt.js"></script>
+  <script src="js/track js/trackapi.js"></script>
+  <script src="js/track js/track.js"></script>
+  <script src="/js/introjs/intro.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
+  <script>
+    $('.dropdown').click(function () {
       $('.dropdownItems').toggleClass('active');
-  })
-  $('.dropdown-item').click(function(){
+    });
+    $('.dropdown-item').click(function () {
       $('.dropdownItems a').removeClass('itemColor');
-     $(this).toggleClass('itemColor');
+      $(this).toggleClass('itemColor');
+    });
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PGGTB73FL0');
+  </script>
+  <script>
+    if (!localStorage.getItem('Avthar')) {
+      var randomNumber = Math.floor(Math.random() * 6) + 1;
+      console.log(randomNumber);
+      localStorage.setItem('Avthar', `avthar${randomNumber}`);
+    }
+  </script>
+  <script src="js/translatorjs/introtranslator.js"></script>
+  <script>
+    window.addEventListener('beforeunload', function (e) {
+      sendbeaconapi(0, 'indexpage-dropoff', '');
+    });
+  </script>
+  <script>window.addEventListener('load', () => {
+      const assets = document.createElement('a-assets');
+      document.body.appendChild(assets);
 
-  })
-</script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'G-PGGTB73FL0');
-</script>
-<script>
-  if(!localStorage.getItem('Avthar')){
-    var randomNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(randomNumber)   
-  localStorage.setItem('Avthar',`avthar${randomNumber}`)
-}
-</script>
-<script src="js/translatorjs/introtranslator.js"></script>
-<script>
-window.addEventListener('beforeunload', function (e) {
-  sendbeaconapi(0,"indexpage-dropoff","")
-})
+      const model1 = document.createElement('a-asset-item');
+      model1.setAttribute('id', 'hallmodel');
+      model1.setAttribute('src', 'assets/hallmodel/Hall_optimized_ver_3_1.glb');
+      assets.appendChild(model1);
 
-</script>
+      const model2 = document.createElement('a-asset-item');
+      model2.setAttribute('id', 'stall');
+      model2.setAttribute('src', 'assets/stallmodel/Updated color stall.glb');
+      assets.appendChild(model2);
+
+      // Add more assets as needed
+    });</script>
 </html>

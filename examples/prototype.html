@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Hospital And Medical Supplies Expo</title>
@@ -20,7 +20,7 @@
       Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest
       trends today.
     </title>
-   
+    <link rel="preload" href="assets/loading/tenor.gif" as="image">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script>
     <!-- <script src="js/extras.js"></script> -->
-    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script> -->
     <script src="/js/spawn-in-circle.component.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/diarmidmackenzie/instanced-mesh@09ee625/src/instanced-mesh.min.js"></script>
@@ -159,7 +159,7 @@
 
   <body>
     <div id="stick">
-      <img src="assets/icons/joystickimg.png">
+      <img src="assets/icons/joystickimg.png" alt="joystick">
     </div>
      <!-- chat noifiction slide -->
      <div class="chatSlide">
@@ -169,7 +169,7 @@
     <!-- webinar popup -->
     <div class="webinarPopUp">
       <div class="webinarPopUpFlex">
-        <img class="webinarClose" src="assets/icons/blueCloseIcon.png" />
+        <img class="webinarClose" src="assets/icons/blueCloseIcon.png"  alt="close"/>
         <div class="webinarPopUpContents">
           <p class="joinText">Join the Webinar</p>
           <a class="sessionText" href="webinar.html" target="_blank" onclick="tracking(0, 'webinar', '')"
@@ -183,7 +183,7 @@
     <!-- orientation -->
     <div id="orientationScreen">
       <div class="orientationScreenContents" id="orientat-content">
-        <img src="assets/icons/rotatePhone.gif" />
+        <img src="assets/icons/rotatePhone.gif"  alt="rotateicon" />
         <h3 class="rotateyourmobile">Rotate your mobile</h3>
       </div>
     </div>
@@ -195,8 +195,8 @@
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
     <div id="instruction-pannel">
-      <image id="instructionimg" src="assets/icons/Walkthrough.png">
-        <img id="closeiconimgipp" class="closeImgip" src="assets/icons/blueCloseIcon.png" />
+      <image id="instructionimg" src="assets/icons/Walkthrough.png"  alt="instructionimg">
+        <img id="closeiconimgipp" class="closeImgip" src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
       </image>
     </div>
     <!-- end of the loading -->
@@ -208,7 +208,7 @@
     </div> -->
     <div id="chat-icon123">
       <div class="notification" id="desktop-notification">20</div>
-      <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"></image>
+      <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"  alt="chaticon"></image>
     </div>
     <!-- error message  -->
     <div id="overLaySection">
@@ -224,7 +224,7 @@
         <!-- <a href="" id="visitorChatFullScreen"
           ><img class="visitorChatFullScreen" src="assets/icons/blueCloseIcon.png"
         /></a> -->
-        <img class="visitorChatClose" src="assets/icons/blueCloseIcon.png" />
+        <img class="visitorChatClose" src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
       </div>
     </div>
     <!-- individual stall chat iframe -->
@@ -234,15 +234,15 @@
         <!-- <a href="" id="indivdualChatFullScreen"
           ><img class="visitorChatFullScreen" src="assets/icons/blueCloseIcon.png"
         /></a> -->
-        <img class="individualChatClose" src="assets/icons/blueCloseIcon.png" />
+        <img class="individualChatClose" src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
       </div>
     </div>
     <!-- popup for the products -->
     <div class="digitalPopUp" id="popup">
       <div class="digitalPopUpContents">
-        <img class="closeImg" src="assets/icons/blueCloseIcon.png" />
+        <img class="closeImg" src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
         <div class="productDetailsSection">
-          <img class="productImg" src="" id="productimge" />
+          <img class="productImg" src="" id="productimge"  alt="productimg"/>
           <div class="productDetails">
             <p class="productName" id="prdt-name">Discover Hidden Treasures:</p>
             <p class="productPrice" id="prd-price">
@@ -268,12 +268,12 @@
           <p id="urlText">Stall Link</p>
           <div class="copyButtonSection">
             <input type="text" id="currentURL" readonly />
-            <img class="global" src="assets/icons/global.png" />
+            <img class="global" src="assets/icons/global.png"  alt="website"/>
             <button id="copyButton" onClick="copyToClipboard()">Copy</button>
           </div>
           <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
         </div>
-        <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png" /></button>
+        <button class="whiteCloseIcon" onClick="closePopup1()"><img src="assets/icons/blueCloseIcon.png" alt="closeicon"/></button>
       </div>
     </div>
 
@@ -283,37 +283,37 @@
     <div id="mapSection" class="mapSectionlass">
       <div id="mapText" class="mapTextClass">
         <div id="pagination">
-          <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px" />
-          <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" />
+          <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px"  alt="leftarrow"/>
+          <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" alt="rightarrow" />
         </div>
         <div id="Backbtn">
           <button id="closeIcon">
-            <img src="assets/icons/blueCloseIcon.png" />
+            <img src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
           </button>
         </div>
       </div>
     </div>
     <div class="iframetag" id="totalIframe">
       <div class="iframetagContent">
-        <img class="iframeImg" src="assets/icons/blueCloseIcon.png" />
+        <img class="iframeImg" src="assets/icons/blueCloseIcon.png" alt="iconicon"/>
         <iframe id="iframe-expoDir" src="about:blank" width="800px" height="500px" allowfullscreen></iframe>
       </div>
     </div>
     <div id="hallButtonsContents">
       <div id="hallButtons">
         <div class="tooltipone" onclick="tracking(0, 'category-map', ''); return true;">
-          <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" />
+          <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" alt="categoryicon"/>
           <!-- <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" /> -->
           <p class="labelText labelcategory">Category</p>
         </div>
         <div class="tooltiptwo" onclick="tracking(0, 'expo-directory', ''); return true;">
-          <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png" />
+          <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png" alt="exploreicon"/>
           <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
           <p class="labelText labelexplore">Explore</p>
         </div>
         <div class="tooltipthree">
           <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
-            <img class="desktopExitImg" src="assets/icons/exitimg.png" />
+            <img class="desktopExitImg" src="assets/icons/exitimg.png" alt="exiticon"/>
             <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
             <p class="labelText labelexit">Exit</p>
           </a>
@@ -332,7 +332,7 @@
     <div class="mblchatDisplay" id="mblchatplaceholder">
       <div class="tooltipChat">
         <div class="smallScreenChatNotification" id="smallscreennot">20</div>
-        <img class="chatIcon" src="assets/icons/chaticon.png" />
+        <img class="chatIcon" src="assets/icons/chaticon.png" alt="chaticon"/>
         <p class="labelText labelchat">Chat</p>
       </div>
     </div>
@@ -381,6 +381,7 @@
     "
       
       xr-mode-ui="enabled: false"
+       gltf-model="dracoDecoderPath:https://www.gstatic.com/draco/versioned/decoders/1.5.6/;meshoptDecoderPath:https://unpkg.com/meshoptimizer@0.19.0/meshopt_decoder.js;basisTranscoderPath:https://cdn.jsdelivr.net/npm/three@0.154.0/examples/jsm/libs/basis/"
       cursor="rayOrigin:mouse"
     >
       <!-- assets for initial load -->
@@ -397,13 +398,13 @@
         <!-- //3dcharacter  -->
         <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
-        <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized ver 3 1.glb"></a-asset-item>
-        <img id="leftarrow-icon" src="assets/icons/left arrow.png" />
-        <img id="vendor-image" src="assets/icons/vendor-image.jpg" />
-        <img id="share-button" src="assets/icons/shareicon.png" />
-        <img id="visit-stall-button" src="assets/icons/visitstall-button.png" />
-         <img id="stall-next" src="assets/icons/next-button.png" />
-          <img id="stall-prev" src="assets/icons/previous-button.png" />
+        <a-asset-item id="hallmodel" src="assets/hallmodel/Hall_optimized_ver_3_1.glb"></a-asset-item>
+        <img id="leftarrow-icon" src="assets/icons/left arrow.png" alt="leftarrowicon"/>
+        <img id="vendor-image" src="assets/icons/vendor-image.jpg" alt="vendorimage"/>
+        <img id="share-button" src="assets/icons/shareicon.png" alt="sharebutton"/>
+        <img id="visit-stall-button" src="assets/icons/visitstall-button.png" alt="stallbutton"/>
+        <img id="stall-next" src="assets/icons/next-button.png" alt="nextbtton"/>
+        <img id="stall-prev" src="assets/icons/previous-button.png" alt="prevbutton"/>
 
         <template id="rig-template">
           <a-entity></a-entity>
@@ -505,7 +506,7 @@
         </a-entity>
         <!-- category name board end -->
         <a-entity id="ban" gltf-model="#banner" position="0 1 10"></a-entity>
-        <a-entity id="five-hall" gltf-model="url(assets/hallmodel/Hall with lighting5.glb)" visible="false" position="0 15 0"></a-entity>
+        <a-entity id="five-hall"  visible="false" position="0 15 0"></a-entity>
         <!-- hall -door  -->
         <a-entity
           gltf-model="#halldoor"

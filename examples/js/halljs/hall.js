@@ -843,6 +843,7 @@ function openLink(event) {
 function checkhallfive(x) {
     if (x <= 5) {
         // alert("satisfied")
+        document.getElementById('five-hall').setAttribute('gltf-model', 'assets/hallmodel/Hall_with_lighting5.glb')
         document.getElementById('five-hall').setAttribute('visible', 'true')
         document.getElementById('five-hall').setAttribute('position', '0 0 0')
         // document.getElementById('area5').setAttribute('rotation','90 -90 0')
