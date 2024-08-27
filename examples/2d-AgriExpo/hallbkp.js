@@ -1,4 +1,5 @@
 let stallsData;
+
 var urlendpoint = '';
 const queryString = window.location.search;
 let c;
@@ -277,11 +278,53 @@ function renderStalls() {
             console.error(`Product section not found for stall ${index}`);
         }
     });
+   // const selectedHall = localStorage.getItem('selectedHall');
+    if (selectedHallNumber !== null) {
+        const hallElement = document.querySelector(`.hallNumbers .numbers[data-index="${selectedHallNumber}"]`);
+        if (hallElement) {
+            hallElement.classList.add('highlighted-button');
+        }
+    }
     // Show the first stall by default
     showStall(currentStallIndex);
 
 }
 
+
+
+
+
+
+// chatgpt new code
+
+
+// function renderStalls() {
+//     stallsData.stalls.forEach((stall, index) => {
+//         const stallElement = document.createElement("div");
+//         stallElement.classList.add("stall");
+
+//         stallElement.innerHTML = `
+//         <!-- Your existing stall HTML code here -->
+//         `;
+
+//         document.body.appendChild(stallElement);
+
+//         // Your existing code for product section, etc.
+
+//     });
+
+//     // After rendering, apply the highlight to the previously selected hall number
+//     const selectedHall = localStorage.getItem('selectedHall');
+//     if (selectedHall) {
+//         const hallElement = document.querySelector(`.hallNumbers .numbers[data-index="${selectedHall}"]`);
+//         if (hallElement) {
+//             hallElement.classList.add('highlighted-hall');
+//         }
+//     }
+
+//     // Show the first stall by default
+//     showStall(currentStallIndex);
+// }
 
 // Function to show a specific stall
 // function showStall(index) {
@@ -304,6 +347,8 @@ function showStall(index) {
     currentStallIndex = (index + stalls.length) % stalls.length;
     stalls[currentStallIndex].classList.add('active');
 }
+
+
 
 function showStalls(index) {
     //debugger
@@ -338,15 +383,41 @@ function showpopup(prdname, prdprice, prdlink, prdurl, index) {
 }
 
 
+// function changehall(indexvalue) {
+//     document.body.innerHTML = '';
+
+//     // Update requestBody for fetching new data
+//     requestBody.start = (indexvalue - 1) * 10 + 1;
+//     requestBody.end = indexvalue * 10;
+//     //document.getElementById("stallcontent").innerHTML=""
+//     // Fetch new data
+//     currentStallIndex = 0
+//     fetchdata();
+// }
+let selectedHallNumber = null;
 function changehall(indexvalue) {
+    // Store the selected hall number in a global variable
+    selectedHallNumber = indexvalue;
+
+    // Remove existing highlights
+    const allHalls = document.querySelectorAll('.hallNumbers .numbers');
+    allHalls.forEach(hall => hall.classList.remove('highlighted-hall'));
+
+    // Highlight the clicked hall number
+    const selectedHall = document.querySelector(`.hallNumbers .numbers[data-index="${indexvalue}"]`);
+    if (selectedHall) {
+        selectedHall.classList.add('highlighted-hall');
+    }
+
+    // Clear the body content to render new hall's stalls
     document.body.innerHTML = '';
 
     // Update requestBody for fetching new data
     requestBody.start = (indexvalue - 1) * 10 + 1;
     requestBody.end = indexvalue * 10;
-    //document.getElementById("stallcontent").innerHTML=""
-    // Fetch new data
-    currentStallIndex = 0
+
+    // Fetch new data and render stalls
+    currentStallIndex = 0;
     fetchdata();
 }
 function checkurlparm(urlparameter) {

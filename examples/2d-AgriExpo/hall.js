@@ -121,6 +121,7 @@ if(startValue&&endValue&&hallnum){
     
             // Set onclick event to each button
             buttonDiv.addEventListener("click", function() {
+               
                 // Handle click event, you can do something when button is clicked
                 console.log(`Button ${i} clicked!`);
                 showStall(i-1)
@@ -141,19 +142,19 @@ if(startValue&&endValue&&hallnum){
     //     stalls[currentStallIndex].classList.add('active');
     // }
 
-    function showStall(index) {
-        const stalls = document.querySelectorAll('.stall');
+    // function showStall(index) {
+    //     const stalls = document.querySelectorAll('.stall');
         
-        // Remove 'active' class from all stalls
-        stalls.forEach(stall => {
-            stall.classList.remove('active');
-        });
-        stalls[currentStallIndex].classList.remove('active');
+    //     // Remove 'active' class from all stalls
+    //     stalls.forEach(stall => {
+    //         stall.classList.remove('active');
+    //     });
+    //     stalls[currentStallIndex].classList.remove('active');
     
-        // Add 'active' class to the clicked stall
-        currentStallIndex = (index + stalls.length) % stalls.length;
-        stalls[currentStallIndex].classList.add('active');
-    }
+    //     // Add 'active' class to the clicked stall
+    //     currentStallIndex = (index + stalls.length) % stalls.length;
+    //     stalls[currentStallIndex].classList.add('active');
+    // }
     
  function showStalls(index) {
         const stalls = document.querySelectorAll('.stall');
@@ -211,6 +212,8 @@ fetch(hallbtnurl)
         // Set onclick event to each button
         buttonDiv1.addEventListener("click", function() {
             // Handle click event, you can do something when button is clicked
+         //   alert("hallchange")
+         //   highlightHallButton(buttonDiv1);
             console.log(`Hall ${i} clicked!`);
             changehall(i)
         });
@@ -223,3 +226,26 @@ fetch(hallbtnurl)
       console.log(categoryparam)
       
     //  console.log(filterdata)
+
+
+
+    // function highlightButton(button) {
+    //     // Remove the highlighted class from all buttons
+    //     document.querySelectorAll('.stall-button').forEach(btn => {
+    //         btn.classList.remove('highlighted-button');
+    //     });
+    
+    //     // Add the highlighted class to the clicked button
+    //     button.classList.add('highlighted-button');
+    // }
+
+    // function highlightHallButton(button) {
+    //     // Remove the highlighted class from all hall buttons
+    //     document.querySelectorAll('.Hall-button').forEach(btn => {
+    //         btn.classList.remove('highlighted-button');
+    //     });
+    
+    //     // Add the highlighted class to the clicked hall button
+    //     button.classList.add('highlighted-button');
+    // }
+    

@@ -51,6 +51,7 @@ else {
 }
 const endpoint_ExhibitionId = '4';
 
+var overalloverlay = document.getElementById('overallOverLay')
 
 // Get the query string from the current URL
 
@@ -501,6 +502,7 @@ const fetchDataFromAPI = () => {
                             imageElement.setAttribute("src", imageUrl);
                             imageElement.setAttribute("rotation", "0 90 0");
                             imageElement.addEventListener('click', function () {
+                                overalloverlay.style.display='flex'
                                 document.getElementById('popup').style.display = 'flex'
                                 document.getElementById('productimge').setAttribute('src', imageUrl)
                                 document.getElementById('prdt-name').textContent = imageDescription
@@ -706,11 +708,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-
+document.querySelector('.iframeImg').addEventListener('click',function(){
+    overalloverlay.style.display='none'
+})
 if (useragent == "mobile") {
        document.getElementById("chat-icon123").style.display = "none"
       document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click',function(){
+         overalloverlay.style.display='flex'
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
     })
     
@@ -718,6 +723,7 @@ if (useragent == "mobile") {
      document.getElementById("stick").style.display = "none"
  document.querySelector('.switch').style.display="none"
     document.querySelector('.tooltiptwo').addEventListener('click',function(){
+         overalloverlay.style.display='flex'
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)  
     })
 
@@ -748,6 +754,7 @@ let buttonid = 0;
 // }
 
 async function getcategorymapdata() {
+    overalloverlay.style.display='flex'
     try {
         const response = await fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`);
         const data = await response.json(); // Await the response and parse it as JSON
@@ -846,6 +853,7 @@ function showPrevious() {
 }
 
 function closePopup() {
+     overalloverlay.style.display='none'
     var popupcontainer = document.getElementById('mappopup');
     popupcontainer.style.display = 'none';
 }

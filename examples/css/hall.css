@@ -1095,6 +1095,17 @@ iframe {
   justify-content: center;
   align-items: center;
 }
+
+#overallOverLay {
+  position: absolute;
+  z-index: 998;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 #overLayContent {
   display: flex;
   align-items: center;

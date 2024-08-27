@@ -217,6 +217,12 @@
       </div>
     </div>
     <!-- error message  -->
+
+
+    <!-- total overlay -->
+    <div id="overallOverLay">
+    </div>
+    <!-- end of total overlay -->
     <!-- visitor panel iframe -->
     <div id="chat-ui-room">
       <iframe id="chatui" src="" width="800px" height="500px" allowfullscreen></iframe>
@@ -2640,9 +2646,11 @@
         $('.popUp').css('display', 'none');
       });
       $('.closeImg').click(function () {
+        $('#overallOverLay').css('display','none')
         $('.digitalPopUp').css('display', 'none');
       });
       $('.iframeImg').click(function () {
+       
         $('.iframetag').css('display', 'none');
         $('.iframetagContent').removeClass('active');
       });
