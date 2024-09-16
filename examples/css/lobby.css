@@ -228,12 +228,12 @@
                 border: 1px solid #5e5e5e;
                 justify-content: space-between;
                 /* margin: 5px; */
-                width: 15% !important;
+                width: 18% !important;
               }
               .card button {
                 padding: 7px 10px;
                 border-radius: 5px;
-                background: #F65927;
+                background: #299941;
                 color: #fff;
                 width: 100%;
                 max-width: 155px;
@@ -257,6 +257,10 @@
                 margin: 20px 0;
                 font-size: 20px;
                 font-family: "Nunito", sans-serif;
+              }
+              .dropdownSection {
+                display: flex;
+                gap: 5px;
               }
               #pagination {
                 position: relative;
@@ -708,7 +712,7 @@
           text-align: center;
           font-size: 49px;
           font-weight: 600;
-          border-bottom:1px solid #F65927;
+          border-bottom:1px solid #299941;
           /* display:flex; */
           padding-bottom:10px;
       }

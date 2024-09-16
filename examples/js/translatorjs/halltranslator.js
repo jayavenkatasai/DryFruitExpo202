@@ -3,7 +3,7 @@ const datalanguage = {
     {
        "labelchat": "Chat",
        "labelexplore":"Explore",
-       "labelexit":"Exit",
+       "labelexit":"Lobby",
        "labelcategory":"Category",
        "fullscreenButton":"Enter Full Screen",
        "Exitfullscreen":"Exit Full Screen",
@@ -19,13 +19,14 @@ const datalanguage = {
         "jointhewebinar":"Join the Webinar",
         "jointhesession":"Join the session",
         "URLcopiedtoclipboard":"URL copied to clipboard!",
-        "Rotateyourmobile":"Rotate your mobile"
+        "Rotateyourmobile":"Rotate your mobile",
+        "helptext": "Help"
     },
     "hindi":
     {
         "labelchat": "चैट",
         "labelexplore":"एक्सप्लोर",
-        "labelexit":"निकास",
+        "labelexit": "लॉबी",
         "labelcategory":"श्रेणी",
         "fullscreenButton":"पूर्ण स्क्रीन दर्ज करें",
         "Exitfullscreen":"पूर्ण स्क्रीन से बाहर निकलें",
@@ -41,12 +42,13 @@ const datalanguage = {
          "jointhewebinar":"वेबिनार में शामिल हों",
          "jointhesession":"सत्र में शामिल हों",
          "URLcopiedtoclipboard":"URL क्लिपबोर्ड पर कॉपी किया गया!",
-         "Rotateyourmobile":"अपने मोबाइल को घुमाएं"
+         "Rotateyourmobile":"अपने मोबाइल को घुमाएं",
+         "helptext": "सहायता"
      },
      "telugu":{
         "labelchat": "చాట్",
         "labelexplore": "అన్వేషించు",
-        "labelexit": "నిష్క్రమణ",
+        "labelexit": "లోబీ",
         "labelcategory": "వర్గం",
         "fullscreenButton": "పూర్తి పర్దాలు ఎంటర్ చేయండి",
         "Exitfullscreen": "పూర్తి పర్దాలు నిష్క్రమించండి",
@@ -61,13 +63,15 @@ const datalanguage = {
         "jointhewebinar": "వెబినార్‌లో చేరండి",
         "jointhesession": "సెషన్‌లో చేరండి",
         "URLcopiedtoclipboard": "URL క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది!",
-        "Rotateyourmobile": "మీ మొబైల్ ను తిరగడం"
+        "Rotateyourmobile": "మీ మొబైల్ ను తిరగడం",
+         "helptext": "సహాయం"
+        
     }
 ,
 "gujrathi":{
     "labelchat": "ચેટ",
     "labelexplore": "અન્વેષણ કરો",
-    "labelexit": "બહાર નીકળો",
+   "labelexit": "લોબી",
     "labelcategory": "વર્ગ",
     "fullscreenButton": "પૂર્ણ સ્ક્રીન પ્રવેશ કરો",
     "Exitfullscreen": "પૂર્ણ સ્ક્રીન બહાર નીકળો",
@@ -82,12 +86,14 @@ const datalanguage = {
     "jointhewebinar": "વેબિનારમાં જોડાઓ",
     "jointhesession": "સેશનમાં જોડાઓ",
     "URLcopiedtoclipboard": "URL ક્લિપબોર્ડમાં કોપી કરવામાં આવ્યું છે!",
-    "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો"
+    "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો",
+     
+        "helptext": "મદદ"
 },
 "marati":{
     "labelchat": "चॅट",
     "labelexplore": "अन्वेषण करा",
-    "labelexit": "बाहेर पडा",
+   "labelexit": "लॉबी",
     "labelcategory": "श्रेणी",
     "fullscreenButton": "पूर्णस्क्रीन प्रवेश करा",
     "Exitfullscreen": "पूर्णस्क्रीन बाहेर पडा",
@@ -102,12 +108,14 @@ const datalanguage = {
     "jointhewebinar": "वेबिनारमध्ये सामील व्हा",
     "jointhesession": "सत्रात सामील व्हा",
     "URLcopiedtoclipboard": "URL क्लिपबोर्डमध्ये कॉपी केले गेले आहे!",
-    "Rotateyourmobile": "आपलं मोबाइल फेरबदला"
+    "Rotateyourmobile": "आपलं मोबाइल फेरबदला",
+    "helptext": "मदत"
+     
 },
 "bengali":{
     "labelchat": "চ্যাট",
     "labelexplore": "অন্বেষণ করুন",
-    "labelexit": "প্রস্থান",
+     "labelexit": "লবি",
     "labelcategory": "বিভাগ",
     "fullscreenButton": "পূর্ণ স্ক্রিনে প্রবেশ করুন",
     "Exitfullscreen": "পূর্ণ স্ক্রিন থেকে প্রস্থান করুন",
@@ -122,7 +130,8 @@ const datalanguage = {
     "jointhewebinar": "ওয়েবিনারে যোগদান করুন",
     "jointhesession": "সেশনে যোগদান করুন",
     "URLcopiedtoclipboard": "URL ক্লিপবোর্ডে কপি করা হয়েছে!",
-    "Rotateyourmobile": "আপনার মোবাইল ঘোরান"
+    "Rotateyourmobile": "আপনার মোবাইল ঘোরান",
+    "helptext": "সাহায্য"
 }
 };
 const language = localStorage.getItem('languageselection')
@@ -138,6 +147,7 @@ const visitButton = document.querySelector('.visitButton')
 const shareproduct = document.querySelector('.shareButton')
 const joinText = document.querySelector('.joinText')
 const sessionText= document.querySelector('.sessionText')
+const helptext = document.querySelector('.labelhelp')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
 const buttonText = fullscreenButton.textContent;
 chat.textContent=datalanguage[language].labelchat
@@ -152,6 +162,7 @@ shareproduct.textContent= datalanguage[language].shareproduct
 joinText.textContent=datalanguage[language].joinText
 sessionText.textContent =datalanguage[language].jointhesession
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
+helptext.textContent=datalanguage[language].helptext
 if(buttonText=="Enter Full Screen"){
     fullscreenButton.textContent=datalanguage[language].fullscreenButton
 }

@@ -19,7 +19,8 @@ const datalanguage = {
         "jointhewebinar":"Join the Webinar",
         "jointhesession":"Join the session",
         "URLcopiedtoclipboard":"URL copied to clipboard!",
-        "Rotateyourmobile":"Rotate your mobile"
+        "Rotateyourmobile":"Rotate your mobile",
+         "helptext": "Help"
     },
     "hindi":
     {
@@ -41,7 +42,8 @@ const datalanguage = {
          "jointhewebinar":"वेबिनार में शामिल हों",
          "jointhesession":"सत्र में शामिल हों",
          "URLcopiedtoclipboard":"URL क्लिपबोर्ड पर कॉपी किया गया!",
-         "Rotateyourmobile":"अपने मोबाइल को घुमाएं"
+         "Rotateyourmobile":"अपने मोबाइल को घुमाएं",
+         "helptext": "सहायता"
      },
      "telugu":{
         "labelchat": "చాట్",
@@ -61,7 +63,8 @@ const datalanguage = {
         "jointhewebinar": "వెబినార్‌లో చేరండి",
         "jointhesession": "సెషన్‌లో చేరండి",
         "URLcopiedtoclipboard": "URL క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది!",
-        "Rotateyourmobile": "మీ మొబైల్ ను తిరగడం"
+        "Rotateyourmobile": "మీ మొబైల్ ను తిరగడం",
+        "helptext": "సహాయం"
     }
 ,
 "gujrathi":{
@@ -82,7 +85,8 @@ const datalanguage = {
     "jointhewebinar": "વેબિનારમાં જોડાઓ",
     "jointhesession": "સેશનમાં જોડાઓ",
     "URLcopiedtoclipboard": "URL ક્લિપબોર્ડમાં કોપી કરવામાં આવ્યું છે!",
-    "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો"
+    "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો",
+     "helptext": "મદદ"
 },
 "marati":{
     "labelchat": "चॅट",
@@ -102,7 +106,8 @@ const datalanguage = {
     "jointhewebinar": "वेबिनारमध्ये सामील व्हा",
     "jointhesession": "सत्रात सामील व्हा",
     "URLcopiedtoclipboard": "URL क्लिपबोर्डमध्ये कॉपी केले गेले आहे!",
-    "Rotateyourmobile": "आपलं मोबाइल फेरबदला"
+    "Rotateyourmobile": "आपलं मोबाइल फेरबदला",
+     "helptext": "मदत"
 },
 "bengali":{
     "labelchat": "চ্যাট",
@@ -122,7 +127,8 @@ const datalanguage = {
     "jointhewebinar": "ওয়েবিনারে যোগদান করুন",
     "jointhesession": "সেশনে যোগদান করুন",
     "URLcopiedtoclipboard": "URL ক্লিপবোর্ডে কপি করা হয়েছে!",
-    "Rotateyourmobile": "আপনার মোবাইল ঘোরান"
+    "Rotateyourmobile": "আপনার মোবাইল ঘোরান",
+    "helptext": "সাহায্য"
 }
 };
 const language = localStorage.getItem('languageselection')
@@ -139,6 +145,7 @@ const shareproduct = document.querySelector('.shareButton')
 const joinText = document.querySelector('.joinText')
 const sessionText= document.querySelector('.sessionText')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
+const helptext = document.querySelector('.labelhelp')
 const buttonText = fullscreenButton.textContent;
 chat.textContent=datalanguage[language].labelchat
 explore.textContent=datalanguage[language].labelexplore
@@ -152,6 +159,8 @@ shareproduct.textContent= datalanguage[language].shareproduct
 joinText.textContent=datalanguage[language].joinText
 sessionText.textContent =datalanguage[language].jointhesession
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
+helptext.textContent=datalanguage[language].helptext
+
 if(buttonText=="Enter Full Screen"){
     fullscreenButton.textContent=datalanguage[language].fullscreenButton
 }

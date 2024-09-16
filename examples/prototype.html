@@ -1,11 +1,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Hospital And Medical Supplies Expo</title>
+    <title>Agri products online Expo</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/H&MS Expo logo.png" />
     <meta
       name="meta title"
-      content="Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest trends today."
+      content="Agri products online Expo: Check out the Agri products innovation at the event hall with the latest trends today."
     />
     <meta
       name="keywords"
@@ -16,11 +16,11 @@
       name="description"
       content="Get a chance to interact with products and industry experts, attend a live demonstration, and learn about the latest advancements in patient care."
     />
-    <title>
-      Hospital & Medical Supplies Online Expo: Check out the healthcare innovation at the event hall with the latest
-      trends today.
-    </title>
+
     <link rel="preload" href="assets/loading/tenor.gif" as="image">
+
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -54,6 +54,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script src="js/Custom_components/camerlook.js"></script>
     <script src="/js/joystick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- <script src="js/nipplecontrols.js"></script> -->
 
     <link rel="preconnect" href="
@@ -158,8 +160,148 @@
   </head>
 
   <body>
+
+
+
+    <!-- Help Icon and its data  -->
+    <div id="help-overlay">
+      <div id="help-main-popup">
+        <button class="help-close-button">&times;</button>
+
+        <!-- Row with two popup contents -->
+        <div class="popup-row">
+          <div class="popup-content">
+            <div class="popup-inner">
+              <div class="key-container">
+                <span class="key">🡡</span>
+                <div class="key-row">
+                  <span class="key">🡠</span>
+                  <span class="key">🡣</span>
+                  <span class="key">🡢</span>
+                </div>
+                <p class="help-instruction-text">Use the arrow keys to navigate</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="popup-content">
+            <div class="popup-inner">
+              <div class="key-container">
+                <img src="assets/icons/clickanddrag.png" alt="Click and drag" />
+                <p class="instruction-text">Click & drag</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-row">
+          <div class="popup-content">
+            <div class="popup-inner">
+              <div class="key-container">
+                <img src="assets/icons/clickanddrag.png" alt="Click and drag" />
+                <p class="instruction-text">Click on floor to move</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="popup-content">
+            <div class="popup-inner">
+              <div class="key-container">
+                <img src="assets/icons/clickanddrag.png" alt="Click and drag" />
+                <p class="help-instruction-text">
+                  Click on visit stall to visit the stall
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- end of help icon -->
+
+
+     <!-- SECOND VERSION OF USERGUIDE UI -->
+      
+  <!-- The Modal -->
+  <div id="guideModal" class="modal">
+    <div class="modal-contentt">
+      
+      <span class="guideclose">Skip</span>
+      <div class="instruction active" id="instruction1">
+        <div class="sub-instruction">
+          <h5>Walk</h5>
+          <p id="walkinstructiontext">Hold and drag the Joystick to move forward, backward, left, or right.</p>
+        </div>
+       
+        <img id="walkinstructionnimg"src="assets/Instructions/joystickfeature.png">
+      
+      </div>
+      <div class="instruction" id="instruction2">
+        <div class="sub-instruction">
+          <h5>Hold and drag</h5>
+          <p>Hold and drag the mouse to look arround</p>
+        </div>
+       
+        <img  src="assets/Instructions/holdanddragfeature.png">
+      
+      </div>
+      <div class="instruction" id="instruction3">
+        <div class="sub-instruction">
+          <h5>Category Map</h5>
+          <p>Click here to view all the Categories in the Agri Expo
+          </p>
+        </div>
+       
+        <img  src="assets/Instructions/categorymapfeature.png">
+      
+      </div>
+      <div class="instruction" id="instruction4">
+        <div class="sub-instruction">
+          <h5>Expo Directory</h5>
+          <p>Click here to explore the Halls and Stalls by Category.</p>
+        </div>
+       
+        <img src="assets/Instructions/expodirectoryfeature.png">
+      
+      </div>
+      <div class="instruction" id="instruction5">
+        <div class="sub-instruction">
+          <h5>Lobby</h5>
+          <p>Click here to explore the Halls and Stalls by Category.</p>
+        </div>
+       
+        <img  src="assets/Instructions/lobbyfeature.png">
+      
+    </div>
+    <!-- <div class="instruction" id="instruction6">
+      <div class="sub-instruction">
+        <h5>Help</h5>
+        <p>Reach out Here for Help</p>
+      </div>
+     
+      <img  src="assets/Instructions/chatfeature.png">
+    
+  </div> -->
+  <div class="instruction" id="instruction7">
+    <div class="sub-instruction">
+      <h5>Chat</h5>
+      <p>Reach out to exhibitors directly. Learn more about their products, ask questions, or even negotiate deals!</p>
+    </div>
+   
+    <img  src="assets/Instructions/chatfeature.png">
+  
+</div>
+  
+      <div class="nav-buttons">
+        <button id="prevBtn" disabled><span class="instnavtext">Previous</span> <img class="instimagenav" id="previmgnav" src="assets/icons/instlefticon.png" height="30px" width="30px"></button>
+            <div class="instruction-count" id="instructionCount">1/4</div>
+        <button id="nextBtn"><span class="instnavtext">Next</span> <img class="instimagenav" id="nextimgnav" src="assets/icons/instrighticon.png" height="30px" width="30px"></button>
+      </div>
+    </div>
+  </div>
+      <!--END OF SECOND VERSION OF USERGUIDE UI   -->
     <div id="stick">
-      <img src="assets/icons/joystickimg.png" alt="joystick">
+      <img id="joy" src="assets/icons/joystickimg.png" alt="joystick">
     </div>
      <!-- chat noifiction slide -->
      <div class="chatSlide">
@@ -194,11 +336,11 @@
       <img src="assets/loading/tenor.gif" alt="Loading GIF" />
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
-    <div id="instruction-pannel">
+    <!-- <div id="instruction-pannel">
       <image id="instructionimg" src="assets/icons/Walkthrough.png"  alt="instructionimg">
         <img id="closeiconimgipp" class="closeImgip" src="assets/icons/blueCloseIcon.png"  alt="closeicon"/>
       </image>
-    </div>
+    </div> -->
     <!-- end of the loading -->
     <!-- fullscreen option enable and disable -->
     <button id="fullscreenButton">Enter Full Screen</button>
@@ -206,7 +348,7 @@
     <!-- <div id="chat-icon123">
       <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"></image>
     </div> -->
-    <div id="chat-icon123">
+    <div id="chat-icon123" class="icon chatint">
       <div class="notification" id="desktop-notification">20</div>
       <image id="chat-img" src="assets/icons/Chat Icon.png" style="height: 100px; width: 100px"  alt="chaticon"></image>
     </div>
@@ -223,6 +365,14 @@
     <div id="overallOverLay">
     </div>
     <!-- end of total overlay -->
+    <div id="overallOverLayinst">
+      <button class="instclose" onclick="closeInstruction()">X</button>
+      <p class="instruction-stall">Stall OverView</p>
+      <img src="assets/stallmodel/stalloverall.png">
+    </div>
+    <!-- instruction overlay -->
+
+     <!-- end of instruction overlay -->
     <!-- visitor panel iframe -->
     <div id="chat-ui-room">
       <iframe id="chatui" src="" width="800px" height="500px" allowfullscreen></iframe>
@@ -288,6 +438,7 @@
     <!-- navigation icons start -->
     <div id="mapSection" class="mapSectionlass">
       <div id="mapText" class="mapTextClass">
+        <img src="assets/loading/tenor.gif" height="50px" width="50px" class="categoryloading">
         <div id="pagination">
           <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px"  alt="leftarrow"/>
           <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" alt="rightarrow" />
@@ -307,24 +458,33 @@
     </div>
     <div id="hallButtonsContents">
       <div id="hallButtons">
-        <div class="tooltipone" onclick="tracking(0, 'category-map', ''); return true;">
+       
+
+        <div class="tooltipone icon" id="icon1" onclick="tracking(0, 'category-map', ''); return true;">
           <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" alt="categoryicon"/>
           <!-- <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" /> -->
           <p class="labelText labelcategory">Category</p>
         </div>
-        <div class="tooltiptwo" onclick="tracking(0, 'expo-directory', ''); return true;">
-          <img class="infoIcon desktopInfoIcon" src="assets/icons/infoimg.png" alt="exploreicon"/>
+        <div class="tooltiptwo icon" id="icon2" onclick="tracking(0, 'expo-directory', ''); return true;">
+          <img class="infoIcon desktopInfoIcon" width="47" height="47" src="assets/icons/newexpodirectory.svg" alt="exploreicon"/>
           <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
           <p class="labelText labelexplore">Explore</p>
         </div>
-        <div class="tooltipthree">
+        <div class="tooltipthree icon" id="icon3">
           <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
             <img class="desktopExitImg" src="assets/icons/exitimg.png" alt="exiticon"/>
             <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
-            <p class="labelText labelexit">Exit</p>
+            <p class="labelText labelexit">Lobby</p>
+          </a>
+        </div> 
+        <div class="tooltipthree icon" id="Help-icon">
+          <!-- <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;"> -->
+            <img class="desktopExitImg" src="assets/icons/question.png" alt="exiticon" width="40px" height="44px"/>
+            <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
+            <p class="labelText labelhelp">Help</p>
           </a>
         </div>
-
+      
         <!-- navigation icons end -->
         <!-- extra chat for mobile -->
       </div>
@@ -335,8 +495,19 @@
         </div>
       </div>
     </div> -->
+
+
+
+    <!-- help icon for mobile -->
+ <div class=" mblhelpicondisplay " id="mblhelpicon">
+          <div class="icon tooltiphelpmobile" id="mblhelp">
+            <img class="chatIcon" src="assets/icons/question.png" alt="chaticon"/>
+            <p class="labelText labelhelp">Help</p>
+          </div>
+  </div>
+    <!-- end of help icon  for mobike -->
     <div class="mblchatDisplay" id="mblchatplaceholder">
-      <div class="tooltipChat">
+      <div class="icon tooltipChat" id="mblchat">
         <div class="smallScreenChatNotification" id="smallscreennot">20</div>
         <img class="chatIcon" src="assets/icons/chaticon.png" alt="chaticon"/>
         <p class="labelText labelchat">Chat</p>
@@ -405,12 +576,14 @@
         <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
         <a-asset-item id="hallmodel" src="assets/hallmodel/Hall_optimized_ver_3_1.glb"></a-asset-item>
+        <a-asset-item id="NovaFont" src="css/Fonts/ProximaNova-Bold.ttf"></a-asset-item>
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" alt="leftarrowicon"/>
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" alt="vendorimage"/>
         <img id="share-button" src="assets/icons/shareicon.png" alt="sharebutton"/>
         <img id="visit-stall-button" src="assets/icons/visitstall-button.png" alt="stallbutton"/>
         <img id="stall-next" src="assets/icons/next-button.png" alt="nextbtton"/>
         <img id="stall-prev" src="assets/icons/previous-button.png" alt="prevbutton"/>
+
 
         <template id="rig-template">
           <a-entity></a-entity>
@@ -578,13 +751,6 @@
           <!-- stall 5 waypoint code ends -->
       
       <!-- buttons ---next prev  -->
-      
-      
-      
-      
-      
-      
-      
           <!-- stall1 -->
        <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
          <a-image id="stall1-next" class="clickable" width="2" height="0.5"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination1-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
@@ -717,15 +883,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname1"
             value="Medical Manufacturing Technologies"
+            font="#NovaFont"
             color="black"
             scale="2 2 2"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno1"
@@ -919,15 +1086,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname2"
             value="Medical Manufacturing Technologies"
             color="black"
             scale="2 2 2"
+            font="#NovaFont"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno2"
@@ -1118,15 +1286,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname3"
             value="Medical Manufacturing Technologies"
             color="black"
+            font="#NovaFont"
             scale="2 2 2"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno3"
@@ -1319,15 +1488,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname4"
             value="Medical Manufacturing Technologies"
             color="black"
             scale="2 2 2"
+            font="#NovaFont"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno4"
@@ -1518,15 +1688,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname5"
             value="Medical Manufacturing Technologies"
             color="black"
             scale="2 2 2"
             align="center"
             position="4.5 8.5 1"
+            font="#NovaFont"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno5"
@@ -1713,15 +1884,16 @@
             width="1.3"
             height="0.5"
           ></a-image>
-          <a-text
+          <a-troika-text
             id="vendorbusinessname6"
             value="Medical Manufacturing Technologies"
+            font="#NovaFont"
             color="black"
             scale="2 2 2"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno6"
@@ -1911,15 +2083,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname7"
             value="Medical Manufacturing Technologies"
             color="black"
             scale="2 2 2"
             align="center"
+            font="#NovaFont"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno7"
@@ -2111,15 +2284,16 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname8"
             value="Medical Manufacturing Technologies"
             color="black"
             scale="2 2 2"
             align="center"
             position="4.5 8.5 1"
+            font="#NovaFont"
             rotation="0 90 0"
-          ></a-text>
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno8"
@@ -2310,7 +2484,7 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname9"
             value="Medical Manufacturing Technologies"
             color="black"
@@ -2318,7 +2492,8 @@
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+            font="#NovaFont"
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno9"
@@ -2507,7 +2682,7 @@
             height="0.5"
           ></a-image>
 
-          <a-text
+          <a-troika-text
             id="vendorbusinessname10"
             value="Medical Manufacturing Technologies"
             color="black"
@@ -2515,7 +2690,8 @@
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
-          ></a-text>
+            font="#NovaFont"
+          ></a-troika-text>
           <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno10"
@@ -2648,6 +2824,7 @@
       $('.closeImg').click(function () {
         $('#overallOverLay').css('display','none')
         $('.digitalPopUp').css('display', 'none');
+        clearPopupData()
       });
       $('.iframeImg').click(function () {
        
@@ -2679,21 +2856,7 @@
       });
     </script>
 
-    <script>
-      document.getElementById('hall1').addEventListener('model-loaded', function () {
-        // After the model is loaded, hide the loading icon
-        setInterval(hideLoadingIcon, 3000);
-      });
-
-      function hideLoadingIcon() {
-        $('.loading-container').css('visibility', 'hidden');
-        $('.loading-text').css('visibility', 'hidden');
-      }
-      // Function to handle avatar selection
-
-      // Example usage
-      let avthar = localStorage.getItem('Avthar');
-    </script>
+   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -2712,75 +2875,10 @@
       $('.individualChatClose').click(function () {
         $('#chat-ui-room2').css('display', 'none');
       });
+      $('.desktopMapIcon').cick(function(){
+        $('#overallOverlay').css('display','flex !important')
+      })
     </script>
-    <script>
-      // function checkOrientation() {
-
-      //   if(useragent=='mobile'){
-
-      //     //  const deviceOrientationElement = document.getElementById('device-orientation');
-      //     const orientationscreen = document.getElementById("orientationScreen");
-      //     //console.log(`the orientation screen is ${orientationscreen}`);
-
-      //     //  alert("triggering")
-      //      console.log("trigger")
-      //     if (window.orientation === 90 || window.orientation === -90) {
-      //       //console.log("Device is in landscape orientation");
-      //       //   deviceOrientationElement.textContent = "it is in landscape mode";
-      //       //  deviceOrientationElement.style.display = "none";
-      //       document.getElementById("orientat-content").style.display = "none";
-      //       //console.log(`before hitting the black screen`);
-      //       orientationscreen.style.display = "none";
-
-      //       //console.log(`the blackscreen is ${orientationscreen}`);
-      //       //console.log(orientationscreen);
-      //       //console.log(`after hitting the black screen`);
-
-      //     } else {
-      //       //console.log("Device is in portrait orientation");
-      //       //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
-      //       //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
-      //       orientationscreen.style.display = "block";
-      //       document.getElementById("orientat-content").style.display = "flex";
-      //     }
-
-      //   }
-      //   else{
-      //     orientationscreen.style.display = "none";
-      //   }
-      //   }
-
-      // window.addEventListener("resize", checkOrientation, false);
-
-      // function disableCheckAfterOrientationChange() {
-      //   // Remove the event listener after the user enters landscape mode
-      //   window.removeEventListener("orientationchange", checkOrientation);
-      //   // Set up a new event listener to re-enable orientation checking
-      //   window.addEventListener("orientationchange", enableCheckAfterPortrait);
-      // }
-
-      // function enableCheckAfterPortrait() {
-      //   // Remove the event listener after the user enters portrait mode again
-      //   window.removeEventListener(
-      //     "orientationchange",
-      //     enableCheckAfterPortrait
-      //   );
-      //   // Set up a new event listener to check orientation on further changes
-      //   window.addEventListener("orientationchange", checkOrientation);
-      // }
-
-      // // Listen for changes in orientationcameraq
-      // window.addEventListener("orientationchange", () => {
-      //   checkOrientation();
-      //   disableCheckAfterOrientationChange();
-      // });
-
-      // window.onload =function(){
-
-      //   checkOrientation();
-      // }
-    </script>
-
     <script>
       // Function to check orientation
       var parser = new UAParser();
@@ -2844,6 +2942,211 @@
        
       }
     </script>
+
+
+
+<!-- newww                           code                                                -->
+<script>
+
+  // new user guide backupp
+  
+// NEW VERSION START
+
+const desktopIconMapping = {
+  2: ['icon1'],        // Instruction 1 highlights icon1
+  3: ['icon2'],        // Instruction 2 highlights icon2
+  4: ['icon3'],        // Instruction 3 highlights icon3       // Instruction 4 highlights icon4
+  5: ['chat-icon123'],        // Instruction 5 highlights icon5
+};
+
+// Icon mapping for Mobile
+const mobileIconMapping = {// Instruction 1 highlights mobile-icon1
+  2: ['icon1'], // Instruction 2 highlights mobile-icon2
+  3: ['icon2'], // Instruction 3 highlights mobile-icon3
+  4: ['icon3'], // Instruction 4 highlights mobile-icon4
+  5: ['mblchat'], // Instruction 5 highlights mobile-icon5
+};
+
+
+
+
+const modal = document.getElementById("guideModal");
+const openBtn = document.querySelector(".open-guide-btn");
+const closeBtn = document.querySelector(".guideclose");
+const instructionsi = document.querySelectorAll(".instruction");
+const icons = document.querySelectorAll(".icon");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const instructionCount = document.getElementById("instructionCount");
+const walkinstructionnimg = document.getElementById('walkinstructionnimg');
+const walkinstructiontext = document.getElementById('walkinstructiontext')
+let currentIndexi = 0;
+if(useragent==="mobile"){
+  walkinstructionnimg.src='assets/Instructions/joystickfeature.png'
+  walkinstructiontext.textContent= "Hold and drag the Joystick to move forward, backward, left, or right."
+}else{
+ walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
+  walkinstructiontext.textContent= "User Arrow keys to move forward, backward, left, or right."
+}
+const iconMapping = useragent =="mobile"?mobileIconMapping :desktopIconMapping
+
+
+// const instructionsi = useragent =="mobile"?mobileInstructions:desktopInstructions
+let totalInstructions = instructionsi.length;
+let autoNextInterval;
+// const iconMapping = {
+//   0: ['icon1'],   // Instruction 1 highlights icon1
+//   1: ['icon2'],   // Instruction 2 highlights icon2
+//   2: ['icon3'],   // Instruction 3 highlights icon3
+//   3: ['Help-icon'], 
+//   4: ['chat-icon123']  // Instruction 4 highlights icon4
+// };
+
+// const mediaQuery = window.matchMedia("(min-width: 900px) and (orientation: portrait)");
+const mediaQuery = window.matchMedia("(max-width: 900px) and (orientation: portrait)");
+const landscapeQuery = window.matchMedia("(min-width: 901px)");
+// Function to update instruction modal and icon highlighting
+function updateInstructions() {
+
+
+  //   // Hide all instructions first
+  //   document.querySelectorAll('.instruction').forEach(instruction => {
+  //   instruction.style.display = 'none';
+  // });
+
+  // // Show the current instruction
+  // const currentInstruction = document.getElementById(instructions[currentIndex].id);
+  // if (currentInstruction) {
+  //   currentInstruction.style.display = 'block';
+  // }
+  // Update instructionsi
+  instructionsi.forEach((instruction, index) => {
+    instruction.classList.toggle("active", index === currentIndexi);
+  });
+
+  // Highlight the corresponding icons based on iconMapping
+  icons.forEach(icon => {
+    const iconId = icon.id;
+    const highlight = iconMapping[currentIndexi]?.includes(iconId) || false;
+    icon.classList.toggle("highlighted", highlight);
+  });
+
+  // Update instruction count and button states
+  instructionCount.textContent = `${currentIndexi + 1}/${totalInstructions}`;
+  prevBtn.disabled = currentIndexi === 0;
+//   if(useragent==='mobile'){
+
+  
+//   if(currentIndexi===0){
+//     document.getElementById('previmgnav').style.display='none !important'
+//   }else{
+//      document.getElementById('previmgnav').style.display='block !important'
+//   }
+
+//   if( nextBtn.textContent = currentIndexi === instructionsi.length - 1){
+//      document.getElementById('nextimgnav').style.display='block'
+//   }else{
+//      document.getElementById('nextimgnav').style.display='none'
+//   }
+// }
+  if (mediaQuery.matches) {
+        nextBtn.textContent = currentIndexi === instructionsi.length - 1 ? "Close" : "Next";
+    }
+    else {
+        // Optionally handle cases where the media query does not match
+      //  nextBtn.textContent = "Next"; // Or some other default behavior
+    }
+//  nextBtn.textContent = currentIndexi === instructionsi.length - 1 ? "Close" : "Next";
+}
+
+// Automatically move to the next instruction after 10 seconds of no interaction
+function autoNextInstruction() {
+  clearInterval(autoNextInterval);  // Clear any existing interval
+  autoNextInterval = setInterval(() => {
+    if (currentIndexi < instructionsi.length - 1) {
+      currentIndexi++;
+    } else {
+      closeGuide();  // Close the modal when the last instruction is done
+    }
+    updateInstructions();
+  }, 1000000);  // 10 seconds interval
+}
+
+
+// Close modal and reset the highlighted icons
+function closeGuide() {
+  document.getElementById('hallButtonsContents').style.pointerEvents='auto'
+  modal.style.display = "none";
+clearInterval(autoNextInterval);  // Stop auto-transition
+icons.forEach(icon => icon.classList.remove("highlighted")); 
+currentIndexi = 998;  // Reset icon highlights
+
+}
+
+closeBtn.addEventListener("click", () => {
+  closeGuide();
+});
+
+// Move to the next instruction
+nextBtn.addEventListener("click", () => {
+  if (currentIndexi < instructionsi.length - 1) {
+    currentIndexi++;
+  } else {
+    closeGuide();
+  }
+  updateInstructions();
+  autoNextInstruction();  // Reset the auto-next timer
+});
+
+// Move to the previous instruction
+prevBtn.addEventListener("click", () => {
+  if (currentIndexi > 0) {
+    currentIndexi--;
+  }else{
+    closeGuide();
+  }
+  updateInstructions();
+  autoNextInstruction();  // Reset the auto-next timer
+});
+
+// NEW VERSION END
+
+
+function openuguide(){
+modal.style.display = "block";
+currentIndexi = 0;
+updateInstructions();
+autoNextInstruction();
+}
+  document.getElementById('hall1').addEventListener('model-loaded', function () {
+    // After the model is loaded, hide the loading icon
+    setTimeout(hideLoadingIcon, 3000);
+  });
+
+  function hideLoadingIcon() {
+    $('.loading-container').css('visibility', 'hidden');
+    $('.loading-text').css('visibility', 'hidden');
+
+    // document.getElementById('hall1').removeEventListener('model-loaded')
+  if (!localStorage.getItem('intiated')) {
+    var halllang = localStorage.getItem('languageselection')
+    localStorage.setItem('intiated', 'true')
+    openuguide()
+ 
+} else {
+      document.getElementById('hallButtonsContents').style.pointerEvents='auto'
+}
+
+  
+    document.getElementById('hall1').removeEventListener('model-loaded')
+  }
+  // Function to handle avatar selection
+
+  // Example usage
+  let avthar = localStorage.getItem('Avthar');
+</script>
+
+<!-- enddddddddddddddddddddddddddddd -->
     <script>
       setname();
 
@@ -2939,6 +3242,7 @@ if(useragent=="mobile"){
 <script src="js/halljs/hall.js"></script>
 <script src="js/halljs/hall2.js"></script>
 <script src="js/halljs/webinar-notify.js"></script>
+<script src="js/userguidejs/userguide.js"></script>
 <!-- <script>
   document.getElementById('destination').addEventListener('click',function(){
     var stallPosition= document.getElementById('stall1').getAttribute('position')

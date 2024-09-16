@@ -44,7 +44,7 @@ AFRAME.registerComponent("cursor-listener3", {
       createCards(data);
       //alert("test")
       //console.log(apicall)
-      document.getElementById('apiload').style.display='none'
+      document.getElementById('apiloadcategory').style.display='none'
       
       }
       apicall+=1
@@ -92,44 +92,124 @@ AFRAME.registerComponent("cursor-listener3", {
   .addEventListener("click", showPrevious);
 document.getElementById("mapbutton2").addEventListener("click", showNext);
 var halllang = localStorage.getItem('languageselection')
+var dynamicpoint;
+
+async function checkDynamicPoint() {
+    return new Promise((resolve) => {
+        let interval = setInterval(() => {
+            if (typeof dynamicpoint !== 'undefined') {
+                clearInterval(interval);
+                resolve(dynamicpoint);
+            }
+        }, 1000); // Check every second
+    });
+}
+
+async function waitForDynamicPoint() {
+    // dynamicpoint = undefined; // Reset dynamicpoint
+     await checkDynamicPoint();
+     // Dynamic point is now defined, do something
+     console.log("Dynamic point is now defined:", dynamicpoint);
+     // Further actions here
+ }
+ 
+async function sendnavdropdown(category, startpoint, endpoint, hallnum) {
+
+    
+        window.location.href = `prototype.html?category=${encrypt(category)}&start=${startpoint}&end=${endpoint}&hallnum=${hallnum}`;
+   
+   
+    // sendbeaconapi(0, `${category}`, '');
+    // trackinga(`${category}`, 'category_page');
+  
+}
 function createCards(data) {
-  for (var i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
       var card = document.createElement('div');
       card.className = 'card';
       card.id = 'card' + (i + 1);
-  
+
+      // Image element
       var img = document.createElement('img');
       img.id = 'img' + (i + 1);
-      img.src = `assets/categorymap_images/category${data[i].CATEGORY}.png`;
-      img.src = `assets/categorymap_images/category${i+1}.png`;
+      img.src = `assets/categorymap_images/category${i + 1}.png`;
       img.style.width = '50px';
       img.style.height = '50px';
-  
+
+      // Category name (hindi or default)
       var h3 = document.createElement('h3');
       h3.id = `categoryname${i + 1}`;
-      if(halllang =="hindi"){
-        h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;  
-    }else{
-        h3.textContent = data[i].CATEGORY;
-    }
-      h3.textContent = data[i].CATEGORY;
-  
+      if (halllang == "hindi") {
+          h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;
+      } else {
+          h3.textContent = data[i].CATEGORY;
+      }
+
+      // Visit button
       var button = document.createElement('button');
       button.id = 'button' + (i + 1);
       button.textContent = 'Visit';
       button.dataset.categoryIndex = i;
       button.addEventListener('click', openLink);
-  
+
+      // Dropdown button
+      var dropdownButton = document.createElement('button');
+      dropdownButton.className = 'btn btn-primary numberToggle dropdown-toggle';
+      dropdownButton.setAttribute('type', 'button');
+      dropdownButton.setAttribute('data-toggle', 'dropdown');
+      dropdownButton.textContent = '1';
+
+      // Dropdown menu
+      var dropdownMenu = document.createElement('div');
+      dropdownMenu.className = 'dropdown-menu';
+      
+      // Populate dropdown items
+      var hallCount = data[i].HALL_COUNT; 
+      // Assuming this value is in the data array
+      // console.log("newdata cards")
+      // console.log(hallCount)
+      // console.log(data)
+      for (let j = 0; j < hallCount; j++) {
+          let startpoint = j * 10 + 1;
+          let endpoint = (j + 1) * 10;
+          let dropdownItem = document.createElement('a');
+          dropdownItem.className = 'dropdown-item';
+          dropdownItem.textContent = `Hall ${j + 1}`;
+          dropdownItem.onclick = function() {
+              sendnavdropdown(data[i].CATEGORY, startpoint, endpoint, j + 1);
+          };
+          dropdownMenu.appendChild(dropdownItem);
+      }
+
+      // Dropdown section
+      var dropdownSection = document.createElement('div');
+      dropdownSection.className = 'dropdownSection';
+      
+      var visitHallButton = document.createElement('div');
+      visitHallButton.className = 'visitHallButton';
+      visitHallButton.style.display = 'flex';
+      visitHallButton.appendChild(button);
+
+      var dropdownDiv = document.createElement('div');
+      dropdownDiv.className = 'dropdown';
+      dropdownDiv.appendChild(dropdownButton);
+      dropdownDiv.appendChild(dropdownMenu);
+
+      dropdownSection.appendChild(visitHallButton);
+      dropdownSection.appendChild(dropdownDiv);
+
+      // Append elements to card
       card.appendChild(img);
       card.appendChild(h3);
-      card.appendChild(button);
-  
+      card.appendChild(dropdownSection);
+
+      // Append card to container
       bgContainer.appendChild(card);
       cards.push(card);
   }
-  
+
   showCard(currentIndex);
-  }
+}
   function showCard(index) {
     for (var i = 0; i < cards.length; i++) {
       cards[i].style.display = "none";

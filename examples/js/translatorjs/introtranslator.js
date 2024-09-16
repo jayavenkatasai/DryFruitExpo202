@@ -27,8 +27,7 @@ var data = {
     "hindi": 
     {
       "welcomeIntro": "आपका स्वागत है",
-      "welcomeHsptlText": 
-          "अस्पताल एवं चिकित्सा आपूर्ति एक्सपो",
+      "welcomeHsptlText": "कृषि उत्पाद ऑनलाइन एक्सपो",
        "enterExpoButton":"एक्सपो में प्रवेश करें",
        "Avthartext":"अपना अवतार चुनें",
        "continuetext":"एक्सपो दर्ज करें",
@@ -39,7 +38,7 @@ var data = {
     },
     "marati":{
         "welcomeIntro": "स्वागत आहे",
-        "welcomeHsptlText": "अस्पताल आणि वैद्यकीय सामग्री एक्सपो",
+        "welcomeHsptlText": "कृषी उत्पादने ऑनलाइन एक्सपो",
         "enterExpoButton": "एंटर एक्सपो",
         "Avthartext": "तुमचं अवतार निवडा",
         "continuetext": "एक्सपोमध्ये प्रवेश करा",
@@ -50,7 +49,7 @@ var data = {
     },
     "bengali":{
         "welcomeIntro": "স্বাগতম",
-        "welcomeHsptlText": "হাসপাতাল এবং চিকিৎসা সরবরাহ এক্সপো",
+       "welcomeHsptlText": "কৃষি পণ্য অনলাইন এক্সপো",
         "enterExpoButton": "এন্টার এক্সপো",
         "Avthartext": "আপনার অবতার চয়ন করুন",
         "continuetext": "এক্সপোতে প্রবেশ করুন",
@@ -62,7 +61,7 @@ var data = {
     "gujrathi":
     {
         "welcomeIntro": "સ્વાગત છે",
-        "welcomeHsptlText": "હોસ્પિટલ અને તબીબી સરનામું એક્સપો",
+       "welcomeHsptlText": "કૃષિ ઉત્પાદનો ઓનલાઈન એક્સપો",
         "enterExpoButton": "એક્સપો પ્રવેશ કરો",
         "Avthartext": "તમારો આવતાર પસંદ કરો",
         "continuetext": "એક્સપોમાં પ્રવેશ કરો",
@@ -73,7 +72,7 @@ var data = {
     },
     "telugu":{
         "welcomeIntro": "స్వాగతం",
-        "welcomeHsptlText": "ఆసుపత్రి మరియు ఆరోగ్య సరఫరాల ఎక్స్‌పో",
+      "welcomeHsptlText": "వ్యవసాయ ఉత్పత్తులు ఆన్‌లైన్ ఎక్స్పో",
         "enterExpoButton": "ఎంటర్ ఎక్స్‌పో",
         "Avthartext": "మీ అవతారాన్ని ఎంచుకోండి",
         "continuetext": "ఎక్స్‌పోలో ప్రవేశించండి",
