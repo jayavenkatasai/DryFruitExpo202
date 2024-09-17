@@ -1919,6 +1919,9 @@ button#nextBtn {
 #chat-icon123.initial_guide {
   opacity: 0.3;
 }
+#chat-icon123.initial_guide.highlighted {
+  opacity: 1;
+}
 @media only screen and (min-width:768px) and (max-width:991px) {
   #guideModal.modal {
     z-index: 999;
@@ -1987,6 +1990,9 @@ button#nextBtn {
   }
   #mblhelpicon {
     display: none !important;
+  }
+  .instruction-count {
+    top: -368px;
   }
 }
 @media only screen and (max-width:767px) {
@@ -2058,11 +2064,7 @@ button#nextBtn {
     margin-right: -20px;
     min-height: 50px;
   }
-  .icon {
-    opacity: 0.3;
-  }
-  .icon.highlighted {
-    opacity: 1;
-    font-weight: 600;
+  .instruction-count {
+    top: -368px;
   }
 }
