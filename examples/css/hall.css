@@ -1688,7 +1688,7 @@ button#nextBtn {
 .icon.highlighted{
   position: relative;
 }
-.icon.highlighted::before {
+/* .icon.highlighted::before {
 	position: absolute;
 	content: '';
 	color: #007bff;
@@ -1699,7 +1699,7 @@ button#nextBtn {
 	height: 66px;
 	width: 56px;
 	top: -5px;
-}
+} */
 .chatint.icon.highlighted::before {
   height: 100%!important;
   width: 100%!important;
@@ -1770,7 +1770,7 @@ button#nextBtn {
 .instruction-count {
   text-align: center;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .nav-buttons {
@@ -1785,16 +1785,15 @@ button#nextBtn {
     /* align-self: self-end; */
     /* margin-top: 32px; */
     position: absolute;
-    bottom: 14px;
-    
+    bottom: 6px;
     width: 88%;
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav-buttons button {
   background-color: #299941;
   color: white;
-  padding: 10px 20px;
+  padding: 6px 16px 8px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1814,7 +1813,7 @@ button#nextBtn {
 .sub-instruction{
   /* display: flex; */
   text-align: left;
-  margin: 25px;
+  margin: 25px 40px;
   width: 50%;
 }
 
@@ -1826,7 +1825,7 @@ button#nextBtn {
 
 .instruction > img{
   width: 50%;
- 
+  margin: 10px 25px;
 }
 /* .guideclose{
   border: 3px solid #299941; 
@@ -1860,7 +1859,7 @@ button#nextBtn {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
- 
+  text-decoration: underline;
   position: absolute;
   right: 8px;
   top: 10px;
@@ -1892,4 +1891,178 @@ button#nextBtn {
 
 .instimagenav{
   display: none;
+}
+.modal-content.modal-dialog-centered {
+  width: 60%;
+  height: 60%;
+  min-height: calc(100% - 9.5rem);
+  margin: 10px auto;
+  justify-content: center;
+}
+.icon {
+  opacity: 1;
+}
+.initial_guide .icon {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.initial_guide .icon.highlighted {
+  opacity: 1;
+  font-weight: 600;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+#chat-icon123 {
+  opacity: 1;
+}
+#chat-icon123.initial_guide {
+  opacity: 0.3;
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+  #guideModal.modal {
+    z-index: 999;
+  }
+  #guideModal .modal-content {
+    width: 96%;
+    height: 96%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  button#nextBtn {
+    position: absolute;
+    right: -10%;
+    top: -200px;
+  }
+  button#prevBtn {
+    position: absolute;
+    left: -10%;
+    top: -200px;
+  }
+  #hallButtons {
+    height: 50px;
+    padding: 0px;
+  }
+  .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour, .tooltipChat, .tooltiphelpmobile {
+    height: auto;
+  }
+  .mapIcon, .infoIcon, .chatIcon, .tooltipthree a img {
+    width: 20px;
+  }
+  .labelText {
+    margin-bottom: 5px !important;
+  }
+  .icon {
+    font-size: 14px;
+    margin: 5px 5px 0px;
+  }
+  #hallButtons, .mblchatDisplay, .mblhelpicondisplay {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .tooltipthree a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mblchatDisplay {
+    margin-left: 200px;
+  }
+  .mblchatDisplay {
+    border-radius: 6px;
+    background: #299941;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 9999;
+    margin-bottom: 10px;
+    bottom: 0;
+    margin-right: -20px;
+    min-height: 50px;
+  }
+  #mblhelpicon {
+    display: none !important;
+  }
+}
+@media only screen and (max-width:767px) {
+  #mblhelpicon {
+    display: none !important;
+  }
+  #guideModal.modal {
+    z-index: 999;
+  }
+  #guideModal .modal-content {
+    width: 96%;
+    height: 96%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  button#nextBtn {
+    position: absolute;
+    right: -10%;
+    top: -200px;
+  }
+  button#prevBtn {
+    position: absolute;
+    left: -10%;
+    top: -200px;
+  }
+  #hallButtons {
+    height: 50px;
+    padding: 0px;
+  }
+  .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour, .tooltipChat, .tooltiphelpmobile {
+    height: auto;
+  }
+  .mapIcon, .infoIcon, .chatIcon, .tooltipthree a img {
+    width: 20px;
+  }
+  .labelText {
+    margin-bottom: 5px !important;
+  }
+  .icon {
+    font-size: 14px;
+    margin: 5px 5px 0px;
+  }
+  #hallButtons, .mblchatDisplay, .mblhelpicondisplay {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .tooltipthree a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mblchatDisplay {
+    margin-left: 200px;
+  }
+  .mblchatDisplay {
+    border-radius: 6px;
+    background: #299941;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 9999;
+    margin-bottom: 10px;
+    bottom: 0;
+    margin-right: -20px;
+    min-height: 50px;
+  }
+  .icon {
+    opacity: 0.3;
+  }
+  .icon.highlighted {
+    opacity: 1;
+    font-weight: 600;
+  }
 }

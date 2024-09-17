@@ -1177,11 +1177,13 @@ function openInstruction(){
 
 document.getElementById('Help-icon').addEventListener('click',function(){
     // document.getElementById('help-overlay').style.display='flex'
-    openuguide()
+    openuguide();
+    $("#hallButtons, #mblchatplaceholder, #chat-icon123").addClass("initial_guide");
 })
 document.getElementById('mblhelpicon').addEventListener('click',function(){
     // document.getElementById('help-overlay').style.display='flex'
-    openuguide()
+    openuguide();
+    $("#hallButtons, #mblchatplaceholder, #chat-icon123").addClass("initial_guide");
 })
 
 document.querySelector('.help-close-button').addEventListener('click',function(){

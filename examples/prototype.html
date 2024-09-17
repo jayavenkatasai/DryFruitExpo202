@@ -224,7 +224,7 @@
       
   <!-- The Modal -->
   <div id="guideModal" class="modal">
-    <div class="modal-contentt">
+    <div class="modal-content modal-dialog-centered">
       
       <span class="guideclose">Skip</span>
       <div class="instruction active" id="instruction1">
@@ -466,7 +466,7 @@
           <p class="labelText labelcategory">Category</p>
         </div>
         <div class="tooltiptwo icon" id="icon2" onclick="tracking(0, 'expo-directory', ''); return true;">
-          <img class="infoIcon desktopInfoIcon" width="47" height="47" src="assets/icons/newexpodirectory.svg" alt="exploreicon"/>
+          <img class="infoIcon desktopInfoIcon" src="assets/icons/newexpodirectory.svg" alt="exploreicon"/>
           <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
           <p class="labelText labelexplore">Explore</p>
         </div>
@@ -3075,6 +3075,7 @@ function autoNextInstruction() {
 
 // Close modal and reset the highlighted icons
 function closeGuide() {
+  $("#hallButtons, #mblchatplaceholder, #chat-icon123").removeClass("initial_guide");
   document.getElementById('hallButtonsContents').style.pointerEvents='auto'
   modal.style.display = "none";
 clearInterval(autoNextInterval);  // Stop auto-transition
@@ -3131,8 +3132,8 @@ autoNextInstruction();
   if (!localStorage.getItem('intiated')) {
     var halllang = localStorage.getItem('languageselection')
     localStorage.setItem('intiated', 'true')
-    openuguide()
- 
+    openuguide();
+    $("#hallButtons, #mblchatplaceholder, #chat-icon123").addClass("initial_guide");
 } else {
       document.getElementById('hallButtonsContents').style.pointerEvents='auto'
 }
