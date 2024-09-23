@@ -18,9 +18,6 @@
     />
 
     <link rel="preload" href="assets/loading/tenor.gif" as="image">
-
-    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
@@ -229,50 +226,47 @@
       <span class="guideclose">Skip</span>
       <div class="instruction active" id="instruction1">
         <div class="sub-instruction">
-          <h5>Walk</h5>
-          <p id="walkinstructiontext">Hold and drag the Joystick to move forward, backward, left, or right.</p>
+          <h5 id="walkTitle">Walk</h5>
+          <p id="walkText">Hold and drag the Joystick to move forward, backward, left, or right.</p>
         </div>
        
-        <img id="walkinstructionnimg"src="assets/Instructions/joystickfeature.png">
+        <img id="walkinstructionnimg" src="assets/Instructions/joystickfeature.png">
       
       </div>
+
       <div class="instruction" id="instruction2">
         <div class="sub-instruction">
-          <h5>Hold and drag</h5>
-          <p>Hold and drag the mouse to look arround</p>
+          <h5 id="dragTitle">Hold and drag</h5>
+          <p id="dragText">Hold and drag the mouse to look around.</p>
         </div>
-       
-        <img  src="assets/Instructions/holdanddragfeature.png">
-      
+        <img src="assets/Instructions/holdanddragfeature.png">
       </div>
-      <div class="instruction" id="instruction3">
-        <div class="sub-instruction">
-          <h5>Category Map</h5>
-          <p>Click here to view all the Categories in the Agri Expo
-          </p>
-        </div>
-       
-        <img  src="assets/Instructions/categorymapfeature.png">
       
+       <div class="instruction" id="instruction3">
+      <div class="sub-instruction">
+        <h5 id="categoryMapTitle">Category Map</h5>
+        <p id="categoryMapText">Click here to view all the Categories in the Agri Expo.</p>
       </div>
-      <div class="instruction" id="instruction4">
-        <div class="sub-instruction">
-          <h5>Expo Directory</h5>
-          <p>Click here to explore the Halls and Stalls by Category.</p>
-        </div>
-       
-        <img src="assets/Instructions/expodirectoryfeature.png">
-      
-      </div>
-      <div class="instruction" id="instruction5">
-        <div class="sub-instruction">
-          <h5>Lobby</h5>
-          <p>Click here to explore the Halls and Stalls by Category.</p>
-        </div>
-       
-        <img  src="assets/Instructions/lobbyfeature.png">
-      
+      <img src="assets/Instructions/categorymapfeature.png">
     </div>
+
+    <div class="instruction" id="instruction4">
+      <div class="sub-instruction">
+        <h5 id="expoDirectoryTitle">Expo Directory</h5>
+        <p id="expoDirectoryText">Click here to explore the Halls and Stalls by Category.</p>
+      </div>
+      <img src="assets/Instructions/expodirectoryfeature.png">
+    </div>
+
+
+    <div class="instruction" id="instruction5">
+      <div class="sub-instruction">
+        <h5 id="lobbyTitle">Lobby</h5>
+        <p id="lobbyText">Click here to explore the Halls and Stalls by Category.</p>
+      </div>
+      <img src="assets/Instructions/lobbyfeature.png">
+    </div>
+
     <!-- <div class="instruction" id="instruction6">
       <div class="sub-instruction">
         <h5>Help</h5>
@@ -282,16 +276,13 @@
       <img  src="assets/Instructions/chatfeature.png">
     
   </div> -->
-  <div class="instruction" id="instruction7">
-    <div class="sub-instruction">
-      <h5>Chat</h5>
-      <p>Reach out to exhibitors directly. Learn more about their products, ask questions, or even negotiate deals!</p>
+   <div class="instruction" id="instruction7">
+      <div class="sub-instruction">
+        <h5 id="chatTitle">Chat</h5>
+        <p id="chatText">Reach out to exhibitors directly. Learn more about their products, ask questions, or even negotiate deals!</p>
+      </div>
+      <img src="assets/Instructions/chatfeature.png">
     </div>
-   
-    <img  src="assets/Instructions/chatfeature.png">
-  
-</div>
-  
       <div class="nav-buttons">
         <button id="prevBtn" disabled><span class="instnavtext">Previous</span> <img class="instimagenav" id="previmgnav" src="assets/icons/instlefticon.png" height="30px" width="30px"></button>
             <div class="instruction-count" id="instructionCount">1/4</div>
@@ -461,25 +452,25 @@
        
 
         <div class="tooltipone icon" id="icon1" onclick="tracking(0, 'category-map', ''); return true;">
-          <img class="mapIcon desktopMapIcon" src="assets/icons/mapimg.png" alt="categoryicon"/>
+          <img class="mapIcon desktopMapIcon" src="assets/icons/Category Map (1).svg" alt="categoryicon"/>
           <!-- <img class="mapIcon mblMapIcon" src="assets/icons/blueMap.png" /> -->
           <p class="labelText labelcategory">Category</p>
         </div>
         <div class="tooltiptwo icon" id="icon2" onclick="tracking(0, 'expo-directory', ''); return true;">
-          <img class="infoIcon desktopInfoIcon" src="assets/icons/newexpodirectory.svg" alt="exploreicon"/>
+          <img class="infoIcon desktopInfoIcon" src="assets/icons/Stall directory (1) (1).svg" alt="exploreicon"/>
           <!-- <img class="infoIcon mblInfoIcon" src="assets/icons/blueInfo.png" /> -->
           <p class="labelText labelexplore">Explore</p>
         </div>
         <div class="tooltipthree icon" id="icon3">
           <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
-            <img class="desktopExitImg" src="assets/icons/exitimg.png" alt="exiticon"/>
+            <img class="desktopExitImg" src="assets/icons/Lobby (3) (1).svg" alt="exiticon"  />
             <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
             <p class="labelText labelexit">Lobby</p>
           </a>
         </div> 
         <div class="tooltipthree icon" id="Help-icon">
           <!-- <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;"> -->
-            <img class="desktopExitImg" src="assets/icons/question.png" alt="exiticon" width="40px" height="44px"/>
+            <img class="desktopExitImg" src="assets/icons/Help1 (2) (1).svg" alt="exiticon" />
             <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
             <p class="labelText labelhelp">Help</p>
           </a>
@@ -502,7 +493,7 @@
  <div class=" mblhelpicondisplay " id="mblhelpicon">
           <div class="icon tooltiphelpmobile" id="mblhelp">
             <img class="chatIcon" src="assets/icons/question.png" alt="chaticon"/>
-            <p class="labelText labelhelp">Help</p>
+            <p class="labelText labelhelpmbl">Help</p>
           </div>
   </div>
     <!-- end of help icon  for mobike -->
@@ -537,7 +528,7 @@
     <div id="iframe-container">
       <iframe id="iframe-url" src=""></iframe>
     </div>
-     <button class="switch">Switch To 2D</button>
+     <!-- <button class="switch">Switch To 2D</button> -->
     <!-- js files -->
 
     <script src="js/translatorjs/halltranslator.js"></script>
@@ -629,7 +620,7 @@
 
       <a-entity gltf-model="#hallmodel" id="hall1">
         <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity>
-
+        <a-entity geltf-model ="" animation="* clip"></a-entity>
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
         <a-entity id="rig"  cursor-teleport="cameraRig: #rig; cameraHead: #player; collisionEntities: .collision;" 
@@ -637,6 +628,7 @@
           <a-entity
             id="player"
             camera
+            fov="50"
             networked="template:#head-template;"
             visible="true"
             look-controls="magicWindowTrackingEnabled:false"
@@ -2788,6 +2780,8 @@
     </a-scene>
     <!-- a-scene close -->
     <script>
+ 
+
       document.getElementById('scene1').setAttribute('networked-scene', `room:${networkcategory}`);
       // console.log(networkcategory);
       // alert(category)
@@ -2875,7 +2869,7 @@
       $('.individualChatClose').click(function () {
         $('#chat-ui-room2').css('display', 'none');
       });
-      $('.desktopMapIcon').cick(function(){
+      $('.desktopMapIcon').click(function(){
         $('#overallOverlay').css('display','flex !important')
       })
     </script>
@@ -2941,16 +2935,219 @@
   tracking(0, 'hallpage', '');
        
       }
-    </script>
-
-
-
-<!-- newww                           code                                                -->
+</script>
+<!-- instruction guide starts here -->
 <script>
+let instselectedLanguagee = localStorage.getItem('languageselection'); 
+var instructiontranslations = {
+  english: {
+    walkInstruction: {
+      title: "Walk",
+      textDesktop: "Use Arrow keys to move forward, backward, left, or right.",
+      textMobile: "Hold and drag the Joystick to move forward, backward, left, or right."
+    },
+    dragInstruction: {
+      title: "Hold and Drag",
+      textDesktop: "Hold and drag the mouse to look around.",
+      textMobile: "Swipe left and right on the screen to look around"
+    },
+    categoryMapInstruction: {
+      title: "Category Map",
+      text: "Click here to view all the Categories in the Agri Expo."
+    },
+    expoDirectoryInstruction: {
+      title: "Expo Directory",
+      text: "Click here to explore the Halls and Stalls by Category."
+    },
+    lobbyInstruction: {
+      title: "Lobby",
+      text: "Click here to explore the Halls and Stalls by Category."
+    },
+    chatInstruction: {
+      title: "Chat",
+      text: "Reach out to exhibitors directly. Learn more about their products, ask questions, or even negotiate deals!"
+    }
+  },
+  hindi: {
+    walkInstruction: {
+    title: "चलना",
+    textDesktop: "आगे, पीछे, बाएँ या दाएँ जाने के लिए तीर कुंजियों का उपयोग करें।",
+    textMobile: "आगे, पीछे, बाएँ या दाएँ जाने के लिए जॉयस्टिक को पकड़ें और खींचें।"
+  },
+  dragInstruction: {
+    title: "पकड़ें और घसीटें",
+    textDesktop: "आसपास देखने के लिए माउस को पकड़ें और घसीटें।",
+    textMobile: "आसपास देखने के लिए स्क्रीन पर बाएँ और दाएँ स्वाइप करें।"
+  },
+    categoryMapInstruction: {
+      title: "श्रेणी मानचित्र",
+      text: "कृषि एक्सपो में सभी श्रेणियों को देखने के लिए यहां क्लिक करें।"
+    },
+    expoDirectoryInstruction: {
+      title: "एक्सपो निर्देशिका",
+      text: "श्रेणी द्वारा हॉल और स्टाल्स का अन्वेषण करने के लिए यहां क्लिक करें।"
+    },
+    lobbyInstruction: {
+      title: "लॉबी",
+      text: "श्रेणी द्वारा हॉल और स्टाल्स का अन्वेषण करने के लिए यहां क्लिक करें।"
+    },
+    chatInstruction: {
+      title: "चैट",
+      text: "प्रदर्शकों से सीधे बात करें। उनके उत्पादों के बारे में जानें, सवाल पूछें, या सौदे करें!"
+    }
+  },
+  telugu: {
+    walkInstruction: {
+    title: "నడవండి",
+    textDesktop: "ముందుకు, వెనక్కి, ఎడమ లేదా కుడి వెళ్ళడానికి ఈకలు కీబోర్డ్ ఉపయోగించండి.",
+    textMobile: "ముందుకు, వెనక్కి, ఎడమ లేదా కుడి వెళ్ళడానికి జాయ్‌స్టిక్‌ని పట్టుకుని లాగండి."
+  },
+  dragInstruction: {
+    title: "పట్టుకొని లాగండి",
+    textDesktop: "చుట్టూ చూడటానికి మౌస్‌ని పట్టుకొని లాగండి.",
+    textMobile: "చుట్టూ చూడటానికి స్క్రీన్‌పై ఎడమ మరియు కుడి వైపుకు స్వైప్ చేయండి."
+  },
+    categoryMapInstruction: {
+      title: "కేటగిరీ మ్యాప్",
+      text: "అగ్రి ఎక్స్‌పోలో అన్ని కేటగిరీలను చూడటానికి ఇక్కడ క్లిక్ చేయండి."
+    },
+    expoDirectoryInstruction: {
+      title: "ఎక్స్‌పో డైరెక్టరీ",
+      text: "కేటగిరీ ప్రకారం హాల్స్ మరియు స్టాల్స్‌ని అన్వేషించడానికి ఇక్కడ క్లిక్ చేయండి."
+    },
+    lobbyInstruction: {
+      title: "లాబీ",
+      text: "కేటగిరీ ప్రకారం హాల్స్ మరియు స్టాల్స్‌ని అన్వేషించడానికి ఇక్కడ క్లిక్ చేయండి."
+    },
+    chatInstruction: {
+      title: "చాట్",
+      text: "నేరుగా ప్రదర్శకులతో మాట్లాడండి. వారి ఉత్పత్తుల గురించి మరింత తెలుసుకోండి, ప్రశ్నలు అడగండి, లేదా ఒప్పందాలు చేసుకోండి!"
+    }
+  },
+  gujarati: {
+    walkInstruction: {
+    title: "ચલાવો",
+    textDesktop: "આગળ, પાછળ, ડાબે અથવા જમણે જવા માટે તીર કીબોર્ડનો ઉપયોગ કરો.",
+    textMobile: "આગળ, પાછળ, ડાબે અથવા જમણે જવા માટે જૉયસ્ટિકને પકડીને ખેંચો."
+  },
+  dragInstruction: {
+    title: "પકડો અને ખેંચો",
+    textDesktop: "આસપાસ જોવા માટે માઉસને પકડીને ખેંચો.",
+    textMobile: "આસપાસ જોવા માટે સ્ક્રીન પર ડાબે અને જમણે સ્વાઇપ કરો."
+  },
+    categoryMapInstruction: {
+      title: "શ્રેણી નકશો",
+      text: "અગરી એક્સ્પોમાં તમામ શ્રેણીઓને જોવા માટે અહીં ક્લિક કરો."
+    },
+    expoDirectoryInstruction: {
+      title: "એક્સ્પો ડાયરેક્ટરી",
+      text: "શ્રેણી મુજબ હોલ અને સ્ટોલ્સને શોધવા માટે અહીં ક્લિક કરો."
+    },
+    lobbyInstruction: {
+      title: "લોબી",
+      text: "શ્રેણી મુજબ હોલ અને સ્ટોલ્સને શોધવા માટે અહીં ક્લિક કરો."
+    },
+    chatInstruction: {
+      title: "ચેટ",
+      text: "પ્રદર્શકો સાથે સીધા વાત કરો. તેમના ઉત્પાદનો વિશે વધુ જાણો, પ્રશ્નો પૂછો, અથવા સોદા કરો!"
+    }
+  },
+  bengali: {
+    walkInstruction: {
+    title: "হাঁটা",
+    textDesktop: "সামনে, পেছনে, বাঁ বা ডানে যেতে তীর চিহ্ন ব্যবহার করুন।",
+    textMobile: "সামনে, পেছনে, বাঁ বা ডানে যেতে জয়স্টিক ধরে টানুন।"
+  },
+  dragInstruction: {
+    title: "ধরুন এবং টানুন",
+    textDesktop: "চতুর্দিকে দেখার জন্য মাউস ধরে টানুন।",
+    textMobile: "চতুর্দিকে দেখার জন্য স্ক্রিনে বাম বা ডান দিকে সোয়াইপ করুন।"
+  },
+    categoryMapInstruction: {
+      title: "শ্রেণী মানচিত্র",
+      text: "এগ্রি এক্সপোতে সমস্ত বিভাগ দেখতে এখানে ক্লিক করুন।"
+    },
+    expoDirectoryInstruction: {
+      title: "এক্সপো ডিরেক্টরি",
+      text: "বিভাগ অনুসারে হল এবং স্টলগুলি অন্বেষণ করতে এখানে ক্লিক করুন।"
+    },
+    lobbyInstruction: {
+      title: "লবির",
+      text: "বিভাগ অনুসারে হল এবং স্টলগুলি অন্বেষণ করতে এখানে ক্লিক করুন।"
+    },
+    chatInstruction: {
+      title: "চ্যাট",
+      text: "প্রদর্শকদের সাথে সরাসরি কথা বলুন। তাদের পণ্য সম্পর্কে আরও জানুন, প্রশ্ন জিজ্ঞাসা করুন, বা চুক্তি করুন!"
+    }
+  },
+  marathi: {
+    walkInstruction: {
+    title: "चाला",
+    textDesktop: "पुढे, मागे, डावीकडे किंवा उजवीकडे जाण्यासाठी कीबोर्ड बटणे वापरा.",
+    textMobile: "पुढे, मागे, डावीकडे किंवा उजवीकडे जाण्यासाठी जॉयस्टिक पकडून खेचा."
+  },
+  dragInstruction: {
+    title: "पकडा आणि खेचा",
+    textDesktop: "चोहोबाजूला पाहण्यासाठी माउस पकडा आणि खेचा.",
+    textMobile: "चोहोबाजूला पाहण्यासाठी स्क्रीनवर डावीकडे आणि उजवीकडे स्वाइप करा."
+  },
+    categoryMapInstruction: {
+      title: "श्रेणी नकाशा",
+      text: "अॅग्री एक्सपोमधील सर्व श्रेण्या पाहण्यासाठी येथे क्लिक करा."
+    },
+    expoDirectoryInstruction: {
+      title: "एक्सपो निर्देशिका",
+      text: "श्रेणीनुसार हॉल आणि स्टॉल्स शोधण्यासाठी येथे क्लिक करा."
+    },
+    lobbyInstruction: {
+      title: "लॉबी",
+      text: "श्रेणीनुसार हॉल आणि स्टॉल्स शोधण्यासाठी येथे क्लिक करा."
+    },
+    chatInstruction: {
+      title: "चॅट",
+      text: "प्रदर्शकांशी थेट संवाद साधा. त्यांच्या उत्पादनांबद्दल अधिक जाणून घ्या, प्रश्न विचारा किंवा व्यवहार करा!"
+    }
+  }
+};
+function updateInstructionBasedOnLanguage(lang) {
+  const translations = instructiontranslations[lang];
 
-  // new user guide backupp
-  
-// NEW VERSION START
+  // Update Walk Instruction
+  if(useragent =='mobile'){
+    document.getElementById("walkTitle").textContent = translations.walkInstruction.title;
+  document.getElementById("walkText").textContent = translations.walkInstruction.textMobile;
+walkinstructionnimg.src='assets/Instructions/joystickfeature.png'
+
+  // Update Drag Instruction
+  document.getElementById("dragTitle").textContent = translations.dragInstruction.title;
+  document.getElementById("dragText").textContent = translations.dragInstruction.textMobile;
+
+  }else{
+    document.getElementById("walkTitle").textContent = translations.walkInstruction.title;
+  document.getElementById("walkText").textContent = translations.walkInstruction.textDesktop;
+walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
+  // Update Drag Instruction
+  document.getElementById("dragTitle").textContent = translations.dragInstruction.title;
+  document.getElementById("dragText").textContent = translations.dragInstruction.textDesktop;
+
+  }
+ 
+  // Update Category Map Instruction
+  document.getElementById("categoryMapTitle").textContent = translations.categoryMapInstruction.title;
+  document.getElementById("categoryMapText").textContent = translations.categoryMapInstruction.text;
+
+  // Update Expo Directory Instruction
+  document.getElementById("expoDirectoryTitle").textContent = translations.expoDirectoryInstruction.title;
+  document.getElementById("expoDirectoryText").textContent = translations.expoDirectoryInstruction.text;
+
+  // Update Lobby Instruction
+  document.getElementById("lobbyTitle").textContent = translations.lobbyInstruction.title;
+  document.getElementById("lobbyText").textContent = translations.lobbyInstruction.text;
+
+  // Update Chat Instruction
+  document.getElementById("chatTitle").textContent = translations.chatInstruction.title;
+  document.getElementById("chatText").textContent = translations.chatInstruction.text;
+}
 
 const desktopIconMapping = {
   2: ['icon1'],        // Instruction 1 highlights icon1
@@ -2966,10 +3163,6 @@ const mobileIconMapping = {// Instruction 1 highlights mobile-icon1
   4: ['icon3'], // Instruction 4 highlights mobile-icon4
   5: ['mblchat'], // Instruction 5 highlights mobile-icon5
 };
-
-
-
-
 const modal = document.getElementById("guideModal");
 const openBtn = document.querySelector(".open-guide-btn");
 const closeBtn = document.querySelector(".guideclose");
@@ -2981,45 +3174,22 @@ const instructionCount = document.getElementById("instructionCount");
 const walkinstructionnimg = document.getElementById('walkinstructionnimg');
 const walkinstructiontext = document.getElementById('walkinstructiontext')
 let currentIndexi = 0;
-if(useragent==="mobile"){
-  walkinstructionnimg.src='assets/Instructions/joystickfeature.png'
-  walkinstructiontext.textContent= "Hold and drag the Joystick to move forward, backward, left, or right."
-}else{
- walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
-  walkinstructiontext.textContent= "User Arrow keys to move forward, backward, left, or right."
-}
+// if(useragent==="mobile"){
+//   walkinstructionnimg.src='assets/Instructions/joystickfeature.png'
+//   walkinstructiontext.textContent= "Hold and drag the Joystick to move forward, backward, left, or right."
+// }else{
+//  walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
+//   walkinstructiontext.textContent= "User Arrow keys to move forward, backward, left, or right."
+// }
 const iconMapping = useragent =="mobile"?mobileIconMapping :desktopIconMapping
 
-
-// const instructionsi = useragent =="mobile"?mobileInstructions:desktopInstructions
 let totalInstructions = instructionsi.length;
 let autoNextInterval;
-// const iconMapping = {
-//   0: ['icon1'],   // Instruction 1 highlights icon1
-//   1: ['icon2'],   // Instruction 2 highlights icon2
-//   2: ['icon3'],   // Instruction 3 highlights icon3
-//   3: ['Help-icon'], 
-//   4: ['chat-icon123']  // Instruction 4 highlights icon4
-// };
 
-// const mediaQuery = window.matchMedia("(min-width: 900px) and (orientation: portrait)");
 const mediaQuery = window.matchMedia("(max-width: 900px) and (orientation: portrait)");
 const landscapeQuery = window.matchMedia("(min-width: 901px)");
-// Function to update instruction modal and icon highlighting
+
 function updateInstructions() {
-
-
-  //   // Hide all instructions first
-  //   document.querySelectorAll('.instruction').forEach(instruction => {
-  //   instruction.style.display = 'none';
-  // });
-
-  // // Show the current instruction
-  // const currentInstruction = document.getElementById(instructions[currentIndex].id);
-  // if (currentInstruction) {
-  //   currentInstruction.style.display = 'block';
-  // }
-  // Update instructionsi
   instructionsi.forEach((instruction, index) => {
     instruction.classList.toggle("active", index === currentIndexi);
   });
@@ -3034,28 +3204,14 @@ function updateInstructions() {
   // Update instruction count and button states
   instructionCount.textContent = `${currentIndexi + 1}/${totalInstructions}`;
   prevBtn.disabled = currentIndexi === 0;
-//   if(useragent==='mobile'){
 
-  
-//   if(currentIndexi===0){
-//     document.getElementById('previmgnav').style.display='none !important'
-//   }else{
-//      document.getElementById('previmgnav').style.display='block !important'
-//   }
-
-//   if( nextBtn.textContent = currentIndexi === instructionsi.length - 1){
-//      document.getElementById('nextimgnav').style.display='block'
-//   }else{
-//      document.getElementById('nextimgnav').style.display='none'
-//   }
-// }
-  if (mediaQuery.matches) {
-        nextBtn.textContent = currentIndexi === instructionsi.length - 1 ? "Close" : "Next";
-    }
-    else {
-        // Optionally handle cases where the media query does not match
-      //  nextBtn.textContent = "Next"; // Or some other default behavior
-    }
+  // if (mediaQuery.matches) {
+  //       nextBtn.textContent = currentIndexi === instructionsi.length - 1 ? "Close" : "Next";
+  //   }
+  //   else {
+  //       // Optionally handle cases where the media query does not match
+  //     //  nextBtn.textContent = "Next"; // Or some other default behavior
+  //   }
 //  nextBtn.textContent = currentIndexi === instructionsi.length - 1 ? "Close" : "Next";
 }
 
@@ -3069,7 +3225,7 @@ function autoNextInstruction() {
       closeGuide();  // Close the modal when the last instruction is done
     }
     updateInstructions();
-  }, 1000000);  // 10 seconds interval
+  }, 5000);  // 10 seconds interval
 }
 
 
@@ -3117,12 +3273,14 @@ function openuguide(){
 modal.style.display = "block";
 currentIndexi = 0;
 updateInstructions();
+updateInstructionBasedOnLanguage(instselectedLanguagee); 
 autoNextInstruction();
 }
-  document.getElementById('hall1').addEventListener('model-loaded', function () {
-    // After the model is loaded, hide the loading icon
-    setTimeout(hideLoadingIcon, 3000);
-  });
+function modelLoadedHandler() {
+  // After the model is loaded, hide the loading icon
+  setTimeout(hideLoadingIcon, 3000);
+}
+  document.getElementById('hall1').addEventListener('model-loaded', modelLoadedHandler);
 
   function hideLoadingIcon() {
     $('.loading-container').css('visibility', 'hidden');
@@ -3139,7 +3297,7 @@ autoNextInstruction();
 }
 
   
-    document.getElementById('hall1').removeEventListener('model-loaded')
+    document.getElementById('hall1').removeEventListener('model-loaded', modelLoadedHandler);
   }
   // Function to handle avatar selection
 
@@ -3266,10 +3424,10 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
 </script> -->
   </body>
   <script>
-    document.querySelector('.switch').addEventListener('click',function(){
-      var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
-    window.location.href = lowpolylink
+    // document.querySelector('.switch').addEventListener('click',function(){
+    //   var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
+    // window.location.href = lowpolylink
  
-    })
+    // })
   </script>
 </html>

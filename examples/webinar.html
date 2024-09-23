@@ -339,9 +339,12 @@
         <div class="webinarSectionContents" id="webinarSectionContents">
           <img class="auditoriumImg" id="dsktp-img" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
-            <img class="video-image" id="dsktp-img"  src="./assets/background_images/BG.jpg">
-            <iframe class="video-link" id="dsktp"
-            src="https://www.youtube.com/embed/BGRUdH3UBh0"
+            <!-- <img class="video-imagee" id="dsktp-img"  src="./assets/background_images/BG.jpg"> -->
+            <iframe
+              class="video-link"
+              id="dsktp"
+              allow="autoplay"
+              src="https://www.youtube.com/embed/AoVlxkVQyAo?feature=oembed&amp;autoplay=1&amp;mute=1&amp;cc_load_policy=1"
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -369,9 +372,16 @@
         <div class="webinarSectionContents">
           <img class="auditoriumImg" src="assets/background_images/auditorium.webp" />
           <div class="youTubeVideo">
-            <img class="video-image" id="mbl-img" src="./assets/background_images/BG.jpg">
-            <iframe class="video-link" id="mbl"
-              src="https://www.youtube.com/embed/BGRUdH3UBh0"
+            <!-- <img
+              class="video-image"
+              id="mbl-img"
+              src="./assets/background_images/BG.jpg"
+            /> -->
+            <iframe
+              class="video-link"
+              id="mbl"
+              allow="autoplay"
+              src="https://www.youtube.com/embed/AoVlxkVQyAo?feature=oembed&amp;autoplay=1&amp;mute=1&amp;cc_load_policy=1"
               frameborder="0"
               allowfullscreen
             ></iframe>
@@ -549,7 +559,32 @@ console.log(guid)
         j.async = true;
         j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-K7WV592');
+      })(window, document, "script", "dataLayer", "GTM-K7WV592");
+    </script>
+    <script src="js/unload.js"></script>
+    <script>
+      $(window).on("load", function () {
+        var uid = localStorage.getItem("GUID");
+        const data = {
+          exhibition_ID: 4,
+          visitor_guid: uid,
+          is_closed: 0,
+        };
+        // Convert data to a JSON string
+        const dataString = JSON.stringify(data);
+        // Use navigator.sendBeacon to send data to the server
+        const result = navigator.sendBeacon(
+          "https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus",
+          dataString
+        );
+
+        // Log the result of the sendBeacon call
+        if (result) {
+          console.log("Data successfully queued for sending.");
+        } else {
+          console.log("Failed to queue data for sending.");
+        }
+      });
     </script>
        <script src="js/unload.js"></script>
        <script>
@@ -574,132 +609,119 @@ console.log(guid)
         } else {
           console.log('Failed to queue data for sending.');
         }
-        });
-        
-      </script>
-      <script>
-        window.onload = function () {
-      tracking(0, 'webinarpage', '');
-      //  trackExpo(0, "exhibition3", "", ipAddress);
-    };
-</script>
-<script>
-  window.addEventListener('beforeunload', function (e) {
-var uid = localStorage.getItem('GUID');
-const data = {
-  exhibition_ID: 4,
-  visitor_guid: uid,
-  is_closed: 1
-};
-// Convert data to a JSON string
-const dataString = JSON.stringify(data);
-// Use navigator.sendBeacon to send data to the server
-const result = navigator.sendBeacon(
-  'https://www.marketcentral.in/rest/virtualExpo/general/UpdateChatStatus',
-  dataString
-);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to check if the current date and time match the scheduled date and time
+        function checkDateTime(scheduledDateTime) {
+          // Convert the scheduled date and time to milliseconds since epoch
+          var scheduledTime = new Date(scheduledDateTime).getTime();
 
-// Log the result of the sendBeacon call
-if (result) {
-  console.log('Data successfully queued for sending.');
-} else {
-  console.log('Failed to queue data for sending.');
-}
-});
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-     // Function to check if the current date and time match the scheduled date and time
-     function checkDateTime(scheduledDateTime) {
-         // Convert the scheduled date and time to milliseconds since epoch
-         var scheduledTime = new Date(scheduledDateTime).getTime();
- 
-         // Get the current date and time in milliseconds since epoch
-         var currentTime = new Date().getTime();
- 
-         // Adjust the current time to IST (UTC+5:30)
-         currentTime += 5.5 * 60 * 60 * 1000;
- 
-         // Compare the current time with the scheduled time
-         return currentTime >= scheduledTime;
-     }
- 
-     // Scheduled dates and times in Indian Standard Time
-     var scheduledEvents = [
-         { videoLink: 'https://www.youtube.com/embed/-R7dEgpWfiw', dateTime: '2024-04-26T11:30:00+05:30', companyName: 'Karur Orange Surgicals' },
-         { videoLink: 'https://www.youtube.com/embed/N24t43yR9Y8', dateTime: '2024-04-27T11:30:00+05:30', companyName: 'RS Respiratory Systems' },
-         { videoLink: 'https://www.youtube.com/embed/Id8wZFouvFk', dateTime: '2024-04-28T11:30:00+05:30', companyName: 'Medizone' }
-     ];
- 
-     // Loop through scheduled events
-     scheduledEvents.forEach(function(event) {
-         // Check if the current date and time match the scheduled date and time
-         if (checkDateTime(event.dateTime)) {
-             // Update the video link
-             document.getElementById('dsktp').setAttribute('src', event.videoLink);
-             document.getElementById('mbl').setAttribute('src', event.videoLink);
-             // You can also display the company name if needed
-             // console.log('Webinar by ' + event.companyName);
-         }else{
-          //  document.getElementById('dsktp').setAttribute('src','https://www.youtube.com/embed/BGRUdH3UBh0')
-          //  document.getElementById('mbl').setAttribute('src','https://www.youtube.com/embed/BGRUdH3UBh0')
-         }
-     });
- });
- 
- </script>
- <script>
-  var apiurl='https://www.marketcentral.in/rest/virtualExpo/general/getWebinar/3'
-function fetchapiforwebinar () {
-fetch(apiurl,{
-    method: 'GET'
-}).then(response=>{
-   
-    if (response.ok) {
-        const urlObject = new URL(apiurl);
-       // console.log(`before api change url :${apiurl}`);
+          // Get the current date and time in milliseconds since epoch
+          var currentTime = new Date().getTime();
 
-        return response.json();
-    }
-    else {
-       
-       // console.log(`failed url is :${apiurl}`)
-        throw new Error(`Network response was not ok.and failed url is :${apiurl}`);
-    }
-}).then(data => {
+          // Adjust the current time to IST (UTC+5:30)
+          currentTime += 5.5 * 60 * 60 * 1000;
 
-    //console.log('Fetched-data123:', data);
-    data.forEach(webinar => {
-        //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
-        if(webinar.NOTIFY===true){
-         //   document.querySelector('.thumbnail_img').style.display='none'
-        
-         document.getElementById('mbl-img').style.display='none'
-         document.getElementById('dsktp-img').style.display='none'
-            //document.querySelector('.webinar_video_link').setAttribute('src',webinar.WEBINAR_LINK)
-            document.getElementById('dsktp').setAttribute('src', webinar.WEBINAR_LINK);
-             document.getElementById('mbl').setAttribute('src', webinar.WEBINAR_LINK);
-        }else{
-           // alert("false")
-            // document.querySelector('.thumbnail_img').style.display='block'
-            // document.querySelector('.thumbnail_img').src=webinar.WEBINAR_LINK
-            
-         document.getElementById('mbl-img').style.display='block'
-        //  document.getElementById('mbl-img').setAttribute('src',webinar.WEBINAR_LINK) add the thumbnails images
-        //  document.getElementById('dsktp-img').setAttribute('src',) add the thumbnails images
-         document.getElementById('dsktp-img').style.display='block'
+          // Compare the current time with the scheduled time
+          return currentTime >= scheduledTime;
         }
-console.log(webinar)
-    });
-}).catch(error => {
-    console.log(error)
-    
-    
-})
-}
-fetchapiforwebinar();
-// checks the webinar status for every 5 minutes and updates ui
-setInterval(fetchapiforwebinar,300000);
- </script>
+
+        // Scheduled dates and times in Indian Standard Time
+        var scheduledEvents = [
+          {
+            videoLink: "https://www.youtube.com/embed/-R7dEgpWfiw",
+            dateTime: "2024-04-26T11:30:00+05:30",
+            companyName: "Karur Orange Surgicals",
+          },
+          {
+            videoLink: "https://www.youtube.com/embed/N24t43yR9Y8",
+            dateTime: "2024-04-27T11:30:00+05:30",
+            companyName: "RS Respiratory Systems",
+          },
+          {
+            videoLink:
+              "https://www.youtube.com/embed/AoVlxkVQyAo?feature=oembed&amp;autoplay=1&amp;mute=1&amp;cc_load_policy=1",
+            dateTime: "2024-04-28T11:30:00+05:30",
+            companyName: "Medizone",
+          },
+        ];
+
+        // Loop through scheduled events
+        scheduledEvents.forEach(function (event) {
+          // Check if the current date and time match the scheduled date and time
+          if (checkDateTime(event.dateTime)) {
+            // Update the video link
+            document
+              .getElementById("dsktp")
+              .setAttribute("src", event.videoLink);
+            document.getElementById("mbl").setAttribute("src", event.videoLink);
+            // You can also display the company name if needed
+            // console.log('Webinar by ' + event.companyName);
+          } else {
+            //  document.getElementById('dsktp').setAttribute('src','https://www.youtube.com/embed/BGRUdH3UBh0')
+            //  document.getElementById('mbl').setAttribute('src','https://www.youtube.com/embed/BGRUdH3UBh0')
+          }
+        });
+      });
+    </script>
+    <script>
+      var apiurl =
+        "https://www.marketcentral.in/rest/virtualExpo/general/getWebinar/3";
+      function fetchapiforwebinar() {
+        fetch(apiurl, {
+          method: "GET",
+        })
+          .then((response) => {
+            if (response.ok) {
+              const urlObject = new URL(apiurl);
+              // console.log(`before api change url :${apiurl}`);
+
+              return response.json();
+            } else {
+              // console.log(`failed url is :${apiurl}`)
+              throw new Error(
+                `Network response was not ok.and failed url is :${apiurl}`
+              );
+            }
+          })
+          .then((data) => {
+            //console.log('Fetched-data123:', data);
+            data.forEach((webinar) => {
+              //checkWebinarStatus(webinar.WEBINAR_END_TIME, webinar.WEBINAR_END_TIME);
+              if (webinar.NOTIFY === true) {
+                //   document.querySelector('.thumbnail_img').style.display='none'
+
+                document.getElementById("mbl-img").style.display = "none";
+                document.getElementById("dsktp-img").style.display = "none";
+                //document.querySelector('.webinar_video_link').setAttribute('src',webinar.WEBINAR_LINK)
+                document
+                  .getElementById("dsktp")
+                  .setAttribute("src", webinar.WEBINAR_LINK);
+                document
+                  .getElementById("mbl")
+                  .setAttribute("src", webinar.WEBINAR_LINK);
+              } else {
+                // alert("false")
+                // document.querySelector('.thumbnail_img').style.display='block'
+                // document.querySelector('.thumbnail_img').src=webinar.WEBINAR_LINK
+
+                document.getElementById("mbl-img").style.display = "block";
+                //  document.getElementById('mbl-img').setAttribute('src',webinar.WEBINAR_LINK) add the thumbnails images
+                //  document.getElementById('dsktp-img').setAttribute('src',) add the thumbnails images
+                document.getElementById("dsktp-img").style.display = "block";
+              }
+              console.log(webinar);
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      fetchapiforwebinar();
+      // checks the webinar status for every 5 minutes and updates ui
+      setInterval(fetchapiforwebinar, 300000);
+    </script>
   </body>
 </html>

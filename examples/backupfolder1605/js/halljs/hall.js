@@ -15,7 +15,7 @@ const translations = {
         inviteText: "उत्पाद लिंक सामायिक करा",
         chattext:"टीप: चॅट करण्यासाठी इथे क्लिक करा"
     },
-    "gujrathi": {
+    "gujarati": {
         urlText: "ઉત્પાદ લિંક",
         inviteText: "ઉત્પાદ લિંક શેર કરો",
         chattext:"લાખનું: ચેટ કરવા માટે અહીં ક્લિક કરો"

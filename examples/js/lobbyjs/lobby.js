@@ -1,3 +1,4 @@
+const selectedLanguage = localStorage.getItem('languageselection');
 //urlendpoint 
 var urlendpoint = '';
 if (window.location.href.includes('digiexpodev.marketcentral')) {
@@ -17,10 +18,10 @@ else {
 var lobbylanguage = localStorage.getItem('languageselection')
 const endpoint_ExhibitionId = 4;
 var bgContainer = document.getElementById("bg");
-if(lobbylanguage =='hindi'){
-  document.getElementById('lobby1').removeAttribute('gltf-model')
-  document.getElementById('lobby1').setAttribute('gltf-model','url(assets/lobbymodels/hindilobby.glb)')
-}
+// if(lobbylanguage =='hindi'){
+//   document.getElementById('lobby1').removeAttribute('gltf-model')
+//   document.getElementById('lobby1').setAttribute('gltf-model','url(assets/lobbymodels/hindilobby.glb)')
+// }
 var ang=0;
 var currentIndex = 0;
 var cards = [];
@@ -137,14 +138,36 @@ function createCards(data) {
       img.style.height = '50px';
 
       // Category name (hindi or default)
-      var h3 = document.createElement('h3');
-      h3.id = `categoryname${i + 1}`;
-      if (halllang == "hindi") {
-          h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;
-      } else {
-          h3.textContent = data[i].CATEGORY;
-      }
+    
+      // if (halllang == "hindi") {
+      //     h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;
+      // } else {
+      //     h3.textContent = data[i].CATEGORY;
+      // }
+   
+    var h3 = document.createElement('h3');
 
+    switch (selectedLanguage) {
+      case "hindi":
+          h3.textContent = data[i].CATEGORY_LEVEL_1_HINDI;
+          break;
+      case "marathi":
+          h3.textContent = data[i].CATEGORY_LEVEL_1_MARATHI;
+          break;
+      case "gujarati":
+          h3.textContent = data[i].CATEGORY_LEVEL_1_GUJARATI;
+          break;
+      case "telugu":
+          h3.textContent = data[i].CATEGORY_LEVEL_1_TELUGU;
+          break;
+      case "bengali":
+          h3.textContent = data[i].CATEGORY_LEVEL_1_BENGALI;
+          break;
+      default:
+          h3.textContent = data[i].CATEGORY; // Assuming you want to default to English
+          break;
+  }
+    h3.id = `categoryname${i + 1}`;
       // Visit button
       var button = document.createElement('button');
       button.id = 'button' + (i + 1);

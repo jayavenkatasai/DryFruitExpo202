@@ -134,7 +134,6 @@ p.categoryName {
     text-decoration:none;
 }
 .category {
-	padding: 16px 0 5px 0;
 	border-radius: 10px;
 	border: 2px solid #299941;
 	background: #fff;
@@ -147,8 +146,9 @@ p.categoryName {
 }
 .category img {
     width: 100%;
-    max-height: 150px;
-    object-fit:contain;
+    object-fit: contain;
+    border: 10px 0px;
+    border-radius: 10px 10px 0px 0px;
 }
 .categoryContents {
     display: grid;

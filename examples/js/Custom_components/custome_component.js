@@ -18,7 +18,7 @@ const messages = {
   english: (userName) => `Hello User, how can I help you?`,
   hindi: (userName) => `नमस्ते User, आपकी कैसे सहायता कर सकता हूँ?`,
   marathi: (userName) => `नमस्कार User, आपल्याला कशी मदत करू शकतो?`,
-  gujrathi: (userName) => `હેલો User, તમને કેવી રીતે સહાય કરી શકું?`,
+  gujarati: (userName) => `હેલો User, તમને કેવી રીતે સહાય કરી શકું?`,
   bengali: (userName) => `হ্যালো User, আমি কীভাবে সাহায্য করতে পারি?`,
   telugu: (userName) => `హలో User, మీకు ఎలా సహాయం చేయగలను?`
 };

@@ -11,8 +11,16 @@
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="/dist/networked-aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script> -->
+    <script src="
+    https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"
+    ></script> 
+    <!-- <script src="
+    https://cdn.jsdelivr.net/npm/impetus@0.8.8/dist/impetus.min.js"
+    ></script> -->
+<script src="
+https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
+></script>
     <script src="/js/spawn-in-circle.component.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
@@ -163,19 +171,39 @@
       </div>
     </div>
     <!--  -->
-    <a-scene cursor="rayOrigin:mouse">
+    <a-scene cursor="rayOrigin:mouse"
+    xr-mode-ui="enabled: false"
+    gltf-model="dracoDecoderPath:https://www.gstatic.com/draco/versioned/decoders/1.5.6/;meshoptDecoderPath:https://unpkg.com/meshoptimizer@0.19.0/meshopt_decoder.js;basisTranscoderPath:https://cdn.jsdelivr.net/npm/three@0.154.0/examples/jsm/libs/basis/" 
+    >
       <a-assets>
         <!-- //hallmodel  -->
-        <a-asset-item id="lobbymodel" src="assets/lobbymodels/agrilobby.glb"></a-asset-item>
+        <a-asset-item id="lobbymodel" src="assets/lobbymodels/newlobby4.glb"></a-asset-item>
+        <a-asset-item id="enterButton" src="assets/lobbymodels/lobby enter btn.glb"></a-asset-item>
+        <a-asset-item id="lobbyrotatedisplay" src="assets/lobbymodels/newlobby4display.glb"></a-asset-item>
+        <a-asset-item id="lobbyadvertisment" src="assets/lobbymodels/display holder 2.glb"></a-asset-item>
         <img id="phone-icon" src="assets/icons/phonelogo.png" />
         <img id="email-icon" src="assets/icons/emaillogo.png" />
         <img id="whatsapp-icon" src="assets/icons/whatsappicon.png" />
         <img id="expodirectory-icon" src="assets/icons/infoimg.png" />
         <!-- <img id="side-banners" src="assets/background_assets/icons/Marketing Banner.png" /> -->
       </a-assets>
+      <!-- <a-light type="ambient"></a-light> -->
+      <a-entity gltf-model="#enterButton"
+      position="6.5 0 0"
+      scale="3 3 3"
+       id="enterExhibitonbtn" animation-mixer="clip:*;timeScale: 0.5;"
+       cursor-listener3
+      ></a-entity>
 
-      <a-entity gltf-model="#lobbymodel" id="lobby1">
-      
+      <a-entity gltf-model="#enterButton"
+      position="11.722 0 0.827"
+      scale="3 3 3"
+       id="enterlobbybtn" animation-mixer="clip:*;timeScale: 0.5;"
+       cursor-listener="targetPage:webinar.html;type:visit-webinar"
+      ></a-entity>
+      <a-entity gltf-model="#lobbymodel" id="lobby1"  scale="2 2 2">
+      <a-entity gltf-model="#lobbyrotatedisplay"  position="-0.266 2.807 2.3" rotation="0 0 0" id="rdisplay" animation-mixer="clip:*;timeScale: 0.5;"></a-entity>
+      <a-entity gltf-model="#lobbyadvertisment" position="-0.432 0.041 2.507" rotation="0 -90 0" id="radv"></a-entity>
         <a-plane
           id="expodirectoryplane"
           color="red"
@@ -191,20 +219,21 @@
           color="red"
           rotation="0 40 0"
           visible="false"
-          position="-8.479 1.2 0.349"
-          width="5"
-          height="3"
+          position="-1.231 0.522 3.399"
+          width="2"
+          height="0.910"
         ></a-plane>
 
         <!-- category map  -->
         <a-plane
-          position="4 1.11 -2.7"
-          width="4.39"
-          height="2.1"
+          position="-0.32 0.628 -0.340"
+          id="categoryplane"
+          width="2.3"
+          height="1.25"
           rotation="0 0 0"
           material="color: grey"
           animation="property: components.material.material.color; type: color; from: grey; to: white; dur: 2000; loop: true"
-          visible="true"
+          visible="false"
           cursor-listener3
         ></a-plane>
         <!-- <a-plane
@@ -228,14 +257,14 @@
         </a-plane> -->
         <!-- visit webinar  -->
         <a-plane
-          position="-4 1.11 -2.7"
-          width="4.39"
-          height="2.1"
+          position="2.516 0.628 -0.340"
+          width="2.3"
+          height="1.5"
           rotation="0 0 0"
           id="visit-webinar"
           material="color: grey"
           animation="property: components.material.material.color; type: color; from: grey; to: white; dur: 2000; loop: true"
-          visible="true"
+          visible="false"
           cursor-listener="targetPage:webinar.html;type:visit-webinar"
         ></a-plane>
         
@@ -276,10 +305,12 @@
         camera
         id="camera"
         user-height="2"
-        position="0 2 17.5"
-        look-controls="magicWindowTrackingEnabled:false;enabled:false"
+        position="0.5 2 18"
+wasd-controls
+        look-controls="magicWindowTrackingEnabled:false;enabled:true"
         touchEabled="true"
-        xr-mode-ui="enabled: false"
+
+      
       ></a-entity>
     </a-scene>
     <script src="js/ip-address.js"></script>
@@ -290,7 +321,7 @@
     <script src="js/track js/trackapi.js"></script>
 
     <script>
-      document.querySelector('[camera]').setAttribute('camera', 'zoom:2');
+      document.querySelector('[camera]').setAttribute('camera', 'zoom:2.2');
     </script>
 
     <script>

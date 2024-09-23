@@ -67,7 +67,7 @@ const datalanguage = {
         "helptext": "సహాయం"
     }
 ,
-"gujrathi":{
+"gujarati":{
     "labelchat": "ચેટ",
     "labelexplore": "અન્વેષણ કરો",
     "labelexit": "બહાર નીકળો",
@@ -88,7 +88,7 @@ const datalanguage = {
     "Rotateyourmobile": "તમારા મોબાઈલ ને ફિરકવો",
      "helptext": "મદદ"
 },
-"marati":{
+"marathi":{
     "labelchat": "चॅट",
     "labelexplore": "अन्वेषण करा",
     "labelexit": "बाहेर पडा",

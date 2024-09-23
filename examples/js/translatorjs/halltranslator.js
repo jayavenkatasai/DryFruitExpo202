@@ -68,7 +68,7 @@ const datalanguage = {
         
     }
 ,
-"gujrathi":{
+"gujarati":{
     "labelchat": "ચેટ",
     "labelexplore": "અન્વેષણ કરો",
    "labelexit": "લોબી",
@@ -90,7 +90,7 @@ const datalanguage = {
      
         "helptext": "મદદ"
 },
-"marati":{
+"marathi":{
     "labelchat": "चॅट",
     "labelexplore": "अन्वेषण करा",
    "labelexit": "लॉबी",
@@ -148,6 +148,7 @@ const shareproduct = document.querySelector('.shareButton')
 const joinText = document.querySelector('.joinText')
 const sessionText= document.querySelector('.sessionText')
 const helptext = document.querySelector('.labelhelp')
+const mblhelptext = document.querySelector('.labelhelpmbl')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
 const buttonText = fullscreenButton.textContent;
 chat.textContent=datalanguage[language].labelchat
@@ -163,6 +164,7 @@ joinText.textContent=datalanguage[language].joinText
 sessionText.textContent =datalanguage[language].jointhesession
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
 helptext.textContent=datalanguage[language].helptext
+mblhelptext.textContent=datalanguage[language].helptext
 if(buttonText=="Enter Full Screen"){
     fullscreenButton.textContent=datalanguage[language].fullscreenButton
 }

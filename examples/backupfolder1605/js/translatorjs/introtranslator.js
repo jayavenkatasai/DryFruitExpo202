@@ -37,7 +37,7 @@ var data = {
        "TermsText":"जारी रखें पर क्लिक करके, आप MarketCentral के नियम और शर्तों को स्वीकार करते हैं",
        "termc":"नियम और शर्तों को स्वीकार करते हैं"
     },
-    "marati":{
+    "marathi":{
         "welcomeIntro": "स्वागत आहे",
         "welcomeHsptlText": "अस्पताल आणि वैद्यकीय सामग्री एक्सपो",
         "enterExpoButton": "एंटर एक्सपो",
@@ -59,7 +59,7 @@ var data = {
         "TermsText": "চলতি বোতামে ক্লিক করে, আপনি মার্কেট সেন্ট্রালের",
         "termc": "শর্তাবলী এবং শর্তগুলি গ্রহণ করেছেন"
     },
-    "gujrathi":
+    "gujarati":
     {
         "welcomeIntro": "સ્વાગત છે",
         "welcomeHsptlText": "હોસ્પિટલ અને તબીબી સરનામું એક્સપો",
@@ -124,7 +124,7 @@ if (urlParams.has('lan')) {
     // Get the value of the 'lan' parameter
     const languageParam = urlParams.get('lan').toLowerCase();
     // If 'lan' parameter is one of the supported languages, set selectedLanguage to that language
-    if (['english', 'hindi', 'telugu', 'gujrathi', 'bengali', 'marathi'].includes(languageParam)) {
+    if (['english', 'hindi', 'telugu', 'gujarati', 'bengali', 'marathi'].includes(languageParam)) {
         selectedLanguage = languageParam;
         updateUI(selectedLanguage);
     }
@@ -151,7 +151,7 @@ const languageDropdown = document.querySelector('.languageDropdown select');
 languageDropdown.addEventListener('change', languageChangeHandler);
 
 // Set options in the dropdown
-const languageOptions = ['english', 'hindi', 'telugu', 'gujrathi', 'bengali', 'marati'];
+const languageOptions = ['english', 'hindi', 'telugu', 'gujarati', 'bengali', 'marathi'];
 languageOptions.forEach(option => {
     const optionElement = document.createElement('option');
     optionElement.textContent = option.charAt(0).toUpperCase() + option.slice(1);

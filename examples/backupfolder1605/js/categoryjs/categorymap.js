@@ -57,7 +57,7 @@ const visitTranslations = {
         "Patient mobility aids": "పేషెంట్ మాబిలిటీ సహాయాలు",
         "Sterile Processing & Infection Control": "స్టెరైల్ ప్రాసెసింగ్ & ఇన్‌ఫెక్షన్ కంట్రోల్"
     }
-,    "gujrathi": {
+,    "gujarati": {
     "visittext": "હોલ મુલાકાત",
     "categoryheading": "શરૂ કરો",
     "categoryDescription": "શ્રેણી પ્રમાણે શોધો શું તમે શોધો છો",
@@ -75,7 +75,7 @@ const visitTranslations = {
     "Sterile Processing & Infection Control": "સ્ટેરાઇલ પ્રક્રિયા અને સંક્રમણ નિયંત્રણ"
 }
 ,
-"marati": {
+"marathi": {
     "visittext": "हॉल भेट",
     "categoryheading": "सुरुवात करा",
     "categoryDescription": "आपल्या आवडत्या वस्तू श्रेणीनुसार शोधा",

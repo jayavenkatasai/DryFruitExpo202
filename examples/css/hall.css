@@ -342,7 +342,7 @@ iframe {
   gap: 26px;
   padding: 12px 12px 25px 12px;
   position: absolute;
-  z-index: 9999;
+  z-index: 9997;
   margin-bottom: 30px;
   bottom: 0;
   margin-right: -65px;
@@ -1982,22 +1982,51 @@ button#nextBtn {
     gap: 5px;
     padding: 0px 5px;
     position: absolute;
-    z-index: 9999;
+    z-index: 9997;       
     margin-bottom: 10px;
     bottom: 0;
     margin-right: -20px;
     min-height: 50px;
   }
   #mblhelpicon {
-    display: none !important;
+    display: Flex !important;
+    margin-right: 229px;
+    min-height: 50px;
+    bottom: 0;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index:99;
+    margin-bottom: 10px;
+        /* margin-right: 229px;
+        min-height: 50px;
+        bottom: 0;
+        align-items: center;
+        gap: 5px;
+        padding: 0px 5px;
+        position: absolute;
+        z-index: 9999;
+        margin-bottom: 10px; */
+    /* display: none !important; */
   }
   .instruction-count {
-    top: -368px;
+    /* top: -368px; */
+    top: -352px;
   }
 }
 @media only screen and (max-width:767px) {
   #mblhelpicon {
-    display: none !important;
+    display: Flex !important;
+    margin-right: 229px;
+    min-height: 50px;
+    bottom: 0;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index:99;
+    margin-bottom: 10px;
   }
   #guideModal.modal {
     z-index: 999;
@@ -2058,7 +2087,7 @@ button#nextBtn {
     gap: 5px;
     padding: 0px 5px;
     position: absolute;
-    z-index: 9999;
+    z-index: 9997;
     margin-bottom: 10px;
     bottom: 0;
     margin-right: -20px;

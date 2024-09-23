@@ -34,7 +34,7 @@ var data = {
      "continuestatement":"एक्सपो सुरू ठेवा",
      "suppliestext":"आपूर्ती एक्सपो"
 },
-"gujrathi": 
+"gujarati": 
 {
     "welcomeText": "સ્વાગત છે",
     "welcomeBackHsptlText": 

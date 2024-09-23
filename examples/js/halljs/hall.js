@@ -15,7 +15,7 @@ const translations = {
         inviteText: "उत्पाद लिंक सामायिक करा",
         chattext: "टीप: चॅट करण्यासाठी इथे क्लिक करा"
     },
-    "gujrathi": {
+    "gujarati": {
         urlText: "ઉત્પાદ લિંક",
         inviteText: "ઉત્પાદ લિંક શેર કરો",
         chattext: "લાખનું: ચેટ કરવા માટે અહીં ક્લિક કરો"
@@ -725,7 +725,7 @@ document.querySelector('.iframeImg').addEventListener('click',function(){
 })
 if (useragent == "mobile") {
        document.getElementById("chat-icon123").style.display = "none"
-      document.querySelector('.switch').style.display="block"
+    //   document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click',function(){
          overalloverlay.style.display='flex'
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
@@ -733,7 +733,7 @@ if (useragent == "mobile") {
     
 } else {
      document.getElementById("stick").style.display = "none"
- document.querySelector('.switch').style.display="none"
+//  document.querySelector('.switch').style.display="none"
     document.querySelector('.tooltiptwo').addEventListener('click',function(){
          overalloverlay.style.display='flex'
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)  

@@ -55,7 +55,7 @@ const visitTranslations = {
         "Safety and Protective Gear": "భద్రత మరియు రక్షణ గియర్",
         "Storage and Handling": "నిల్వ మరియు నిర్వహణ"
     }
-,    "gujrathi": {
+,    "gujarati": {
     "visittext": "હોલ મુલાકાત",
     "categoryheading": "શરૂ કરો",
     "categoryDescription": "શ્રેણી પ્રમાણે શોધો શું તમે શોધો છો",
@@ -72,7 +72,7 @@ const visitTranslations = {
     "Storage and Handling": "સંગ્રહ અને સંભાળ"
 }
 ,
-"marati": {
+"marathi": {
     "visittext": "हॉल भेट",
     "categoryheading": "सुरुवात करा",
     "categoryDescription": "आपल्या आवडत्या वस्तू श्रेणीनुसार शोधा",
