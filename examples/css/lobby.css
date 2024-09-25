@@ -191,7 +191,7 @@
                 top: 0;
               }
               #bg {
-                background-color: #F1FDFF;
+                background-color: #F5FFF6;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -866,3 +866,12 @@
       .helpPopuP{
         display: none;
       }
+
+
+
+.dropdown-menu.show {
+  display: block;
+  height: 175px;
+  overflow: scroll;
+  min-width: unset !important;
+}

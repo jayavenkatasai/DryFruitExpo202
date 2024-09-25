@@ -1038,7 +1038,7 @@ iframe {
   justify-content: space-between;
 }
 #mapText {
-  background: #f1fdff;
+  background: #F5FFF6;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -2096,4 +2096,11 @@ button#nextBtn {
   .instruction-count {
     top: -368px;
   }
+}
+
+.dropdown-menu.show{
+  display: block;
+    height: 175px;
+    overflow: scroll;
+    min-width: unset !important;
 }
