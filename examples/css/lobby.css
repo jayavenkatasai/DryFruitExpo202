@@ -693,6 +693,7 @@
           z-index:99999;
           position: fixed;
           top:1%;
+          display: none;
           left:1%;
           border-radius: 4px;
           background-color: #f2bf0b;
@@ -758,7 +759,7 @@
           margin-bottom:50px;
       }
       .helpPopUpMainContent{
-          display:flex;
+          display:none;
           justify-content: center;
           align-items:center;
         height: 100vh;
@@ -863,9 +864,9 @@
               width:95%;
           }
       }
-      .helpPopuP{
+      /* .helpPopuP{
         display: none;
-      }
+      } */
 
 
 

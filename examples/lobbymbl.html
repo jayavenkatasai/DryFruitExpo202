@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agri products online Expo : Discover the latest advancements  in our lobby at Agri products online Expo</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
+    <script src="/easyrtc/easyrtc.js"></script>
+    <script src="/dist/networked-aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script> -->
     <script src="
@@ -16,6 +19,8 @@
 <script src="
 https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
 ></script>
+    <script src="/js/spawn-in-circle.component.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -174,7 +179,7 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
     >
         <a-assets>
             <!-- //hallmodel  -->
-            <img id="lobbyresource" src="assets/background_images/lobby bg layer 3.jpg">
+            <img id="lobbyresource" src="assets/background_images/lobby bg layer mobile.jpg">
             <a-asset-item id="enterButton" src="assets/lobbymodels/lobby enter btn.glb"></a-asset-item>
             <a-asset-item id="lobbyrotatedisplay" src="assets/lobbymodels/newlobby4display.glb"></a-asset-item>
             <a-asset-item id="lobbyadvertisment" src="assets/lobbymodels/display holder 2.glb"></a-asset-item>
@@ -182,7 +187,6 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
             <img id="email-icon" src="assets/icons/emaillogo.png" />
             <img id="whatsapp-icon" src="assets/icons/whatsappicon.png" />
             <img id="expodirectory-icon" src="assets/icons/infoimg.png" />
-         
             <!-- <img id="side-banners" src="assets/background_assets/icons/Marketing Banner.png" /> -->
           </a-assets>
           <a-entity gltf-model="#lobbyrotatedisplay"  position="0.571 4.706 3.196" rotation="13.386 0 0" id="rdisplay" animation-mixer="clip:*;timeScale: 0.5;" scale="2.5 2.5 2.5"></a-entity>
@@ -200,12 +204,13 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
            cursor-listener="targetPage:webinar.html;type:visit-webinar"
           ></a-entity>
        
-        <a-plane id="lobby-source" src="#lobbyresource" side="double" width="32" height="18.01" scale="1.08 1.08 1.08">
-            <a-image id="sponsor1" position="-5.396 6.849 0.019" src="assets/lobbymodels/Placeholder 2.png" width="1" height="0.56" scale="3.4 3.4 3.4" ></a-image>
-            <a-image  id="sponsor2"  src="assets/lobbymodels/Placeholder 1.png" width="1" height="0.56" scale="3.42 3.42 3.42" position="-12.330 6.881 0.019"></a-image> 
-            <a-image  id="sponsor3" src="assets/lobbymodels/Placeholder 3.png" width="1" height="0.56"  scale="3.42 3.42 3.42" position="8.712 6.816 0.090"></a-image>
+          <!-- <a-plane id="lobby-source" src="#lobbyresource" side="double" width="32" height="14.88"></a-plane> -->
+        <a-plane id="lobby-source" src="#lobbyresource" side="double"width="40" height="18.60" >
+            <a-image id="sponsor1" position="-5.710 7.118 0.019" src="assets/lobbymodels/Placeholder 2.png" width="1" height="0.56" scale="3.4 3.4 3.4" ></a-image>
+            <a-image  id="sponsor2"  src="assets/lobbymodels/Placeholder 1.png" width="1" height="0.56" scale="3.42 3.42 3.42" position="-12.599 7.118 0.019"></a-image> 
+            <a-image  id="sponsor3" src="assets/lobbymodels/Placeholder 3.png" width="1" height="0.56"  scale="3.42 3.42 3.42" position="8.980 7.129 0.090"></a-image>
             <a-image  id="banner1" visible="false" src="assets/lobbymodels/banner1.png" width="1" height="0.56"  scale="3.42 3.42 3.42" position="0.687 2.438 0.090"></a-image>
-            <a-image  id="banner2" visible="false" src="assets/lobbymodels/banner2.png" width="1" height="0.56"  scale="3.42 3.42 3.42" position="10 2.438 0.090"></a-image>
+            <a-image  id="banner2" visible="false" src="assets/lobbymodels/banner2.png" width="1" height="0.56"  scale="3.42 3.42 3.42" position="10.403 2.438 0.090"></a-image>
         </a-plane>
         <a-plane
         id="expodirectoryplane"

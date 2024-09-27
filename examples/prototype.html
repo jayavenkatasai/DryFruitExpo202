@@ -462,7 +462,7 @@
           <p class="labelText labelexplore">Explore</p>
         </div>
         <div class="tooltipthree icon" id="icon3">
-          <a href="lobby.html" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
+          <a href="lobby.html" id="redirectlink" onclick="sendBeaconapilobby(0, 'lobby-button', ''); return true;">
             <img class="desktopExitImg" src="assets/icons/Lobby (3) (1).svg" alt="exiticon"  />
             <!-- <img class="mblExitImg" src="assets/icons/blueExit.png" /> -->
             <p class="labelText labelexit">Lobby</p>
@@ -2879,6 +2879,11 @@
       var result = parser.getResult();
       var useragent = result.device.type;
       var os = result.os.name;
+
+      if(useragent=='mobile'){
+        const redirectLink = document.getElementById('redirectlink');
+        redirectLink.href = "lobbymbl.html"; // Replace with your mobile-specific URL
+      }
       function checkOrientation() {
         // const useragent = 'mobile'; // Assuming this is set somewhere in your code
 
