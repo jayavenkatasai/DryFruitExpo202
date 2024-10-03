@@ -152,7 +152,7 @@ body {
 #mapbutton1 {
   margin-left: -20px;
   position: fixed;
-  left: 10%;
+  left: 9.5%;
   top: 49%;
   cursor: pointer;
   display: none;
@@ -160,6 +160,9 @@ body {
 @media only screen and (max-width: 1300px) {
   #mapText {
     width: 90%;
+  }
+  #mapbutton1 {
+    left: 4%;
   }
   #mapbutton2 {
     right: 2.5%;
@@ -427,6 +430,9 @@ iframe {
 @media only screen and (max-width: 1300px) {
   #mapText {
     width: 90%;
+  }
+  #mapbutton1 {
+    left: 4%;
   }
   #mapbutton2 {
     right: 2.5%;
@@ -1010,7 +1016,7 @@ iframe {
 #mapbutton2 {
   position: fixed;
   top: 49%;
-  right: 8.5%;
+  right: 8%;
   cursor: pointer;
 }
 @media only screen and (max-width: 550px) {
@@ -1166,11 +1172,11 @@ iframe {
     display: block;
   }
   #mapbutton1 {
-    left: 10%;
+    left: 8%;
   }
   #mapbutton2 {
     right: 0;
-    left: 88%;
+    left: 89%;
   }
   .desktopExpoFrame {
     display: none;
@@ -1541,12 +1547,7 @@ iframe {
 .popup-inner img {
   margin-right: 1rem;
 }
-#mapText .card img {
-  width: 90% !important;
-  height: 100px !important;
-  margin: 0 auto;
-  object-fit: cover;
-}
+
 /* Responsive media queries for landscape mode */
 @media (max-width: 768px) and (orientation: landscape) {
   #main-popup {
@@ -1601,38 +1602,25 @@ iframe {
     max-width: 60% !important;
     height: 54% !important;
   }
-  .nav-buttons {
-    display: flex;
-    justify-content: space-between !important;
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: flex-end; */
-    /* align-self: self-end; */
-    /* margin-top: 32px; */
+  button#prevBtn {
     position: absolute;
-    bottom: 6px;
-    width: 100% !important;
-    gap: 15px;
-    top: 0 !important;
-  }
-  #prevBtn {
-    position: relative;
-    left: -30px !important;
-    background-color: transparent !important;
-  }
-  #nextBtn {
-    position: relative;
-    right: -30px !important;
-    background-color: transparent !important;
+
+    left: -15%;
+    top: -112px;
   }
   .nav-buttons button {
-    background-color: #299941;
-    color: white;
-    padding: 0px;
+    background: none !important;
+    /* color: white; */
+    /* padding: 10px 20px; */
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    /* border-radius: 5px; */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+  }
+  button#nextBtn {
+    position: absolute;
+    right: -15%;
+    top: -112px;
   }
   .instimagenav {
     display: block !important;
@@ -1650,6 +1638,9 @@ iframe {
   }
   .nav-buttons button:disabled ~ #previmgnav {
     display: none;
+  }
+  .instruction-count {
+    position: absolute;
   }
 }
 
@@ -1930,6 +1921,16 @@ iframe {
     margin: 10px auto;
     justify-content: center;
   }
+  button#nextBtn {
+    position: absolute;
+    right: -10%;
+    top: -200px;
+  }
+  button#prevBtn {
+    position: absolute;
+    left: -10%;
+    top: -200px;
+  }
   #hallButtons {
     height: 50px;
     padding: 0px;
@@ -2035,7 +2036,16 @@ iframe {
     margin: 10px auto;
     justify-content: center;
   }
-
+  button#nextBtn {
+    position: absolute;
+    right: -10%;
+    top: -200px;
+  }
+  button#prevBtn {
+    position: absolute;
+    left: -10%;
+    top: -200px;
+  }
   #hallButtons {
     height: 50px;
     padding: 0px;

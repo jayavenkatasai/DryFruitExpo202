@@ -239,7 +239,7 @@
           <h5 id="dragTitle">Hold and drag</h5>
           <p id="dragText">Hold and drag the mouse to look around.</p>
         </div>
-        <img src="assets/Instructions/holdanddragfeature.png">
+        <img id ="walkinstructionnimg2"src="assets/Instructions/holdanddragfeature.png">
       </div>
       
        <div class="instruction" id="instruction3">
@@ -555,8 +555,8 @@
       <!-- assets for initial load -->
       <a-assets>
         <!-- //stallmodel  -->
-        <a-asset-item id="stall" src="assets/stallmodel/Updated color stall.glb"></a-asset-item>
-        <a-asset-item id="adversting_stand" src="assets/advertising/newadvertisingstand.glb"></a-asset-item>
+        <a-asset-item id="stall" src="assets/stallmodel/stall.glb"></a-asset-item>
+        <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand2.glb"></a-asset-item>
         <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
         <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
         <a-asset-item id="navmesh_10" src="assets/navmesh/Hall @10 navmesh.glb"></a-asset-item>
@@ -566,7 +566,7 @@
         <!-- //3dcharacter  -->
         <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
-        <a-asset-item id="hallmodel" src="assets/hallmodel/Hall_optimized_ver_3_1.glb"></a-asset-item>
+        <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized.glb"></a-asset-item>
         <a-asset-item id="NovaFont" src="css/Fonts/ProximaNova-Bold.ttf"></a-asset-item>
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" alt="leftarrowicon"/>
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" alt="vendorimage"/>
@@ -640,7 +640,7 @@
         <!-- category name board -->
 
         <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable">
-          <a-plane id="category-name-board" position="0 2 -6.8" color="#299941" height="0.9" width="1.8">
+          <a-plane id="category-name-board" position="0 2 -6.8" color="#164FB1" height="0.9" width="1.8">
             <a-text
               id="board-name"
               value="Dental Supplies"
@@ -745,7 +745,7 @@
       <!-- buttons ---next prev  -->
           <!-- stall1 -->
        <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
-         <a-image id="stall1-next" class="clickable" width="2" height="0.5"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination1-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+         <a-image id="stall1-next" class="clickable" width="1.99" height="1.29" position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination1-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination1-next" position="39 1 3" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise1"
@@ -880,12 +880,12 @@
             value="Medical Manufacturing Technologies"
             font="#NovaFont"
             color="black"
-            scale="2 2 2"
+            scale="2.5 2.5 2.5"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno1"
               value="Stall No : 01"
@@ -935,9 +935,9 @@
         </a-image>
         <!-- stall 2 -->
         <a-entity id="stall2" position="26.677 -0.05 -9.410" scale="1 1 1" rotation="0 180 0" visible="false">
-         <a-image id="stall2-next" class="clickable" width="1.5" height="0.5"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination2-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+         <a-image id="stall2-next" class="clickable" width="1.99" height="1.29"   position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination2-next" src="#stall-next"  visible="true"></a-image>
           <a-waypoint id="destination2-next" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
-           <a-image id="stall2-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination2-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall2-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination2-prev" src="#stall-prev"  visible="true"></a-image>
           <a-waypoint id="destination2-prev" position="39 1 0" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise2"
@@ -1082,13 +1082,13 @@
             id="vendorbusinessname2"
             value="Medical Manufacturing Technologies"
             color="black"
-            scale="2 2 2"
+             scale="2.5 2.5 2.5"
             font="#NovaFont"
             align="center"
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno2"
               value="Stall No : 01"
@@ -1135,9 +1135,9 @@
         </a-image>
         <!-- stall 3 -->
         <a-entity id="stall3" rotation="0 0 0" position="-26.677 -0.05 -41.96" scale="1 1 1" visible="false">
-           <a-image id="stall3-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination3-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall3-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination3-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination3-next" position="39 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
-           <a-image id="stall3-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination3-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall3-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination3-prev" src="#stall-prev"  visible="true"></a-image>
           <a-waypoint id="destination3-prev" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity 
             id="advertise3"
@@ -1288,7 +1288,7 @@
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno3"
               value="Stall No : 01"
@@ -1337,9 +1337,9 @@
         <!-- stall 4 -->
 
         <a-entity id="stall4" position="26.677 -0.05 -38.856" rotation="0 180 0" scale="1 1 1" visible="false">
-             <a-image id="stall4-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination4-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+             <a-image id="stall4-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination4-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination4-next" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
-           <a-image id="stall4-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination4-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall4-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination4-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination4-prev" position="39.5 1 0" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise4"
@@ -1490,7 +1490,7 @@
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno4"
               value="Stall No : 01"
@@ -1538,9 +1538,9 @@
         <!-- stall 5 -->
 
         <a-entity position="-26.677 -0.05 -71.2" id="stall5" rotation="0 0 0" scale="1 1 1" visible="false">
-             <a-image id="stall5-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination5-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+             <a-image id="stall5-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination5-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination5-next" position="39 1 2" rotation="0 90 0" color="red" side="double"></a-waypoint>
-           <a-image id="stall5-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination5-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall5-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination5-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination5-prev" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise5"
@@ -1690,7 +1690,7 @@
             font="#NovaFont"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno5"
               value="Stall No : 01"
@@ -1737,9 +1737,9 @@
         </a-image>
         <!-- stall 6-->
         <a-entity id="stall6" rotation="0 180 0" position="26.677 -0.05 -67.721" scale="1 1 1" visible="false">
-           <a-image id="stall6-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination6-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall6-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination6-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination6-next" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
-          <a-image id="stall6-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination6-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+          <a-image id="stall6-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination6-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination6-prev" position="39.5 1 0" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise6"
@@ -1886,7 +1886,7 @@
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno6"
               value="Stall No : 01"
@@ -1933,9 +1933,9 @@
         </a-image>
         <!-- stall 7 -->
         <a-entity position="-26.677 -0.05 -100.71" id="stall7" rotation="0 0 0" scale="1 1 1" visible="false">
-             <a-image id="stall7-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination7-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+             <a-image id="stall7-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination7-next" src="#stall-next"  visible="true" ></a-image>
           <a-waypoint id="destination7-next" position="39 1 1" rotation="0 90 0" color="red" side="double"></a-waypoint>
-                <a-image id="stall7-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination7-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+                <a-image id="stall7-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination7-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination7-prev" position="39.5 1 30" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise7"
@@ -2085,7 +2085,7 @@
             position="4.5 8.5 1"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno7"
               value="Stall No : 01"
@@ -2134,9 +2134,9 @@
         <!-- stall 8-->
 
         <a-entity id="stall8" rotation="0 180 0" position="26.677 -0.05 -97.305" scale="1 1 1" visible="false">
-             <a-image id="stall8-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination8-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+             <a-image id="stall8-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination8-next" src="#stall-next"  visible="true"></a-image>
           <a-waypoint id="destination8-next" position="37 1 9.3" rotation="0 0 0" color="red" side="double"></a-waypoint>
-            <a-image id="stall8-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination8-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+            <a-image id="stall8-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination8-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination8-prev" position="39.5 1 0" rotation="0 90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise8"
@@ -2286,7 +2286,7 @@
             font="#NovaFont"
             rotation="0 90 0"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno8"
               value="Stall No : 01"
@@ -2334,9 +2334,9 @@
 
         <!-- stall 9 -->
         <a-entity position="-9.555 -0.05 -121.016" id="stall9" rotation="0 -90 0" scale="1 1 1" visible="false">
-            <a-image id="stall9-next" class="clickable" width="1.5" height="0.5"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination9-next" src="#stall-next"  visible="true" scale="2 2 2"></a-image>
+            <a-image id="stall9-next" class="clickable" width="1.99" height="1.29"  position="4 3.4 -11" rotation="0 90 0" open-link="href:#destination9-next" src="#stall-next"  visible="true"></a-image>
           <a-waypoint id="destination9-next" position="15 1 -22" rotation="0 -90 0" color="red" side="double"></a-waypoint>
-            <a-image id="stall9-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination9-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+            <a-image id="stall9-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 12" rotation="0 90 0" open-link="href:#destination9-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination9-prev" position="22 1 -22" rotation="0 180 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise9"
@@ -2486,7 +2486,7 @@
             rotation="0 90 0"
             font="#NovaFont"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno9"
               value="Stall No : 01"
@@ -2533,9 +2533,9 @@
         </a-image>
         <!-- stall 10 -->
         <a-entity id="stall10" rotation="0 -90 0" position="16.257 -0.05 -120.676" scale="1 1 1" visible="false">
-           <a-image id="stall10-prev" class="clickable" width="1.5" height="0.5"   position="4 3.4 11" rotation="0 90 0" open-link="href:#destination10-prev" src="#stall-prev"  visible="true" scale="2 2 2"></a-image>
+           <a-image id="stall10-prev" class="clickable" width="1.99" height="1.29"   position="4 3.4 11" rotation="0 90 0" open-link="href:#destination10-prev" src="#stall-prev"  visible="true" ></a-image>
           <a-waypoint id="destination10-prev" position="14 1 28" rotation="0 -90 0" color="red" side="double"></a-waypoint>
-           <a-image id="stall10-next" class="clickable" width="1.5" height="0.5"   position="6 5 12" rotation="0 90 0" open-link="href:#destination10-next" src="#stall-next"  visible="false" scale="2 2 2"></a-image>
+           <a-image id="stall10-next" class="clickable" width="1.99" height="1.29"   position="6 5 12" rotation="0 90 0" open-link="href:#destination10-next" src="#stall-next"  visible="false"></a-image>
           <a-waypoint id="destination10-next" position="18 1 30" rotation="0 -90 0" color="red" side="double"></a-waypoint>
           <a-entity
             id="advertise10"
@@ -2684,7 +2684,7 @@
             rotation="0 90 0"
             font="#NovaFont"
           ></a-troika-text>
-          <a-plane color="#299941" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
+          <a-plane color="#164FB1" position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
             <a-text
               id="stallno10"
               value="Stall No : 01"
@@ -2740,7 +2740,7 @@
         ></a-entity>
         <!-- next hall and previous and lobby buttons -->
         <a-plane
-          color="#299941"
+          color="#164FB1"
           width="2.5"
           height="1"
           position="9.2 3.2 27"
@@ -2752,7 +2752,7 @@
           <a-text value="Next Hall" align="center" height="10" width="10" color="white" position="0 0 0.01"></a-text>
         </a-plane>
         <a-plane
-          color="#299941"
+          color="#164FB1"
           width="2.5"
           height="1"
           position="13.31 3.2 27"
@@ -3126,6 +3126,7 @@ walkinstructionnimg.src='assets/Instructions/joystickfeature.png'
   // Update Drag Instruction
   document.getElementById("dragTitle").textContent = translations.dragInstruction.title;
   document.getElementById("dragText").textContent = translations.dragInstruction.textMobile;
+  walkinstructionnimg2.src='assets/Instructions/mobileholdanddrag.png'
 
   }else{
     document.getElementById("walkTitle").textContent = translations.walkInstruction.title;
@@ -3134,6 +3135,7 @@ walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
   // Update Drag Instruction
   document.getElementById("dragTitle").textContent = translations.dragInstruction.title;
   document.getElementById("dragText").textContent = translations.dragInstruction.textDesktop;
+   walkinstructionnimg2.src='assets/Instructions/holdanddragfeature.png'
 
   }
  

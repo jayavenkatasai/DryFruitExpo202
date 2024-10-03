@@ -131,7 +131,8 @@ body {
 .tooltipone,
 .tooltiptwo,
 .tooltipthree,
-.tooltipChat,.tooltiphelpmobile {
+.tooltipChat,
+.tooltiphelpmobile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,7 +204,8 @@ align-items: center;
 .tooltipone,
 .tooltiptwo,
 .tooltipthree,
-.tooltipChat ,.tooltiphelpmobile{
+.tooltipChat,
+.tooltiphelpmobile {
   position: relative;
   cursor: pointer;
 }
@@ -323,20 +325,20 @@ iframe {
 }
 #hallButtons {
   border-radius: 6px;
-  background: #299941;
+  background: #164fb1;
   display: flex !important;
   align-items: center;
   gap: 26px;
   padding: 12px 12px 25px 12px;
   position: absolute;
   z-index: 9998;
-  
+
   margin-bottom: 30px;
   bottom: 0;
 }
 .mblchatDisplay {
   border-radius: 6px;
-  background: #299941;
+  background: #164fb1;
   display: none;
   align-items: center;
   gap: 26px;
@@ -351,7 +353,7 @@ iframe {
 
 .mblhelpicondisplay {
   border-radius: 6px;
-  background: #299941;
+  background: #164fb1;
   display: none;
   align-items: center;
   gap: 26px;
@@ -360,8 +362,8 @@ iframe {
   z-index: 9999;
   margin-bottom: 30px;
   bottom: 0;
-    min-height: 82px;
-    margin-right: 310px;
+  min-height: 82px;
+  margin-right: 310px;
 }
 
 .mblchatDisplay {
@@ -525,12 +527,12 @@ iframe {
 }
 .visitButton {
   color: #fff;
-  background: #299941;
-  border: 1px solid #299941;
+  background: #164fb1;
+  border: 1px solid #164fb1;
 }
 .shareButton {
-  color: #299941;
-  border: 1px solid #299941;
+  color: #164fb1;
+  border: 1px solid #164fb1;
   cursor: pointer;
 }
 .productButtons {
@@ -538,7 +540,7 @@ iframe {
 }
 .digitalPopUpContents {
   border-radius: 10px;
-  background: #f5fff6;
+  background: #e7f0ff;
   max-width: 600px;
   margin: 0 auto;
   padding: 35px 20px;
@@ -575,7 +577,8 @@ iframe {
   .tooltiptwo,
   .tooltipthree,
   .tooltipfour,
-  .tooltipChat,.tooltiphelpmobile {
+  .tooltipChat,
+  .tooltiphelpmobile {
     height: 27px;
   }
 }
@@ -598,10 +601,11 @@ iframe {
   #totalIframe {
     align-items: unset !important;
   }
-  .mblchatDisplay,.mblhelpicondisplay {
+  .mblchatDisplay,
+  .mblhelpicondisplay {
     display: flex !important;
   }
-  #Help-icon{
+  #Help-icon {
     display: none !important;
   }
   #chat-icon123 {
@@ -620,7 +624,8 @@ iframe {
     width: 27px;
   }
   #hallButtons,
-  .mblchatDisplay,.mblhelpicondisplay {
+  .mblchatDisplay,
+  .mblhelpicondisplay {
     gap: 15px;
     margin-bottom: 25px;
   }
@@ -803,7 +808,7 @@ iframe {
 
 #popup-card {
   border-radius: 10px;
-  background: #f5fff6;
+  background: #e7f0ff;
   position: relative;
   z-index: 999;
   max-width: 450px;
@@ -857,7 +862,7 @@ iframe {
   right: 8px;
   background: none;
   border: none;
-  color: #299941;
+  color: #164fb1;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -1058,8 +1063,8 @@ iframe {
   font-size: 18px;
 }
 .dropdownSection {
-	display: flex;
-	gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 #closeIcon {
   background: none;
@@ -1068,7 +1073,7 @@ iframe {
 .card button {
   padding: 7px 10px;
   border-radius: 5px;
-  background: #299941;
+  background: #164fb1;
   color: #fff;
   width: 100%;
   max-width: 155px;
@@ -1373,7 +1378,8 @@ iframe {
   display: flex;
   justify-content: end;
 }
-.tooltipChat,.tooltiphelpmobile {
+.tooltipChat,
+.tooltiphelpmobile {
   position: relative;
 }
 .smallScreenChatNotification {
@@ -1398,33 +1404,31 @@ iframe {
   cursor: pointer;
   width: 20px;
 }
-#overallOverLayinst{
+#overallOverLayinst {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 999;
-  background-color: rgba(18, 18, 18,0.5);
+  background-color: rgba(18, 18, 18, 0.5);
   display: none;
   gap: 10px;
   flex-direction: column;
-  
+
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-in-out;
 }
-#overallOverLayinst p{
+#overallOverLayinst p {
   max-width: 500px;
   /* margin: auto; */
   color: #fff;
 }
 
-#overallOverLayinst img{
+#overallOverLayinst img {
   max-width: 500px;
   /* margin: auto; */
-  
-
 }
-.instclose{
+.instclose {
   background: none;
   cursor: pointer;
   border-radius: 50%;
@@ -1439,12 +1443,7 @@ iframe {
   width: 30px;
 }
 
-
-
-
-
 /* new css for the help icon and its data */
-
 
 #help-overlay {
   position: fixed;
@@ -1531,7 +1530,6 @@ iframe {
   padding: 0.5rem 0.625rem;
   font-size: 1.125rem;
   font-weight: bold;
-  
 }
 
 .help-instruction-text {
@@ -1583,7 +1581,6 @@ iframe {
 
   .help-instruction-text {
     font-size: 1rem;
-    
   }
 }
 
@@ -1600,58 +1597,54 @@ iframe {
 
 @media only screen and (max-width: 992px) {
   .modal-contentt {
-    margin:20px auto 0 auto!important;
+    margin: 20px auto 0 auto !important;
     top: 10% !important;
     max-width: 60% !important;
     height: 54% !important;
   }
   button#prevBtn {
     position: absolute;
-   
+
     left: -15%;
     top: -112px;
-}
-.nav-buttons button {
-  background: none!important; 
-  /* color: white; */
-  /* padding: 10px 20px; */
-  border: none;
-  /* border-radius: 5px; */
-  /* cursor: pointer; */
-  /* transition: background-color 0.3s ease; */
-}
-button#nextBtn {
-  position: absolute;
-  right: -15%;
-  top: -112px;
-}
-.instimagenav{
-  display: block!important;
-}
-.instnavtext{
-  display: none;
-}
-.nav-buttons{
-  background: none!important;
-  border: none !important
-
-}
-.nav-buttons button:disabled {
-  background: none;
-  cursor: not-allowed;
- 
-}
-.nav-buttons button:disabled ~ #previmgnav {
-  display: none;
-}
-.instruction-count{
-  position: absolute;
-}
+  }
+  .nav-buttons button {
+    background: none !important;
+    /* color: white; */
+    /* padding: 10px 20px; */
+    border: none;
+    /* border-radius: 5px; */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+  }
+  button#nextBtn {
+    position: absolute;
+    right: -15%;
+    top: -112px;
+  }
+  .instimagenav {
+    display: block !important;
+  }
+  .instnavtext {
+    display: none;
+  }
+  .nav-buttons {
+    background: none !important;
+    border: none !important;
+  }
+  .nav-buttons button:disabled {
+    background: none;
+    cursor: not-allowed;
+  }
+  .nav-buttons button:disabled ~ #previmgnav {
+    display: none;
+  }
+  .instruction-count {
+    position: absolute;
+  }
 }
 
 /* end of help icon and userguide */
-
-
 
 /* SECOND VERSION USERGUIDE START */
 
@@ -1685,7 +1678,7 @@ button#nextBtn {
 
 /* Highlighted icon styles */
 
-.icon.highlighted{
+.icon.highlighted {
   position: relative;
 }
 /* .icon.highlighted::before {
@@ -1701,13 +1694,13 @@ button#nextBtn {
 	top: -5px;
 } */
 .chatint.icon.highlighted::before {
-  height: 100%!important;
-  width: 100%!important;
+  height: 100% !important;
+  width: 100% !important;
 }
 .modal {
   display: none;
   position: fixed;
-  
+
   z-index: 1;
   left: 0;
   top: 0;
@@ -1718,7 +1711,7 @@ button#nextBtn {
 
 .modal-contentt {
   position: relative;
-  
+
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1726,18 +1719,17 @@ button#nextBtn {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, .2);
-  border-radius: .3rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
   outline: 0;
   max-width: 50%;
   height: 52%;
   animation: slideIn 0.5s ease;
-    justify-content: center;
-    padding: 20px;
-    margin: auto;
-    align-items: center;
-    top: 20%
-    
+  justify-content: center;
+  padding: 20px;
+  margin: auto;
+  align-items: center;
+  top: 20%;
 }
 
 .close {
@@ -1779,19 +1771,19 @@ button#nextBtn {
   justify-content: space-between;
   margin-top: 20px;
   display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    /* align-items: flex-end; */
-    /* align-self: self-end; */
-    /* margin-top: 32px; */
-    position: absolute;
-    bottom: 6px;
-    width: 88%;
-    gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  /* align-items: flex-end; */
+  /* align-self: self-end; */
+  /* margin-top: 32px; */
+  position: absolute;
+  bottom: 6px;
+  width: 88%;
+  gap: 15px;
 }
 
 .nav-buttons button {
-  background-color: #299941;
+  background-color: #164fb1;
   color: white;
   padding: 6px 16px 8px;
   border: none;
@@ -1801,8 +1793,7 @@ button#nextBtn {
 }
 
 .nav-buttons button:hover {
-
-  background-color: #299941;
+  background-color: #164fb1;
 }
 
 .nav-buttons button:disabled {
@@ -1810,30 +1801,30 @@ button#nextBtn {
   cursor: not-allowed;
 }
 
-.sub-instruction{
+.sub-instruction {
   /* display: flex; */
   text-align: left;
   margin: 25px 40px;
   width: 50%;
 }
 
-.sub-instruction > h5{
+.sub-instruction > h5 {
   font-size: 30px;
-    margin: auto;
-    text-align: left;
+  margin: auto;
+  text-align: left;
 }
 
-.instruction > img{
+.instruction > img {
   width: 50%;
   margin: 10px 25px;
 }
 /* .guideclose{
-  border: 3px solid #299941; 
+  border: 3px solid #164FB1; 
     float: right; 
     font-size: .8rem;
     font-weight: 800; 
     line-height: 1;
-    color: #299941;
+    color: #164FB1;
    text-shadow: 0 1px 0 #fff;
    opacity: .5; 
     display: flex; 
@@ -1847,9 +1838,8 @@ button#nextBtn {
     cursor: pointer;
 } */
 .guideclose {
- 
   float: right;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1;
   color: black;
@@ -1867,7 +1857,6 @@ button#nextBtn {
 }
 
 /* SECOND VERSION USERGUIDE END */
-
 
 /* modal-content {
   position: relative;
@@ -1889,7 +1878,7 @@ button#nextBtn {
     padding: 20px;
 } */
 
-.instimagenav{
+.instimagenav {
   display: none;
 }
 .modal-content.modal-dialog-centered {
@@ -1922,7 +1911,7 @@ button#nextBtn {
 #chat-icon123.initial_guide.highlighted {
   opacity: 1;
 }
-@media only screen and (min-width:768px) and (max-width:991px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   #guideModal.modal {
     z-index: 999;
   }
@@ -1946,10 +1935,18 @@ button#nextBtn {
     height: 50px;
     padding: 0px;
   }
-  .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour, .tooltipChat, .tooltiphelpmobile {
+  .tooltipone,
+  .tooltiptwo,
+  .tooltipthree,
+  .tooltipfour,
+  .tooltipChat,
+  .tooltiphelpmobile {
     height: auto;
   }
-  .mapIcon, .infoIcon, .chatIcon, .tooltipthree a img {
+  .mapIcon,
+  .infoIcon,
+  .chatIcon,
+  .tooltipthree a img {
     width: 20px;
   }
   .labelText {
@@ -1959,7 +1956,9 @@ button#nextBtn {
     font-size: 14px;
     margin: 5px 5px 0px;
   }
-  #hallButtons, .mblchatDisplay, .mblhelpicondisplay {
+  #hallButtons,
+  .mblchatDisplay,
+  .mblhelpicondisplay {
     gap: 10px;
     margin-bottom: 10px;
   }
@@ -1976,7 +1975,7 @@ button#nextBtn {
   }
   .mblchatDisplay {
     border-radius: 6px;
-    background: #299941;
+    background: #164fb1;
     display: none;
     align-items: center;
     gap: 5px;
@@ -1990,7 +1989,7 @@ button#nextBtn {
   }
   #mblhelpicon {
     display: none !important;
-        /* margin-right: 229px;
+    /* margin-right: 229px;
         min-height: 50px;
         bottom: 0;
         align-items: center;
@@ -2006,7 +2005,7 @@ button#nextBtn {
     top: -352px;
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width: 767px) {
   #mblhelpicon {
     display: Flex !important;
     margin-right: 229px;
@@ -2016,7 +2015,7 @@ button#nextBtn {
     gap: 5px;
     padding: 0px 5px;
     position: absolute;
-    z-index:99;
+    z-index: 99;
     margin-bottom: 10px;
   }
   #guideModal.modal {
@@ -2042,10 +2041,18 @@ button#nextBtn {
     height: 50px;
     padding: 0px;
   }
-  .tooltipone, .tooltiptwo, .tooltipthree, .tooltipfour, .tooltipChat, .tooltiphelpmobile {
+  .tooltipone,
+  .tooltiptwo,
+  .tooltipthree,
+  .tooltipfour,
+  .tooltipChat,
+  .tooltiphelpmobile {
     height: auto;
   }
-  .mapIcon, .infoIcon, .chatIcon, .tooltipthree a img {
+  .mapIcon,
+  .infoIcon,
+  .chatIcon,
+  .tooltipthree a img {
     width: 20px;
   }
   .labelText {
@@ -2055,7 +2062,9 @@ button#nextBtn {
     font-size: 14px;
     margin: 5px 5px 0px;
   }
-  #hallButtons, .mblchatDisplay, .mblhelpicondisplay {
+  #hallButtons,
+  .mblchatDisplay,
+  .mblhelpicondisplay {
     gap: 10px;
     margin-bottom: 10px;
   }
@@ -2072,7 +2081,7 @@ button#nextBtn {
   }
   .mblchatDisplay {
     border-radius: 6px;
-    background: #299941;
+    background: #164fb1;
     display: none;
     align-items: center;
     gap: 5px;

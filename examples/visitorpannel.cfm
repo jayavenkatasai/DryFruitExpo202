@@ -19,7 +19,7 @@
             display:none;
         }
         .sendSection input:focus{
-            border-color:#299941!important;
+            border-color:#164FB1!important;
         }
         .customer{
             text-align:center;
@@ -33,7 +33,7 @@
            right:10px;
            height:20px;
            width:20px;
-           background:#299941;
+           background:#164FB1;
            border-radius:50%;
            color:#fff;
            font-size:12px;
@@ -109,7 +109,7 @@
             position:relative;
         }
         .minimizedChats span{
-            color:#299941;
+            color:#164FB1;
             border-radius: 79.167px;
             background: #FFF;
             height:30px;
@@ -131,7 +131,7 @@
             margin: 0;
         }
         .senderName{
-            color: #299941;;
+            color: #164FB1;;
             font-size: 14px;
             font-style: normal;
             font-weight: 600;
@@ -216,7 +216,7 @@
 		}
         .submit-btn{
             border-radius: 7px;
-            background:#299941;
+            background:#164FB1;
             padding: 14px 21px;
             color: #fff;
             text-decoration: none;
@@ -238,11 +238,11 @@
              scrollbar-width: none; 
         }
         .minimizedChats .active {
-            border: 1px solid #299941#; 
+            border: 1px solid #164FB1#; 
             background: #CDEBD0; 
         }
 		.channelName a.active{
-			 border: 1px solid #299941; 
+			 border: 1px solid #164FB1; 
             background: #CDEBD0; 
 		}
         .backArrow {
