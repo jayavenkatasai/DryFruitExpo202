@@ -325,7 +325,7 @@ iframe {
 }
 #hallButtons {
   border-radius: 6px;
-  background: #164fb1;
+  background: #8c024b;
   display: flex !important;
   align-items: center;
   gap: 26px;
@@ -338,7 +338,7 @@ iframe {
 }
 .mblchatDisplay {
   border-radius: 6px;
-  background: #164fb1;
+  background: #8c024b;
   display: none;
   align-items: center;
   gap: 26px;
@@ -353,7 +353,7 @@ iframe {
 
 .mblhelpicondisplay {
   border-radius: 6px;
-  background: #164fb1;
+  background: #8c024b;
   display: none;
   align-items: center;
   gap: 26px;
@@ -470,7 +470,7 @@ iframe {
   margin-top: 40px;
 }
 .switch {
-  background-color: #f2bf0b;
+  background-color: #faeff4;
   color: #3c2b25;
   border: none;
   padding: 5px 10px;
@@ -527,12 +527,12 @@ iframe {
 }
 .visitButton {
   color: #fff;
-  background: #164fb1;
-  border: 1px solid #164fb1;
+  background: #8c024b;
+  border: 1px solid #8c024b;
 }
 .shareButton {
-  color: #164fb1;
-  border: 1px solid #164fb1;
+  color: #8c024b;
+  border: 1px solid #8c024b;
   cursor: pointer;
 }
 .productButtons {
@@ -540,7 +540,7 @@ iframe {
 }
 .digitalPopUpContents {
   border-radius: 10px;
-  background: #e7f0ff;
+  background: #faeff4;
   max-width: 600px;
   margin: 0 auto;
   padding: 35px 20px;
@@ -808,7 +808,7 @@ iframe {
 
 #popup-card {
   border-radius: 10px;
-  background: #e7f0ff;
+  background: #faeff4;
   position: relative;
   z-index: 999;
   max-width: 450px;
@@ -862,7 +862,7 @@ iframe {
   right: 8px;
   background: none;
   border: none;
-  color: #164fb1;
+  color: #8c024b;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -1043,7 +1043,7 @@ iframe {
   justify-content: space-between;
 }
 #mapText {
-  background: #f1fdff;
+  background: #faeff4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1073,7 +1073,7 @@ iframe {
 .card button {
   padding: 7px 10px;
   border-radius: 5px;
-  background: #164fb1;
+  background: #8c024b;
   color: #fff;
   width: 100%;
   max-width: 155px;
@@ -1093,7 +1093,7 @@ iframe {
   top: 1%;
   left: 1%;
   border-radius: 4px;
-  background-color: #f2bf0b;
+  background-color: #faeff4;
   color: #3c2b25;
   font-family: Roboto;
   cursor: pointer;
@@ -1321,7 +1321,7 @@ iframe {
   position: relative;
   z-index: 999;
   border-radius: 10px;
-  background: #f1fdff;
+  background: #faeff4;
 }
 .webinarPopUpContents {
   text-align: center;
@@ -1783,7 +1783,7 @@ iframe {
 }
 
 .nav-buttons button {
-  background-color: #164fb1;
+  background-color: #8c024b;
   color: white;
   padding: 6px 16px 8px;
   border: none;
@@ -1793,7 +1793,7 @@ iframe {
 }
 
 .nav-buttons button:hover {
-  background-color: #164fb1;
+  background-color: #8c024b;
 }
 
 .nav-buttons button:disabled {
@@ -1819,12 +1819,12 @@ iframe {
   margin: 10px 25px;
 }
 /* .guideclose{
-  border: 3px solid #164FB1; 
+  border: 3px solid #8c024b; 
     float: right; 
     font-size: .8rem;
     font-weight: 800; 
     line-height: 1;
-    color: #164FB1;
+    color: #8c024b;
    text-shadow: 0 1px 0 #fff;
    opacity: .5; 
     display: flex; 
@@ -1975,7 +1975,7 @@ iframe {
   }
   .mblchatDisplay {
     border-radius: 6px;
-    background: #164fb1;
+    background: #8c024b;
     display: none;
     align-items: center;
     gap: 5px;
@@ -2081,7 +2081,7 @@ iframe {
   }
   .mblchatDisplay {
     border-radius: 6px;
-    background: #164fb1;
+    background: #8c024b;
     display: none;
     align-items: center;
     gap: 5px;

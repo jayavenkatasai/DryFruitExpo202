@@ -9,34 +9,34 @@ const englishRadio = document.querySelector('input[value="english"]');
 const hindiRadio = document.querySelector('input[value="hindi"]');
 const chooseText = document.querySelector('.chooseText')
 const TermsText = document.querySelector('.TermsText')
-const termc =document.querySelector('.termc')
+const termc = document.querySelector('.termc')
 var data = {
-    "english": 
+    "english":
     {
-      "welcomeIntro": "Welcome to",
-      "welcomeHsptlText": 
-          "Agri products online Expo",
-       "enterExpoButton":"Enter Expo",
-       "Avthartext":"Choose Your Avatar",
-       "continuetext":"Enter Expo",
-       "nameplaceholder":"Please Enter Your Name",
-       "chooseText":"Choose a language :",
-       "TermsText":"By clicking on continue, you accept MarketCentral's",
-       "termc":"Terms & Conditions"
+        "welcomeIntro": "Welcome to",
+        "welcomeHsptlText":
+            "Dry Fruits Mela",
+        "enterExpoButton": "Enter Expo",
+        "Avthartext": "Choose Your Avatar",
+        "continuetext": "Enter Expo",
+        "nameplaceholder": "Please Enter Your Name",
+        "chooseText": "Choose a language :",
+        "TermsText": "By clicking on continue, you accept MarketCentral's",
+        "termc": "Terms & Conditions"
     },
-    "hindi": 
+    "hindi":
     {
-      "welcomeIntro": "आपका स्वागत है",
-      "welcomeHsptlText": "कृषि उत्पाद ऑनलाइन एक्सपो",
-       "enterExpoButton":"एक्सपो में प्रवेश करें",
-       "Avthartext":"अपना अवतार चुनें",
-       "continuetext":"एक्सपो दर्ज करें",
-       "nameplaceholder":"कृपया अपना नाम दर्ज करें",
-       "chooseText":"एक भाषा चुनें :",
-       "TermsText":"जारी रखें पर क्लिक करके, आप MarketCentral के नियम और शर्तों को स्वीकार करते हैं",
-       "termc":"नियम और शर्तों को स्वीकार करते हैं"
+        "welcomeIntro": "आपका स्वागत है",
+        "welcomeHsptlText": "कृषि उत्पाद ऑनलाइन एक्सपो",
+        "enterExpoButton": "एक्सपो में प्रवेश करें",
+        "Avthartext": "अपना अवतार चुनें",
+        "continuetext": "एक्सपो दर्ज करें",
+        "nameplaceholder": "कृपया अपना नाम दर्ज करें",
+        "chooseText": "एक भाषा चुनें :",
+        "TermsText": "जारी रखें पर क्लिक करके, आप MarketCentral के नियम और शर्तों को स्वीकार करते हैं",
+        "termc": "नियम और शर्तों को स्वीकार करते हैं"
     },
-    "marathi":{
+    "marathi": {
         "welcomeIntro": "स्वागत आहे",
         "welcomeHsptlText": "कृषी उत्पादने ऑनलाइन एक्सपो",
         "enterExpoButton": "एंटर एक्सपो",
@@ -47,9 +47,9 @@ var data = {
         "TermsText": "सुरू बटणावर क्लिक करून, आपण मार्केट सेंट्रलच्या",
         "termc": "अटी आणि अटींच्या शर्तींचे स्वीकार करत आहात"
     },
-    "bengali":{
+    "bengali": {
         "welcomeIntro": "স্বাগতম",
-       "welcomeHsptlText": "কৃষি পণ্য অনলাইন এক্সপো",
+        "welcomeHsptlText": "কৃষি পণ্য অনলাইন এক্সপো",
         "enterExpoButton": "এন্টার এক্সপো",
         "Avthartext": "আপনার অবতার চয়ন করুন",
         "continuetext": "এক্সপোতে প্রবেশ করুন",
@@ -61,7 +61,7 @@ var data = {
     "gujarati":
     {
         "welcomeIntro": "સ્વાગત છે",
-       "welcomeHsptlText": "કૃષિ ઉત્પાદનો ઓનલાઈન એક્સપો",
+        "welcomeHsptlText": "કૃષિ ઉત્પાદનો ઓનલાઈન એક્સપો",
         "enterExpoButton": "એક્સપો પ્રવેશ કરો",
         "Avthartext": "તમારો આવતાર પસંદ કરો",
         "continuetext": "એક્સપોમાં પ્રવેશ કરો",
@@ -70,9 +70,9 @@ var data = {
         "TermsText": "ચાલુ કરવામાં ક્લિક કર્યા પછી, તમે માર્કેટ સેન્ટ્રલને સ્વીકારો",
         "termc": "શરતો અને શરતોને સ્વીકારો"
     },
-    "telugu":{
+    "telugu": {
         "welcomeIntro": "స్వాగతం",
-      "welcomeHsptlText": "వ్యవసాయ ఉత్పత్తులు ఆన్‌లైన్ ఎక్స్పో",
+        "welcomeHsptlText": "వ్యవసాయ ఉత్పత్తులు ఆన్‌లైన్ ఎక్స్పో",
         "enterExpoButton": "ఎంటర్ ఎక్స్‌పో",
         "Avthartext": "మీ అవతారాన్ని ఎంచుకోండి",
         "continuetext": "ఎక్స్‌పోలో ప్రవేశించండి",
@@ -81,10 +81,10 @@ var data = {
         "TermsText": "కన్టిన్యూ పై క్లిక్ చేస్తే, మీరు మార్కెట్ సెంట్రల్‌ను ఆమోదించుకున్నారు",
         "termc": "షరత్లు మరియు షరత్లను ఆమోదించండి"
     }
-    
-    
-    
-  }
+
+
+
+}
 
 
 // link.forEach(el => {
@@ -92,23 +92,23 @@ var data = {
 //         langEl.querySelector('.active').classList.remove('active');
 //         el.classList.add('active');
 
-        // const attr = "hindi"
-        // welcomeIntro.textContent=data[attr].welcomeIntro
-        // welcomeHsptlText.textContent=data[attr].welcomeHsptlText
-        // enterExpoButton.textContent=data[attr].enterExpoButton
-        // Avthartext.textContent=data[attr].Avthartext
-        // continuetext.textContent=data[attr].continuetext
-        // nameInput.placeholder = data[attr].nameplaceholder;
+// const attr = "hindi"
+// welcomeIntro.textContent=data[attr].welcomeIntro
+// welcomeHsptlText.textContent=data[attr].welcomeHsptlText
+// enterExpoButton.textContent=data[attr].enterExpoButton
+// Avthartext.textContent=data[attr].Avthartext
+// continuetext.textContent=data[attr].continuetext
+// nameInput.placeholder = data[attr].nameplaceholder;
 //     });
 // });
 function updateUI(language) {
     welcomeIntro.textContent = data[language].welcomeIntro;
     welcomeHsptlText.textContent = data[language].welcomeHsptlText;
     enterExpoButton.textContent = data[language].enterExpoButton;
-    chooseText.textContent=data[language].chooseText;
-   // nameInput.placeholder = data[language].nameplaceholder;
-    TermsText.textContent=data[language].TermsText
-    termc.textContent=data[language].termc
+    chooseText.textContent = data[language].chooseText;
+    // nameInput.placeholder = data[language].nameplaceholder;
+    TermsText.textContent = data[language].TermsText
+    termc.textContent = data[language].termc
 }
 
 // Set initial language to English

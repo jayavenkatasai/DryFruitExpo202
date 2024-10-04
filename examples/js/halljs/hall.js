@@ -71,7 +71,7 @@ if (categoryparam.includes('||')) {
     // Replace '||' with another string
     categoryparam = categoryparam.replace(/\|\|/g, '&');
 }
-document.title = `Agri products online Expo: ${categoryparam}`;
+document.title = `Dry Fruits Mela: ${categoryparam}`;
 
 
 //console.log(`the categoryparam is ${categoryparam}`)

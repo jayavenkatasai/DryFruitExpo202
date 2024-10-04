@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Document</title>
-</head>
-<style>
-   /* loading start */
- /* body {
+  </head>
+  <style>
+    /* loading start */
+    /* body {
         background-image: url("assets/background_images/Group.png");
         background-position: center;
         background-size: cover;
@@ -22,42 +22,42 @@
         align-items: center;
         height: 100vh;
       } */
-      body{
-        position: relative;
-      }
-      body::before{
-        position: absolute;
-        content: '';
-        background-color:rgba(0,0,0,0.3);
-        width: 100%;
-        height: 100%;
-        z-index: 9;
-        display: none;
-      }
-      body.overlay::before {
-    display: block;
-}
-      .helpPopUp{
-        display: none;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        z-index: 99;
-       top: 50%;
-      }
-      .heart-rate {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-      }
-      
-      /* .container {
+    body {
+      position: relative;
+    }
+    body::before {
+      position: absolute;
+      content: '';
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      display: none;
+    }
+    body.overlay::before {
+      display: block;
+    }
+    .helpPopUp {
+      display: none;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      z-index: 99;
+      top: 50%;
+    }
+    .heart-rate {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* .container {
         position: relative;
         display: flex;
         justify-content: center;
@@ -68,437 +68,426 @@
         background-size: cover;
         z-index: 99;
       } */
- .heartbeat-polyline {
-              fill: none;
-              stroke: #0080bf;
-              stroke-width: 3;
-              stroke-miterlimit: 10;
-              animation: heartbeat 2s infinite;
-            }
-      
-            @keyframes heartbeat {
-              0% {
-                points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
-                  45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-                  45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-              }
-              50% {
-                points: 0, 45.486 38.514, 45.486 44.595, 50 50.676, 45.486 57.771,
-                  45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-                  45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-              }
-              100% {
-                points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771,
-                  45.486 62.838, 55.622 71.959, 9 80.067, 63.729 84.122, 45.486 97.297,
-                  45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
-              }
-            }
-      
-      
-      
-      /* end of the loading */
-      
-      .loading-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 1);
-        z-index: 10000;
-        visibility: visible;
+    .heartbeat-polyline {
+      fill: none;
+      stroke: #0080bf;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771, 45.486 62.838, 55.622 71.959, 9 80.067,
+          63.729 84.122, 45.486 97.297, 45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
       }
-      
-      .loading-container img {
-        width: 100px; /* Adjust this value to your desired width */
-        height: 100px; /* Adjust this value to your desired height */
+      50% {
+        points: 0, 45.486 38.514, 45.486 44.595, 50 50.676, 45.486 57.771, 45.486 62.838, 55.622 71.959, 9 80.067,
+          63.729 84.122, 45.486 97.297, 45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
       }
-      
-      .loading-container p {
-        margin-top: 12px; /* Adjust this value to your desired margin */
-        font-size: 16px;
-        color: #333;
-        visibility: visible;
+      100% {
+        points: 0, 45.486 38.514, 45.486 44.595, 33.324 50.676, 45.486 57.771, 45.486 62.838, 55.622 71.959, 9 80.067,
+          63.729 84.122, 45.486 97.297, 45.486 103.379, 40.419 110.473, 45.486 150, 45.486;
       }
-      
-      
-      
-      
-      
-      
-      
-      html, body {
-          overscroll-behavior-x: none;
-        }
-              body {
-                font-family: "Roboto";
-                overflow-x: hidden;
-              }
-              .webinarAndExpocardContents{
-                    max-width:400px;
-                    background-color:#fff;
-                    border-radius:8px;
-                    margin: auto;
-                    border:1px solid #363636;
-                    padding:25px;
-                    gap:40px;
-                    position: relative;
-                    width:100%;
-                }
-                .visitWebinarCard a,.visitExpoCard a{
-                    text-decoration: none;
-                    padding: 7px 10px;
-                    border-radius: 5px;
-                    background: #1B3D6E;
-                    color: #fff;
-                    width: 100%;
-                    border: none;
-                    cursor: pointer;
-                    text-align:center;
-                }
-                .webinarAndExpocardContents {
-                  display: flex;
-                  justify-content: center;
-                }
-                .closeIcon-webinar{
-                    position: absolute;
-                    right:10px;
-                    top:10px;
-                    cursor:pointer;
-                }
-                .webinarAndExpocard {
-                  display: flex;
-                  position: fixed;
-                  z-index: 999;
-                  bottom: 10px;
-                  width: 100%;
-                }
-              #mapbutton1 {
-                display: none;
-              }
-              #orientationScreen {
-                display: none ;
-              }
-              .orientationScreenContents {
-                height: 100%;
-                top: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                z-index: 9999999;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-              }
-              .orientationScreenContents h3 {
-                margin: 0;
-                font-size: 20px;
-                color: #fff;
-              }
-              iframe {
-                border: none;
-                border-radius: 5px;
-              }
-              .mblExpoFrame {
-                display: none;
-              }
-              #mappopup {
-                width: 65%;
-                margin: 0 auto;
-                height: 100%;
-                display: none;
-                position: relative;
-                bottom: 100px;
-                border-radius: 10px;
-                z-index: 999;
-                align-items: center;
-                height: 100%;
-                justify-content: center;
-                top: 0;
-              }
-              #bg {
-                background-color: #F1FDFF;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                padding: 35px 15px 35px 15px;
-                gap: 15px;
-                justify-content: center;
-                border-radius: 10px;
-                position: absolute;
-                width: 100%;
-              }
-              /* .card{
+    }
+
+    /* end of the loading */
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      z-index: 10000;
+      visibility: visible;
+    }
+
+    .loading-container img {
+      width: 100px; /* Adjust this value to your desired width */
+      height: 100px; /* Adjust this value to your desired height */
+    }
+
+    .loading-container p {
+      margin-top: 12px; /* Adjust this value to your desired margin */
+      font-size: 16px;
+      color: #333;
+      visibility: visible;
+    }
+
+    html,
+    body {
+      overscroll-behavior-x: none;
+    }
+    body {
+      font-family: 'Roboto';
+      overflow-x: hidden;
+    }
+    .webinarAndExpocardContents {
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 8px;
+      margin: auto;
+      border: 1px solid #363636;
+      padding: 25px;
+      gap: 40px;
+      position: relative;
+      width: 100%;
+    }
+    .visitWebinarCard a,
+    .visitExpoCard a {
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 5px;
+      background: #1b3d6e;
+      color: #fff;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .webinarAndExpocardContents {
+      display: flex;
+      justify-content: center;
+    }
+    .closeIcon-webinar {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+    .webinarAndExpocard {
+      display: flex;
+      position: fixed;
+      z-index: 999;
+      bottom: 10px;
+      width: 100%;
+    }
+    #mapbutton1 {
+      display: none;
+    }
+    #orientationScreen {
+      display: none;
+    }
+    .orientationScreenContents {
+      height: 100%;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      z-index: 9999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .orientationScreenContents h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #fff;
+    }
+    iframe {
+      border: none;
+      border-radius: 5px;
+    }
+    .mblExpoFrame {
+      display: none;
+    }
+    #mappopup {
+      width: 65%;
+      margin: 0 auto;
+      height: 100%;
+      display: none;
+      position: relative;
+      bottom: 100px;
+      border-radius: 10px;
+      z-index: 999;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+      top: 0;
+    }
+    #bg {
+      background-color: #faeff4;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 35px 15px 35px 15px;
+      gap: 15px;
+      justify-content: center;
+      border-radius: 10px;
+      position: absolute;
+      width: 100%;
+    }
+    /* .card{
                     position: relative;
                     z-index:999999;
                 } */
-              #close {
-                display: none;
-                cursor: pointer;
-                border: none;
-                background: no-repeat;
-              }
-              /* #parent{
+    #close {
+      display: none;
+      cursor: pointer;
+      border: none;
+      background: no-repeat;
+    }
+    /* #parent{
                 height:70%;
                } */
-              #close img {
-                max-width: 25px;
-              }
-              .card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                flex-shrink: 0;
-                padding: 12px 18px;
-                border-radius: 5px;
-                border: 1px solid #5e5e5e;
-                justify-content: space-between;
-                /* margin: 5px; */
-                width: 15% !important;
-              }
-              .card button {
-                padding: 7px 10px;
-                border-radius: 5px;
-                background: #F65927;
-                color: #fff;
-                width: 100%;
-                max-width: 155px;
-                border: none;
-                cursor: pointer;
-                font-family: "roboto";
-                font-size: 16px;
-                font-family: "Nunito", sans-serif;
-              }
-              .card img {
-                width: 100px;
-                height: 100px;
-              }
-              .card h3 {
-                /* height: 25px; */
-                /* overflow: hidden !important;
+    #close img {
+      max-width: 25px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 12px 18px;
+      border-radius: 5px;
+      border: 1px solid #5e5e5e;
+      justify-content: space-between;
+      /* margin: 5px; */
+      width: 15% !important;
+    }
+    .card button {
+      padding: 7px 10px;
+      border-radius: 5px;
+      background: #f65927;
+      color: #fff;
+      width: 100%;
+      max-width: 155px;
+      border: none;
+      cursor: pointer;
+      font-family: 'roboto';
+      font-size: 16px;
+      font-family: 'Nunito', sans-serif;
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+    }
+    .card h3 {
+      /* height: 25px; */
+      /* overflow: hidden !important;
                 text-overflow: ellipsis; */
-                width: 100%;
-                /* white-space: nowrap; */
-                text-align: center;
-                margin: 20px 0;
-                font-size: 20px;
-                font-family: "Nunito", sans-serif;
-              }
-              #pagination {
-                position: relative;
-                width: 100%;
-              }
-              #pagination #mapbutton1 {
-                margin-left: -20px;
-                position: fixed;
-                left: 17.5%;
-                top: 47%;
-                cursor: pointer;
-              }
-              #pagination #mapbutton2 {
-                position: fixed;
-                top: 47%;
-                right: 16.5%;
-                cursor: pointer;
-              }
-              #Backbtn {
-                position: absolute;
-                z-index: 1001;
-                top: 4px;
-                right: 3px;
-              }
-              .visitorsCount {
-                padding: 8px;
-                border-radius: 5px;
-                background: #363636;
-                max-width: 200px;
-                margin-top: -80px;
-                margin-left: 20px;
-              }
-              .liveCustomers {
-                color: #fff;
-                font-size: 26px;
-                font-weight: 600;
-                margin: 0;
-              }
-              .totalCustomers {
-                color: #fff;
-                font-size: 18px;
-                font-weight: 600;
-                margin: 0;
-              }
-              #parent {
-                height: 100%;
-                /* display: flex; */
-                top: 0;
-    position: absolute;
-    width: 100%;
-    display: none;
-                /* position: absolute!important;
+      width: 100%;
+      /* white-space: nowrap; */
+      text-align: center;
+      margin: 20px 0;
+      font-size: 20px;
+      font-family: 'Nunito', sans-serif;
+    }
+    #pagination {
+      position: relative;
+      width: 100%;
+    }
+    #pagination #mapbutton1 {
+      margin-left: -20px;
+      position: fixed;
+      left: 17.5%;
+      top: 47%;
+      cursor: pointer;
+    }
+    #pagination #mapbutton2 {
+      position: fixed;
+      top: 47%;
+      right: 16.5%;
+      cursor: pointer;
+    }
+    #Backbtn {
+      position: absolute;
+      z-index: 1001;
+      top: 4px;
+      right: 3px;
+    }
+    .visitorsCount {
+      padding: 8px;
+      border-radius: 5px;
+      background: #363636;
+      max-width: 200px;
+      margin-top: -80px;
+      margin-left: 20px;
+    }
+    .liveCustomers {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .totalCustomers {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+    #parent {
+      height: 100%;
+      /* display: flex; */
+      top: 0;
+      position: absolute;
+      width: 100%;
+      display: none;
+      /* position: absolute!important;
     top: 0;
     width: 100%; */
-              }
-              #mappopup {
-                align-items: center;
-              }
-              @media only screen and (max-width: 1600px) {
-                #mappopup {
-                  width: 85%;
-                }
-                #pagination #mapbutton2 {
-                  right: 6.5%;
-                }
-                #pagination #mapbutton1 {
-                  left: 7.5%;
-                }
-              }
-              @media only screen and (max-width: 1230px) {
-                #mappopup {
-                  width: 95%;
-                }
-                #pagination #mapbutton1 {
-                  left: 2.5%;
-                }
-                #pagination #mapbutton2 {
-                  right: 1%;
-                }
-              }
-              @media only screen and (max-width: 1090px) {
-                .card {
-                  width: 30% !important;
-                }
-                .iframeImg {
-                  max-width: 25px;
-                }
-                #bg {
-                  height: 220px !important;
-                  overflow-y: scroll;
-                }
-                /* #button1{
+    }
+    #mappopup {
+      align-items: center;
+    }
+    @media only screen and (max-width: 1600px) {
+      #mappopup {
+        width: 85%;
+      }
+      #pagination #mapbutton2 {
+        right: 6.5%;
+      }
+      #pagination #mapbutton1 {
+        left: 7.5%;
+      }
+    }
+    @media only screen and (max-width: 1230px) {
+      #mappopup {
+        width: 95%;
+      }
+      #pagination #mapbutton1 {
+        left: 2.5%;
+      }
+      #pagination #mapbutton2 {
+        right: 1%;
+      }
+    }
+    @media only screen and (max-width: 1090px) {
+      .card {
+        width: 30% !important;
+      }
+      .iframeImg {
+        max-width: 25px;
+      }
+      #bg {
+        height: 220px !important;
+        overflow-y: scroll;
+      }
+      /* #button1{
                 margin-left:0px ;
                } */
-                #pagination #mapbutton1 {
-                  margin-left: 0%;
-                }
-                #pagination #mapbutton1 {
-                  position: fixed;
-                  top: 50%;
-                  left: 8px;
-                }
-                #pagination #mapbutton2 {
-                  position: fixed;
-                  right: 6px;
-                  top: 50%;
-                }
-         
-                #close {
-                  top: unset !important;
-                }
-                #pagination {
-                  position: fixed;
-                  z-index: 9;
-                }
-                .card {
-                  position: relative;
-                  z-index: 99;
-                }
-                #Backbtn {
-                  z-index: unset;
-                }
-                #close {
-                  position: fixed;
-                  top: 5px;
-                  right: 28px;
-                  z-index: 999999;
-                }
-                #pagination #mapbutton2 {
-                  margin-right: 0%;
-                }
-         
-                /* #mappopup {
+      #pagination #mapbutton1 {
+        margin-left: 0%;
+      }
+      #pagination #mapbutton1 {
+        position: fixed;
+        top: 50%;
+        left: 8px;
+      }
+      #pagination #mapbutton2 {
+        position: fixed;
+        right: 6px;
+        top: 50%;
+      }
+
+      #close {
+        top: unset !important;
+      }
+      #pagination {
+        position: fixed;
+        z-index: 9;
+      }
+      .card {
+        position: relative;
+        z-index: 99;
+      }
+      #Backbtn {
+        z-index: unset;
+      }
+      #close {
+        position: fixed;
+        top: 5px;
+        right: 28px;
+        z-index: 999999;
+      }
+      #pagination #mapbutton2 {
+        margin-right: 0%;
+      }
+
+      /* #mappopup {
                     top: 50%;
                 } */
-              }
-              @media only screen and (max-width: 992px) {
-                .mblExpoFrame {
-                  display: block;
-                }
-                .card h3{
-                  font-size:18px;
-                }
-                .desktopExpoFrame {
-                  display: none;
-                }
-                .webinarAndExpocardContents {
-                    max-width: 276px;
-                  }
-                /* .mblExpoFrame {
+    }
+    @media only screen and (max-width: 992px) {
+      .mblExpoFrame {
+        display: block;
+      }
+      .card h3 {
+        font-size: 18px;
+      }
+      .desktopExpoFrame {
+        display: none;
+      }
+      .webinarAndExpocardContents {
+        max-width: 276px;
+      }
+      /* .mblExpoFrame {
                         height: 200px;
                         object-fit: contain;
                     } */
-                /* #orientationScreen {
+      /* #orientationScreen {
                   display: block !important;
                 } */
-              }
-              @media only screen and (max-width: 900px) {
-                .mblExpoFrame {
-                  width: 352px !important;
-                  max-height: 200px;
-                }
-              }
-         
-              @media only screen and (max-width: 760px) {
-                .liveCustomers {
-                  font-size: 20px;
-                }
-                .visitorsCount {
-                  max-width: 190px;
-                  margin-top: -60px;
-                  margin-left: 8px;
-                }
-                #mappopup {
-                  width: 90%;
-                }
-              }
-              @media only screen and (max-width: 600px) {
-                .visitorsCountSection {
-                  display: flex;
-                  justify-content: end;
-                  margin-top: -72px;
-                }
-                #bg {
-                  height: 335px;
-                  overflow-y: scroll;
-                }
-              }
-         
-              .loading-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 1);
-                z-index: 1002;
-                visibility: visible;
-              }
-         
-              .loading-icon {
-               
-                width: 75px;
-                height: 75px;
-               
-              }
-        /*
+    }
+    @media only screen and (max-width: 900px) {
+      .mblExpoFrame {
+        width: 352px !important;
+        max-height: 200px;
+      }
+    }
+
+    @media only screen and (max-width: 760px) {
+      .liveCustomers {
+        font-size: 20px;
+      }
+      .visitorsCount {
+        max-width: 190px;
+        margin-top: -60px;
+        margin-left: 8px;
+      }
+      #mappopup {
+        width: 90%;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      .visitorsCountSection {
+        display: flex;
+        justify-content: end;
+        margin-top: -72px;
+      }
+      #bg {
+        height: 335px;
+        overflow-y: scroll;
+      }
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      z-index: 1002;
+      visibility: visible;
+    }
+
+    .loading-icon {
+      width: 75px;
+      height: 75px;
+    }
+    /*
               @keyframes spin {
                 0% {
                   transform: rotate(0deg);
@@ -507,402 +496,427 @@
                   transform: rotate(360deg);
                 }
               } */
-         
-              /* .loading-container p {
+
+    /* .loading-container p {
                 margin-top: 10px;
                 font-size: 16px;
                 color: #333;
               } */
-              #totalIframe {
-                z-index: 999;
-                position: relative;
-                display: none;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                width: 100%;
-              }
-              .iframetagContent {
-                position: relative;
-              }
-              .iframeImg {
-                position: absolute;
-                top: 8px;
-                right: 2%;
-                max-width: 31px;
-                cursor: pointer;
-              }
-              .imgPopUpContents {
-                position: relative;
-              }
-              .imgPopUp {
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                z-index: 99999;
-                top: 20px;
-              }
-              @media only screen and (max-width: 1000px) {
-                iframe {
-                  height: 300px !important;
-                }
-              }
-              @media only screen and (max-width: 992px) {
-                iframe {
-                  width: 500px !important;
-                  height: 250px !important;
-                }
-              }
-              #closeIcon {
-                position: absolute;
-                right: 7px;
-                top: 7px;
-                cursor: pointer;
-              }
-              @media only screen and (max-width: 800px) {
-                iframe {
-                  width: 500px !important;
-                }
-              }
-              @media only screen and (max-width: 550px) {
-                iframe {
-                  width: 340px !important;
-                }
-                #pagination #mapbutton1 {
-                  left: -2px !important;
-                }
-                #pagination #mapbutton2 {
-                  right: 0px !important;
-                }
-              }
-              #visitors {
-                border-radius: 5px;
-                background: #363636;
-                max-width: 200px;
-                margin-top: -80px;
-                margin-left: 20px;
-                position: absolute;
-                top: 98%;
-                left: 0%;
-                padding: 10px;
-                z-index: 9999;
-              }
-              #currentVisitors {
-                color: #fff;
-                font-size: 26px;
-                font-weight: 600;
-                margin: 0;
-              }
-              #totalVisitors {
-                color: #fff;
-                font-size: 18px;
-                font-weight: 600;
-                margin: 0;
-              }
-              .orientation-screen {
-                position: absolute;
-                top: 80px;
-                left: 100px;
-                display: none;
-              }
-              @media only screen and (max-width: 450px) {
-                .orientation-screen {
-                  display: flex;
-                  justify-content: end;
-                  margin-top: 150px;
-                  font-size: 5px;
-                  color: rgb(255, 6, 6);
-                  z-index: 9999;
-                }
-              }
-              @-webkit-keyframes rotating /* Safari and Chrome */ {
-          from {
-            -webkit-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-          }
-          to {
-            -webkit-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes rotating {
-          from {
-            -ms-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-          }
-          to {
-            -ms-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-          }
-        }
-        .rotating {
-          -webkit-animation: rotating 5s linear infinite;
-          -moz-animation: rotating 5s linear infinite;
-          -ms-animation: rotating 5s linear infinite;
-          -o-animation: rotating 5s linear infinite;
-          animation: rotating 5s linear infinite;
-        }
-              /* @media only screen and (max-width:400px){
+    #totalIframe {
+      z-index: 999;
+      position: relative;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+    .iframetagContent {
+      position: relative;
+    }
+    .iframeImg {
+      position: absolute;
+      top: 8px;
+      right: 2%;
+      max-width: 31px;
+      cursor: pointer;
+    }
+    .imgPopUpContents {
+      position: relative;
+    }
+    .imgPopUp {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      z-index: 99999;
+      top: 20px;
+    }
+    @media only screen and (max-width: 1000px) {
+      iframe {
+        height: 300px !important;
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      iframe {
+        width: 500px !important;
+        height: 250px !important;
+      }
+    }
+    #closeIcon {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 800px) {
+      iframe {
+        width: 500px !important;
+      }
+    }
+    @media only screen and (max-width: 550px) {
+      iframe {
+        width: 340px !important;
+      }
+      #pagination #mapbutton1 {
+        left: -2px !important;
+      }
+      #pagination #mapbutton2 {
+        right: 0px !important;
+      }
+    }
+    #visitors {
+      border-radius: 5px;
+      background: #363636;
+      max-width: 200px;
+      margin-top: -80px;
+      margin-left: 20px;
+      position: absolute;
+      top: 98%;
+      left: 0%;
+      padding: 10px;
+      z-index: 9999;
+    }
+    #currentVisitors {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0;
+    }
+    #totalVisitors {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .orientation-screen {
+      position: absolute;
+      top: 80px;
+      left: 100px;
+      display: none;
+    }
+    @media only screen and (max-width: 450px) {
+      .orientation-screen {
+        display: flex;
+        justify-content: end;
+        margin-top: 150px;
+        font-size: 5px;
+        color: rgb(255, 6, 6);
+        z-index: 9999;
+      }
+    }
+    @-webkit-keyframes rotating /* Safari and Chrome */ {
+      from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes rotating {
+      from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    .rotating {
+      -webkit-animation: rotating 5s linear infinite;
+      -moz-animation: rotating 5s linear infinite;
+      -ms-animation: rotating 5s linear infinite;
+      -o-animation: rotating 5s linear infinite;
+      animation: rotating 5s linear infinite;
+    }
+    /* @media only screen and (max-width:400px){
             iframe{
                 width: 340px!important;
             }
         }  */
-        #internet-status{
-          z-index:9999;
-          position: relative;
-          background-color: rgba(0, 0, 0, 0.8);
-          padding: 1%;
-          top:90%;
-          width:50%;
-          left:50% ;
-          display: flex;
-          justify-content: center; /* corrected property name */
-          align-items: center; /* corrected property name */
-         
-        }
-        #status-content{
-          color: #fff;
-          text-align: center;
-        }
-        #snackbar {
-          visibility: hidden;
-          min-width: 250px;
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          border-radius: 2px;
-          padding: 20px;
-          position: fixed;
-          z-index: 9999;
-          top: 30px;
-          font-size: 17px;
-        }
-        #snackbarContent{
-            width:100%;
-            display: flex;
-            justify-content:center;
-        }
-        .closeIcon-webinar img {
-            max-width: 23px;
-        }
-         
-        #snackbar.show {
-          visibility: visible;
-          -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-          animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        max-height: 20px;
-        }
-         
-        @-webkit-keyframes fadein {
-          from {bottom: 0; opacity: 0;}
-          to {bottom: 30px; opacity: 1;}
-        }
-         
-        @keyframes fadein {
-          from {bottom: 0; opacity: 0;}
-          to {bottom: 30px; opacity: 1;}
-        }
-         
-        @-webkit-keyframes fadeout {
-          from {bottom: 30px; opacity: 1;}
-          to {bottom: 0; opacity: 0;}
-        }
-         
-        @keyframes fadeout {
-          from {bottom: 30px; opacity: 1;}
-          to {bottom: 0; opacity: 0;}
-        }
-        #fullscreenButton{
-          z-index:99999;
-          position: fixed;
-          top:1%;
-          left:1%;
-          border-radius: 4px;
-          background-color: rgba(0, 128, 191, 0.5);
-          color:#fff;
-          font-family: Roboto;
-          cursor: pointer;
-        }
-        .helpPopUpContents{
-          max-width:760px;
-          background-color:#F1FDFF;
-          border-radius:10px;
-          padding:50px 0;
-          width:100%;
+    #internet-status {
+      z-index: 9999;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1%;
+      top: 90%;
+      width: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center; /* corrected property name */
+      align-items: center; /* corrected property name */
+    }
+    #status-content {
+      color: #fff;
+      text-align: center;
+    }
+    #snackbar {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 20px;
+      position: fixed;
+      z-index: 9999;
+      top: 30px;
+      font-size: 17px;
+    }
+    #snackbarContent {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .closeIcon-webinar img {
+      max-width: 23px;
+    }
+
+    #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      max-height: 20px;
+    }
+
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
       }
-      .helpText{
-          color: #464646;
-          text-align: center;
-          font-size: 49px;
-          font-weight: 600;
-          border-bottom:1px solid #F65927;
-          /* display:flex; */
-          padding-bottom:10px;
+      to {
+        bottom: 30px;
+        opacity: 1;
       }
-      .followText{
-          color: #464646;
-          font-size: 32px;
-          font-weight: 600;
-          text-align:center;
-          padding-bottom:20px;
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
       }
-      .helpPopUpContents{
-          position: relative;
-          z-index:999
+      to {
+        bottom: 30px;
+        opacity: 1;
       }
-      .helpcloseIcon{
-          position: absolute;
-          right:10px;
-          top:10px;
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
       }
-      .linkedImgs{
-          display:flex;
-          justify-content: center;
-          gap:14px;
+      to {
+        bottom: 0;
+        opacity: 0;
       }
-      .mediaIcons{
-          display:flex;
-          justify-content: center;
-          gap:19px;
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
       }
-      .followSection {
-          border-radius: 5px;
-          border: 1px solid rgba(0, 0, 0, 0.20);
-          padding: 20px 0;
-          max-width: 620px;
-          margin: auto;
+      to {
+        bottom: 0;
+        opacity: 0;
       }
-      .helpTextHeading{
-          display:flex;
-          justify-content: center;
-          margin-bottom:50px;
-      }
-      .mediaIcons{
-          margin-bottom:50px;
-      }
-      .helpPopUpMainContent{
-          display:flex;
-          justify-content: center;
-          align-items:center;
-        height: 100vh;
-          width: 100%;
-          
-      }
-      .helpcloseIcon{
-          cursor: pointer;
-      }
-      .footerBgImg img {
-            width: 100%;
-        }
-        .agriExpoHeading{
-            text-transform: uppercase;
-            color: #007A54;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 5px;
-            border: 1px solid #007A54; 
-            padding: 7px 10px 5px 11px;
-            text-decoration: none;
-        }
-        header{
-            display: flex;
-            justify-content: center;
-            padding:11px 0;
-            background: #FEF5DF;
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.18); 
-        }
-        .lobby{
-            background-image: url('./assets/background_images/lobbyBgImg.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top:45%;
-        }
-        .lobbyImages{
-            display:flex;
-            width: 100%;
-            padding:20px 0;
-        }
-        .lobbyImages img{
-            width:100%;
-        }
-        .helpAndDirectory{
-            padding: 21px 0;
-            background-color:#007A54;
-            /* position: fixed;
+    }
+    #fullscreenButton {
+      z-index: 99999;
+      position: fixed;
+      top: 1%;
+      left: 1%;
+      border-radius: 4px;
+      background-color: rgba(0, 128, 191, 0.5);
+      color: #fff;
+      font-family: Roboto;
+      cursor: pointer;
+    }
+    .helpPopUpContents {
+      max-width: 760px;
+      background-color: #faeff4;
+      border-radius: 10px;
+      padding: 50px 0;
+      width: 100%;
+    }
+    .helpText {
+      color: #464646;
+      text-align: center;
+      font-size: 49px;
+      font-weight: 600;
+      border-bottom: 1px solid #f65927;
+      /* display:flex; */
+      padding-bottom: 10px;
+    }
+    .followText {
+      color: #464646;
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .helpPopUpContents {
+      position: relative;
+      z-index: 999;
+    }
+    .helpcloseIcon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .linkedImgs {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    .mediaIcons {
+      display: flex;
+      justify-content: center;
+      gap: 19px;
+    }
+    .followSection {
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 20px 0;
+      max-width: 620px;
+      margin: auto;
+    }
+    .helpTextHeading {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .mediaIcons {
+      margin-bottom: 50px;
+    }
+    .helpPopUpMainContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+    .helpcloseIcon {
+      cursor: pointer;
+    }
+    .footerBgImg img {
+      width: 100%;
+    }
+    .agriExpoHeading {
+      text-transform: uppercase;
+      color: #007a54;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 5px;
+      border: 1px solid #007a54;
+      padding: 7px 10px 5px 11px;
+      text-decoration: none;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      padding: 11px 0;
+      background: #fef5df;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.18);
+    }
+    .lobby {
+      background-image: url('./assets/background_images/lobbyBgImg.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 45%;
+    }
+    .lobbyImages {
+      display: flex;
+      width: 100%;
+      padding: 20px 0;
+    }
+    .lobbyImages img {
+      width: 100%;
+    }
+    .helpAndDirectory {
+      padding: 21px 0;
+      background-color: #007a54;
+      /* position: fixed;
             width: 100%; */
-        }
-        .helpDeskText,.directoryText{
-            color: #FFF;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .directoryContents,.helpDeskContents{
-            display: flex;
-            align-items: center;
-            gap:12px;
-            padding: 4px 20px 4px 7px;
-            border-radius: 25px;
-            border: 2px solid #CDEBD0;
-            background: #007A54; 
-            cursor: pointer;
-            /* max-width:160px;
+    }
+    .helpDeskText,
+    .directoryText {
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .directoryContents,
+    .helpDeskContents {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 20px 4px 7px;
+      border-radius: 25px;
+      border: 2px solid #cdebd0;
+      background: #007a54;
+      cursor: pointer;
+      /* max-width:160px;
             margin: auto; */
-        }
-        .footerBgImg{
-            position: relative;
-        }
-        .footerBgImg::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0,0,0,0.3);
-        }
-        .helpAndDirectory{
-            display:flex;
-            gap: 20px;
-            padding: 21px 0;
-            justify-content: center;
-            /* flex-direction: column; */
-        }
-        .exhibitionImgClass {
-            position: relative;
-            top: 15px;
-        }
-        .webinarImgSection,.exhibitionImgSection{
-            position: relative;
-        }
-        /* .helpAndDirectory img{
+    }
+    .footerBgImg {
+      position: relative;
+    }
+    .footerBgImg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .helpAndDirectory {
+      display: flex;
+      gap: 20px;
+      padding: 21px 0;
+      justify-content: center;
+      /* flex-direction: column; */
+    }
+    .exhibitionImgClass {
+      position: relative;
+      top: 15px;
+    }
+    .webinarImgSection,
+    .exhibitionImgSection {
+      position: relative;
+    }
+    /* .helpAndDirectory img{
             width:100%;
         } */
-        .leftArrow {
-            animation: slide1 1s ease-in-out infinite;
-            max-width: 30px;
-            position: absolute;
-            left: 46%;
-            bottom: 25%;
-        }
-        .rightArrow {
-            position: absolute;
-            left: 47%;
-            bottom: 12%;
-        }
-        /* @keyframes slide1 {
+    .leftArrow {
+      animation: slide1 1s ease-in-out infinite;
+      max-width: 30px;
+      position: absolute;
+      left: 46%;
+      bottom: 25%;
+    }
+    .rightArrow {
+      position: absolute;
+      left: 47%;
+      bottom: 12%;
+    }
+    /* @keyframes slide1 {
             0%,
             100% {
                 transform: translate(0, 0);
@@ -912,440 +926,436 @@
                 transform: translate(0, 10px);
             }
             } */
-        @media only screen and (max-width:400px){
-            .directoryContents, .helpDeskContents{
-                gap:5px;
-            }
-        }
-        @media only screen and (max-width:630px){
-            .leftArrow img,.rightArrow img{
-                width:20px;
-            }
-        }
-        @media only screen and (max-width:460px){
-            .rightArrow {
-                bottom: 7%;
-            }
-            .leftArrow {
-                bottom: 22%;
-            }
-            .leftArrow img, .rightArrow img {
-                width: 16px;
-            }
-        }
-      @media only screen and (max-width:1470px){
-        .helpText {
-              font-size: 22px;
-              margin-top:0;
-          }
-          /* .helpPopUpMainContent{
+    @media only screen and (max-width: 400px) {
+      .directoryContents,
+      .helpDeskContents {
+        gap: 5px;
+      }
+    }
+    @media only screen and (max-width: 630px) {
+      .leftArrow img,
+      .rightArrow img {
+        width: 20px;
+      }
+    }
+    @media only screen and (max-width: 460px) {
+      .rightArrow {
+        bottom: 7%;
+      }
+      .leftArrow {
+        bottom: 22%;
+      }
+      .leftArrow img,
+      .rightArrow img {
+        width: 16px;
+      }
+    }
+    @media only screen and (max-width: 1470px) {
+      .helpText {
+        font-size: 22px;
+        margin-top: 0;
+      }
+      /* .helpPopUpMainContent{
           
         } */
-          .helpTextHeading {
-              margin-bottom: 0;
-          }
-          .mediaIcons img {
-              max-width: 35px;
-          }
-          .followText {
-              font-size: 20px;
-              margin-bottom:15px;
-          }
-          .linkedImgs img {
-              max-width: 30px;
-          }
-          .followSection {
-            padding: 10px 0;
-          }
-          .mediaIcons {
-              margin-bottom: 20px;
-          }
-          .helpPopUpContents {
-              max-width: 500px;
-          }
-          .followSection {
-              width: 85%;
-          }
-          .linkedImgs,.mediaIcons{
-              gap: 10px;
-          }
-          .helpPopUpContents{
-            padding:15px 0;
-          }
-          .followText{
-            padding-bottom: 0;
-            margin-top: 0;
-          }
+      .helpTextHeading {
+        margin-bottom: 0;
       }
-      @media only screen and (max-width:992px){
-          .helpText {
-              font-size: 22px;
-              margin-top:0;
-          }
-          .helpPopUpMainContent{
-          position: relative;
-            top:10px;
-            height: unset !important;;
-        }
-          .helpTextHeading {
-              margin-bottom: 0;
-          }
-          .mediaIcons img {
-              max-width: 25px;
-          }
-          .followText {
-              font-size: 20px;
-              margin-bottom:15px;
-          }
-          .linkedImgs img {
-              max-width: 20px;
-          }
-          .followSection {
-            padding: 10px 0;
-          }
-          .mediaIcons {
-              margin-bottom: 20px;
-          }
-          .helpPopUpContents {
-              max-width: 350px;
-          }
-          .followSection {
-              width: 85%;
-          }
-          .linkedImgs,.mediaIcons{
-              gap: 10px;
-          }
-          .helpPopUpContents{
-            padding:15px 0;
-          }
-          .followText{
-            padding-bottom: 0;
-            margin-top: 0;
-          }
+      .mediaIcons img {
+        max-width: 35px;
       }
-      @media only screen and (max-width:470px){
-          .helpPopUpContents {
-              width:95%;
-          }
+      .followText {
+        font-size: 20px;
+        margin-bottom: 15px;
       }
-      /*  */
-      #expo-directory-section {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000; /* High z-index to appear on top */
-    background-color: #fff;
-    display: none; /* Optional: add background color */
-}
+      .linkedImgs img {
+        max-width: 30px;
+      }
+      .followSection {
+        padding: 10px 0;
+      }
+      .mediaIcons {
+        margin-bottom: 20px;
+      }
+      .helpPopUpContents {
+        max-width: 500px;
+      }
+      .followSection {
+        width: 85%;
+      }
+      .linkedImgs,
+      .mediaIcons {
+        gap: 10px;
+      }
+      .helpPopUpContents {
+        padding: 15px 0;
+      }
+      .followText {
+        padding-bottom: 0;
+        margin-top: 0;
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .helpText {
+        font-size: 22px;
+        margin-top: 0;
+      }
+      .helpPopUpMainContent {
+        position: relative;
+        top: 10px;
+        height: unset !important;
+      }
+      .helpTextHeading {
+        margin-bottom: 0;
+      }
+      .mediaIcons img {
+        max-width: 25px;
+      }
+      .followText {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .linkedImgs img {
+        max-width: 20px;
+      }
+      .followSection {
+        padding: 10px 0;
+      }
+      .mediaIcons {
+        margin-bottom: 20px;
+      }
+      .helpPopUpContents {
+        max-width: 350px;
+      }
+      .followSection {
+        width: 85%;
+      }
+      .linkedImgs,
+      .mediaIcons {
+        gap: 10px;
+      }
+      .helpPopUpContents {
+        padding: 15px 0;
+      }
+      .followText {
+        padding-bottom: 0;
+        margin-top: 0;
+      }
+    }
+    @media only screen and (max-width: 470px) {
+      .helpPopUpContents {
+        width: 95%;
+      }
+    }
+    /*  */
+    #expo-directory-section {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000; /* High z-index to appear on top */
+      background-color: #fff;
+      display: none; /* Optional: add background color */
+    }
 
-#close-icon-expo {
-    position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    cursor: pointer; /* Optional: change cursor to pointer */
-    z-index: 1001; /* Ensure it is above the iframe */
-}
+    #close-icon-expo {
+      position: absolute;
+      top: 10px; /* Adjust as needed */
+      right: 10px; /* Adjust as needed */
+      cursor: pointer; /* Optional: change cursor to pointer */
+      z-index: 1001; /* Ensure it is above the iframe */
+    }
 
-#iframe {
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    border: none; /* Remove border if any */
-}
+    #iframe {
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      border: none; /* Remove border if any */
+    }
 
-#expo-frame {
-  width: 100% !important;
-    height: 100vh !important; /* Full viewport height minus space for the close icon */
-    border: none; /* Remove border if any */
-    position: relative;
-}
+    #expo-frame {
+      width: 100% !important;
+      height: 100vh !important; /* Full viewport height minus space for the close icon */
+      border: none; /* Remove border if any */
+      position: relative;
+    }
 
-      /*  */
-     
-</style>
-<body>
-
+    /*  */
+  </style>
+  <body>
     <script src="encrypt.js"></script>
-<!--  -->
-<div id="expo-directory-section">
-  <div id="close-icon-expo" >
-    <img  src="assets/icons/closeButton 1.png" >
-  </div>
-    <iframe id="expo-frame" src="https://expo1.marketcentral.in/expoDirectoryMobile.cfm"></iframe>
- 
-</div>
+    <!--  -->
+    <div id="expo-directory-section">
+      <div id="close-icon-expo">
+        <img src="assets/icons/closeButton 1.png" />
+      </div>
+      <iframe id="expo-frame" src="https://expo1.marketcentral.in/expoDirectoryMobile.cfm"></iframe>
+    </div>
     <header>
       <a class="agriExpoHeading" href="">Agri Expo</a>
-  </header>
+    </header>
 
-  <div class="lobby">
+    <div class="lobby">
       <div class="lobbyImages">
-          <div class="webinarImgSectionMain">
-              <div class="webinarImgSection">
-                  <img id="webinar-btn" class="webinarImgClass" src="./assets/background_images/webinarImg.png">
-                  <div class="arrow leftArrow">
-                      <img src="./assets/upArrow.png">
-                  </div>
-              </div>
+        <div class="webinarImgSectionMain">
+          <div class="webinarImgSection">
+            <img id="webinar-btn" class="webinarImgClass" src="./assets/background_images/webinarImg.png" />
+            <div class="arrow leftArrow">
+              <img src="./assets/upArrow.png" />
+            </div>
           </div>
-          <div class="exhibitionImgSectionMain">
-              <div id="enter-exhib-btn" class="exhibitionImgSection">
-                  <img class="exhibitionImgClass" src="./assets/background_images/exhibitionImg.png">
-                  <div class="arrow rightArrow">
-                      <img src="./assets/upArrow.png">
-                  </div>
-              </div>
+        </div>
+        <div class="exhibitionImgSectionMain">
+          <div id="enter-exhib-btn" class="exhibitionImgSection">
+            <img class="exhibitionImgClass" src="./assets/background_images/exhibitionImg.png" />
+            <div class="arrow rightArrow">
+              <img src="./assets/upArrow.png" />
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-  <div class="helpAndDirectory">
-      <div class="helpDeskContents"  id="helpdesk-btn">
-          <img src="./assets/Question.svg">
-          <p class="helpDeskText">HELP DESK</p>
+    </div>
+    <div class="helpAndDirectory">
+      <div class="helpDeskContents" id="helpdesk-btn">
+        <img src="./assets/Question.svg" />
+        <p class="helpDeskText">HELP DESK</p>
       </div>
       <div class="directoryContents" id="direct">
-          <img src="./assets/FolderOpen.svg">
-          <p class="directoryText">EXPO
-              DIRECTORY</p>
+        <img src="./assets/FolderOpen.svg" />
+        <p class="directoryText">EXPO DIRECTORY</p>
       </div>
-  
-  </div>
-  <div class="footerBgImg">
-      <img src="assets/background_images/footerImg.png">
-  </div>
-  <!--  -->
-    <div class="helpPopUp">
-        <div class="helpPopUpMainContent">
-          <div class="helpPopUpContents">
-            <div class="helpcloseIcon">
-              <img src="assets/icons/closeButton 1.png" />
-            </div>
-            <div class="helpPopUpText">
-              <div class="helpTextHeading"><h2 class="helpText">Help Desk</h2></div>
-              <div class="mediaIcons">
-                <a
-                  href="https://www.marketcentral.in"
-                  target="_blank"
-                  onclick="tracking(0, 'marketcentral-website', ''); return true;"
-                  ><img src="assets/icons/web 1.png"
-                /></a>
-                <a href="tel:+918008900100" target="_blank" onclick="tracking(0, 'marketcentral-phone', ''); return true;"
-                  ><img src="assets/icons/call 2.png"
-                /></a>
-                <a
-                  href="mailto:expo@marketcentral.in"
-                  target="_blank"
-                  onclick="tracking(0, 'marketcentral-mail', ''); return true;"
-                  ><img src="assets/icons/Mail 1.png"
-                /></a>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=918008544800"
-                  target="_blank"
-                  onclick="tracking(0, 'marketcentral-whatsapp', ''); return true;"
-                  ><img src="assets/icons/whatsapp 1.png"
-                /></a>
-              </div>
-              <div class="followSection">
-                <p class="followText">Follow us</p>
-                <div class="linkedImgs">
-                  <a
-                    href="https://www.facebook.com/MKTCTL/"
-                    onclick="tracking(0, 'marketcentral-facebook', ''); return true;"
-                    target="_blank"
-                    ><img src="assets/icons/facebook 1.png" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/_marketcentral/"
-                    onclick="tracking(0, 'marketcentral-instagram', ''); return true;"
-                    target="_blank"
-                    ><img src="assets/icons/insta 1.png"
-                  /></a>
-                  <a
-                    href="https://www.youtube.com/channel/UCf_0cdvzynO4mwNenGwa7IQ"
-                    onclick="tracking(0, 'marketcentral-youtube', ''); return true;"
-                    target="_blank"
-                    ><img src="assets/icons/youtube 1.png"
-                  /></a>
-                  <a
-                    href="https://www.linkedin.com/showcase/marketcentral"
-                    onclick="tracking(0, 'marketcentral-linkedin', ''); return true;"
-                    target="_blank"
-                    ><img src="assets/icons/linkedin 1.png"
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-    <div id="parent">
-        <div id="mappopup">
-          <div id="bg">
-            <image src="assets/icons/loadingicon-1.png" id="apiload" class="rotating" height="50px" width="50px"></image>
-            <div id="pagination">
-              <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px" />
-              <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" />
-            </div>
-            <div id="Backbtn">
-              <button id="close">
-                <img src="assets/icons/blueCloseIcon.png" />
-              </button>
-            </div>
-          </div>
-        </div>
     </div>
-   
+    <div class="footerBgImg">
+      <img src="assets/background_images/footerImg.png" />
+    </div>
+    <!--  -->
+    <div class="helpPopUp">
+      <div class="helpPopUpMainContent">
+        <div class="helpPopUpContents">
+          <div class="helpcloseIcon">
+            <img src="assets/icons/closeButton 1.png" />
+          </div>
+          <div class="helpPopUpText">
+            <div class="helpTextHeading"><h2 class="helpText">Help Desk</h2></div>
+            <div class="mediaIcons">
+              <a
+                href="https://www.marketcentral.in"
+                target="_blank"
+                onclick="tracking(0, 'marketcentral-website', ''); return true;"
+                ><img src="assets/icons/web 1.png"
+              /></a>
+              <a href="tel:+918008900100" target="_blank" onclick="tracking(0, 'marketcentral-phone', ''); return true;"
+                ><img src="assets/icons/call 2.png"
+              /></a>
+              <a
+                href="mailto:expo@marketcentral.in"
+                target="_blank"
+                onclick="tracking(0, 'marketcentral-mail', ''); return true;"
+                ><img src="assets/icons/Mail 1.png"
+              /></a>
+              <a
+                href="https://api.whatsapp.com/send/?phone=918008544800"
+                target="_blank"
+                onclick="tracking(0, 'marketcentral-whatsapp', ''); return true;"
+                ><img src="assets/icons/whatsapp 1.png"
+              /></a>
+            </div>
+            <div class="followSection">
+              <p class="followText">Follow us</p>
+              <div class="linkedImgs">
+                <a
+                  href="https://www.facebook.com/MKTCTL/"
+                  onclick="tracking(0, 'marketcentral-facebook', ''); return true;"
+                  target="_blank"
+                  ><img src="assets/icons/facebook 1.png" />
+                </a>
+                <a
+                  href="https://www.instagram.com/_marketcentral/"
+                  onclick="tracking(0, 'marketcentral-instagram', ''); return true;"
+                  target="_blank"
+                  ><img src="assets/icons/insta 1.png"
+                /></a>
+                <a
+                  href="https://www.youtube.com/channel/UCf_0cdvzynO4mwNenGwa7IQ"
+                  onclick="tracking(0, 'marketcentral-youtube', ''); return true;"
+                  target="_blank"
+                  ><img src="assets/icons/youtube 1.png"
+                /></a>
+                <a
+                  href="https://www.linkedin.com/showcase/marketcentral"
+                  onclick="tracking(0, 'marketcentral-linkedin', ''); return true;"
+                  target="_blank"
+                  ><img src="assets/icons/linkedin 1.png"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="parent">
+      <div id="mappopup">
+        <div id="bg">
+          <image src="assets/icons/loadingicon-1.png" id="apiload" class="rotating" height="50px" width="50px"></image>
+          <div id="pagination">
+            <img id="mapbutton1" src="assets/icons/arrow-circle-left.png" style="width: 40px; height: 40px" />
+            <img id="mapbutton2" src="assets/icons/arrow-circle-left-1.png" style="width: 40px; height: 40px" />
+          </div>
+          <div id="Backbtn">
+            <button id="close">
+              <img src="assets/icons/blueCloseIcon.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- <button  id="webinar-btn">Webinar</button> -->
     <!-- <button id="expo-dir-btn">Expo Directory</button> -->
     <!-- <button id="helpdesk-btn">Help Desk</button> -->
     <!-- <button id="enter-exhib-btn">Enter Exhibiton</button>  -->
-</body>
-<script>
- var ang = 0;
-var currentIndex = 0;
-var cards = [];
-var data;
-let buttonid = 0;
-let apicall = 0;
-var halllang = "english";
+  </body>
+  <script>
+    var ang = 0;
+    var currentIndex = 0;
+    var cards = [];
+    var data;
+    let buttonid = 0;
+    let apicall = 0;
+    var halllang = 'english';
 
-document.getElementById("mapbutton1").addEventListener("click", showPrevious);
-document.getElementById("mapbutton2").addEventListener("click", showNext);
+    document.getElementById('mapbutton1').addEventListener('click', showPrevious);
+    document.getElementById('mapbutton2').addEventListener('click', showNext);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const button = document.querySelector("#enter-exhib-btn");
+    document.addEventListener('DOMContentLoaded', function () {
+      const button = document.querySelector('#enter-exhib-btn');
 
-  button.addEventListener("click", function () {
-    document.querySelector('#parent').style.display="block"
-    fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4`)
-      .then((response) => response.json())
-      .then((apiData) => {
-        data = apiData;
-        if (apicall === 0) {
-          createCards(data);
-          document.getElementById('apiload').style.display = 'none';
-        }
-        apicall += 1;
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+      button.addEventListener('click', function () {
+        document.querySelector('#parent').style.display = 'block';
+        fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4`)
+          .then((response) => response.json())
+          .then((apiData) => {
+            data = apiData;
+            if (apicall === 0) {
+              createCards(data);
+              document.getElementById('apiload').style.display = 'none';
+            }
+            apicall += 1;
+          })
+          .catch((error) => console.error('Error fetching data:', error));
 
-    const bgContainer1 = document.getElementById("mappopup");
-    bgContainer1.style.display = "flex";
-    const closebtn = document.getElementById("close");
-    closebtn.style.display = "block";
-   
-  });
-});
-
-function createCards(data) {
-  const bgContainer = document.getElementById("bg"); // Define bgContainer here
-
-  for (var i = 0; i < data.length; i++) {
-    var card = document.createElement('div');
-    card.className = 'card';
-    card.id = 'card' + (i + 1);
-
-    var img = document.createElement('img');
-    img.id = 'img' + (i + 1);
-    img.src = `assets/categorymap_images/category${i+1}.png`;
-    img.style.width = '50px';
-    img.style.height = '50px';
-
-    var h3 = document.createElement('h3');
-    h3.id = `categoryname${i + 1}`;
-    h3.textContent = halllang === "hindi" ? data[i].CATEGORY_LEVEL_1_HINDI : data[i].CATEGORY;
-
-    var button = document.createElement('button');
-    button.id = 'button' + (i + 1);
-    button.textContent = 'Visit';
-    button.dataset.categoryIndex = i;
-    button.addEventListener('click', openLink);
-
-    card.appendChild(img);
-    card.appendChild(h3);
-    card.appendChild(button);
-
-    bgContainer.appendChild(card);
-    cards.push(card);
-  }
-
-  showCard(currentIndex);
-}
-
-function showCard(index) {
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.display = "none";
-  }
-
-  for (var i = 0; i < 10; i++) {
-    if (index + i < cards.length) {
-      cards[index + i].style.display = "flex";
-      document.getElementById("mapbutton2").style.display = "flex";
-    } else {
-      document.getElementById("mapbutton2").style.display = "none";
-    }
-  }
-}
-
-function showNext() {
-  currentIndex = (currentIndex + 10) % cards.length;
-  buttonid += 1;
-
-  if (buttonid >= 1) {
-    document.getElementById("mapbutton1").style.display = "flex";
-  }
-  showCard(currentIndex);
-}
-
-function showPrevious() {
-  currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-  buttonid -= 1;
-
-  if (buttonid == 0) {
-    document.getElementById("mapbutton1").style.display = "none";
-  }
-  showCard(currentIndex);
-}
-
-function openLink(event) {
-  var index = event.currentTarget.dataset.categoryIndex;
-  var categories = data.map((item) => item.CATEGORY);
-  var links = categories.map(
-    (category) => `hall.html?category=${encrypt(category.replace(/&/g, '||'))}`
-  );
-
-  var categoriesselect = categories.map((category) => category);
-//  sendbeaconapi(0, categoriesselect[index], "");
-
-  window.location.href = links[index];
-}
-
-document.getElementById("close").addEventListener("click", closePopup);
-function closePopup() {
-    var popupcontainer = document.getElementById("mappopup");
-    popupcontainer.style.display = "none";
-    document.querySelector('#parent').style.display="none"
-  }
-
-  document.getElementById('helpdesk-btn').addEventListener('click',function(){
-    document.body.classList.toggle('overlay');
-     document.querySelector('.helpPopUp').style.display='flex'
-     
-})
-$('.helpcloseIcon').click(function () {
-        $('.helpPopUp').css('display', 'none');
-         $('body').toggleClass('overlay');
+        const bgContainer1 = document.getElementById('mappopup');
+        bgContainer1.style.display = 'flex';
+        const closebtn = document.getElementById('close');
+        closebtn.style.display = 'block';
       });
+    });
 
-      document.getElementById("webinar-btn").addEventListener("click", function() {
-  window.open("webinar.html", "_blank");
-});
-document.getElementById("close-icon-expo").addEventListener("click",function(){
-  document.getElementById('expo-directory-section').style.display="none"
-})
-document.getElementById("direct").addEventListener("click",function(){
-  document.getElementById('expo-directory-section').style.display="block"
-})
-</script>
+    function createCards(data) {
+      const bgContainer = document.getElementById('bg'); // Define bgContainer here
+
+      for (var i = 0; i < data.length; i++) {
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.id = 'card' + (i + 1);
+
+        var img = document.createElement('img');
+        img.id = 'img' + (i + 1);
+        img.src = `assets/categorymap_images/category${i + 1}.png`;
+        img.style.width = '50px';
+        img.style.height = '50px';
+
+        var h3 = document.createElement('h3');
+        h3.id = `categoryname${i + 1}`;
+        h3.textContent = halllang === 'hindi' ? data[i].CATEGORY_LEVEL_1_HINDI : data[i].CATEGORY;
+
+        var button = document.createElement('button');
+        button.id = 'button' + (i + 1);
+        button.textContent = 'Visit';
+        button.dataset.categoryIndex = i;
+        button.addEventListener('click', openLink);
+
+        card.appendChild(img);
+        card.appendChild(h3);
+        card.appendChild(button);
+
+        bgContainer.appendChild(card);
+        cards.push(card);
+      }
+
+      showCard(currentIndex);
+    }
+
+    function showCard(index) {
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].style.display = 'none';
+      }
+
+      for (var i = 0; i < 10; i++) {
+        if (index + i < cards.length) {
+          cards[index + i].style.display = 'flex';
+          document.getElementById('mapbutton2').style.display = 'flex';
+        } else {
+          document.getElementById('mapbutton2').style.display = 'none';
+        }
+      }
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 10) % cards.length;
+      buttonid += 1;
+
+      if (buttonid >= 1) {
+        document.getElementById('mapbutton1').style.display = 'flex';
+      }
+      showCard(currentIndex);
+    }
+
+    function showPrevious() {
+      currentIndex = (currentIndex - 10 + cards.length) % cards.length;
+      buttonid -= 1;
+
+      if (buttonid == 0) {
+        document.getElementById('mapbutton1').style.display = 'none';
+      }
+      showCard(currentIndex);
+    }
+
+    function openLink(event) {
+      var index = event.currentTarget.dataset.categoryIndex;
+      var categories = data.map((item) => item.CATEGORY);
+      var links = categories.map((category) => `hall.html?category=${encrypt(category.replace(/&/g, '||'))}`);
+
+      var categoriesselect = categories.map((category) => category);
+      //  sendbeaconapi(0, categoriesselect[index], "");
+
+      window.location.href = links[index];
+    }
+
+    document.getElementById('close').addEventListener('click', closePopup);
+    function closePopup() {
+      var popupcontainer = document.getElementById('mappopup');
+      popupcontainer.style.display = 'none';
+      document.querySelector('#parent').style.display = 'none';
+    }
+
+    document.getElementById('helpdesk-btn').addEventListener('click', function () {
+      document.body.classList.toggle('overlay');
+      document.querySelector('.helpPopUp').style.display = 'flex';
+    });
+    $('.helpcloseIcon').click(function () {
+      $('.helpPopUp').css('display', 'none');
+      $('body').toggleClass('overlay');
+    });
+
+    document.getElementById('webinar-btn').addEventListener('click', function () {
+      window.open('webinar.html', '_blank');
+    });
+    document.getElementById('close-icon-expo').addEventListener('click', function () {
+      document.getElementById('expo-directory-section').style.display = 'none';
+    });
+    document.getElementById('direct').addEventListener('click', function () {
+      document.getElementById('expo-directory-section').style.display = 'block';
+    });
+  </script>
 </html>

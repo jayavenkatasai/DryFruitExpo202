@@ -182,7 +182,7 @@ iframe {
   top: 0;
 }
 #bg {
-  background-color: #e7f0ff;
+  background-color: #faeff4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -224,7 +224,7 @@ iframe {
 .card button {
   padding: 7px 10px;
   border-radius: 5px;
-  background: #164fb1;
+  background: #8c024b;
   color: #fff;
   width: 100%;
   max-width: 155px;
@@ -708,14 +708,14 @@ iframe {
   display: none;
   left: 1%;
   border-radius: 4px;
-  background-color: #f2bf0b;
+  background-color: #faeff4;
   color: #3c2b25;
   font-family: Roboto;
   cursor: pointer;
 }
 .helpPopUpContents {
   max-width: 760px;
-  background-color: #f1fdff;
+  background-color: #faeff4;
   border-radius: 10px;
   padding: 50px 0;
   width: 100%;
@@ -725,7 +725,7 @@ iframe {
   text-align: center;
   font-size: 49px;
   font-weight: 600;
-  border-bottom: 1px solid #164fb1;
+  border-bottom: 1px solid #8c024b;
   /* display:flex; */
   padding-bottom: 10px;
 }

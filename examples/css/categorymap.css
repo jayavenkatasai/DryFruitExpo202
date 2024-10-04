@@ -13,7 +13,7 @@ h6 {
   padding: 0;
 }
 .categoryheading {
-  color: #164fb1;
+  color: #8c024b;
   font-size: 50px;
   font-weight: 600;
   padding-bottom: 5px;
@@ -27,19 +27,19 @@ h6 {
 .numberToggle {
   background-color: transparent !important;
   color: #363636 !important;
-  border-color: #164fb1 !important;
+  border-color: #8c024b !important;
 }
 .numberToggle:hover {
   background-color: transparent !important;
   color: #363636 !important;
-  border-color: #164fb1 !important;
+  border-color: #8c024b !important;
 }
 .numberToggle:focus {
   outline: none !important;
   background-color: transparent !important;
   color: #363636 !important;
   box-shadow: none !important;
-  border-color: #164fb1 !important;
+  border-color: #8c024b !important;
 }
 .dropdown-menu.show {
   height: 175px;
@@ -47,7 +47,7 @@ h6 {
 }
 .dropdown-item:focus,
 .dropdown-item:hover {
-  border-color: #164fb1 !important;
+  border-color: #8c024b !important;
   color: #363636;
 }
 .categoryheading {
@@ -63,7 +63,7 @@ p.categoryName {
 }
 .categoryMap {
   padding: 60px 0 170px 0;
-  background: #e7f0ff;
+  background: #faeff4;
 }
 .categoryName {
   color: #5a463f;
@@ -81,7 +81,7 @@ p.categoryName {
 .dropdownSection select {
   padding: 6px;
   background: transparent;
-  border: 2px solid #164fb1;
+  border: 2px solid #8c024b;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -125,7 +125,7 @@ p.categoryName {
   position: relative;
   font-weight: 600;
   border-radius: 5px;
-  background: #164fb1;
+  background: #8c024b;
   padding: 8px 12px;
   text-decoration: none;
   max-width: 115px;
@@ -144,7 +144,7 @@ p.categoryName {
 }
 .category {
   border-radius: 10px;
-  border: 2px solid #164fb1;
+  border: 2px solid #8c024b;
   background: #fff;
   text-align: center;
   position: relative;

@@ -4,7 +4,7 @@ var data = {
     {
       "welcomeIntro": "Welcome to",
       "welcomeHsptlText": 
-          "Hospital & Medical Supplies Expo",
+          "Dry Fruits Mela",
        "enterExpoButton":"Enter Expo",
        "Avthartext":"Choose Your Avatar",
        "continuetext":"Continue",
