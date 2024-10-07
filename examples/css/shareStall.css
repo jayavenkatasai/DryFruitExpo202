@@ -1,0 +1,2113 @@
+/* loading start */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* body {
+        background-image: url("assets/background_images/Group.png");
+        background-position: center;
+        background-size: cover;
+        font-size: 100%;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      } */
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* chat slide */
+.slideText {
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: #f65927;
+  color: #fff;
+  position: absolute;
+  z-index: 99999;
+  right: 10px;
+  top: 10px;
+  display: none;
+}
+/* chat slide */
+.heart-rate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.tooltipthree a {
+  text-decoration: none !important;
+}
+/* .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("assets/background_images/digitalIntroImg.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 99;
+} */
+
+/* end of the loading */
+/* 
+           
+.loading-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(255, 255, 255, 0.8);
+ z-index: 1000;
+ visibility: visible;
+}
+
+.loading-container p {
+ margin-top: 12%;
+ font-size: 16px;
+ color: #333;
+ visibility: visible;
+} */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 10000;
+  visibility: visible;
+  overflow: hidden !important;
+}
+
+.loading-container img {
+  width: 200px; /* Adjust this value to your desired width */
+  height: 200px; /* Adjust this value to your desired height */
+}
+
+.loading-container p {
+  margin-top: 12px; /* Adjust this value to your desired margin */
+  font-size: 16px;
+  color: #333;
+  visibility: visible;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+/* bottom buttons styling starts here */
+.whiteCloseIcon img {
+  width: 30px;
+  height: 30px;
+}
+#icon1 {
+	display: none;
+}
+
+.tooltipone,
+.tooltiptwo,
+.tooltipthree,
+.tooltipChat,
+.tooltiphelpmobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mapbutton1 {
+  /* position: fixed;
+    top: 50%;
+    left: 8px; */
+  display: none;
+}
+#mapbutton1 {
+  /* position: fixed;
+    top: 50%;
+    left: 8px; */
+  display: none;
+}
+#mapbutton1 {
+  margin-left: -20px;
+  position: fixed;
+  left: 10%;
+  top: 49%;
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 1300px) {
+  #mapText {
+    width: 90%;
+  }
+  #mapbutton2 {
+    right: 2.5%;
+  }
+}
+/* #overLaySection{
+position: absolute;
+z-index: 99999;
+width: 100%;
+height: 100vh;
+background-color: rgba(0,0,0,0.8);
+display:none;
+justify-content: center;
+align-items: center;
+} */
+/* .mblMapIcon,.mblInfoIcon,.mblExitImg,.mblShare{
+    display:none;
+}
+.tooltipone:hover .desktopMapIcon, .tooltiptwo:hover  .desktopInfoIcon, .tooltipthree:hover  .desktopExitImg,.tooltipFour:hover .desktopShare{
+    display: none;
+}
+.tooltipone:hover .mblMapIcon, .tooltiptwo:hover .mblInfoIcon, .tooltipthree:hover .mblExitImg,.tooltipFour:hover .mblShare{
+    display:block;
+} */
+.tooltipFour {
+  display: none;
+}
+.tooltipone{
+  display: none;
+}
+/* .tooltipone {
+    display: flex;
+    align-items: center;
+} */
+#hallButtonsContents {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+.tooltipone,
+.tooltiptwo,
+.tooltipthree,
+.tooltipChat,
+.tooltiphelpmobile {
+  position: relative;
+  cursor: pointer;
+}
+/* 
+.tooltipone::before {
+
+position: absolute;
+
+content: 'Category map';
+
+font-size: 15px;
+
+color: #fff;
+
+background-color: #363636;
+
+z-index: 999;
+
+top: -7px;
+
+left: -135px;
+
+padding: 10px;
+
+display: none;
+
+}
+.tooltiptwo::before {
+
+position: absolute;
+
+content: 'Expo directory';
+
+font-size: 15px;
+
+color: #fff;
+
+background-color: #363636;
+
+z-index: 999;
+
+top: -59px;
+
+left: -35px;
+
+padding: 10px;
+
+display: none;
+
+width: 100px;
+
+}
+.tooltipthree::before {
+   position: absolute;
+   content: 'Lobby';
+   font-size: 15px;
+   color: #fff;
+   background-color: #363636;
+   z-index: 999;
+   padding: 10px;
+   display: none;
+   right: -83px;
+}
+.tooltiptwo::after{
+   position: absolute;
+   content: '';
+   border: 8px solid #363636;
+   z-index: 99;
+   left: 11px;
+   transform: rotate(44deg);
+   top: -32px;
+   display: none;
+}
+.tooltipone::after {
+   position: absolute;
+   content: '';
+   border: 8px solid #363636;
+   z-index: 99;
+   left: -31px;
+   transform: rotate(44deg);
+   top: 3px;
+   display: none;
+}
+.tooltipthree::after {
+   position: absolute;
+   content: '';
+   border: 8px solid #363636;
+   z-index: 99;
+   transform: rotate(44deg);
+   top: 11px;
+   display: none;
+   right: -35px;
+}
+.tooltipone:hover::before,
+.tooltipone:hover::after,
+.tooltiptwo:hover::before,
+.tooltiptwo:hover::after,
+.tooltipthree:hover::before,
+.tooltipthree:hover::after{
+   display: block!important;
+} */
+iframe {
+  border: none;
+  border-radius: 5px;
+}
+.tooltipone,
+.tooltiptwo,
+.tooltipthree,
+.tooltipfour {
+  height: 40px;
+}
+.labelText {
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+#hallButtons {
+  border-radius: 6px;
+  background: #8c024b;
+  display: flex !important;
+  align-items: center;
+  gap: 26px;
+  padding: 12px 12px 25px 12px;
+  position: absolute;
+  z-index: 9998;
+
+  margin-bottom: 30px;
+  bottom: 0;
+}
+.mblchatDisplay {
+  border-radius: 6px;
+  background: #8c024b;
+  display: none;
+  align-items: center;
+  gap: 26px;
+  padding: 12px 12px 25px 12px;
+  position: absolute;
+  z-index: 9997;
+  margin-bottom: 30px;
+  bottom: 0;
+  margin-right: -65px;
+  min-height: 82px;
+}
+
+.mblhelpicondisplay {
+  border-radius: 6px;
+  background: #8c024b;
+  display: none;
+  align-items: center;
+  gap: 26px;
+  padding: 12px 12px 25px 12px;
+  position: absolute;
+  z-index: 9999;
+  margin-bottom: 30px;
+  bottom: 0;
+  min-height: 82px;
+  margin-right: 310px;
+}
+
+.mblchatDisplay {
+  margin-left: 251px;
+}
+.tooltipthree a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* bottom buttons styling ends here */
+#iframe-container {
+  position: fixed;
+  z-index: 9999;
+  top: 150px;
+  left: 20px;
+  display: none;
+  width: 100px;
+  height: 200px;
+}
+#mapSection {
+  position: relative;
+  z-index: 9999;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 1090px) {
+  .card {
+    width: 30% !important;
+  }
+  #mapbutton2 {
+    right: 1.5%;
+    top: 49%;
+  }
+  #mapbutton1 {
+    top: 49%;
+  }
+  .iframeImg {
+    max-width: 25px;
+  }
+  #closeIcon img {
+    max-width: 25px;
+    cursor: pointer;
+  }
+  #mapText {
+    height: 79%;
+    overflow-y: scroll;
+    position: absolute;
+    top: -4%;
+  }
+  #closeIcon {
+    position: absolute;
+    right: 4%;
+    cursor: pointer;
+  }
+  #pagination {
+    position: fixed;
+    left: 4px;
+    width: 99%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #mapText {
+    width: 90%;
+  }
+  #mapbutton2 {
+    right: 2.5%;
+  }
+}
+.mapSectionlass {
+  display: none !important;
+}
+.mapSectionlass.activeOne {
+  display: flex !important;
+}
+#pagination {
+  position: relative;
+  width: 100%;
+}
+#mapText {
+  width: 80%;
+  position: relative;
+}
+#pagination #button1 {
+  margin-left: -20px;
+}
+#pagination #button2 {
+  margin-right: -20px;
+}
+#mapText {
+  background-color: #faeff4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 35px 15px 35px 15px;
+  gap: 15px;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.switch {
+  background-color: #faeff4;
+  color: #3c2b25;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  right: 10px;
+  top: 5px;
+  display: none;
+}
+#stick img {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  display: block;
+  pointer-events: auto;
+  right: 10px;
+  bottom: 22px;
+  z-index: 99;
+}
+#iframe-url {
+  position: fixed;
+  z-index: 999;
+  top: 150px;
+  left: 20px;
+  display: none;
+  width: 500px;
+  height: 500px;
+  border: 0px;
+}
+.productName {
+  color: #5a463f;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 0 3px 0;
+}
+.productDescription {
+  color: #5a463f;
+  font-size: 16px;
+  font-weight: 500;
+}
+.productPrice {
+  color: #585858;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 0 20px 0;
+}
+.productButtons a {
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 9px 17px;
+  text-decoration: none;
+}
+.visitButton {
+  color: #fff;
+  background: #8c024b;
+  border: 1px solid #8c024b;
+}
+.shareButton {
+  color: #8c024b;
+  border: 1px solid #8c024b;
+  cursor: pointer;
+}
+.productButtons {
+  gap: 10px;
+}
+.digitalPopUpContents {
+  border-radius: 10px;
+  background: #faeff4;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 35px 20px;
+  position: relative;
+}
+.closeImg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.productDetailsSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.productImg {
+  height: 230px;
+  width: 230px;
+  object-fit: contain;
+}
+.digitalPopUp {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 1470px) {
+  #chat-ui-room {
+    height: 400px !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .tooltipone,
+  .tooltiptwo,
+  .tooltipthree,
+  .tooltipfour,
+  .tooltipChat,
+  .tooltiphelpmobile {
+    height: 27px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .indidualChatIcons a {
+    display: flex !important;
+  }
+  #chat-ui-room,
+  #chat-ui-room2 {
+    top: 0;
+    bottom: unset;
+  }
+  .visitorMsgIcons a {
+    display: flex !important;
+  }
+  .mapIcon {
+    width: 28px;
+  }
+  #totalIframe {
+    align-items: unset !important;
+  }
+  .mblchatDisplay,
+  .mblhelpicondisplay {
+    display: flex !important;
+  }
+  #Help-icon {
+    display: none !important;
+  }
+  #chat-icon123 {
+    display: none;
+  }
+  #chat-ui-room,
+  #chat-ui-room2 {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .infoIcon,
+  .chatIcon {
+    width: 27px;
+  }
+  .tooltipthree a img {
+    width: 27px;
+  }
+  #hallButtons,
+  .mblchatDisplay,
+  .mblhelpicondisplay {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .tooltipone:hover::before,
+  .tooltipone:hover::after,
+  .tooltiptwo:hover::before,
+  .tooltiptwo:hover::after,
+  .tooltipthree:hover::before,
+  .tooltipthree:hover::after {
+    display: none !important;
+  }
+  .iframetagContent.active {
+    width: 98%;
+  }
+  #iframe-expoDir {
+    height: 91vh;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .tooltipone::before {
+    top: -7px;
+
+    left: -135px;
+  }
+  .tooltiptwo::before {
+    top: -7px;
+
+    left: -140px;
+  }
+  .tooltipthree::before {
+    right: 44px;
+  }
+  .tooltipone::after,
+  .tooltiptwo::after {
+    left: -31px;
+    top: 3px;
+  }
+  .tooltipthree::after {
+    right: 41px;
+  }
+  .categoryHalls {
+    padding: 9px !important;
+  }
+  .anchorToggleButton {
+    font-size: 14px;
+  }
+}
+.iframetag {
+  height: 100%;
+}
+#totalIframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iframetagContent {
+  position: relative;
+  z-index: 9999;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.iframetagContent {
+  display: none;
+}
+.iframetagContent.active {
+  display: flex;
+}
+.iframeImg {
+  position: absolute;
+  top: 20px;
+  right: 2%;
+  max-width: 31px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .productImg {
+    height: 150px;
+    width: 150px;
+  }
+  .productButtons {
+    display: flex;
+    flex-direction: column;
+  }
+  .productButtons a {
+    max-width: 120px;
+    text-align: center;
+    font-size: 12px;
+    padding: 7px 5px;
+  }
+  .productName,
+  .productPrice {
+    font-size: 16px;
+  }
+  .productPrice {
+    padding: 10px 0 10px 0;
+  }
+  .productDescription {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .productDetailsSection {
+    flex-direction: column;
+  }
+}
+.visitProductButton {
+  color: #121212;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 9px 17px;
+  border-radius: 5px;
+  background: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popUpContents {
+  border-radius: 10px;
+  background: #7e90a2;
+  max-width: 570px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 45px 30px;
+  position: relative;
+  display: flex;
+  gap: 15px;
+}
+
+#popup {
+  height: 100vh;
+
+  width: 100%;
+
+  display: none;
+
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.1);
+
+  position: absolute;
+
+  z-index: 9999;
+
+  top: 0;
+}
+.closeIcon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  max-width: 30px;
+  z-index: 9999;
+}
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.productImg {
+  height: 240px;
+  width: 240px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+#popup-overlay {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup-card {
+  border-radius: 10px;
+  background: #faeff4;
+  position: relative;
+  z-index: 999;
+  max-width: 450px;
+  width: 100%;
+}
+.inviteText {
+  color: #5a463f;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 40px 0 28px 0;
+  margin: 0;
+}
+#urlText {
+  color: #5a463f;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+.copySection {
+  width: 85%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+.global {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.copyButtonSection {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #363636;
+}
+.whiteCloseIcon {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  cursor: pointer;
+}
+
+#copyButton {
+  z-index: 999;
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #8c024b;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#showPopupButton {
+  z-index: 9999;
+  position: relative;
+}
+#currentURL {
+  /* width: 100%; */
+  padding: 10px 12px 10px 35px;
+  color: #5a463f;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: lowercase;
+  border-radius: 5px;
+  border: transparent;
+  background: #fff;
+  /* max-width: 329px; */
+  width: 280px;
+}
+#currentURL:focus {
+  outline: none;
+}
+.copyButtonSection {
+  position: relative;
+  display: flex;
+}
+@media only screen and (max-width: 500px) {
+  .whiteCloseIcon img {
+    width: 25px;
+    height: 25px;
+  }
+  .copySection {
+    width: 95% !important;
+  }
+  #currentURL {
+    width: 230px !important;
+  }
+  #copyButton {
+    top: 9px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .productImg {
+    height: 150px;
+    width: 150px;
+  }
+  .productName,
+  .productPrice {
+    font-size: 22px;
+    padding-bottom: 5px;
+  }
+  .price {
+    font-size: 18px;
+  }
+  .visitProductButton {
+    font-size: 14px;
+  }
+  .popUpContents {
+    max-width: 380px;
+  }
+  .closeIcon {
+    max-width: 21px;
+  }
+}
+@media only screen and (max-width: 452px) {
+  .productImg {
+    height: 120px;
+    width: 120px;
+  }
+  .productName,
+  .productPrice {
+    font-size: 18px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .popUpContents {
+    padding: 30px 15px;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .card {
+    width: 30% !important;
+  }
+  #mapbutton2 {
+    right: 1.5%;
+    top: 49%;
+  }
+  #mapbutton1 {
+    top: 49%;
+  }
+  .iframeImg {
+    max-width: 25px;
+  }
+  #closeIcon img {
+    max-width: 25px;
+  }
+  #mapText {
+    height: 79%;
+    overflow-y: scroll;
+    position: absolute;
+    top: -4%;
+  }
+  #closeIcon {
+    position: fixed;
+    right: 4%;
+  }
+  #pagination {
+    position: fixed;
+    left: 4px;
+    width: 99%;
+  }
+}
+@media only screen and (max-width: 1090px) {
+  .card {
+    width: 30% !important;
+  }
+  #mapbutton2 {
+    right: 1.5%;
+    top: 49%;
+  }
+  #mapbutton1 {
+    top: 49%;
+  }
+  .iframeImg {
+    max-width: 25px;
+  }
+  #closeIcon img {
+    max-width: 25px;
+  }
+  #mapText {
+    height: 79%;
+    overflow-y: scroll;
+    position: absolute;
+    top: -4%;
+  }
+  #closeIcon {
+    position: absolute;
+    right: 4%;
+  }
+  #pagination {
+    position: fixed;
+    left: 4px;
+    width: 99%;
+  }
+}
+#mapbutton2 {
+  position: fixed;
+  top: 49%;
+  right: 8.5%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 550px) {
+  #mapbutton2 {
+    right: 0px !important;
+  }
+}
+#Backbtn {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border-radius: 5px;
+  border: 1px solid #5e5e5e;
+  /* margin: 5px; */
+  width: 18% !important;
+  justify-content: space-between;
+}
+#mapText {
+  background: #faeff4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 35px 15px 35px 15px;
+  gap: 15px;
+  justify-content: center;
+  border-radius: 10px;
+}
+.card h3 {
+  font-family: 'Nunito', sans-serif;
+  /* overflow: hidden !important;
+	text-overflow: ellipsis; */
+  width: 100%;
+  /* white-space: nowrap; */
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+.dropdownSection {
+  display: flex;
+  gap: 5px;
+}
+#closeIcon {
+  background: none;
+  border: none;
+}
+.card button {
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: #8c024b;
+  color: #fff;
+  width: 100%;
+  max-width: 155px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
+@media only screen and (max-width: 1090px) {
+  .card {
+    width: 30% !important;
+  }
+}
+
+#fullscreenButton {
+  z-index: 97;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  border-radius: 4px;
+  background-color: #faeff4;
+  color: #3c2b25;
+  font-family: Roboto;
+  cursor: pointer;
+}
+
+#nextbutton {
+  z-index: 99999;
+  position: relative;
+  top: 5%;
+  left: 5%;
+  border-radius: 4px;
+  background-color: rgba(0, 128, 191, 0.5);
+  color: #fff;
+  font-family: Roboto;
+  cursor: pointer;
+}
+#chat-icon123 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* Ensure the icon is above other content */
+  cursor: pointer;
+}
+
+#overLaySection {
+  position: absolute;
+  z-index: 97;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#overallOverLay {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#overLayContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f8f8;
+  font-family: roboto;
+}
+#orientationScreen {
+  display: none;
+}
+.orientationScreenContents {
+  height: 100%;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 99999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.orientationScreenContents h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  .mblExpoFrame {
+    display: block;
+  }
+  #mapbutton1 {
+    left: 10%;
+  }
+  #mapbutton2 {
+    right: 0;
+    left: 88%;
+  }
+  .desktopExpoFrame {
+    display: none;
+  }
+  .productImg {
+    height: 150px;
+    width: 150px;
+  }
+  .webinarAndExpocardContents {
+    max-width: 276px;
+  }
+  /* .mblExpoFrame {
+            height: 200px;
+            object-fit: contain;
+        } */
+  /* #orientationScreen {
+      display: none ;
+    } */
+}
+#instruction-pannel {
+  display: flex;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Adjust z-index as needed */
+}
+
+#instructionimg {
+  display: block;
+  max-width: 100%;
+  max-height: 75%; /* Ensure image doesn't exceed container height */
+  object-fit: contain; /* Maintain aspect ratio while fitting within container */
+}
+
+#closeiconimgipp {
+  align-self: flex-start;
+  margin-top: 7px;
+  /* margin-right: -17px; */
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+}
+
+#chat-ui-room {
+  position: fixed;
+  display: none;
+  /* top: 0; */
+  right: 0;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  border: none;
+  z-index: 9999;
+  bottom: 135px;
+}
+
+#chatui {
+  width: 100%;
+  height: 100%;
+}
+
+#chat-ui-room2 {
+  position: fixed;
+  display: none;
+  /* top: 0; */
+  right: 0;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  border: none;
+  bottom: 135px;
+  z-index: 10000; /* Adjust z-index as needed */
+}
+
+#chatui2 {
+  width: 100%;
+  height: 100%;
+}
+.visitorChatClose {
+  cursor: pointer;
+}
+.visitorMsgIcons {
+  position: absolute;
+  top: 32px;
+  right: 33px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.visitorMsgIcons a {
+  display: none;
+}
+
+.indidualChatIcons {
+  position: absolute;
+  top: 17px;
+  right: 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.individualChatClose {
+  cursor: pointer;
+}
+.indidualChatIcons a {
+  display: none;
+}
+#url-copied-alert-txt {
+  display: none;
+}
+
+/* webinar popup css */
+.joinText {
+  color: #464646;
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+.sessionText {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  background: #f65927;
+  padding: 8px 17px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+}
+#closeIcon {
+  cursor: pointer;
+}
+.webinarPopUpFlex {
+  max-width: 320px;
+  width: 100%;
+  padding: 30px 0;
+  position: relative;
+  z-index: 999;
+  border-radius: 10px;
+  background: #faeff4;
+}
+.webinarPopUpContents {
+  text-align: center;
+}
+.webinarPopUp {
+  display: none;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.webinarClose {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 10px;
+}
+/* webinar popup ends */
+
+.rotateText {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin: 20px;
+}
+.rotateTextcontents {
+  position: relative;
+  z-index: 9999;
+  background-color: #f65927;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  max-width: 200px;
+  text-align: center;
+  justify-content: center;
+  padding: 0 10px;
+  left: -2%;
+}
+.notification {
+  position: absolute;
+  background-color: #f65927;
+  width: 30px;
+  height: 30px;
+  z-index: 9999;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+#chat-icon123 {
+  display: flex;
+  justify-content: end;
+}
+.tooltipChat,
+.tooltiphelpmobile {
+  position: relative;
+}
+.smallScreenChatNotification {
+  position: absolute;
+  background-color: #f65927;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  height: 20px;
+  width: 20px;
+  top: -7px;
+  right: -10px;
+}
+.gifImg {
+  max-width: 35px;
+}
+.rotateClose {
+  cursor: pointer;
+  width: 20px;
+}
+#overallOverLayinst {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 999;
+  background-color: rgba(18, 18, 18, 0.5);
+  display: none;
+  gap: 10px;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+#overallOverLayinst p {
+  max-width: 500px;
+  /* margin: auto; */
+  color: #fff;
+}
+
+#overallOverLayinst img {
+  max-width: 500px;
+  /* margin: auto; */
+}
+.instclose {
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  text-align: center;
+  padding: 2px;
+  font-size: 18px;
+  width: 30px;
+}
+
+/* new css for the help icon and its data */
+
+#help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+}
+
+#help-main-popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 34px;
+  background: #2a2525;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.popup-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.popup-content {
+  flex: 1;
+  padding: 10px;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  position: relative;
+  max-width: calc(50% - 20px);
+}
+
+.help-close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.popup-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.key-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.key-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #000000;
+  border-bottom-width: 3px;
+  padding: 0.5rem 0.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.help-instruction-text {
+  margin: 0;
+  font-size: 1.125rem;
+  /* font-weight: bold; */
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.popup-inner img {
+  margin-right: 1rem;
+}
+#mapText .card img {
+  width: 90% !important;
+  height: 100px !important;
+  margin: 0 auto;
+  object-fit: cover;
+}
+/* Responsive media queries for landscape mode */
+@media (max-width: 768px) and (orientation: landscape) {
+  #main-popup {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .popup-content {
+    flex: 1;
+    padding: 10px;
+    max-width: calc(50% - 10px);
+    box-sizing: border-box;
+  }
+
+  .popup-row {
+    gap: 10px;
+  }
+
+  .popup-inner {
+    flex-direction: column;
+    text-align: center;
+    width: 282px;
+  }
+
+  .key {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .help-instruction-text {
+    font-size: 1rem;
+  }
+}
+
+/* Further responsiveness for very small mobile screens */
+@media (max-width: 480px) {
+  .popup-content {
+    max-width: 100%;
+  }
+
+  .popup-row {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .modal-contentt {
+    margin: 20px auto 0 auto !important;
+    top: 10% !important;
+    max-width: 60% !important;
+    height: 54% !important;
+  }
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between !important;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: flex-end; */
+    /* align-self: self-end; */
+    /* margin-top: 32px; */
+    position: absolute;
+    bottom: 6px;
+    width: 100% !important;
+    gap: 15px;
+    top: 0 !important;
+  }
+  #prevBtn {
+    position: relative;
+    left: -30px !important;
+    background-color: transparent !important;
+  }
+  #nextBtn {
+    position: relative;
+    right: -30px !important;
+    background-color: transparent !important;
+  }
+  .nav-buttons button {
+    background-color: #299941;
+    color: white;
+    padding: 0px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .instimagenav {
+    display: block !important;
+  }
+  .instnavtext {
+    display: none;
+  }
+  .nav-buttons {
+    background: none !important;
+    border: none !important;
+  }
+  .nav-buttons button:disabled {
+    background: none;
+    cursor: not-allowed;
+  }
+  .nav-buttons button:disabled ~ #previmgnav {
+    display: none;
+  }
+}
+
+/* end of help icon and userguide */
+
+/* SECOND VERSION USERGUIDE START */
+
+.open-guide-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.icons-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999; /* Ensure icons are on top of the overlay */
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 30px;
+  margin: 10px;
+  color: gray;
+  transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+
+/* Highlighted icon styles */
+
+.icon.highlighted {
+  position: relative;
+}
+/* .icon.highlighted::before {
+	position: absolute;
+	content: '';
+	color: #007bff;
+	background-color: none;
+	border: 2px solid #007bff;
+	outline: 3px solid white;
+	padding: 7px;
+	height: 66px;
+	width: 56px;
+	top: -5px;
+} */
+.chatint.icon.highlighted::before {
+  height: 100% !important;
+  width: 100% !important;
+}
+.modal {
+  display: none;
+  position: fixed;
+
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-contentt {
+  position: relative;
+
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  max-width: 50%;
+  height: 52%;
+  animation: slideIn 0.5s ease;
+  justify-content: center;
+  padding: 20px;
+  margin: auto;
+  align-items: center;
+  top: 20%;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.instruction {
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.instruction.active {
+  /* display: block;
+  opacity: 1; */
+  display: flex;
+  opacity: 1;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0 auto;
+}
+
+.instruction-count {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 7px;
+}
+
+.nav-buttons {
+  display: flex;
+
+  justify-content: space-between;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* align-items: flex-end; */
+  /* align-self: self-end; */
+  /* margin-top: 32px; */
+  position: absolute;
+  bottom: 6px;
+  width: 88%;
+  gap: 15px;
+}
+
+.nav-buttons button {
+  background-color: #8c024b;
+  color: white;
+  padding: 6px 16px 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #8c024b;
+}
+
+.nav-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.sub-instruction {
+  /* display: flex; */
+  text-align: left;
+  margin: 25px 40px;
+  width: 50%;
+}
+
+.sub-instruction > h5 {
+  font-size: 30px;
+  margin: auto;
+  text-align: left;
+}
+
+.instruction > img {
+  width: 50%;
+  margin: 10px 25px;
+}
+/* .guideclose{
+  border: 3px solid #8c024b; 
+    float: right; 
+    font-size: .8rem;
+    font-weight: 800; 
+    line-height: 1;
+    color: #8c024b;
+   text-shadow: 0 1px 0 #fff;
+   opacity: .5; 
+    display: flex; 
+   align-items: center; 
+    justify-content: center; 
+   border-radius: 50%;
+    padding: 7px;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    cursor: pointer;
+} */
+.guideclose {
+  float: right;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1;
+  color: black;
+
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: underline;
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* SECOND VERSION USERGUIDE END */
+
+/* modal-content {
+  position: relative;
+  
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  outline: 0;
+  max-width: 90%;
+  height: 76%;
+  animation: slideIn 0.5s ease;
+    justify-content: center;
+    padding: 20px;
+} */
+
+.instimagenav {
+  display: none;
+}
+.modal-content.modal-dialog-centered {
+  width: 60%;
+  height: 60%;
+  min-height: calc(100% - 9.5rem);
+  margin: 10px auto;
+  justify-content: center;
+}
+.icon {
+  opacity: 1;
+}
+.initial_guide .icon {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+.initial_guide .icon.highlighted {
+  opacity: 1;
+  font-weight: 600;
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+#chat-icon123 {
+  opacity: 1;
+}
+#chat-icon123.initial_guide {
+  opacity: 0.3;
+}
+#chat-icon123.initial_guide.highlighted {
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #guideModal.modal {
+    z-index: 999;
+  }
+  #guideModal .modal-content {
+    width: 96%;
+    height: 96%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  #hallButtons {
+    height: 50px;
+    padding: 0px;
+  }
+  .tooltipone,
+  .tooltiptwo,
+  .tooltipthree,
+  .tooltipfour,
+  .tooltipChat,
+  .tooltiphelpmobile {
+    height: auto;
+  }
+  .mapIcon,
+  .infoIcon,
+  .chatIcon,
+  .tooltipthree a img {
+    width: 20px;
+  }
+  .labelText {
+    margin-bottom: 5px !important;
+  }
+  .icon {
+    font-size: 14px;
+    margin: 5px 5px 0px;
+  }
+  #hallButtons,
+  .mblchatDisplay,
+  .mblhelpicondisplay {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .tooltipthree a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mblchatDisplay {
+    margin-left: 200px;
+  }
+  .mblchatDisplay {
+    border-radius: 6px;
+    background: #8c024b;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 9997;
+    margin-bottom: 10px;
+    bottom: 0;
+    margin-right: -20px;
+    min-height: 50px;
+  }
+  #mblhelpicon {
+    display: Flex !important;
+    margin-right: 229px;
+    min-height: 50px;
+    bottom: 0;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 99;
+    margin-bottom: 10px;
+    /* margin-right: 229px;
+        min-height: 50px;
+        bottom: 0;
+        align-items: center;
+        gap: 5px;
+        padding: 0px 5px;
+        position: absolute;
+        z-index: 9999;
+        margin-bottom: 10px; */
+    /* display: none !important; */
+  }
+  .instruction-count {
+    /* top: -368px; */
+    top: -352px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #mblhelpicon {
+    display: Flex !important;
+    margin-right: 229px;
+    min-height: 50px;
+    bottom: 0;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 99;
+    margin-bottom: 10px;
+  }
+  #guideModal.modal {
+    z-index: 999;
+  }
+  #guideModal .modal-content {
+    width: 96%;
+    height: 96%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+
+  #hallButtons {
+    height: 50px;
+    padding: 0px;
+  }
+  .tooltipone,
+  .tooltiptwo,
+  .tooltipthree,
+  .tooltipfour,
+  .tooltipChat,
+  .tooltiphelpmobile {
+    height: auto;
+  }
+  .mapIcon,
+  .infoIcon,
+  .chatIcon,
+  .tooltipthree a img {
+    width: 20px;
+  }
+  .labelText {
+    margin-bottom: 5px !important;
+  }
+  .icon {
+    font-size: 14px;
+    margin: 5px 5px 0px;
+  }
+  #hallButtons,
+  .mblchatDisplay,
+  .mblhelpicondisplay {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .tooltipthree a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mblchatDisplay {
+    margin-left: 200px;
+  }
+  .mblchatDisplay {
+    border-radius: 6px;
+    background: #8c024b;
+    display: none;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    z-index: 9997;
+    margin-bottom: 10px;
+    bottom: 0;
+    margin-right: -20px;
+    min-height: 50px;
+  }
+  .instruction-count {
+    top: -368px;
+  }
+}
+
+.dropdown-menu.show {
+  display: block;
+  height: 175px;
+  overflow: scroll;
+  min-width: unset !important;
+}

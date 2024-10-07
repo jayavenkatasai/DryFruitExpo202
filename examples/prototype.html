@@ -540,7 +540,7 @@
     <div id="iframe-container">
       <iframe id="iframe-url" src=""></iframe>
     </div>
-     <button class="switch">Switch To 2D</button> 
+     <!-- <button class="switch">Switch To 2D</button>  -->
     <!-- js files -->
 
     <script src="js/translatorjs/halltranslator.js"></script>
@@ -3295,7 +3295,7 @@ autoNextInstruction();
 }
 function modelLoadedHandler() {
   // After the model is loaded, hide the loading icon
-  setTimeout(hideLoadingIcon, 5000);
+  setTimeout(hideLoadingIcon, 3000);
 }
   document.getElementById('hall1').addEventListener('model-loaded', modelLoadedHandler);
 
@@ -3441,10 +3441,10 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
 </script> -->
   </body>
   <script>
-    document.querySelector('.switch').addEventListener('click',function(){
-      var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
-    window.location.href = lowpolylink
+    // document.querySelector('.switch').addEventListener('click',function(){
+    //   var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
+    // window.location.href = lowpolylink
  
-    })
+    // })
   </script>
 </html>
