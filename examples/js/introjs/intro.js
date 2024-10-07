@@ -117,9 +117,9 @@ var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
                     //throw new Error('Network response was not ok');
                     // need to add to error log
                  
-                    window.location.href="categorymapdynmic.html"
+                    window.location.href="prototype.html?category=QWdyaSBQcmFjdGljZXMgYW5kIFN5c3RlbXM="
                 }else{
-                    window.location.href="categorymapdynmic.html"
+                    window.location.href="prototype.html?category=QWdyaSBQcmFjdGljZXMgYW5kIFN5c3RlbXM="
                  
                 }
             })

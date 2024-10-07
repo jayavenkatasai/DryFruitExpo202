@@ -20,6 +20,7 @@
     <link rel="preload" href="assets/loading/tenor.gif" as="image">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="/dist/networked-aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -324,7 +325,16 @@
 
     <!-- start of loading icon -->
     <div class="loading-container" id="loading-cnt">
-      <img src="assets/loading/tenor.gif" alt="Loading GIF" />
+   
+<lottie-player 
+src="assets/loading/loader for expo.json" 
+background="transparent" 
+speed="1" 
+style="width: 300px; height: 300px;" 
+direction="1" 
+mode="normal" 
+autoplay>
+</lottie-player>
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
     <!-- <div id="instruction-pannel">
@@ -639,7 +649,7 @@
         <!-- camera end -->
         <!-- category name board -->
 
-        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable">
+        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable" visible="false">
           <a-plane id="category-name-board" position="0 2 -6.8" color="#8c024b" height="0.9" width="1.8">
             <a-text
               id="board-name"
@@ -879,10 +889,10 @@
             id="vendorbusinessname1"
             value="Medical Manufacturing Technologies"
             font="#NovaFont"
-            color="black"
+            color="white"
             scale="2.5 2.5 2.5"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6" >
@@ -1081,11 +1091,11 @@
           <a-troika-text
             id="vendorbusinessname2"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
              scale="2.5 2.5 2.5"
             font="#NovaFont"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
@@ -1281,11 +1291,11 @@
           <a-troika-text
             id="vendorbusinessname3"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             font="#NovaFont"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
@@ -1483,11 +1493,11 @@
           <a-troika-text
             id="vendorbusinessname4"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             font="#NovaFont"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
@@ -1683,10 +1693,10 @@
           <a-troika-text
             id="vendorbusinessname5"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             font="#NovaFont"
             rotation="0 90 0"
           ></a-troika-text>
@@ -1880,10 +1890,10 @@
             id="vendorbusinessname6"
             value="Medical Manufacturing Technologies"
             font="#NovaFont"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
@@ -2078,11 +2088,11 @@
           <a-troika-text
             id="vendorbusinessname7"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
             font="#NovaFont"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
           ></a-troika-text>
           <a-entity  position="4 6.4 -7.2" rotation="0 90 0" width="2.3" height="0.6">
@@ -2279,10 +2289,10 @@
           <a-troika-text
             id="vendorbusinessname8"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             font="#NovaFont"
             rotation="0 90 0"
           ></a-troika-text>
@@ -2479,10 +2489,10 @@
           <a-troika-text
             id="vendorbusinessname9"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
             font="#NovaFont"
           ></a-troika-text>
@@ -2677,10 +2687,10 @@
           <a-troika-text
             id="vendorbusinessname10"
             value="Medical Manufacturing Technologies"
-            color="black"
+            color="white"
             scale="2 2 2"
             align="center"
-            position="4.5 8.5 1"
+            position="4.5 8.282 1"
             rotation="0 90 0"
             font="#NovaFont"
           ></a-troika-text>

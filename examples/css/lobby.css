@@ -79,8 +79,8 @@
 }
 
 .loading-container img {
-  width: 100px; /* Adjust this value to your desired width */
-  height: 100px; /* Adjust this value to your desired height */
+  width: 200px; /* Adjust this value to your desired width */
+  height: 200px; /* Adjust this value to your desired height */
 }
 
 .loading-container p {
