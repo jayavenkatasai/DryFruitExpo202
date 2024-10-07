@@ -243,13 +243,13 @@
         <img id ="walkinstructionnimg2"src="assets/Instructions/holdanddragfeature.png">
       </div>
       
-       <div class="instruction" id="instruction3">
+       <!-- <div class="instruction" id="instruction3">
       <div class="sub-instruction">
         <h5 id="categoryMapTitle">Category Map</h5>
         <p id="categoryMapText">Click here to view all the Categories in the Agri Expo.</p>
       </div>
       <img src="assets/Instructions/categorymapfeature.png">
-    </div>
+    </div> -->
 
     <div class="instruction" id="instruction4">
       <div class="sub-instruction">
@@ -649,7 +649,7 @@ autoplay>
         <!-- camera end -->
         <!-- category name board -->
 
-        <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable" visible="false">
+        <!-- <a-entity id="board" gltf-model="#display-board" position="0 0 19" scale="2 2 2" open-link="href:#destination1" class="clickable" visible="false">
           <a-plane id="category-name-board" position="0 2 -6.8" color="#8c024b" height="0.9" width="1.8">
             <a-text
               id="board-name"
@@ -684,7 +684,7 @@ autoplay>
               ></a-text>
             </a-image>
           </a-plane>
-        </a-entity>
+        </a-entity> -->
         <!-- category name board end -->
         <a-entity id="ban" gltf-model="#banner" position="0 1 10"></a-entity>
         <a-entity id="five-hall"  visible="false" position="0 15 0"></a-entity>
@@ -771,7 +771,7 @@ autoplay>
               height="0.910"
               id="vendorlogo21"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-entity id="txt1" rotation="0 90 0" scale="1 1 1" position="6 2 14.25" visible="false">
@@ -963,7 +963,7 @@ autoplay>
               height="0.910"
               id="vendorlogo22"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -1163,7 +1163,7 @@ autoplay>
               height="0.910"
               id="vendorlogo23"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -1365,7 +1365,7 @@ autoplay>
               height="0.910"
               id="vendorlogo24"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -1566,7 +1566,7 @@ autoplay>
               height="0.910"
               id="vendorlogo25"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -1765,7 +1765,7 @@ autoplay>
               height="0.910"
               id="vendorlogo26"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -1961,7 +1961,7 @@ autoplay>
               height="0.910"
               id="vendorlogo27"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -2162,7 +2162,7 @@ autoplay>
               height="0.910"
               id="vendorlogo28"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -2362,7 +2362,7 @@ autoplay>
               height="0.910"
               id="vendorlogo29"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -2561,7 +2561,7 @@ autoplay>
               height="0.910"
               id="vendorlogo210"
               rotation="0 0 0"
-              position="0 2.152 0.05"
+              position="0 2.152 0.1"
             ></a-plane>
           </a-entity>
           <a-plane
@@ -2759,7 +2759,7 @@ autoplay>
           visible="true"
           side="double"
         >
-          <a-text value="Next Hall" align="center" height="10" width="10" color="white" position="0 0 0.01"></a-text>
+          <a-text value="Next Hall" align="center" height="13" width="13" color="white" position="0 0 0.1"></a-text>
         </a-plane>
         <a-plane
           color="#8c024b"
@@ -2771,7 +2771,7 @@ autoplay>
           visible="true"
           side="double"
         >
-          <a-text value="Previous Hall" align="center" height="9" width="9" color="white" position="0 0 0.01"></a-text>
+          <a-text value="Previous Hall" align="center" height="9" width="9" color="white" position="0 0 0.05"></a-text>
         </a-plane>
         <a-plane
           color="skyblue"
@@ -3150,8 +3150,8 @@ walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
   }
  
   // Update Category Map Instruction
-  document.getElementById("categoryMapTitle").textContent = translations.categoryMapInstruction.title;
-  document.getElementById("categoryMapText").textContent = translations.categoryMapInstruction.text;
+  // document.getElementById("categoryMapTitle").textContent = translations.categoryMapInstruction.title;
+  // document.getElementById("categoryMapText").textContent = translations.categoryMapInstruction.text;
 
   // Update Expo Directory Instruction
   document.getElementById("expoDirectoryTitle").textContent = translations.expoDirectoryInstruction.title;
@@ -3167,18 +3167,16 @@ walkinstructionnimg.src='assets/Instructions/keyboardfeature.png'
 }
 
 const desktopIconMapping = {
-  2: ['icon1'],        // Instruction 1 highlights icon1
-  3: ['icon2'],        // Instruction 2 highlights icon2
-  4: ['icon3'],        // Instruction 3 highlights icon3       // Instruction 4 highlights icon4
-  5: ['chat-icon123'],        // Instruction 5 highlights icon5
+  2: ['icon2'],        // Instruction 1 highlights icon1
+  3: ['icon3'],        // Instruction 2 highlights icon2
+  4: ['chat-icon123'],        // Instruction 3 highlights icon3       // Instruction 4 highlights icon4       // Instruction 5 highlights icon5
 };
 
 // Icon mapping for Mobile
 const mobileIconMapping = {// Instruction 1 highlights mobile-icon1
-  2: ['icon1'], // Instruction 2 highlights mobile-icon2
-  3: ['icon2'], // Instruction 3 highlights mobile-icon3
-  4: ['icon3'], // Instruction 4 highlights mobile-icon4
-  5: ['mblchat'], // Instruction 5 highlights mobile-icon5
+  2: ['icon2'], // Instruction 2 highlights mobile-icon2
+  3: ['icon3'], // Instruction 3 highlights mobile-icon3
+  4: ['mblchat'], // Instruction 4 highlights mobile-icon4
 };
 const modal = document.getElementById("guideModal");
 const openBtn = document.querySelector(".open-guide-btn");
