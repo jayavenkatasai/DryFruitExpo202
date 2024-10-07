@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Dry Fruits Mela : Discover the latest advancements in our lobby at Dry Fruits Mela
-    </title>
+    <title>Dry Fruits Mela : Discover the latest advancements in our lobby at Dry Fruits Mela</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/Dry Fruit Fav Icon.svg" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -17,6 +15,8 @@
     ></script> -->
     <script src="
 https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
     <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -216,8 +216,18 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
     </div>
     <!-- orientation ends -->
     <!-- start of loading icon -->
+
     <div class="loading-container" id="loading-cnt">
-      <img src="assets/loading/tenor.gif" alt="Loading GIF" />
+      <dotlottie-player
+        src="assets/loading/loading.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        direction="1"
+        mode="normal"
+        autoplay
+      >
+      </dotlottie-player>
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
 
@@ -346,23 +356,21 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
         animation-mixer="clip:*;timeScale: 0.5;"
         scale="2.5 2.5 2.5"
       ></a-entity>
-      <a-entity
-        gltf-model="#enterButton"
-        position="7.637 -2.766 0.827"
+      <a-text
+        value="ENTER"
+        position="-0.271 -2.332 0.827"
         scale="3 3 3"
         id="enterExhibitonbtn"
-        animation-mixer="clip:*;timeScale: 0.5;"
         cursor-listeneriframe
-      ></a-entity>
+      ></a-text>
 
-      <a-entity
-        gltf-model="#enterButton"
-        position="16.953 -2.766 0.827"
+      <a-text
+        value="ENTER"
+        position="8.809 -2.332 0.827"
         scale="3 3 3"
         id="enterlobbybtn"
-        animation-mixer="clip:*;timeScale: 0.5;"
         cursor-listener="targetPage:webinar.html;type:visit-webinar"
-      ></a-entity>
+      ></a-text>
 
       <a-plane id="lobby-source" src="#lobbyresource" side="double" width="32" height="18.01" scale="1.08 1.08 1.08">
         <a-image
@@ -417,7 +425,6 @@ https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-compone
         height="3.5"
         visible="false"
         cursor-listeneriframe
-   
       ></a-plane>
 
       <a-plane

@@ -21,6 +21,7 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="/dist/networked-aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -326,15 +327,16 @@
     <!-- start of loading icon -->
     <div class="loading-container" id="loading-cnt">
    
-<lottie-player 
-src="assets/loading/loader for expo.json" 
-background="transparent" 
-speed="1" 
-style="width: 300px; height: 300px;" 
-direction="1" 
-mode="normal" 
-autoplay>
-</lottie-player>
+ <dotlottie-player
+        src="assets/loading/loading.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        direction="1"
+        mode="normal"
+        autoplay
+      >
+      </dotlottie-player>
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
     <!-- <div id="instruction-pannel">
@@ -538,7 +540,7 @@ autoplay>
     <div id="iframe-container">
       <iframe id="iframe-url" src=""></iframe>
     </div>
-     <!-- <button class="switch">Switch To 2D</button> -->
+     <button class="switch">Switch To 2D</button> 
     <!-- js files -->
 
     <script src="js/translatorjs/halltranslator.js"></script>
@@ -634,7 +636,7 @@ autoplay>
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
         <a-entity id="rig"  cursor-teleport="cameraRig: #rig; cameraHead: #player; collisionEntities: .collision;" 
-        movement-controls="fly:false;controls:keyboard,nipple;speed:1" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right;sideMargin:30px;bottomMargin:30px" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 1 17.4"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:1;">
+        movement-controls="fly:false;controls:keyboard,nipple;speed:1" nipple-controls="lookJoystickEnabled:false;moveJoystickPosition:right;sideMargin:30px;bottomMargin:30px" spawn-in-circle="radius:1"   networked="template:#rig-template;" position="0 1 16"  simple-navmesh-constraint="navmesh:.navmesh;fall:0.3;height:1;">
           <a-entity
             id="player"
             camera
@@ -751,7 +753,7 @@ autoplay>
           <a-image id="moveup51" class="clickable" width="2" height="0.5" position="0 9.8 -60" rotation="0 0 0" open-link="href:#destination51" src="#visit-stall-button" look-at="[camera]" visible="false" scale="2 2 2"></a-image>
           <a-waypoint id="destination51" position="0 1 -50" rotation="0 180 0" color="red" side="double"></a-waypoint>
           <!-- stall 5 waypoint code ends -->
-      
+       <a-entity gltf-model="assets\advertising\dangle.glb"></a-entity>
       <!-- buttons ---next prev  -->
           <!-- stall1 -->
        <a-entity id="stall1" position="-26.677 -0.05 -11.412" rotation="0 0 0" scale="1 1 1" visible="false">
@@ -3293,7 +3295,7 @@ autoNextInstruction();
 }
 function modelLoadedHandler() {
   // After the model is loaded, hide the loading icon
-  setTimeout(hideLoadingIcon, 3000);
+  setTimeout(hideLoadingIcon, 5000);
 }
   document.getElementById('hall1').addEventListener('model-loaded', modelLoadedHandler);
 
@@ -3439,10 +3441,10 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
 </script> -->
   </body>
   <script>
-    // document.querySelector('.switch').addEventListener('click',function(){
-    //   var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
-    // window.location.href = lowpolylink
+    document.querySelector('.switch').addEventListener('click',function(){
+      var lowpolylink = `2d-AgriExpo/hall.html?category=${encrypt(categoryparam)}`; // Assign the desired URL to lowpolylink
+    window.location.href = lowpolylink
  
-    // })
+    })
   </script>
 </html>
