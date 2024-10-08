@@ -27,7 +27,7 @@ var data = {
     "hindi":
     {
         "welcomeIntro": "आपका स्वागत है",
-        "welcomeHsptlText": "कृषि उत्पाद ऑनलाइन एक्सपो",
+        "welcomeHsptlText": "ड्राई फ्रूट्स मेला",
         "enterExpoButton": "एक्सपो में प्रवेश करें",
         "Avthartext": "अपना अवतार चुनें",
         "continuetext": "एक्सपो दर्ज करें",
@@ -38,7 +38,7 @@ var data = {
     },
     "marathi": {
         "welcomeIntro": "स्वागत आहे",
-        "welcomeHsptlText": "कृषी उत्पादने ऑनलाइन एक्सपो",
+        "welcomeHsptlText": "ड्रायफ्रुट्स मेळा",
         "enterExpoButton": "एंटर एक्सपो",
         "Avthartext": "तुमचं अवतार निवडा",
         "continuetext": "एक्सपोमध्ये प्रवेश करा",
@@ -49,7 +49,7 @@ var data = {
     },
     "bengali": {
         "welcomeIntro": "স্বাগতম",
-        "welcomeHsptlText": "কৃষি পণ্য অনলাইন এক্সপো",
+        "welcomeHsptlText": "ড্রাই ফ্রুটস মেলা",
         "enterExpoButton": "এন্টার এক্সপো",
         "Avthartext": "আপনার অবতার চয়ন করুন",
         "continuetext": "এক্সপোতে প্রবেশ করুন",
@@ -61,7 +61,7 @@ var data = {
     "gujarati":
     {
         "welcomeIntro": "સ્વાગત છે",
-        "welcomeHsptlText": "કૃષિ ઉત્પાદનો ઓનલાઈન એક્સપો",
+        "welcomeHsptlText": "સુકા ફળોનો મેળો",
         "enterExpoButton": "એક્સપો પ્રવેશ કરો",
         "Avthartext": "તમારો આવતાર પસંદ કરો",
         "continuetext": "એક્સપોમાં પ્રવેશ કરો",
@@ -72,7 +72,7 @@ var data = {
     },
     "telugu": {
         "welcomeIntro": "స్వాగతం",
-        "welcomeHsptlText": "వ్యవసాయ ఉత్పత్తులు ఆన్‌లైన్ ఎక్స్పో",
+        "welcomeHsptlText": "డ్రై ఫ్రూట్స్ మేళా",
         "enterExpoButton": "ఎంటర్ ఎక్స్‌పో",
         "Avthartext": "మీ అవతారాన్ని ఎంచుకోండి",
         "continuetext": "ఎక్స్‌పోలో ప్రవేశించండి",

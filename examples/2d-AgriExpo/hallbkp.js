@@ -131,7 +131,7 @@ function renderStalls() {
               </div>
         </div>
         <div class="expoHeading">
-            <p class="expoHeadinng">AGRI EXPO</p>
+            <p class="expoHeadinng">Dry Fruits Mela</p>
         </div>
         <div class="lobbyClass" onclick="navigatetolobby()">
             <p class="lobbyName">Lobby</p>

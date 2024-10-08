@@ -75,21 +75,21 @@ function shaerestall(uno, name, index) {
     document.getElementById(`popup-overlay_${index}`).style.display = "flex"
     document.getElementById(`currentURL`).value = newURL
     document.getElementById('urlText').textContent = "Stall Link"
-    
+
     // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
     //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
     //     document.getElementById(`currentURL_${index}`).value=prdurl
- 
+
     //  });
 }
- 
+
 function shaerestallurl(uno, name, index) {
     var currentURL1 = window.location.href;
     var baseURL = currentURL1
     console.log(currentURL1)
     // alert(currentURL1)
     //console.log(uno)
- 
+
     document.getElementById(`popup-overlay_${index}`).style.display = "flex"
     document.getElementById(`currentURL`).value = currentURL1
     document.getElementById('urlText').textContent = "Stall Link"
@@ -97,19 +97,19 @@ function shaerestallurl(uno, name, index) {
     // document.getElementById(`sharestall_${index}`).addEventListener('click', function () {
     //     document.getElementById(`popup-overlay_${index}`).style.display="flex"
     //     document.getElementById(`currentURL_${index}`).value=prdurl
- 
+
     //  });
 }
- 
- 
+
+
 function closepopup(index) {
     document.querySelector(`#digitalPopUp_${index}`).style.display = "none";
 }
 //     document.querySelector('.closeImg').addEventListener('click', function() {
- 
+
 //     });
 // });
- 
+
 function openlink(value) {
     window.open(value, '_blank')
 }
@@ -121,7 +121,7 @@ function openlink(value) {
 //     }
 //     document.body.classList.remove('overlay');
 // }
- 
+
 function copyToClipboard(inex) {
     // Get the current URL
     var currentURL = document.getElementById(`currentURL`).value;
@@ -153,9 +153,9 @@ function renderStalls() {
         <div class="stallHeader">
         
         <div class="expoHeading">
-            <p class="expoHeadinng">AGRI EXPO</p>
+            <p class="expoHeadinng">Dry Fruits Mela</p>
         </div>
-        <div class="lobbyClass">
+        <div class="lobbyClass" onclick="navigatetolobby()">
             <p class="lobbyName">Lobby</p>
         </div>
     </div>
@@ -378,4 +378,10 @@ function closePopup1(index) {
     // document.getElementById(`digitalPopUp_${index}`).style.display = "flex"
     document.getElementById(`url-copied-alert-txt`).style.display = "none"
     document.getElementById(`popup-overlay_${index}`).style.display = "none"
+}
+
+function navigatetolobby() {
+
+    window.location.href = "lobby.html"
+
 }
