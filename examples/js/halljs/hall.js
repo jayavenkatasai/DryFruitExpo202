@@ -230,7 +230,7 @@ document.getElementById('fullscreenButton').addEventListener('click', function (
 });
 // Function to fetch data from the API and update the scene
 let requestBody = {
-    exhibition_ID: '4',
+    exhibition_ID: '5',
     start: '1',
     end: '10',
     category: "0",
@@ -336,10 +336,11 @@ const fetchDataFromAPI = () => {
                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("instanced-mesh-member", "mesh:#mesh1");
                     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible", "true");
                     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("instanced-mesh-member", "mesh:#mesh2");
-                    // if(stallIndex==2){ ---> need to implement based on vas service ...! need to get the api data variable and validate if yes then only accept
-                    //     document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
-                    // }
-                    document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
+                    if(stall.vendorInfo.ExpoChatSubscribed === 'Y'){
+                        // ---> need to implement based on vas service ...! need to get the api data variable and validate if yes then only accept
+                        document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
+                    }
+                   // document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
 
                     // if(halllang=='hindi'){
                     //     document.getElementById(`notetext${stallIndex + 1}`).setAttribute('value',"नोट: चैट करने के लिए यहां क्लिक करें")
@@ -630,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //console.log('Start:', start); // Output: 1
         //console.log('End:', end); 
         requestBody = {
-            exhibition_ID: '4',
+            exhibition_ID: '5',
             start: `${start}`,
             end: `${end}`,
             category: "0",
@@ -684,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //console.log('End:', end1);
         //    debugger
         requestBody = {
-            exhibition_ID: '4',
+            exhibition_ID: '5',
             start: `${start}`,
             end: `${end}`,
             category: "0",
@@ -731,7 +732,7 @@ if (useragent == "mobile") {
     //   document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
         overalloverlay.style.display = 'flex'
-        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
     })
 
 } else {
