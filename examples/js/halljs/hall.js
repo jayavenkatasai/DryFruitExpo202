@@ -731,7 +731,7 @@ if (useragent == "mobile") {
     //   document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
         overalloverlay.style.display = 'flex'
-        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)
     })
 
 } else {

@@ -1102,10 +1102,10 @@
         <img src="./assets/Question.svg" />
         <p class="helpDeskText">HELP DESK</p>
       </div>
-      <div class="directoryContents" id="direct">
+      <!-- <div class="directoryContents" id="direct">
         <img src="./assets/FolderOpen.svg" />
         <p class="directoryText">EXPO DIRECTORY</p>
-      </div>
+      </div> -->
     </div>
     <div class="footerBgImg">
       <img src="assets/background_images/footerImg.webp" />
@@ -1207,120 +1207,120 @@
     let apicall = 0;
     var halllang = 'english';
 
-    document.getElementById('mapbutton1').addEventListener('click', showPrevious);
-    document.getElementById('mapbutton2').addEventListener('click', showNext);
+    // document.getElementById('mapbutton1').addEventListener('click', showPrevious);
+    // document.getElementById('mapbutton2').addEventListener('click', showNext);
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const button = document.querySelector('#enter-exhib-btn');
+    // document.addEventListener('DOMContentLoaded', function () {
+      // const button = document.querySelector('#enter-exhib-btn');
 
-      button.addEventListener('click', function () {
-        document.querySelector('#parent').style.display = 'block';
-        fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4`)
-          .then((response) => response.json())
-          .then((apiData) => {
-            data = apiData;
-            if (apicall === 0) {
-              createCards(data);
-              document.getElementById('apiload').style.display = 'none';
-            }
-            apicall += 1;
-          })
-          .catch((error) => console.error('Error fetching data:', error));
+      // button.addEventListener('click', function () {
+      //   document.querySelector('#parent').style.display = 'block';
+      //   fetch(`https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/4`)
+      //     .then((response) => response.json())
+      //     .then((apiData) => {
+      //       data = apiData;
+      //       if (apicall === 0) {
+      //         createCards(data);
+      //         document.getElementById('apiload').style.display = 'none';
+      //       }
+      //       apicall += 1;
+      //     })
+      //     .catch((error) => console.error('Error fetching data:', error));
 
-        const bgContainer1 = document.getElementById('mappopup');
-        bgContainer1.style.display = 'flex';
-        const closebtn = document.getElementById('close');
-        closebtn.style.display = 'block';
-      });
-    });
+      //   const bgContainer1 = document.getElementById('mappopup');
+      //   bgContainer1.style.display = 'flex';
+      //   const closebtn = document.getElementById('close');
+      //   closebtn.style.display = 'block';
+      // });
+    // });
 
-    function createCards(data) {
-      const bgContainer = document.getElementById('bg'); // Define bgContainer here
+    // function createCards(data) {
+    //   const bgContainer = document.getElementById('bg'); // Define bgContainer here
 
-      for (var i = 0; i < data.length; i++) {
-        var card = document.createElement('div');
-        card.className = 'card';
-        card.id = 'card' + (i + 1);
+    //   for (var i = 0; i < data.length; i++) {
+    //     var card = document.createElement('div');
+    //     card.className = 'card';
+    //     card.id = 'card' + (i + 1);
 
-        var img = document.createElement('img');
-        img.id = 'img' + (i + 1);
-        img.src = `assets/categorymap_images/category${i + 1}.png`;
-        img.style.width = '50px';
-        img.style.height = '50px';
+    //     var img = document.createElement('img');
+    //     img.id = 'img' + (i + 1);
+    //     img.src = `assets/categorymap_images/category${i + 1}.png`;
+    //     img.style.width = '50px';
+    //     img.style.height = '50px';
 
-        var h3 = document.createElement('h3');
-        h3.id = `categoryname${i + 1}`;
-        h3.textContent = halllang === 'hindi' ? data[i].CATEGORY_LEVEL_1_HINDI : data[i].CATEGORY;
+    //     var h3 = document.createElement('h3');
+    //     h3.id = `categoryname${i + 1}`;
+    //     h3.textContent = halllang === 'hindi' ? data[i].CATEGORY_LEVEL_1_HINDI : data[i].CATEGORY;
 
-        var button = document.createElement('button');
-        button.id = 'button' + (i + 1);
-        button.textContent = 'Visit';
-        button.dataset.categoryIndex = i;
-        button.addEventListener('click', openLink);
+    //     var button = document.createElement('button');
+    //     button.id = 'button' + (i + 1);
+    //     button.textContent = 'Visit';
+    //     button.dataset.categoryIndex = i;
+    //     button.addEventListener('click', openLink);
 
-        card.appendChild(img);
-        card.appendChild(h3);
-        card.appendChild(button);
+    //     card.appendChild(img);
+    //     card.appendChild(h3);
+    //     card.appendChild(button);
 
-        bgContainer.appendChild(card);
-        cards.push(card);
-      }
+    //     bgContainer.appendChild(card);
+    //     cards.push(card);
+    //   }
 
-      showCard(currentIndex);
-    }
+    //   showCard(currentIndex);
+    // }
 
-    function showCard(index) {
-      for (var i = 0; i < cards.length; i++) {
-        cards[i].style.display = 'none';
-      }
+    // function showCard(index) {
+    //   for (var i = 0; i < cards.length; i++) {
+    //     cards[i].style.display = 'none';
+    //   }
 
-      for (var i = 0; i < 10; i++) {
-        if (index + i < cards.length) {
-          cards[index + i].style.display = 'flex';
-          document.getElementById('mapbutton2').style.display = 'flex';
-        } else {
-          document.getElementById('mapbutton2').style.display = 'none';
-        }
-      }
-    }
+    //   for (var i = 0; i < 10; i++) {
+    //     if (index + i < cards.length) {
+    //       cards[index + i].style.display = 'flex';
+    //       document.getElementById('mapbutton2').style.display = 'flex';
+    //     } else {
+    //       document.getElementById('mapbutton2').style.display = 'none';
+    //     }
+    //   }
+    // }
 
-    function showNext() {
-      currentIndex = (currentIndex + 10) % cards.length;
-      buttonid += 1;
+    // function showNext() {
+    //   currentIndex = (currentIndex + 10) % cards.length;
+    //   buttonid += 1;
 
-      if (buttonid >= 1) {
-        document.getElementById('mapbutton1').style.display = 'flex';
-      }
-      showCard(currentIndex);
-    }
+    //   if (buttonid >= 1) {
+    //     document.getElementById('mapbutton1').style.display = 'flex';
+    //   }
+    //   showCard(currentIndex);
+    // }
 
-    function showPrevious() {
-      currentIndex = (currentIndex - 10 + cards.length) % cards.length;
-      buttonid -= 1;
+    // function showPrevious() {
+    //   currentIndex = (currentIndex - 10 + cards.length) % cards.length;
+    //   buttonid -= 1;
 
-      if (buttonid == 0) {
-        document.getElementById('mapbutton1').style.display = 'none';
-      }
-      showCard(currentIndex);
-    }
+    //   if (buttonid == 0) {
+    //     document.getElementById('mapbutton1').style.display = 'none';
+    //   }
+    //   showCard(currentIndex);
+    // }
 
-    function openLink(event) {
-      var index = event.currentTarget.dataset.categoryIndex;
-      var categories = data.map((item) => item.CATEGORY);
-      var links = categories.map((category) => `hall.html?category=${encrypt(category.replace(/&/g, '||'))}`);
+    // function openLink(event) {
+    //   var index = event.currentTarget.dataset.categoryIndex;
+    //   var categories = data.map((item) => item.CATEGORY);
+    //   var links = categories.map((category) => `hall.html?category=${encrypt(category.replace(/&/g, '||'))}`);
 
-      var categoriesselect = categories.map((category) => category);
-      //  sendbeaconapi(0, categoriesselect[index], "");
+    //   var categoriesselect = categories.map((category) => category);
+    //   //  sendbeaconapi(0, categoriesselect[index], "");
 
-      window.location.href = links[index];
-    }
+    //   window.location.href = links[index];
+    // }
 
-    document.getElementById('close').addEventListener('click', closePopup);
-    function closePopup() {
-      var popupcontainer = document.getElementById('mappopup');
-      popupcontainer.style.display = 'none';
-      document.querySelector('#parent').style.display = 'none';
-    }
+    // document.getElementById('close').addEventListener('click', closePopup);
+    // function closePopup() {
+    //   var popupcontainer = document.getElementById('mappopup');
+    //   popupcontainer.style.display = 'none';
+    //   document.querySelector('#parent').style.display = 'none';
+    // }
 
     document.getElementById('helpdesk-btn').addEventListener('click', function () {
       document.body.classList.toggle('overlay');
@@ -1337,7 +1337,7 @@
     document.getElementById('close-icon-expo').addEventListener('click', function () {
       document.getElementById('expo-directory-section').style.display = 'none';
     });
-    document.getElementById('direct').addEventListener('click', function () {
+    document.querySelector('.exhibitionImgSection').addEventListener('click', function () {
       document.getElementById('expo-directory-section').style.display = 'block';
     });
   </script>
