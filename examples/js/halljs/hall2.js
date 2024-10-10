@@ -153,35 +153,3 @@ function avtharassign(avthar) {
     // modelEntity.setAttribute('gltf-model', `assets/3dmodels/${avthar}.glb`);
     //alert(playerInfoComponent)
 }
-
-// Assuming you have a reference to the template content
-
-
-// // Function to change the GLTF model dynamically
-// function changeModel(modelURL) {
-//     // Find the entity with the model ID
-//     var modelEntity = headTemplate.querySelector('#model-id');
-    
-//     // Set the GLTF model attribute to the new URL
-//     modelEntity.setAttribute('gltf-model', modelURL);
-// }
-
-// // Example usage: change the model to a different GLTF file
-// changeModel('#new-boy-character');
-
-
-// document.getElementById('nextbutton').addEventListener('click',function(){
-
-//      var cam=document.getElementById('player')
-    
-//      cam.removeAttribute('look-controls')
-//      cam.removeAttribute('position')
-//      cam.setAttribute('posistion','-26.677 2 -11.412')
-//      cam.setAttribute('userheight',4)
-//      cam.setAttribute('rotation','0 90 0')
-   
-//      cam.setAttribute('look-controls', 'magicWindowTrackingEnabled:false')
- 
-//      //console.log(cam.getAttribute('position'))
-
-// })

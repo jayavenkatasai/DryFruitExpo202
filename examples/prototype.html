@@ -574,10 +574,10 @@
         <a-asset-item id="navmesh_10" src="assets/navmesh/Hall @10 navmesh.glb"></a-asset-item>
         <!-- <a-asset-item id="navmesh_5" src="assets/navmesh/Hall @5 navmesh.glb"></a-asset-item> -->
         <a-asset-item id="halldoor" src="assets/doors/Hall door.glb"></a-asset-item>
-        <a-asset-item id="stallavatar" src="assets/Avthars/avatarreductech.glb"></a-asset-item>
+        <!-- <a-asset-item id="stallavatar" src="assets/Avthars/avatarreductech.glb"></a-asset-item> -->
         <!-- //3dcharacter  -->
-        <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
-        <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item>
+        <!-- <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
+        <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item> -->
         <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized.glb"></a-asset-item>
         <a-asset-item id="NovaFont" src="css/Fonts/ProximaNova-Bold.ttf"></a-asset-item>
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" alt="leftarrowicon"/>
@@ -595,7 +595,7 @@
           <a-entity class="avatar" player-info>
             <a-entity
               id="model-id"
-              gltf-model="#avthar1"
+              gltf-model="url(assets/3dmodels/avthar1.glb)"
               class="model"
               position="0 -2 2"
               visible="true"
@@ -702,7 +702,7 @@
 
         <!-- instance mesh code -->
         <a-entity id="mesh1" gltf-model="#stall" instanced-mesh></a-entity>
-        <a-entity id="mesh2" gltf-model="#stallavatar" instanced-mesh></a-entity>
+        <a-entity id="mesh2" gltf-model="url(assets/Avthars/avatarreductech.glb)" instanced-mesh></a-entity>
         <!-- instance mesh code end -->
         <!-- avatar models -->
         <a-entity id="stall-avatar1" position="-27 0 -11" rotation="0 0 0" scale="1 1 1" visible="false"> </a-entity>
@@ -2851,11 +2851,8 @@
         $('#mapSection').removeClass('activeOne');
       });
       document.addEventListener('DOMContentLoaded', function () {
-        // console.log(document.getElementById('player'));
-        // console.log(document.getElementById('boy-character'));
-        
-     // Replace 'your_avatar_name_here' with the actual avatar name
-    avtharassign(avthar);
+      
+             avtharassign(avthar);
 
         // document.getElementById('boy-character').setAttribute('src','assets/3dmodels/avthar2.glb')
         //document.querySelector('#player').querySelector('#model-id').setAttribute('gltf-model', 'url(assets/3dmodels/avthar2.glb)');

@@ -69,7 +69,97 @@ AFRAME.registerComponent("type-on", {
 });
 // optimizwd
 
+// AFRAME.registerComponent('activate-on-approach', {
+//   init: function () {
+//     // Store reference to the camera
+//     this.camera = document.getElementById('player');
+//     if (!this.camera) {
+//       console.error('Camera not found');
+//       return;
+//     }
+    
+//     // Store reference to the target element and original visibility
+//     this.targetElement = this.el;
+//     this.activeElementId = null; // Initialize active element ID
+//     this.originalVisibility = this.el.getAttribute('visible');
+
+//     // Find the text element within the target element
+//     this.textElement = this.el.querySelector('a-troika-text');
+//     if (!this.textElement) {
+//       console.error('Text element not found');
+//       return;
+//     }
+    
+//     // Disable visibility and the 'type-on' component initially
+//     this.targetElement.setAttribute('visible', false);
+//     if (this.textElement.components['type-on']) {
+//       this.textElement.removeAttribute('type-on');
+//     }
+    
+//     // Cache frequently accessed values
+//     this.cameraPosition = new THREE.Vector3();
+//     this.elPosition = new THREE.Vector3();
+//   },
+//   tick: function () {
+//     if (!this.camera) return;
+
+//     // Get positions (cached values)
+//     this.camera.object3D.getWorldPosition(this.cameraPosition);
+//     this.targetElement.object3D.getWorldPosition(this.elPosition);
+
+//     // Calculate distance
+//     const distance = this.cameraPosition.distanceTo(this.elPosition);
+
+//     // Toggle visibility and apply 'type-on' component based on distance
+//     if (distance < 14) {
+//       this.targetElement.setAttribute('visible', true);
+
+//       if (!this.textElement.components['type-on']) {
+//         this.textElement.setAttribute('type-on', {
+//           message: message,
+//           delay: 100
+//         });
+//       }
+
+//       this.activeElementId = this.targetElement.getAttribute('id');
+//       var numericPart = this.activeElementId.match(/\d+/)[0];
+//       var bname = document.getElementById(`bname${numericPart}`).getAttribute('value');
+//       var stallnum = document.getElementById(`txtval${numericPart}`).getAttribute('value');
+
+//       if (!isStallVisited(stallnum)) {
+//         document.getElementById("iframe-url").setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+//         trackinga(`visitor passed through - ${stallnum}`,'hall')
+        
+//         markStallVisited(stallnum);
+//       }
+
+//       // Set cursor listener attribute
+//       this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
+//     //   document.getElementById('indivdualChatFullScreen').addEventListener('click',function(){
+//     //     //alert("trigger")
+       
+//     //         var chaturl = `https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`;
+            
+//     //         tracking(0, 'visitor-chat-icon', ipAddress);
+//     //         window.open(chaturl, '_blank');
+    
+//     // })
+//     } else {
+//       this.targetElement.setAttribute('visible', this.originalVisibility);
+//       if (this.textElement.components['type-on']) {
+//         this.textElement.removeAttribute('type-on');
+//       }
+//       this.activeElementId = null;
+//     }
+//   }
+// });
+
+// new chatgpt
 AFRAME.registerComponent('activate-on-approach', {
+  schema: {
+    isSubscribed: { type: 'string', default: 'defaultValue' } // Add custom parameter
+  },
+
   init: function () {
     // Store reference to the camera
     this.camera = document.getElementById('player');
@@ -77,7 +167,7 @@ AFRAME.registerComponent('activate-on-approach', {
       console.error('Camera not found');
       return;
     }
-    
+
     // Store reference to the target element and original visibility
     this.targetElement = this.el;
     this.activeElementId = null; // Initialize active element ID
@@ -89,17 +179,22 @@ AFRAME.registerComponent('activate-on-approach', {
       console.error('Text element not found');
       return;
     }
-    
+
     // Disable visibility and the 'type-on' component initially
     this.targetElement.setAttribute('visible', false);
     if (this.textElement.components['type-on']) {
       this.textElement.removeAttribute('type-on');
     }
-    
+
     // Cache frequently accessed values
     this.cameraPosition = new THREE.Vector3();
     this.elPosition = new THREE.Vector3();
+
+    // Access the custom parameter
+    this.customParamValue = this.data.isSubscribed;
+    console.log('Custom parameter passed:', this.customParamValue); // Example usage
   },
+
   tick: function () {
     if (!this.camera) return;
 
@@ -125,25 +220,17 @@ AFRAME.registerComponent('activate-on-approach', {
       var numericPart = this.activeElementId.match(/\d+/)[0];
       var bname = document.getElementById(`bname${numericPart}`).getAttribute('value');
       var stallnum = document.getElementById(`txtval${numericPart}`).getAttribute('value');
+      if (this.customParamValue === 'Y') {
+        if (!isStallVisited(stallnum)) {
+          document.getElementById("iframe-url").setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
+          trackinga(`visitor passed through - ${stallnum}`, 'hall')
 
-      if (!isStallVisited(stallnum)) {
-        document.getElementById("iframe-url").setAttribute('src', `https://expo1.marketcentral.in/CHAT/cfmchat.cfm?stallid=${stallnum}&bname=${bname}testing&name=${usernamelocal}&uid=${guidd}`);
-        trackinga(`visitor passed through - ${stallnum}`,'hall')
-        
-        markStallVisited(stallnum);
+          markStallVisited(stallnum);
+        }
+
+        // Set cursor listener attribute
+        this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
       }
-
-      // Set cursor listener attribute
-      this.targetElement.setAttribute('cursor-listener-chat', `targetPage:https://expo1.marketcentral.in/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`);
-    //   document.getElementById('indivdualChatFullScreen').addEventListener('click',function(){
-    //     //alert("trigger")
-       
-    //         var chaturl = `https://stage.marketcentral.in/expo/CHAT/individualstall.cfm?stallid=${stallnum}&bname=${bname}&name=${usernamelocal}&uid=${guidd}`;
-            
-    //         tracking(0, 'visitor-chat-icon', ipAddress);
-    //         window.open(chaturl, '_blank'); 
-    
-    // })
     } else {
       this.targetElement.setAttribute('visible', this.originalVisibility);
       if (this.textElement.components['type-on']) {
@@ -153,6 +240,8 @@ AFRAME.registerComponent('activate-on-approach', {
     }
   }
 });
+
+//end new chatgpt
 
 // new shiv
 // AFRAME.registerComponent('activate-on-approach', {

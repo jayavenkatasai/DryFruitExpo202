@@ -336,11 +336,11 @@ const fetchDataFromAPI = () => {
                     document.getElementById(`stall${stallIndex + 1}`).setAttribute("instanced-mesh-member", "mesh:#mesh1");
                     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("visible", "true");
                     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute("instanced-mesh-member", "mesh:#mesh2");
-                    if(stall.vendorInfo.ExpoChatSubscribed === 'Y'){
-                        // ---> need to implement based on vas service ...! need to get the api data variable and validate if yes then only accept
-                        document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
-                    }
-                   // document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
+                    document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', {
+                        isSubscribed: stall.vendorInfo.ExpoChatSubscribed
+                    });
+
+                    // document.getElementById(`bubble${stallIndex + 1}`).setAttribute('activate-on-approach', 'true')
 
                     // if(halllang=='hindi'){
                     //     document.getElementById(`notetext${stallIndex + 1}`).setAttribute('value',"नोट: चैट करने के लिए यहां क्लिक करें")
@@ -740,7 +740,7 @@ if (useragent == "mobile") {
     //  document.querySelector('.switch').style.display="none"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
         overalloverlay.style.display = 'flex'
-        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectory.cfm`)
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
     })
 
 }
@@ -1118,7 +1118,7 @@ function checkurlparm(urlparameter) {
             window.location.replace("index.html")
         }
         else {
-            window.location.replace("categorymapdynmic.html")
+            //   window.location.replace("categorymapdynmic.html")
         }
     }
 }
