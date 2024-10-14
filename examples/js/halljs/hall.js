@@ -71,7 +71,7 @@ if (categoryparam.includes('||')) {
     // Replace '||' with another string
     categoryparam = categoryparam.replace(/\|\|/g, '&');
 }
-document.title = `Dry Fruits Mela: ${categoryparam}`;
+document.title = `Diwali Dry Fruits Mela – Buy Almonds, Apricots, Raisins & Cashews Online`;
 
 
 //console.log(`the categoryparam is ${categoryparam}`)

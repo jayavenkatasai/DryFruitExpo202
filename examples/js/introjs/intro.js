@@ -136,7 +136,7 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
     console.log(localStorage.getItem('languageselection'))
     sendbeaconapi(0,localStorage.getItem('languageselection'),'','')
     const requestBody = {
-                exhibition_ID: 4,
+                exhibition_ID: 5,
                 visitor_guid: guid,
                 visitor_name: localStorage.getItem('UserName'),
                 ipaddress: ipAddress
