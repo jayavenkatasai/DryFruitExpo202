@@ -129,7 +129,7 @@ body {
   height: 30px;
 }
 #icon1 {
-	display: none;
+  display: none;
 }
 .tooltipone,
 .tooltiptwo,
@@ -2105,4 +2105,32 @@ iframe {
   height: 175px;
   overflow: scroll;
   min-width: unset !important;
+}
+
+.loading-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 10000;
+  visibility: visible;
+  overflow: hidden !important;
+}
+
+.loading-container1 img {
+  width: 200px; /* Adjust this value to your desired width */
+  height: 200px; /* Adjust this value to your desired height */
+}
+
+.loading-container1 p {
+  margin-top: 12px; /* Adjust this value to your desired margin */
+  font-size: 16px;
+  color: #333;
+  visibility: visible;
 }

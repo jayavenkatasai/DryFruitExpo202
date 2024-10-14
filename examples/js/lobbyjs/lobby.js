@@ -22,30 +22,30 @@ var bgContainer = document.getElementById("bg");
 //   document.getElementById('lobby1').removeAttribute('gltf-model')
 //   document.getElementById('lobby1').setAttribute('gltf-model','url(assets/lobbymodels/hindilobby.glb)')
 // }
-var ang=0;
+var ang = 0;
 var currentIndex = 0;
 var cards = [];
 var data;
 let buttonid = 0; // Declare data outside the function
-let apicall=0;
+let apicall = 0;
 AFRAME.registerComponent("cursor-listener3", {
-    init: function () {
-      var el = this.el;
-      this.el.addEventListener("click", function () {
-        // alert("component called")
-        // Extract button ID from the element
-        fetch(
-    `${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`
-  )
-    .then((response) => response.json())
-    .then((apiData) => {
-      data = apiData;
-      if(apicall===0){
-        // Assign data from API to the global variable
-      createCards(data);
-      //alert("test")
-      //console.log(apicall)
-      document.getElementById('apiloadcategory').style.display='none'
+  init: function () {
+    var el = this.el;
+    this.el.addEventListener("click", function () {
+      // alert("component called")
+      // Extract button ID from the element
+      fetch(
+        `${urlendpoint}/rest/virtualExpo/general/getBusinesses/${endpoint_ExhibitionId}`
+      )
+        .then((response) => response.json())
+        .then((apiData) => {
+          data = apiData;
+          if (apicall === 0) {
+            // Assign data from API to the global variable
+            createCards(data);
+            //alert("test")
+            //console.log(apicall)
+            document.getElementById('apiloadcategory').style.display = 'none'
 
           }
           apicall += 1
@@ -68,6 +68,7 @@ AFRAME.registerComponent("cursor-listener3", {
 });
 
 AFRAME.registerComponent("cursor-listeneriframe", {
+
   init: function () {
     var el = this.el;
     this.el.addEventListener("click", function () {
@@ -79,6 +80,7 @@ AFRAME.registerComponent("cursor-listeneriframe", {
       var buttonId = el.id;
 
       document.getElementById("totalIframe").style.display = "flex";
+      alert('clicked');
       //console.log("Click event triggered! for category");
 
 
@@ -333,7 +335,7 @@ var userAgent = navigator.userAgent;
 //console.log(`the device type is ${useragent}`)
 // alert(browser)
 if (useragent == "mobile") {
-  document.getElementById("iframe-expo").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
+  document.getElementById("iframe-expo").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
   // $(".webinarAndExpocard").css("display", "flex");
 } else {
   document.getElementById("iframe-expo").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)

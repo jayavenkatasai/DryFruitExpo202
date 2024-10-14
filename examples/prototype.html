@@ -456,6 +456,19 @@
     <div class="iframetag" id="totalIframe">
       <div class="iframetagContent">
         <img class="iframeImg" src="assets/icons/blueCloseIcon.png" alt="iconicon"/>
+        <div class="loading-container1" id="loading-cnt1">
+        <dotlottie-player
+        src="assets/loading/loading.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 200px; height: 200px"
+        direction="1"
+        mode="normal"
+        autoplay
+        >
+        </dotlottie-player>
+    <p class="loading-text1">Please wait while your virtual experience loads!</p>
+    </div>
         <iframe id="iframe-expoDir" src="about:blank" width="800px" height="500px" allowfullscreen></iframe>
       </div>
     </div>
@@ -3318,7 +3331,14 @@ function modelLoadedHandler() {
   // Example usage
   let avthar = localStorage.getItem('Avthar');
 </script>
+<script>
 
+  document.getElementById("iframe-expoDir").onload = function () {
+    // Hide the loading animation once iframe is loaded
+    $('.loading-container1').css('visibility', 'hidden');
+    $('.loading-text1').css('visibility', 'hidden');
+};
+</script>
 <!-- enddddddddddddddddddddddddddddd -->
     <script>
       setname();

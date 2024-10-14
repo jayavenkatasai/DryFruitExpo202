@@ -309,7 +309,6 @@ const fetchDataFromAPI = () => {
                     //console.log(c)
                     c = parseInt(c);
                     var bannerElements = document.getElementById("ban");
-                   
                     bannerElements.setAttribute('gltf-model', `assets/banners/banner${c}.glb`)
                     // document.querySelector('#text-hallvalue').setAttribute('value', `Hall no : ${c}`)
                     // checkhallfive(apivariable.stalls.length);
@@ -320,7 +319,7 @@ const fetchDataFromAPI = () => {
                         var bannerElements = document.getElementById("ban");
                         bannerElements.setAttribute('gltf-model', `assets/banners/banner${b}.glb`)
 
-                      
+
                         // document.querySelector('#text-hallvalue').setAttribute('value', `Hall no : ${b}`)
                     };
                     // checkhallfive(apivariable.stalls.length);
@@ -732,18 +731,21 @@ if (useragent == "mobile") {
     //   document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
         overalloverlay.style.display = 'flex'
-        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`)
+        document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
     })
 
 } else {
     document.getElementById("stick").style.display = "none"
     //  document.querySelector('.switch').style.display="none"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
+        // document.querySelector('.loading-container1').style.display = 'flex'
+
         overalloverlay.style.display = 'flex'
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
     })
 
 }
+
 
 var bgContainer = document.getElementById('mapText');
 var cards = [];

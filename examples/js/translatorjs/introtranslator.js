@@ -21,7 +21,7 @@ var data = {
         "continuetext": "Enter Expo",
         "nameplaceholder": "Please Enter Your Name",
         "chooseText": "Choose a language :",
-        "TermsText": "By clicking on continue, you accept MarketCentral's",
+        "TermsText": "By clicking on Enter Expo, you accept MarketCentral's",
         "termc": "Terms & Conditions"
     },
     "hindi":

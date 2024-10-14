@@ -507,8 +507,8 @@ iframe {
 }
 @media only screen and (max-width: 992px) {
   iframe {
-    width: 500px !important;
-    height: 250px !important;
+    width: 510px !important;
+    height: 300px !important;
   }
 }
 #closeIcon {
