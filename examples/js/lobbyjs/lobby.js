@@ -80,7 +80,6 @@ AFRAME.registerComponent("cursor-listeneriframe", {
       var buttonId = el.id;
 
       document.getElementById("totalIframe").style.display = "flex";
-      alert('clicked');
       //console.log("Click event triggered! for category");
 
 

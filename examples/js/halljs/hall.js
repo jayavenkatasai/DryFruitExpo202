@@ -731,20 +731,38 @@ if (useragent == "mobile") {
     //   document.querySelector('.switch').style.display="block"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
         overalloverlay.style.display = 'flex'
+        document.querySelector('.loading-container1').style.visibility = 'visible';
+        document.querySelector('.loading-text1').style.visibility = 'visible';
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
+        document.getElementById("iframe-expoDir").onload = function () {
+            // Hide the loading animation once the iframe is loaded
+            document.querySelector('.loading-container1').style.visibility = 'hidden';
+            document.querySelector('.loading-text1').style.visibility = 'hidden';
+        };
     })
 
 } else {
     document.getElementById("stick").style.display = "none"
     //  document.querySelector('.switch').style.display="none"
     document.querySelector('.tooltiptwo').addEventListener('click', function () {
-        // document.querySelector('.loading-container1').style.display = 'flex'
+
 
         overalloverlay.style.display = 'flex'
+        document.querySelector('.loading-container1').style.visibility = 'visible';
+        document.querySelector('.loading-text1').style.visibility = 'visible';
+
+
         document.getElementById("iframe-expoDir").setAttribute("src", `https://expo1.marketcentral.in/expoDirectoryDryFruits.cfm`)
+        document.getElementById("iframe-expoDir").onload = function () {
+            // Hide the loading animation once the iframe is loaded
+            document.querySelector('.loading-container1').style.visibility = 'hidden';
+            document.querySelector('.loading-text1').style.visibility = 'hidden';
+        };
+
     })
 
 }
+
 
 
 var bgContainer = document.getElementById('mapText');

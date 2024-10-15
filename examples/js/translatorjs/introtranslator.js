@@ -135,12 +135,12 @@ updateUI(selectedLanguage);
 function languageChangeHandler(event) {
     selectedLanguage = event.target.value.toLowerCase();
     localStorage.setItem('languageselection', selectedLanguage);
-    if (selectedLanguage === "hindi") {
-        termc.href = 'hindit&c.html';
+    if (selectedLanguage) {
+        termc.href = `${selectedLanguage}t&c.html`;
         // document.querySelector('.inputone').removeAttribute('checked');
         // document.querySelector('.inputtwo').setAttribute('checked', 'true');
     } else {
-        termc.href = 'expot&c.html';
+        termc.href = 'englisht&c.html';
     }
     updateUI(selectedLanguage);
 }
