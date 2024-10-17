@@ -134,7 +134,9 @@ var addvisitorurl = `${urlendpoint}/rest/virtualExpo/general/AddVisitors`;
 document.getElementById("enterExpo-btn").addEventListener('click',function(){
     localStorage.setItem('UserName',visitorID1)
     console.log(localStorage.getItem('languageselection'))
-    sendbeaconapi(0,localStorage.getItem('languageselection'),'','')
+    sendbeaconapi(0, localStorage.getItem('languageselection'), '', '')
+    sendbeaconapi(0, 'Enter-expo-button', '', '')
+    trackinga("Enter-expo", "indexpage")
     const requestBody = {
                 exhibition_ID: 5,
                 visitor_guid: guid,
@@ -174,6 +176,10 @@ document.getElementById("enterExpo-btn").addEventListener('click',function(){
 })
 
 
+document.querySelector('.termc').addEventListener('click', function () { 
+    trackinga("terms&conditions", "terms&conditions")
+
+})
 
 //  function validateName(names) {
 //     let nameInput = document.getElementById("name-value");

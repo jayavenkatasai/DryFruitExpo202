@@ -61,7 +61,7 @@ function tracking(uno = 0, track_type, pname = "", websitename = "") {
     "visitor_guid": guid
   }
   console.log(requestBody)
-  trackinga(websitename, pagetitle)
+  trackinga(track_type, pagetitle)
   async function postData(url, data) {
     try {
       const response = await fetch(url, {

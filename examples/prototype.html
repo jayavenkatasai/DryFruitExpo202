@@ -577,7 +577,7 @@
       <!-- assets for initial load -->
       <a-assets>
         <!-- //stallmodel  -->
-        <a-asset-item id="stall" src="assets/stallmodel/Updated color stall.glb"></a-asset-item>
+        <a-asset-item id="stall" src="assets/stallmodel/UpdatedColorStall.glb"></a-asset-item>
         <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand2.glb"></a-asset-item>
         <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
         <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
@@ -588,7 +588,7 @@
         <!-- //3dcharacter  -->
         <!-- <a-asset-item id="avthar1" src="assets/3dmodels/avthar1.glb"></a-asset-item>
         <a-asset-item id="avthar2" src="assets/3dmodels/avthar2.glb"></a-asset-item> -->
-        <a-asset-item id="hallmodel" src="assets/hallmodel/Hall optimized.glb"></a-asset-item>
+        <a-asset-item id="hallmodel" src="assets/hallmodel/HallOptimized.glb"></a-asset-item>
         <a-asset-item id="NovaFont" src="css/Fonts/ProximaNova-Bold.ttf"></a-asset-item>
         <img id="leftarrow-icon" src="assets/icons/left arrow.png" alt="leftarrowicon"/>
         <img id="vendor-image" src="assets/icons/vendor-image.jpg" alt="vendorimage"/>
@@ -2869,8 +2869,7 @@
       });
     </script>
 
-   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ96K2PXX9"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -2957,6 +2956,7 @@
 
  window.onload =function(){
   tracking(0, 'hallpage', '');
+  // trackinga('hallpage','hallpage')
        
       }
 </script>
@@ -3266,6 +3266,7 @@ currentIndexi = 998;  // Reset icon highlights
 
 closeBtn.addEventListener("click", () => {
   closeGuide();
+    tracking("", "skip-help","")
 });
 
 // Move to the next instruction

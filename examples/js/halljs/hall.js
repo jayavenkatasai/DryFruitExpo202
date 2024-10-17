@@ -547,6 +547,7 @@ const fetchDataFromAPI = () => {
                                     // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
                                 })
                                 tracking(stall.uno, "product", imageDescription)
+                                trackinga("product", "hallpage")
                             });
 
 
@@ -669,6 +670,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetchDataFromAPI()
         document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
+        trackinga("next-hall", "next-hallButton")
     })
 
     previousbutton.addEventListener('click', function () {
@@ -719,6 +721,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('rig').setAttribute('position', { x: newX, y: newY, z: newZ });
         fetchDataFromAPI()
         document.getElementById('player').setAttribute('look-controls', 'magicWindowTrackingEnabled:false');
+        trackinga("previous-hall", "previous-hallButton")
 
     })
 })
@@ -1203,6 +1206,8 @@ document.getElementById('Help-icon').addEventListener('click', function () {
     // document.getElementById('help-overlay').style.display='flex'
     openuguide();
     $("#hallButtons, #mblchatplaceholder, #chat-icon123").addClass("initial_guide");
+    tracking("", "Help-guide", "")
+    // trackinga("next-hall", "next-hallButton") 
 })
 document.getElementById('mblhelpicon').addEventListener('click', function () {
     // document.getElementById('help-overlay').style.display='flex'

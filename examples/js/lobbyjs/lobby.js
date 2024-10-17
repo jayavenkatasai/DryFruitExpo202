@@ -84,7 +84,7 @@ AFRAME.registerComponent("cursor-listeneriframe", {
 
 
       // trackExpo(0, buttonId, "",ipAddress);
-      tracking(0, buttonId, "")
+      tracking(0, "lobby-expoDirectory", "")
       //console.log(`the ip at third  is :${ipAddress}`)
     });
   },

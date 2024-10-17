@@ -531,6 +531,14 @@
         }
       }
     </style>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-VQ96K2PXX9');
+    </script>
   </head>
   <body>
     <script>
@@ -543,7 +551,7 @@
         <div class="sectionOne">
           <div class="poweredBy mbl_visible">
             <p>Co-Powered by</p>
-            <a href="https://dev.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
+            <a href="https://www.marketcentral.in/market/index.cfm" target="_blank" id="marketcentral-website-visit">
               <img src="./assets/background_images/mcImg.png" />
             </a>
           </div>
@@ -580,7 +588,6 @@
   <script src="js/track js/trackapi.js"></script>
   <script src="js/track js/track.js"></script>
   <script src="/js/introjs/intro.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ96K2PXX9"></script>
   <script>
     $('.dropdown').click(function () {
       $('.dropdownItems').toggleClass('active');
@@ -590,14 +597,7 @@
       $(this).toggleClass('itemColor');
     });
   </script>
- <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-VQ96K2PXX9');
-  </script>
+
   <script>
     if (!localStorage.getItem('Avthar')) {
       // var randomNumber = Math.floor(Math.random() * 5) + 1;
@@ -618,12 +618,12 @@
 
       const model1 = document.createElement('a-asset-item');
       model1.setAttribute('id', 'hallmodel');
-      model1.setAttribute('src', 'assets/hallmodel/Hall optimized.glb');
+      model1.setAttribute('src', 'assets/hallmodel/HallOptimized.glb');
       assets.appendChild(model1);
 
       const model2 = document.createElement('a-asset-item');
       model2.setAttribute('id', 'stall');
-      model2.setAttribute('src', 'assets/stallmodel/Updated color stall.glb');
+      model2.setAttribute('src', 'assets/stallmodel/UpdatedColorStall.glb');
       assets.appendChild(model2);
 
       // Add more assets as needed
