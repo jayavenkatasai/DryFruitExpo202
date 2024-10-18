@@ -518,9 +518,9 @@ iframe {
   cursor: pointer;
 }
 @media only screen and (max-width: 800px) {
-  iframe {
+  /* iframe {
     width: 500px !important;
-  }
+  } */
 }
 @media only screen and (max-width: 550px) {
   iframe {

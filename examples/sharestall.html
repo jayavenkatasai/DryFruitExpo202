@@ -151,7 +151,9 @@
     <script src="js/encrypt.js"></script>
     <script src="js/sharestall/sharestall.js"></script>
     <!-- //////////////////////////////////////////////////////////////////////////////A-FRAME/////////////////////////////////////////// -->
-    <a-scene id="scene1" xr-mode-ui="enabled: false" cursor="rayOrigin:mouse">
+    <a-scene id="scene1" xr-mode-ui="enabled: false" cursor="rayOrigin:mouse"
+     gltf-model="dracoDecoderPath:https://www.gstatic.com/draco/versioned/decoders/1.5.6/;meshoptDecoderPath:https://unpkg.com/meshoptimizer@0.19.0/meshopt_decoder.js;basisTranscoderPath:https://cdn.jsdelivr.net/npm/three@0.154.0/examples/jsm/libs/basis/"
+    >
       <a-assets>
         <!-- //stallmodel  -->
         <a-asset-item id="chat-icon" src="assets/icons/chaticon.glb"></a-asset-item>

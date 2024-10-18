@@ -582,6 +582,8 @@
         <a-asset-item id="adversting_stand" src="assets/advertising/advertisingstand2.glb"></a-asset-item>
         <a-asset-item id="display-board" src="assets/hallmodel/info display stand empty.glb"></a-asset-item>
         <a-asset-item id="banner" src="assets/banners/banner1.glb"></a-asset-item>
+         <a-asset-item id="hanging-banners" src="assets/hallmodel/Hall_banners_1.glb"></a-asset-item>
+         <a-asset-item id="bigPoster-banners" src="assets/hallmodel/Hall_big_banners.glb"></a-asset-item>
         <a-asset-item id="navmesh_10" src="assets/navmesh/Hall @10 navmesh.glb"></a-asset-item>
         <!-- <a-asset-item id="navmesh_5" src="assets/navmesh/Hall @5 navmesh.glb"></a-asset-item> -->
         <a-asset-item id="halldoor" src="assets/doors/Hall door.glb"></a-asset-item>
@@ -642,7 +644,9 @@
       
 
       <a-entity gltf-model="#hallmodel" id="hall1">
-        <!-- <a-entity light="type: ambient; color: white; intensity: 1;"></a-entity> -->
+          <a-entity gltf-model="#hanging-banners" id="banners-hanging1"></a-entity>
+          <a-entity gltf-model="#bigPoster-banners" id="banners-big"></a-entity>
+        <a-entity light="type: ambient; color: white; intensity: 0.8;"></a-entity>
         <a-entity gltf-model ="" animation="* clip"></a-entity>
       <!-- <a-entity id="moveup" class="clickable" geometry="primitive: plane; width:2; height: 2" position="-21.1 3 -10.41" side="double" rotation="0 90 0" material="color: #000000"></a-entity> -->
         <!-- camera start -->
