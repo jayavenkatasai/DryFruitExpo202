@@ -112,9 +112,9 @@ body {
   visibility: visible;
 }
 .loading-container dotlottie-player {
-    width: 300px;
-    height: 300px !important;
-  }
+  width: 300px;
+  height: 300px !important;
+}
 p,
 h1,
 h2,
@@ -2155,7 +2155,7 @@ iframe {
   height: 500px; /* Match iframe height */
   background-color: rgba(255, 255, 255, 1); /* Background to match iframe */
   z-index: 10000;
-  visibility: visible !important; /* Initially hidden */
+  visibility: visible; /* Initially hidden */
   overflow: hidden !important;
 }
 
